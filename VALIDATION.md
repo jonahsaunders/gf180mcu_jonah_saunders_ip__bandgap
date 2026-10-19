@@ -1,3 +1,46 @@
+# Design review: 1k resistors and readable Python — 2026-10-19
+
+The original build is preserved on `design_review_1` at
+`28e3c1114d4984cd8f6888d6509e786220378dfc`. All earlier entries below describe
+that 2k-resistor design. Current `main` uses the 1k models and doubled lengths;
+see the [change and code-review guide](docs/DESIGN_REVIEW.md).
+
+Checks completed using the installed `hpretl/iic-osic-tools` image
+`5d6adf1f437c`, GF180MCU-D, ngspice 46 and Xschem 3.4.8RC:
+
+- **37 runner tests pass**, including nominal resistance preservation for all
+  16 instances, fingerprint sensitivity and rejection of stale result caches.
+- **3 plotting tests pass**.
+- **40 Xschem netlists pass** across fresh, moved and configured checkouts. The
+  closed loop-probe still matches all 86 statements in the untrimmed core.
+- Comparison with the preserved branch confirms that the three schematics
+  differ only in resistor symbols/models and lengths. Syntax-tree comparison
+  confirms equivalent computations in 57 runner helpers after renaming and
+  docstring changes; the four reformatted companion scripts are also equivalent.
+- All ten testbenches complete their selected **smoke profiles**: 16 case
+  bundles, no execution failures and no simulator warnings reported by the
+  runner. TB01–TB09 use `smoke`; TB10 uses `trim_nominal`, with all 128 codes
+  at each of 3.3 V and 5 V, followed by selected-code cold start and restart.
+  No PDK model or measurement threshold was modified for these runs.
+
+The [saved smoke reports](docs/results/design-review-2026-10-19/README.md)
+include source hashes and actual measurements. These are execution checks,
+not full electrical qualification: nominal untrimmed PSRR reaches only
+**52.03 dB minimum** against the existing 60 dB target, untrimmed temperature
+coefficient is **11.22 ppm/°C** against 10 ppm/°C, and TB08 reports one device
+voltage-screen flag. Only one of three TB06 draws meets its original voltage
+band. TB10 selects **code 72**, gives **1.194230 V at 3.3 V**, and passes its
+nominal startup/restart checks at both supplies. This voltage-target calibration
+does not replace a temperature-minimizing trim study.
+
+Full PVT, minimum-drift trim calibration, mismatch, layout dimensions/parasitics
+and extracted performance still need revalidation for the 1k option. The old
+specification estimates and temperature-trim codes must not be treated as
+measurements of this revision. New runs should use a fresh results root;
+automatic migration of predecessor caches has been removed.
+
+---
+
 # Temperature-first trim calibration — 2026-09-28
 
 The revised project goal is approximately **1.18 V**, with the physical resistor
@@ -105,7 +148,7 @@ false. Readiness and device-screen metrics use every adaptive sample;
 only the compact plotting trace is reduced to about 12,000 points.
 
 ---
-# TB05 repaired-core synchronization � 2026-09-27
+# TB05 repaired-core synchronization — 2026-09-27
 
 `Bandgap_Core_LoopProbe.sch` is rebuilt from the current **untrimmed**
 `Bandgap_Core.sch`, as requested. It includes the repaired startup network,

@@ -554,16 +554,16 @@ spiceprefix=X
 }
 C {lab_wire.sym} 200 -610 0 0 {name=p4 sig_type=std_logic lab=avdd
 }
-C {symbols/ppolyf_u_2k.sym} 640 250 0 0 {name=R1
+C {symbols/ppolyf_u_1k.sym} 640 250 0 0 {name=R1
 W=4e-6
-L=21.05e-6
-model=ppolyf_u_2k
+L=42.10e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
-C {symbols/ppolyf_u_2k.sym} 870 250 0 0 {name=R2
+C {symbols/ppolyf_u_1k.sym} 870 250 0 0 {name=R2
 W=4e-6
-L=192.5e-6
-model=ppolyf_u_2k
+L=385.0e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 610 250 0 0 {name=p6 sig_type=std_logic lab=avss

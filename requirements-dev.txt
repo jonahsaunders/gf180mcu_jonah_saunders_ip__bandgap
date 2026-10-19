@@ -1,0 +1,3 @@
+# Formatting only; the simulator runner still uses the standard library.
+# Install with Python 3.10 or newer in a development virtual environment.
+black==26.3.1

@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-19",
+  "preserved_branch": "design_review_1",
+  "preserved_commit": "28e3c1114d4984cd8f6888d6509e786220378dfc",
+  "environment": {
+    "image": "hpretl/iic-osic-tools:latest",
+    "pdk": "gf180mcuD",
+    "ngspice": "46",
+    "xschem": "3.4.8RC",
+    "image_id": "sha256:5d6adf1f437cd0f2f8f8614488ec3c247ba8c768f4663a25d5e997b30ccb13b0"
+  },
+  "scope": "Smoke execution only; TB01-TB09 use smoke, TB10 uses trim_nominal with startup. This is not full PVT or post-layout qualification.",
+  "reports": [
+    {
+      "file": "TB01_PSRR_UPLOAD_THIS.txt",
+      "sha256": "267a1e6b553c5bb0684a2b12eec771961751e3b0aa580be5ea488d6d1212fbed",
+      "profile": "smoke",
+      "cases_completed": 1,
+      "simulator_warning_count": 0
+    },
+    {
+      "file": "TB02_LINE_REGULATION_UPLOAD_THIS.txt",
+      "sha256": "3f06861e86acf77257f33363ae0a796de855f526e72b3906a1f5243b4ebcfd6a",
+      "profile": "smoke",
+      "cases_completed": 1,
+      "simulator_warning_count": 0
+    },
+    {
+      "file": "TB03_STARTUP_RESTART_UPLOAD_THIS.txt",
+      "sha256": "5c6afa9077b6dba951ee8e464e3d34a96c877c7efe0a885dbcd40660e2185a13",
+      "profile": "smoke",
+      "cases_completed": 1,
+      "simulator_warning_count": 0
+    },
+    {
+      "file": "TB04_TEMPERATURE_UPLOAD_THIS.txt",
+      "sha256": "0664edd0bf7b52d436ceef04714fda91bc5dfbadd51e63f1eb1d3f8444230e33",
+      "profile": "smoke",
+      "cases_completed": 1,
+      "simulator_warning_count": 0
+    },
+    {
+      "file": "TB05_LOOP_STABILITY_UPLOAD_THIS.txt",
+      "sha256": "b0cb8a831323686b6f9f186998eec1f03d554e21bc31f54129fa781bbbcaecf7",
+      "profile": "smoke",
+      "cases_completed": 1,
+      "simulator_warning_count": 0
+    },
+    {
+      "file": "TB06_MONTE_CARLO_UPLOAD_THIS.txt",
+      "sha256": "d1a73dea5163ecb93c5ab658aae4be790b0b8a953da56bdaaf4dfcb807703251",
+      "profile": "smoke",
+      "cases_completed": 3,
+      "simulator_warning_count": 0
+    },
+    {
+      "file": "TB07_NOISE_UPLOAD_THIS.txt",
+      "sha256": "e5321511f2aac0e35105b5586720a42bcbdea6f9bc6b2254acb209656bdde81c",
+      "profile": "smoke",
+      "cases_completed": 1,
+      "simulator_warning_count": 0
+    },
+    {
+      "file": "TB08_POWER_DEVICE_LIMITS_UPLOAD_THIS.txt",
+      "sha256": "e977122931d6230ad4297efce15392eeb1db0dc5e5691d59cad76a55e32c56f4",
+      "profile": "smoke",
+      "cases_completed": 1,
+      "simulator_warning_count": 0
+    },
+    {
+      "file": "TB09_SUPPLY_DISTURBANCE_UPLOAD_THIS.txt",
+      "sha256": "9709fa9d4d2dd7f42039c6d4dddb4c28f85913589b5f17462b6121a1b602202e",
+      "profile": "smoke",
+      "cases_completed": 5,
+      "simulator_warning_count": 0
+    },
+    {
+      "file": "TB10_RESISTOR_TRIM_UPLOAD_THIS.txt",
+      "sha256": "fa0f2d6ec55380802ecb74f5c875a8e6d1c4b27d982fbe4ed50f911629f65cb0",
+      "profile": "trim_nominal",
+      "cases_completed": 1,
+      "simulator_warning_count": 0
+    }
+  ],
+  "source_sha256_utf8_lf": {
+    "run_bandgap.py": "d9d7383cc8a1fe9ca209c880e65f64438a93749611b759d97c25c56337f60976",
+    "bandgap_config.json": "ec997d2fa18c471dc9a65bdd30d202f282b6c6d4884a01aa08aae33091ed314e",
+    "Bandgap_Core.sch": "6d8f31ca79e97dff826927c33e0fddac2ef274fcdd8ca58aac0018fd361d19a9",
+    "Bandgap_Core_LoopProbe.sch": "00ceb1a5a2898f751a1184d011d8ca6d8732f5f221d9ced9772a16047d8607f1",
+    "Bandgap_Core_Res.sch": "df6534925e9475d737f4484243faa5c13a2135f9df4d9f42f5710cbbc7c35353",
+    "TB01_PSRR.sch": "9d6f9dcb8acbb058ac7247615be5496592f2bd7deed26a24e8d39ed8f3fe67fb",
+    "TB02_LINE_REGULATION.sch": "ded0f22d85775fce2f6eb7f6b4532afdc6effd09e2cb9315d04eb7497a952c68",
+    "TB03_STARTUP_RESTART.sch": "6975a9d45d6c3ad0eea7896ed4b926956878fdce19553a20c80aa8a597a275dc",
+    "TB04_TEMPERATURE.sch": "36b16b70d014bde04f3b5a0a1bd8b7e358899593037356845b47235e38b1c579",
+    "TB05_LOOP_STABILITY.sch": "05d76db99e9dd908bf2008317039738bb6d044e251d7d9cb56a3e2d780775074",
+    "TB06_MONTE_CARLO.sch": "6bd095b4e7c853c7a53b7ce9612baf9a2f68c5ffb3fa65df6272ba2645d9bd17",
+    "TB07_NOISE.sch": "5a7671cd00b45bf24822dc8692e4fa2ac49e2d1384d4087925aab823dc7add4d",
+    "TB08_POWER_DEVICE_LIMITS.sch": "1f3bf0d0117b468a8374ab8b9d6f0c2a7fa5829b6a25cf22f4731726df145958",
+    "TB09_SUPPLY_DISTURBANCE.sch": "0625c99e4673694e43badf300a11a5d7ba36db270dce28583a92b163efffe9a2",
+    "TB10_RESISTOR_TRIM.sch": "85b51097dacc65e92176a8e2662eecdf5af95e7d7cd10c995a4a55254908942f",
+    "Bandgap_Core.sym": "0e1fa99cd49055dc72c617cf8603be1b4795edabdbc4ae00c70c1d05236c4662",
+    "Bandgap_Core_LoopProbe.sym": "d7161a4b7e5ae2040b77ea77d9c6b55dccde9e6dd132d1fd7de00af9301cb176",
+    "Bandgap_Core_Res.sym": "ad2cffe3293f7ca216510cdcaa48b94827c2ab89ed156eedffc47e6d324f8ba6"
+  }
+}

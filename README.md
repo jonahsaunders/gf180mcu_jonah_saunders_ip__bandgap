@@ -4,6 +4,8 @@ A GF180MCU bandgap reference with a seven-bit resistor-trim network, targeting a
 
 [Specifications](#specifications) · [Schematics](#schematics) · [Installation](#installation-and-first-run) · **[Results](docs/RESULTS.md)** · [Testbenches](docs/TESTBENCHES.md)
 
+**Design-review update:** `main` uses `ppolyf_u_1k` resistors with doubled lengths to preserve nominal resistance. The original 2k build is saved on [`design_review_1`](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/tree/design_review_1). The specifications and published full simulation results below were developed with that original build; the 1k version needs fresh electrical qualification. See the [change and code-review guide](docs/DESIGN_REVIEW.md).
+
 <a id="projected-post-trim-specifications"></a>
 
 ## Specifications
@@ -49,7 +51,7 @@ The trim version adds the physical resistor segments, bypass switches, and seven
 
 [View full-size image](docs/images/bandgap-core-resistor-trim.svg) · [Open Xschem source](Bandgap_Core_Res.sch)
 
-Both images are exported from the checked-in schematics. Click an image to inspect device labels and connections at full size.
+Both images show the checked-in schematics, with resistor model and length labels updated for the 1k conversion. Click an image to inspect device labels and connections at full size.
 
 ## Installation and first run
 
@@ -72,8 +74,8 @@ The testbench model paths assume `/foss/pdks/gf180mcuD/libs.tech/ngspice/`. If y
 
 ```bash
 cd /foss/designs
-git clone https://github.com/jonahsaunders/jonah_saunders_bandgap.git
-cd jonah_saunders_bandgap
+git clone https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap.git
+cd gf180mcu_jonah_saunders_ip__bandgap
 
 python3 -m venv .venv
 source .venv/bin/activate

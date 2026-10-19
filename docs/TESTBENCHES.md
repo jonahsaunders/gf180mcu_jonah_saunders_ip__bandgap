@@ -4,6 +4,8 @@
 
 Overview of the ten Xschem/ngspice benches, their configured coverage, and the existing runner criteria.
 
+The current schematics use the 1k resistor option. The published full-grid evidence and temperature-trim screen describe the earlier 2k build on `design_review_1`; rerun these benches before applying those results or trim codes to the revised circuit.
+
 ## Current testbench acceptance targets
 
 The standard runner retains its existing **1.194 V** voltage-calibration criterion at **3.3 V / 25 °C** and the acceptance targets below. The revised project goal is **approximately 1.18 V with calibration for minimum temperature drift**. The [published temperature-trim results](RESULTS.md) come from a separate analysis; updating this goal does not change the runner's settings or reclassify historical results. Simply changing its voltage target to 1.18 V would not implement minimum-drift calibration.

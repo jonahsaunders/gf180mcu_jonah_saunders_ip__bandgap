@@ -1333,12 +1333,12 @@ text {font-family: Sans-Serif;}
 <text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(774.75, 673.916)" >1 x 1u / 2u</text>
 <text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(774.75, 666.416)" >nf=1</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(848.5, 81.2367)" >avdd</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1143, 609.416)" >1 * 4e-6 / 21.05e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1143, 598.916)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1143, 609.416)" >1 * 4e-6 / 42.10e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1143, 598.916)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1122, 596.749)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1143, 588.416)" >XR1</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1281, 609.416)" >1 * 4e-6 / 192.5e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1281, 598.916)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1281, 609.416)" >1 * 4e-6 / 385.0e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1281, 598.916)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1260, 596.749)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1281, 588.416)" >XR2</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(1096.5, 597.237)" >avss</text>

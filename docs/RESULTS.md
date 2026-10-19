@@ -1,5 +1,9 @@
 # Simulation results
 
+**Historical 2k design:** the results on this page belong to the build preserved on [`design_review_1`](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/tree/design_review_1). The current 1k resistor conversion on `main` preserves nominal sheet resistance, but these measurements do not qualify its different device models. See [design-review validation](../VALIDATION.md).
+
+The new [1k smoke-check reports](results/design-review-2026-10-19/README.md) are recorded separately and do not replace this full-grid evidence.
+
 [Overview](../README.md) · **Results** · [Testbenches](TESTBENCHES.md) · [Simulation guide](SIMULATION_GUIDE.md) · [Validation notes](../VALIDATION.md)
 
 Pre-layout evidence from the saved **TB01–TB10** reports, including the **repaired-core TB05 rerun** and the later **TB10 DC and minimum-drift trim studies**. The project goal is a reference near **1.18 V**, with calibration chosen for low temperature drift. The standard full TB10 run still selects a code for **1.194 V at 25 °C**; see the [runner's acceptance criteria](TESTBENCHES.md#current-testbench-acceptance-targets) before comparing the workflows.

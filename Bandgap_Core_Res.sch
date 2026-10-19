@@ -767,10 +767,10 @@ spiceprefix=X
 }
 C {lab_wire.sym} 1300 -760 0 0 {name=p4 sig_type=std_logic lab=avdd
 }
-C {symbols/ppolyf_u_2k.sym} 1740 100 0 0 {name=R1
+C {symbols/ppolyf_u_1k.sym} 1740 100 0 0 {name=R1
 W=4e-6
-L=21.05e-6
-model=ppolyf_u_2k
+L=42.10e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 1710 100 0 0 {name=p6 sig_type=std_logic lab=avss
@@ -1917,46 +1917,46 @@ C {lab_wire.sym} 1360 -250 0 0 {name=p94 sig_type=std_logic lab=avdd
 }
 C {lab_wire.sym} 2767.5 -60 0 0 {name=p7 sig_type=std_logic lab=vref
 }
-C {symbols/ppolyf_u_2k.sym} 2880 -7.5 0 0 {name=RFIXED
+C {symbols/ppolyf_u_1k.sym} 2880 -7.5 0 0 {name=RFIXED
 W=6.6e-6
-L=64e-6
-model=ppolyf_u_2k
+L=128e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
-C {symbols/ppolyf_u_2k.sym} 2880 322.5 0 0 {name=RB0
-W=6.6e-6
-L=1e-6
-model=ppolyf_u_2k
-spiceprefix=X
-m=1}
-C {symbols/ppolyf_u_2k.sym} 2880 402.5 0 0 {name=RB1
+C {symbols/ppolyf_u_1k.sym} 2880 322.5 0 0 {name=RB0
 W=6.6e-6
 L=2e-6
-model=ppolyf_u_2k
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
-C {symbols/ppolyf_u_2k.sym} 2880 482.5 0 0 {name=RB2
+C {symbols/ppolyf_u_1k.sym} 2880 402.5 0 0 {name=RB1
 W=6.6e-6
 L=4e-6
-model=ppolyf_u_2k
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
-C {symbols/ppolyf_u_2k.sym} 2880 562.5 0 0 {name=RB3
+C {symbols/ppolyf_u_1k.sym} 2880 482.5 0 0 {name=RB2
 W=6.6e-6
 L=8e-6
-model=ppolyf_u_2k
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
-C {symbols/ppolyf_u_2k.sym} 2880 642.5 0 0 {name=RB4
+C {symbols/ppolyf_u_1k.sym} 2880 562.5 0 0 {name=RB3
 W=6.6e-6
 L=16e-6
-model=ppolyf_u_2k
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
-C {symbols/ppolyf_u_2k.sym} 2880 722.5 0 0 {name=RB5
+C {symbols/ppolyf_u_1k.sym} 2880 642.5 0 0 {name=RB4
 W=6.6e-6
 L=32e-6
-model=ppolyf_u_2k
+model=ppolyf_u_1k
+spiceprefix=X
+m=1}
+C {symbols/ppolyf_u_1k.sym} 2880 722.5 0 0 {name=RB5
+W=6.6e-6
+L=64e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 2850 562.5 0 0 {name=p95 sig_type=std_logic lab=avss
@@ -1973,34 +1973,34 @@ C {lab_wire.sym} 2850 322.5 0 0 {name=p100 sig_type=std_logic lab=avss
 }
 C {lab_wire.sym} 2850 -7.5 0 0 {name=p101 sig_type=std_logic lab=avss
 }
-C {symbols/ppolyf_u_2k.sym} 2880 802.5 0 0 {name=RB6
+C {symbols/ppolyf_u_1k.sym} 2880 802.5 0 0 {name=RB6
 W=6.6e-6
-L=64e-6
-model=ppolyf_u_2k
+L=128e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 2850 802.5 0 0 {name=p102 sig_type=std_logic lab=avss
 }
-C {symbols/ppolyf_u_2k.sym} 2880 72.5 0 0 {name=RFIXED1
+C {symbols/ppolyf_u_1k.sym} 2880 72.5 0 0 {name=RFIXED1
 W=6.6e-6
-L=64e-6
-model=ppolyf_u_2k
+L=128e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 2850 72.5 0 0 {name=p103 sig_type=std_logic lab=avss
 }
-C {symbols/ppolyf_u_2k.sym} 2880 152.5 0 0 {name=RFIXED2
+C {symbols/ppolyf_u_1k.sym} 2880 152.5 0 0 {name=RFIXED2
 W=6.6e-6
-L=64e-6
-model=ppolyf_u_2k
+L=128e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 2850 152.5 0 0 {name=p104 sig_type=std_logic lab=avss
 }
-C {symbols/ppolyf_u_2k.sym} 2880 232.5 0 0 {name=RFIXED3
+C {symbols/ppolyf_u_1k.sym} 2880 232.5 0 0 {name=RFIXED3
 W=6.6e-6
-L=64e-6
-model=ppolyf_u_2k
+L=128e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 2850 232.5 0 0 {name=p105 sig_type=std_logic lab=avss

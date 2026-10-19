@@ -1,5 +1,7 @@
 # Temperature-trim results — September 28, 2026
 
+These historical results use the 2k resistor build preserved on `design_review_1`. They do not qualify the 1k conversion on current `main`; see the [design-review notes](../../DESIGN_REVIEW.md).
+
 The reference goal is **approximately 1.18 V**. Calibration selects the physical resistor-trim code that minimizes temperature drift, allowing its final voltage to vary. The same code is held across all temperatures and both tested supplies for each process combination.
 
 | Metric | Simulated result |

@@ -116,6 +116,8 @@ Reports contain coverage, configuration, per-case metrics, simulator warnings, a
 
 Resume requires a matching fingerprint of configuration, controls, deck, runner, simulator executable, and discovered model dependencies. A wrapper executable does not automatically fingerprint its external target/environment. Source updates can invalidate old caches, which is why revised runs should use new output folders.
 
+The design-review update removes automatic migration from the old suite-v9 runner. No encoded predecessor source is carried in Python anymore. Existing reports remain readable, but earlier fingerprints require new simulations. After the 1k resistor conversion, regenerate netlists and choose a new `--results-root`; use `design_review_1` to reproduce the original 2k build.
+
 | Exit code | Meaning |
 | --- | --- |
 | `0` | All requested simulations executed and parsed; performance may still fail, and a requested subset is still partial coverage |

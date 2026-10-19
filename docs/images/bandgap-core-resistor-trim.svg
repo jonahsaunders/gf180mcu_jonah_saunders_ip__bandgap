@@ -1956,8 +1956,8 @@ text {font-family: Sans-Serif;}
 <text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(774.75, 673.916)" >1 x 1u / 2u</text>
 <text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(774.75, 666.416)" >nf=1</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(848.5, 81.2367)" >avdd</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1143, 609.416)" >1 * 4e-6 / 21.05e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1143, 598.916)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1143, 609.416)" >1 * 4e-6 / 42.10e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1143, 598.916)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1122, 596.749)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1143, 588.416)" >XR1</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(1096.5, 597.237)" >avss</text>
@@ -2606,32 +2606,32 @@ text {font-family: Sans-Serif;}
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(679.5, 1017.24)" >vbn_i</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(884.5, 387.237)" >avdd</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(1732, 501.237)" >vref</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 544.916)" >1 * 6.6e-6 / 64e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 534.416)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 544.916)" >1 * 6.6e-6 / 128e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 534.416)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1806, 532.249)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 523.916)" >XRFIXED</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 742.916)" >1 * 6.6e-6 / 1e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 732.416)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 742.916)" >1 * 6.6e-6 / 2e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 732.416)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1806, 730.249)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 721.916)" >XRB0</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 790.916)" >1 * 6.6e-6 / 2e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 780.416)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 790.916)" >1 * 6.6e-6 / 4e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 780.416)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1806, 778.249)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 769.916)" >XRB1</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 838.916)" >1 * 6.6e-6 / 4e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 828.416)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 838.916)" >1 * 6.6e-6 / 8e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 828.416)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1806, 826.249)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 817.916)" >XRB2</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 886.916)" >1 * 6.6e-6 / 8e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 876.416)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 886.916)" >1 * 6.6e-6 / 16e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 876.416)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1806, 874.249)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 865.916)" >XRB3</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 934.916)" >1 * 6.6e-6 / 16e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 924.416)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 934.916)" >1 * 6.6e-6 / 32e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 924.416)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1806, 922.249)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 913.916)" >XRB4</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 982.916)" >1 * 6.6e-6 / 32e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 972.416)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 982.916)" >1 * 6.6e-6 / 64e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 972.416)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1806, 970.249)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 961.916)" >XRB5</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(1780.5, 874.737)" >avss</text>
@@ -2641,23 +2641,23 @@ text {font-family: Sans-Serif;}
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(1780.5, 778.737)" >avss</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(1780.5, 730.737)" >avss</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(1780.5, 532.737)" >avss</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 1030.92)" >1 * 6.6e-6 / 64e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 1020.42)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 1030.92)" >1 * 6.6e-6 / 128e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 1020.42)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1806, 1018.25)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 1009.92)" >XRB6</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(1780.5, 1018.74)" >avss</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 592.916)" >1 * 6.6e-6 / 64e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 582.416)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 592.916)" >1 * 6.6e-6 / 128e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 582.416)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1806, 580.249)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 571.916)" >XRFIXED1</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(1780.5, 580.737)" >avss</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 640.916)" >1 * 6.6e-6 / 64e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 630.416)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 640.916)" >1 * 6.6e-6 / 128e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 630.416)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1806, 628.249)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 619.916)" >XRFIXED2</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(1780.5, 628.737)" >avss</text>
-<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 688.916)" >1 * 6.6e-6 / 64e-6</text>
-<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 678.416)" >ppolyf_u_2k</text>
+<text fill="#666600"  xml:space="preserve" font-size="6.24" transform="translate(1827, 688.916)" >1 * 6.6e-6 / 128e-6</text>
+<text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 678.416)" >ppolyf_u_1k</text>
 <text fill="#ff0000"  xml:space="preserve" font-size="4.68" transform="translate(1806, 676.249)" >B</text>
 <text fill="#172533"  xml:space="preserve" font-size="6.24" transform="translate(1827, 667.916)" >XRFIXED3</text>
 <text fill="#175ea8"  xml:space="preserve" font-size="8.424" transform="translate(1780.5, 676.737)" >avss</text>
