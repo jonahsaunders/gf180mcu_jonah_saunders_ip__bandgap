@@ -1,0 +1,725 @@
+* NGSPICE file created from Bandgap_Core_Res.ext - technology: gf180mcuD
+
+.subckt Bandgap_Core_Res avdd avss vref b0 b1 b2 b3 b4 b5 b6 dvss dvdd
+Xpnp_05p00x05p00_0 avss avss vq3 pnp_05p00x05p00
+Xpnp_05p00x05p00_1 avss avss vq2 pnp_05p00x05p00
+Xpnp_05p00x05p00_2 avss avss vq2 pnp_05p00x05p00
+Xpnp_05p00x05p00_4 avss avss vq2 pnp_05p00x05p00
+Xpnp_05p00x05p00_3 avss avss vq2 pnp_05p00x05p00
+Xpnp_05p00x05p00_5 avss avss v1 pnp_05p00x05p00
+Xpnp_05p00x05p00_6 avss avss vq2 pnp_05p00x05p00
+Xpnp_05p00x05p00_7 avss avss vq2 pnp_05p00x05p00
+Xpnp_05p00x05p00_8 avss avss vq2 pnp_05p00x05p00
+Xpnp_05p00x05p00_9 avss avss vq2 pnp_05p00x05p00
+Xnwell_0 net3 net4 avss nwell r_length=20.19u r_width=2u
+X0 rbit0top b0 rbit1top dvss nfet_03v3 ad=17.6p pd=80.88u as=17.6p ps=80.88u w=40u l=0.28u M=2
+X1 vref vcasp vx3 avdd pfet_05v0 ad=7.2248p pd=33.72u as=7.2248p ps=33.72u w=16.42u l=4u M=5
+X2 vx2 psrg_m3_feed avdd avdd pfet_05v0 ad=7.37p pd=34.38u as=7.37p ps=34.38u w=16.75u l=2u M=6
+X3 vbn_sink vbn_sink avss avss nfet_05v0 ad=5.4164p pd=25.5u as=5.4164p ps=25.5u w=12.31u l=8u M=2
+X4 vbn_fold vbp_i avdd avdd pfet_05v0 ad=8.3556p pd=38.86u as=8.3556p ps=38.86u w=18.99u l=8u M=12
+X5 vx3 psrg_m3_feed avdd avdd pfet_05v0 ad=7.37p pd=34.38u as=7.37p ps=34.38u w=16.75u l=2u M=6
+X6 vbp_bias vbp_bias avdd avdd pfet_03v3 ad=8.3864p pd=39u as=8.3864p ps=39u w=19.06u l=8u M=9
+X7 vgn2 avss cap_mim_2f0fF c_width=59u c_length=59u
+X8 vbn_sink vbp_i avdd avdd pfet_05v0 ad=8.338p pd=38.78u as=8.338p ps=38.78u w=18.95u l=8u M=17
+X9 b3_b b3 dvdd dvdd pfet_03v3 ad=1.32p pd=6.88u as=1.32p ps=6.88u w=3u l=0.5u
+X10 vref avss cap_mim_2f0fF c_width=70.7u c_length=70.7u
+X11 su_state vbp_tail avdd avdd pfet_05v0 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=8u
+X12 vbn_i vbp_i avdd avdd pfet_05v0 ad=8.25p pd=38.38u as=8.25p ps=38.38u w=18.75u l=8u M=5
+X13 rbit3top b2_b rbit2top dvdd pfet_03v3 ad=8.8p pd=40.88u as=8.8p ps=40.88u w=20u l=0.28u M=3
+X14 xf2 vbn_sink avss avss nfet_05v0 ad=7.1896p pd=33.56u as=7.1896p ps=33.56u w=16.34u l=8u M=6
+X15 rbit6top b5_b rbit5top dvdd pfet_03v3 ad=3.3p pd=15.88u as=3.3p ps=15.88u w=7.5u l=0.28u
+X16 rbit4top rbit3top avss ppolyf_u_1k r_width=6.6u r_length=16u
+X17 rb_mid rb_mid avss avss nfet_05v0 ad=0.2376p pd=1.96u as=0.2376p ps=1.96u w=0.54u l=20u
+X18 vgn1 vcasp vx1 avdd pfet_05v0 ad=7.2248p pd=33.72u as=7.2248p ps=33.72u w=16.42u l=4u M=5
+X19 xf1 v1 vsp avdd pfet_05v0 ad=24.1516p pd=0.11066m as=24.1516p ps=0.11066m w=54.89u l=4u M=5
+X20 rfix2 rfix1 avss ppolyf_u_1k r_width=6.6u r_length=0.128m
+X21 vgn2 vbp_cas pm2 avdd pfet_05v0 ad=9.7724p pd=45.3u as=9.7724p ps=45.3u w=22.21u l=8u M=6
+X22 aux_gate vcasp avdd avdd pfet_05v0 ad=0.22p pd=1.88u as=0.22p ps=1.88u w=0.5u l=10u
+X23 xf2 v2 vsp avdd pfet_05v0 ad=24.1516p pd=0.11066m as=24.1516p ps=0.11066m w=54.89u l=4u M=5
+X24 vsu vsu bgsu1 avss nfet_05v0 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=2u
+X25 vbp_cas vbp_cas vbp_bias avdd pfet_05v0 ad=8.3292p pd=38.74u as=8.3292p ps=38.74u w=18.93u l=8u M=10
+X26 rbit6top rbit5top avss ppolyf_u_1k r_width=6.6u r_length=64u
+X27 vx1 psrg_m3_feed avdd avdd pfet_05v0 ad=7.37p pd=34.38u as=7.37p ps=34.38u w=16.75u l=2u M=6
+X28 psrg_m3_feed vcasp vx2 avdd pfet_05v0 ad=7.2248p pd=33.72u as=7.2248p ps=33.72u w=16.42u l=4u M=5
+X29 xf1 vbn_sink avss avss nfet_05v0 ad=7.1896p pd=33.56u as=7.1896p ps=33.56u w=16.34u l=8u M=6
+X30 su_state vsu avdd avdd pfet_05v0 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=8u
+X31 psrg_vnc vbp_i avdd avdd pfet_05v0 ad=7.8056p pd=36.36u as=7.8056p ps=36.36u w=17.74u l=4u M=7
+X32 pm1 y1 avdd avdd pfet_05v0 ad=9.1344p pd=42.4u as=9.1344p ps=42.4u w=20.76u l=4u M=6
+X33 vsu psrg_m3_feed avdd avdd pfet_05v0 ad=0.88p pd=4.88u as=0.88p ps=4.88u w=2u l=2u
+X34 b2_b b2 dvdd dvdd pfet_03v3 ad=1.32p pd=6.88u as=1.32p ps=6.88u w=3u l=0.5u
+X35 b5_b b5 dvdd dvdd pfet_03v3 ad=1.32p pd=6.88u as=1.32p ps=6.88u w=3u l=0.5u
+X36 vref avss cap_mim_2f0fF c_width=70.7u c_length=70.7u
+X37 rbit1top b0_b rbit0top dvdd pfet_03v3 ad=17.6p pd=80.88u as=17.6p ps=80.88u w=40u l=0.28u M=6
+X38 vbp_i vbp_i avdd avdd pfet_05v0 ad=8.25p pd=38.38u as=8.25p ps=38.38u w=18.75u l=8u M=5
+X39 y1 psrg_vnc psrg_mf1_protected avss nfet_05v0 ad=8.1356p pd=37.86u as=8.1356p ps=37.86u w=18.49u l=6u
+X40 rbit0top rfix2 avss ppolyf_u_1k r_width=6.6u r_length=0.128m
+X41 rbit4top b3_b rbit3top dvdd pfet_03v3 ad=13.2p pd=60.88u as=13.2p ps=60.88u w=30u l=0.28u
+X42 rbit5top b4_b rbit4top dvdd pfet_03v3 ad=6.6p pd=30.88u as=6.6p ps=30.88u w=15u l=0.28u
+X43 rbit2top b1_b rbit1top dvdd pfet_03v3 ad=17.6p pd=80.88u as=17.6p ps=80.88u w=40u l=0.28u M=3
+X44 rbit4top b4 rbit5top dvss nfet_03v3 ad=2.2p pd=10.88u as=2.2p ps=10.88u w=5u l=0.28u
+X45 vbn vbn avss avss nfet_05v0 ad=3.322p pd=15.98u as=3.322p ps=15.98u w=7.55u l=4u
+X46 vsp vbp_tail avdd avdd pfet_03v3 ad=12.7204p pd=58.7u as=12.7204p ps=58.7u w=28.91u l=6u M=6
+X47 vref avss cap_mim_2f0fF c_width=70.7u c_length=70.7u
+X48 vaux psrg_m3_feed avdd avdd pfet_05v0 ad=4.4p pd=20.88u as=4.4p ps=20.88u w=10u l=2u M=2
+X49 vbp_tail vbn_i avss avss nfet_05v0 ad=6.138p pd=28.78u as=6.138p ps=28.78u w=13.95u l=8u
+X50 y1 vbp_cas pm1 avdd pfet_05v0 ad=9.7724p pd=45.3u as=9.7724p ps=45.3u w=22.21u l=8u M=6
+X51 psrg_vnc psrg_vnc rb_mid avss nfet_05v0 ad=0.3124p pd=2.3u as=0.3124p ps=2.3u w=0.71u l=20u
+X52 rfix0 vref avss ppolyf_u_1k r_width=6.6u r_length=0.128m
+X53 pm2 y1 avdd avdd pfet_05v0 ad=9.1344p pd=42.4u as=9.1344p ps=42.4u w=20.76u l=4u M=6
+X54 vref avss cap_mim_2f0fF c_width=70.7u c_length=70.7u
+X55 rbit3top rbit2top avss ppolyf_u_1k r_width=6.6u r_length=8u
+X56 psrg_m3_feed psrg_vnc psrg_m3_protected avss nfet_05v0 ad=6.424p pd=30.08u as=6.424p ps=30.08u w=14.6u l=4u M=2
+X57 vbn_fold vbn_fold vnx_bias avss nfet_05v0 ad=2.0328p pd=10.12u as=2.0328p ps=10.12u w=4.62u l=6u
+X58 iref_gate vbp_i vsu1 avss nfet_05v0 ad=0.22p pd=1.88u as=0.22p ps=1.88u w=0.5u l=50u
+X59 vbp_tail vbp_tail avdd avdd pfet_03v3 ad=6.05p pd=28.38u as=6.05p ps=28.38u w=13.75u l=6u M=3
+X60 rfix1 rfix0 avss ppolyf_u_1k r_width=6.6u r_length=0.128m
+X61 vref avss cap_mim_2f0fF c_width=70.7u c_length=70.7u
+X62 rbit3top b3 rbit4top dvss nfet_03v3 ad=4.4p pd=20.88u as=4.4p ps=20.88u w=10u l=0.28u
+X63 bgsu1 bgsu1 bgsu2 avss nfet_03v3 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=2u
+X64 vref avss cap_mim_2f0fF c_width=70.7u c_length=70.7u
+X65 b3_b b3 dvss dvss nfet_03v3 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=0.5u
+X66 vgn1 vgn1 v1 avss nfet_05v0 ad=6.424p pd=30.08u as=6.424p ps=30.08u w=14.6u l=4u M=2
+X67 iref_gate vbp_i avdd avdd pfet_05v0 ad=35.2p pd=0.16088m as=35.2p ps=0.16088m w=80u l=1u M=2
+X68 su_state vgn2 avss avss nfet_05v0 ad=1.76p pd=8.88u as=1.76p ps=8.88u w=4u l=1u
+X69 b5_b b5 dvss dvss nfet_03v3 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=0.5u
+X70 b6_b b6 dvdd dvdd pfet_03v3 ad=1.32p pd=6.88u as=1.32p ps=6.88u w=3u l=0.5u
+X71 b1_b b1 dvdd dvdd pfet_03v3 ad=1.32p pd=6.88u as=1.32p ps=6.88u w=3u l=0.5u
+X72 vq3 b6_b rbit6top dvdd pfet_03v3 ad=1.65p pd=8.38u as=1.65p ps=8.38u w=3.75u l=0.28u
+X73 vq3 rbit6top avss ppolyf_u_1k r_width=6.6u r_length=0.128m
+X74 vgn2 vbn_fold xf2 avss nfet_05v0 ad=8.1356p pd=37.86u as=8.1356p ps=37.86u w=18.49u l=6u
+X75 vbn vcasp vaux avdd pfet_05v0 ad=7.04p pd=32.88u as=7.04p ps=32.88u w=16u l=4u
+X76 vsua vcasp avdd avdd pfet_05v0 ad=0.88p pd=4.88u as=0.88p ps=4.88u w=2u l=2u
+X77 rbit2top b2 rbit3top dvss nfet_03v3 ad=8.8p pd=40.88u as=8.8p ps=40.88u w=20u l=0.28u
+X78 rbit5top b5 rbit6top dvss nfet_03v3 ad=1.1p pd=5.88u as=1.1p ps=5.88u w=2.5u l=0.28u
+X79 rbit1top rbit0top avss ppolyf_u_1k r_width=6.6u r_length=2u
+X80 b4_b b4 dvdd dvdd pfet_03v3 ad=1.32p pd=6.88u as=1.32p ps=6.88u w=3u l=0.5u
+X81 b1_b b1 dvss dvss nfet_03v3 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=0.5u
+X82 rbit1top b1 rbit2top dvss nfet_03v3 ad=17.6p pd=80.88u as=17.6p ps=80.88u w=40u l=0.28u
+X83 vq2 v2 avss ppolyf_u_1k r_width=4u r_length=42.1u
+X84 b4_b b4 dvss dvss nfet_03v3 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=0.5u
+X85 vref avss cap_mim_2f0fF c_width=70.7u c_length=70.7u
+X86 vref avss cap_mim_2f0fF c_width=70.7u c_length=70.7u
+X87 vbn_i iref_gate avdd avdd pfet_05v0 ad=0.22p pd=1.88u as=0.22p ps=1.88u w=0.5u l=8u
+X88 vnx_bias vnx_bias avss avss nfet_03v3 ad=0.7128p pd=4.12u as=0.7128p ps=4.12u w=1.62u l=8u
+X89 vbp_i vbn_i net4 avss nfet_05v0 ad=4.0172p pd=19.14u as=4.0172p ps=19.14u w=9.13u l=8u
+X90 bgsu2 bgsu2 avss avss nfet_03v3 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=2u
+X91 b0_b b0 dvss dvss nfet_03v3 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=0.5u
+X92 rbit6top b6 vq3 dvss nfet_03v3 ad=0.55p pd=3.38u as=0.55p ps=3.38u w=1.25u l=0.28u
+X93 auxsu1 auxsu1 auxsu2 avss nfet_03v3 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=2u
+X94 psrg_m3_protected vgn2 v2 avss nfet_05v0 ad=6.424p pd=30.08u as=6.424p ps=30.08u w=14.6u l=4u M=2
+X95 aux_gate vbn_i avss avss nfet_05v0 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=8u
+X96 vsu1 vbp_i vsu2 avss nfet_05v0 ad=0.22p pd=1.88u as=0.22p ps=1.88u w=0.5u l=50u
+X97 vbp_cas vbn_i avss avss nfet_05v0 ad=0.286p pd=2.18u as=0.286p ps=2.18u w=0.65u l=8u
+X98 b6_b b6 dvss dvss nfet_03v3 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=0.5u
+X99 psrg_mf1_protected vbn_fold xf1 avss nfet_05v0 ad=8.1356p pd=37.86u as=8.1356p ps=37.86u w=18.49u l=6u
+X100 vbn aux_gate avdd avdd pfet_05v0 ad=0.22p pd=1.88u as=0.22p ps=1.88u w=0.5u l=8u
+X101 vsu2 vbp_i avss avss nfet_05v0 ad=0.22p pd=1.88u as=0.22p ps=1.88u w=0.5u l=50u
+X102 vcasp vbn avss avss nfet_05v0 ad=3.322p pd=15.98u as=3.322p ps=15.98u w=7.55u l=4u
+X103 avss net3 avdd pplus_u r_width=1u r_length=0.23253m
+X104 vgn1 aux_gate psrg_m3_feed avdd pfet_05v0 ad=0.88p pd=4.88u as=0.88p ps=4.88u w=2u l=2u
+X105 vcasp vcasp avdd avdd pfet_05v0 ad=0.396p pd=2.68u as=0.396p ps=2.68u w=0.9u l=2u
+X106 b2_b b2 dvss dvss nfet_03v3 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=0.5u
+X107 vbn_i vbn_i avss avss nfet_05v0 ad=3.4232p pd=16.44u as=3.4232p ps=16.44u w=7.78u l=8u
+X108 rbit5top rbit4top avss ppolyf_u_1k r_width=6.6u r_length=32u
+X109 auxsu2 auxsu2 avss avss nfet_03v3 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=2u
+X110 b0_b b0 dvdd dvdd pfet_03v3 ad=1.32p pd=6.88u as=1.32p ps=6.88u w=3u l=0.5u
+X111 rbit2top rbit1top avss ppolyf_u_1k r_width=6.6u r_length=4u
+X112 vref avss cap_mim_2f0fF c_width=70.7u c_length=70.7u
+X113 vref avss cap_mim_2f0fF c_width=70.7u c_length=70.7u
+X114 vsua vsua auxsu1 avss nfet_05v0 ad=0.44p pd=2.88u as=0.44p ps=2.88u w=1u l=2u
+C0 iref_gate psrg_m3_feed 1.06745f
+C1 vq2 vbp_cas 0.23087f
+C2 v2 vbn 0.52261f
+C3 v2 avdd 13.715f
+C4 rbit3top b2 0.29283f
+C5 iref_gate vbn_i 0.81755f
+C6 b2_b b0 1.29126f
+C7 vsu vbn_sink 2.45374f
+C8 rbit0top rbit6top 0.19439f
+C9 b6_b b0_b 0.10457f
+C10 v2 vgn2 1.50463f
+C11 xf1 v1 10.2886f
+C12 dvdd b6 2.68811f
+C13 v1 y1 0.18075f
+C14 xf2 vbp_cas 0.14767f
+C15 vq3 pm2 1.76859f
+C16 vbp_bias net3 0.16448f
+C17 pm1 y1 9.66249f
+C18 rbit5top rbit4top 3.70078f
+C19 b3_b rbit4top 0.32162f
+C20 avdd vbn 5.7741f
+C21 vq2 psrg_m3_feed 5.12005f
+C22 vbp_tail xf2 0.90034f
+C23 vgn1 vsu1 0.18706f
+C24 rbit3top b5 0.17918f
+C25 rbit1top rbit3top 0.19439f
+C26 vbn_i vq2 0.12561f
+C27 rbit2top rbit4top 2.63156f
+C28 avdd vgn2 25.7525f
+C29 vgn2 vbn 0.12496f
+C30 b6_b b1 0.20434f
+C31 vbp_bias vbp_cas 17.5596f
+C32 b1_b b4_b 0.12858f
+C33 iref_gate vbp_i 6.12357f
+C34 rbit3top b0 0.32954f
+C35 xf2 psrg_m3_feed 0.38229f
+C36 vcasp vbp_cas 2.83164f
+C37 rfix2 vref 0.91589f
+C38 vbp_tail vbp_bias 0.32402f
+C39 vbp_cas psrg_vnc 3.11352f
+C40 vcasp vref 4.83961f
+C41 b0_b rbit4top 0.1617f
+C42 vsu v2 0.63194f
+C43 aux_gate vbn 0.50084f
+C44 xf2 vbn_i 0.526f
+C45 iref_gate vsp 0.81681f
+C46 avdd aux_gate 5.05412f
+C47 vbp_tail psrg_vnc 2.11535f
+C48 b2 rbit4top 0.21125f
+C49 dvdd b2_b 3.6832f
+C50 vbp_bias psrg_m3_feed 0.32891f
+C51 vx3 vref 3.45456f
+C52 vgn2 aux_gate 0.26108f
+C53 vcasp psrg_m3_feed 5.73849f
+C54 vq2 vsua 1.14717f
+C55 vbp_bias vbn_i 1.76868f
+C56 psrg_vnc psrg_m3_feed 2.17271f
+C57 avdd pm2 44.0287f
+C58 vsu vbn 0.70477f
+C59 vsu avdd 7.09342f
+C60 b6 rbit3top 0.38535f
+C61 vaux pm1 0.17034f
+C62 vbn_i vcasp 0.518f
+C63 vbp_tail vbn_fold 0.21285f
+C64 vx3 psrg_m3_feed 4.80132f
+C65 dvss b5_b 1.60251f
+C66 vbn_i psrg_vnc 1.89856f
+C67 net3 vbn_sink 0.16702f
+C68 psrg_vnc net4 1.24418f
+C69 vgn2 pm2 2.38974f
+C70 b5 rbit4top 0.14768f
+C71 xf2 vsua 0.12641f
+C72 b6_b b6 0.67454f
+C73 iref_gate xf1 1.94173f
+C74 iref_gate y1 0.10436f
+C75 rb_mid psrg_m3_feed 0.17742f
+C76 vbn_fold psrg_m3_feed 10.6152f
+C77 b0 rbit4top 0.31177f
+C78 dvdd rbit3top 13.9743f
+C79 avdd vx2 33.2731f
+C80 rbit2top rfix2 0.92377f
+C81 b5_b b3 0.3282f
+C82 vbp_cas vbn_sink 0.81593f
+C83 b1_b rbit6top 1.0297f
+C84 xf2 vsp 7.18284f
+C85 vsu aux_gate 0.16883f
+C86 vbp_bias vsua 0.44161f
+C87 vbn_fold vbn_i 2.11959f
+C88 vbp_bias vbp_i 0.9516f
+C89 vbp_tail vbn_sink 1.51169f
+C90 dvdd b6_b 1.30502f
+C91 vcasp vsua 1.13f
+C92 rfix0 rbit4top 0.21062f
+C93 vgn1 v1 2.04664f
+C94 vcasp vbp_i 0.41851f
+C95 b2_b rbit3top 1.66075f
+C96 vbp_i psrg_vnc 9.40262f
+C97 dvss rbit5top 1.97323f
+C98 b3_b dvss 0.96866f
+C99 vsp vbp_bias 0.48005f
+C100 b5_b b4 4.7115f
+C101 vbn_sink psrg_m3_feed 1.44591f
+C102 b6 rbit4top 0.54445f
+C103 v2 net3 0.57255f
+C104 vcasp vx1 4.56382f
+C105 b4_b b5_b 0.22887f
+C106 rbit2top dvss 6.47227f
+C107 vq3 psrg_m3_feed 0.26949f
+C108 vbn_i vbn_sink 0.86756f
+C109 xf1 xf2 6.24477f
+C110 rbit5top b3 0.33178f
+C111 b3_b b3 0.42582f
+C112 xf2 y1 0.81527f
+C113 rbit0top vref 2.72432f
+C114 vbn_fold vbp_i 11.739f
+C115 vx1 vx3 2.90626f
+C116 rfix1 rfix2 0.18834f
+C117 v2 vbp_cas 3.82018f
+C118 vq3 net4 0.41149f
+C119 avdd net3 8.51088f
+C120 dvdd rbit4top 8.20952f
+C121 dvss b0_b 1.0362f
+C122 vbp_tail v2 0.87674f
+C123 psrg_mf1_protected psrg_vnc 0.77161f
+C124 xf1 vbp_bias 0.26006f
+C125 dvss b2 1.29674f
+C126 vbp_bias y1 0.79323f
+C127 rbit5top vq3 0.11707f
+C128 rbit5top b4 0.35986f
+C129 vbp_bias vsu1 0.96396f
+C130 vsu bgsu1 1.03106f
+C131 vbp_cas vbn 1.22372f
+C132 avdd vbp_cas 0.10076p
+C133 b6_b rbit3top 0.12518f
+C134 vcasp vsu1 2.01775f
+C135 v2 psrg_m3_feed 0.87255f
+C136 b0_b b3 0.6222f
+C137 psrg_vnc y1 1.12938f
+C138 vbn_sink vsua 1.50022f
+C139 b2_b rbit4top 0.2183f
+C140 b4_b rbit5top 0.81654f
+C141 b4_b b3_b 0.66061f
+C142 vbp_i vbn_sink 18.4909f
+C143 vbp_tail avdd 50.0761f
+C144 dvss b1 1.83316f
+C145 vbp_tail vbn 0.12664f
+C146 avdd vref 12.7623f
+C147 b2 b3 0.82218f
+C148 vbn_fold psrg_mf1_protected 0.73665f
+C149 rbit2top b4 0.2024f
+C150 vgn2 vbp_cas 11.2096f
+C151 auxsu1 vsua 0.37587f
+C152 v2 vbn_i 0.98635f
+C153 rbit0top rbit5top 0.19256f
+C154 iref_gate v1 0.47074f
+C155 bgsu2 bgsu1 0.41323f
+C156 vx3 vsu1 0.20767f
+C157 vq3 vbp_i 2.67766f
+C158 dvss b5 2.67566f
+C159 rbit1top dvss 12.9565f
+C160 vbn_fold xf1 0.97203f
+C161 vbn psrg_m3_feed 0.43041f
+C162 avdd psrg_m3_feed 56.31682f
+C163 b1 b3 0.25065f
+C164 vbn_fold y1 1.43474f
+C165 rbit0top rbit2top 2.73172f
+C166 b0_b b4 0.34059f
+C167 dvss b0 1.81704f
+C168 vbp_cas aux_gate 0.22496f
+C169 rbit6top vref 0.11361f
+C170 vq3 b2 1.01287f
+C171 rbit6top b5_b 0.21464f
+C172 b4 b2 0.16147f
+C173 vbn_i vbn 0.16668f
+C174 avdd vbn_i 21.9598f
+C175 b5 b3 0.59668f
+C176 rbit1top b3 0.43786f
+C177 avdd net4 4.50198f
+C178 vbp_tail aux_gate 1.99643f
+C179 rbit3top rbit4top 6.57522f
+C180 rbit0top b0_b 2.21042f
+C181 vq2 v1 0.28351f
+C182 b0 b3 0.15351f
+C183 vgn2 vbn_i 0.69009f
+C184 vq3 b1 0.1123f
+C185 v2 vsua 9.53629f
+C186 vbp_cas pm2 9.58589f
+C187 vsu vbp_cas 2.53191f
+C188 vcasp vsu2 0.27825f
+C189 v2 vbp_i 0.48845f
+C190 rbit0top b2 0.30397f
+C191 vaux vcasp 0.65926f
+C192 psrg_m3_protected psrg_vnc 1.29419f
+C193 xf1 vbn_sink 6.86035f
+C194 aux_gate psrg_m3_feed 1.26273f
+C195 vbn_sink y1 1.23295f
+C196 vnx_bias vcasp 0.17898f
+C197 vq3 b5 0.13324f
+C198 vsu vbp_tail 0.1293f
+C199 vaux psrg_vnc 0.10578f
+C200 b4_b b1 0.21877f
+C201 b6 dvss 2.47367f
+C202 b4 b5 0.77437f
+C203 rbit1top b4 0.31841f
+C204 xf2 v1 1.0939f
+C205 v2 vsp 11.157f
+C206 vq3 y1 1.46015f
+C207 vbn_i aux_gate 6.22113f
+C208 rbit0top b1 0.60448f
+C209 avdd vsua 7.34097f
+C210 b1_b b5_b 0.45855f
+C211 b4_b b5 0.97427f
+C212 rbit5top rbit6top 1.83882f
+C213 vbp_i vbn 1.36069f
+C214 avdd vbp_i 0.21371p
+C215 vsu psrg_m3_feed 2.198f
+C216 rfix1 rbit0top 0.26344f
+C217 b6 b3 1.75404f
+C218 rbit0top b5 0.25231f
+C219 rbit0top rbit1top 31.6753f
+C220 vx2 vref 0.43052f
+C221 dvdd dvss 7.99298f
+C222 vgn2 vbp_i 3.01936f
+C223 rbit2top rbit6top 0.30581f
+C224 vbp_bias v1 1.74402f
+C225 vnx_bias vbn_fold 0.44744f
+C226 vsp avdd 0.10386p
+C227 vsu vbn_i 0.3708f
+C228 rfix0 vq3 5.16564f
+C229 avdd vx1 35.2473f
+C230 vbp_bias pm1 1.15892f
+C231 rbit0top b0 1.1838f
+C232 vcasp v1 0.19797f
+C233 vbp_bias vgn1 0.45212f
+C234 v1 psrg_vnc 0.25909f
+C235 vgn1 vcasp 19.1865f
+C236 xf1 v2 0.27167f
+C237 vx2 psrg_m3_feed 8.91396f
+C238 pm1 psrg_vnc 3.60303f
+C239 dvdd b3 2.41974f
+C240 b6 vq3 0.60932f
+C241 v2 y1 2.94204f
+C242 su_state vcasp 0.12217f
+C243 b0_b rbit6top 0.43936f
+C244 vgn1 psrg_vnc 0.53166f
+C245 vbp_i aux_gate 0.24491f
+C246 b6 b4 0.13739f
+C247 dvss b2_b 1.96288f
+C248 rbit0top rfix0 0.22803f
+C249 b1_b rbit5top 0.28902f
+C250 rbit6top b2 0.39618f
+C251 vgn1 vx3 0.10755f
+C252 vaux vbn_sink 0.31645f
+C253 b4_b b6 0.16695f
+C254 rbit1top avdd 0.17165f
+C255 vbn_fold v1 0.60807f
+C256 pm2 vsua 0.22691f
+C257 xf1 avdd 38.9184f
+C258 rbit0top b6 0.29145f
+C259 b1_b rbit2top 1.01233f
+C260 vbp_i pm2 1.23585f
+C261 avdd y1 57.2095f
+C262 vsu vbp_i 2.38741f
+C263 b2_b b3 1.45425f
+C264 dvdd vq3 0.84903f
+C265 vbn_fold vgn1 0.21297f
+C266 avdd vsu1 2.71121f
+C267 dvdd b4 2.35748f
+C268 vgn2 y1 3.98685f
+C269 vbp_tail net3 1.05691f
+C270 dvdd b4_b 2.58898f
+C271 rbit6top b5 0.36676f
+C272 vsu vsp 0.85839f
+C273 iref_gate xf2 2.70811f
+C274 dvss rbit3top 4.2815f
+C275 dvdd rbit0top 30.0793f
+C276 vq3 b2_b 0.17628f
+C277 rbit6top b0 0.45856f
+C278 b2_b b4 0.30466f
+C279 v1 vbn_sink 0.24909f
+C280 vbp_tail vbp_cas 0.20385f
+C281 psrg_m3_protected v2 0.69866f
+C282 b6_b dvss 2.06579f
+C283 vq3 v1 1.04944f
+C284 rbit3top b3 0.44919f
+C285 iref_gate vbp_bias 0.15181f
+C286 vx2 vx1 1.59365f
+C287 net3 vbn_i 0.1723f
+C288 b1_b b1 3.74994f
+C289 vq3 pm1 0.33579f
+C290 rfix0 rbit6top 0.31729f
+C291 net3 net4 0.21018f
+C292 vbp_cas psrg_m3_feed 1.02546f
+C293 vsu xf1 2.39876f
+C294 pm2 y1 10.015f
+C295 b1_b rbit1top 1.0224f
+C296 b6_b b3 0.19347f
+C297 avdd vsu2 0.18862f
+C298 vaux vbn 0.18148f
+C299 avdd vaux 8.89276f
+C300 psrg_m3_feed vref 1.24892f
+C301 b6 rbit6top 0.2823f
+C302 vbn_i vbp_cas 0.56771f
+C303 vbp_cas net4 5.13989f
+C304 vnx_bias avdd 0.38981f
+C305 b1_b b0 0.21771f
+C306 psrg_m3_protected vgn2 1.45949f
+C307 vbp_tail vbn_i 6.61404f
+C308 vgn2 vaux 0.16422f
+C309 vbp_bias vq2 0.56997f
+C310 net4 vref 0.25004f
+C311 iref_gate vbn_fold 0.71284f
+C312 v2 v1 14.6926f
+C313 b4_b rbit3top 0.20071f
+C314 b6_b vq3 0.64539f
+C315 dvss rbit4top 4.46449f
+C316 b6_b b4 0.20318f
+C317 net3 vbp_i 2.05787f
+C318 v2 vgn1 0.10136f
+C319 dvdd rbit6top 4.28384f
+C320 rbit0top rbit3top 0.18061f
+C321 vx2 vsu1 0.70883f
+C322 vbn_i psrg_m3_feed 0.21852f
+C323 rbit5top b5_b 0.36198f
+C324 b3_b b5_b 0.12774f
+C325 xf2 vbp_bias 0.32149f
+C326 b4_b b6_b 0.9559f
+C327 vaux aux_gate 0.10754f
+C328 vbp_cas vsua 3.61284f
+C329 vsp net3 0.14854f
+C330 rbit4top b3 3.85971f
+C331 v1 vbn 0.2475f
+C332 avdd v1 11.88061f
+C333 b1_b b6 0.30215f
+C334 rbit2top vref 3.66787f
+C335 vbp_i vbp_cas 3.26422f
+C336 vbn_i net4 0.42336f
+C337 avdd pm1 43.3937f
+C338 vgn1 vbn 0.62766f
+C339 avdd vgn1 18.8546f
+C340 vbp_tail vsua 1.33691f
+C341 b2_b rbit6top 0.24114f
+C342 iref_gate vbn_sink 2.55434f
+C343 vbp_tail vbp_i 3.35896f
+C344 vbp_i vref 0.17146f
+C345 su_state avdd 0.81312f
+C346 vaux pm2 0.16736f
+C347 su_state vbn 0.51024f
+C348 vgn2 pm1 2.13706f
+C349 vsu vnx_bias 0.20458f
+C350 vbp_bias vcasp 2.56845f
+C351 vq3 rbit4top 0.19245f
+C352 vsua psrg_m3_feed 0.11359f
+C353 dvdd b1_b 2.347f
+C354 vbp_tail vsp 7.87899f
+C355 b4 rbit4top 0.21187f
+C356 su_state vgn2 0.12044f
+C357 vx1 vref 0.88318f
+C358 vbp_i psrg_m3_feed 1.94976f
+C359 vbn_fold xf2 2.80397f
+C360 vcasp psrg_vnc 0.89989f
+C361 b4_b rbit4top 0.64833f
+C362 vcasp vx3 5.08699f
+C363 vgn1 aux_gate 1.95059f
+C364 vbn_i vbp_i 11.9574f
+C365 vbp_i net4 0.68274f
+C366 vsp psrg_m3_feed 0.30249f
+C367 vx1 psrg_m3_feed 5.13568f
+C368 rbit2top rbit5top 0.16828f
+C369 rbit3top rbit6top 0.82438f
+C370 vq3 vq2 0.71944f
+C371 rfix1 vref 0.91067f
+C372 vsu v1 0.4387f
+C373 vcasp rb_mid 1.34108f
+C374 vsp vbn_i 0.5747f
+C375 vbp_cas y1 8.50353f
+C376 iref_gate v2 0.64906f
+C377 rbit1top vref 4.41895f
+C378 pm2 pm1 12.1903f
+C379 b5_b b5 0.86786f
+C380 psrg_vnc rb_mid 0.79729f
+C381 vbn_fold psrg_vnc 0.18848f
+C382 b6_b rbit6top 0.1563f
+C383 vbp_tail xf1 0.45879f
+C384 xf2 vbn_sink 7.01853f
+C385 b3_b b0_b 0.26233f
+C386 b0_b rbit5top 0.1439f
+C387 su_state vsu 0.22274f
+C388 vsu1 vref 0.73254f
+C389 rbit5top b2 0.20686f
+C390 vbp_i vsua 1.30631f
+C391 iref_gate vbn 0.11992f
+C392 iref_gate avdd 33.8731f
+C393 xf1 psrg_m3_feed 0.46203f
+C394 rbit2top b0_b 0.14501f
+C395 y1 psrg_m3_feed 0.53507f
+C396 vbp_bias vbn_sink 0.82732f
+C397 rbit2top b2 0.27743f
+C398 rfix0 vref 0.8496f
+C399 vgn1 vx2 0.9818f
+C400 vsp vsua 0.14888f
+C401 b3_b b1 0.33353f
+C402 xf1 vbn_i 0.23103f
+C403 vq3 vbp_bias 0.90325f
+C404 net4 y1 0.84565f
+C405 vbn_sink psrg_vnc 1.79382f
+C406 vq3 vcasp 0.51649f
+C407 rbit5top b5 0.17375f
+C408 b3_b b5 0.231f
+C409 b1_b b6_b 0.24061f
+C410 rbit2top b1 1.03686f
+C411 b6 b5_b 0.15457f
+C412 rbit6top rbit4top 0.67023f
+C413 vq3 psrg_vnc 1.25069f
+C414 b0_b b2 0.76689f
+C415 dvss b3 2.47514f
+C416 rfix1 rbit2top 0.91898f
+C417 v2 xf2 10.4106f
+C418 rbit0top rfix2 0.28137f
+C419 rbit5top b0 1.08329f
+C420 avdd vq2 0.2772f
+C421 vaux vbp_cas 3.03123f
+C422 rbit1top rbit2top 17.7916f
+C423 vbn_fold vbn_sink 1.45062f
+C424 rbit2top b0 0.58571f
+C425 vq3 rb_mid 0.15374f
+C426 dvdd b5_b 1.16684f
+C427 vsua y1 1.43812f
+C428 b1 b2 1.18477f
+C429 v2 vbp_bias 2.25526f
+C430 dvss vq3 0.74444f
+C431 xf1 vbp_i 0.73622f
+C432 xf2 avdd 37.4943f
+C433 vbp_i y1 3.23783f
+C434 vsu iref_gate 7.17726f
+C435 dvss b4 1.42112f
+C436 b0_b b5 0.19552f
+C437 rbit1top b0_b 2.12085f
+C438 psrg_m3_protected psrg_m3_feed 0.85721f
+C439 v2 vcasp 0.34754f
+C440 vsu2 psrg_m3_feed 0.28512f
+C441 vbp_i vsu1 0.29412f
+C442 vaux psrg_m3_feed 0.8277f
+C443 b2 b5 1.78164f
+C444 rbit1top b2 0.89353f
+C445 v2 psrg_vnc 0.60375f
+C446 b4_b dvss 0.74387f
+C447 rfix0 rbit2top 0.85625f
+C448 b0_b b0 2.81287f
+C449 xf1 vsp 7.79995f
+C450 xf2 vgn2 0.23576f
+C451 b6 rbit5top 0.28987f
+C452 b3_b b6 1.01578f
+C453 vsp y1 0.10341f
+C454 vq3 b3 1.1684f
+C455 psrg_m3_protected vbn_i 0.26514f
+C456 b0 b2 0.31135f
+C457 b4 b3 4.31308f
+C458 rbit0top dvss 8.74257f
+C459 vbp_bias vbn 0.13373f
+C460 vbn_i vaux 1.05472f
+C461 v1 vbp_cas 1.84705f
+C462 avdd vbp_bias 0.10147p
+C463 vaux net4 0.27149f
+C464 vnx_bias vbn_i 0.1277f
+C465 vbp_cas pm1 7.99879f
+C466 rbit1top b1 0.87742f
+C467 vcasp vbn 6.46858f
+C468 avdd vcasp 40.4401f
+C469 vgn1 vbp_cas 1.32053f
+C470 b4_b b3 0.18306f
+C471 vbp_tail v1 1.58133f
+C472 psrg_vnc vbn 0.43313f
+C473 avdd psrg_vnc 27.3707f
+C474 vsu vq2 0.3692f
+C475 vbp_bias vgn2 0.20008f
+C476 vbn_fold v2 0.21234f
+C477 xf1 psrg_mf1_protected 0.13981f
+C478 psrg_mf1_protected y1 0.69177f
+C479 b1 b0 0.49485f
+C480 dvdd rbit5top 4.67329f
+C481 rbit1top b5 0.27554f
+C482 rbit0top b3 0.53998f
+C483 vgn1 vref 0.18774f
+C484 dvdd b3_b 1.41013f
+C485 vgn2 vcasp 0.26958f
+C486 avdd vx3 31.8324f
+C487 vq3 b4 0.10345f
+C488 vgn2 psrg_vnc 1.12358f
+C489 b6 b0_b 0.27119f
+C490 v1 psrg_m3_feed 0.72526f
+C491 rbit1top b0 0.98106f
+C492 dvdd rbit2top 24.2054f
+C493 xf1 y1 6.94221f
+C494 vsu xf2 2.81892f
+C495 avdd rb_mid 0.8068f
+C496 vgn1 psrg_m3_feed 1.51298f
+C497 vbn_fold vbn 0.19588f
+C498 vbn_fold avdd 41.9818f
+C499 vbp_i vsu2 5.09731f
+C500 b4_b b4 0.6945f
+C501 rbit3top b5_b 0.10459f
+C502 vbn_i v1 1.76628f
+C503 vaux vbp_i 2.74092f
+C504 vcasp aux_gate 5.87717f
+C505 b3_b b2_b 0.14987f
+C506 rbit5top b2_b 0.27685f
+C507 rfix1 rfix0 0.18752f
+C508 rbit0top b4 0.26882f
+C509 psrg_vnc aux_gate 0.8724f
+C510 v2 vbn_sink 0.23826f
+C511 vbn_i vgn1 9.07292f
+C512 vgn1 net4 6.11043f
+C513 vbn_fold vgn2 1.02751f
+C514 auxsu1 auxsu2 0.31683f
+C515 dvdd b0_b 5.68882f
+C516 vbp_bias pm2 0.17989f
+C517 rbit2top b2_b 0.62978f
+C518 dvdd b2 3.60905f
+C519 vsu vcasp 0.24537f
+C520 dvss rbit6top 1.79096f
+C521 b6 b5 1.31967f
+C522 rbit1top b6 0.40928f
+C523 pm2 psrg_vnc 0.75199f
+C524 aux_gate rb_mid 0.19126f
+C525 vbn_fold aux_gate 0.62924f
+C526 avdd vbn_sink 60.214f
+C527 v1 vsua 3.88251f
+C528 dvdd b1 2.15562f
+C529 b0_b b2_b 0.6531f
+C530 rbit6top b3 0.28161f
+C531 vbp_i v1 1.35947f
+C532 rbit5top rbit3top 9.21737f
+C533 vsua pm1 0.2836f
+C534 vq3 avdd 3.1344f
+C535 b3_b rbit3top 0.57452f
+C536 b2_b b2 0.88825f
+C537 vgn2 vbn_sink 0.86021f
+C538 vbp_i pm1 1.8438f
+C539 vcasp vx2 4.94163f
+C540 vgn1 vbp_i 1.18073f
+C541 dvdd b5 2.30597f
+C542 dvdd rbit1top 43.2764f
+C543 vbp_tail iref_gate 3.91782f
+C544 vsu vbn_fold 0.36465f
+C545 vaux y1 0.16463f
+C546 rbit2top rbit3top 9.8463f
+C547 vsp v1 10.4163f
+C548 b6_b rbit5top 0.10079f
+C549 b5_b rbit4top 0.112f
+C550 b6_b b3_b 0.16107f
+C551 dvdd b0 2.75392f
+C552 b1 b2_b 0.31456f
+C553 b1_b dvss 0.70803f
+C554 vx2 vx3 0.71594f
+C555 vgn1 vx1 3.13047f
+C556 rbit0top avdd 0.11793f
+C557 vq3 rbit6top 6.45544f
+C558 avdd avss 4.17718p
+C559 dvss avss 32.1469f
+C560 dvdd avss 0.23821p
+C561 psrg_mf1_protected avss 20.79875f
+C562 su_state avss 17.64624f
+C563 auxsu1 avss 8.20437f
+C564 xf1 avss 28.25036f
+C565 vsp avss 15.8666f
+C566 xf2 avss 26.58435f
+C567 psrg_m3_protected avss 6.84122f
+C568 pm1 avss 19.41499f
+C569 pm2 avss 28.04964f
+C570 vaux avss 13.7451f
+C571 vx3 avss 14.57637f
+C572 vx1 avss 3.54791f
+C573 vx2 avss 20.12953f
+C574 vsu1 avss 7.04388f
+C575 vsu2 avss 6.07349f
+C576 rfix2 avss 11.5703f
+C577 rfix1 avss 11.5329f
+C578 rfix0 avss 10.1505f
+C579 b1_b avss 1.69086f
+C580 rbit0top avss 22.56326f
+C581 rbit1top avss 13.84388f
+C582 rbit2top avss 16.18524f
+C583 b2_b avss 1.08968f
+C584 rbit6top avss 18.62686f
+C585 rbit5top avss 24.3292f
+C586 b5_b avss 0.95935f
+C587 rbit3top avss 20.42077f
+C588 rbit4top avss 17.91647f
+C589 net4 avss 11.50585f
+C590 net3 avss 27.03643f
+C591 vq2 avss 8.91043f
+C592 v1 avss 7.8261f
+C593 vq3 avss 16.49721f
+.ends
+

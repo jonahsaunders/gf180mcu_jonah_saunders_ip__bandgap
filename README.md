@@ -6,6 +6,10 @@ A GF180MCU bandgap reference with a seven-bit resistor-trim network, targeting a
 
 **Design-review update:** `main` uses `ppolyf_u_1k` resistors with doubled lengths to preserve nominal resistance. The original 2k build is saved on [`design_review_1`](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/tree/design_review_1). The specifications and published full simulation results below were developed with that original build; the 1k version needs fresh electrical qualification. See the [change and code-review guide](docs/DESIGN_REVIEW.md).
 
+**Layout review candidate:** the complete trim-inclusive core now has a routed GDS with **zero reported DRC violations and an LVS match** under the pinned GF180MCU-D KLayout decks. It is **not tapeout-qualified**: the public wrapper dimensions are inconsistent, no slot is assigned, ground resistance is omitted from the RC screen, and post-layout PSRR misses the existing targets. See the [build instructions and limitations](layout/README.txt), [verification evidence](layout/release/verification.json), and [illustrated review report](layout/report.html). The report and images distinguish the initial concept from the implemented placement.
+
+[![Routed trim-inclusive layout candidate](layout/figures/physical-layout.png)](layout/figures/physical-layout.png)
+
 <a id="projected-post-trim-specifications"></a>
 
 ## Specifications

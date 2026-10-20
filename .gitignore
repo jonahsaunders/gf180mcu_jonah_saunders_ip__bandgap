@@ -5,3 +5,4 @@ __pycache__/
 # Keep previously generated standalone results untracked after migration.
 /trim_testbench/generated/
 /trim_testbench/runs/
+/layout/build/

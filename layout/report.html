@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trim-inclusive bandgap — layout review candidate</title>
+<style>
+body{font:17px/1.55 system-ui,sans-serif;max-width:1150px;margin:44px auto;padding:0 25px;color:#203044;background:#fff}
+h1{font-size:36px;line-height:1.15}h2{margin-top:42px;font-size:24px}h3{font-size:19px}a{color:#17619c}
+.subtitle{color:#596a7b}.status{padding:20px 24px;border-left:5px solid #9f5826;background:#fff4e8;margin:26px 0}
+.pass{color:#23663e;font-weight:700}img{display:block;width:100%;height:auto;margin:22px 0 8px}
+figcaption{font-size:14px;color:#596a7b}figure{margin:28px 0}table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:10px;border-bottom:1px solid #d9e1e8;text-align:left}th{background:#eff4f7}
+code{background:#eef2f5;padding:2px 5px}li{margin:9px 0}.small{font-size:14px;color:#596a7b}
+@media print{body{font-size:11pt;margin:10mm;max-width:none}h2{break-after:avoid}figure,table{break-inside:avoid}a{color:inherit}}
+</style><body>
+<p class="subtitle">Jonah Saunders · GF180MCU-D · Chipalooza Challenge #3 · 19 October 2026</p>
+<h1>Full trim-inclusive core: routed, DRC-clean, LVS-matched</h1>
+<div class="status"><strong>This is a review candidate, not a tapeout-qualified Chipalooza submission.</strong>
+The complete core has 272 physical device units and passes the pinned, unedited KLayout rule decks.
+Final wrapper integration, complete ground RC extraction, matching refinements, and analog qualification remain unfinished.</div>
+<p><a href="release/Bandgap_Core_Res.gds">GDS layout</a> · <a href="release/verification.json">Hashed verification evidence</a> ·
+<a href="README.txt">Rebuild instructions and source guide</a> · <a href="release/nominal_screen.json">Nominal metrics</a> ·
+<a href="release/pvt_dc_screen.json">360-point DC screen</a></p>
+
+<h2>Scope and public shuttle requirements</h2>
+<p>The layout implements <code>Bandgap_Core_Res</code>, the DUT in the last testbench, including the seven-bit trim ladder,
+switches, logic, startup circuits, amplifier, bias network, bipolar devices, and all eleven MIM capacitors.
+It is an IP core intended for the harness padframe.</p>
+<p>Challenge #3 specifies 3.3 V digital and 5 V analog resources, digital controls and shared analog buses. It requires
+reproducible sources, DRC/LVS evidence, post-layout PVT qualification, and designer wiring inside an assigned wrapper.
+Dedicated pad use requires organizer approval. <a href="https://opencircuitdesign.com/chipalooza/rules-3.html">Official #3 rules</a>.</p>
+<p>Challenge #2 uses IHP SG13CMOS5L with 1.2 V digital and 3.3 V analog resources. Its wrapper-based integration and
+open-source verification requirements are useful precedents; its process layers and electrical limits cannot be reused for GF180.
+<a href="https://opencircuitdesign.com/chipalooza/rules-2.html">Official #2 rules</a> and
+<a href="https://github.com/RTimothyEdwards/sg13cmos5l_ocd_chipalooza">official #2 harness</a>.</p>
+<p>No nonpublic instructions or slot assignment were provided. At harness revision
+<code>0a03d8c04a2f73650205b0d86decc1cdccf4b283</code>, the public slot configuration is unassigned.
+The wrapper generator specifies <strong>537.15 × 273 µm</strong>; the checked-in wrapper opens at approximately
+<strong>619.785 × 315 µm</strong> with this pinned Magic PDK because of its saved scale. The current core bounds are
+(0.6, 3.0)–(614.6, 310.6) µm: <strong>614.0 × 307.6 µm</strong>. It does not fit the smaller dimensions.
+No slot, pin assignment, or final harness fit is claimed.
+<a href="https://github.com/RTimothyEdwards/gf180mcu_ocd_chipalooza/blob/0a03d8c04a2f73650205b0d86decc1cdccf4b283/scripts/run_gen_user_wrappers.sh">Wrapper generator</a>;
+<a href="https://github.com/RTimothyEdwards/gf180mcu_ocd_chipalooza/blob/0a03d8c04a2f73650205b0d86decc1cdccf4b283/magic/slot14_wrapper.mag">representative checked-in wrapper</a>.
+The leaderboard rank is not a slot number.</p>
+
+<h2>Floorplan and implementation steps</h2>
+<figure><img src="figures/initial-floorplan.png" alt="Initial conceptual floorplan with separated analog, trim, and capacitor regions">
+<figcaption>Initial box diagram, prepared before implementation. The smaller envelope was a planning assumption, not a proven fit.</figcaption></figure>
+<ol>
+<li><strong>Audit the circuit and process.</strong> Read the final testbench hierarchy, preserve all device multiplicities,
+collapse only zero-volt measurement probes, and use the requested 1k poly model. Snap three off-grid dimensions consistently
+in the source schematics; rerun the ten schematic smoke profiles.</li>
+<li><strong>Arrange matched devices deliberately.</strong> Preserve orientation and equal geometric centroids for seven MOS matching groups.
+Place Q1 centrally among eight Q2 unit PNPs; keep Q3 nearby. Use foundry PNP GDS. These choices follow the PDK's guidance on
+identical units, orientation and gradient cancellation. Edge dummies and equalized interconnect remain open.
+<a href="https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_10_6_2.html">GF180 matching guidance</a>.</li>
+<li><strong>Separate switching and precision regions.</strong> Put trim logic in a deep-well region with contacted substrate isolation.
+Keep the resistor ladder beside its switches and leave active devices out of the MIM area. Device taps and the outer ring provide
+local body/substrate contacts; this does not replace a complete latch-up and substrate-noise review.
+<a href="https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_14_3_1.html">Latch-up guidance</a>.</li>
+<li><strong>Route and reinforce supplies.</strong> Route signals on M2–M4 with physical clearance checks. Add 2 µm M5 supply routes,
+193 landing sites and 772 via4 cuts across AVDD/DVDD. Add grounded comb shields below the capacitors. Export all twelve core pins.
+Pin assignment into the eventual harness remains provisional.</li>
+<li><strong>Finish manufacturing geometry.</strong> Add deterministic COMP and metal fill, keeping precision arrays and resistors clear
+of metal fill. Respect MIM bottom-plate access and fill keepouts. Run the full decks, including density checks.
+<a href="https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_10_4_2.html">MIM rules</a>,
+<a href="https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_13_1.html">COMP fill</a>,
+<a href="https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_13_3.html">metal fill</a>.</li>
+<li><strong>Verify independently and rebuild.</strong> Run schematic-to-GDS LVS, full DRC, geometry-preserving extraction preparation,
+and a second LVS audit after collapsing the extracted interconnect resistors. Rebuild from the public scripts and compare all GDS
+layers and labels: zero geometry differences.</li>
+<li><strong>Screen analog behavior.</strong> Compare schematic, extracted devices, capacitance-only, and RC models; sweep all trim codes,
+temperature, PSRR, cold start and restart. Screen 45 process combinations at two supplies and four temperatures.
+Record failed performance targets as failures, even when the simulator completes.</li>
+</ol>
+<figure><img src="figures/implemented-floorplan.png" alt="Implemented device group placement">
+<figcaption>Implemented placement. It grew beyond the initial envelope; the wrapper discrepancy must be resolved before final integration.</figcaption></figure>
+<figure><img src="figures/physical-layout.png" alt="Actual routed and filled five-metal GDS">
+<figcaption>Rendered from the delivered GDS, including fill. No illustrative geometry is substituted for the layout.</figcaption></figure>
+<figure><img src="figures/matched-arrays.png" alt="Matched device unit coordinates and centroids">
+<figcaption>Geometric matching is implemented. Q3 is a nearby unit, not part of the Q1:Q2 centroid ratio.
+The v1/v2 route totals are approximately 340.8/356.8 µm; matched routing is not yet established.</figcaption></figure>
+
+<h2>Measured verification and simulation evidence</h2>
+<table><tr><th>Check</th><th>Result</th><th>Scope</th></tr>
+<tr><td>Full KLayout DRC</td><td class="pass">0 violations</td><td>GF180MCU-D, unedited installed deck, all enabled checks</td></tr>
+<tr><td>KLayout LVS</td><td class="pass">Matched</td><td>All 272 physical units, schematic-derived reference, 1k poly and MIM B</td></tr>
+<tr><td>Extraction topology audits</td><td class="pass">Both matched</td><td>Device-only and collapsed-RC extraction compared with physical GDS</td></tr>
+<tr><td>Fresh source rebuild</td><td class="pass">Geometry identical</td><td>All layers and text labels; GDS timestamps can differ</td></tr>
+<tr><td>Repository checks</td><td class="pass">37 tests passed</td><td>Existing suite after schematic grid adjustments</td></tr></table>
+<p>Nominal screens use TT, digital supply 3.3 V, fixed trim 72, no added load, and the existing TB10 reference of 1.194 V.
+This is separate from the README's 1.18 V planning goal and temperature-optimized calibration strategy. TC below is the
+box estimate across −40 to 125 °C. Startup settling is measured after each 100 µs ramp, within 0.5% of the settled value.
+In this first bench, only AVDD cycles; DVDD stays powered. The output rests near 0.3 V during its analog-off interval,
+so this test must not be confused with both supplies being off.</p>
+<table><tr><th>Analog supply</th><th>VREF</th><th>IDD</th><th>Box TC</th><th>Minimum PSRR, 1 Hz–1 MHz</th><th>Cold / restart settling</th></tr><tr><td>3.3 V</td><td>1.194341 V</td><td>24.33 µA</td>
+    <td>10.06 ppm/°C</td><td>39.25 dB</td>
+    <td>152.7 / 93.0 µs</td></tr><tr><td>5 V</td><td>1.194498 V</td><td>31.66 µA</td>
+    <td>9.98 ppm/°C</td><td>42.40 dB</td>
+    <td>65.7 / 38.5 µs</td></tr></table>
+<p><strong>PSRR does not meet the existing targets.</strong> The RC results are below the README's 45 dB planning minimum
+and the testbench's 60 dB threshold. The 3.3 V box TC is also slightly above the 10 ppm/°C budget. These results are not sign-off passes.</p>
+<figure><img src="figures/post-layout-screens.png" alt="Nominal temperature, PSRR, trim and startup plots"></figure>
+<p>A separate test starts and restarts <strong>both supplies from zero</strong>, with high trim inputs following DVDD.
+Both cases complete with the expected settled reference. Cold settling after the ramps is
+159.4 µs at 3.3 V and 76.7 µs at 5 V;
+restart settling is 92.2 and 37.6 µs.
+These remain nominal-corner screens, not a complete power-sequencing qualification.</p>
+<figure><img src="figures/both-supply-startup.png" alt="Both rails start from zero and restart together"></figure>
+<p>The cross-corner screen completed <strong>360 DC points</strong>: five MOS × three BJT × three resistor corners × two
+supplies × four temperatures (−40, 25, 110, 125 °C). With code 72 held fixed, VREF spans 1.175909–1.219886 V and
+maximum IDD is 52.29 µA. Convergence is not calibrated accuracy or full PVT qualification.</p>
+<figure><img src="figures/process-corner-screen.png" alt="Fixed-code output across the 360 process, voltage and temperature points"></figure>
+
+<h2>What remains before a shuttle release</h2>
+<ul><li><strong>Integration:</strong> obtain a consistent public wrapper/slot allocation, compact or re-floorplan if the smaller envelope applies,
+and connect power, trim and output pins. Check shared-multiplexer/pad loading and unpowered behavior.</li>
+<li><strong>Analog refinement:</strong> improve sensitive-node routing and PSRR; add and verify appropriate edge dummies; equalize matched parasitics;
+perform quantitative supply/ground IR and current-density checks.</li>
+<li><strong>Complete extraction:</strong> resolve Magic's false AVSS–DVSS resistor connection. The supplied RC screen explicitly omits both ground
+resistances, retains signal/supply RC and coupling above 0.1 fF, and uses the project's documented MIM compatibility model.
+PNP/well-resistor hierarchy restoration has zero fabricated-geometry XOR and independent topology audits.</li>
+<li><strong>Extractor accuracy:</strong> the pinned Magic 8.3.678 predates the sidewall-capacitance correction identified in the
+<a href="https://iic-jku.github.io/klayout-pex-website/doc/doc.html">KLayout-PEX documentation</a>, which requires 8.3.679 or newer
+for its Magic wrapper. The capacitance and RC results here are screening evidence and need revalidation with a corrected extractor.</li>
+<li><strong>Qualification:</strong> calibrated trim across PVT, corner startup/restart, stability, noise, mismatch, load response and device-voltage
+limits, followed by final wrapper-level DRC/LVS. No performance target was relaxed to make this candidate pass.</li></ul>
+<p class="small">Verified toolchain: Magic 8.3.678, KLayout 0.30.9, ngspice 46, Xschem 3.4.8RC.
+PDK revision f6eeac7dad085ffcc829ccfd721f7b4ce39edcf7. The pinned image, source map, commands, file hashes, reports and extraction
+limitations are included with the deliverable. The original pre-review build remains on design_review_1.</p>
+</body></html>

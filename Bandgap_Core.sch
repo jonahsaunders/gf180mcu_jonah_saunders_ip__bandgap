@@ -1081,13 +1081,13 @@ C {lab_wire.sym} 0 820 0 0 {name=p74 sig_type=std_logic lab=avss
 }
 C {symbols/nwell.sym} 170 1010 0 0 {name=R3
 W=2e-6
-L=20.193e-6
+L=20.19e-6
 model=nwell
 spiceprefix=X
 m=1}
 C {symbols/pplus_u.sym} 170 1100 0 0 {name=R4
 W=1e-6
-L=232.532e-6
+L=232.53e-6
 model=pplus_u
 spiceprefix=X
 m=1}
@@ -1273,7 +1273,7 @@ spiceprefix=X
 }
 C {symbols/nfet_05v0.sym} 1250 1100 0 0 {name=N3
 L=8u
-W=0.646u
+W=0.65u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"

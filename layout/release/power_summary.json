@@ -1,0 +1,16 @@
+[
+  {
+    "net": "avdd",
+    "m5_width_um": 2,
+    "landing_count": 183,
+    "via4_count": 732,
+    "area_um2": 4976.8
+  },
+  {
+    "net": "dvdd",
+    "m5_width_um": 2,
+    "landing_count": 10,
+    "via4_count": 40,
+    "area_um2": 407.2
+  }
+]

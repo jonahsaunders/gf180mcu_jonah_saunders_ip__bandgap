@@ -1,0 +1,9 @@
+*.sch text eol=lf
+*.sym text eol=lf
+layout/** text eol=lf
+layout/**/*.gds binary
+layout/**/*.gz binary
+layout/**/*.png binary
+# Preserve tool-produced evidence and SVG paths verbatim.
+layout/release/** -whitespace
+layout/figures/*.svg -whitespace

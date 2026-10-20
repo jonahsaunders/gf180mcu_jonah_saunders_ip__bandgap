@@ -1,4 +1,4 @@
 [tool.black]
 line-length = 88
 target-version = ["py39"]
-include = '^/(run_bandgap|plot_bandgap|prepare_reruns|verify_suite|verify_plotting|verify_xschem_symbols)\.py$'
+include = '^/((run_bandgap|plot_bandgap|prepare_reruns|verify_suite|verify_plotting|verify_xschem_symbols)\.py|layout/scripts/.*\.py)$'

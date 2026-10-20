@@ -1,0 +1,8 @@
+{
+  "fabricated_and_annotation_layers_xor": "zero differences",
+  "text_labels_equal": true,
+  "sha256": {
+    "layout-research/filled_candidate.gds": "2a09a999589c973154182d4a0ceae87d2d10575de4cc10902ce9447a1dfceb4c",
+    "bandgap/layout/build/filled_candidate.gds": "7cea77b79521812202d74172a61a5831285a16360b30bed6c5673a4fb0b8bead"
+  }
+}
