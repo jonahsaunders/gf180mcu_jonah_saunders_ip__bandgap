@@ -1,0 +1,120 @@
+
+Magic 8.3 revision 685 - Compiled on .
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=1048576]
+Using NULL graphics device.
+Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
+Sourcing design .magicrc for technology gf180mcuD ...
+10 Magic internal units = 1 Lambda
+Input style import: scaleFactor=10, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    obsactive mvobsactive filldiff fillpoly m1hole obsm1 fillm1 obsv1 m2hole obsm2 fillm2 obsv2 m3hole obsm3 fillm3 m4hole obsm4 fillm4 m5hole obsm5 fillm5 glass fillblock lvstext obscomment 
+Scaled tech values by 10 / 1 to match internal grid scaling
+Loading gf180mcuD Device Generator Menu ...
+Using technology "gf180mcuD", version 1.0.588-52-gf6eeac7
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 6.0
+Library name: LIB
+Reading "nwell".
+Reading "pnp_05p00x05p00".
+Reading "Bandgap_Core_Res".
+The selected label is already a port.
+Do "port help" to get a list of options.
+The selected label is already a port.
+Do "port help" to get a list of options.
+The selected label is already a port.
+Do "port help" to get a list of options.
+The selected label is already a port.
+Do "port help" to get a list of options.
+The selected label is already a port.
+Do "port help" to get a list of options.
+The selected label is already a port.
+Do "port help" to get a list of options.
+The selected label is already a port.
+Do "port help" to get a list of options.
+The selected label is already a port.
+Do "port help" to get a list of options.
+Extracting nwell into nwell.ext:
+Processing nwell
+Extracting pnp_05p00x05p00 into pnp_05p00x05p00.ext:
+Processing pnp_05p00x05p00
+Extracting Bandgap_Core_Res into Bandgap_Core_Res.ext:
+Processing Bandgap_Core_Res
+exttospice finished.
+Devs merged: 146
+exttospice finished.
+Extracting W
+Extracting A
+Extracting B
+Total Nets: 4
+Nets extracted: 3 (0.750000)
+Nets output: 0 (0.000000)
+Extracting C
+Extracting B
+Extracting E
+Total Nets: 3
+Nets extracted: 3 (1.000000)
+Nets output: 2 (0.666667)
+Extracting rbit4top
+Extracting rbit3top
+Extracting b5_b
+Extracting rbit5top
+Extracting rbit6top
+Extracting b2_b
+Extracting rbit2top
+Extracting rbit1top
+Extracting rbit0top
+Extracting b0_b
+Extracting b4_b
+Extracting b6_b
+Extracting vq3
+Extracting b1_b
+Extracting b3_b
+Extracting vbp_i
+Extracting psrg_m3_feed
+Extracting vx2
+Extracting vx1
+Extracting vx3
+Extracting vgn1
+Extracting psrg_vnc
+Extracting vaux
+Extracting vbp_cas
+Extracting pm2
+Extracting vgn2
+Extracting pm1
+Extracting y1
+Extracting vbn_i
+Extracting vbn_sink
+Extracting vbp_bias
+Extracting vbn
+Extracting v1
+Extracting v2
+Extracting psrg_m3_protected
+Extracting vbp_tail
+Extracting vbn_fold
+Extracting xf2
+Extracting iref_gate
+Extracting vsp
+Extracting xf1
+Extracting su_state
+Extracting psrg_mf1_protected
+Extracting dvdd
+Extracting avdd
+Extracting b3
+Extracting b4
+Extracting b0
+Extracting b5
+Extracting b6
+Extracting b2
+Extracting b1
+Extracting vref
+Total Nets: 114
+Nets extracted: 53 (0.464912)
+Nets output: 53 (0.464912)
+Devs merged: 0
+exttospice finished.

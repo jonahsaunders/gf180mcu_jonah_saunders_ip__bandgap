@@ -35,7 +35,7 @@ def run_case(supply):
         f"* Both rails start from zero, analog supply {supply:g} V",
         HEADER,
         ".options klu num_threads=1",
-        f'.include {circuit_file("rc")}',
+        f'.include {circuit_file("rcc")}',
         "XDUT avdd 0 vref b0 b1 b2 b3 b4 b5 b6 0 dvdd Bandgap_Core_Res",
         f"VDD avdd 0 {ramp(supply)}",
         f"VDVDD dvdd 0 {ramp(3.3)}",
@@ -89,8 +89,9 @@ def run_case(supply):
         "initial_vref_V": float(vref[0]),
         "end_s": float(time[-1]),
         "deck_sha256": hashlib.sha256(text.encode()).hexdigest(),
+        "model": "capacitance-conserving RCC approximation",
         "rc_netlist_sha256": hashlib.sha256(
-            circuit_file("rc").read_bytes()
+            circuit_file("rcc").read_bytes()
         ).hexdigest(),
     }
     for name, first, last in [("cold", 0.0001, 0.002), ("restart", 0.0026, 0.004)]:

@@ -2,15 +2,19 @@
   {
     "net": "avdd",
     "m5_width_um": 2,
-    "landing_count": 183,
-    "via4_count": 732,
-    "area_um2": 4976.8
+    "landing_count": 159,
+    "via4_count": 636,
+    "area_um2": 5674.4,
+    "signal_clearance_um": 3.0,
+    "unreinforced_landings": 3
   },
   {
     "net": "dvdd",
     "m5_width_um": 2,
     "landing_count": 10,
     "via4_count": 40,
-    "area_um2": 407.2
+    "area_um2": 407.2,
+    "signal_clearance_um": 3.0,
+    "unreinforced_landings": 0
   }
 ]

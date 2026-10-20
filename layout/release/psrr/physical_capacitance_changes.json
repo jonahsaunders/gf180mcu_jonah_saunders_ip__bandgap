@@ -1,0 +1,34 @@
+[
+  {
+    "nets": [
+      "avdd",
+      "xf2"
+    ],
+    "baseline_fF": 24.800900000000002,
+    "revised_fF": 24.9025
+  },
+  {
+    "nets": [
+      "avdd",
+      "vgn2"
+    ],
+    "baseline_fF": 18.2555,
+    "revised_fF": 19.8834
+  },
+  {
+    "nets": [
+      "avss",
+      "pm1"
+    ],
+    "baseline_fF": 18.414060000000003,
+    "revised_fF": 18.88802
+  },
+  {
+    "nets": [
+      "vbp_cas",
+      "vgn2"
+    ],
+    "baseline_fF": 10.1059,
+    "revised_fF": 9.770840000000002
+  }
+]

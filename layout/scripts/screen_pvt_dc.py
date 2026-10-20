@@ -26,7 +26,7 @@ def run_case(case):
         f"* Fixed-code DC screen {name}",
         header,
         ".options klu num_threads=1",
-        f'.include {nominal.circuit_file("rc")}',
+        f'.include {nominal.circuit_file("rcc")}',
         "XDUT avdd 0 vref b0 b1 b2 b3 b4 b5 b6 0 dvdd Bandgap_Core_Res",
         f"VDD avdd 0 {supply}",
         "VDVDD dvdd 0 3.3",

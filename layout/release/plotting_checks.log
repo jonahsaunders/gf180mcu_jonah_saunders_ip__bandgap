@@ -1,0 +1,8 @@
+test_corner_reducer_direction (__main__.PlotChecks.test_corner_reducer_direction) ... ok
+test_large_loop_sweep_has_bounded_pages_and_keeps_extremes (__main__.PlotChecks.test_large_loop_sweep_has_bounded_pages_and_keeps_extremes) ... ok
+test_startup_plot_uses_actual_largest_peak (__main__.PlotChecks.test_startup_plot_uses_actual_largest_peak) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.527s
+
+OK

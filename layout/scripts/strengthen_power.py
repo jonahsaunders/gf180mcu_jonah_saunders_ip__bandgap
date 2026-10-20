@@ -9,6 +9,7 @@ from pathlib import Path
 import heapq
 import json
 import math
+import os
 
 import klayout.db as k
 import numpy as np
@@ -41,6 +42,25 @@ for a, b in [
     extractor.connect(layers[a], layers[b])
 extractor.extract_netlist()
 placement = json.loads((ROOT / "placement.json").read_text())
+
+# Avoid placing noisy supply straps directly above sensitive amplifier nets.
+# The guard distance is measured from the edge of the underlying signal metal.
+supply_clearance = float(os.environ.get("BANDGAP_SUPPLY_CLEARANCE_UM", "3"))
+sensitive = k.Region()
+if supply_clearance:
+    sensitive_names = {"vgn2", "xf1", "xf2", "pm1", "pm2", "y1"}
+    seen = set()
+    for device in placement["placed"]:
+        for name, point in zip(device["nodes"], device["pins"]):
+            if name not in sensitive_names or name in seen:
+                continue
+            net = extractor.probe_net(layers[36], k.DPoint(*point))
+            assert net is not None, name
+            for number in [36, 42, 46]:
+                sensitive += extractor.shapes_of_net(net, layers[number], True)
+            seen.add(name)
+    assert seen == sensitive_names
+    sensitive = sensitive.merged().sized(round((supply_clearance + 1) / layout.dbu))
 
 
 def square(x, y, radius):
@@ -86,7 +106,7 @@ def find_path(start, tree, blocked):
                 parents[point] = current
                 heuristic = abs(xx - target[0]) + abs(yy - target[1])
                 heapq.heappush(queue, (trial + heuristic, trial, point))
-    raise RuntimeError(f"Cannot connect supply landing {start}")
+    return None
 
 
 summary = []
@@ -96,7 +116,8 @@ for name, port in [("avdd", (210.4, 309.6)), ("dvdd", (1.6, 302.4))]:
     drawn4 = k.Region(top.begin_shapes_rec(layout.layer(46, 0))).merged()
     foreign4 = (drawn4 - own).sized(285)
     drawn5 = k.Region(top.begin_shapes_rec(layout.layer(81, 0))).merged()
-    obstacle5 = drawn5.sized(1285)
+    # GF180-D top metal needs 0.46 um spacing, unlike the lower metals.
+    obstacle5 = drawn5.sized(1465) + sensitive
     blocked = np.zeros((394, 775), dtype=bool)
     for poly in obstacle5.each():
         for part in poly.decompose_trapezoids():
@@ -135,6 +156,8 @@ for name, port in [("avdd", (210.4, 309.6)), ("dvdd", (1.6, 302.4))]:
     metal = k.Region()
     tree = {landings[0]}
     pending = set(landings[1:])
+    connected_landings = [landings[0]]
+    skipped_landings = []
     while pending:
         start = min(
             pending,
@@ -142,9 +165,17 @@ for name, port in [("avdd", (210.4, 309.6)), ("dvdd", (1.6, 302.4))]:
         )
         pending.remove(start)
         path = find_path(start, tree, blocked)
+        if path is None:
+            # The complete lower-metal supply network already connects this
+            # terminal. Omit only its optional M5 reinforcement when a signal
+            # clearance corridor encloses it; never cross that corridor.
+            skipped_landings.append(start)
+            continue
         for a, b in zip(path, path[1:]):
             metal += segment(a, b)
         tree.update(path)
+        connected_landings.append(start)
+    landings = connected_landings
     for x, y in landings:
         x, y = x * 0.8, y * 0.8
         put(46, square(x, y, 0.6))
@@ -152,7 +183,7 @@ for name, port in [("avdd", (210.4, 309.6)), ("dvdd", (1.6, 302.4))]:
         for dx in [-0.26, 0.26]:
             for dy in [-0.26, 0.26]:
                 put(41, square(x + dx, y + dy, 0.13))
-    metal = metal.merged().sized(140).sized(-140)
+    metal = metal.merged().sized(235).sized(-235)
     put(81, metal)
     pin_x, pin_y = landings[0]
     assert abs(pin_x * 0.8 - port[0]) + abs(pin_y * 0.8 - port[1]) < 7, name
@@ -166,6 +197,8 @@ for name, port in [("avdd", (210.4, 309.6)), ("dvdd", (1.6, 302.4))]:
             "landing_count": len(landings),
             "via4_count": 4 * len(landings),
             "area_um2": metal.area() * layout.dbu**2,
+            "signal_clearance_um": supply_clearance,
+            "unreinforced_landings": len(skipped_landings),
         }
     )
     print(summary[-1], flush=True)

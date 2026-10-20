@@ -13,6 +13,9 @@ release/filled_drc.lyrdb and release/filled.lvsdb.gz open in KLayout.
 release/reference.spice is the schematic-derived LVS reference. Zero-volt
 current probes become net aliases; transistor multiplicities become units.
 report.html explains the research, floorplan, results, and open work.
+The PSRR revision separates physical routing improvements from extraction
+corrections. Raw Magic RC and capacitance-conserving RCC results are both
+retained; the latter is an approximation, not a foundry signoff extraction.
 
 STATUS: the complete, unedited GF180MCU-D KLayout DRC deck reports zero
 violations and LVS matches. This is NOT a claim that every uncoded foundry
@@ -29,12 +32,12 @@ Linux command, from the repository root:
 docker run --rm --network none --mount type=bind,source="$PWD",target=/design \
   --entrypoint /bin/bash \
   hpretl/iic-osic-tools@sha256:5d6adf1f437cd0f2f8f8614488ec3c247ba8c768f4663a25d5e997b30ccb13b0 \
-  /design/layout/build.sh build
+  -lc 'bash /design/layout/build.sh build'
 
 Replace the last word with:
   verify   rerun full DRC/LVS on layout/build/filled_candidate.gds
   extract  prepare the extraction view and independently audit its topology
-  screen   nominal schematic/C/RC comparison, all trim codes, startup/restart
+  screen   schematic/C/raw-RC/conserved-RCC comparison, trim and startup
   pvt      360 fixed-code DC points across process, supply, and temperature
   all      build, verify, extract, nominal screen, and fixed-code DC screen
 
@@ -43,10 +46,30 @@ and are ignored by Git. BANDGAP_LAYOUT_BUILD can select another build folder.
 The tools fail when DRC or LVS fails; a tool's zero exit code alone is not
 accepted as verification. GDS timestamps may differ between rebuilds.
 
+Extraction now requires Magic >= 8.3.679. For the exact tested version, run:
+
+docker run --rm --user root --mount type=bind,source="$PWD",target=/design \
+  --entrypoint /bin/bash \
+  hpretl/iic-osic-tools@sha256:5d6adf1f437cd0f2f8f8614488ec3c247ba8c768f4663a25d5e997b30ccb13b0 \
+  -lc 'bash /design/layout/build_magic.sh'
+
+This preparation requires network access. It
+installs compiler dependencies only in that disposable container and builds
+official Magic commit bed8d4ff84333767aa923d469d339cd05c56a00a (8.3.685) under
+layout/build/toolchain. The extraction stage discovers that installation.
+Alternatively set BANDGAP_MAGIC to its absolute executable path. Keep the
+same repository mount path when building and running the installed tool.
+No PDK deck or model is patched by this procedure.
+
+Run scripts/diagnose_psrr.py after screen to reproduce the AC ablations and
+the zero-resistance capacitance-conservation check. Optional --sweep and
+--pairs generate diagnostic counterfactuals, never deliverable layout models.
+
 Toolchain
 ---------
 GF180MCU-D PDK revision f6eeac7dad085ffcc829ccfd721f7b4ce39edcf7
-Magic 8.3.678; KLayout 0.30.9; ngspice 46; Xschem 3.4.8RC.
+Primitive generation: bundled Magic 8.3.678. Extraction: official Magic 8.3.685.
+KLayout 0.30.9; ngspice 46; Xschem 3.4.8RC.
 Five metals, 11K top metal, MIM option B / 2 fF per square micron, poly_res=1k.
 The lower-case 1k parameter is required by this LVS deck.
 
@@ -58,11 +81,14 @@ scripts/audit_circuit.py     literal numeric SPICE parser; no eval
 scripts/generate_primitives.py  PDK geometry generation, one cell per geometry
 scripts/place_layout.py      common-centroid unit arrays and placement
 scripts/route_physical.py    three-layer signal routing and substrate isolation
+scripts/lift_sensitive_routes.py  move the long vgn2 route to M5
 scripts/strengthen_power.py  2 um M5 supplies and four-via landing arrays
 scripts/add_density_fill.py  deterministic COMP and metal fill with keepouts
 scripts/prepare_pex_view.py   geometry-identical PNP/nwell extraction hierarchy
 scripts/extract_parasitics.tcl  visible Magic extraction commands
 scripts/audit_pex_topology.py   collapse interconnect R and create LVS audit input
+scripts/conserve_pex_capacitance.py  preserve the C-only net-pair matrix in RCC
+scripts/diagnose_psrr.py      repeatable AC sensitivity and conservation checks
 scripts/screen_extracted.py  nominal post-layout screens, with input fingerprints
 scripts/screen_power_sequence.py  both rails start/restart from zero together
 scripts/screen_pvt_dc.py      limited fixed-code cross-corner DC screen
@@ -83,14 +109,23 @@ KLayout LVS audit compares both the raw device extraction and the RC network
 with interconnect resistances collapsed to the actual GDS.
 
 Magic extresist falsely joins AVSS and DVSS when ground resistance is enabled.
-The screening RC model therefore explicitly excludes resistance on both
+The screening RC/RCC models therefore explicitly exclude resistance on both
 grounds. It includes signal/supply resistance, capacitance and coupling above
 0.1 fF. This is not complete distributed RC sign-off. The pre-existing project
 MIM charge-form compatibility model remains in use. Resistor tee splitting is
 disabled so the extracted primitive topology can be independently verified.
-Magic 8.3.678 also predates the sidewall-capacitance correction identified in
-the KLayout-PEX documentation (8.3.679 or newer is required for its wrapper).
-These capacitance/RC screens need revalidation with a corrected extractor.
+Magic 8.3.685 corrects the old double-counted sidewall coefficient. A separate
+extresist issue remains: its rnode capacitances are derived from coupling
+capacitors, and the RC export also keeps the original couplings. Collapsing
+all wire resistances in that raw RC model therefore fails to reproduce the
+C-only response. The raw export is preserved as *_rc_simulation.spice.
+
+The *_rcc_simulation.spice approximation keeps raw RC devices and resistors
+and rescales parasitic capacitors by original net pair to conserve the C-only
+matrix. Relative positions along each wire remain approximate. The release
+includes per-pair totals, source hashes, and an AC check that zeroing all wire
+resistances recovers C-only PSRR at 481 frequencies for both supplies. This
+check establishes internal consistency, not independent field-solver accuracy.
 Source: https://iic-jku.github.io/klayout-pex-website/doc/doc.html
 
 Known integration and analog work
@@ -104,8 +139,10 @@ is invented here. The initial floorplan was a concept, not a fit guarantee.
 Exact geometric centroids and equal device orientation are implemented for
 the named matching groups. Edge dummies, matched interconnect resistance/
 capacitance, complete shielding, and a quantitative EM/IR review remain open.
-The power straps do not replace those checks. Post-layout PSRR misses existing
-targets. Full corner startup, stability, noise, mismatch, calibrated trim,
+The power straps do not replace those checks. The corrected nominal PSRR
+screen exceeds the README planning threshold of 45 dB, but does not meet the
+original testbench's 60 dB criterion; the schematic itself also misses 60 dB.
+Full corner startup, stability, noise, mismatch, calibrated trim,
 pad/multiplexer loading, and all device-voltage checks remain to be qualified.
 
 Three source dimensions were snapped to the manufacturing grid: N3 W 0.646

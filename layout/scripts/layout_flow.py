@@ -10,6 +10,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -210,6 +211,7 @@ def build():
     for name in [
         "place_layout",
         "route_physical",
+        "lift_sensitive_routes",
         "strengthen_power",
         "add_density_fill",
     ]:
@@ -219,11 +221,31 @@ def build():
 
 
 def extract():
+    bundled = REPOSITORY / "layout/build/toolchain/magic/bin/magic"
+    executable = os.environ.get(
+        "BANDGAP_MAGIC", str(bundled) if bundled.exists() else "magic"
+    )
+    version = subprocess.check_output([executable, "--version"], text=True).strip()
+    match = re.search(r"(\d+)\.(\d+)\.(\d+)", version)
+    if not match or tuple(map(int, match.groups())) < (8, 3, 679):
+        raise RuntimeError(
+            "PEX requires Magic >= 8.3.679: older versions double sidewall capacitance. See layout/build_magic.sh."
+        )
+    (BUILD_DIR / "extractor_version.json").write_text(
+        json.dumps(
+            {
+                "magic_version": version,
+                "reference_magic_commit": "bed8d4ff84333767aa923d469d339cd05c56a00a",
+            },
+            indent=2,
+        )
+        + "\n"
+    )
     stage("prepare_pex_view")
     with tempfile.TemporaryDirectory(prefix="extraction-", dir=BUILD_DIR) as scratch:
         run(
             [
-                "magic",
+                executable,
                 "-dnull",
                 "-noconsole",
                 "-rcfile",
@@ -243,6 +265,7 @@ def extract():
             BUILD_DIR / f"pex/audit_{name}.lvsdb",
             f"audit_{name}.log",
         )
+    stage("conserve_pex_capacitance")
     print(
         "Extraction topology matches; ground resistance is explicitly omitted.",
         flush=True,

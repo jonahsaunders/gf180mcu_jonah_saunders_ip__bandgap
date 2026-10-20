@@ -21,10 +21,10 @@ fig, axes = plt.subplots(2, 2, figsize=(13, 9), layout="constrained")
 colors = {3.3: "#176caa", 5.0: "#b85230"}
 for supply in [3.3, 5.0]:
     color = colors[supply]
-    folder = data / f"rc_typical_typical_typical_{supply:g}"
+    folder = data / f"rcc_typical_typical_typical_{supply:g}"
     temp = np.loadtxt(folder / "temperature.dat", skiprows=1)
-    axes[0, 0].plot(temp[:, 0], temp[:, 1], label=f"{supply:g} V RC", color=color)
-    for mode, style in [("schematic", "--"), ("rc", "-")]:
+    axes[0, 0].plot(temp[:, 0], temp[:, 1], label=f"{supply:g} V RCC approximation", color=color)
+    for mode, style in [("schematic", "--"), ("rcc", "-")]:
         ac = np.loadtxt(
             data / f"{mode}_typical_typical_typical_{supply:g}/psrr.dat", skiprows=1
         )
@@ -40,7 +40,7 @@ for supply in [3.3, 5.0]:
     trim = np.asarray(rows)
     axes[1, 0].plot(trim[:, 1], trim[:, 2], label=f"{supply:g} V", color=color)
     tran = np.loadtxt(
-        data / f"rc_typical_typical_typical_{supply:g}_startup/startup.dat", skiprows=1
+        data / f"rcc_typical_typical_typical_{supply:g}_startup/startup.dat", skiprows=1
     )
     axes[1, 1].plot(tran[:, 0] * 1e3, tran[:, 2], label=f"{supply:g} V", color=color)
 for ax, title, xlabel, ylabel in zip(

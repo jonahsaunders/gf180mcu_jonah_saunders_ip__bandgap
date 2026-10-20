@@ -191,11 +191,11 @@ def main():
     parser.add_argument("--pvt", action="store_true")
     args = parser.parse_args()
     RESULTS.mkdir(exist_ok=True)
-    for mode in ["schematic", "magic_lvs", "c", "rc"]:
+    for mode in ["schematic", "magic_lvs", "c", "rc", "rcc"]:
         CIRCUITS[mode] = circuit_file(mode)
     if args.pvt:
         cases = [
-            ("rc", mos, bjt, res, supply, False)
+            ("rcc", mos, bjt, res, supply, False)
             for mos, bjt, res, supply in product(
                 ["typical", "ff", "ss", "fs", "sf"],
                 ["typical", "ff", "ss"],
@@ -207,12 +207,12 @@ def main():
         cases = [
             (mode, "typical", "typical", "typical", supply, False)
             for mode, supply in product(
-                ["schematic", "magic_lvs", "c", "rc"], [3.3, 5.0]
+                ["schematic", "magic_lvs", "c", "rc", "rcc"], [3.3, 5.0]
             )
         ]
         cases += [
-            ("rc", "typical", "typical", "typical", supply, True)
-            for supply in [3.3, 5.0]
+            (mode, "typical", "typical", "typical", supply, True)
+            for mode, supply in product(["rc", "rcc"], [3.3, 5.0])
         ]
     with ThreadPoolExecutor(max_workers=4) as pool:
         records = list(pool.map(run_case, cases))

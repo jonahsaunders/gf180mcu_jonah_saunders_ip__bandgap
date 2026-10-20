@@ -1,0 +1,82 @@
+[
+  {
+    "name": "c_drop_pair_avdd_xf2",
+    "supply": 3.3,
+    "psrr_min_dB": 49.56892001741682,
+    "worst_Hz": 20535.25026457187,
+    "dc_psrr_dB": 81.87755778714318,
+    "vref_V": 1.194220647540189,
+    "idd_uA": 24.37990027320464,
+    "sha256": "cb9a71da9d36269f8a08fed97b15175fd46debb261ca8d0cc7f583515f728117"
+  },
+  {
+    "name": "c_drop_pair_avdd_xf2",
+    "supply": 5.0,
+    "psrr_min_dB": 52.60813696873327,
+    "worst_Hz": 446683.5921509749,
+    "dc_psrr_dB": 71.85181114361812,
+    "vref_V": 1.19437144644403,
+    "idd_uA": 31.71599824478824,
+    "sha256": "3e279c66f8ac714d572101ef80d64f17bed31d99b3319e5bad51d24ed75bf37a"
+  },
+  {
+    "name": "c_drop_pair_avdd_vgn2",
+    "supply": 3.3,
+    "psrr_min_dB": 48.949663489836,
+    "worst_Hz": 20535.25026457187,
+    "dc_psrr_dB": 81.87754181518146,
+    "vref_V": 1.194220647540189,
+    "idd_uA": 24.37990027320464,
+    "sha256": "53abdf677d6582d945643d5571eeec6c766b2116c480359fee045b81b1d61cec"
+  },
+  {
+    "name": "c_drop_pair_avdd_vgn2",
+    "supply": 5.0,
+    "psrr_min_dB": 52.49412028812102,
+    "worst_Hz": 434010.2636447552,
+    "dc_psrr_dB": 71.85181069749765,
+    "vref_V": 1.19437144644403,
+    "idd_uA": 31.71599824478824,
+    "sha256": "4e0e777434f01bf6be8be31b93fbd01296b139e15ae1e68efce47b67c885409a"
+  },
+  {
+    "name": "c_drop_pair_avss_pm1",
+    "supply": 3.3,
+    "psrr_min_dB": 48.96459205187793,
+    "worst_Hz": 19952.62314968919,
+    "dc_psrr_dB": 81.87754182390778,
+    "vref_V": 1.194220647540189,
+    "idd_uA": 24.37990027320464,
+    "sha256": "0560fa78fe486c0c6abc422157176443054ad2ff01f9a19efa6b59dc851c0ed3"
+  },
+  {
+    "name": "c_drop_pair_avss_pm1",
+    "supply": 5.0,
+    "psrr_min_dB": 52.75896646450968,
+    "worst_Hz": 421696.5034285933,
+    "dc_psrr_dB": 71.85181069879874,
+    "vref_V": 1.19437144644403,
+    "idd_uA": 31.71599824478824,
+    "sha256": "8eb41eaa01e83925ddaf41487592beb68f7689c5f9c89cc18a0262bcfd6051e7"
+  },
+  {
+    "name": "c_drop_pair_vbp_cas_vgn2",
+    "supply": 3.3,
+    "psrr_min_dB": 47.97226889682769,
+    "worst_Hz": 21752.04034019566,
+    "dc_psrr_dB": 81.87751725720852,
+    "vref_V": 1.194220647540189,
+    "idd_uA": 24.37990027320464,
+    "sha256": "e993253ca10536e4f5e1c6f41b01053b650fcd0088d74d986dbcb2c6b5ce4354"
+  },
+  {
+    "name": "c_drop_pair_vbp_cas_vgn2",
+    "supply": 5.0,
+    "psrr_min_dB": 52.51742478270953,
+    "worst_Hz": 409732.1098135522,
+    "dc_psrr_dB": 71.85180996962791,
+    "vref_V": 1.19437144644403,
+    "idd_uA": 31.71599824478824,
+    "sha256": "2afac644cbce69e62bce4c4669fb46011d6eb3fc47680b05a3b62c8ded143a3a"
+  }
+]

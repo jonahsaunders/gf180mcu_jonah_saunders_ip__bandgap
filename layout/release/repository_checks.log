@@ -37,6 +37,6 @@ test_trim_timing_constraints (__main__.SuiteChecks.test_trim_timing_constraints)
 test_trim_unhealthy_evaluation_point_is_not_execution_failure (__main__.SuiteChecks.test_trim_unhealthy_evaluation_point_is_not_execution_failure) ... ok
 
 ----------------------------------------------------------------------
-Ran 37 tests in 0.255s
+Ran 37 tests in 0.404s
 
 OK
