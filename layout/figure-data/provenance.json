@@ -1,0 +1,19 @@
+{
+  "source_release_commit": "776035c3e46767f3c8bee2f362b6be4f92ba5deb",
+  "gds_sha256": "86c11f6ccd18e887284f187bb1635ce37da98bfc5e14b5d436efcd7a043bfa00",
+  "source": "Saved psrr-final-build/postlayout outputs from the already verified release",
+  "transformation": "Verbatim gzip compression only; no resampling or numerical edits",
+  "uncompressed_sha256": {
+    "postlayout/nominal_summary.json": "876feb2b89d5b01e2a50470f2ddbfed5cc7125633e570da02cfef39a8452c127",
+    "postlayout/rcc_typical_typical_typical_3.3/temperature.dat.gz": "83736f58fe0709188b2cf710757e342334af2a022c486311cef71137121cefd5",
+    "postlayout/rcc_typical_typical_typical_3.3/psrr.dat.gz": "7194a4c81ed7a28962a71ddb3f37b75dbd63049d5dbe7983b3ad3ccca6c0b035",
+    "postlayout/rcc_typical_typical_typical_3.3/trim.dat.gz": "b129061859a901ea32ece2e27cdafb2308da7b8e379d22e5b90f62260c39a27d",
+    "postlayout/rcc_typical_typical_typical_3.3_startup/startup.dat.gz": "fd16157d70b61f4daf98a600be9898094bcddcba95890a846e8f2b49cf63e897",
+    "postlayout/power_sequence/3.3/startup.dat.gz": "a5c05a33a3f575ac84deca8b3c500922bed986986216bfdfdf0456711b937b1f",
+    "postlayout/rcc_typical_typical_typical_5/temperature.dat.gz": "e01c41d841d5413d336e1998d9b650d16418a105393607284b1bf34e43d1b473",
+    "postlayout/rcc_typical_typical_typical_5/psrr.dat.gz": "d4cffcb71358f1f7c3772c0dba35da786acfac8bea7c469ac03d7c288e876b8f",
+    "postlayout/rcc_typical_typical_typical_5/trim.dat.gz": "9eabb4598ad4e11652d89ed3971a12c8e691ff089c95e10057707b64ffde5a09",
+    "postlayout/rcc_typical_typical_typical_5_startup/startup.dat.gz": "b8599a6a7bdcd31009caa6bb45e6a24030fcdc9c1f3782532382c8672df0f249",
+    "postlayout/power_sequence/5/startup.dat.gz": "160af555a4a08d0a065cac6ceed22d199a41c66b72eb8bfd0d978e6872fd5a00"
+  }
+}

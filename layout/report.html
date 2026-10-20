@@ -13,10 +13,15 @@ li{margin:7px 0}@media print{body{font-size:11pt;margin:10mm}figure,table{break-
 39.3 / 42.4 dB report comes from correcting extraction. The physical routing change adds about 0.24 / 0.25 dB when measured
 with the same corrected model. The remaining 3.3 V gap to the schematic is about 3.36 dB.</div>
 <p><a href="release/Bandgap_Core_Res.gds">Revised GDS</a> · <a href="release/verification.json">Verification and hashes</a> ·
-<a href="release/psrr/comparison.json">PSRR measurements</a> · <a href="README.txt">Reproduction instructions</a></p>
+<a href="release/psrr/comparison.json">PSRR measurements</a> · <a href="README.txt">Reproduction instructions</a> ·
+<a href="figures/index.html">Paper figure gallery — PDF, SVG and PNG</a></p>
+<p class="small">Figures have been redrawn with consistent paper-scale typography, dimensioned layout views and 600-dpi raster exports.
+Simulation data and GDS geometry are unchanged. The gallery provides complete captions and vector downloads.</p>
 <figure><img src="figures/psrr-before-after.png" alt="Before and after PSRR curves at both supply voltages"><figcaption>
 All curves use the same schematic, trim code 72, TT models, 25 °C, ideal supply sources, and no added external load.
-Higher rejection is better. Conserved RCC is explicitly an approximate model; raw RC exports remain available.</figcaption></figure>
+Higher rejection is better. The lower panels expand the RCC minima and use different vertical scales; routing alone adds 0.24 / 0.25 dB.
+Conserved RCC is explicitly an approximate model; raw RC exports remain available.
+<a href="figures/psrr-before-after.pdf">PDF</a> · <a href="figures/psrr-before-after.svg">SVG</a></figcaption></figure>
 <table><thead><tr><th>Model / layout</th><th>Minimum, 3.3 V</th><th>Minimum, 5 V</th></tr></thead><tbody><tr><td>Schematic</td><td>50.56 dB</td><td>52.04 dB</td></tr><tr><td>Previous raw RC · Magic 8.3.678</td><td>39.25 dB</td><td>42.40 dB</td></tr><tr><td>Same layout · raw RC · Magic 8.3.685</td><td>40.99 dB</td><td>44.37 dB</td></tr><tr><td>Same layout · conserved RCC</td><td>46.96 dB</td><td>51.91 dB</td></tr><tr><td>Revised layout · raw RC</td><td>41.14 dB</td><td>44.51 dB</td></tr><tr><td>Revised layout · conserved RCC</td><td>47.20 dB</td><td>52.16 dB</td></tr></tbody></table>
 <p class="small">Minima over 481 frequency points from 1 Hz to 1 MHz. Matching minima does not imply identical curves.
 The 45 dB planning threshold is exceeded in the corrected nominal screen; the original testbench's 60 dB requirement is still
@@ -73,13 +78,17 @@ DC points complete. The existing 37 suite checks and three plotting checks pass.
 <p class="small">Settling is measured to ±0.5% after the end of the supply ramp. Fixed-code DC corner results span
 1.175964…1.219987 V; these are convergence screens, not a statement that every specification passes.</p>
 <figure><img src="figures/both-supply-startup.png" alt="Both power rails ramp from zero and restart"><figcaption>
-No forced initial state or startup kick. High trim inputs track DVDD.</figcaption></figure>
+The upper panel shows both supply waveforms; the lower panel shows VREF. No forced initial state or startup kick.
+High trim inputs track DVDD. <a href="figures/both-supply-startup.pdf">PDF</a></figcaption></figure>
 <h2>Floorplan and physical scope</h2>
 <p>The complete TB10 trim-inclusive IP core still contains 272 device units, seven trim controls and eleven MIM capacitors.
 Device placement is unchanged by the retained PSRR revision. The core occupies 614.0 × 307.6 µm.</p>
-<figure><img src="figures/initial-floorplan.png" alt="Initial conceptual box floorplan"><figcaption>Initial planning diagram, retained for reference.</figcaption></figure>
-<figure><img src="figures/implemented-floorplan.png" alt="Actual implemented macro placement"><figcaption>Implemented placement; the PSRR changes affect routing above it.</figcaption></figure>
-<figure><img src="figures/physical-layout.png" alt="Revised physical layout"><figcaption>Revised GDS with the upper-metal signal route and supply clearances.</figcaption></figure>
+<figure><img src="figures/initial-floorplan.png" alt="Initial conceptual box floorplan"><figcaption>Original planning allocations, redrawn for clarity.
+The provisional envelope is smaller than the implemented core. <a href="figures/initial-floorplan.pdf">PDF</a></figcaption></figure>
+<figure><img src="figures/implemented-floorplan.png" alt="Actual implemented macro placement"><figcaption>Implemented placement; the PSRR changes affect routing above it.
+Numbered groups identify matching sets. <a href="figures/implemented-floorplan.pdf">PDF</a></figcaption></figure>
+<figure><img src="figures/physical-layout.png" alt="Revised physical layout"><figcaption>Actual routed and filled GDS rendering, with functional annotations.
+This is a layout rendering, not a silicon micrograph. <a href="figures/physical-layout.pdf">PDF</a></figcaption></figure>
 <div class="note limit"><strong>This remains a core candidate, not a tapeout-qualified submission.</strong>
 Ground resistance is still omitted because the raw extractor falsely joins the isolated grounds. The conserved RCC distribution
 needs independent extraction confirmation. Full stability, noise, mismatch, corner startup, calibrated trim, pad/multiplexer loading,

@@ -4,6 +4,7 @@ layout/** text eol=lf
 layout/**/*.gds binary
 layout/**/*.gz binary
 layout/**/*.png binary
+layout/**/*.pdf binary
 # Preserve tool-produced evidence and SVG paths verbatim.
 layout/release/** -whitespace
 layout/figures/*.svg -whitespace

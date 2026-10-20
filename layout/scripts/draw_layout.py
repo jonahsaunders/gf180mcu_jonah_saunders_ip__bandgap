@@ -1,212 +1,352 @@
-"""Render the actual GDS and placement; all displayed geometry is measured."""
+"""Dimensioned paper figures from the actual GDS and saved placement.
 
-from pathlib import Path
+Functional annotations are overlays; device positions and polygons are never
+altered for the illustration. The concept drawing is explicitly separate.
+"""
+
 import json
 import klayout.db as k
-import matplotlib
 
-matplotlib.use("Agg")
+from figure_style import WIDTH, INK, BLUE, configure, export
 import matplotlib.pyplot as plt
 from matplotlib.collections import PolyCollection
 from matplotlib.patches import Rectangle
 
-from layout_paths import BUILD_DIR as ROOT
-
-OUT = ROOT / "figures"
-OUT.mkdir(exist_ok=True)
-data = json.loads((ROOT / "placement.json").read_text())
-layout = k.Layout()
-layout.read(str(ROOT / "filled_candidate.gds"))
-top = layout.top_cell()
-plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10})
+BLOCK_COLORS = {"analog": "#DCEAF3", "digital": "#E4DBEE", "resistors": "#F4E4C5"}
+CAP_COLOR = "#D7E9E1"
 
 
-def style(ax):
-    ax.set_aspect("equal")
-    ax.set_xlim(0, 620)
-    ax.set_ylim(0, 315)
-    ax.set_xlabel("x (µm)")
-    ax.set_ylabel("y (µm)")
-    ax.spines[["top", "right"]].set_visible(False)
-
-
-fig, ax = plt.subplots(figsize=(15, 8.5))
-fig.subplots_adjust(left=0.06, right=0.99, bottom=0.12, top=0.80)
-colors = {"analog": "#d6e8f5", "digital": "#efcfdf", "resistors": "#f5deb2"}
-for group in data["groups"]:
-    x, y, w, h = (group[key] for key in ("x", "y", "width", "height"))
+def rectangle(ax, x, y, w, h, color, label=None, **kwargs):
     ax.add_patch(
-        Rectangle(
-            (x, y),
-            w,
-            h,
-            facecolor=colors[group["category"]],
-            edgecolor="#536477",
-            linewidth=0.6,
-        )
+        Rectangle((x, y), w, h, facecolor=color, edgecolor=INK, lw=0.65, **kwargs)
     )
-    if w * h > 600 or len(group["names"]) > 1:
-        label = " / ".join(group["names"])
-        if len(label) > 18 or (len(group["names"]) > 1 and w < 80):
-            label = "\n".join(group["names"])
-        ax.text(
-            x + w / 2,
-            y + h / 2,
-            label,
-            ha="center",
-            va="center",
-            fontsize=7,
-            rotation=90 if w < 15 else 0,
-        )
-for device in data["placed"]:
-    if not device["model"].startswith("cap_"):
-        continue
-    x, y, xx, yy = device["bounds"]
-    ax.add_patch(
-        Rectangle((x, y), xx - x, yy - y, facecolor="#d7e8c6", edgecolor="#557c38")
+    if label:
+        ax.text(x + w / 2, y + h / 2, label, ha="center", va="center", fontsize=8)
+
+
+def dimension(ax, start, end, text, vertical=False):
+    ax.annotate(
+        "",
+        xy=end,
+        xytext=start,
+        arrowprops={"arrowstyle": "<->", "lw": 0.7, "shrinkA": 0, "shrinkB": 0},
     )
+    x, y = (start[0] + end[0]) / 2, (start[1] + end[1]) / 2
     ax.text(
-        (x + xx) / 2,
-        (y + yy) / 2,
-        device["name"] + "\nMIM + AVSS shield",
+        x,
+        y,
+        text,
         ha="center",
         va="center",
+        rotation=90 if vertical else 0,
+        fontsize=9,
+        bbox={"facecolor": "white", "edgecolor": "none", "pad": 2},
+    )
+
+
+def layout_axes(bounds, height=4.25, dimension_y=24, decimals=1):
+    fig, ax = plt.subplots(figsize=(WIDTH, height))
+    fig.subplots_adjust(left=0.01, right=0.995, bottom=0.09, top=0.96)
+    x0, y0, x1, y1 = bounds
+    ax.set_aspect("equal")
+    ax.set_xlim(x0 - 43, x1 + 8)
+    ax.set_ylim(y0 - 14, y1 + 55)
+    ax.axis("off")
+    dimension(
+        ax, (x0, y1 + dimension_y), (x1, y1 + dimension_y), f"{x1-x0:.{decimals}f} µm"
+    )
+    dimension(ax, (x0 - 24, y0), (x0 - 24, y1), f"{y1-y0:.1f} µm", True)
+    ax.add_patch(
+        Rectangle((x0, y0), x1 - x0, y1 - y0, fill=False, edgecolor=INK, lw=0.8)
+    )
+    return fig, ax
+
+
+def draw_initial(out):
+    """Retain the original planning allocations, not the implemented footprint."""
+    configure()
+    fig, ax = layout_axes((0, 0, 537.15, 273), height=4.1, decimals=2)
+    rectangle(ax, 12, 119, 34, 136, BLOCK_COLORS["digital"])
+    ax.text(29, 187, "Trim logic / switches", rotation=90, ha="center", va="center")
+    rectangle(ax, 53, 119, 81, 136, BLOCK_COLORS["resistors"], "1 kΩ/□\ntrim ladder")
+    rectangle(ax, 12, 15, 122, 91, BLOCK_COLORS["analog"], "PNP / PTAT\ncore + mirrors")
+    rectangle(
+        ax,
+        145,
+        15,
+        173,
+        80,
+        BLOCK_COLORS["analog"],
+        "Error amplifier\nMatched input pair",
+    )
+    rectangle(ax, 329, 15, 111, 80, "#E9EAEC", "Bias +\nstartup")
+    rectangle(ax, 453, 20, 63, 63, CAP_COLOR, "C1\nComp.")
+    for row in range(2):
+        for col in range(5):
+            rectangle(
+                ax,
+                145 + col * 74.4,
+                111 + row * 74.4,
+                72,
+                72,
+                CAP_COLOR,
+                f"C{2+row*5+col}",
+            )
+    ax.text(330, 265, "Output MIM bank (~100 pF)", ha="center", va="center", fontsize=8)
+    ax.text(330, 103, "Routing / supply channel", ha="center", va="center", fontsize=7)
+    fig.text(
+        0.53,
+        0.035,
+        "INITIAL CONCEPT • provisional envelope • no assigned shuttle slot",
+        ha="center",
         fontsize=8,
     )
-ax.add_patch(
-    Rectangle(
-        (5, 162),
-        56,
-        144,
-        fill=False,
-        edgecolor="#9e4579",
-        linewidth=1.8,
-        linestyle="--",
-    )
-)
-ax.text(
-    33, 313, "Trim logic / DNW", ha="center", va="bottom", fontsize=9, color="#8b285e"
-)
-ax.text(
-    145,
-    313,
-    "Trim resistor ladder",
-    ha="center",
-    va="bottom",
-    fontsize=9,
-    color="#956025",
-)
-ax.text(
-    420, 313, "Output capacitors", ha="center", va="bottom", fontsize=9, color="#557c38"
-)
-style(ax)
-fig.suptitle(
-    "Implemented placement · trim-inclusive bandgap\n272 physical device units · provisional 620 × 315 µm envelope",
-    x=0.06,
-    y=0.96,
-    ha="left",
-    fontweight="bold",
-)
-fig.text(
-    0.06,
-    0.025,
-    "Actual placement, not the initial concept. The public 537.15 × 273 µm wrapper script is smaller; final slot integration is unresolved.",
-    fontsize=10,
-    color="#8a3b22",
-)
-fig.savefig(OUT / "implemented-floorplan.png", dpi=180)
-plt.close(fig)
+    export(fig, out, "initial-floorplan")
 
-fig, ax = plt.subplots(figsize=(15, 8.5))
-fig.subplots_adjust(left=0.06, right=0.99, bottom=0.12, top=0.85)
-layers = [
-    (12, "#d5c4ef", 0.4),
-    (21, "#e4d8c5", 0.5),
-    (22, "#92b87e", 0.85),
-    (30, "#d56067", 0.8),
-    (34, "#66a0df", 0.75),
-    (36, "#d2ae36", 0.8),
-    (42, "#9864bd", 0.75),
-    (46, "#46a295", 0.6),
-    (75, "#a1bd76", 0.45),
-    (81, "#718fa3", 0.55),
-]
-for number, color, alpha in layers:
-    polygons = []
-    for poly in k.Region(top.begin_shapes_rec(layout.layer(number, 0))).merged().each():
-        # Trapezoids preserve holes in rings, combs, and routing.
-        polygons.extend(
-            [
-                [(p.x * layout.dbu, p.y * layout.dbu) for p in part.each_point()]
-                for part in poly.decompose_trapezoids()
-            ]
+
+def draw_placement(data, bounds, out):
+    configure()
+    fig, ax = layout_axes(bounds, dimension_y=70)
+    for group in data["groups"]:
+        rectangle(
+            ax,
+            group["x"],
+            group["y"],
+            group["width"],
+            group["height"],
+            BLOCK_COLORS[group["category"]],
         )
-    ax.add_collection(
-        PolyCollection(
-            polygons, facecolors=color, edgecolors="none", alpha=alpha, rasterized=True
+    for device in data["placed"]:
+        if device["model"].startswith("cap_"):
+            x, y, xx, yy = device["bounds"]
+            rectangle(ax, x, y, xx - x, yy - y, CAP_COLOR, device["name"])
+    # Numbered matching groups keep tiny geometries readable without hiding
+    # adjacent devices. Full source names are given beneath the drawing.
+    groups = [g for g in data["groups"] if len(g["names"]) > 1]
+    for number, group in enumerate(groups, 1):
+        ax.text(
+            group["x"] + group["width"] / 2,
+            group["y"] + group["height"] / 2,
+            str(number),
+            ha="center",
+            va="center",
+            weight="bold",
+            fontsize=8,
+            bbox={"boxstyle": "circle,pad=.22", "fc": "white", "ec": INK, "lw": 0.6},
         )
+    ax.add_patch(
+        Rectangle((5, 162), 56, 144, fill=False, edgecolor="#705290", lw=1, ls="--")
     )
-for number in [22, 34, 36, 42, 46, 81]:
-    polygons = [
-        [(p.x * layout.dbu, p.y * layout.dbu) for p in poly.each_point_hull()]
-        for poly in k.Region(top.begin_shapes_rec(layout.layer(number, 4))).each()
+    for text, point, label in [
+        ("Trim logic\nDNW", (33, 266), (33, 340)),
+        ("Poly trim\nladder", (108, 275), (145, 340)),
+        ("Output capacitors C2–C11", (420, 301), (420, 340)),
+    ]:
+        ax.annotate(
+            text,
+            xy=point,
+            xytext=label,
+            ha="center",
+            va="bottom",
+            fontsize=8,
+            arrowprops={"arrowstyle": "-", "lw": 0.6},
+        )
+    # Move dimensions above the annotation line by using the available upper band.
+    ax.set_ylim(bounds[1] - 14, bounds[3] + 85)
+    fig.set_size_inches(WIDTH, 4.9)
+    fig.subplots_adjust(bottom=0.21)
+    entries = [f"{n}  {' / '.join(g['names'])}" for n, g in enumerate(groups, 1)]
+    for index, text in enumerate(entries):
+        fig.text(
+            0.07 + 0.47 * (index // 4), 0.155 - 0.035 * (index % 4), text, fontsize=7.5
+        )
+    export(fig, out, "implemented-floorplan")
+
+
+def polygon_vertices(layout, top, number, purpose=0):
+    region = k.Region(top.begin_shapes_rec(layout.layer(number, purpose))).merged()
+    # Decompose polygons so holes remain holes in the rendering.
+    return [
+        [(p.x * layout.dbu, p.y * layout.dbu) for p in part.each_point()]
+        for poly in region.each()
+        for part in poly.decompose_trapezoids()
     ]
-    ax.add_collection(
-        PolyCollection(
-            polygons,
-            facecolors="#777777",
-            edgecolors="none",
-            alpha=0.12,
-            rasterized=True,
-        )
-    )
-style(ax)
-fig.suptitle(
-    "Actual routed and filled GDS\nGF180MCU-D · five metals · MIM option B · 1 kΩ/□ poly",
-    x=0.06,
-    y=0.96,
-    ha="left",
-    fontweight="bold",
-)
-fig.text(
-    0.06,
-    0.025,
-    "Core verification: 0 DRC violations and LVS match. Wrapper integration and full post-layout qualification remain open.",
-    fontsize=10,
-    color="#264d6e",
-)
-fig.savefig(OUT / "physical-layout.png", dpi=220)
-plt.close(fig)
 
-records = []
-fig, axes = plt.subplots(2, 4, figsize=(16, 8), layout="constrained")
-matched = [g for g in data["groups"] if len(g["names"]) > 1]
-for ax, group in zip(axes.flat, matched):
-    for index, name in enumerate(group["names"]):
-        units = [d for d in data["placed"] if d["source"] == name]
-        xs = [d["x"] for d in units]
-        ys = [d["y"] for d in units]
-        color = plt.cm.Set2(index)
-        ax.scatter(xs, ys, s=180, color=color, edgecolor="#333", label=name)
-        for d in units:
-            ax.text(d["x"], d["y"], name, ha="center", va="center", fontsize=6)
-        cx = sum(xs) / len(xs)
-        cy = sum(ys) / len(ys)
-        records.append(
-            {
-                "group": group["names"],
-                "name": name,
-                "units": len(units),
-                "centroid_um": [cx, cy],
-            }
+
+def draw_physical(layout, bounds, out):
+    configure()
+    fig, ax = layout_axes(bounds, height=4.35)
+    top = layout.top_cell()
+    layers = [
+        (12, "#D8C8E8", 0.35),
+        (21, "#CABDA7", 0.40),
+        (22, "#539565", 0.75),
+        (30, "#C45146", 0.90),
+        (34, "#3779B1", 0.80),
+        (36, "#BC9127", 0.82),
+        (42, "#8559A4", 0.78),
+        (46, "#279786", 0.62),
+        (75, "#A5AE68", 0.40),
+        (81, "#527E8C", 0.60),
+    ]
+    for number, color, alpha in layers:
+        ax.add_collection(
+            PolyCollection(
+                polygon_vertices(layout, top, number),
+                facecolors=color,
+                edgecolors="none",
+                alpha=alpha,
+                rasterized=True,
+            )
         )
-        ax.scatter([cx], [cy], marker="+", s=160, color="#c83b2e")
-    ax.set_title(" / ".join(group["names"]), fontsize=10)
-    ax.set_aspect("equal", adjustable="datalim")
-    ax.grid(alpha=0.15)
-fig.suptitle(
-    "Matched unit locations · crosses mark geometric centroids\nOrientation is preserved; routing symmetry and edge dummies remain review items.",
-    fontsize=14,
-)
-fig.savefig(OUT / "matched-arrays.png", dpi=180)
-(ROOT / "matching_audit.json").write_text(json.dumps(records, indent=2) + "\n")
+    for number in [22, 34, 36, 42, 46, 81]:
+        ax.add_collection(
+            PolyCollection(
+                polygon_vertices(layout, top, number, 4),
+                facecolors="#888888",
+                edgecolors="none",
+                alpha=0.12,
+                rasterized=True,
+            )
+        )
+    # Label broad regions only; the outline remains actual routed/filled GDS.
+    for x, y, text in [
+        (33, 237, "Trim\nlogic"),
+        (118, 237, "Poly\nladder"),
+        (420, 223, "Output MIM bank"),
+        (166, 60, "PNP"),
+        (275, 44, "Input pair"),
+        (568, 54, "C1"),
+    ]:
+        ax.text(
+            x,
+            y,
+            text,
+            ha="center",
+            va="center",
+            fontsize=8,
+            bbox={
+                "facecolor": "white",
+                "edgecolor": INK,
+                "lw": 0.4,
+                "alpha": 0.94,
+                "pad": 2,
+            },
+        )
+    fig.text(
+        0.53,
+        0.035,
+        "LAYOUT RENDERING • GF180MCU-D • 5 metals • 614.0 × 307.6 µm",
+        ha="center",
+        fontsize=8,
+    )
+    export(fig, out, "physical-layout")
+
+
+def draw_matching(data, out):
+    configure()
+    groups = [g for g in data["groups"] if len(g["names"]) > 1]
+    assert len(groups) == 8, "Update the panel allocation if matching groups change"
+    fig, axes = plt.subplots(
+        4, 2, figsize=(WIDTH, 7.6), gridspec_kw={"height_ratios": [0.45, 1, 1, 1]}
+    )
+    fig.subplots_adjust(
+        left=0.08, right=0.98, bottom=0.07, top=0.93, hspace=0.56, wspace=0.26
+    )
+    records = []
+    colors = [BLUE, "#C84332", "#007F69"]
+    markers = ["s", "o", "^"]
+    for ax, group in zip(axes.flat, groups):
+        xs_all, ys_all = [], []
+        origin_x, origin_y = group["x"], group["y"]
+        for index, name in enumerate(group["names"]):
+            units = [d for d in data["placed"] if d["source"] == name]
+            xs, ys = [d["x"] for d in units], [d["y"] for d in units]
+            cx, cy = sum(xs) / len(xs), sum(ys) / len(ys)
+            records.append(
+                {
+                    "group": group["names"],
+                    "name": name,
+                    "units": len(units),
+                    "centroid_um": [cx, cy],
+                }
+            )
+            local_x, local_y = [x - origin_x for x in xs], [y - origin_y for y in ys]
+            xs_all.extend(local_x)
+            ys_all.extend(local_y)
+            ax.scatter(
+                local_x,
+                local_y,
+                s=36,
+                c=colors[index],
+                marker=markers[index],
+                edgecolor=INK,
+                linewidth=0.4,
+                label=f"{name} ×{len(units)}",
+                zorder=3,
+            )
+            ax.scatter(
+                [cx - origin_x],
+                [cy - origin_y],
+                marker="+",
+                s=65,
+                linewidth=1.1,
+                color=INK,
+                zorder=4,
+            )
+        ax.set_aspect("equal", adjustable="box")
+        ax.set_xlim(min(xs_all) - 5, max(xs_all) + 5)
+        ax.set_ylim(min(ys_all) - 5, max(ys_all) + 5)
+        ax.tick_params(labelsize=7, top=True, right=True)
+        ax.set_xlabel("Local x (µm)", fontsize=7, labelpad=1)
+        ax.set_ylabel("Local y (µm)", fontsize=7, labelpad=1)
+        ax.grid(color="#D7DADD", lw=0.4)
+        ax.legend(
+            loc="lower center",
+            bbox_to_anchor=(0.5, 1.02),
+            ncol=len(group["names"]),
+            fontsize=7,
+            handletextpad=0.3,
+            columnspacing=0.6,
+            handlelength=1,
+        )
+    fig.text(
+        0.5,
+        0.975,
+        "Matched unit placement • crosses mark geometric centroids",
+        ha="center",
+        fontsize=9,
+        weight="bold",
+    )
+    fig.text(
+        0.5,
+        0.025,
+        "Actual placement origins; equal axis scale within each panel. Q3 remains separate from Q1/Q2.",
+        ha="center",
+        fontsize=8,
+    )
+    export(fig, out, "matched-arrays")
+    return records
+
+
+def draw_all(gds_path, placement_path, out):
+    data = json.loads(placement_path.read_text())
+    layout = k.Layout()
+    layout.read(str(gds_path))
+    box = layout.top_cell().dbbox()
+    bounds = (box.left, box.bottom, box.right, box.top)
+    draw_initial(out)
+    draw_placement(data, bounds, out)
+    draw_physical(layout, bounds, out)
+    return draw_matching(data, out)
+
+
+if __name__ == "__main__":
+    from layout_paths import BUILD_DIR
+
+    records = draw_all(
+        BUILD_DIR / "filled_candidate.gds",
+        BUILD_DIR / "placement.json",
+        BUILD_DIR / "figures",
+    )
+    (BUILD_DIR / "matching_audit.json").write_text(json.dumps(records, indent=2) + "\n")

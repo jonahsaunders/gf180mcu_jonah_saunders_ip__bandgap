@@ -11,14 +11,11 @@ import json
 import re
 import subprocess
 
-import matplotlib
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 import numpy as np
 
 from layout_paths import BUILD_DIR
 from screen_extracted import HEADER, circuit_file
+from plot_screens import plot_power_sequence
 
 OUT = BUILD_DIR / "postlayout/power_sequence"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -110,15 +107,4 @@ def run_case(supply):
 with ThreadPoolExecutor(max_workers=2) as pool:
     records = list(pool.map(run_case, [3.3, 5.0]))
 (OUT / "summary.json").write_text(json.dumps(records, indent=2) + "\n")
-fig, ax = plt.subplots(figsize=(10, 4.8), layout="constrained")
-for supply in [3.3, 5.0]:
-    values = np.loadtxt(OUT / f"{supply:g}/startup.dat", skiprows=1)
-    ax.plot(values[:, 0] * 1e3, values[:, 3], label=f"AVDD {supply:g} V; DVDD 3.3 V")
-ax.set(
-    xlabel="Time (ms)",
-    ylabel="Reference (V)",
-    title="Both supplies start from zero and restart together\nTrim code 72; high trim inputs track DVDD; no forced initial state",
-)
-ax.legend()
-ax.grid(alpha=0.2)
-fig.savefig(BUILD_DIR / "figures/both-supply-startup.png", dpi=170)
+plot_power_sequence(OUT, BUILD_DIR / "figures")

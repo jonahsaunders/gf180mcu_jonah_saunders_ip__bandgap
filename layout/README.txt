@@ -13,6 +13,7 @@ release/filled_drc.lyrdb and release/filled.lvsdb.gz open in KLayout.
 release/reference.spice is the schematic-derived LVS reference. Zero-volt
 current probes become net aliases; transistor multiplicities become units.
 report.html explains the research, floorplan, results, and open work.
+figures/index.html presents the paper-style figure gallery and full captions.
 The PSRR revision separates physical routing improvements from extraction
 corrections. Raw Magic RC and capacitance-conserving RCC results are both
 retained; the latter is an approximation, not a foundry signoff extraction.
@@ -75,6 +76,8 @@ The lower-case 1k parameter is required by this LVS deck.
 
 Source guide
 ------------
+scripts/render_paper_figures.py  regenerate eight figures from the release archive
+scripts/figure_style.py      shared typography and PDF/SVG/600-dpi PNG export
 scripts/layout_flow.py       explicit orchestration and verification gates
 scripts/layout_paths.py      build and PDK paths
 scripts/audit_circuit.py     literal numeric SPICE parser; no eval
@@ -152,3 +155,23 @@ schematic smoke tests were rerun. This is separate from post-layout checking.
 
 Foundry-derived geometry/models retain LICENSE-GF180.txt. No PDK source or
 verification rule was edited or weakened to obtain a passing report.
+
+Paper figure reproduction (no circuit simulation)
+------------------------------------------------
+From the repository root, in the same container environment:
+
+  python layout/scripts/render_paper_figures.py
+
+Use --out DIRECTORY to export elsewhere. The script verifies release hashes
+and the uncompressed hashes of saved samples in figure-data/ before rendering.
+All archived simulation samples are preserved verbatim with gzip compression.
+No curve fitting, smoothing, or numerical adjustment is applied. The GDS,
+netlists, DRC/LVS evidence, and PSRR results are unchanged by this restyling.
+
+Each figure has PDF, SVG, and 600-dpi PNG versions. Plots, labels and box
+diagrams are vector; dense GDS polygons are rasterized at 600 dpi inside the
+vector exports. Master width is 7.1 inches with 7–9 point labels. Use dense
+composites at that width or repanel them before reducing to a narrow column.
+captions.txt records conditions and limitations for reuse with the artwork.
+The style follows https://www.isscc.org/figures readability guidance, without
+claiming compliance with an ISSCC manuscript template or submission rules.
