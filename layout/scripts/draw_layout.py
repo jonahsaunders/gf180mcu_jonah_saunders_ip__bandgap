@@ -233,9 +233,11 @@ def polygon_vertices(layout, top, number, purpose=0):
     ]
 
 
-def draw_physical(layout, bounds, out):
+def draw_physical(layout, bounds, data, out):
     configure()
-    fig, ax = layout_axes(bounds, height=4.35)
+    fig, ax = layout_axes(bounds, height=5.55, dimension_y=70)
+    fig.subplots_adjust(bottom=0.30)
+    ax.set_ylim(bounds[1] - 14, bounds[3] + 85)
     top = layout.top_cell()
     layers = [
         (12, "#D8C8E8", 0.35),
@@ -269,34 +271,101 @@ def draw_physical(layout, bounds, out):
                 rasterized=True,
             )
         )
-    # Label broad regions only; the outline remains actual routed/filled GDS.
-    for x, y, text in [
-        (33, 237, "Trim\nlogic"),
-        (118, 237, "Poly\nladder"),
-        (420, 223, "Output MIM bank"),
-        (166, 60, "PNP"),
-        (275, 44, "Input pair"),
-        (568, 54, "C1"),
-    ]:
+    # Use the same matching-group numbers as the placement figure. Markers
+    # locate actual group bounds; the legend keeps long names off the geometry.
+    matching = [g for g in data["groups"] if len(g["names"]) > 1]
+    labels = [
+        "PREF / PRMIR — bias mirror",
+        "MINP / MINN — amplifier input pair",
+        "PCAS1 / PCAS2 — PMOS cascodes",
+        "MSINK1 / MSINK2 — current sinks",
+        "M1 / M2 / M5 — matched array",
+        "M11 / M12 / M13 — matched array",
+        "PLOAD1 / PLOAD2 — matched loads",
+        "Q1 / Q2 / Q3 — PNP devices",
+    ]
+    selected = matching + [
+        next(g for g in data["groups"] if g["names"] == [name])
+        for name in ["MPSINK", "MPFOLD", "VBPCASLOW"]
+    ]
+    labels += [
+        "MPSINK — sink bias",
+        "MPFOLD — fold bias",
+        "VBPCASLOW — cascode bias",
+    ]
+    for number, group in enumerate(selected, 1):
+        x = group["x"] + group["width"] / 2
+        y = group["y"] + group["height"] / 2
         ax.text(
             x,
             y,
-            text,
+            str(number),
             ha="center",
             va="center",
+            fontsize=7.5,
+            weight="bold",
+            bbox={"boxstyle": "circle,pad=.20", "fc": "white", "ec": INK, "lw": 0.6},
+        )
+    startup = [d for d in data["placed"] if d["source"] in ["MSU_SENSE", "SUPINJ"]]
+    x = sum(d["x"] for d in startup) / len(startup)
+    y = sum(d["y"] for d in startup) / len(startup)
+    ax.text(
+        x,
+        y,
+        "12",
+        ha="center",
+        va="center",
+        fontsize=7.5,
+        weight="bold",
+        bbox={"boxstyle": "circle,pad=.20", "fc": "white", "ec": INK, "lw": 0.6},
+    )
+    labels.append("MSU_SENSE / SUPINJ — startup")
+    for device in data["placed"]:
+        if device["model"].startswith("cap_"):
+            x0, y0, x1, y1 = device["bounds"]
+            label = "C1\nComp." if device["name"] == "C1" else device["name"]
+            ax.text(
+                (x0 + x1) / 2,
+                (y0 + y1) / 2,
+                label,
+                ha="center",
+                va="center",
+                fontsize=7.5,
+                bbox={
+                    "facecolor": "white",
+                    "edgecolor": "none",
+                    "alpha": 0.94,
+                    "pad": 1.5,
+                },
+            )
+    ax.add_patch(
+        Rectangle((5, 162), 56, 144, fill=False, edgecolor="#705290", lw=0.9, ls="--")
+    )
+    for label, point, location in [
+        ("Trim logic\n+ switches / DNW", (33, 266), (33, 340)),
+        ("1 kΩ/□ poly\ntrim ladder", (108, 275), (145, 340)),
+        ("Output MIM bank · C2–C11", (420, 301), (420, 340)),
+    ]:
+        ax.annotate(
+            label,
+            xy=point,
+            xytext=location,
+            ha="center",
+            va="bottom",
             fontsize=8,
-            bbox={
-                "facecolor": "white",
-                "edgecolor": INK,
-                "lw": 0.4,
-                "alpha": 0.94,
-                "pad": 2,
-            },
+            arrowprops={"arrowstyle": "-", "lw": 0.6},
+        )
+    for index, label in enumerate(labels):
+        fig.text(
+            0.07 + 0.47 * (index // 6),
+            0.255 - 0.034 * (index % 6),
+            f"{index+1}  {label}",
+            fontsize=7,
         )
     fig.text(
         0.53,
-        0.035,
-        "LAYOUT RENDERING • GF180MCU-D • 5 metals • 614.0 × 307.6 µm",
+        0.025,
+        "Actual GDS rendering • GF180MCU-D • 5 metals • numbered device groups",
         ha="center",
         fontsize=8,
     )
@@ -397,7 +466,7 @@ def draw_all(gds_path, placement_path, out):
     bounds = (box.left, box.bottom, box.right, box.top)
     draw_initial(out)
     draw_placement(data, bounds, out)
-    draw_physical(layout, bounds, out)
+    draw_physical(layout, bounds, data, out)
     return draw_matching(data, out)
 
 

@@ -2,7 +2,7 @@
 
 [Overview](../README.md) · [Results](RESULTS.md) · [Testbenches](TESTBENCHES.md) · [Measurement details](TESTBENCH_DETAILS.md) · [Validation notes](../VALIDATION.md)
 
-Complete the README's installation and smoke check first. Run the commands below from the repository root in Bash inside the configured Linux/FOSS environment. In each new terminal, reactivate your Python environment if used and select the complete GF180 tool setup:
+Complete the [installation and smoke check](GETTING_STARTED.md) first. Run the commands below from the repository root in Bash inside the configured Linux/FOSS environment. In each new terminal, reactivate your Python environment if used and select the complete GF180 tool setup:
 
 ```bash
 source /foss/tools/sak/sak-pdk-script.sh gf180mcuD

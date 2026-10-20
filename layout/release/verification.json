@@ -94,7 +94,7 @@
     "layout/scripts/audit_pex_topology.py": "e6afe1748e20cdf745febc4c2df30f6ad5da978eb4a80287c89960a885141245",
     "layout/scripts/conserve_pex_capacitance.py": "15ddb13f25ba64e6ab0e6bdbf8847152707bfcf180f7bd0861a9cb9b42dca66e",
     "layout/scripts/diagnose_psrr.py": "eb8145c12dda551ed24b7c797aa0d3608e682913d6b22e7d1a015f8c3ca7440a",
-    "layout/scripts/draw_layout.py": "0820f69b5f51c5b37e25905e0d635c595fc1a8eec9d8b00450f76ecaaa429f8b",
+    "layout/scripts/draw_layout.py": "593dc9d75866333198f1742b20088498d27149ad759d0e0ad469eef037957d53",
     "layout/scripts/generate_primitives.py": "d37958d67d118f411de0176784679b092a5d188f9f3eddba9592f5f4ea0aa8bc",
     "layout/scripts/layout_flow.py": "ea61eb12dac5143b6eda492060b640744571923758d2806092bc95f5471f79f8",
     "layout/scripts/layout_paths.py": "48c859b5a2e381b68370fe851710dd5a7d102bb33e2073205e0f64d7f88a56c8",
@@ -113,7 +113,7 @@
     "Bandgap_Core_Res.sch": "f7b743d6003c8c774628cbc2b5ceaaaf93a0a7923a39607b8378df716a08c511",
     "TB10_RESISTOR_TRIM.sch": "85b51097dacc65e92176a8e2662eecdf5af95e7d7cd10c995a4a55254908942f",
     "layout/scripts/figure_style.py": "7b58d7545bb38c5607198374cb9b8221b86d3b388c7fbb08e92e51b9af6b8feb",
-    "layout/scripts/render_paper_figures.py": "6127e3209430bde9474f5f62d5a21b967a9c46f58302b09d72eb501cd9ec5653",
+    "layout/scripts/render_paper_figures.py": "719512e28c0fb82b959b1ba7d0ac83c35802d05738e63af200d1ccf063cc37dc",
     "layout/planning_envelope.json": "7eb84000c9a9297ca436df16f22bd9b22b824b8473307f82eb52c707f38b208f"
   },
   "presentation_revision": {

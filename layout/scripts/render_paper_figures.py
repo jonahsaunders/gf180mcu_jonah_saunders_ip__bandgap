@@ -39,7 +39,9 @@ CAPTIONS = [
         "physical-layout",
         "Routed core layout",
         "Rendering of the actual routed and filled GDS, not a silicon micrograph. GF180MCU-D, five metals, MIM option B, "
-        "1 kΩ/□ poly. Core bounds are 614.0 × 307.6 µm. Selected functional labels overlay the geometry. "
+        "1 kΩ/□ poly. Core bounds are 614.0 × 307.6 µm. Twelve numbered device-group labels and eleven capacitor labels "
+        "locate the input pair, mirrors, cascodes, sinks, PNPs, bias and startup devices. Numbers 1–8 match the placement figure. "
+        "The dashed outline identifies the trim-logic deep n-well region. Labels overlay the actual geometry. "
         "Layout polygons are rasterized at 600 dpi inside the vector exports; dimensions and labels remain vector. "
         "The GDS is unchanged by this figure revision. Its existing checks report zero DRC violations and an LVS match. "
         "Shuttle integration and full analog qualification remain open.",
