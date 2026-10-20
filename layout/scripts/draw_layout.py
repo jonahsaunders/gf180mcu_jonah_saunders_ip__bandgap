@@ -97,11 +97,71 @@ def draw_initial(out):
     fig.text(
         0.53,
         0.035,
-        "INITIAL CONCEPT • provisional envelope • no assigned shuttle slot",
+        "HISTORICAL CONCEPT • superseded planning envelope",
         ha="center",
         fontsize=8,
     )
     export(fig, out, "initial-floorplan")
+
+
+def draw_harness_fit(bounds, planning, out):
+    """Show geometric fit only; the centered placement does not modify GDS."""
+    configure()
+    width, height = planning["width_um"], planning["height_um"]
+    core_w, core_h = bounds[2] - bounds[0], bounds[3] - bounds[1]
+    x_margin, y_margin = (width - core_w) / 2, (height - core_h) / 2
+    fraction = core_w * core_h / (width * height)
+    fig, ax = plt.subplots(figsize=(WIDTH, 3.0))
+    fig.subplots_adjust(left=0.02, right=0.99, bottom=0.17, top=0.90)
+    ax.set_aspect("equal")
+    ax.set_xlim(-85, width + 20)
+    ax.set_ylim(-20, height + 80)
+    ax.axis("off")
+    rectangle(ax, 0, 0, width, height, "#F4F5F6")
+    rectangle(
+        ax,
+        x_margin,
+        y_margin,
+        core_w,
+        core_h,
+        BLOCK_COLORS["analog"],
+        f"Existing trim-inclusive core\n{core_w:.1f} × {core_h:.1f} µm\n"
+        f"{100*fraction:.1f}% of draft user area",
+    )
+    dimension(ax, (0, height + 40), (width, height + 40), f"≈ {width:g} µm")
+    dimension(ax, (-45, 0), (-45, height), f"≈ {height:g} µm", vertical=True)
+    for x in [x_margin / 2, width - x_margin / 2]:
+        ax.text(
+            x,
+            height / 2,
+            "Unallocated\nplanning space",
+            ha="center",
+            va="center",
+            fontsize=8,
+        )
+    fig.text(
+        0.5,
+        0.955,
+        "Chipalooza #3 • draft user area",
+        ha="center",
+        fontsize=9,
+        weight="bold",
+    )
+    fig.text(
+        0.5,
+        0.095,
+        f"Centered illustration: {x_margin:g} µm each side; {y_margin:g} µm top/bottom",
+        ha="center",
+        fontsize=8,
+    )
+    fig.text(
+        0.5,
+        0.035,
+        "Approximate organizer guidance supplied by designer • final wrapper and pins pending",
+        ha="center",
+        fontsize=7,
+    )
+    export(fig, out, "harness-area-fit")
 
 
 def draw_placement(data, bounds, out):

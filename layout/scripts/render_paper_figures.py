@@ -11,11 +11,21 @@ import html
 import json
 from pathlib import Path
 
-from draw_layout import draw_all
+from draw_layout import draw_all, draw_harness_fit
 from plot_screens import plot_nominal, plot_corners, plot_power_sequence, plot_psrr
 
 LAYOUT = Path(__file__).resolve().parents[1]
 CAPTIONS = [
+    (
+        "harness-area-fit",
+        "Fit within the updated draft user area",
+        "Approximately 1270 × 410 µm, from an organizer announcement supplied by the designer on 20 October 2026. "
+        "The existing 614.0 × 307.6 µm core occupies 36.3% of that rectangle. A centered placement would leave "
+        "328 µm on each side and 51.2 µm above/below. These are geometric margins, not verified routing or boundary clearances. "
+        "The centered position is illustrative; no GDS placement, slot, pin assignment or wrapper connection has changed. "
+        "This draft target supersedes the earlier inferred smaller envelope for planning. Keep the analog core compact "
+        "and use spare area selectively for matching, isolation, supply routing and harness access.",
+    ),
     (
         "psrr-before-after",
         "Supply rejection and routing improvement",
@@ -37,9 +47,9 @@ CAPTIONS = [
     (
         "initial-floorplan",
         "Initial floorplan concept",
-        "Original planning allocations, redrawn as a box diagram. The provisional envelope from the public wrapper script is "
+        "Historical planning allocations, retained as a box diagram. The earlier envelope inferred from the wrapper script was "
         "537.15 × 273 µm. This concept is not the implemented placement or a fit guarantee. "
-        "The implemented core exceeds this envelope; the wrapper scaling discrepancy and slot assignment remain unresolved. "
+        "The implemented core exceeds this historical envelope, but fits geometrically within the updated approximately 1270 × 410 µm draft user area. "
         "Routing symmetry, shielding and dummy placement were planning intentions, not claims of completed verification.",
     ),
     (
@@ -125,7 +135,7 @@ h1{font-size:28px}h2{font-size:20px}a{color:#0072b2}figure{margin:40px 0;border-
 img{width:100%;height:auto}figcaption{font-size:14px;color:#333}p{margin:12px 0}
 @media print{body{margin:0;max-width:none}figure{break-inside:avoid}figure p{display:none}}</style>
 <h1>Trim-inclusive bandgap — paper figures</h1>
-<p>GF180MCU-D · simulated results and actual layout geometry · 8 figures</p>
+<p>GF180MCU-D · simulated results, actual layout geometry and updated draft user area · 9 figures</p>
 <p>Artwork uses a 7.1-inch master width, 7–9 pt labels, restrained colors and distinguishable line styles.
 PDF and SVG exports preserve vector plots and text; PNG copies are 600 dpi. The GDS polygons are rasterized
 inside vector files to keep them manageable. Full-size masters are intended for a wide paper figure;
@@ -157,13 +167,16 @@ def main():
     verify_inputs()
     release = LAYOUT / "release"
     data = LAYOUT / "figure-data/postlayout"
+    planning = json.loads((LAYOUT / "planning_envelope.json").read_text())
+    evidence = json.loads((release / "verification.json").read_text())
+    draw_harness_fit(evidence["bounds_um"], planning, args.out)
     draw_all(release / "Bandgap_Core_Res.gds", release / "placement.json", args.out)
     plot_psrr(release / "psrr", args.out)
     plot_nominal(data, args.out)
     plot_corners(release / "pvt_dc_screen.json", args.out)
     plot_power_sequence(data / "power_sequence", args.out)
     write_gallery(args.out)
-    print(f"Eight figures exported as PDF, SVG and 600-dpi PNG: {args.out}")
+    print(f"{len(CAPTIONS)} figures exported as PDF, SVG and 600-dpi PNG: {args.out}")
 
 
 if __name__ == "__main__":

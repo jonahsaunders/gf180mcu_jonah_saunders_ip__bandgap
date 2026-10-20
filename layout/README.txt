@@ -76,7 +76,7 @@ The lower-case 1k parameter is required by this LVS deck.
 
 Source guide
 ------------
-scripts/render_paper_figures.py  regenerate eight figures from the release archive
+scripts/render_paper_figures.py  regenerate nine figures from release and planning inputs
 scripts/figure_style.py      shared typography and PDF/SVG/600-dpi PNG export
 scripts/layout_flow.py       explicit orchestration and verification gates
 scripts/layout_paths.py      build and PDK paths
@@ -133,11 +133,24 @@ Source: https://iic-jku.github.io/klayout-pex-website/doc/doc.html
 
 Known integration and analog work
 --------------------------------
-No slot has been assigned publicly or supplied by the designer. The public
-wrapper script says 537.15 x 273 um, but the checked-in wrapper scales to about
-619.785 x 315 um with this pinned Magic PDK. The present core does not fit the
-smaller dimensions. No slot number, pad assignment, or final wrapper wiring
-is invented here. The initial floorplan was a concept, not a fit guarantee.
+Updated planning target: approximately 1270 x 410 um. On 20 October 2026 the
+designer supplied an organizer announcement describing this draft user area.
+planning_envelope.json preserves its wording and provisional status. It
+supersedes the earlier inferred 537.15 x 273 um envelope and wrapper scaling
+discrepancy for floorplanning purposes.
+
+The current 614.0 x 307.6 um core fits geometrically and occupies 36.3% of
+the draft area. Centering it would leave 328 um on each side and 51.2 um
+above/below. These are geometric margins, not verified integration clearances.
+Final wrapper geometry, slot, pin locations and wiring remain pending.
+The initial-floorplan figure is historical; harness-area-fit is the current
+planning view. Neither changes the actual GDS.
+
+Compaction to the old smaller envelope is no longer a priority. Keep the
+analog core compact, shorten sensitive amplifier/C1 connections, and use
+spare area selectively for matching dummies, isolation, supply routing and
+harness access. Spreading the circuit across the full width would lengthen
+sensitive nets; any relocation needs extraction and analog requalification.
 
 Exact geometric centroids and equal device orientation are implemented for
 the named matching groups. Edge dummies, matched interconnect resistance/

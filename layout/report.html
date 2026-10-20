@@ -83,8 +83,20 @@ High trim inputs track DVDD. <a href="figures/both-supply-startup.pdf">PDF</a></
 <h2>Floorplan and physical scope</h2>
 <p>The complete TB10 trim-inclusive IP core still contains 272 device units, seven trim controls and eleven MIM capacitors.
 Device placement is unchanged by the retained PSRR revision. The core occupies 614.0 × 307.6 µm.</p>
+<div class="note"><strong>Planning update — 20 October 2026.</strong> The designer supplied an organizer announcement
+describing approximately <strong>1270 × 410 µm</strong> user areas in the first draft of the GF180 harness floorplan.
+This supersedes the smaller inferred envelope for planning. The existing core fits geometrically and uses
+<strong>36.3%</strong> of the draft area. <a href="planning_envelope.json">Announcement and planning assumptions</a>.</div>
+<figure><img src="figures/harness-area-fit.png" alt="Existing core centered inside the approximate 1270 by 410 micron user area">
+<figcaption>Illustrative geometric fit: 328 µm each side and 51.2 µm above/below if centered.
+Final wrapper clearance and pin placement are unverified. No GDS placement has changed.
+<a href="figures/harness-area-fit.pdf">PDF</a> · <a href="figures/harness-area-fit.svg">SVG</a></figcaption></figure>
+<p>The wider draft area removes the need to compact the core to the previous inferred boundary.
+The next layout iteration should keep the analog core compact, shorten sensitive amplifier and C1 connections, and
+use spare area selectively for matching dummies, isolation, supply distribution and harness routing.
+Stretching the circuit to occupy the full width would unnecessarily lengthen sensitive connections.</p>
 <figure><img src="figures/initial-floorplan.png" alt="Initial conceptual box floorplan"><figcaption>Original planning allocations, redrawn for clarity.
-The provisional envelope is smaller than the implemented core. <a href="figures/initial-floorplan.pdf">PDF</a></figcaption></figure>
+This historical envelope has been superseded by the draft user-area announcement. <a href="figures/initial-floorplan.pdf">PDF</a></figcaption></figure>
 <figure><img src="figures/implemented-floorplan.png" alt="Actual implemented macro placement"><figcaption>Implemented placement; the PSRR changes affect routing above it.
 Numbered groups identify matching sets. <a href="figures/implemented-floorplan.pdf">PDF</a></figcaption></figure>
 <figure><img src="figures/physical-layout.png" alt="Revised physical layout"><figcaption>Actual routed and filled GDS rendering, with functional annotations.
@@ -93,8 +105,10 @@ This is a layout rendering, not a silicon micrograph. <a href="figures/physical-
 Ground resistance is still omitted because the raw extractor falsely joins the isolated grounds. The conserved RCC distribution
 needs independent extraction confirmation. Full stability, noise, mismatch, corner startup, calibrated trim, pad/multiplexer loading,
 device-voltage and EM/IR qualification remain open. Matching edge dummies and matched route refinement remain open as well.</div>
-<p>No public slot has been assigned. The public wrapper script specifies 537.15 × 273 µm, while the checked-in wrapper scales
-to about 619.785 × 315 µm with the pinned Magic PDK. This core does not fit the smaller envelope. The
+<p>No slot or final pin map has been supplied for this block. The earlier wrapper files suggested 537.15 × 273 µm
+(about 619.785 × 315 µm after the observed Magic scaling); those values are retained as historical context,
+not the current planning target. The approximately 1270 × 410 µm announcement is explicitly a first draft.
+The final wrapper and its connection requirements still need to be applied. The
 <a href="https://opencircuitdesign.com/chipalooza/rules-3.html">Chipalooza #3 rules</a> and
 <a href="https://github.com/RTimothyEdwards/gf180mcu_ocd_chipalooza">public harness</a> govern final integration. The
 <a href="https://opencircuitdesign.com/chipalooza/rules-2.html">#2 rules</a> provide integration precedent but use a different PDK.

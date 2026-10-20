@@ -73,7 +73,7 @@
   "drc_deck_sha256": "e7c7d2597890cfcb4cf0e5312f5652051a119fb3e1cc1772a6e5c04594bc65d8",
   "lvs_deck_sha256": "09a4f1f1a6fe1fc1e4e193ae5ae1c2b1c49ba190f9e135ffd72d45c14637fde9",
   "open_items": [
-    "Assigned wrapper and dimensions",
+    "Final wrapper, slot and pins; approximate 1270 x 410 um planning area received",
     "Complete RC including ground network",
     "Matched-route symmetry and edge dummies",
     "EM/IR and full analog PVT qualification"
@@ -94,7 +94,7 @@
     "layout/scripts/audit_pex_topology.py": "e6afe1748e20cdf745febc4c2df30f6ad5da978eb4a80287c89960a885141245",
     "layout/scripts/conserve_pex_capacitance.py": "15ddb13f25ba64e6ab0e6bdbf8847152707bfcf180f7bd0861a9cb9b42dca66e",
     "layout/scripts/diagnose_psrr.py": "eb8145c12dda551ed24b7c797aa0d3608e682913d6b22e7d1a015f8c3ca7440a",
-    "layout/scripts/draw_layout.py": "239ac24363e96d41dce3747d629b95620bcdda34f43de5b680eb46d1b0a2a2ff",
+    "layout/scripts/draw_layout.py": "0820f69b5f51c5b37e25905e0d635c595fc1a8eec9d8b00450f76ecaaa429f8b",
     "layout/scripts/generate_primitives.py": "d37958d67d118f411de0176784679b092a5d188f9f3eddba9592f5f4ea0aa8bc",
     "layout/scripts/layout_flow.py": "ea61eb12dac5143b6eda492060b640744571923758d2806092bc95f5471f79f8",
     "layout/scripts/layout_paths.py": "48c859b5a2e381b68370fe851710dd5a7d102bb33e2073205e0f64d7f88a56c8",
@@ -113,12 +113,21 @@
     "Bandgap_Core_Res.sch": "f7b743d6003c8c774628cbc2b5ceaaaf93a0a7923a39607b8378df716a08c511",
     "TB10_RESISTOR_TRIM.sch": "85b51097dacc65e92176a8e2662eecdf5af95e7d7cd10c995a4a55254908942f",
     "layout/scripts/figure_style.py": "7b58d7545bb38c5607198374cb9b8221b86d3b388c7fbb08e92e51b9af6b8feb",
-    "layout/scripts/render_paper_figures.py": "76b3e58fbd5da8fc67ab8c1da6fb2679fd02c53056579163d168e64deb57831a"
+    "layout/scripts/render_paper_figures.py": "6127e3209430bde9474f5f62d5a21b967a9c46f58302b09d72eb501cd9ec5653",
+    "layout/planning_envelope.json": "7eb84000c9a9297ca436df16f22bd9b22b824b8473307f82eb52c707f38b208f"
   },
   "presentation_revision": {
     "base_release_commit": "776035c3e46767f3c8bee2f362b6be4f92ba5deb",
     "scope": "Figure rendering and archived samples only; all release evidence hashes unchanged",
     "verification": "Prior DRC/LVS and simulation evidence retained; no electrical runs repeated",
-    "exports": "8 figures, each PDF/SVG/600-dpi PNG; vector plot paths and embedded TrueType fonts"
+    "exports": "9 figures, each PDF/SVG/600-dpi PNG; vector plot paths and embedded TrueType fonts"
+  },
+  "planning_envelope": {
+    "width_um": 1270.0,
+    "height_um": 410.0,
+    "status": "APPROXIMATE_DRAFT_USER_AREA",
+    "received_date": "2026-10-20",
+    "source_file": "layout/planning_envelope.json",
+    "scope": "Geometric fit only; final wrapper, slot and pins remain pending"
   }
 }

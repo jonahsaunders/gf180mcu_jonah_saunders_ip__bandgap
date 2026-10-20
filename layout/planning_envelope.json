@@ -1,0 +1,10 @@
+{
+  "status": "APPROXIMATE_DRAFT_USER_AREA",
+  "width_um": 1270.0,
+  "height_um": 410.0,
+  "received_date": "2026-10-20",
+  "source": "Designer supplied an organizer announcement in the project conversation; announcement date and URL were not supplied.",
+  "quote": "For the Chipalooza #3 (GF) designers: I did a first draft of a floorplan of the GF180MCU version of the harness chip, and it looks like the user areas are going to be approximately 1270um x 410um. This is the same area as I had previously suggested to some of the designers, but a different aspect ratio. So please keep that in mind when starting layout work and floorplanning your circuit.",
+  "scope": "Planning target superseding the earlier inferred wrapper dimensions. Not a final wrapper, slot assignment, pin map, or verified integration boundary.",
+  "placement_policy": "Keep the analog core compact. Use available space selectively for matching, isolation, supply routing and harness access; do not stretch sensitive nets to fill the area."
+}
