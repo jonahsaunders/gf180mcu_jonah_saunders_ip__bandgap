@@ -1,0 +1,314 @@
+<!-- Source: Bandgap_Core_Res.sch; SHA-256: cedc57eff17583c7ccc3fb25ccf7114d85389c148d365d7b38a732b10827ac09. GF180 symbol geometry: Copyright 2022 GlobalFoundries PDK Authors; Apache-2.0; see ../../LICENSE-GF180.txt. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1592" height="1300" viewBox="0 0 1592 1300" role="img" aria-labelledby="title description">
+  <title id="title">Trim-inclusive bandgap: dummy devices — sheet 2 of 2</title>
+  <desc id="description">All 13 netlisted dummy banks. 197 PMOS units have drain, gate, source and body tied to AVDD; 64 NMOS units have all four terminals tied to AVSS. Each symbol represents m identical devices. Sizes are per device.</desc>
+  <rect width="1592" height="1300" fill="white" />
+  <text x="48" y="63" font-size="32" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">TRIM-INCLUSIVE BANDGAP · DUMMY DEVICES</text>
+  <text x="48" y="101" font-size="21" fill="#546370" font-family="Arial, Helvetica, sans-serif">13 banks  /  261 units  ·  Same source and nets as sheet 1</text>
+  <text x="1544" y="63" font-size="27" fill="#172533" font-family="Arial, Helvetica, sans-serif" text-anchor="end">2 / 2</text>
+  <path d="M48 128 H1544" stroke="#bec9d1" />
+  <text x="48" y="174" font-size="23" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">PMOS · pfet_05v0 · 197 units · All terminals tied to AVDD</text>
+  <g transform="translate(48 196)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_M1</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches M1 / M2 / M5</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
+      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
+      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 22</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 16.75 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 2 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
+  </g>
+  <g transform="translate(427 196)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_M11</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches M11 / M12 / M13</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
+      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
+      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 34</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 16.42 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 4 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
+  </g>
+  <g transform="translate(806 196)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_MINP</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches MINP / MINN</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
+      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
+      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 29</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 54.89 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 4 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
+  </g>
+  <g transform="translate(1185 196)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_PCAS1</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches PCAS1 / PCAS2</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
+      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
+      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 20</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 22.21 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
+  </g>
+  <g transform="translate(48 436)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_PLOAD1</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches PLOAD1 / PLOAD2</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
+      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
+      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 20</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 20.76 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 4 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
+  </g>
+  <g transform="translate(427 436)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_PREF</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches PREF / PRMIR</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
+      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
+      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 29</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 18.75 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
+  </g>
+  <g transform="translate(806 436)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_MPSINK</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches MPSINK</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
+      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
+      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 23</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 18.95 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
+  </g>
+  <g transform="translate(1185 436)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_MPFOLD</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches MPFOLD</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
+      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
+      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 20</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 18.99 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
+  </g>
+  <text x="48" y="698" font-size="23" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">NMOS · nfet_05v0 · 64 units · All terminals tied to AVSS</text>
+  <g transform="translate(48 720)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_MSINK1</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches MSINK1 / MSINK2</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVSS</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M-20 0 H-2.5 M7.5 -17.5 H20 M7.5 17.5 H15" fill="none" stroke="#172533" stroke-width="1.8" />
+      <polygon points="15,15 20,17.5 15,20" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 20</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 16.34 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVSS</text>
+  </g>
+  <g transform="translate(427 720)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_M3</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches M3 / M4</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVSS</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M-20 0 H-2.5 M7.5 -17.5 H20 M7.5 17.5 H15" fill="none" stroke="#172533" stroke-width="1.8" />
+      <polygon points="15,15 20,17.5 15,20" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 14</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 14.6 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 4 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVSS</text>
+  </g>
+  <g transform="translate(806 720)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_MFOLD1</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches MFOLD1 / MFOLD2</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVSS</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M-20 0 H-2.5 M7.5 -17.5 H20 M7.5 17.5 H15" fill="none" stroke="#172533" stroke-width="1.8" />
+      <polygon points="15,15 20,17.5 15,20" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 10</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 18.49 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 6 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVSS</text>
+  </g>
+  <g transform="translate(1185 720)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_M16</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches M16 / M18</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVSS</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M-20 0 H-2.5 M7.5 -17.5 H20 M7.5 17.5 H15" fill="none" stroke="#172533" stroke-width="1.8" />
+      <polygon points="15,15 20,17.5 15,20" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 10</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 7.55 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 4 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVSS</text>
+  </g>
+  <g transform="translate(48 960)">
+    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
+    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_VBNSINK</text>
+    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches VBNSINK</text>
+    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVSS</text>
+    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
+    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
+    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
+    <g transform="translate(73 141)">
+      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M-20 0 H-2.5 M7.5 -17.5 H20 M7.5 17.5 H15" fill="none" stroke="#172533" stroke-width="1.8" />
+      <polygon points="15,15 20,17.5 15,20" fill="#172533" />
+      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
+      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
+      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
+      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
+      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
+    </g>
+    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 10</text>
+    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 12.31 µm</text>
+    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
+    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVSS</text>
+  </g>
+  <text x="448" y="1003" font-size="22" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">READING THIS SHEET</text>
+  <text x="448" y="1040" font-size="20" fill="#546370" font-family="Arial, Helvetica, sans-serif">m is the number of identical physical units; W and L are per-unit dimensions.</text>
+  <text x="448" y="1074" font-size="20" fill="#546370" font-family="Arial, Helvetica, sans-serif">The four-terminal connections are explicit: no dummy gate or diffusion floats.</text>
+  <text x="448" y="1108" font-size="20" fill="#546370" font-family="Arial, Helvetica, sans-serif">“Matches” identifies the functional array that the dummy bank surrounds.</text>
+  <text x="448" y="1142" font-size="20" fill="#546370" font-family="Arial, Helvetica, sans-serif">The panel arrangement is for readability; it does not depict physical placement.</text>
+  <path d="M48 1214 H1544" stroke="#bec9d1" />
+  <text x="48" y="1248" font-size="19" fill="#172533" font-family="Arial, Helvetica, sans-serif">Graphical companion to LAYOUT_MATCHING_DUMMIES in Bandgap_Core_Res.sch; verified against the released netlist.</text>
+  <text x="48" y="1278" font-size="16" fill="#546370" font-family="Arial, Helvetica, sans-serif">GF180 symbol geometry: © 2022 GlobalFoundries PDK Authors · Apache-2.0 · See LICENSE-GF180.txt</text>
+</svg>
