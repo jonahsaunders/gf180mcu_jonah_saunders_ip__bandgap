@@ -24,7 +24,7 @@
     "filled_lvs.log": "8387439dffdc3563103fefdb1e5bceff28ef3a13282bc8d703180a4f27796e4d",
     "functional_equivalence.json": "29c70cd0fa25f7ed8f3ed56ddb396365b78954fdb6b09602f25c8a9f46eddcc6",
     "matched_local_routes.json": "4a4788589acd966300bd38ed369fbbfd6279a915c718c023f9feeb5e593ced1f",
-    "mirror_bias/input_manifest.json": "ce0bbf745b5f38815332020bb9c03314c0f6b2983a143818401aa2fa20d8543f",
+    "mirror_bias/input_manifest.json": "2111fb00505ff55cd4c06274502a757c51cb7ac49d4d8234bf6685215d940d5d",
     "mirror_bias/model_header.spice": "13a666e7d3290ee89bdca2fdf0cf5f748834835741ab6262363e9ddabf460402",
     "mirror_bias/rcc_3.3V/diagnostic.spice": "834d1c71fee1022950d97c9f611acdd4548efc4469ddcbab70bc62b594b7d0f6",
     "mirror_bias/rcc_3.3V/ngspice.log": "0417a762628762d986b009c3f2bb3a4a14e95cbc17ce22a268ea8b2f88b29f24",
@@ -214,9 +214,20 @@
     "simulation-logs/rcc_typical_typical_typical_5/ngspice.log.gz": "dfb1412f20533754e237a36799ee4fc44bd9caa58c098ebd3f35b39ebd2e9e8f",
     "simulation-logs/rcc_typical_typical_typical_5_startup/ngspice.log.gz": "054821cc5b0802f6f4172d271d8bdeb8cde6850bd8fce640231d3148e59f1ad1",
     "simulation-logs/schematic_typical_typical_typical_3.3/ngspice.log.gz": "209931eb3a55b981a4fedc83b1ccea0a055c83bbd78601c05e1016f8af345ac1",
-    "simulation-logs/schematic_typical_typical_typical_5/ngspice.log.gz": "e76d3188928800c8a6dc33ef33100a1eaf32ad555ea107023f587490707b96c3"
+    "simulation-logs/schematic_typical_typical_typical_5/ngspice.log.gz": "e76d3188928800c8a6dc33ef33100a1eaf32ad555ea107023f587490707b96c3",
+    "schematic-symbols/audit_circuit.log": "ee282f5597982a9cc0ed84b443ed8dbe696913151d673cbf937d47cdd494427e",
+    "schematic-symbols/circuit.json": "6ad00a00df78dd590a11ccf3ce2ef46da02a014c4dd8a74bf2df9d1224698882",
+    "schematic-symbols/filled.cir": "8e67ee6ae6b60204a4ee169909bfbb8c36ac482fd106d2c728d239aac54b12ac",
+    "schematic-symbols/filled.lvsdb.gz": "a1e199afe21de7bb0a1f58f0cd46806968d6714a1bb26c24b23a476fcea19db1",
+    "schematic-symbols/filled_lvs.log": "589262eaf1c612a64d7067c99f33e4720be101f1f62f10ae807d97624b496c12",
+    "schematic-symbols/reference.spice": "eb97cc0be09f9ee57e386b6eed29e835e093e5b435faaa441b5aa7c7048b7ca9",
+    "schematic-symbols/schematic_source.spice": "452703c882757b759cda44eb6c8a606abe3ae6bc89cd4a849443e8cf1207e36b",
+    "schematic-symbols/verification.json": "d0a5836667e98254626df3c5349a784b17f8f90bc347c8372ccbfc8bb404aaf2",
+    "schematic-symbols/xschem.log": "d2bcff0f9e6d429a2762c9e8630b0576cedf79c7e3fe731c08bfa63778b1ede8",
+    "schematic-symbols/portability_checks.log": "ec361db370a0e1edcbe5fd6ca09a046283a242169fb85206fd65877cc9bedcd3",
+    "schematic-symbols/repository_checks.log": "f4eee98a320c0beea486f85fd074e8ea0836b5e8a162e39621b7071403182c8a"
   },
-  "schematic_sha256": "cedc57eff17583c7ccc3fb25ccf7114d85389c148d365d7b38a732b10827ac09",
+  "schematic_sha256": "bed8b6dbb6f63facc51432769c2d601a1e830204d75cbdd8ee5941d311a751b3",
   "pdk_version": "f6eeac7dad085ffcc829ccfd721f7b4ce39edcf7",
   "container": "hpretl/iic-osic-tools@sha256:5d6adf1f437cd0f2f8f8614488ec3c247ba8c768f4663a25d5e997b30ccb13b0",
   "drc_deck_sha256": "e7c7d2597890cfcb4cf0e5312f5652051a119fb3e1cc1772a6e5c04594bc65d8",
@@ -258,9 +269,10 @@
     "layout/scripts/strengthen_power.py": "3ab2741d3d2f454173829d19483407302a2ee5059eda65448b84a929785c402a",
     "layout/scripts/extract_parasitics.tcl": "bfdc6d830d969bf8e72c984da917d5a13f31eefba75f9a3507b71f2f6505f6dd",
     "layout/build.sh": "a6d1d85b192a03c02f76611fe92c588535061620eca0169c5fb8f7c1d0aa1c41",
-    "Bandgap_Core_Res.sch": "cedc57eff17583c7ccc3fb25ccf7114d85389c148d365d7b38a732b10827ac09",
+    "Bandgap_Core_Res.sch": "bed8b6dbb6f63facc51432769c2d601a1e830204d75cbdd8ee5941d311a751b3",
     "TB10_RESISTOR_TRIM.sch": "85b51097dacc65e92176a8e2662eecdf5af95e7d7cd10c995a4a55254908942f",
-    "layout/planning_envelope.json": "7eb84000c9a9297ca436df16f22bd9b22b824b8473307f82eb52c707f38b208f"
+    "layout/planning_envelope.json": "7eb84000c9a9297ca436df16f22bd9b22b824b8473307f82eb52c707f38b208f",
+    "layout/scripts/verify_schematic_representation.py": "ecff4ba09062f0bad1a0e0bbd669e32259ffb16f9185cf048d441b73f3189aac"
   },
   "tool_versions": {
     "magic_primitive_generation": "8.3.678",
@@ -270,5 +282,13 @@
     "xschem": "3.4.8RC"
   },
   "matching_revision": "13 protected arrays, 261 explicit quiet-rail dummies, balanced local M1/M2/M5 drain routes, compact precision placement and reinforced current paths",
-  "pvt_recovered_fallback_cases": 2
+  "pvt_recovered_fallback_cases": 2,
+  "schematic_representation_update": {
+    "previous_schematic_sha256": "cedc57eff17583c7ccc3fb25ccf7114d85389c148d365d7b38a732b10827ac09",
+    "verification": "schematic-symbols/verification.json",
+    "checked_utc": "2026-10-21T17:16:07.931693+00:00",
+    "canonical_spice_unchanged": true,
+    "gds_unchanged": true,
+    "note": "Fresh full-core LVS passes for the native dummy symbols. Original physical-build evidence and all simulation inputs/results are retained unchanged."
+  }
 }

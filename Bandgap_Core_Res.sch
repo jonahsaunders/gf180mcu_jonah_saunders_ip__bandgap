@@ -620,104 +620,104 @@ N 3255 722.5 3290 722.5 {lab=avdd}
 N 3260 802.5 3305 802.5 {lab=avdd}
 N 2660 -60 2880 -60 {lab=vref}
 N 2880 -60 2880 -37.5 {lab=vref}
-N 3455 65 3455 105 {lab=b0_b}
-N 3455 165 3455 195 {lab=dvss}
-N 3455 195 3500 195 {lab=dvss}
-N 3500 135 3500 195 {lab=dvss}
-N 3455 135 3500 135 {lab=dvss}
-N 3455 35 3495 35 {lab=dvdd}
-N 3495 -20 3495 35 {lab=dvdd}
-N 3455 -20 3495 -20 {lab=dvdd}
-N 3455 -20 3455 5 {lab=dvdd}
-N 3390 135 3415 135 {lab=b0}
-N 3390 35 3390 135 {lab=b0}
-N 3390 35 3415 35 {lab=b0}
-N 3355 80 3390 80 {lab=b0}
-N 3455 80 3545 80 {lab=b0_b}
-N 3685 65 3685 105 {lab=b1_b}
-N 3685 165 3685 195 {lab=dvss}
-N 3685 195 3730 195 {lab=dvss}
-N 3730 135 3730 195 {lab=dvss}
-N 3685 135 3730 135 {lab=dvss}
-N 3685 35 3725 35 {lab=dvdd}
-N 3725 -20 3725 35 {lab=dvdd}
-N 3685 -20 3725 -20 {lab=dvdd}
-N 3685 -20 3685 5 {lab=dvdd}
-N 3620 135 3645 135 {lab=b1}
-N 3620 35 3620 135 {lab=b1}
-N 3620 35 3645 35 {lab=b1}
-N 3585 80 3620 80 {lab=b1}
-N 3685 80 3775 80 {lab=b1_b}
-N 3920 65 3920 105 {lab=b2_b}
-N 3920 165 3920 195 {lab=dvss}
-N 3920 195 3965 195 {lab=dvss}
-N 3965 135 3965 195 {lab=dvss}
-N 3920 135 3965 135 {lab=dvss}
-N 3920 35 3960 35 {lab=dvdd}
-N 3960 -20 3960 35 {lab=dvdd}
-N 3920 -20 3960 -20 {lab=dvdd}
-N 3920 -20 3920 5 {lab=dvdd}
-N 3855 135 3880 135 {lab=b2}
-N 3855 35 3855 135 {lab=b2}
-N 3855 35 3880 35 {lab=b2}
-N 3820 80 3855 80 {lab=b2}
-N 3920 80 4010 80 {lab=b2_b}
-N 4140 65 4140 105 {lab=b3_b}
-N 4140 165 4140 195 {lab=dvss}
-N 4140 195 4185 195 {lab=dvss}
-N 4185 135 4185 195 {lab=dvss}
-N 4140 135 4185 135 {lab=dvss}
-N 4140 35 4180 35 {lab=dvdd}
-N 4180 -20 4180 35 {lab=dvdd}
-N 4140 -20 4180 -20 {lab=dvdd}
-N 4140 -20 4140 5 {lab=dvdd}
-N 4075 135 4100 135 {lab=b3}
-N 4075 35 4075 135 {lab=b3}
-N 4075 35 4100 35 {lab=b3}
-N 4040 80 4075 80 {lab=b3}
-N 4140 80 4230 80 {lab=b3_b}
-N 4360 65 4360 105 {lab=b4_b}
-N 4360 165 4360 195 {lab=dvss}
-N 4360 195 4405 195 {lab=dvss}
-N 4405 135 4405 195 {lab=dvss}
-N 4360 135 4405 135 {lab=dvss}
-N 4360 35 4400 35 {lab=dvdd}
-N 4400 -20 4400 35 {lab=dvdd}
-N 4360 -20 4400 -20 {lab=dvdd}
-N 4360 -20 4360 5 {lab=dvdd}
-N 4295 135 4320 135 {lab=b4}
-N 4295 35 4295 135 {lab=b4}
-N 4295 35 4320 35 {lab=b4}
-N 4260 80 4295 80 {lab=b4}
-N 4360 80 4450 80 {lab=b4_b}
-N 4570 65 4570 105 {lab=b5_b}
-N 4570 165 4570 195 {lab=dvss}
-N 4570 195 4615 195 {lab=dvss}
-N 4615 135 4615 195 {lab=dvss}
-N 4570 135 4615 135 {lab=dvss}
-N 4570 35 4610 35 {lab=dvdd}
-N 4610 -20 4610 35 {lab=dvdd}
-N 4570 -20 4610 -20 {lab=dvdd}
-N 4570 -20 4570 5 {lab=dvdd}
-N 4505 135 4530 135 {lab=b5}
-N 4505 35 4505 135 {lab=b5}
-N 4505 35 4530 35 {lab=b5}
-N 4470 80 4505 80 {lab=b5}
-N 4570 80 4660 80 {lab=b5_b}
-N 4792.5 65 4792.5 105 {lab=b6_b}
-N 4792.5 165 4792.5 195 {lab=dvss}
-N 4792.5 195 4837.5 195 {lab=dvss}
-N 4837.5 135 4837.5 195 {lab=dvss}
-N 4792.5 135 4837.5 135 {lab=dvss}
-N 4792.5 35 4832.5 35 {lab=dvdd}
-N 4832.5 -20 4832.5 35 {lab=dvdd}
-N 4792.5 -20 4832.5 -20 {lab=dvdd}
-N 4792.5 -20 4792.5 5 {lab=dvdd}
-N 4727.5 135 4752.5 135 {lab=b6}
-N 4727.5 35 4727.5 135 {lab=b6}
-N 4727.5 35 4752.5 35 {lab=b6}
-N 4692.5 80 4727.5 80 {lab=b6}
-N 4792.5 80 4882.5 80 {lab=b6_b}
+N 2610 1215 2610 1255 {lab=b0_b}
+N 2610 1315 2610 1345 {lab=dvss}
+N 2610 1345 2655 1345 {lab=dvss}
+N 2655 1285 2655 1345 {lab=dvss}
+N 2610 1285 2655 1285 {lab=dvss}
+N 2610 1185 2650 1185 {lab=dvdd}
+N 2650 1130 2650 1185 {lab=dvdd}
+N 2610 1130 2650 1130 {lab=dvdd}
+N 2610 1130 2610 1155 {lab=dvdd}
+N 2545 1285 2570 1285 {lab=b0}
+N 2545 1185 2545 1285 {lab=b0}
+N 2545 1185 2570 1185 {lab=b0}
+N 2510 1230 2545 1230 {lab=b0}
+N 2610 1230 2700 1230 {lab=b0_b}
+N 2900 1215 2900 1255 {lab=b1_b}
+N 2900 1315 2900 1345 {lab=dvss}
+N 2900 1345 2945 1345 {lab=dvss}
+N 2945 1285 2945 1345 {lab=dvss}
+N 2900 1285 2945 1285 {lab=dvss}
+N 2900 1185 2940 1185 {lab=dvdd}
+N 2940 1130 2940 1185 {lab=dvdd}
+N 2900 1130 2940 1130 {lab=dvdd}
+N 2900 1130 2900 1155 {lab=dvdd}
+N 2835 1285 2860 1285 {lab=b1}
+N 2835 1185 2835 1285 {lab=b1}
+N 2835 1185 2860 1185 {lab=b1}
+N 2800 1230 2835 1230 {lab=b1}
+N 2900 1230 2990 1230 {lab=b1_b}
+N 3190 1215 3190 1255 {lab=b2_b}
+N 3190 1315 3190 1345 {lab=dvss}
+N 3190 1345 3235 1345 {lab=dvss}
+N 3235 1285 3235 1345 {lab=dvss}
+N 3190 1285 3235 1285 {lab=dvss}
+N 3190 1185 3230 1185 {lab=dvdd}
+N 3230 1130 3230 1185 {lab=dvdd}
+N 3190 1130 3230 1130 {lab=dvdd}
+N 3190 1130 3190 1155 {lab=dvdd}
+N 3125 1285 3150 1285 {lab=b2}
+N 3125 1185 3125 1285 {lab=b2}
+N 3125 1185 3150 1185 {lab=b2}
+N 3090 1230 3125 1230 {lab=b2}
+N 3190 1230 3280 1230 {lab=b2_b}
+N 3480 1215 3480 1255 {lab=b3_b}
+N 3480 1315 3480 1345 {lab=dvss}
+N 3480 1345 3525 1345 {lab=dvss}
+N 3525 1285 3525 1345 {lab=dvss}
+N 3480 1285 3525 1285 {lab=dvss}
+N 3480 1185 3520 1185 {lab=dvdd}
+N 3520 1130 3520 1185 {lab=dvdd}
+N 3480 1130 3520 1130 {lab=dvdd}
+N 3480 1130 3480 1155 {lab=dvdd}
+N 3415 1285 3440 1285 {lab=b3}
+N 3415 1185 3415 1285 {lab=b3}
+N 3415 1185 3440 1185 {lab=b3}
+N 3380 1230 3415 1230 {lab=b3}
+N 3480 1230 3570 1230 {lab=b3_b}
+N 2610 1615 2610 1655 {lab=b4_b}
+N 2610 1715 2610 1745 {lab=dvss}
+N 2610 1745 2655 1745 {lab=dvss}
+N 2655 1685 2655 1745 {lab=dvss}
+N 2610 1685 2655 1685 {lab=dvss}
+N 2610 1585 2650 1585 {lab=dvdd}
+N 2650 1530 2650 1585 {lab=dvdd}
+N 2610 1530 2650 1530 {lab=dvdd}
+N 2610 1530 2610 1555 {lab=dvdd}
+N 2545 1685 2570 1685 {lab=b4}
+N 2545 1585 2545 1685 {lab=b4}
+N 2545 1585 2570 1585 {lab=b4}
+N 2510 1630 2545 1630 {lab=b4}
+N 2610 1630 2700 1630 {lab=b4_b}
+N 2900 1615 2900 1655 {lab=b5_b}
+N 2900 1715 2900 1745 {lab=dvss}
+N 2900 1745 2945 1745 {lab=dvss}
+N 2945 1685 2945 1745 {lab=dvss}
+N 2900 1685 2945 1685 {lab=dvss}
+N 2900 1585 2940 1585 {lab=dvdd}
+N 2940 1530 2940 1585 {lab=dvdd}
+N 2900 1530 2940 1530 {lab=dvdd}
+N 2900 1530 2900 1555 {lab=dvdd}
+N 2835 1685 2860 1685 {lab=b5}
+N 2835 1585 2835 1685 {lab=b5}
+N 2835 1585 2860 1585 {lab=b5}
+N 2800 1630 2835 1630 {lab=b5}
+N 2900 1630 2990 1630 {lab=b5_b}
+N 3190 1615 3190 1655 {lab=b6_b}
+N 3190 1715 3190 1745 {lab=dvss}
+N 3190 1745 3235 1745 {lab=dvss}
+N 3235 1685 3235 1745 {lab=dvss}
+N 3190 1685 3235 1685 {lab=dvss}
+N 3190 1585 3230 1585 {lab=dvdd}
+N 3230 1530 3230 1585 {lab=dvdd}
+N 3190 1530 3230 1530 {lab=dvdd}
+N 3190 1530 3190 1555 {lab=dvdd}
+N 3125 1685 3150 1685 {lab=b6}
+N 3125 1585 3125 1685 {lab=b6}
+N 3125 1585 3150 1585 {lab=b6}
+N 3090 1630 3125 1630 {lab=b6}
+N 3190 1630 3280 1630 {lab=b6_b}
 N 2770 200 2770 222.5 {lab=#net6}
 C {symbols/pnp_05p00x05p00.sym} 1990 190 0 1 {name=Q3
 model=pnp_05p00x05p00
@@ -2289,9 +2289,9 @@ C {lab_wire.sym} 3192.5 682.5 0 0 {name=p168 sig_type=std_logic lab=rbit5top
 C {lab_wire.sym} 3195 762.5 0 0 {name=p169 sig_type=std_logic lab=rbit6top
 
 }
-C {lab_wire.sym} 3495 195 0 0 {name=p131 sig_type=std_logic lab=dvss
+C {lab_wire.sym} 2650 1345 0 0 {name=p131 sig_type=std_logic lab=dvss
 }
-C {symbols/nfet_03v3.sym} 3435 135 0 0 {name=M38
+C {symbols/nfet_03v3.sym} 2590 1285 0 0 {name=M38
 L=0.5u
 W=1u
 nf=1
@@ -2306,7 +2306,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/pfet_03v3.sym} 3435 35 0 0 {name=M39
+C {symbols/pfet_03v3.sym} 2590 1185 0 0 {name=M39
 L=0.5u
 W=3u
 nf=1
@@ -2321,15 +2321,15 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 3490 -20 0 0 {name=p133 sig_type=std_logic lab=dvdd
+C {lab_wire.sym} 2645 1130 0 0 {name=p133 sig_type=std_logic lab=dvdd
 }
-C {lab_wire.sym} 3375 80 0 0 {name=p134 sig_type=std_logic lab=b0
+C {lab_wire.sym} 2530 1230 0 0 {name=p134 sig_type=std_logic lab=b0
 }
-C {lab_wire.sym} 3540 80 0 0 {name=p135 sig_type=std_logic lab=b0_b
+C {lab_wire.sym} 2695 1230 0 0 {name=p135 sig_type=std_logic lab=b0_b
 }
-C {lab_wire.sym} 3725 195 0 0 {name=p136 sig_type=std_logic lab=dvss
+C {lab_wire.sym} 2940 1345 0 0 {name=p136 sig_type=std_logic lab=dvss
 }
-C {symbols/nfet_03v3.sym} 3665 135 0 0 {name=M40
+C {symbols/nfet_03v3.sym} 2880 1285 0 0 {name=M40
 L=0.5u
 W=1u
 nf=1
@@ -2344,7 +2344,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/pfet_03v3.sym} 3665 35 0 0 {name=M41
+C {symbols/pfet_03v3.sym} 2880 1185 0 0 {name=M41
 L=0.5u
 W=3u
 nf=1
@@ -2359,15 +2359,15 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 3720 -20 0 0 {name=p137 sig_type=std_logic lab=dvdd
+C {lab_wire.sym} 2935 1130 0 0 {name=p137 sig_type=std_logic lab=dvdd
 }
-C {lab_wire.sym} 3605 80 0 0 {name=p138 sig_type=std_logic lab=b1
+C {lab_wire.sym} 2820 1230 0 0 {name=p138 sig_type=std_logic lab=b1
 }
-C {lab_wire.sym} 3770 80 0 0 {name=p139 sig_type=std_logic lab=b1_b
+C {lab_wire.sym} 2985 1230 0 0 {name=p139 sig_type=std_logic lab=b1_b
 }
-C {lab_wire.sym} 3960 195 0 0 {name=p140 sig_type=std_logic lab=dvss
+C {lab_wire.sym} 3230 1345 0 0 {name=p140 sig_type=std_logic lab=dvss
 }
-C {symbols/nfet_03v3.sym} 3900 135 0 0 {name=M42
+C {symbols/nfet_03v3.sym} 3170 1285 0 0 {name=M42
 L=0.5u
 W=1u
 nf=1
@@ -2382,7 +2382,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/pfet_03v3.sym} 3900 35 0 0 {name=M43
+C {symbols/pfet_03v3.sym} 3170 1185 0 0 {name=M43
 L=0.5u
 W=3u
 nf=1
@@ -2397,15 +2397,15 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 3955 -20 0 0 {name=p141 sig_type=std_logic lab=dvdd
+C {lab_wire.sym} 3225 1130 0 0 {name=p141 sig_type=std_logic lab=dvdd
 }
-C {lab_wire.sym} 3840 80 0 0 {name=p142 sig_type=std_logic lab=b2
+C {lab_wire.sym} 3110 1230 0 0 {name=p142 sig_type=std_logic lab=b2
 }
-C {lab_wire.sym} 4005 80 0 0 {name=p143 sig_type=std_logic lab=b2_b
+C {lab_wire.sym} 3275 1230 0 0 {name=p143 sig_type=std_logic lab=b2_b
 }
-C {lab_wire.sym} 4180 195 0 0 {name=p144 sig_type=std_logic lab=dvss
+C {lab_wire.sym} 3520 1345 0 0 {name=p144 sig_type=std_logic lab=dvss
 }
-C {symbols/nfet_03v3.sym} 4120 135 0 0 {name=M44
+C {symbols/nfet_03v3.sym} 3460 1285 0 0 {name=M44
 L=0.5u
 W=1u
 nf=1
@@ -2420,7 +2420,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/pfet_03v3.sym} 4120 35 0 0 {name=M45
+C {symbols/pfet_03v3.sym} 3460 1185 0 0 {name=M45
 L=0.5u
 W=3u
 nf=1
@@ -2435,14 +2435,14 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 4175 -20 0 0 {name=p145 sig_type=std_logic lab=dvdd
+C {lab_wire.sym} 3515 1130 0 0 {name=p145 sig_type=std_logic lab=dvdd
 }
-C {lab_wire.sym} 4060 80 0 0 {name=p146 sig_type=std_logic lab=b3
+C {lab_wire.sym} 3400 1230 0 0 {name=p146 sig_type=std_logic lab=b3
 }
-C {lab_wire.sym} 4225 80 0 0 {name=p147 sig_type=std_logic lab=b3_b}
-C {lab_wire.sym} 4400 195 0 0 {name=p148 sig_type=std_logic lab=dvss
+C {lab_wire.sym} 3565 1230 0 0 {name=p147 sig_type=std_logic lab=b3_b}
+C {lab_wire.sym} 2650 1745 0 0 {name=p148 sig_type=std_logic lab=dvss
 }
-C {symbols/nfet_03v3.sym} 4340 135 0 0 {name=M46
+C {symbols/nfet_03v3.sym} 2590 1685 0 0 {name=M46
 L=0.5u
 W=1u
 nf=1
@@ -2457,7 +2457,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/pfet_03v3.sym} 4340 35 0 0 {name=M47
+C {symbols/pfet_03v3.sym} 2590 1585 0 0 {name=M47
 L=0.5u
 W=3u
 nf=1
@@ -2472,13 +2472,13 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 4395 -20 0 0 {name=p149 sig_type=std_logic lab=dvdd
+C {lab_wire.sym} 2645 1530 0 0 {name=p149 sig_type=std_logic lab=dvdd
 }
-C {lab_wire.sym} 4280 80 0 0 {name=p150 sig_type=std_logic lab=b4}
-C {lab_wire.sym} 4445 80 0 0 {name=p151 sig_type=std_logic lab=b4_b}
-C {lab_wire.sym} 4610 195 0 0 {name=p152 sig_type=std_logic lab=dvss
+C {lab_wire.sym} 2530 1630 0 0 {name=p150 sig_type=std_logic lab=b4}
+C {lab_wire.sym} 2695 1630 0 0 {name=p151 sig_type=std_logic lab=b4_b}
+C {lab_wire.sym} 2940 1745 0 0 {name=p152 sig_type=std_logic lab=dvss
 }
-C {symbols/nfet_03v3.sym} 4550 135 0 0 {name=M48
+C {symbols/nfet_03v3.sym} 2880 1685 0 0 {name=M48
 L=0.5u
 W=1u
 nf=1
@@ -2493,7 +2493,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/pfet_03v3.sym} 4550 35 0 0 {name=M49
+C {symbols/pfet_03v3.sym} 2880 1585 0 0 {name=M49
 L=0.5u
 W=3u
 nf=1
@@ -2508,13 +2508,13 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 4605 -20 0 0 {name=p153 sig_type=std_logic lab=dvdd
+C {lab_wire.sym} 2935 1530 0 0 {name=p153 sig_type=std_logic lab=dvdd
 }
-C {lab_wire.sym} 4490 80 0 0 {name=p154 sig_type=std_logic lab=b5}
-C {lab_wire.sym} 4655 80 0 0 {name=p155 sig_type=std_logic lab=b5_b}
-C {lab_wire.sym} 4832.5 195 0 0 {name=p156 sig_type=std_logic lab=dvss
+C {lab_wire.sym} 2820 1630 0 0 {name=p154 sig_type=std_logic lab=b5}
+C {lab_wire.sym} 2985 1630 0 0 {name=p155 sig_type=std_logic lab=b5_b}
+C {lab_wire.sym} 3230 1745 0 0 {name=p156 sig_type=std_logic lab=dvss
 }
-C {symbols/nfet_03v3.sym} 4772.5 135 0 0 {name=M50
+C {symbols/nfet_03v3.sym} 3170 1685 0 0 {name=M50
 L=0.5u
 W=1u
 nf=1
@@ -2529,7 +2529,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/pfet_03v3.sym} 4772.5 35 0 0 {name=M51
+C {symbols/pfet_03v3.sym} 3170 1585 0 0 {name=M51
 L=0.5u
 W=3u
 nf=1
@@ -2544,10 +2544,10 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 4827.5 -20 0 0 {name=p157 sig_type=std_logic lab=dvdd
+C {lab_wire.sym} 3225 1530 0 0 {name=p157 sig_type=std_logic lab=dvdd
 }
-C {lab_wire.sym} 4712.5 80 0 0 {name=p158 sig_type=std_logic lab=b6}
-C {lab_wire.sym} 4877.5 80 0 0 {name=p159 sig_type=std_logic lab=b6_b}
+C {lab_wire.sym} 3110 1630 0 0 {name=p158 sig_type=std_logic lab=b6}
+C {lab_wire.sym} 3275 1630 0 0 {name=p159 sig_type=std_logic lab=b6_b}
 C {lab_wire.sym} 2725 200 0 0 {name=p116 sig_type=std_logic lab=vq3
 }
 C {iopin.sym} 3010 312.5 0 1 {name=p132 lab=b0
@@ -2564,9 +2564,9 @@ C {iopin.sym} 3000 722.5 0 1 {name=p174 lab=b5
 }
 C {iopin.sym} 3010 802.5 0 1 {name=p175 lab=b6
 }
-C {iopin.sym} 3455 192.5 0 1 {name=p176 lab=dvss
+C {iopin.sym} 2610 1342.5 0 1 {name=p176 lab=dvss
 }
-C {iopin.sym} 3455 -17.5 0 1 {name=p177 lab=dvdd
+C {iopin.sym} 2610 1132.5 0 1 {name=p177 lab=dvdd
 }
 C {lab_wire.sym} 3360 312.5 0 0 {name=p178 sig_type=std_logic lab=b0_b
 }
@@ -2576,20 +2576,324 @@ C {lab_wire.sym} 3360 642.5 0 0 {name=p180 sig_type=std_logic lab=b4_b
 }
 C {lab_wire.sym} 3360 802.5 0 0 {name=p181 sig_type=std_logic lab=b6_b
 }
+T {Trim input buffers: b0 - b6} 2550 1090 0 0 0.4 0.4 {}
 
-C {code_shown.sym} 5100 1100 0 0 {name=LAYOUT_MATCHING_DUMMIES only_toplevel=false value="* Explicit layout perimeter/empty-site dummies. All D/G/S/B terminals
-* connect to the quiet body rail; no dummy gate or diffusion is floating.
-XDUM_M1 avdd avdd avdd avdd pfet_05v0 W=16.75u L=2u m=22
-XDUM_M11 avdd avdd avdd avdd pfet_05v0 W=16.42u L=4u m=34
-XDUM_MINP avdd avdd avdd avdd pfet_05v0 W=54.89u L=4u m=29
-XDUM_PCAS1 avdd avdd avdd avdd pfet_05v0 W=22.21u L=8u m=20
-XDUM_PLOAD1 avdd avdd avdd avdd pfet_05v0 W=20.76u L=4u m=20
-XDUM_MSINK1 avss avss avss avss nfet_05v0 W=16.34u L=8u m=20
-XDUM_PREF avdd avdd avdd avdd pfet_05v0 W=18.75u L=8u m=29
-XDUM_M3 avss avss avss avss nfet_05v0 W=14.6u L=4u m=14
-XDUM_MFOLD1 avss avss avss avss nfet_05v0 W=18.49u L=6u m=10
-XDUM_M16 avss avss avss avss nfet_05v0 W=7.55u L=4u m=10
-XDUM_MPSINK avdd avdd avdd avdd pfet_05v0 W=18.95u L=8u m=23
-XDUM_MPFOLD avdd avdd avdd avdd pfet_05v0 W=18.99u L=8u m=20
-XDUM_VBNSINK avss avss avss avss nfet_05v0 W=12.31u L=8u m=10
-"}
+T {LAYOUT MATCHING DUMMIES - 261 units} 4100 -740 0 0 0.5 0.5 {}
+T {PMOS dummy banks: 197 units; all D/G/S/B terminals tied to avdd} 4100 -610 0 0 0.4 0.4 {}
+B 4 4100 -500 4560 -220 {fill=false}
+T {Matches M1 / M2 / M5} 4120 -480 0 0 0.3 0.3 {}
+N 4270 -330 4130 -330 {lab=avdd}
+N 4130 -330 4130 -400 {lab=avdd}
+N 4130 -400 4310 -400 {lab=avdd}
+N 4310 -400 4520 -400 {lab=avdd}
+N 4310 -400 4310 -360 {lab=avdd}
+N 4520 -400 4520 -270 {lab=avdd}
+N 4310 -330 4310 -300 {lab=avdd}
+N 4310 -300 4310 -270 {lab=avdd}
+N 4310 -270 4520 -270 {lab=avdd}
+C {lab_wire.sym} 4520 -400 0 0 {name=p_DUM_M1_rail sig_type=std_logic lab=avdd}
+C {symbols/pfet_05v0.sym} 4290 -330 0 0 {name=DUM_M1
+L=2u
+W=16.75u
+nf=1
+m=22
+model=pfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+B 4 4580 -500 5040 -220 {fill=false}
+T {Matches M11 / M12 / M13} 4600 -480 0 0 0.3 0.3 {}
+N 4750 -330 4610 -330 {lab=avdd}
+N 4610 -330 4610 -400 {lab=avdd}
+N 4610 -400 4790 -400 {lab=avdd}
+N 4790 -400 5000 -400 {lab=avdd}
+N 4790 -400 4790 -360 {lab=avdd}
+N 5000 -400 5000 -270 {lab=avdd}
+N 4790 -330 4790 -300 {lab=avdd}
+N 4790 -300 4790 -270 {lab=avdd}
+N 4790 -270 5000 -270 {lab=avdd}
+C {lab_wire.sym} 5000 -400 0 0 {name=p_DUM_M11_rail sig_type=std_logic lab=avdd}
+C {symbols/pfet_05v0.sym} 4770 -330 0 0 {name=DUM_M11
+L=4u
+W=16.42u
+nf=1
+m=34
+model=pfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+B 4 5060 -500 5520 -220 {fill=false}
+T {Matches MINP / MINN} 5080 -480 0 0 0.3 0.3 {}
+N 5230 -330 5090 -330 {lab=avdd}
+N 5090 -330 5090 -400 {lab=avdd}
+N 5090 -400 5270 -400 {lab=avdd}
+N 5270 -400 5480 -400 {lab=avdd}
+N 5270 -400 5270 -360 {lab=avdd}
+N 5480 -400 5480 -270 {lab=avdd}
+N 5270 -330 5270 -300 {lab=avdd}
+N 5270 -300 5270 -270 {lab=avdd}
+N 5270 -270 5480 -270 {lab=avdd}
+C {lab_wire.sym} 5480 -400 0 0 {name=p_DUM_MINP_rail sig_type=std_logic lab=avdd}
+C {symbols/pfet_05v0.sym} 5250 -330 0 0 {name=DUM_MINP
+L=4u
+W=54.89u
+nf=1
+m=29
+model=pfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+B 4 5540 -500 6000 -220 {fill=false}
+T {Matches PCAS1 / PCAS2} 5560 -480 0 0 0.3 0.3 {}
+N 5710 -330 5570 -330 {lab=avdd}
+N 5570 -330 5570 -400 {lab=avdd}
+N 5570 -400 5750 -400 {lab=avdd}
+N 5750 -400 5960 -400 {lab=avdd}
+N 5750 -400 5750 -360 {lab=avdd}
+N 5960 -400 5960 -270 {lab=avdd}
+N 5750 -330 5750 -300 {lab=avdd}
+N 5750 -300 5750 -270 {lab=avdd}
+N 5750 -270 5960 -270 {lab=avdd}
+C {lab_wire.sym} 5960 -400 0 0 {name=p_DUM_PCAS1_rail sig_type=std_logic lab=avdd}
+C {symbols/pfet_05v0.sym} 5730 -330 0 0 {name=DUM_PCAS1
+L=8u
+W=22.21u
+nf=1
+m=20
+model=pfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+B 4 4100 -180 4560 100 {fill=false}
+T {Matches PLOAD1 / PLOAD2} 4120 -160 0 0 0.3 0.3 {}
+N 4270 -10 4130 -10 {lab=avdd}
+N 4130 -10 4130 -80 {lab=avdd}
+N 4130 -80 4310 -80 {lab=avdd}
+N 4310 -80 4520 -80 {lab=avdd}
+N 4310 -80 4310 -40 {lab=avdd}
+N 4520 -80 4520 50 {lab=avdd}
+N 4310 -10 4310 20 {lab=avdd}
+N 4310 20 4310 50 {lab=avdd}
+N 4310 50 4520 50 {lab=avdd}
+C {lab_wire.sym} 4520 -80 0 0 {name=p_DUM_PLOAD1_rail sig_type=std_logic lab=avdd}
+C {symbols/pfet_05v0.sym} 4290 -10 0 0 {name=DUM_PLOAD1
+L=4u
+W=20.76u
+nf=1
+m=20
+model=pfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+B 4 4580 -180 5040 100 {fill=false}
+T {Matches PREF / PRMIR} 4600 -160 0 0 0.3 0.3 {}
+N 4750 -10 4610 -10 {lab=avdd}
+N 4610 -10 4610 -80 {lab=avdd}
+N 4610 -80 4790 -80 {lab=avdd}
+N 4790 -80 5000 -80 {lab=avdd}
+N 4790 -80 4790 -40 {lab=avdd}
+N 5000 -80 5000 50 {lab=avdd}
+N 4790 -10 4790 20 {lab=avdd}
+N 4790 20 4790 50 {lab=avdd}
+N 4790 50 5000 50 {lab=avdd}
+C {lab_wire.sym} 5000 -80 0 0 {name=p_DUM_PREF_rail sig_type=std_logic lab=avdd}
+C {symbols/pfet_05v0.sym} 4770 -10 0 0 {name=DUM_PREF
+L=8u
+W=18.75u
+nf=1
+m=29
+model=pfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+B 4 5060 -180 5520 100 {fill=false}
+T {Matches MPSINK} 5080 -160 0 0 0.3 0.3 {}
+N 5230 -10 5090 -10 {lab=avdd}
+N 5090 -10 5090 -80 {lab=avdd}
+N 5090 -80 5270 -80 {lab=avdd}
+N 5270 -80 5480 -80 {lab=avdd}
+N 5270 -80 5270 -40 {lab=avdd}
+N 5480 -80 5480 50 {lab=avdd}
+N 5270 -10 5270 20 {lab=avdd}
+N 5270 20 5270 50 {lab=avdd}
+N 5270 50 5480 50 {lab=avdd}
+C {lab_wire.sym} 5480 -80 0 0 {name=p_DUM_MPSINK_rail sig_type=std_logic lab=avdd}
+C {symbols/pfet_05v0.sym} 5250 -10 0 0 {name=DUM_MPSINK
+L=8u
+W=18.95u
+nf=1
+m=23
+model=pfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+B 4 5540 -180 6000 100 {fill=false}
+T {Matches MPFOLD} 5560 -160 0 0 0.3 0.3 {}
+N 5710 -10 5570 -10 {lab=avdd}
+N 5570 -10 5570 -80 {lab=avdd}
+N 5570 -80 5750 -80 {lab=avdd}
+N 5750 -80 5960 -80 {lab=avdd}
+N 5750 -80 5750 -40 {lab=avdd}
+N 5960 -80 5960 50 {lab=avdd}
+N 5750 -10 5750 20 {lab=avdd}
+N 5750 20 5750 50 {lab=avdd}
+N 5750 50 5960 50 {lab=avdd}
+C {lab_wire.sym} 5960 -80 0 0 {name=p_DUM_MPFOLD_rail sig_type=std_logic lab=avdd}
+C {symbols/pfet_05v0.sym} 5730 -10 0 0 {name=DUM_MPFOLD
+L=8u
+W=18.99u
+nf=1
+m=20
+model=pfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+T {NMOS dummy banks: 64 units; all D/G/S/B terminals tied to avss} 4100 220 0 0 0.4 0.4 {}
+B 4 4100 350 4560 630 {fill=false}
+T {Matches MSINK1 / MSINK2} 4120 370 0 0 0.3 0.3 {}
+N 4270 520 4130 520 {lab=avss}
+N 4130 520 4130 450 {lab=avss}
+N 4130 450 4310 450 {lab=avss}
+N 4310 450 4520 450 {lab=avss}
+N 4310 450 4310 490 {lab=avss}
+N 4520 450 4520 580 {lab=avss}
+N 4310 520 4310 550 {lab=avss}
+N 4310 550 4310 580 {lab=avss}
+N 4310 580 4520 580 {lab=avss}
+C {lab_wire.sym} 4520 450 0 0 {name=p_DUM_MSINK1_rail sig_type=std_logic lab=avss}
+C {symbols/nfet_05v0.sym} 4290 520 0 0 {name=DUM_MSINK1
+L=8u
+W=16.34u
+nf=1
+m=20
+model=nfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+B 4 4580 350 5040 630 {fill=false}
+T {Matches M3 / M4} 4600 370 0 0 0.3 0.3 {}
+N 4750 520 4610 520 {lab=avss}
+N 4610 520 4610 450 {lab=avss}
+N 4610 450 4790 450 {lab=avss}
+N 4790 450 5000 450 {lab=avss}
+N 4790 450 4790 490 {lab=avss}
+N 5000 450 5000 580 {lab=avss}
+N 4790 520 4790 550 {lab=avss}
+N 4790 550 4790 580 {lab=avss}
+N 4790 580 5000 580 {lab=avss}
+C {lab_wire.sym} 5000 450 0 0 {name=p_DUM_M3_rail sig_type=std_logic lab=avss}
+C {symbols/nfet_05v0.sym} 4770 520 0 0 {name=DUM_M3
+L=4u
+W=14.6u
+nf=1
+m=14
+model=nfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+B 4 5060 350 5520 630 {fill=false}
+T {Matches MFOLD1 / MFOLD2} 5080 370 0 0 0.3 0.3 {}
+N 5230 520 5090 520 {lab=avss}
+N 5090 520 5090 450 {lab=avss}
+N 5090 450 5270 450 {lab=avss}
+N 5270 450 5480 450 {lab=avss}
+N 5270 450 5270 490 {lab=avss}
+N 5480 450 5480 580 {lab=avss}
+N 5270 520 5270 550 {lab=avss}
+N 5270 550 5270 580 {lab=avss}
+N 5270 580 5480 580 {lab=avss}
+C {lab_wire.sym} 5480 450 0 0 {name=p_DUM_MFOLD1_rail sig_type=std_logic lab=avss}
+C {symbols/nfet_05v0.sym} 5250 520 0 0 {name=DUM_MFOLD1
+L=6u
+W=18.49u
+nf=1
+m=10
+model=nfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+B 4 5540 350 6000 630 {fill=false}
+T {Matches M16 / M18} 5560 370 0 0 0.3 0.3 {}
+N 5710 520 5570 520 {lab=avss}
+N 5570 520 5570 450 {lab=avss}
+N 5570 450 5750 450 {lab=avss}
+N 5750 450 5960 450 {lab=avss}
+N 5750 450 5750 490 {lab=avss}
+N 5960 450 5960 580 {lab=avss}
+N 5750 520 5750 550 {lab=avss}
+N 5750 550 5750 580 {lab=avss}
+N 5750 580 5960 580 {lab=avss}
+C {lab_wire.sym} 5960 450 0 0 {name=p_DUM_M16_rail sig_type=std_logic lab=avss}
+C {symbols/nfet_05v0.sym} 5730 520 0 0 {name=DUM_M16
+L=4u
+W=7.55u
+nf=1
+m=10
+model=nfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+B 4 4100 670 4560 950 {fill=false}
+T {Matches VBNSINK} 4120 690 0 0 0.3 0.3 {}
+N 4270 840 4130 840 {lab=avss}
+N 4130 840 4130 770 {lab=avss}
+N 4130 770 4310 770 {lab=avss}
+N 4310 770 4520 770 {lab=avss}
+N 4310 770 4310 810 {lab=avss}
+N 4520 770 4520 900 {lab=avss}
+N 4310 840 4310 870 {lab=avss}
+N 4310 870 4310 900 {lab=avss}
+N 4310 900 4520 900 {lab=avss}
+C {lab_wire.sym} 4520 770 0 0 {name=p_DUM_VBNSINK_rail sig_type=std_logic lab=avss}
+C {symbols/nfet_05v0.sym} 4290 840 0 0 {name=DUM_VBNSINK
+L=8u
+W=12.31u
+nf=1
+m=10
+model=nfet_05v0
+spiceprefix=X
+text_size_4=0.28
+text_size_5=0.3
+text_size_9=0.32
+format="@spiceprefix@name @pinlist @model W=@W L=@L m=@m"
+}
+T {Each m represents identical physical units. W and L are per-unit sizes.} 4600 740 0 0 0.35 0.35 {}
+T {All dummy gates, diffusions and bodies connect to the quiet body rail.} 4600 800 0 0 0.35 0.35 {}
+T {Schematic arrangement is for readability; see layout for array placement.} 4600 860 0 0 0.35 0.35 {}
+T {Native PDK transistor symbols; no dummy SPICE code block.} 4100 1090 0 0 0.35 0.35 {}

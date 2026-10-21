@@ -22,6 +22,30 @@ The PSRR revision separates physical routing improvements from extraction
 corrections. Raw Magic RC and capacitance-conserving RCC results are both
 retained; the latter is an approximation, not a foundry signoff extraction.
 
+Native schematic symbols
+------------------------
+Bandgap_Core_Res.sch now uses 13 editable GF180 PDK transistor symbols for
+all 261 dummy units. Their D/G/S/B terminals have explicit quiet-rail wiring.
+The dummy symbols occupy a labeled section to the right of the functional
+circuit. The trim buffers are arranged in two rows in the actual source.
+The dummy instance format emits the original W/L/m-only SPICE parameter
+list, preserving the PDK defaults used by the former code block; it does
+not add different diffusion-area, perimeter, or series-resistance values.
+
+release/schematic-symbols/ contains a fresh core netlist, independently
+generated LVS reference, complete KLayout LVS log/database, and source-
+equivalence evidence. All 533 units are retained; no dummies are filtered.
+The full core LVS passes. GDS is unchanged, so the existing DRC result still
+applies. The original simulation inputs and numerical results are retained.
+mirror_bias/input_manifest.json retains their original generation-source
+hash and records the equivalent current source hash for reproducible reruns.
+
+After selecting GF180MCU-D, from the repository root:
+  BANDGAP_LAYOUT_BUILD=layout/build/native-dummy-symbols python layout/scripts/verify_schematic_representation.py
+  python docs/scripts/render_schematics.py
+The second command uses the published evidence; to render a newly checked
+source, add --evidence layout/build/native-dummy-symbols.
+
 STATUS: the complete, unedited GF180MCU-D KLayout DRC deck reports zero
 violations and LVS matches. This is NOT a claim that every uncoded foundry
 recommendation, analog specification, or Chipalooza integration requirement

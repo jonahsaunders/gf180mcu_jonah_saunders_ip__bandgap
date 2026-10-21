@@ -1,0 +1,5 @@
+PASS: closed loop-probe matches all 86 core statements; only M3/N2 gates are cut and C1 stays on MAIN e
+PASS: fresh checkout: all ten core symbols resolve; circuits match
+PASS: moved checkout: all ten core symbols resolve; circuits match
+PASS: configured then moved: all ten core symbols resolve; circuits match
+PASS: 40 Xschem netlists; no simulations performed

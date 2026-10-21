@@ -1,314 +1,627 @@
-<!-- Source: Bandgap_Core_Res.sch; SHA-256: cedc57eff17583c7ccc3fb25ccf7114d85389c148d365d7b38a732b10827ac09. GF180 symbol geometry: Copyright 2022 GlobalFoundries PDK Authors; Apache-2.0; see ../../LICENSE-GF180.txt. -->
-<svg xmlns="http://www.w3.org/2000/svg" width="1592" height="1300" viewBox="0 0 1592 1300" role="img" aria-labelledby="title description">
-  <title id="title">Trim-inclusive bandgap: dummy devices — sheet 2 of 2</title>
-  <desc id="description">All 13 netlisted dummy banks. 197 PMOS units have drain, gate, source and body tied to AVDD; 64 NMOS units have all four terminals tied to AVSS. Each symbol represents m identical devices. Sizes are per device.</desc>
-  <rect width="1592" height="1300" fill="white" />
-  <text x="48" y="63" font-size="32" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">TRIM-INCLUSIVE BANDGAP · DUMMY DEVICES</text>
-  <text x="48" y="101" font-size="21" fill="#546370" font-family="Arial, Helvetica, sans-serif">13 banks  /  261 units  ·  Same source and nets as sheet 1</text>
-  <text x="1544" y="63" font-size="27" fill="#172533" font-family="Arial, Helvetica, sans-serif" text-anchor="end">2 / 2</text>
-  <path d="M48 128 H1544" stroke="#bec9d1" />
-  <text x="48" y="174" font-size="23" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">PMOS · pfet_05v0 · 197 units · All terminals tied to AVDD</text>
-  <g transform="translate(48 196)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_M1</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches M1 / M2 / M5</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
-      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
-      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 22</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 16.75 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 2 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
+<!-- Direct Xschem export: Bandgap_Core_Res.sch; SHA-256: bed8b6dbb6f63facc51432769c2d601a1e830204d75cbdd8ee5941d311a751b3. GF180 symbol geometry: Copyright 2022 GlobalFoundries PDK Authors; Apache-2.0; see ../../LICENSE-GF180.txt. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1236" height="1215" viewBox="0 0 2060 2025.1" role="img" aria-labelledby="title description">
+  <title id="title">TRIM-INCLUSIVE BANDGAP · NATIVE DUMMY SYMBOLS</title>
+  <desc id="description">Direct Xschem export from Bandgap_Core_Res.sch. 13 native PDK symbols / 261 units · Explicit D/G/S/B supply ties</desc>
+  <rect width="2060" height="2025.1" fill="white" />
+  <text x="53.559999999999995" y="47.38" font-size="28.84" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">TRIM-INCLUSIVE BANDGAP · NATIVE DUMMY SYMBOLS</text>
+  <text x="53.559999999999995" y="80.34" font-size="18.54" fill="#546370" font-family="Arial, Helvetica, sans-serif">13 native PDK symbols / 261 units · Explicit D/G/S/B supply ties</text>
+  <text x="2006.44" y="47.38" font-size="24.72" fill="#172533" font-family="Arial, Helvetica, sans-serif" text-anchor="end">2 / 2</text>
+  <path d="M53.56 100.94 H2006.44" stroke="#bec9d1" />
+  <g transform="translate(0 113.3)">
+    <style type="text/css">
+.l0{
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l1{
+  fill: #225c86;
+  stroke: #225c86;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l2{
+  fill: #aaaaaa; fill-opacity: 0.2;
+  stroke: #aaaaaa;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l3{
+  fill: #172533; fill-opacity: 0.5;
+  stroke: #172533;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l4{
+  fill: #172533;
+  stroke: #172533;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l5{
+  fill: #225c86;
+  stroke: #225c86;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l6{
+  fill: #0066cc; fill-opacity: 0.5;
+  stroke: #0066cc;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l7{
+  fill: #546370; fill-opacity: 0.5;
+  stroke: #546370;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l8{
+  fill: #546370; fill-opacity: 0.5;
+  stroke: #546370;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l9{
+  fill: #00aaaa; fill-opacity: 0.5;
+  stroke: #00aaaa;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l10{
+  fill: #880088;
+  stroke: #880088;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l11{
+  fill: #00ff00; fill-opacity: 0.5;
+  stroke: #00ff00;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l12{
+  fill: #0000cc; fill-opacity: 0.5;
+  stroke: #0000cc;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l13{
+  fill: #546370; fill-opacity: 0.5;
+  stroke: #546370;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l14{
+  fill: #557755; fill-opacity: 0.2;
+  stroke: #557755;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l15{
+  fill: #aa2222; fill-opacity: 0.5;
+  stroke: #aa2222;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l16{
+  fill: #7ccc40; fill-opacity: 0.5;
+  stroke: #7ccc40;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l17{
+  fill: #00ffcc; fill-opacity: 0.2;
+  stroke: #00ffcc;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l18{
+  fill: #ce0097; fill-opacity: 0.5;
+  stroke: #ce0097;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l19{
+  fill: #d2d46b; fill-opacity: 0.2;
+  stroke: #d2d46b;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l20{
+  fill: #ef6158; fill-opacity: 0.2;
+  stroke: #ef6158;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+.l21{
+  fill: #fdb200; fill-opacity: 0.2;
+  stroke: #fdb200;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 1.5;
+}
+text {font-family: Arial;}
+</style>
+    <rect class="l0" x="0" y="0" width="2060" height="1850" />
+    <path class="l4" style="fill:none;" d="M100 170L560 170L560 450L100 450L100 170z" />
+    <path class="l4" style="fill:none;" d="M580 170L1040 170L1040 450L580 450L580 170z" />
+    <path class="l4" style="fill:none;" d="M1060 170L1520 170L1520 450L1060 450L1060 170z" />
+    <path class="l4" style="fill:none;" d="M1540 170L2000 170L2000 450L1540 450L1540 170z" />
+    <path class="l4" style="fill:none;" d="M100 490L560 490L560 770L100 770L100 490z" />
+    <path class="l4" style="fill:none;" d="M580 490L1040 490L1040 770L580 770L580 490z" />
+    <path class="l4" style="fill:none;" d="M1060 490L1520 490L1520 770L1060 770L1060 490z" />
+    <path class="l4" style="fill:none;" d="M1540 490L2000 490L2000 770L1540 770L1540 490z" />
+    <path class="l4" style="fill:none;" d="M100 1020L560 1020L560 1300L100 1300L100 1020z" />
+    <path class="l4" style="fill:none;" d="M580 1020L1040 1020L1040 1300L580 1300L580 1020z" />
+    <path class="l4" style="fill:none;" d="M1060 1020L1520 1020L1520 1300L1060 1300L1060 1020z" />
+    <path class="l4" style="fill:none;" d="M1540 1020L2000 1020L2000 1300L1540 1300L1540 1020z" />
+    <path class="l4" style="fill:none;" d="M100 1340L560 1340L560 1620L100 1620L100 1340z" />
+    <path class="l4" d="M297.5 317.5L297.5 362.5" />
+    <path class="l4" d="M310 310L310 322.5" />
+    <path class="l4" d="M310 357.5L310 370" />
+    <path class="l4" d="M287.5 325L287.5 355" />
+    <path class="l4" d="M297.5 357.5L310 357.5" />
+    <path class="l4" d="M302.5 322.5L310 322.5" />
+    <path class="l4" d="M270 340L277.5 340" />
+    <path class="l4" d="M302.5 320L297.5 322.5L302.5 325L302.5 320" />
+    <circle class="l4" cx="282.5" cy="340" r="5" style="fill:none;" />
+    <path class="l4" d="M777.5 317.5L777.5 362.5" />
+    <path class="l4" d="M790 310L790 322.5" />
+    <path class="l4" d="M790 357.5L790 370" />
+    <path class="l4" d="M767.5 325L767.5 355" />
+    <path class="l4" d="M777.5 357.5L790 357.5" />
+    <path class="l4" d="M782.5 322.5L790 322.5" />
+    <path class="l4" d="M750 340L757.5 340" />
+    <path class="l4" d="M782.5 320L777.5 322.5L782.5 325L782.5 320" />
+    <circle class="l4" cx="762.5" cy="340" r="5" style="fill:none;" />
+    <path class="l4" d="M1257.5 317.5L1257.5 362.5" />
+    <path class="l4" d="M1270 310L1270 322.5" />
+    <path class="l4" d="M1270 357.5L1270 370" />
+    <path class="l4" d="M1247.5 325L1247.5 355" />
+    <path class="l4" d="M1257.5 357.5L1270 357.5" />
+    <path class="l4" d="M1262.5 322.5L1270 322.5" />
+    <path class="l4" d="M1230 340L1237.5 340" />
+    <path class="l4" d="M1262.5 320L1257.5 322.5L1262.5 325L1262.5 320" />
+    <circle class="l4" cx="1242.5" cy="340" r="5" style="fill:none;" />
+    <path class="l4" d="M1737.5 317.5L1737.5 362.5" />
+    <path class="l4" d="M1750 310L1750 322.5" />
+    <path class="l4" d="M1750 357.5L1750 370" />
+    <path class="l4" d="M1727.5 325L1727.5 355" />
+    <path class="l4" d="M1737.5 357.5L1750 357.5" />
+    <path class="l4" d="M1742.5 322.5L1750 322.5" />
+    <path class="l4" d="M1710 340L1717.5 340" />
+    <path class="l4" d="M1742.5 320L1737.5 322.5L1742.5 325L1742.5 320" />
+    <circle class="l4" cx="1722.5" cy="340" r="5" style="fill:none;" />
+    <path class="l4" d="M297.5 637.5L297.5 682.5" />
+    <path class="l4" d="M310 630L310 642.5" />
+    <path class="l4" d="M310 677.5L310 690" />
+    <path class="l4" d="M287.5 645L287.5 675" />
+    <path class="l4" d="M297.5 677.5L310 677.5" />
+    <path class="l4" d="M302.5 642.5L310 642.5" />
+    <path class="l4" d="M270 660L277.5 660" />
+    <path class="l4" d="M302.5 640L297.5 642.5L302.5 645L302.5 640" />
+    <circle class="l4" cx="282.5" cy="660" r="5" style="fill:none;" />
+    <path class="l4" d="M777.5 637.5L777.5 682.5" />
+    <path class="l4" d="M790 630L790 642.5" />
+    <path class="l4" d="M790 677.5L790 690" />
+    <path class="l4" d="M767.5 645L767.5 675" />
+    <path class="l4" d="M777.5 677.5L790 677.5" />
+    <path class="l4" d="M782.5 642.5L790 642.5" />
+    <path class="l4" d="M750 660L757.5 660" />
+    <path class="l4" d="M782.5 640L777.5 642.5L782.5 645L782.5 640" />
+    <circle class="l4" cx="762.5" cy="660" r="5" style="fill:none;" />
+    <path class="l4" d="M1257.5 637.5L1257.5 682.5" />
+    <path class="l4" d="M1270 630L1270 642.5" />
+    <path class="l4" d="M1270 677.5L1270 690" />
+    <path class="l4" d="M1247.5 645L1247.5 675" />
+    <path class="l4" d="M1257.5 677.5L1270 677.5" />
+    <path class="l4" d="M1262.5 642.5L1270 642.5" />
+    <path class="l4" d="M1230 660L1237.5 660" />
+    <path class="l4" d="M1262.5 640L1257.5 642.5L1262.5 645L1262.5 640" />
+    <circle class="l4" cx="1242.5" cy="660" r="5" style="fill:none;" />
+    <path class="l4" d="M1737.5 637.5L1737.5 682.5" />
+    <path class="l4" d="M1750 630L1750 642.5" />
+    <path class="l4" d="M1750 677.5L1750 690" />
+    <path class="l4" d="M1727.5 645L1727.5 675" />
+    <path class="l4" d="M1737.5 677.5L1750 677.5" />
+    <path class="l4" d="M1742.5 642.5L1750 642.5" />
+    <path class="l4" d="M1710 660L1717.5 660" />
+    <path class="l4" d="M1742.5 640L1737.5 642.5L1742.5 645L1742.5 640" />
+    <circle class="l4" cx="1722.5" cy="660" r="5" style="fill:none;" />
+    <path class="l4" d="M297.5 1167.5L297.5 1212.5" />
+    <path class="l4" d="M270 1190L287.5 1190" />
+    <path class="l4" d="M310 1160L310 1172.5" />
+    <path class="l4" d="M310 1207.5L310 1220" />
+    <path class="l4" d="M287.5 1175L287.5 1205" />
+    <path class="l4" d="M297.5 1172.5L310 1172.5" />
+    <path class="l4" d="M297.5 1207.5L305 1207.5" />
+    <path class="l4" d="M305 1205L310 1207.5L305 1210L305 1205" />
+    <path class="l4" d="M777.5 1167.5L777.5 1212.5" />
+    <path class="l4" d="M750 1190L767.5 1190" />
+    <path class="l4" d="M790 1160L790 1172.5" />
+    <path class="l4" d="M790 1207.5L790 1220" />
+    <path class="l4" d="M767.5 1175L767.5 1205" />
+    <path class="l4" d="M777.5 1172.5L790 1172.5" />
+    <path class="l4" d="M777.5 1207.5L785 1207.5" />
+    <path class="l4" d="M785 1205L790 1207.5L785 1210L785 1205" />
+    <path class="l4" d="M1257.5 1167.5L1257.5 1212.5" />
+    <path class="l4" d="M1230 1190L1247.5 1190" />
+    <path class="l4" d="M1270 1160L1270 1172.5" />
+    <path class="l4" d="M1270 1207.5L1270 1220" />
+    <path class="l4" d="M1247.5 1175L1247.5 1205" />
+    <path class="l4" d="M1257.5 1172.5L1270 1172.5" />
+    <path class="l4" d="M1257.5 1207.5L1265 1207.5" />
+    <path class="l4" d="M1265 1205L1270 1207.5L1265 1210L1265 1205" />
+    <path class="l4" d="M1737.5 1167.5L1737.5 1212.5" />
+    <path class="l4" d="M1710 1190L1727.5 1190" />
+    <path class="l4" d="M1750 1160L1750 1172.5" />
+    <path class="l4" d="M1750 1207.5L1750 1220" />
+    <path class="l4" d="M1727.5 1175L1727.5 1205" />
+    <path class="l4" d="M1737.5 1172.5L1750 1172.5" />
+    <path class="l4" d="M1737.5 1207.5L1745 1207.5" />
+    <path class="l4" d="M1745 1205L1750 1207.5L1745 1210L1745 1205" />
+    <path class="l4" d="M297.5 1487.5L297.5 1532.5" />
+    <path class="l4" d="M270 1510L287.5 1510" />
+    <path class="l4" d="M310 1480L310 1492.5" />
+    <path class="l4" d="M310 1527.5L310 1540" />
+    <path class="l4" d="M287.5 1495L287.5 1525" />
+    <path class="l4" d="M297.5 1492.5L310 1492.5" />
+    <path class="l4" d="M297.5 1527.5L305 1527.5" />
+    <path class="l4" d="M305 1525L310 1527.5L305 1530L305 1525" />
+    <path class="l5" d="M518.75 268.75L521.25 268.75L521.25 271.25L518.75 271.25L518.75 268.75z" />
+    <path class="l5" d="M305 337.5L310 340L305 342.5L305 337.5" />
+    <path class="l5" d="M307.5 367.5L312.5 367.5L312.5 372.5L307.5 372.5L307.5 367.5z" />
+    <path class="l5" d="M267.5 337.5L272.5 337.5L272.5 342.5L267.5 342.5L267.5 337.5z" />
+    <path class="l5" d="M307.5 307.5L312.5 307.5L312.5 312.5L307.5 312.5L307.5 307.5z" />
+    <path class="l5" d="M309.922 339.922L310.078 339.922L310.078 340.078L309.922 340.078L309.922 339.922z" />
+    <path class="l5" d="M998.75 268.75L1001.25 268.75L1001.25 271.25L998.75 271.25L998.75 268.75z" />
+    <path class="l5" d="M785 337.5L790 340L785 342.5L785 337.5" />
+    <path class="l5" d="M787.5 367.5L792.5 367.5L792.5 372.5L787.5 372.5L787.5 367.5z" />
+    <path class="l5" d="M747.5 337.5L752.5 337.5L752.5 342.5L747.5 342.5L747.5 337.5z" />
+    <path class="l5" d="M787.5 307.5L792.5 307.5L792.5 312.5L787.5 312.5L787.5 307.5z" />
+    <path class="l5" d="M789.922 339.922L790.078 339.922L790.078 340.078L789.922 340.078L789.922 339.922z" />
+    <path class="l5" d="M1478.75 268.75L1481.25 268.75L1481.25 271.25L1478.75 271.25L1478.75 268.75z" />
+    <path class="l5" d="M1265 337.5L1270 340L1265 342.5L1265 337.5" />
+    <path class="l5" d="M1267.5 367.5L1272.5 367.5L1272.5 372.5L1267.5 372.5L1267.5 367.5z" />
+    <path class="l5" d="M1227.5 337.5L1232.5 337.5L1232.5 342.5L1227.5 342.5L1227.5 337.5z" />
+    <path class="l5" d="M1267.5 307.5L1272.5 307.5L1272.5 312.5L1267.5 312.5L1267.5 307.5z" />
+    <path class="l5" d="M1269.92 339.922L1270.08 339.922L1270.08 340.078L1269.92 340.078L1269.92 339.922z" />
+    <path class="l5" d="M1958.75 268.75L1961.25 268.75L1961.25 271.25L1958.75 271.25L1958.75 268.75z" />
+    <path class="l5" d="M1745 337.5L1750 340L1745 342.5L1745 337.5" />
+    <path class="l5" d="M1747.5 367.5L1752.5 367.5L1752.5 372.5L1747.5 372.5L1747.5 367.5z" />
+    <path class="l5" d="M1707.5 337.5L1712.5 337.5L1712.5 342.5L1707.5 342.5L1707.5 337.5z" />
+    <path class="l5" d="M1747.5 307.5L1752.5 307.5L1752.5 312.5L1747.5 312.5L1747.5 307.5z" />
+    <path class="l5" d="M1749.92 339.922L1750.08 339.922L1750.08 340.078L1749.92 340.078L1749.92 339.922z" />
+    <path class="l5" d="M518.75 588.75L521.25 588.75L521.25 591.25L518.75 591.25L518.75 588.75z" />
+    <path class="l5" d="M305 657.5L310 660L305 662.5L305 657.5" />
+    <path class="l5" d="M307.5 687.5L312.5 687.5L312.5 692.5L307.5 692.5L307.5 687.5z" />
+    <path class="l5" d="M267.5 657.5L272.5 657.5L272.5 662.5L267.5 662.5L267.5 657.5z" />
+    <path class="l5" d="M307.5 627.5L312.5 627.5L312.5 632.5L307.5 632.5L307.5 627.5z" />
+    <path class="l5" d="M309.922 659.922L310.078 659.922L310.078 660.078L309.922 660.078L309.922 659.922z" />
+    <path class="l5" d="M998.75 588.75L1001.25 588.75L1001.25 591.25L998.75 591.25L998.75 588.75z" />
+    <path class="l5" d="M785 657.5L790 660L785 662.5L785 657.5" />
+    <path class="l5" d="M787.5 687.5L792.5 687.5L792.5 692.5L787.5 692.5L787.5 687.5z" />
+    <path class="l5" d="M747.5 657.5L752.5 657.5L752.5 662.5L747.5 662.5L747.5 657.5z" />
+    <path class="l5" d="M787.5 627.5L792.5 627.5L792.5 632.5L787.5 632.5L787.5 627.5z" />
+    <path class="l5" d="M789.922 659.922L790.078 659.922L790.078 660.078L789.922 660.078L789.922 659.922z" />
+    <path class="l5" d="M1478.75 588.75L1481.25 588.75L1481.25 591.25L1478.75 591.25L1478.75 588.75z" />
+    <path class="l5" d="M1265 657.5L1270 660L1265 662.5L1265 657.5" />
+    <path class="l5" d="M1267.5 687.5L1272.5 687.5L1272.5 692.5L1267.5 692.5L1267.5 687.5z" />
+    <path class="l5" d="M1227.5 657.5L1232.5 657.5L1232.5 662.5L1227.5 662.5L1227.5 657.5z" />
+    <path class="l5" d="M1267.5 627.5L1272.5 627.5L1272.5 632.5L1267.5 632.5L1267.5 627.5z" />
+    <path class="l5" d="M1269.92 659.922L1270.08 659.922L1270.08 660.078L1269.92 660.078L1269.92 659.922z" />
+    <path class="l5" d="M1958.75 588.75L1961.25 588.75L1961.25 591.25L1958.75 591.25L1958.75 588.75z" />
+    <path class="l5" d="M1745 657.5L1750 660L1745 662.5L1745 657.5" />
+    <path class="l5" d="M1747.5 687.5L1752.5 687.5L1752.5 692.5L1747.5 692.5L1747.5 687.5z" />
+    <path class="l5" d="M1707.5 657.5L1712.5 657.5L1712.5 662.5L1707.5 662.5L1707.5 657.5z" />
+    <path class="l5" d="M1747.5 627.5L1752.5 627.5L1752.5 632.5L1747.5 632.5L1747.5 627.5z" />
+    <path class="l5" d="M1749.92 659.922L1750.08 659.922L1750.08 660.078L1749.92 660.078L1749.92 659.922z" />
+    <path class="l5" d="M518.75 1118.75L521.25 1118.75L521.25 1121.25L518.75 1121.25L518.75 1118.75z" />
+    <path class="l5" d="M310 1187.5L305 1190L310 1192.5L310 1187.5" />
+    <path class="l5" d="M307.5 1157.5L312.5 1157.5L312.5 1162.5L307.5 1162.5L307.5 1157.5z" />
+    <path class="l5" d="M267.5 1187.5L272.5 1187.5L272.5 1192.5L267.5 1192.5L267.5 1187.5z" />
+    <path class="l5" d="M307.5 1217.5L312.5 1217.5L312.5 1222.5L307.5 1222.5L307.5 1217.5z" />
+    <path class="l5" d="M309.922 1189.92L310.078 1189.92L310.078 1190.08L309.922 1190.08L309.922 1189.92z" />
+    <path class="l5" d="M998.75 1118.75L1001.25 1118.75L1001.25 1121.25L998.75 1121.25L998.75 1118.75z" />
+    <path class="l5" d="M790 1187.5L785 1190L790 1192.5L790 1187.5" />
+    <path class="l5" d="M787.5 1157.5L792.5 1157.5L792.5 1162.5L787.5 1162.5L787.5 1157.5z" />
+    <path class="l5" d="M747.5 1187.5L752.5 1187.5L752.5 1192.5L747.5 1192.5L747.5 1187.5z" />
+    <path class="l5" d="M787.5 1217.5L792.5 1217.5L792.5 1222.5L787.5 1222.5L787.5 1217.5z" />
+    <path class="l5" d="M789.922 1189.92L790.078 1189.92L790.078 1190.08L789.922 1190.08L789.922 1189.92z" />
+    <path class="l5" d="M1478.75 1118.75L1481.25 1118.75L1481.25 1121.25L1478.75 1121.25L1478.75 1118.75z" />
+    <path class="l5" d="M1270 1187.5L1265 1190L1270 1192.5L1270 1187.5" />
+    <path class="l5" d="M1267.5 1157.5L1272.5 1157.5L1272.5 1162.5L1267.5 1162.5L1267.5 1157.5z" />
+    <path class="l5" d="M1227.5 1187.5L1232.5 1187.5L1232.5 1192.5L1227.5 1192.5L1227.5 1187.5z" />
+    <path class="l5" d="M1267.5 1217.5L1272.5 1217.5L1272.5 1222.5L1267.5 1222.5L1267.5 1217.5z" />
+    <path class="l5" d="M1269.92 1189.92L1270.08 1189.92L1270.08 1190.08L1269.92 1190.08L1269.92 1189.92z" />
+    <path class="l5" d="M1958.75 1118.75L1961.25 1118.75L1961.25 1121.25L1958.75 1121.25L1958.75 1118.75z" />
+    <path class="l5" d="M1750 1187.5L1745 1190L1750 1192.5L1750 1187.5" />
+    <path class="l5" d="M1747.5 1157.5L1752.5 1157.5L1752.5 1162.5L1747.5 1162.5L1747.5 1157.5z" />
+    <path class="l5" d="M1707.5 1187.5L1712.5 1187.5L1712.5 1192.5L1707.5 1192.5L1707.5 1187.5z" />
+    <path class="l5" d="M1747.5 1217.5L1752.5 1217.5L1752.5 1222.5L1747.5 1222.5L1747.5 1217.5z" />
+    <path class="l5" d="M1749.92 1189.92L1750.08 1189.92L1750.08 1190.08L1749.92 1190.08L1749.92 1189.92z" />
+    <path class="l5" d="M518.75 1438.75L521.25 1438.75L521.25 1441.25L518.75 1441.25L518.75 1438.75z" />
+    <path class="l5" d="M310 1507.5L305 1510L310 1512.5L310 1507.5" />
+    <path class="l5" d="M307.5 1477.5L312.5 1477.5L312.5 1482.5L307.5 1482.5L307.5 1477.5z" />
+    <path class="l5" d="M267.5 1507.5L272.5 1507.5L272.5 1512.5L267.5 1512.5L267.5 1507.5z" />
+    <path class="l5" d="M307.5 1537.5L312.5 1537.5L312.5 1542.5L307.5 1542.5L307.5 1537.5z" />
+    <path class="l5" d="M309.922 1509.92L310.078 1509.92L310.078 1510.08L309.922 1510.08L309.922 1509.92z" />
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(482.5, 265.394)">avdd</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(312.5, 364.582)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(312.5, 320.636)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(310, 337.082)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(271.5, 334.582)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(320, 327.77)">pfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(321.25, 367.915)">22 x 16.75u / 2u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(321.25, 350.693)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(212, 325.109)">XDUM_M1</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(962.5, 265.394)">avdd</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(792.5, 364.582)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(792.5, 320.636)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(790, 337.082)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(751.5, 334.582)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(800, 327.77)">pfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(801.25, 367.915)">34 x 16.42u / 4u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(801.25, 350.693)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(681, 325.109)">XDUM_M11</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(1442.5, 265.394)">avdd</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1272.5, 364.582)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1272.5, 320.636)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1270, 337.082)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1231.5, 334.582)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(1280, 327.77)">pfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(1281.25, 367.915)">29 x 54.89u / 4u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(1281.25, 350.693)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(1156, 325.109)">XDUM_MINP</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(1922.5, 265.394)">avdd</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1752.5, 364.582)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1752.5, 320.636)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1750, 337.082)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1711.5, 334.582)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(1760, 327.77)">pfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(1761.25, 367.915)">20 x 22.21u / 8u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(1761.25, 350.693)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(1622, 325.109)">XDUM_PCAS1</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(482.5, 585.394)">avdd</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(312.5, 684.582)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(312.5, 640.636)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(310, 657.082)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(271.5, 654.582)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(320, 647.77)">pfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(321.25, 687.915)">20 x 20.76u / 4u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(321.25, 670.693)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(170, 645.109)">XDUM_PLOAD1</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(962.5, 585.394)">avdd</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(792.5, 684.582)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(792.5, 640.636)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(790, 657.082)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(751.5, 654.582)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(800, 647.77)">pfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(801.25, 687.915)">29 x 18.75u / 8u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(801.25, 670.693)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(674, 645.109)">XDUM_PREF</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(1442.5, 585.394)">avdd</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1272.5, 684.582)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1272.5, 640.636)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1270, 657.082)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1231.5, 654.582)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(1280, 647.77)">pfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(1281.25, 687.915)">23 x 18.95u / 8u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(1281.25, 670.693)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(1133, 645.109)">XDUM_MPSINK</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(1922.5, 585.394)">avdd</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1752.5, 684.582)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1752.5, 640.636)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1750, 657.082)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1711.5, 654.582)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(1760, 647.77)">pfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(1761.25, 687.915)">20 x 18.99u / 8u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(1761.25, 670.693)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(1608, 645.109)">XDUM_MPFOLD</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(486.5, 1115.39)">avss</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(312.5, 1214.58)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(312.5, 1170.64)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(310, 1187.08)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(274, 1187.08)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(320, 1177.77)">nfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(321.25, 1217.91)">20 x 16.34u / 8u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(321.25, 1200.69)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(173, 1175.11)">XDUM_MSINK1</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(966.5, 1115.39)">avss</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(792.5, 1214.58)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(792.5, 1170.64)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(790, 1187.08)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(754, 1187.08)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(800, 1177.77)">nfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(801.25, 1217.91)">14 x 14.6u / 4u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(801.25, 1200.69)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(692, 1175.11)">XDUM_M3</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(1446.5, 1115.39)">avss</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1272.5, 1214.58)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1272.5, 1170.64)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1270, 1187.08)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1234, 1187.08)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(1280, 1177.77)">nfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(1281.25, 1217.91)">10 x 18.49u / 6u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(1281.25, 1200.69)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(1127, 1175.11)">XDUM_MFOLD1</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(1926.5, 1115.39)">avss</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1752.5, 1214.58)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1752.5, 1170.64)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1750, 1187.08)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(1714, 1187.08)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(1760, 1177.77)">nfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(1761.25, 1217.91)">10 x 7.55u / 4u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(1761.25, 1200.69)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(1641, 1175.11)">XDUM_M16</text>
+    <text fill="#225c86" xml:space="preserve" font-size="14.04" transform="translate(486.5, 1435.39)">avss</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(312.5, 1534.58)">S</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(312.5, 1490.64)">D</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(310, 1507.08)">B</text>
+    <text fill="#546370" xml:space="preserve" font-size="7.8" transform="translate(274, 1507.08)">G</text>
+    <text fill="#172533" xml:space="preserve" font-size="14.56" transform="translate(320, 1497.77)">nfet_05v0</text>
+    <text fill="#546370" xml:space="preserve" font-size="15.6" transform="translate(321.25, 1537.91)">10 x 12.31u / 8u</text>
+    <text fill="#546370" xml:space="preserve" font-size="10.4" transform="translate(321.25, 1520.69)">nf=1</text>
+    <text fill="#172533" xml:space="preserve" font-size="16.64" transform="translate(163, 1495.11)">XDUM_VBNSINK</text>
+    <path class="l1" d="M130 340L270 340" />
+    <path class="l1" d="M130 270L130 340" />
+    <path class="l1" d="M130 270L310 270" />
+    <path class="l1" d="M310 270L520 270" />
+    <path class="l1" d="M310 270L310 310" />
+    <path class="l1" d="M520 270L520 400" />
+    <path class="l1" d="M310 340L310 370" />
+    <path class="l1" d="M310 370L310 400" />
+    <path class="l1" d="M310 400L520 400" />
+    <path class="l1" d="M610 340L750 340" />
+    <path class="l1" d="M610 270L610 340" />
+    <path class="l1" d="M610 270L790 270" />
+    <path class="l1" d="M790 270L1000 270" />
+    <path class="l1" d="M790 270L790 310" />
+    <path class="l1" d="M1000 270L1000 400" />
+    <path class="l1" d="M790 340L790 370" />
+    <path class="l1" d="M790 370L790 400" />
+    <path class="l1" d="M790 400L1000 400" />
+    <path class="l1" d="M1090 340L1230 340" />
+    <path class="l1" d="M1090 270L1090 340" />
+    <path class="l1" d="M1090 270L1270 270" />
+    <path class="l1" d="M1270 270L1480 270" />
+    <path class="l1" d="M1270 270L1270 310" />
+    <path class="l1" d="M1480 270L1480 400" />
+    <path class="l1" d="M1270 340L1270 370" />
+    <path class="l1" d="M1270 370L1270 400" />
+    <path class="l1" d="M1270 400L1480 400" />
+    <path class="l1" d="M1570 340L1710 340" />
+    <path class="l1" d="M1570 270L1570 340" />
+    <path class="l1" d="M1570 270L1750 270" />
+    <path class="l1" d="M1750 270L1960 270" />
+    <path class="l1" d="M1750 270L1750 310" />
+    <path class="l1" d="M1960 270L1960 400" />
+    <path class="l1" d="M1750 340L1750 370" />
+    <path class="l1" d="M1750 370L1750 400" />
+    <path class="l1" d="M1750 400L1960 400" />
+    <path class="l1" d="M130 660L270 660" />
+    <path class="l1" d="M130 590L130 660" />
+    <path class="l1" d="M130 590L310 590" />
+    <path class="l1" d="M310 590L520 590" />
+    <path class="l1" d="M310 590L310 630" />
+    <path class="l1" d="M520 590L520 720" />
+    <path class="l1" d="M310 660L310 690" />
+    <path class="l1" d="M310 690L310 720" />
+    <path class="l1" d="M310 720L520 720" />
+    <path class="l1" d="M610 660L750 660" />
+    <path class="l1" d="M610 590L610 660" />
+    <path class="l1" d="M610 590L790 590" />
+    <path class="l1" d="M790 590L1000 590" />
+    <path class="l1" d="M790 590L790 630" />
+    <path class="l1" d="M1000 590L1000 720" />
+    <path class="l1" d="M790 660L790 690" />
+    <path class="l1" d="M790 690L790 720" />
+    <path class="l1" d="M790 720L1000 720" />
+    <path class="l1" d="M1090 660L1230 660" />
+    <path class="l1" d="M1090 590L1090 660" />
+    <path class="l1" d="M1090 590L1270 590" />
+    <path class="l1" d="M1270 590L1480 590" />
+    <path class="l1" d="M1270 590L1270 630" />
+    <path class="l1" d="M1480 590L1480 720" />
+    <path class="l1" d="M1270 660L1270 690" />
+    <path class="l1" d="M1270 690L1270 720" />
+    <path class="l1" d="M1270 720L1480 720" />
+    <path class="l1" d="M1570 660L1710 660" />
+    <path class="l1" d="M1570 590L1570 660" />
+    <path class="l1" d="M1570 590L1750 590" />
+    <path class="l1" d="M1750 590L1960 590" />
+    <path class="l1" d="M1750 590L1750 630" />
+    <path class="l1" d="M1960 590L1960 720" />
+    <path class="l1" d="M1750 660L1750 690" />
+    <path class="l1" d="M1750 690L1750 720" />
+    <path class="l1" d="M1750 720L1960 720" />
+    <path class="l1" d="M130 1190L270 1190" />
+    <path class="l1" d="M130 1120L130 1190" />
+    <path class="l1" d="M130 1120L310 1120" />
+    <path class="l1" d="M310 1120L520 1120" />
+    <path class="l1" d="M310 1120L310 1160" />
+    <path class="l1" d="M520 1120L520 1250" />
+    <path class="l1" d="M310 1190L310 1220" />
+    <path class="l1" d="M310 1220L310 1250" />
+    <path class="l1" d="M310 1250L520 1250" />
+    <path class="l1" d="M610 1190L750 1190" />
+    <path class="l1" d="M610 1120L610 1190" />
+    <path class="l1" d="M610 1120L790 1120" />
+    <path class="l1" d="M790 1120L1000 1120" />
+    <path class="l1" d="M790 1120L790 1160" />
+    <path class="l1" d="M1000 1120L1000 1250" />
+    <path class="l1" d="M790 1190L790 1220" />
+    <path class="l1" d="M790 1220L790 1250" />
+    <path class="l1" d="M790 1250L1000 1250" />
+    <path class="l1" d="M1090 1190L1230 1190" />
+    <path class="l1" d="M1090 1120L1090 1190" />
+    <path class="l1" d="M1090 1120L1270 1120" />
+    <path class="l1" d="M1270 1120L1480 1120" />
+    <path class="l1" d="M1270 1120L1270 1160" />
+    <path class="l1" d="M1480 1120L1480 1250" />
+    <path class="l1" d="M1270 1190L1270 1220" />
+    <path class="l1" d="M1270 1220L1270 1250" />
+    <path class="l1" d="M1270 1250L1480 1250" />
+    <path class="l1" d="M1570 1190L1710 1190" />
+    <path class="l1" d="M1570 1120L1570 1190" />
+    <path class="l1" d="M1570 1120L1750 1120" />
+    <path class="l1" d="M1750 1120L1960 1120" />
+    <path class="l1" d="M1750 1120L1750 1160" />
+    <path class="l1" d="M1960 1120L1960 1250" />
+    <path class="l1" d="M1750 1190L1750 1220" />
+    <path class="l1" d="M1750 1220L1750 1250" />
+    <path class="l1" d="M1750 1250L1960 1250" />
+    <path class="l1" d="M130 1510L270 1510" />
+    <path class="l1" d="M130 1440L130 1510" />
+    <path class="l1" d="M130 1440L310 1440" />
+    <path class="l1" d="M310 1440L520 1440" />
+    <path class="l1" d="M310 1440L310 1480" />
+    <path class="l1" d="M520 1440L520 1570" />
+    <path class="l1" d="M310 1510L310 1540" />
+    <path class="l1" d="M310 1540L310 1570" />
+    <path class="l1" d="M310 1570L520 1570" />
+    <text fill="#172533" xml:space="preserve" font-size="20.8" transform="translate(100, 78.8864)">PMOS dummy banks: 197 units; all D/G/S/B terminals tied to avdd</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(120, 204.165)">Matches M1 / M2 / M5</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(600, 204.165)">Matches M11 / M12 / M13</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(1080, 204.165)">Matches MINP / MINN</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(1560, 204.165)">Matches PCAS1 / PCAS2</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(120, 524.165)">Matches PLOAD1 / PLOAD2</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(600, 524.165)">Matches PREF / PRMIR</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(1080, 524.165)">Matches MPSINK</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(1560, 524.165)">Matches MPFOLD</text>
+    <text fill="#172533" xml:space="preserve" font-size="20.8" transform="translate(100, 908.886)">NMOS dummy banks: 64 units; all D/G/S/B terminals tied to avss</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(120, 1054.16)">Matches MSINK1 / MSINK2</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(600, 1054.16)">Matches M3 / M4</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(1080, 1054.16)">Matches MFOLD1 / MFOLD2</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(1560, 1054.16)">Matches M16 / M18</text>
+    <text fill="#172533" xml:space="preserve" font-size="15.6" transform="translate(120, 1374.16)">Matches VBNSINK</text>
+    <text fill="#172533" xml:space="preserve" font-size="18.2" transform="translate(600, 1426.53)">Each m represents identical physical units. W and L are per-unit sizes.</text>
+    <text fill="#172533" xml:space="preserve" font-size="18.2" transform="translate(600, 1486.53)">All dummy gates, diffusions and bodies connect to the quiet body rail.</text>
+    <text fill="#172533" xml:space="preserve" font-size="18.2" transform="translate(600, 1546.53)">Schematic arrangement is for readability; see layout for array placement.</text>
+    <text fill="#172533" xml:space="preserve" font-size="18.2" transform="translate(100, 1776.53)">Native PDK transistor symbols; no dummy SPICE code block.</text>
   </g>
-  <g transform="translate(427 196)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_M11</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches M11 / M12 / M13</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
-      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
-      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 34</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 16.42 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 4 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
-  </g>
-  <g transform="translate(806 196)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_MINP</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches MINP / MINN</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
-      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
-      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 29</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 54.89 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 4 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
-  </g>
-  <g transform="translate(1185 196)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_PCAS1</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches PCAS1 / PCAS2</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
-      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
-      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 20</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 22.21 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
-  </g>
-  <g transform="translate(48 436)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_PLOAD1</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches PLOAD1 / PLOAD2</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
-      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
-      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 20</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 20.76 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 4 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
-  </g>
-  <g transform="translate(427 436)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_PREF</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches PREF / PRMIR</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
-      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
-      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 29</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 18.75 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
-  </g>
-  <g transform="translate(806 436)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_MPSINK</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches MPSINK</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
-      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
-      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 23</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 18.95 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
-  </g>
-  <g transform="translate(1185 436)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_MPFOLD</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches MPFOLD</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVDD</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M7.5 17.5 H20 M12.5 -17.5 H20 M-20 0 H-12.5" fill="none" stroke="#172533" stroke-width="1.8" />
-      <circle cx="-7.5" cy="0" r="5" fill="white" stroke="#172533" stroke-width="1.8" />
-      <polygon points="12.5,-20 7.5,-17.5 12.5,-15" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 20</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 18.99 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVDD</text>
-  </g>
-  <text x="48" y="698" font-size="23" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">NMOS · nfet_05v0 · 64 units · All terminals tied to AVSS</text>
-  <g transform="translate(48 720)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_MSINK1</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches MSINK1 / MSINK2</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVSS</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M-20 0 H-2.5 M7.5 -17.5 H20 M7.5 17.5 H15" fill="none" stroke="#172533" stroke-width="1.8" />
-      <polygon points="15,15 20,17.5 15,20" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 20</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 16.34 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVSS</text>
-  </g>
-  <g transform="translate(427 720)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_M3</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches M3 / M4</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVSS</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M-20 0 H-2.5 M7.5 -17.5 H20 M7.5 17.5 H15" fill="none" stroke="#172533" stroke-width="1.8" />
-      <polygon points="15,15 20,17.5 15,20" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 14</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 14.6 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 4 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVSS</text>
-  </g>
-  <g transform="translate(806 720)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_MFOLD1</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches MFOLD1 / MFOLD2</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVSS</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M-20 0 H-2.5 M7.5 -17.5 H20 M7.5 17.5 H15" fill="none" stroke="#172533" stroke-width="1.8" />
-      <polygon points="15,15 20,17.5 15,20" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 10</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 18.49 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 6 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVSS</text>
-  </g>
-  <g transform="translate(1185 720)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_M16</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches M16 / M18</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVSS</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M-20 0 H-2.5 M7.5 -17.5 H20 M7.5 17.5 H15" fill="none" stroke="#172533" stroke-width="1.8" />
-      <polygon points="15,15 20,17.5 15,20" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 10</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 7.55 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 4 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVSS</text>
-  </g>
-  <g transform="translate(48 960)">
-    <rect width="359" height="220" fill="white" stroke="#ccd5dc" stroke-width="1" />
-    <text x="16" y="29" font-size="20" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">XDUM_VBNSINK</text>
-    <text x="16" y="53" font-size="15" fill="#546370" font-family="Arial, Helvetica, sans-serif">Matches VBNSINK</text>
-    <text x="133" y="84" font-size="15" fill="#225c86" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="bold">AVSS</text>
-    <path d="M93 111 V98 H133 V184 H93 V171 M93 141 H133 M53 141 H33 V98 H93" fill="none" stroke="#225c86" stroke-width="1.8" />
-    <circle cx="93" cy="98" r="3.2" fill="#225c86" />
-    <circle cx="133" cy="141" r="3.2" fill="#225c86" />
-    <g transform="translate(73 141)">
-      <path d="M7.5 -22.5 V22.5 M20 -30 V-17.5 M20 17.5 V30 M-2.5 -15 V15 M-20 0 H-2.5 M7.5 -17.5 H20 M7.5 17.5 H15" fill="none" stroke="#172533" stroke-width="1.8" />
-      <polygon points="15,15 20,17.5 15,20" fill="#172533" />
-      <path d="M7.5 0 H20" stroke="#172533" stroke-width="1.8" />
-      <text x="26" y="-21" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">D</text>
-      <text x="26" y="27" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">S</text>
-      <text x="26" y="-5" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">B</text>
-      <text x="-19" y="-10" font-size="11" fill="#546370" font-family="Arial, Helvetica, sans-serif">G</text>
-    </g>
-    <text x="164" y="118" font-size="24" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">m = 10</text>
-    <text x="164" y="148" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">W = 12.31 µm</text>
-    <text x="164" y="175" font-size="18" fill="#172533" font-family="Arial, Helvetica, sans-serif">L = 8 µm</text>
-    <text x="16" y="207" font-size="14" fill="#546370" font-family="Arial, Helvetica, sans-serif">D = G = S = B = AVSS</text>
-  </g>
-  <text x="448" y="1003" font-size="22" fill="#172533" font-family="Arial, Helvetica, sans-serif" font-weight="bold">READING THIS SHEET</text>
-  <text x="448" y="1040" font-size="20" fill="#546370" font-family="Arial, Helvetica, sans-serif">m is the number of identical physical units; W and L are per-unit dimensions.</text>
-  <text x="448" y="1074" font-size="20" fill="#546370" font-family="Arial, Helvetica, sans-serif">The four-terminal connections are explicit: no dummy gate or diffusion floats.</text>
-  <text x="448" y="1108" font-size="20" fill="#546370" font-family="Arial, Helvetica, sans-serif">“Matches” identifies the functional array that the dummy bank surrounds.</text>
-  <text x="448" y="1142" font-size="20" fill="#546370" font-family="Arial, Helvetica, sans-serif">The panel arrangement is for readability; it does not depict physical placement.</text>
-  <path d="M48 1214 H1544" stroke="#bec9d1" />
-  <text x="48" y="1248" font-size="19" fill="#172533" font-family="Arial, Helvetica, sans-serif">Graphical companion to LAYOUT_MATCHING_DUMMIES in Bandgap_Core_Res.sch; verified against the released netlist.</text>
-  <text x="48" y="1278" font-size="16" fill="#546370" font-family="Arial, Helvetica, sans-serif">GF180 symbol geometry: © 2022 GlobalFoundries PDK Authors · Apache-2.0 · See LICENSE-GF180.txt</text>
+  <text x="53.559999999999995" y="2000.3799999999999" font-size="17.51" fill="#172533" font-family="Arial, Helvetica, sans-serif">Direct Xschem export of the saved transistor symbols and wires; full core LVS passes with every dummy unit retained.</text>
 </svg>

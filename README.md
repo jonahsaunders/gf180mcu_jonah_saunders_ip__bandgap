@@ -121,7 +121,7 @@ A shared 2 µm source bus reduces local supply-drop imbalance. The two main-mirr
 | Circuit | Schematic image | Xschem source |
 | :--- | :--- | :--- |
 | Trim-inclusive core — functional circuit | [Sheet 1 · full-size SVG](docs/images/bandgap-core-resistor-trim.svg) | [Bandgap_Core_Res.sch](Bandgap_Core_Res.sch) |
-| Trim-inclusive core — dummy devices | [Sheet 2 · full-size SVG](docs/images/bandgap-core-resistor-trim-dummies.svg) | `LAYOUT_MATCHING_DUMMIES` in the same source |
+| Trim-inclusive core — dummy devices | [Sheet 2 · full-size SVG](docs/images/bandgap-core-resistor-trim-dummies.svg) | [Native `DUM_*` transistor symbols](Bandgap_Core_Res.sch) |
 | Untrimmed reference core | [Full-size SVG](docs/images/bandgap-core.svg) | [Bandgap_Core.sch](Bandgap_Core.sch) |
 | Seven-bit resistor-trim testbench | [Testbench guide](docs/TESTBENCHES.md) | [TB10_RESISTOR_TRIM.sch](TB10_RESISTOR_TRIM.sch) |
 
@@ -129,11 +129,13 @@ The two sheets below show the **same trim-inclusive schematic**: the functional 
 
 [![Sheet 1: trim-inclusive bandgap schematic with seven-bit trim and neatly arranged input buffers](docs/images/bandgap-core-resistor-trim.svg)](docs/images/bandgap-core-resistor-trim.svg)
 
-**Fig. 7(a).** Functional circuit of the current 1k-resistor core, freshly exported from Xschem. The seven trim-input buffers are arranged in two rows for readability; the display netlists before and after this rearrangement are identical. Dummy devices continue in Fig. 7(b).
+**Fig. 7(a).** Functional circuit of the current 1k-resistor core, exported directly from the saved Xschem schematic. Its seven trim-input buffers are arranged in two rows for readability. Dummy devices continue in Fig. 7(b).
 
 [![Sheet 2: all 13 dummy transistor banks with device sizes, multiplicities, matched groups, and explicit supply connections](docs/images/bandgap-core-resistor-trim-dummies.svg)](docs/images/bandgap-core-resistor-trim-dummies.svg)
 
-**Fig. 7(b).** Graphical view of the schematic's `LAYOUT_MATCHING_DUMMIES` block: **197 PMOS and 64 NMOS units**, grouped into 13 banks. Each symbol represents `m` identical units, with per-unit W/L and the associated functional array labeled. Drain, gate, source, and body are all tied to **AVDD for PMOS** or **AVSS for NMOS**. Names, sizes, counts, and connections are checked against the released netlist and matching constraints. Panel positions are for readability; physical placement is shown in [the matched-array figure](layout/figures/matched-arrays.pdf). [Figure provenance](docs/images/trim-schematic-provenance.json) · [Reproduction script](docs/scripts/render_schematics.py)
+**Fig. 7(b).** Direct Xschem export of **13 native PDK transistor symbols**, representing **197 PMOS and 64 NMOS dummy units**. Each editable symbol carries its own model, W/L, and multiplicity; the displayed size line reads `m × W / L`. Explicit wires tie drain, gate, source, and body to **AVDD for PMOS** or **AVSS for NMOS**. The dummy code block has been removed. Panel positions are for readability; physical placement is shown in [the matched-array figure](layout/figures/matched-arrays.pdf). [Figure provenance](docs/images/trim-schematic-provenance.json) · [Reproduction script](docs/scripts/render_schematics.py)
+
+**Native-symbol verification.** A fresh TB10 netlist preserves all device models, parameters, multiplicities, and connections. Full core LVS against the released GDS passes with all **533 device units**, including every dummy unit, retained in the reference. The GDS and archived simulation inputs/results are unchanged. [LVS and equivalence evidence](layout/release/schematic-symbols/verification.json) · [LVS log](layout/release/schematic-symbols/filled_lvs.log)
 
 ## Installation and first run
 
