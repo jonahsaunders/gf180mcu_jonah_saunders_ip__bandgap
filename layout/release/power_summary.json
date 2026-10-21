@@ -25,17 +25,17 @@
     "landing_count": 6,
     "via4_count": 24,
     "direct_metal5_landings": 0,
-    "added_area_um2": 733.6,
+    "added_area_um2": 759.1999999999999,
     "signal_clearance_um": 0,
     "unreinforced_landings": 0
   },
   {
     "net": "v2",
     "m5_width_um": 2,
-    "landing_count": 5,
-    "via4_count": 20,
+    "landing_count": 2,
+    "via4_count": 8,
     "direct_metal5_landings": 0,
-    "added_area_um2": 733.6,
+    "added_area_um2": 730.4,
     "signal_clearance_um": 0,
     "unreinforced_landings": 0
   },
@@ -52,8 +52,8 @@
   {
     "net": "rbit0top",
     "m5_width_um": 2,
-    "landing_count": 3,
-    "via4_count": 12,
+    "landing_count": 4,
+    "via4_count": 16,
     "direct_metal5_landings": 0,
     "added_area_um2": 84.0,
     "signal_clearance_um": 0,
@@ -65,9 +65,9 @@
     "landing_count": 2,
     "via4_count": 8,
     "direct_metal5_landings": 0,
-    "added_area_um2": 4.0,
+    "added_area_um2": 7.199999999999999,
     "signal_clearance_um": 0,
-    "unreinforced_landings": 2
+    "unreinforced_landings": 5
   },
   {
     "net": "rbit2top",
@@ -120,6 +120,26 @@
     "unreinforced_landings": 0
   },
   {
+    "net": "dvss",
+    "m5_width_um": 2,
+    "landing_count": 3,
+    "via4_count": 12,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 250.39999999999998,
+    "signal_clearance_um": 0,
+    "unreinforced_landings": 7
+  },
+  {
+    "net": "avss",
+    "m5_width_um": 2,
+    "landing_count": 169,
+    "via4_count": 672,
+    "direct_metal5_landings": 1,
+    "added_area_um2": 5201.48,
+    "signal_clearance_um": 0,
+    "unreinforced_landings": 63
+  },
+  {
     "net": "avdd",
     "m5_width_um": 2,
     "landing_count": 55,
@@ -127,6 +147,6 @@
     "direct_metal5_landings": 48,
     "added_area_um2": 649.208,
     "signal_clearance_um": 3.0,
-    "unreinforced_landings": 529
+    "unreinforced_landings": 527
   }
 ]

@@ -1,7 +1,7 @@
 """Run bounded post-layout screens; this is not the complete qualification suite.
 
-Ground resistance is omitted because Magic's resistor extractor falsely joins
-the isolated grounds. MOS diffusion geometry and signal/supply RC are retained.
+Ground metal resistance is included; well/substrate resistance remains lumped.
+MOS diffusion geometry and signal/supply RC are retained.
 The original project's explicitly documented MIM compatibility model is used.
 """
 
@@ -189,6 +189,11 @@ def run_case(case):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pvt", action="store_true")
+    parser.add_argument(
+        "--dc-only",
+        action="store_true",
+        help="Run nominal OP, temperature, trim and AC; omit transients",
+    )
     args = parser.parse_args()
     RESULTS.mkdir(exist_ok=True)
     for mode in ["schematic", "magic_lvs", "c", "rc", "rcc"]:
@@ -210,13 +215,21 @@ def main():
                 ["schematic", "magic_lvs", "c", "rc", "rcc"], [3.3, 5.0]
             )
         ]
-        cases += [
-            (mode, "typical", "typical", "typical", supply, True)
-            for mode, supply in product(["rc", "rcc"], [3.3, 5.0])
-        ]
+        cases += (
+            []
+            if args.dc_only
+            else [
+                (mode, "typical", "typical", "typical", supply, True)
+                for mode, supply in product(["rc", "rcc"], [3.3, 5.0])
+            ]
+        )
     with ThreadPoolExecutor(max_workers=4) as pool:
         records = list(pool.map(run_case, cases))
-    name = "pvt_summary.json" if args.pvt else "nominal_summary.json"
+    name = (
+        "pvt_summary.json"
+        if args.pvt
+        else "nominal_dc_summary.json" if args.dc_only else "nominal_summary.json"
+    )
     (RESULTS / name).write_text(json.dumps(records, indent=2) + "\n")
 
 

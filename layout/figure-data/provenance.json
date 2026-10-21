@@ -1,18 +1,14 @@
 {
-  "gds_sha256": "868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36",
-  "source": "Matching-revision rerun, 21 October 2026",
+  "gds_sha256": "a1e2b376e15501b8854acdcf7586cc31891f3a70d93550aa5144348bb2f3af9c",
+  "source": "Compact routing revision, 21 October 2026, ground metal resistance included",
   "transformation": "Verbatim gzip compression only; no resampling or numerical edits",
   "uncompressed_sha256": {
-    "postlayout/nominal_summary.json": "6657ccf038ca2550e73802728963dca91f557343c21474d9faaa7800d7059a11",
-    "postlayout/rcc_typical_typical_typical_3.3/temperature.dat.gz": "faed7810cb77cd033a9d4164c45f59fc30031754f3ed9d190aaf2791d0747d89",
-    "postlayout/rcc_typical_typical_typical_3.3/psrr.dat.gz": "3d9691d3f31aeb8be872c7cd37c766e782455fb79fecadf42ef0d45c8e913c15",
-    "postlayout/rcc_typical_typical_typical_3.3/trim.dat.gz": "2aff11b52b2018eff558196668dc05e8ccad6302d782f043303f30fd31c9b756",
-    "postlayout/rcc_typical_typical_typical_3.3_startup/startup.dat.gz": "a40e6e91a57a5097252c3a0c97804444e9063f7fff725187a2d1408566462687",
-    "postlayout/power_sequence/3.3/startup.dat.gz": "5c8fd0b023becfdfded7c8bb48a619740961426b682860533d120ebb73baa623",
-    "postlayout/rcc_typical_typical_typical_5/temperature.dat.gz": "5d965203412ca4a2ff46fc58075f9e92a057cf773ee4a46eff49e04153fbb91f",
-    "postlayout/rcc_typical_typical_typical_5/psrr.dat.gz": "77045773433c3c3a7aebf0cbfea9940d251adeff64b0a4918fa5b3d82a1a1b1c",
-    "postlayout/rcc_typical_typical_typical_5/trim.dat.gz": "d28e9f017586ceb24711a7abaecadf9c1b0a92b68e4385a72ff2e79d40d29279",
-    "postlayout/rcc_typical_typical_typical_5_startup/startup.dat.gz": "718f0007565cb15fef6c39d1a5e01f43d2a2ed184c730e2265eeb87630f05a0a",
-    "postlayout/power_sequence/5/startup.dat.gz": "59574f5d1f65f883f5967f5d172410dfff6c3bf6247acb0cfc3bc15ffeb1a041"
+    "postlayout/nominal_summary.json": "2cef099538c213d213b95d42209a25d5253e87814b7198d06ae6711a71c8a4a4",
+    "postlayout/rcc_typical_typical_typical_3.3/temperature.dat.gz": "6a091631cf0167285167116a80d472cc005bedb7ba05774a356c7f2fe09e3f04",
+    "postlayout/rcc_typical_typical_typical_3.3/psrr.dat.gz": "a314721e2091c7ac05f49d9a9732ef03f8944051f9aca8b5771447b186def782",
+    "postlayout/rcc_typical_typical_typical_3.3/trim.dat.gz": "7911ef5c80860874757d64e1f51112ffba56905597379e201b2cf56f6ead7518",
+    "postlayout/rcc_typical_typical_typical_5/temperature.dat.gz": "aea9a248d003ae4be966607901b82f1ef097f3fa8a4f1118a1990368b79f0b55",
+    "postlayout/rcc_typical_typical_typical_5/psrr.dat.gz": "185f454109c9f3b9aafc7a6ce40acca0a63ad4bb24e5a0aa5b0957c4e1be386f",
+    "postlayout/rcc_typical_typical_typical_5/trim.dat.gz": "c37978f4d1fdb90b75a41db5c79c119e9d6ad0a8aafffc47f8f24fa8b82eb1bb"
   }
 }

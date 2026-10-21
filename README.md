@@ -16,7 +16,7 @@ Physical checks apply to the released core and pinned decks. This is a **layout 
 
 [![Annotated GDS layout with numbered analog groups, trim circuitry and capacitor labels](layout/figures/physical-layout.png)](layout/figures/physical-layout.png)
 
-**Fig. 1.** Routed and filled GDS of the complete trim-inclusive core. Sixteen numbered callouts identify the analog device groups and startup circuitry; C1–C11 identify the MIM capacitors. The dashed outline marks the deep-n-well trim region. Numbers 1–14 correspond to the matching groups in Fig. 3. This is a layout rendering, not a silicon micrograph. [Vector PDF](layout/figures/physical-layout.pdf)
+**Fig. 1.** Routed and filled GDS of the complete trim-inclusive core. Sixteen numbered callouts identify the analog device groups and startup circuitry; C1–C11 identify the MIM capacitors. The dashed outline marks the deep-n-well trim region. Numbers 1–14 correspond to the matching groups in Fig. 3. The updated routing adds shared amplifier source buses and separate M5 ground reinforcement inside the unchanged footprint. This is a layout rendering, not a silicon micrograph. [Vector PDF](layout/figures/physical-layout.pdf)
 
 ## Floorplan
 
@@ -87,34 +87,35 @@ Typical values are rounded estimates near nominal conditions; the 1.184 V estima
 
 ### Post-layout simulation
 
-Current results use typical device corners, trim code 72, DVDD = 3.3 V, and 25 °C unless stated otherwise. The extracted model uses a capacitance-conserving RCC approximation; ground resistance is omitted, and distributed coupling placement remains approximate. These are simulated screening results.
+Current results use typical device corners, trim code 72, DVDD = 3.3 V, and 25 °C unless stated otherwise. The capacitance-conserving RCC approximation now includes **analog and digital ground metal resistance**. Well/substrate resistance remains lumped, and distributed coupling placement remains approximate.
 
 | Parameter | AVDD = 3.3 V | AVDD = 5.0 V | Unit |
 | :--- | ---: | ---: | :--- |
-| Reference output | 1.193127 | 1.193267 | V |
-| Analog supply current | 24.13 | 31.34 | µA |
-| Box temperature coefficient, −40 to 125 °C | 7.65 | 7.57 | ppm/°C |
-| Minimum PSRR, 1 Hz to 1 MHz | 48.10 | 53.37 | dB |
-| Cold-start settling, both rails cycled | 203.5 | 114.9 | µs |
-| Restart settling, both rails cycled | 111.4 | 49.3 | µs |
+| Reference output | 1.193160 | 1.193320 | V |
+| Analog supply current | 24.06 | 31.21 | µA |
+| Box temperature coefficient, −40 to 125 °C | 7.53 | 7.45 | ppm/°C |
+| Minimum PSRR, 1 Hz to 1 MHz | 48.01 | 53.17 | dB |
 
-Settling is measured to ±0.5% of the final value after a 100 µs supply ramp, with high trim inputs following DVDD and no external output load. Code 72 is fixed; it is not a completed minimum-drift calibration. [Nominal data](layout/release/nominal_screen.json) · [PSRR data](layout/release/psrr/summary.json) · [Supply-sequence data](layout/release/power_sequence_screen.json)
+
+No external output load is added. Code 72 is fixed; it is not a completed minimum-drift calibration. [Nominal data](layout/release/nominal_screen.json) · [PSRR data](layout/release/psrr/summary.json)
+
+**Startup remains unqualified on this revision.** The expanded transient screen exceeded its 300 s per-case runtime limit. No incomplete run is counted as passing. Earlier cold-start/restart results remain in the [historical supply-sequence data](layout/release/previous/published_power_sequence_screen.json); they apply to the previous GDS and extraction model. [Current attempt status and logs](layout/release/incomplete-transients/status.json)
 
 [![Schematic and extracted PSRR comparisons at both supplies](layout/figures/psrr-before-after.png)](layout/figures/psrr-before-after.png)
 
-**Fig. 5.** Controlled before/after PSRR comparison over 481 common frequencies. Minimum PSRR changes from **47.17 to 48.10 dB** at 3.3 V and **52.12 to 53.37 dB** at 5 V. Both layouts were extracted with Magic 8.3.685, the same primitive-terminal anchors, and the same RCC conservation method. The unchanged previous GDS was rerun for this comparison, so its values differ slightly from the earlier published figures. [Vector PDF](layout/figures/psrr-before-after.pdf) · [Comparison and method](layout/reviews/2026-10-21-mirrors-implemented/README.md#psrr-comparison)
+**Fig. 5.** Controlled comparison over 481 common frequencies. With ground metal resistance included in **both** layouts, minimum PSRR improves from **45.94 to 48.01 dB** at 3.3 V and **48.66 to 53.17 dB** at 5 V. Both use Magic 8.3.685, identical terminal anchoring, and the same RCC conservation method. The earlier published 48.10/53.37 dB values omitted ground resistance; those results are retained separately and are not the baseline for the physical gain. [Vector PDF](layout/figures/psrr-before-after.pdf) · [Extraction explanation and comparison](layout/reviews/2026-10-21-compact-routing/README.md#psrr-and-the-extraction-correction)
 
 ### Mirror layout and matching
 
-The revision adds complete, explicitly netlisted dummy surrounds to 13 MOS arrays, equal-centroid and equal-second-moment patterns for M1/M2/M5 and M11/M12/M13, balanced local main-mirror drain routing, and protected matching regions. The geometry audit finds **zero unrelated-net crossings over the matched channels**. All 272 functional device units retain their original models, sizes, multiplicities, and connections; 261 tied-off dummy units are added.
+The **686.0 × 399.6 µm** placement is unchanged. The routing revision adds shared 2 µm source buses for the amplifier load and sink pairs, reinforces separate AVSS/DVSS returns with M5 and redundant vias, and keeps unrelated wires off R1 and the PNP-array region. All 13 MOS dummy surrounds remain intact. The actual-GDS audit finds zero unrelated-net crossings over the matched MOS channels and R1's resistor body; Q1/Q2 retain coincident emitter centroids and equal unit areas.
 
-A shared 2 µm source bus reduces local supply-drop imbalance. The two main-mirror ratios now stay within **0.0044% at 3.3 V** and **0.0130% at 5 V**. Some amplifier-pair errors increase slightly; the full comparison retains those tradeoffs.
+At 3.3 V, nominal load-pair error falls from **0.0081% to 0.0007%** and sink-pair error from **0.0198% to 0.0024%**. The main mirror changes only slightly. All seven ratios, including the larger bias-dependent errors, are reported below and in the detailed comparison. All 272 functional units and 261 tied-off dummy units retain their models, dimensions and connections.
 
-[![Nominal mirror current ratios before and after the layout revision](layout/reviews/2026-10-21-mirrors-implemented/mirror-current-ratios.png)](layout/reviews/2026-10-21-mirrors-implemented/mirror-current-ratios.png)
+[![Nominal mirror current ratios before and after compact routing improvements](layout/reviews/2026-10-21-compact-routing/mirror-current-ratios.png)](layout/reviews/2026-10-21-compact-routing/mirror-current-ratios.png)
 
-**Fig. 6.** Nominal current-ratio errors, from independent drain-current probes. These are deterministic DC comparisons, not statistical mismatch predictions. The larger bias-pair errors already appear in the schematic; placement alone cannot remove unequal drain-bias effects. [Results, placement distances and limitations](layout/reviews/2026-10-21-mirrors-implemented/README.md) · [Per-unit currents and biases](layout/release/mirror_bias/summary.json)
+**Fig. 6.** Nominal DC current-ratio errors from independent drain probes, with the same ground-inclusive extraction for both layouts. These are deterministic comparisons, not statistical mismatch predictions. Source-path resistance, terminal biases and remaining asymmetries are documented in the [routing review](layout/reviews/2026-10-21-compact-routing/README.md). [Per-unit currents](layout/release/mirror_bias/summary.json) · [Precision-layout audit](layout/release/precision_layout_audit.json)
 
-**Verification and qualification.** The complete unedited core DRC deck reports **0 violations**, LVS matches, both extraction-topology LVS checks pass, and an independent source rebuild has zero geometry/text differences. All 360 fixed-code corner DC points complete; 2 of 90 cases use a successful solver fallback after a recorded dynamic-gmin warning. Those warnings are retained in the evidence. Neither the schematic nor the layout meets the existing 60 dB testbench PSRR criterion. Code 72 is not calibrated to the 1.18 V ±1% output budget. Full ground extraction, statistical matching/trim yield, EM/IR, stability, noise, loading, and final harness integration remain open. [Release evidence](layout/release/verification.json) · [Detailed report](layout/report.html) · [Design budgets](docs/REFERENCE_SPECIFICATIONS.md)
+**Verification and qualification.** The complete unedited core DRC deck reports **0 violations**, LVS matches all **533 units**, both extraction-topology LVS audits pass, and an independent source rebuild has zero geometry/text differences. All **360 fixed-code corner DC points** complete; **2 of 90 cases** retain recovered solver-fallback warnings. Neither schematic nor layout meets the existing 60 dB testbench PSRR criterion. Startup/restart, statistical matching/trim yield, independent PEX accuracy, distributed well/substrate resistance, EM/IR, stability, noise, loading and final harness integration remain open. [Release evidence](layout/release/verification.json) · [Detailed report](layout/report.html) · [Design budgets](docs/REFERENCE_SPECIFICATIONS.md)
 
 ## Schematics
 
@@ -135,9 +136,9 @@ The two sheets below show the **same trim-inclusive schematic**: the functional 
 
 **Fig. 7(b).** Direct Xschem export of **13 native PDK transistor symbols**, representing **197 PMOS and 64 NMOS dummy units**. Each editable symbol carries its own model, W/L, and multiplicity; the displayed size line reads `m × W / L`. Explicit wires tie drain, gate, source, and body to **AVDD for PMOS** or **AVSS for NMOS**. The dummy code block has been removed. Panel positions are for readability; physical placement is shown in [the matched-array figure](layout/figures/matched-arrays.pdf). [Figure provenance](docs/images/trim-schematic-provenance.json) · [Reproduction script](docs/scripts/render_schematics.py)
 
-**Native-symbol verification.** A fresh TB10 netlist preserves all device models, parameters, multiplicities, and connections. Full core LVS against the released GDS passes with all **533 device units**, including every dummy unit, retained in the reference. The GDS and archived simulation inputs/results are unchanged. [LVS and equivalence evidence](layout/release/schematic-symbols/verification.json) · [LVS log](layout/release/schematic-symbols/filled_lvs.log)
+**Native-symbol verification.** The schematic still contains all 13 native dummy transistor banks. A fresh TB10 netlist and full LVS against the revised GDS retain all **533 device units**, including every dummy. [Current LVS evidence](layout/release/schematic-symbols/verification.json) · [Full LVS log](layout/release/schematic-symbols/filled_lvs.log)
 
-**Fresh simulation confirmation · 21 October 2026.** Eight new runs from the native-symbol schematic confirm unchanged nominal mirror matching and PSRR at TT, 25 °C, trim 72, and AVDD = 3.3/5 V. All seven reviewed current ratios, every MOS current/bias, and all 481 PSRR samples per curve match the previous results at saved precision. Minimum PSRR remains **50.56/52.04 dB (schematic)** and **48.10/53.37 dB (extracted RCC)** at 3.3/5 V. [Comparison, conditions and reproduction](layout/release/native-symbol-simulations/README.md) · [Fresh numerical evidence](layout/release/native-symbol-simulations/comparison.json)
+**Preserved simulation history.** The earlier eight-run check established that replacing the dummy code block with native symbols did not change mirror matching or any PSRR sample at saved precision. That comparison applies to the previous GDS and its ground-omitting extraction. Its **50.56/52.04 dB schematic** and **48.10/53.37 dB extracted** results remain in the [historical confirmation](layout/release/previous/native-symbol-simulations/README.md). The new routing results are reported above.
 
 ## Installation and first run
 
@@ -212,9 +213,10 @@ For the full-suite command, profile settings, troubleshooting, and **rerunning s
 | :--- | :--- |
 | [Layout reproduction](layout/README.txt) | Pinned tools, build flow, extraction assumptions, and open work |
 | [Release verification](layout/release/verification.json) | DRC/LVS results, tool versions, and source/artifact hashes |
-| [Implemented mirror review](layout/reviews/2026-10-21-mirrors-implemented/README.md) | Physical changes, current ratios, PSRR comparison, and verification evidence |
+| [Compact routing review](layout/reviews/2026-10-21-compact-routing/README.md) | Source buses, ground returns, mirror matching and controlled PSRR comparison |
+| [Previous matching revision](layout/reviews/2026-10-21-mirrors-implemented/README.md) | Preserved dummy-array and placement results before this routing revision |
 | [Historical mirror audit](layout/reviews/2026-10-21-mirrors/README.md) | Original compact layout and the findings that motivated this revision |
-| [Figure exports](layout/figures) | Nine figures in PDF, SVG, and 600-dpi PNG; captions included |
+| [Figure exports](layout/figures) | Eight current figures in PDF, SVG, and 600-dpi PNG; captions included |
 | [Testbench reference](docs/TESTBENCHES.md) | TB01–TB10 and measurement coverage |
 | [Software validation](VALIDATION.md) | Runner, parser, and plotting checks |
 | [Historical simulation results](docs/RESULTS.md) | Results from the original 2k-resistor build |

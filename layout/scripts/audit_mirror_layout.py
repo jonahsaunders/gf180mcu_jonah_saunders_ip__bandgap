@@ -366,6 +366,21 @@ def analyze(release, output):
             number,
             "source bus via missing",
         )
+    additional_buses = []
+    bus_path = release / "matched_source_buses.json"
+    if bus_path.exists():
+        for bus in json.loads(bus_path.read_text()):
+            plan = core_supply_routes(placement, dbu, 0.8, bus["sources"])
+            rail = canonical(plan["net"])
+            for number, expected in zip(
+                [36, 42, 46, 38, 40], plan["metal"] + plan["vias"]
+            ):
+                assert (expected - net_shapes[rail][number]).is_empty(), (
+                    bus["sources"],
+                    number,
+                    "matched source bus missing from GDS",
+                )
+            additional_buses.append({**bus, "verified_in_gds": True})
     record = {
         "scope": "Read-only geometry/connectivity audit; not mismatch or electrical qualification",
         "release_sha256": hashes,
@@ -376,6 +391,7 @@ def analyze(release, output):
         "additional_pair_distances": pairs,
         "net_geometry": net_metrics,
         "balanced_local_routes_verified_in_gds": local_validation,
+        "matched_source_buses": additional_buses,
         "main_mirror_source_bus": {
             "verified_in_gds": True,
             "source_terminals": len(source_plan["unit_sources"]),

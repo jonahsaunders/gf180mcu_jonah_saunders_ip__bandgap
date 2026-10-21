@@ -1,6 +1,8 @@
 # Implemented mirror-layout revision
 
-**21 October 2026 · Trim-inclusive TB10 core · DRC clean and LVS matched**
+**Historical revision at `9b2f539` · 21 October 2026 · Trim-inclusive TB10 core**
+
+The [current compact-routing review](../2026-10-21-compact-routing/README.md) supersedes this release. Figures and evidence below are pinned to the original layout and extraction assumptions.
 
 This revision implements the physical improvements from the [preceding review](../2026-10-21-mirrors/README.md). The core measures **686.0 × 399.6 µm** and contains **272 unchanged functional device units plus 261 explicit tied-off dummy MOS units**. The earlier compact layout is retained in Git at `f249c5c`; that same GDS was re-extracted with the current extraction anchors for the controlled before-layout baseline below. The original pre-layout temperature-trim study remains in the main README.
 
@@ -12,9 +14,9 @@ This revision implements the physical improvements from the [preceding review](.
 4. **Proximity and current paths.** Related bias devices are clustered, and the core mirrors, PNPs and PTAT resistor sit beside the trim ladder. Two-micrometer M5 reinforcement is added to VREF, PTAT and selected trim-current routes. Some optional M5 landings remain inaccessible; their verified lower-metal connections remain in place. These routes are not a Kelvin implementation or completed EM/IR signoff.
 5. **Manufacturing and independent checks.** All 13 arrays have zero unrelated-net overlap over their channels and no metal-fill overlap. The complete unedited GF180MCU-D DRC deck reports **0 violations**, including density checks; LVS matches all **533 units**. Both extraction-topology LVS audits pass. A fresh source rebuild has zero GDS polygon/text differences.
 
-![Implemented floorplan](../../figures/implemented-floorplan.png)
+![Implemented floorplan](https://raw.githubusercontent.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/figures/implemented-floorplan.png)
 
-*Actual saved placement. [Matching arrays](../../figures/matched-arrays.pdf) · [Annotated GDS](../../figures/physical-layout.pdf) · [Geometry audit](../../release/mirror_geometry_audit.json) · [Rebuild comparison](../../release/rebuild_equivalence.json).*
+*Actual saved placement. [Matching arrays](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/figures/matched-arrays.pdf) · [Annotated GDS](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/figures/physical-layout.pdf) · [Geometry audit](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/release/mirror_geometry_audit.json) · [Rebuild comparison](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/release/rebuild_equivalence.json).*
 
 | Related devices | Previous separation | Revised separation |
 | :--- | ---: | ---: |
@@ -48,7 +50,7 @@ Typical process, 25 °C, trim 72, DVDD = 3.3 V. Each entry is **100 × (|Ia| / |
 
 ![Nominal branch current ratios before and after the matching revision](mirror-current-ratios.png)
 
-*Upper panels use ppm; lower panels use percent. [Vector PDF](mirror-current-ratios.pdf) · [Per-unit currents and terminal biases](../../release/mirror_bias/summary.json).*
+*Upper panels use ppm; lower panels use percent. [Vector PDF](mirror-current-ratios.pdf) · [Per-unit currents and terminal biases](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/release/mirror_bias/summary.json).*
 
 The larger M18/M16 and PRMIR/PREF errors already exist in the schematic. Their unequal drain biases and finite output resistance are consistent with those errors. Improved placement does not remove this circuit-level limitation.
 
@@ -76,9 +78,9 @@ The following model comparisons isolate contributions without treating them as a
 | Diagnostic only: remove AVDD–xf2 coupling | 51.81 dB | 53.87 dB |
 
 
-![PSRR before and after the matching revision](../../figures/psrr-before-after.png)
+![PSRR before and after the matching revision](https://raw.githubusercontent.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/figures/psrr-before-after.png)
 
-The RCC zero-wire-resistance response is checked against the capacitance-only response to within 0.001 dB over the full frequency grid. [AC conservation check](../../release/psrr/conservation_ac_check.json) · [Comparison numbers](comparison.json) · [All diagnostic AC metrics](../../release/psrr/summary.json).
+The RCC zero-wire-resistance response is checked against the capacitance-only response to within 0.001 dB over the full frequency grid. [AC conservation check](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/release/psrr/conservation_ac_check.json) · [Comparison numbers](comparison.json) · [All diagnostic AC metrics](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/release/psrr/summary.json).
 
 Early trial placement increased the reference offset because of resistive voltage drops in longer VREF, trim and PTAT routes. Diagnostic zero-resistance counterfactuals identified those paths. Moving the compensation capacitor and startup detector closer to the amplifier reduced the sensitive vgn2 route. The final compact floorplan restores a two-row output-capacitor bank and places the precision core beside the trim ladder. The 1270 × 410 µm area is a maximum planning envelope, not a target to fill. Supply-coupling ablations identify remaining sensitive nodes; those counterfactual circuits are not delivered extraction models.
 
@@ -86,6 +88,10 @@ Early trial placement increased the reference offset because of resistive voltag
 
 The RCC model omits AVSS/DVSS resistance and approximates distributed coupling placement. Statistical mismatch/trim yield, thermal and stress gradients, complete branch RC balance, EM/IR, stability, noise, loading, and final harness integration remain open. The 360-point fixed-code DC screen and nominal power-cycle tests are screening evidence, not full electrical qualification. The approximate 1270 × 410 µm area does not supply final boundary clearances or pin assignments.
 
-Use the pinned container and [build instructions](../../README.txt). Run `build`, `extract`, `screen`, and `pvt`, then `audit_mirror_layout.py --release <build> --out <build>/mirror_review`, `screen_mirror_bias.py --build <build>`, and `diagnose_psrr.py --build <build> --output <build>/psrr_diagnostics --supply-coupling`. For archived release inputs, omit `--build` from the current-bias screen; results default to the ignored build directory. `render_matching_results.py` regenerates this review and its figure from archived evidence.
+Use the pinned container and [build instructions](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/README.txt). Run `build`, `extract`, `screen`, and `pvt`, then `audit_mirror_layout.py --release <build> --out <build>/mirror_review`, `screen_mirror_bias.py --build <build>`, and `diagnose_psrr.py --build <build> --output <build>/psrr_diagnostics --supply-coupling`. For archived release inputs, omit `--build` from the current-bias screen; results default to the ignored build directory. `render_matching_results.py` regenerates this review and its figure from archived evidence.
 
-GDS SHA-256: `868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36`. [Release manifest](../../release/verification.json) binds physical checks and source/artifact hashes. [Functional-equivalence check](../../release/functional_equivalence.json) confirms unchanged functional geometry, connectivity and multiplicity.
+GDS SHA-256: `868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36`. [Release manifest](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/release/verification.json) binds physical checks and source/artifact hashes. [Functional-equivalence check](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/release/functional_equivalence.json) confirms unchanged functional geometry, connectivity and multiplicity.
+
+## Historical supply-cycle plot
+
+[Previous both-supply startup/restart figure](both-supply-startup.pdf) · [PNG](both-supply-startup.png). These curves apply to GDS 868a5339 with ground resistance omitted; they do not qualify the current routing revision.

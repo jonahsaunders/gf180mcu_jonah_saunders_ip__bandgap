@@ -156,7 +156,7 @@ def verify():
         "lvs_deck_sha256": hash_file(PDK / "libs.tech/klayout/tech/lvs/gf180mcu.lvs"),
         "open_items": [
             "Assigned wrapper and dimensions",
-            "Complete RC including ground network",
+            "Independent PEX accuracy and distributed well/substrate resistance",
             "Quantitative per-branch RC balance and mismatch yield",
             "EM/IR and full analog PVT qualification",
         ],
@@ -274,7 +274,7 @@ def extract():
         )
     stage("conserve_pex_capacitance")
     print(
-        "Extraction topology matches; ground resistance is explicitly omitted.",
+        "Extraction topology matches; ground metal is included, wells/substrate remain lumped.",
         flush=True,
     )
 

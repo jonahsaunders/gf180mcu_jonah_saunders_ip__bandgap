@@ -50,7 +50,7 @@ def routing_exclusions(placement, net, aliases):
         return name
 
     for group in placement["groups"]:
-        if not group.get("matching"):
+        if not group.get("matching") and "Q1" not in group["names"]:
             continue
         related = {
             canonical(node)
@@ -61,3 +61,10 @@ def routing_exclusions(placement, net, aliases):
         if canonical(net) not in related:
             x, y = group["x"], group["y"]
             yield (x, y, x + group["width"], y + group["height"])
+    # Keep startup and bias wires off the PTAT resistor. Its own terminals
+    # remain accessible, and the PNP array above is treated as one circuit.
+    for device in placement["placed"]:
+        if device["source"] == "R1":
+            related = {canonical(node) for node in device["nodes"]}
+            if canonical(net) not in related:
+                yield tuple(device["bounds"])

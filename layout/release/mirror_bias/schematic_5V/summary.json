@@ -6,6 +6,7 @@
   "temperature_C": 25,
   "vref_V": 1.194381285576608,
   "vref_difference_from_saved_screen_V": 1.5360550609244683e-09,
+  "reference_ac": "layout/build/compact-routing-protected/psrr_diagnostics",
   "devices": {
     "AN": {
       "current_uA": 0.04255568608613203,
@@ -2779,33 +2780,15 @@
     },
     {
       "index": 96,
-      "source": "DUM_MSINK1",
-      "instance": "XDUM_MSINK1",
-      "nodes": [
-        "audit_d96",
-        "avss",
-        "avss",
-        "avss"
-      ],
-      "voltage_probe": "VAUD96",
-      "multiplicity": 20,
-      "aid": -0.0,
-      "avd": -0.0,
-      "avg": 0.0,
-      "avs": 0.0,
-      "avb": 0.0
-    },
-    {
-      "index": 97,
       "source": "DUM_PREF",
       "instance": "XDUM_PREF",
       "nodes": [
-        "audit_d97",
+        "audit_d96",
         "avdd",
         "avdd",
         "avdd"
       ],
-      "voltage_probe": "VAUD97",
+      "voltage_probe": "VAUD96",
       "multiplicity": 29,
       "aid": -0.0,
       "avd": 5.0,
@@ -2814,70 +2797,16 @@
       "avb": 5.0
     },
     {
-      "index": 98,
-      "source": "DUM_M3",
-      "instance": "XDUM_M3",
-      "nodes": [
-        "audit_d98",
-        "avss",
-        "avss",
-        "avss"
-      ],
-      "voltage_probe": "VAUD98",
-      "multiplicity": 14,
-      "aid": -0.0,
-      "avd": -0.0,
-      "avg": 0.0,
-      "avs": 0.0,
-      "avb": 0.0
-    },
-    {
-      "index": 99,
-      "source": "DUM_MFOLD1",
-      "instance": "XDUM_MFOLD1",
-      "nodes": [
-        "audit_d99",
-        "avss",
-        "avss",
-        "avss"
-      ],
-      "voltage_probe": "VAUD99",
-      "multiplicity": 10,
-      "aid": -0.0,
-      "avd": -0.0,
-      "avg": 0.0,
-      "avs": 0.0,
-      "avb": 0.0
-    },
-    {
-      "index": 100,
-      "source": "DUM_M16",
-      "instance": "XDUM_M16",
-      "nodes": [
-        "audit_d100",
-        "avss",
-        "avss",
-        "avss"
-      ],
-      "voltage_probe": "VAUD100",
-      "multiplicity": 10,
-      "aid": -0.0,
-      "avd": -0.0,
-      "avg": 0.0,
-      "avs": 0.0,
-      "avb": 0.0
-    },
-    {
-      "index": 101,
+      "index": 97,
       "source": "DUM_MPSINK",
       "instance": "XDUM_MPSINK",
       "nodes": [
-        "audit_d101",
+        "audit_d97",
         "avdd",
         "avdd",
         "avdd"
       ],
-      "voltage_probe": "VAUD101",
+      "voltage_probe": "VAUD97",
       "multiplicity": 23,
       "aid": -0.0,
       "avd": 5.0,
@@ -2886,22 +2815,94 @@
       "avb": 5.0
     },
     {
-      "index": 102,
+      "index": 98,
       "source": "DUM_MPFOLD",
       "instance": "XDUM_MPFOLD",
       "nodes": [
-        "audit_d102",
+        "audit_d98",
         "avdd",
         "avdd",
         "avdd"
       ],
-      "voltage_probe": "VAUD102",
+      "voltage_probe": "VAUD98",
       "multiplicity": 20,
       "aid": -0.0,
       "avd": 5.0,
       "avg": 5.0,
       "avs": 5.0,
       "avb": 5.0
+    },
+    {
+      "index": 99,
+      "source": "DUM_MSINK1",
+      "instance": "XDUM_MSINK1",
+      "nodes": [
+        "audit_d99",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD99",
+      "multiplicity": 20,
+      "aid": -0.0,
+      "avd": -0.0,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 100,
+      "source": "DUM_M3",
+      "instance": "XDUM_M3",
+      "nodes": [
+        "audit_d100",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD100",
+      "multiplicity": 14,
+      "aid": -0.0,
+      "avd": -0.0,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 101,
+      "source": "DUM_MFOLD1",
+      "instance": "XDUM_MFOLD1",
+      "nodes": [
+        "audit_d101",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD101",
+      "multiplicity": 10,
+      "aid": -0.0,
+      "avd": -0.0,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 102,
+      "source": "DUM_M16",
+      "instance": "XDUM_M16",
+      "nodes": [
+        "audit_d102",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD102",
+      "multiplicity": 10,
+      "aid": -0.0,
+      "avd": -0.0,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
     },
     {
       "index": 103,
@@ -2922,6 +2923,6 @@
       "avb": 0.0
     }
   ],
-  "original_circuit_sha256": "3e8a183237a5f1034a36ec0a1d0ab46d90b6c4fdda3fd9bb01e1806fe677f091",
-  "deck_sha256": "d5d1d9f85c6c0862e17610821eecf225ffce61c127e7633897cfabc9a6fb8d55"
+  "original_circuit_sha256": "452703c882757b759cda44eb6c8a606abe3ae6bc89cd4a849443e8cf1207e36b",
+  "deck_sha256": "9e7fd2aba9d2e8b6e479b51ddba86dacec93dac20f831e158646f29579ba88e7"
 }

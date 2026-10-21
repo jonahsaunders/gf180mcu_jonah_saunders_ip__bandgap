@@ -1,0 +1,47 @@
+{"mode": "schematic", "mos": "typical", "bjt": "typical", "resistor": "typical", "supply_V": 3.3, "transient": false, "exit_code": 0, "path": "schematic_typical_typical_typical_3.3", "input_sha256": "d8ff46d72722c44b030fc4109fd7cf7f989372f382fb44f953d4f4b367ba5634", "errors": [], "vref_V": 1.194230495820671, "idd_uA": 24.379896150584038, "idigital_uA": 0.00010593975434292171, "tc_box_ppm_C": 10.085961614466699, "psrr_min_dB": 50.55737492200695, "trim_codes": 128, "best_code": 72, "best_vref_V": 1.194230498025304, "trim_min_V": 1.115315581994406, "trim_max_V": 1.29674784008242}
+{"mode": "schematic", "mos": "typical", "bjt": "typical", "resistor": "typical", "supply_V": 5.0, "transient": false, "exit_code": 0, "path": "schematic_typical_typical_typical_5", "input_sha256": "d0e9d54d6dd8d1c9b36d3ffe696aa086e83a3df47e8b476b77c8d03b546411ab", "errors": [], "vref_V": 1.194381284040553, "idd_uA": 31.71598058022465, "idigital_uA": 0.0001059365535094005, "tc_box_ppm_C": 10.018878250657652, "psrr_min_dB": 52.03993266999905, "trim_codes": 128, "best_code": 72, "best_vref_V": 1.194381285929393, "trim_min_V": 1.115455253933396, "trim_max_V": 1.296913553374257}
+{"mode": "c", "mos": "typical", "bjt": "typical", "resistor": "typical", "supply_V": 3.3, "transient": false, "exit_code": 0, "path": "c_typical_typical_typical_3.3", "input_sha256": "13ac288aca797455df90a53bc3b87bb9b7b8c813cecf75705a9a1daf94c9d57c", "errors": [], "vref_V": 1.194220647510319, "idd_uA": 24.37990027220263, "idigital_uA": 0.0001059271629203207, "tc_box_ppm_C": 10.06616800594446, "psrr_min_dB": 47.71316005135244, "trim_codes": 128, "best_code": 72, "best_vref_V": 1.194220647510989, "trim_min_V": 1.115298207638131, "trim_max_V": 1.296747798795035}
+{"mode": "c", "mos": "typical", "bjt": "typical", "resistor": "typical", "supply_V": 5.0, "transient": false, "exit_code": 0, "path": "c_typical_typical_typical_5", "input_sha256": "2521bd16a247aff08079a1bf1f09eed7fcaf3ac485cbf70be815ebea6a5d6419", "errors": [], "vref_V": 1.194371446438555, "idd_uA": 31.715998244550082, "idigital_uA": 0.0001059259013566295, "tc_box_ppm_C": 9.998749742028398, "psrr_min_dB": 52.94293905167176, "trim_codes": 128, "best_code": 72, "best_vref_V": 1.194371446436009, "trim_min_V": 1.115437795845281, "trim_max_V": 1.296913755011166}
+{"mode": "magic_lvs", "mos": "typical", "bjt": "typical", "resistor": "typical", "supply_V": 3.3, "transient": false, "exit_code": 0, "path": "magic_lvs_typical_typical_typical_3.3", "input_sha256": "9d9b16f4439fd1a5b6770808383547e4f3c5cd91034943f95c9c4bd18579dd24", "errors": [], "vref_V": 1.194220647452992, "idd_uA": 24.37990027042876, "idigital_uA": 0.0001059271618484126, "tc_box_ppm_C": 10.066168597974368, "psrr_min_dB": 50.90191357878254, "trim_codes": 128, "best_code": 72, "best_vref_V": 1.194220647453213, "trim_min_V": 1.115298207591439, "trim_max_V": 1.296747798727417}
+{"mode": "magic_lvs", "mos": "typical", "bjt": "typical", "resistor": "typical", "supply_V": 5.0, "transient": false, "exit_code": 0, "path": "magic_lvs_typical_typical_typical_5", "input_sha256": "84690b4b8618d9b23d8e342dd7c89d9a9dad74f2bee9d21bf2fc435fca533112", "errors": [], "vref_V": 1.194371446481138, "idd_uA": 31.7159982462947, "idigital_uA": 0.00010592590106599821, "tc_box_ppm_C": 9.998749162905726, "psrr_min_dB": 52.71831537765577, "trim_codes": 128, "best_code": 72, "best_vref_V": 1.194371446481415, "trim_min_V": 1.115437795712357, "trim_max_V": 1.296913754870917}
+{"mode": "rcc", "mos": "typical", "bjt": "typical", "resistor": "typical", "supply_V": 3.3, "transient": false, "exit_code": 0, "path": "rcc_typical_typical_typical_3.3", "input_sha256": "8e94ef335067efdc642182766036e6afa31ba89efe3fa6fafda9c29e2110c7ce", "errors": [], "vref_V": 1.193160339534074, "idd_uA": 24.064510887922008, "idigital_uA": 0.0001059023910746434, "tc_box_ppm_C": 7.527247272874456, "psrr_min_dB": 48.01154664396314, "trim_codes": 128, "best_code": 71, "best_vref_V": 1.194207996894479, "trim_min_V": 1.114514836794001, "trim_max_V": 1.294798608849894}
+{"mode": "rc", "mos": "typical", "bjt": "typical", "resistor": "typical", "supply_V": 3.3, "transient": false, "exit_code": 0, "path": "rc_typical_typical_typical_3.3", "input_sha256": "441082e19a6a30a947344eef84b5f9875dc32a7e7301476fca1284aa177ebc2e", "errors": [], "vref_V": 1.193160339534074, "idd_uA": 24.064510887922008, "idigital_uA": 0.0001059023910746434, "tc_box_ppm_C": 7.527247272874456, "psrr_min_dB": 41.14616314297979, "trim_codes": 128, "best_code": 71, "best_vref_V": 1.194207996894479, "trim_min_V": 1.114514836794001, "trim_max_V": 1.294798608849894}
+{"mode": "rcc", "mos": "typical", "bjt": "typical", "resistor": "typical", "supply_V": 5.0, "transient": false, "exit_code": 0, "path": "rcc_typical_typical_typical_5", "input_sha256": "6f855f90913ee2dad34ea37aa9965e630a5348e422a942ae52b618d53a738ca8", "errors": [], "vref_V": 1.193320126101019, "idd_uA": 31.214710072810803, "idigital_uA": 0.0001058993037673942, "tc_box_ppm_C": 7.448620411949405, "psrr_min_dB": 53.16844088138151, "trim_codes": 128, "best_code": 71, "best_vref_V": 1.194367955634905, "trim_min_V": 1.114661745175756, "trim_max_V": 1.294975640792228}
+{"mode": "rc", "mos": "typical", "bjt": "typical", "resistor": "typical", "supply_V": 5.0, "transient": false, "exit_code": 0, "path": "rc_typical_typical_typical_5", "input_sha256": "123260898cc47534f500f5da9ff1ad4d8af4e8f6afb0db985f6902914801f86e", "errors": [], "vref_V": 1.193320126101019, "idd_uA": 31.214710072810803, "idigital_uA": 0.0001058993037673942, "tc_box_ppm_C": 7.448620411949405, "psrr_min_dB": 44.40156828465373, "trim_codes": 128, "best_code": 71, "best_vref_V": 1.194367955634905, "trim_min_V": 1.114661745175756, "trim_max_V": 1.294975640792228}
+Traceback (most recent call last):
+  File "/workspace/bandgap/layout/scripts/screen_extracted.py", line 237, in <module>
+    main()
+  File "/workspace/bandgap/layout/scripts/screen_extracted.py", line 227, in main
+    records = list(pool.map(run_case, cases))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/bandgap/layout/scripts/screen_extracted.py", line 118, in run_case
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2141, in _communicate
+    self.wait(timeout=self._remaining_time(endtime))
+  File "/usr/lib/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2045, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['ngspice', '-b', 'test.spice']' timed out after 299.99995409599796 seconds

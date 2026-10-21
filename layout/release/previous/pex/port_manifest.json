@@ -34,24 +34,24 @@
   ],
   "internal_anchor_points_um": {
     "vq2": [
-      149.5,
-      49.85
+      88.0,
+      129.0
     ],
     "v1": [
-      159.5,
-      59.85
+      98.0,
+      139.0
     ],
     "vq3": [
-      179.5,
-      59.85
+      118.0,
+      139.0
     ],
     "net3": [
-      85.79,
-      65.24
+      125.41,
+      118.49
     ],
     "net4": [
-      85.79,
-      44.29
+      125.41,
+      97.54
     ]
   },
   "scope": "Temporary extraction interface only; fabricated geometry and connectivity unchanged"

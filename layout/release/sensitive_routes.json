@@ -3,6 +3,7 @@
     "net": "vgn2",
     "m4_area_um2": 239.51999999999998,
     "m5_area_um2": 3747.94,
-    "via4_count": 13
+    "via4_count": 13,
+    "retained_m4_area_um2": 0.0
   }
 ]

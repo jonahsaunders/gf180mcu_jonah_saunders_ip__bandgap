@@ -58,3073 +58,3486 @@ echo DEVICE 0
 let aid=i(v.xdut.vaud0)
 let avd=v(xdut.audit_d0)
 let avg=v(xdut.b0.t2)
-let avs=v(xdut.rbit1top.t8)
+let avs=v(xdut.rbit1top.t9)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 1
 let aid=i(v.xdut.vaud1)
 let avd=v(xdut.audit_d1)
-let avg=v(xdut.avdd.t742)
-let avs=v(xdut.avdd.t744)
-let avb=v(xdut.avdd.t743)
+let avg=v(xdut.avdd.t461)
+let avs=v(xdut.avdd.t462)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 2
 let aid=i(v.xdut.vaud2)
 let avd=v(xdut.audit_d2)
-let avg=0
-let avs=0
+let avg=v(xdut.avss.t112)
+let avs=v(xdut.avss.t113)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 3
 let aid=i(v.xdut.vaud3)
 let avd=v(xdut.audit_d3)
-let avg=0
-let avs=0
+let avg=v(xdut.avss.t139)
+let avs=v(xdut.avss.t140)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 4
 let aid=i(v.xdut.vaud4)
 let avd=v(xdut.audit_d4)
-let avg=v(xdut.avdd.t391)
-let avs=v(xdut.avdd.t393)
-let avb=v(xdut.avdd.t392)
+let avg=v(xdut.avdd.t223)
+let avs=v(xdut.avdd.t224)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 5
 let aid=i(v.xdut.vaud5)
 let avd=v(xdut.audit_d5)
 let avg=v(xdut.vbp_i.t32)
-let avs=v(xdut.avdd.t61)
-let avb=v(xdut.avdd.t60)
+let avs=v(xdut.avdd.t590)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 6
 let aid=i(v.xdut.vaud6)
 let avd=v(xdut.audit_d6)
 let avg=v(xdut.vbp_i.t24)
-let avs=v(xdut.avdd.t69)
-let avb=v(xdut.avdd.t68)
+let avs=v(xdut.avdd.t576)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 7
 let aid=i(v.xdut.vaud7)
 let avd=v(xdut.audit_d7)
-let avg=v(xdut.avdd.t447)
-let avs=v(xdut.avdd.t449)
-let avb=v(xdut.avdd.t448)
+let avg=v(xdut.avdd.t265)
+let avs=v(xdut.avdd.t266)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 8
 let aid=i(v.xdut.vaud8)
 let avd=v(xdut.audit_d8)
-let avg=v(xdut.avdd.t471)
-let avs=v(xdut.avdd.t473)
-let avb=v(xdut.avdd.t472)
+let avg=v(xdut.avdd.t283)
+let avs=v(xdut.avdd.t284)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 9
 let aid=i(v.xdut.vaud9)
 let avd=v(xdut.audit_d9)
 let avg=v(xdut.vbp_i.t33)
-let avs=v(xdut.avdd.t63)
-let avb=v(xdut.avdd.t62)
+let avs=v(xdut.avdd.t591)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 10
 let aid=i(v.xdut.vaud10)
 let avd=v(xdut.audit_d10)
-let avg=v(xdut.avdd.t275)
-let avs=v(xdut.avdd.t277)
-let avb=v(xdut.avdd.t276)
+let avg=v(xdut.avdd.t136)
+let avs=v(xdut.avdd.t137)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 11
 let aid=i(v.xdut.vaud11)
 let avd=v(xdut.audit_d11)
 let avg=v(xdut.vbp_i.t47)
-let avs=v(xdut.avdd.t892)
-let avb=v(xdut.avdd.t891)
+let avs=v(xdut.avdd.t564)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 12
 let aid=i(v.xdut.vaud12)
 let avd=v(xdut.audit_d12)
 let avg=v(xdut.b3.t0)
-let avs=v(xdut.dvdd.t27)
-let avb=v(xdut.dvdd.t26)
+let avs=v(xdut.dvdd.t0)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 13
 let aid=i(v.xdut.vaud13)
 let avd=v(xdut.audit_d13)
 let avg=v(xdut.psrg_m3_feed.t13)
-let avs=v(xdut.avdd.t1048)
-let avb=v(xdut.avdd.t1047)
+let avs=v(xdut.avdd.t605)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 14
 let aid=i(v.xdut.vaud14)
 let avd=v(xdut.audit_d14)
 let avg=v(xdut.b2_b.t3)
-let avs=v(xdut.rbit2top.t4)
-let avb=v(xdut.dvdd.t23)
+let avs=v(xdut.rbit2top.t1)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 15
 let aid=i(v.xdut.vaud15)
 let avd=v(xdut.audit_d15)
 let avg=v(xdut.y1.t13)
-let avs=v(xdut.avdd.t948)
-let avb=v(xdut.avdd.t947)
+let avs=v(xdut.avdd.t624)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 16
 let aid=i(v.xdut.vaud16)
 let avd=v(xdut.audit_d16)
 let avg=v(xdut.vbn.t0)
-let avs=0
+let avs=v(xdut.avss.t204)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 17
 let aid=i(v.xdut.vaud17)
 let avd=v(xdut.audit_d17)
-let avg=v(xdut.avdd.t207)
-let avs=v(xdut.avdd.t209)
-let avb=v(xdut.avdd.t208)
+let avg=v(xdut.avdd.t85)
+let avs=v(xdut.avdd.t86)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 18
 let aid=i(v.xdut.vaud18)
 let avd=v(xdut.audit_d18)
-let avg=v(xdut.avdd.t295)
-let avs=v(xdut.avdd.t297)
-let avb=v(xdut.avdd.t296)
+let avg=v(xdut.avdd.t151)
+let avs=v(xdut.avdd.t152)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 19
 let aid=i(v.xdut.vaud19)
 let avd=v(xdut.audit_d19)
 let avg=v(xdut.vbn_fold.t14)
-let avs=v(xdut.xf2.t0)
+let avs=v(xdut.xf2.t2)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 20
 let aid=i(v.xdut.vaud20)
 let avd=v(xdut.audit_d20)
 let avg=v(xdut.vbn_i.t11)
-let avs=0
+let avs=v(xdut.avss.t207)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 21
 let aid=i(v.xdut.vaud21)
 let avd=v(xdut.audit_d21)
 let avg=v(xdut.vbp_i.t52)
-let avs=v(xdut.avdd.t894)
-let avb=v(xdut.avdd.t893)
+let avs=v(xdut.avdd.t633)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 22
 let aid=i(v.xdut.vaud22)
 let avd=v(xdut.audit_d22)
-let avg=v(xdut.avdd.t439)
-let avs=v(xdut.avdd.t441)
-let avb=v(xdut.avdd.t440)
+let avg=v(xdut.avdd.t259)
+let avs=v(xdut.avdd.t260)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 23
 let aid=i(v.xdut.vaud23)
 let avd=v(xdut.audit_d23)
-let avg=v(xdut.vbp_cas.t32)
-let avs=v(xdut.pm2.t2)
-let avb=v(xdut.avdd.t966)
+let avg=v(xdut.avss.t163)
+let avs=v(xdut.avss.t164)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 24
 let aid=i(v.xdut.vaud24)
 let avd=v(xdut.audit_d24)
-let avg=v(xdut.avdd.t623)
-let avs=v(xdut.avdd.t625)
-let avb=v(xdut.avdd.t624)
+let avg=v(xdut.vbp_cas.t32)
+let avs=v(xdut.pm2.t7)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 25
 let aid=i(v.xdut.vaud25)
 let avd=v(xdut.audit_d25)
-let avg=v(xdut.avdd.t858)
-let avs=v(xdut.avdd.t860)
-let avb=v(xdut.avdd.t859)
+let avg=v(xdut.avdd.t384)
+let avs=v(xdut.avdd.t385)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 26
 let aid=i(v.xdut.vaud26)
 let avd=v(xdut.audit_d26)
-let avg=v(xdut.avdd.t635)
-let avs=v(xdut.avdd.t637)
-let avb=v(xdut.avdd.t636)
+let avg=v(xdut.avdd.t545)
+let avs=v(xdut.avdd.t546)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 27
 let aid=i(v.xdut.vaud27)
 let avd=v(xdut.audit_d27)
-let avg=v(xdut.avdd.t203)
-let avs=v(xdut.avdd.t205)
-let avb=v(xdut.avdd.t204)
+let avg=v(xdut.avdd.t393)
+let avs=v(xdut.avdd.t394)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 28
 let aid=i(v.xdut.vaud28)
 let avd=v(xdut.audit_d28)
-let avg=v(xdut.avdd.t291)
-let avs=v(xdut.avdd.t293)
-let avb=v(xdut.avdd.t292)
+let avg=v(xdut.avdd.t82)
+let avs=v(xdut.avdd.t83)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 29
 let aid=i(v.xdut.vaud29)
 let avd=v(xdut.audit_d29)
-let avg=v(xdut.avdd.t511)
-let avs=v(xdut.avdd.t513)
-let avb=v(xdut.avdd.t512)
+let avg=v(xdut.avdd.t148)
+let avs=v(xdut.avdd.t149)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 30
 let aid=i(v.xdut.vaud30)
 let avd=v(xdut.audit_d30)
-let avg=v(xdut.vbn_fold.t12)
-let avs=v(xdut.vnx_bias)
-let avb=0
+let avg=v(xdut.avdd.t304)
+let avs=v(xdut.avdd.t305)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 31
 let aid=i(v.xdut.vaud31)
 let avd=v(xdut.audit_d31)
-let avg=v(xdut.vbn_sink.t23)
-let avs=0
+let avg=v(xdut.vbn_fold.t8)
+let avs=v(xdut.vnx_bias)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 32
 let aid=i(v.xdut.vaud32)
 let avd=v(xdut.audit_d32)
-let avg=v(xdut.aux_gate)
-let avs=v(xdut.psrg_m3_feed.t7)
-let avb=v(xdut.avdd.t1013)
+let avg=v(xdut.vbn_sink.t23)
+let avs=v(xdut.avss.t202)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 33
 let aid=i(v.xdut.vaud33)
 let avd=v(xdut.audit_d33)
-let avg=v(xdut.b5_b.t2)
-let avs=v(xdut.rbit5top.t2)
-let avb=v(xdut.dvdd.t5)
+let avg=v(xdut.aux_gate)
+let avs=v(xdut.psrg_m3_feed.t7)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 34
 let aid=i(v.xdut.vaud34)
 let avd=v(xdut.audit_d34)
-let avg=v(xdut.avdd.t754)
-let avs=v(xdut.avdd.t756)
-let avb=v(xdut.avdd.t755)
+let avg=v(xdut.b5_b.t2)
+let avs=v(xdut.rbit5top.t0)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 35
 let aid=i(v.xdut.vaud35)
 let avd=v(xdut.audit_d35)
-let avg=v(xdut.avdd.t103)
-let avs=v(xdut.avdd.t105)
-let avb=v(xdut.avdd.t104)
+let avg=v(xdut.avdd.t467)
+let avs=v(xdut.avdd.t468)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 36
 let aid=i(v.xdut.vaud36)
 let avd=v(xdut.audit_d36)
-let avg=0
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t7)
+let avs=v(xdut.avdd.t8)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 37
 let aid=i(v.xdut.vaud37)
 let avd=v(xdut.audit_d37)
-let avg=v(xdut.psrg_m3_feed.t26)
-let avs=v(xdut.avdd.t896)
-let avb=v(xdut.avdd.t895)
+let avg=v(xdut.avss.t67)
+let avs=v(xdut.avss.t68)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 38
 let aid=i(v.xdut.vaud38)
 let avd=v(xdut.audit_d38)
-let avg=v(xdut.avdd.t818)
-let avs=v(xdut.avdd.t820)
-let avb=v(xdut.avdd.t819)
+let avg=v(xdut.psrg_m3_feed.t26)
+let avs=v(xdut.avdd.t637)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 39
 let aid=i(v.xdut.vaud39)
 let avd=v(xdut.audit_d39)
-let avg=v(xdut.avdd.t547)
-let avs=v(xdut.avdd.t549)
-let avb=v(xdut.avdd.t548)
+let avg=v(xdut.avdd.t515)
+let avs=v(xdut.avdd.t516)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 40
 let aid=i(v.xdut.vaud40)
 let avd=v(xdut.audit_d40)
-let avg=v(xdut.avdd.t99)
-let avs=v(xdut.avdd.t101)
-let avb=v(xdut.avdd.t100)
+let avg=v(xdut.avss.t7)
+let avs=v(xdut.avss.t8)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 41
 let aid=i(v.xdut.vaud41)
 let avd=v(xdut.audit_d41)
-let avg=v(xdut.avdd.t451)
-let avs=v(xdut.avdd.t453)
-let avb=v(xdut.avdd.t452)
+let avg=v(xdut.avdd.t327)
+let avs=v(xdut.avdd.t328)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 42
 let aid=i(v.xdut.vaud42)
 let avd=v(xdut.audit_d42)
-let avg=v(xdut.psrg_m3_feed.t28)
-let avs=v(xdut.avdd.t900)
-let avb=v(xdut.avdd.t899)
+let avg=v(xdut.avdd.t4)
+let avs=v(xdut.avdd.t5)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 43
 let aid=i(v.xdut.vaud43)
 let avd=v(xdut.audit_d43)
-let avg=v(xdut.aux_gate)
-let avs=v(xdut.avdd.t1012)
-let avb=v(xdut.avdd.t1011)
+let avg=v(xdut.avdd.t268)
+let avs=v(xdut.avdd.t269)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 44
 let aid=i(v.xdut.vaud44)
 let avd=v(xdut.audit_d44)
-let avg=v(xdut.avdd.t706)
-let avs=v(xdut.avdd.t708)
-let avb=v(xdut.avdd.t707)
+let avg=v(xdut.psrg_m3_feed.t28)
+let avs=v(xdut.avdd.t648)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 45
 let aid=i(v.xdut.vaud45)
 let avd=v(xdut.audit_d45)
-let avg=v(xdut.avdd.t503)
-let avs=v(xdut.avdd.t505)
-let avb=v(xdut.avdd.t504)
+let avg=v(xdut.aux_gate)
+let avs=v(xdut.avdd.t662)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 46
 let aid=i(v.xdut.vaud46)
 let avd=v(xdut.audit_d46)
-let avg=v(xdut.avdd.t215)
-let avs=v(xdut.avdd.t217)
-let avb=v(xdut.avdd.t216)
+let avg=v(xdut.avdd.t443)
+let avs=v(xdut.avdd.t444)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 47
 let aid=i(v.xdut.vaud47)
 let avd=v(xdut.audit_d47)
-let avg=v(xdut.avdd.t850)
-let avs=v(xdut.avdd.t852)
-let avb=v(xdut.avdd.t851)
+let avg=v(xdut.avdd.t300)
+let avs=v(xdut.avdd.t301)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 48
 let aid=i(v.xdut.vaud48)
 let avd=v(xdut.audit_d48)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx3.t5)
-let avb=v(xdut.avdd.t995)
+let avg=v(xdut.avss.t4)
+let avs=v(xdut.avss.t5)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 49
 let aid=i(v.xdut.vaud49)
 let avd=v(xdut.audit_d49)
-let avg=v(xdut.avdd.t403)
-let avs=v(xdut.avdd.t405)
-let avb=v(xdut.avdd.t404)
+let avg=v(xdut.avdd.t91)
+let avs=v(xdut.avdd.t92)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 50
 let aid=i(v.xdut.vaud50)
 let avd=v(xdut.audit_d50)
-let avg=v(xdut.psrg_vnc.t7)
-let avs=v(xdut.rb_mid)
-let avb=0
+let avg=v(xdut.avdd.t539)
+let avs=v(xdut.avdd.t540)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 51
 let aid=i(v.xdut.vaud51)
 let avd=v(xdut.audit_d51)
-let avg=v(xdut.avdd.t710)
-let avs=v(xdut.avdd.t712)
-let avb=v(xdut.avdd.t711)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx3.t6)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 52
 let aid=i(v.xdut.vaud52)
 let avd=v(xdut.audit_d52)
-let avg=v(xdut.psrg_m3_feed.t18)
-let avs=v(xdut.avdd.t3)
-let avb=v(xdut.avdd.t2)
+let avg=v(xdut.avdd.t232)
+let avs=v(xdut.avdd.t233)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 53
 let aid=i(v.xdut.vaud53)
 let avd=v(xdut.audit_d53)
-let avg=v(xdut.avdd.t111)
-let avs=v(xdut.avdd.t113)
-let avb=v(xdut.avdd.t112)
+let avg=v(xdut.psrg_vnc.t0)
+let avs=v(xdut.rb_mid)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 54
 let aid=i(v.xdut.vaud54)
 let avd=v(xdut.audit_d54)
-let avg=v(xdut.avdd.t687)
-let avs=v(xdut.avdd.t689)
-let avb=v(xdut.avdd.t688)
+let avg=v(xdut.avss.t154)
+let avs=v(xdut.avss.t155)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 55
 let aid=i(v.xdut.vaud55)
 let avd=v(xdut.audit_d55)
-let avg=v(xdut.y1.t9)
-let avs=v(xdut.avdd.t928)
-let avb=v(xdut.avdd.t927)
+let avg=v(xdut.avdd.t445)
+let avs=v(xdut.avdd.t446)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 56
 let aid=i(v.xdut.vaud56)
 let avd=v(xdut.audit_d56)
-let avg=v(xdut.avdd.t591)
-let avs=v(xdut.avdd.t593)
-let avb=v(xdut.avdd.t592)
+let avg=v(xdut.psrg_m3_feed.t18)
+let avs=v(xdut.avdd.t651)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 57
 let aid=i(v.xdut.vaud57)
 let avd=v(xdut.audit_d57)
-let avg=v(xdut.avdd.t271)
-let avs=v(xdut.avdd.t273)
-let avb=v(xdut.avdd.t272)
+let avg=v(xdut.avdd.t13)
+let avs=v(xdut.avdd.t14)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 58
 let aid=i(v.xdut.vaud58)
 let avd=v(xdut.audit_d58)
-let avg=v(xdut.avdd.t319)
-let avs=v(xdut.avdd.t321)
-let avb=v(xdut.avdd.t320)
+let avg=v(xdut.avdd.t429)
+let avs=v(xdut.avdd.t430)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 59
 let aid=i(v.xdut.vaud59)
 let avd=v(xdut.audit_d59)
-let avg=v(xdut.avdd.t355)
-let avs=v(xdut.avdd.t357)
-let avb=v(xdut.avdd.t356)
+let avg=v(xdut.y1.t9)
+let avs=v(xdut.avdd.t628)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 60
 let aid=i(v.xdut.vaud60)
 let avd=v(xdut.audit_d60)
-let avg=v(xdut.avdd.t607)
-let avs=v(xdut.avdd.t609)
-let avb=v(xdut.avdd.t608)
+let avg=v(xdut.avss.t88)
+let avs=v(xdut.avss.t89)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 61
 let aid=i(v.xdut.vaud61)
 let avd=v(xdut.audit_d61)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx2.t6)
-let avb=v(xdut.avdd.t992)
+let avg=v(xdut.avdd.t360)
+let avs=v(xdut.avdd.t361)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 62
 let aid=i(v.xdut.vaud62)
 let avd=v(xdut.audit_d62)
-let avg=v(xdut.y1.t12)
-let avs=v(xdut.avdd.t946)
-let avb=v(xdut.avdd.t945)
+let avg=v(xdut.avss.t115)
+let avs=v(xdut.avss.t116)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 63
 let aid=i(v.xdut.vaud63)
 let avd=v(xdut.audit_d63)
-let avg=v(xdut.psrg_m3_feed.t25)
-let avs=v(xdut.avdd.t888)
-let avb=v(xdut.avdd.t887)
+let avg=v(xdut.avdd.t133)
+let avs=v(xdut.avdd.t134)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 64
 let aid=i(v.xdut.vaud64)
 let avd=v(xdut.audit_d64)
-let avg=v(xdut.avdd.t535)
-let avs=v(xdut.avdd.t537)
-let avb=v(xdut.avdd.t536)
+let avg=v(xdut.avdd.t169)
+let avs=v(xdut.avdd.t170)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 65
 let aid=i(v.xdut.vaud65)
 let avd=v(xdut.audit_d65)
-let avg=v(xdut.avdd.t267)
-let avs=v(xdut.avdd.t269)
-let avb=v(xdut.avdd.t268)
+let avg=v(xdut.avdd.t196)
+let avs=v(xdut.avdd.t197)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 66
 let aid=i(v.xdut.vaud66)
 let avd=v(xdut.audit_d66)
-let avg=v(xdut.avdd.t315)
-let avs=v(xdut.avdd.t317)
-let avb=v(xdut.avdd.t316)
+let avg=v(xdut.avdd.t372)
+let avs=v(xdut.avdd.t373)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 67
 let aid=i(v.xdut.vaud67)
 let avd=v(xdut.audit_d67)
-let avg=v(xdut.avdd.t351)
-let avs=v(xdut.avdd.t353)
-let avb=v(xdut.avdd.t352)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx2.t6)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 68
 let aid=i(v.xdut.vaud68)
 let avd=v(xdut.audit_d68)
-let avg=v(xdut.b2.t0)
-let avs=v(xdut.dvdd.t9)
-let avb=v(xdut.dvdd.t8)
+let avg=v(xdut.y1.t12)
+let avs=v(xdut.avdd.t641)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 69
 let aid=i(v.xdut.vaud69)
 let avd=v(xdut.audit_d69)
-let avg=v(xdut.avdd.t627)
-let avs=v(xdut.avdd.t629)
-let avb=v(xdut.avdd.t628)
+let avg=v(xdut.psrg_m3_feed.t25)
+let avs=v(xdut.avdd.t636)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 70
 let aid=i(v.xdut.vaud70)
 let avd=v(xdut.audit_d70)
-let avg=v(xdut.avdd.t667)
-let avs=v(xdut.avdd.t669)
-let avb=v(xdut.avdd.t668)
+let avg=v(xdut.avdd.t318)
+let avs=v(xdut.avdd.t319)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 71
 let aid=i(v.xdut.vaud71)
 let avd=v(xdut.audit_d71)
-let avg=v(xdut.vbp_cas.t26)
-let avs=v(xdut.pm1.t0)
-let avb=v(xdut.avdd.t953)
+let avg=v(xdut.avdd.t130)
+let avs=v(xdut.avdd.t131)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 72
 let aid=i(v.xdut.vaud72)
 let avd=v(xdut.audit_d72)
-let avg=v(xdut.avdd.t830)
-let avs=v(xdut.avdd.t832)
-let avb=v(xdut.avdd.t831)
+let avg=v(xdut.avdd.t166)
+let avs=v(xdut.avdd.t167)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 73
 let aid=i(v.xdut.vaud73)
 let avd=v(xdut.audit_d73)
-let avg=0
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t193)
+let avs=v(xdut.avdd.t194)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 74
 let aid=i(v.xdut.vaud74)
 let avd=v(xdut.audit_d74)
-let avg=v(xdut.b5.t0)
-let avs=v(xdut.dvdd.t1)
-let avb=v(xdut.dvdd.t0)
+let avg=v(xdut.b2.t0)
+let avs=v(xdut.dvdd.t3)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 75
 let aid=i(v.xdut.vaud75)
 let avd=v(xdut.audit_d75)
-let avg=0
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t387)
+let avs=v(xdut.avdd.t388)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 76
 let aid=i(v.xdut.vaud76)
 let avd=v(xdut.audit_d76)
-let avg=v(xdut.avdd.t491)
-let avs=v(xdut.avdd.t493)
-let avb=v(xdut.avdd.t492)
+let avg=v(xdut.avdd.t415)
+let avs=v(xdut.avdd.t416)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 77
 let aid=i(v.xdut.vaud77)
 let avd=v(xdut.audit_d77)
-let avg=v(xdut.vbp_i.t9)
-let avs=v(xdut.avdd.t1033)
-let avb=v(xdut.avdd.t1032)
+let avg=v(xdut.vbp_cas.t26)
+let avs=v(xdut.pm1.t10)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 78
 let aid=i(v.xdut.vaud78)
 let avd=v(xdut.audit_d78)
-let avg=v(xdut.vbp_bias.t10)
-let avs=v(xdut.avdd.t9)
-let avb=v(xdut.avdd.t8)
+let avg=v(xdut.avdd.t524)
+let avs=v(xdut.avdd.t525)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 79
 let aid=i(v.xdut.vaud79)
 let avd=v(xdut.audit_d79)
-let avg=v(xdut.avdd.t199)
-let avs=v(xdut.avdd.t201)
-let avb=v(xdut.avdd.t200)
+let avg=v(xdut.avss.t133)
+let avs=v(xdut.avss.t134)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 80
 let aid=i(v.xdut.vaud80)
 let avd=v(xdut.audit_d80)
-let avg=v(xdut.avdd.t774)
-let avs=v(xdut.avdd.t776)
-let avb=v(xdut.avdd.t775)
+let avg=v(xdut.b5.t0)
+let avs=v(xdut.dvdd.t6)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 81
 let aid=i(v.xdut.vaud81)
 let avd=v(xdut.audit_d81)
-let avg=v(xdut.vbp_bias.t26)
-let avs=v(xdut.avdd.t912)
-let avb=v(xdut.avdd.t911)
+let avg=v(xdut.avss.t172)
+let avs=v(xdut.avss.t173)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 82
 let aid=i(v.xdut.vaud82)
 let avd=v(xdut.audit_d82)
-let avg=v(xdut.vbn_sink.t24)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t294)
+let avs=v(xdut.avdd.t295)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 83
 let aid=i(v.xdut.vaud83)
 let avd=v(xdut.audit_d83)
-let avg=v(xdut.vbp_i.t28)
-let avs=v(xdut.avdd.t19)
-let avb=v(xdut.avdd.t18)
+let avg=v(xdut.vbp_i.t8)
+let avs=v(xdut.avdd.t569)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 84
 let aid=i(v.xdut.vaud84)
 let avd=v(xdut.audit_d84)
-let avg=v(xdut.vbp_i.t41)
-let avs=v(xdut.avdd.t13)
-let avb=v(xdut.avdd.t12)
+let avg=v(xdut.avss.t25)
+let avs=v(xdut.avss.t26)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 85
 let aid=i(v.xdut.vaud85)
 let avd=v(xdut.audit_d85)
-let avg=v(xdut.b0_b.t3)
-let avs=v(xdut.rbit0top.t2)
-let avb=v(xdut.dvdd.t15)
+let avg=v(xdut.avss.t130)
+let avs=v(xdut.avss.t131)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 86
 let aid=i(v.xdut.vaud86)
 let avd=v(xdut.audit_d86)
-let avg=v(xdut.avdd.t862)
-let avs=v(xdut.avdd.t864)
-let avb=v(xdut.avdd.t863)
+let avg=v(xdut.vbp_bias.t10)
+let avs=v(xdut.avdd.t656)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 87
 let aid=i(v.xdut.vaud87)
 let avd=v(xdut.audit_d87)
-let avg=v(xdut.iref_gate.t3)
-let avs=v(xdut.avdd.t932)
-let avb=v(xdut.avdd.t931)
+let avg=v(xdut.avdd.t79)
+let avs=v(xdut.avdd.t80)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 88
 let aid=i(v.xdut.vaud88)
 let avd=v(xdut.audit_d88)
-let avg=v(xdut.avdd.t307)
-let avs=v(xdut.avdd.t309)
-let avb=v(xdut.avdd.t308)
+let avg=v(xdut.avdd.t482)
+let avs=v(xdut.avdd.t483)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 89
 let aid=i(v.xdut.vaud89)
 let avd=v(xdut.audit_d89)
-let avg=v(xdut.avdd.t343)
-let avs=v(xdut.avdd.t345)
-let avb=v(xdut.avdd.t344)
+let avg=v(xdut.vbp_bias.t26)
+let avs=v(xdut.avdd.t632)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 90
 let aid=i(v.xdut.vaud90)
 let avd=v(xdut.audit_d90)
-let avg=v(xdut.avdd.t95)
-let avs=v(xdut.avdd.t97)
-let avb=v(xdut.avdd.t96)
+let avg=v(xdut.vbn_sink.t24)
+let avs=v(xdut.avss.t203)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 91
 let aid=i(v.xdut.vaud91)
 let avd=v(xdut.audit_d91)
-let avg=v(xdut.vbp_i.t21)
-let avs=v(xdut.vsu1)
-let avb=0
+let avg=v(xdut.vbp_i.t28)
+let avs=v(xdut.avdd.t601)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 92
 let aid=i(v.xdut.vaud92)
 let avd=v(xdut.audit_d92)
-let avg=v(xdut.vbp_cas.t29)
-let avs=v(xdut.pm2.t1)
-let avb=v(xdut.avdd.t956)
+let avg=v(xdut.vbp_i.t41)
+let avs=v(xdut.avdd.t646)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 93
 let aid=i(v.xdut.vaud93)
 let avd=v(xdut.audit_d93)
-let avg=v(xdut.vbp_i.t51)
-let avs=v(xdut.avdd.t59)
-let avb=v(xdut.avdd.t58)
+let avg=v(xdut.b0_b.t3)
+let avs=v(xdut.rbit0top.t0)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 94
 let aid=i(v.xdut.vaud94)
 let avd=v(xdut.audit_d94)
-let avg=v(xdut.vbp_tail.t12)
-let avs=v(xdut.avdd.t916)
-let avb=v(xdut.avdd.t915)
+let avg=v(xdut.avdd.t548)
+let avs=v(xdut.avdd.t549)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 95
 let aid=i(v.xdut.vaud95)
 let avd=v(xdut.audit_d95)
-let avg=v(xdut.avdd.t603)
-let avs=v(xdut.avdd.t605)
-let avb=v(xdut.avdd.t604)
+let avg=v(xdut.iref_gate.t3)
+let avs=v(xdut.avdd.t643)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 96
 let aid=i(v.xdut.vaud96)
 let avd=v(xdut.audit_d96)
-let avg=v(xdut.b3_b.t2)
-let avs=v(xdut.rbit3top.t1)
-let avb=v(xdut.dvdd.t2)
+let avg=v(xdut.avss.t190)
+let avs=v(xdut.avss.t191)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 97
 let aid=i(v.xdut.vaud97)
 let avd=v(xdut.audit_d97)
-let avg=v(xdut.avdd.t435)
-let avs=v(xdut.avdd.t437)
-let avb=v(xdut.avdd.t436)
+let avg=v(xdut.avdd.t160)
+let avs=v(xdut.avdd.t161)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 98
 let aid=i(v.xdut.vaud98)
 let avd=v(xdut.audit_d98)
-let avg=v(xdut.vsu)
-let avs=v(xdut.avdd.t88)
-let avb=v(xdut.avdd.t87)
+let avg=v(xdut.avdd.t187)
+let avs=v(xdut.avdd.t188)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 99
 let aid=i(v.xdut.vaud99)
 let avd=v(xdut.audit_d99)
-let avg=v(xdut.vbn_sink.t27)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t1)
+let avs=v(xdut.avdd.t2)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 100
 let aid=i(v.xdut.vaud100)
 let avd=v(xdut.audit_d100)
-let avg=v(xdut.avdd.t191)
-let avs=v(xdut.avdd.t193)
-let avb=v(xdut.avdd.t192)
+let avg=v(xdut.vbp_i.t21)
+let avs=v(xdut.vsu1)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 101
 let aid=i(v.xdut.vaud101)
 let avd=v(xdut.audit_d101)
-let avg=v(xdut.b4_b.t2)
-let avs=v(xdut.rbit4top.t0)
-let avb=v(xdut.dvdd.t4)
+let avg=v(xdut.vbp_cas.t29)
+let avs=v(xdut.pm2.t6)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 102
 let aid=i(v.xdut.vaud102)
 let avd=v(xdut.audit_d102)
-let avg=v(xdut.avdd.t379)
-let avs=v(xdut.avdd.t381)
-let avb=v(xdut.avdd.t380)
+let avg=v(xdut.vbp_i.t51)
+let avs=v(xdut.avdd.t593)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 103
 let aid=i(v.xdut.vaud103)
 let avd=v(xdut.audit_d103)
-let avg=v(xdut.vbp_i.t54)
-let avs=v(xdut.avdd.t77)
-let avb=v(xdut.avdd.t76)
+let avg=v(xdut.avss.t181)
+let avs=v(xdut.avss.t182)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 104
 let aid=i(v.xdut.vaud104)
 let avd=v(xdut.audit_d104)
-let avg=v(xdut.vbn_sink.t28)
-let avs=0
-let avb=0
+let avg=v(xdut.vbp_tail.t12)
+let avs=v(xdut.avdd.t622)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 105
 let aid=i(v.xdut.vaud105)
 let avd=v(xdut.audit_d105)
-let avg=v(xdut.avdd.t878)
-let avs=v(xdut.avdd.t880)
-let avb=v(xdut.avdd.t879)
+let avg=v(xdut.avdd.t369)
+let avs=v(xdut.avdd.t370)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 106
 let aid=i(v.xdut.vaud106)
 let avd=v(xdut.audit_d106)
-let avg=v(xdut.avdd.t615)
-let avs=v(xdut.avdd.t617)
-let avb=v(xdut.avdd.t616)
+let avg=v(xdut.b3_b.t2)
+let avs=v(xdut.rbit3top.t0)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 107
 let aid=i(v.xdut.vaud107)
 let avd=v(xdut.audit_d107)
-let avg=v(xdut.v1.t3)
-let avs=v(xdut.vsp.t11)
-let avb=v(xdut.avdd.t1028)
+let avg=v(xdut.avdd.t256)
+let avs=v(xdut.avdd.t257)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 108
 let aid=i(v.xdut.vaud108)
 let avd=v(xdut.audit_d108)
-let avg=v(xdut.b1_b.t4)
-let avs=v(xdut.rbit1top.t12)
-let avb=v(xdut.dvdd.t12)
+let avg=v(xdut.vsu)
+let avs=v(xdut.avdd.t642)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 109
 let aid=i(v.xdut.vaud109)
 let avd=v(xdut.audit_d109)
-let avg=v(xdut.psrg_vnc.t10)
-let avs=v(xdut.psrg_m3_protected.t2)
+let avg=v(xdut.vbn_sink.t27)
+let avs=v(xdut.avss.t198)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 110
 let aid=i(v.xdut.vaud110)
 let avd=v(xdut.audit_d110)
-let avg=v(xdut.avdd.t375)
-let avs=v(xdut.avdd.t377)
-let avb=v(xdut.avdd.t376)
+let avg=v(xdut.avdd.t73)
+let avs=v(xdut.avdd.t74)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 111
 let aid=i(v.xdut.vaud111)
 let avd=v(xdut.audit_d111)
-let avg=v(xdut.b4.t2)
-let avs=v(xdut.rbit5top.t3)
-let avb=0
+let avg=v(xdut.b4_b.t2)
+let avs=v(xdut.rbit4top.t5)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 112
 let aid=i(v.xdut.vaud112)
 let avd=v(xdut.audit_d112)
-let avg=v(xdut.avdd.t167)
-let avs=v(xdut.avdd.t169)
-let avb=v(xdut.avdd.t168)
+let avg=v(xdut.avss.t97)
+let avs=v(xdut.avss.t98)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 113
 let aid=i(v.xdut.vaud113)
 let avd=v(xdut.audit_d113)
-let avg=v(xdut.vbn_sink.t17)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t214)
+let avs=v(xdut.avdd.t215)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 114
 let aid=i(v.xdut.vaud114)
 let avd=v(xdut.audit_d114)
-let avg=v(xdut.avdd.t519)
-let avs=v(xdut.avdd.t521)
-let avb=v(xdut.avdd.t520)
+let avg=v(xdut.vbp_i.t54)
+let avs=v(xdut.avdd.t603)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 115
 let aid=i(v.xdut.vaud115)
 let avd=v(xdut.audit_d115)
-let avg=v(xdut.avdd.t423)
-let avs=v(xdut.avdd.t425)
-let avb=v(xdut.avdd.t424)
+let avg=v(xdut.vbn_sink.t28)
+let avs=v(xdut.avss.t1)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 116
 let aid=i(v.xdut.vaud116)
 let avd=v(xdut.audit_d116)
-let avg=v(xdut.vbp_tail.t2)
-let avs=v(xdut.avdd.t920)
-let avb=v(xdut.avdd.t919)
+let avg=v(xdut.avss.t16)
+let avs=v(xdut.avss.t17)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 117
 let aid=i(v.xdut.vaud117)
 let avd=v(xdut.audit_d117)
-let avg=v(xdut.avdd.t539)
-let avs=v(xdut.avdd.t541)
-let avb=v(xdut.avdd.t540)
+let avg=v(xdut.avdd.t560)
+let avs=v(xdut.avdd.t561)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 118
 let aid=i(v.xdut.vaud118)
 let avd=v(xdut.audit_d118)
-let avg=v(xdut.avdd.t714)
-let avs=v(xdut.avdd.t716)
-let avb=v(xdut.avdd.t715)
+let avg=v(xdut.avss.t151)
+let avs=v(xdut.avss.t152)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 119
 let aid=i(v.xdut.vaud119)
 let avd=v(xdut.audit_d119)
-let avg=v(xdut.vbp_cas.t16)
-let avs=v(xdut.vbp_bias.t4)
-let avb=v(xdut.avdd.t974)
+let avg=v(xdut.avdd.t378)
+let avs=v(xdut.avdd.t379)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 120
 let aid=i(v.xdut.vaud120)
 let avd=v(xdut.audit_d120)
-let avg=v(xdut.y1.t18)
-let avs=v(xdut.avdd.t963)
-let avb=v(xdut.avdd.t962)
+let avg=v(xdut.v1.t3)
+let avs=v(xdut.vsp.t6)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 121
 let aid=i(v.xdut.vaud121)
 let avd=v(xdut.audit_d121)
-let avg=v(xdut.avdd.t455)
-let avs=v(xdut.avdd.t457)
-let avb=v(xdut.avdd.t456)
+let avg=v(xdut.avss.t49)
+let avs=v(xdut.avss.t50)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 122
 let aid=i(v.xdut.vaud122)
 let avd=v(xdut.audit_d122)
-let avg=v(xdut.v2.t5)
-let avs=v(xdut.vsp.t1)
-let avb=v(xdut.avdd.t65)
+let avg=v(xdut.b1_b.t4)
+let avs=v(xdut.rbit1top.t12)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 123
 let aid=i(v.xdut.vaud123)
 let avd=v(xdut.audit_d123)
-let avg=v(xdut.psrg_m3_feed.t27)
-let avs=v(xdut.avdd.t898)
-let avb=v(xdut.avdd.t897)
+let avg=v(xdut.psrg_vnc.t10)
+let avs=v(xdut.psrg_m3_protected.t1)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 124
 let aid=i(v.xdut.vaud124)
 let avd=v(xdut.audit_d124)
-let avg=v(xdut.avdd.t822)
-let avs=v(xdut.avdd.t824)
-let avb=v(xdut.avdd.t823)
+let avg=v(xdut.avdd.t211)
+let avs=v(xdut.avdd.t212)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 125
 let aid=i(v.xdut.vaud125)
 let avd=v(xdut.audit_d125)
-let avg=v(xdut.vbp_tail.t13)
-let avs=v(xdut.avdd.t92)
-let avb=v(xdut.avdd.t91)
+let avg=v(xdut.b4.t2)
+let avs=v(xdut.rbit5top.t2)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 126
 let aid=i(v.xdut.vaud126)
 let avd=v(xdut.audit_d126)
-let avg=v(xdut.avdd.t703)
-let avs=v(xdut.avdd.t705)
-let avb=v(xdut.avdd.t704)
+let avg=v(xdut.avdd.t55)
+let avs=v(xdut.avdd.t56)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 127
 let aid=i(v.xdut.vaud127)
 let avd=v(xdut.audit_d127)
-let avg=v(xdut.avdd.t387)
-let avs=v(xdut.avdd.t389)
-let avb=v(xdut.avdd.t388)
+let avg=v(xdut.vbn_sink.t19)
+let avs=v(xdut.avss.t239)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 128
 let aid=i(v.xdut.vaud128)
 let avd=v(xdut.audit_d128)
-let avg=v(xdut.avdd.t870)
-let avs=v(xdut.avdd.t872)
-let avb=v(xdut.avdd.t871)
+let avg=v(xdut.avdd.t308)
+let avs=v(xdut.avdd.t309)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 129
 let aid=i(v.xdut.vaud129)
 let avd=v(xdut.audit_d129)
-let avg=v(xdut.avdd.t347)
-let avs=v(xdut.avdd.t349)
-let avb=v(xdut.avdd.t348)
+let avg=v(xdut.avdd.t247)
+let avs=v(xdut.avdd.t248)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 130
 let aid=i(v.xdut.vaud130)
 let avd=v(xdut.audit_d130)
-let avg=v(xdut.y1.t11)
-let avs=v(xdut.avdd.t976)
-let avb=v(xdut.avdd.t975)
+let avg=v(xdut.vbp_tail.t3)
+let avs=v(xdut.avdd.t655)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 131
 let aid=i(v.xdut.vaud131)
 let avd=v(xdut.audit_d131)
-let avg=v(xdut.avdd.t551)
-let avs=v(xdut.avdd.t553)
-let avb=v(xdut.avdd.t552)
+let avg=v(xdut.avdd.t321)
+let avs=v(xdut.avdd.t322)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 132
 let aid=i(v.xdut.vaud132)
 let avd=v(xdut.audit_d132)
-let avg=v(xdut.avdd.t599)
-let avs=v(xdut.avdd.t601)
-let avb=v(xdut.avdd.t600)
+let avg=v(xdut.avdd.t447)
+let avs=v(xdut.avdd.t448)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 133
 let aid=i(v.xdut.vaud133)
 let avd=v(xdut.audit_d133)
-let avg=v(xdut.vbp_i.t18)
-let avs=v(xdut.avdd.t15)
-let avb=v(xdut.avdd.t14)
+let avg=v(xdut.avss.t100)
+let avs=v(xdut.avss.t101)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 134
 let aid=i(v.xdut.vaud134)
 let avd=v(xdut.audit_d134)
-let avg=v(xdut.avdd.t243)
-let avs=v(xdut.avdd.t245)
-let avb=v(xdut.avdd.t244)
+let avg=v(xdut.vbp_cas.t0)
+let avs=v(xdut.vbp_bias.t4)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 135
 let aid=i(v.xdut.vaud135)
 let avd=v(xdut.audit_d135)
-let avg=v(xdut.avdd.t367)
-let avs=v(xdut.avdd.t369)
-let avb=v(xdut.avdd.t368)
+let avg=v(xdut.y1.t18)
+let avs=v(xdut.avdd.t661)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 136
 let aid=i(v.xdut.vaud136)
 let avd=v(xdut.audit_d136)
-let avg=v(xdut.vbn_sink.t31)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t271)
+let avs=v(xdut.avdd.t272)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 137
 let aid=i(v.xdut.vaud137)
 let avd=v(xdut.audit_d137)
-let avg=v(xdut.vbp_i.t23)
-let avs=v(xdut.avdd.t49)
-let avb=v(xdut.avdd.t48)
+let avg=v(xdut.v2.t5)
+let avs=v(xdut.vsp.t10)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 138
 let aid=i(v.xdut.vaud138)
 let avd=v(xdut.audit_d138)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.avdd.t1010)
-let avb=v(xdut.avdd.t1009)
+let avg=v(xdut.psrg_m3_feed.t27)
+let avs=v(xdut.avdd.t647)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 139
 let aid=i(v.xdut.vaud139)
 let avd=v(xdut.audit_d139)
-let avg=v(xdut.avdd.t195)
-let avs=v(xdut.avdd.t197)
-let avb=v(xdut.avdd.t196)
+let avg=v(xdut.avdd.t518)
+let avs=v(xdut.avdd.t519)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 140
 let aid=i(v.xdut.vaud140)
 let avd=v(xdut.audit_d140)
-let avg=v(xdut.psrg_m3_feed.t17)
-let avs=v(xdut.avdd.t1)
-let avb=v(xdut.avdd.t0)
+let avg=v(xdut.vbp_tail.t13)
+let avs=v(xdut.avdd.t623)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 141
 let aid=i(v.xdut.vaud141)
 let avd=v(xdut.audit_d141)
-let avg=v(xdut.vbp_bias.t12)
-let avs=v(xdut.avdd.t1022)
-let avb=v(xdut.avdd.t1021)
+let avg=v(xdut.avdd.t441)
+let avs=v(xdut.avdd.t442)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 142
 let aid=i(v.xdut.vaud142)
 let avd=v(xdut.audit_d142)
-let avg=v(xdut.avdd.t611)
-let avs=v(xdut.avdd.t613)
-let avb=v(xdut.avdd.t612)
+let avg=v(xdut.avss.t91)
+let avs=v(xdut.avss.t92)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 143
 let aid=i(v.xdut.vaud143)
 let avd=v(xdut.audit_d143)
-let avg=v(xdut.avdd.t575)
-let avs=v(xdut.avdd.t577)
-let avb=v(xdut.avdd.t576)
+let avg=v(xdut.avdd.t220)
+let avs=v(xdut.avdd.t221)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 144
 let aid=i(v.xdut.vaud144)
 let avd=v(xdut.audit_d144)
-let avg=v(xdut.avdd.t415)
-let avs=v(xdut.avdd.t417)
-let avb=v(xdut.avdd.t416)
+let avg=v(xdut.avdd.t554)
+let avs=v(xdut.avdd.t555)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 145
 let aid=i(v.xdut.vaud145)
 let avd=v(xdut.audit_d145)
-let avg=v(xdut.vbp_i.t46)
-let avs=v(xdut.avdd.t890)
-let avb=v(xdut.avdd.t889)
+let avg=v(xdut.avdd.t190)
+let avs=v(xdut.avdd.t191)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 146
 let aid=i(v.xdut.vaud146)
 let avd=v(xdut.audit_d146)
-let avg=v(xdut.y1.t14)
-let avs=v(xdut.avdd.t950)
-let avb=v(xdut.avdd.t949)
+let avg=v(xdut.y1.t11)
+let avs=v(xdut.avdd.t631)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 147
 let aid=i(v.xdut.vaud147)
 let avd=v(xdut.audit_d147)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx3.t6)
-let avb=v(xdut.avdd.t997)
+let avg=v(xdut.avdd.t330)
+let avs=v(xdut.avdd.t331)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 148
 let aid=i(v.xdut.vaud148)
 let avd=v(xdut.audit_d148)
-let avg=v(xdut.avdd.t139)
-let avs=v(xdut.avdd.t141)
-let avb=v(xdut.avdd.t140)
+let avg=v(xdut.avdd.t366)
+let avs=v(xdut.avdd.t367)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 149
 let aid=i(v.xdut.vaud149)
 let avd=v(xdut.audit_d149)
-let avg=v(xdut.vbp_cas.t23)
-let avs=v(xdut.pm1.t11)
-let avb=v(xdut.avdd.t978)
+let avg=v(xdut.vbp_i.t18)
+let avs=v(xdut.avdd.t610)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 150
 let aid=i(v.xdut.vaud150)
 let avd=v(xdut.audit_d150)
-let avg=v(xdut.avdd.t303)
-let avs=v(xdut.avdd.t305)
-let avb=v(xdut.avdd.t304)
+let avg=v(xdut.avdd.t112)
+let avs=v(xdut.avdd.t113)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 151
 let aid=i(v.xdut.vaud151)
 let avd=v(xdut.audit_d151)
-let avg=v(xdut.vbp_i.t20)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t205)
+let avs=v(xdut.avdd.t206)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 152
 let aid=i(v.xdut.vaud152)
 let avd=v(xdut.audit_d152)
-let avg=v(xdut.vbp_i.t35)
-let avs=v(xdut.avdd.t938)
-let avb=v(xdut.avdd.t937)
+let avg=v(xdut.vbn_sink.t31)
+let avs=v(xdut.avss.t235)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 153
 let aid=i(v.xdut.vaud153)
 let avd=v(xdut.audit_d153)
-let avg=v(xdut.avdd.t810)
-let avs=v(xdut.avdd.t812)
-let avb=v(xdut.avdd.t811)
+let avg=v(xdut.vbp_i.t23)
+let avs=v(xdut.avdd.t585)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 154
 let aid=i(v.xdut.vaud154)
 let avd=v(xdut.audit_d154)
-let avg=v(xdut.avdd.t842)
-let avs=v(xdut.avdd.t844)
-let avb=v(xdut.avdd.t843)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.avdd.t639)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 155
 let aid=i(v.xdut.vaud155)
 let avd=v(xdut.audit_d155)
-let avg=v(xdut.psrg_m3_feed.t24)
-let avs=v(xdut.avdd.t886)
-let avb=v(xdut.avdd.t885)
+let avg=v(xdut.avss.t127)
+let avs=v(xdut.avss.t128)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 156
 let aid=i(v.xdut.vaud156)
 let avd=v(xdut.audit_d156)
-let avg=v(xdut.avdd.t507)
-let avs=v(xdut.avdd.t509)
-let avb=v(xdut.avdd.t508)
+let avg=v(xdut.avdd.t76)
+let avs=v(xdut.avdd.t77)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 157
 let aid=i(v.xdut.vaud157)
 let avd=v(xdut.audit_d157)
-let avg=v(xdut.avdd.t299)
-let avs=v(xdut.avdd.t301)
-let avb=v(xdut.avdd.t300)
+let avg=v(xdut.psrg_m3_feed.t17)
+let avs=v(xdut.avdd.t617)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 158
 let aid=i(v.xdut.vaud158)
 let avd=v(xdut.audit_d158)
-let avg=v(xdut.vbp_tail.t9)
-let avs=v(xdut.avdd.t988)
-let avb=v(xdut.avdd.t987)
+let avg=v(xdut.vbp_bias.t12)
+let avs=v(xdut.avdd.t657)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 159
 let aid=i(v.xdut.vaud159)
 let avd=v(xdut.audit_d159)
-let avg=v(xdut.avdd.t790)
-let avs=v(xdut.avdd.t792)
-let avb=v(xdut.avdd.t791)
+let avg=v(xdut.avdd.t375)
+let avs=v(xdut.avdd.t376)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 160
 let aid=i(v.xdut.vaud160)
 let avd=v(xdut.audit_d160)
-let avg=v(xdut.vbp_i.t25)
-let avs=v(xdut.avdd.t71)
-let avb=v(xdut.avdd.t70)
+let avg=v(xdut.avss.t124)
+let avs=v(xdut.avss.t125)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 161
 let aid=i(v.xdut.vaud161)
 let avd=v(xdut.audit_d161)
-let avg=v(xdut.v1.t5)
-let avs=v(xdut.vsp.t9)
-let avb=v(xdut.avdd.t1026)
+let avg=v(xdut.avdd.t348)
+let avs=v(xdut.avdd.t349)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 162
 let aid=i(v.xdut.vaud162)
 let avd=v(xdut.audit_d162)
-let avg=v(xdut.avdd.t834)
-let avs=v(xdut.avdd.t836)
-let avb=v(xdut.avdd.t835)
+let avg=v(xdut.avdd.t241)
+let avs=v(xdut.avdd.t242)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 163
 let aid=i(v.xdut.vaud163)
 let avd=v(xdut.audit_d163)
-let avg=v(xdut.avdd.t183)
-let avs=v(xdut.avdd.t185)
-let avb=v(xdut.avdd.t184)
+let avg=v(xdut.vbp_i.t46)
+let avs=v(xdut.avdd.t563)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 164
 let aid=i(v.xdut.vaud164)
 let avd=v(xdut.audit_d164)
-let avg=v(xdut.avdd.t499)
-let avs=v(xdut.avdd.t501)
-let avb=v(xdut.avdd.t500)
+let avg=v(xdut.y1.t14)
+let avs=v(xdut.avdd.t625)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 165
 let aid=i(v.xdut.vaud165)
 let avd=v(xdut.audit_d165)
-let avg=v(xdut.vbp_i.t48)
-let avs=v(xdut.avdd.t75)
-let avb=v(xdut.avdd.t74)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx3.t7)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 166
 let aid=i(v.xdut.vaud166)
 let avd=v(xdut.audit_d166)
-let avg=v(xdut.vbp_cas.t12)
-let avs=v(xdut.vbp_bias.t9)
-let avb=v(xdut.avdd.t968)
+let avg=v(xdut.avdd.t34)
+let avs=v(xdut.avdd.t35)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 167
 let aid=i(v.xdut.vaud167)
 let avd=v(xdut.audit_d167)
-let avg=v(xdut.vbp_i.t5)
-let avs=v(xdut.avdd.t934)
-let avb=v(xdut.avdd.t933)
+let avg=v(xdut.vbp_cas.t23)
+let avs=v(xdut.pm1.t9)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 168
 let aid=i(v.xdut.vaud168)
 let avd=v(xdut.audit_d168)
-let avg=v(xdut.vbn_sink.t15)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t157)
+let avs=v(xdut.avdd.t158)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 169
 let aid=i(v.xdut.vaud169)
 let avd=v(xdut.audit_d169)
-let avg=v(xdut.vbp_i.t45)
-let avs=v(xdut.avdd.t86)
-let avb=v(xdut.avdd.t85)
+let avg=v(xdut.vbp_i.t20)
+let avs=v(xdut.avss.t0)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 170
 let aid=i(v.xdut.vaud170)
 let avd=v(xdut.audit_d170)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx2.t9)
-let avb=v(xdut.avdd.t1001)
+let avg=v(xdut.vbp_i.t35)
+let avs=v(xdut.avdd.t575)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 171
 let aid=i(v.xdut.vaud171)
 let avd=v(xdut.audit_d171)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx2.t7)
-let avb=v(xdut.avdd.t994)
+let avg=v(xdut.avdd.t509)
+let avs=v(xdut.avdd.t510)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 172
 let aid=i(v.xdut.vaud172)
 let avd=v(xdut.audit_d172)
-let avg=v(xdut.vbp_i.t15)
-let avs=v(xdut.avdd.t45)
-let avb=v(xdut.avdd.t44)
+let avg=v(xdut.avdd.t533)
+let avs=v(xdut.avdd.t534)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 173
 let aid=i(v.xdut.vaud173)
 let avd=v(xdut.audit_d173)
-let avg=v(xdut.vbp_tail.t11)
-let avs=v(xdut.avdd.t914)
-let avb=v(xdut.avdd.t913)
+let avg=v(xdut.psrg_m3_feed.t24)
+let avs=v(xdut.avdd.t635)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 174
 let aid=i(v.xdut.vaud174)
 let avd=v(xdut.audit_d174)
-let avg=v(xdut.avdd.t251)
-let avs=v(xdut.avdd.t253)
-let avb=v(xdut.avdd.t252)
+let avg=v(xdut.avdd.t302)
+let avs=v(xdut.avdd.t303)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 175
 let aid=i(v.xdut.vaud175)
 let avd=v(xdut.audit_d175)
-let avg=v(xdut.avdd.t595)
-let avs=v(xdut.avdd.t597)
-let avb=v(xdut.avdd.t596)
+let avg=v(xdut.avdd.t154)
+let avs=v(xdut.avdd.t155)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 176
 let aid=i(v.xdut.vaud176)
 let avd=v(xdut.audit_d176)
-let avg=v(xdut.vbp_tail.t0)
-let avs=v(xdut.avdd.t1037)
-let avb=v(xdut.avdd.t1036)
+let avg=v(xdut.vbp_tail.t9)
+let avs=v(xdut.avdd.t607)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 177
 let aid=i(v.xdut.vaud177)
 let avd=v(xdut.audit_d177)
-let avg=v(xdut.vbp_bias.t16)
-let avs=v(xdut.avdd.t82)
-let avb=v(xdut.avdd.t81)
+let avg=v(xdut.avdd.t494)
+let avs=v(xdut.avdd.t495)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 178
 let aid=i(v.xdut.vaud178)
 let avd=v(xdut.audit_d178)
-let avg=v(xdut.avdd.t718)
-let avs=v(xdut.avdd.t720)
-let avb=v(xdut.avdd.t719)
+let avg=v(xdut.vbp_i.t25)
+let avs=v(xdut.avdd.t577)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 179
 let aid=i(v.xdut.vaud179)
 let avd=v(xdut.audit_d179)
-let avg=v(xdut.vbp_cas.t10)
-let avs=v(xdut.vbp_bias.t8)
-let avb=v(xdut.avdd.t967)
+let avg=v(xdut.avss.t178)
+let avs=v(xdut.avss.t179)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 180
 let aid=i(v.xdut.vaud180)
 let avd=v(xdut.audit_d180)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx2.t10)
-let avb=v(xdut.avdd.t1004)
+let avg=v(xdut.v1.t5)
+let avs=v(xdut.vsp.t4)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 181
 let aid=i(v.xdut.vaud181)
 let avd=v(xdut.audit_d181)
-let avg=v(xdut.avdd.t655)
-let avs=v(xdut.avdd.t657)
-let avb=v(xdut.avdd.t656)
+let avg=v(xdut.avdd.t527)
+let avs=v(xdut.avdd.t528)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 182
 let aid=i(v.xdut.vaud182)
 let avd=v(xdut.audit_d182)
-let avg=v(xdut.vbp_cas.t14)
-let avs=v(xdut.vbp_bias.t7)
-let avb=v(xdut.avdd.t973)
+let avg=v(xdut.avdd.t67)
+let avs=v(xdut.avdd.t68)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 183
 let aid=i(v.xdut.vaud183)
 let avd=v(xdut.audit_d183)
-let avg=v(xdut.vbp_cas.t4)
-let avs=v(xdut.vbp_bias.t0)
-let avb=v(xdut.avdd.t972)
+let avg=v(xdut.avss.t13)
+let avs=v(xdut.avss.t14)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 184
 let aid=i(v.xdut.vaud184)
 let avd=v(xdut.audit_d184)
-let avg=v(xdut.avdd.t239)
-let avs=v(xdut.avdd.t241)
-let avb=v(xdut.avdd.t240)
+let avg=v(xdut.avdd.t298)
+let avs=v(xdut.avdd.t299)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 185
 let aid=i(v.xdut.vaud185)
 let avd=v(xdut.audit_d185)
-let avg=v(xdut.avdd.t363)
-let avs=v(xdut.avdd.t365)
-let avb=v(xdut.avdd.t364)
+let avg=v(xdut.vbp_i.t48)
+let avs=v(xdut.avdd.t579)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 186
 let aid=i(v.xdut.vaud186)
 let avd=v(xdut.audit_d186)
-let avg=v(xdut.vbn_sink.t32)
-let avs=0
+let avg=v(xdut.avss.t193)
+let avs=v(xdut.avss.t194)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 187
 let aid=i(v.xdut.vaud187)
 let avd=v(xdut.audit_d187)
-let avg=v(xdut.avdd.t515)
-let avs=v(xdut.avdd.t517)
-let avb=v(xdut.avdd.t516)
+let avg=v(xdut.vbp_cas.t4)
+let avs=v(xdut.vbp_bias.t9)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 188
 let aid=i(v.xdut.vaud188)
 let avd=v(xdut.audit_d188)
-let avg=v(xdut.avdd.t419)
-let avs=v(xdut.avdd.t421)
-let avb=v(xdut.avdd.t420)
+let avg=v(xdut.vbp_i.t4)
+let avs=v(xdut.avdd.t609)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 189
 let aid=i(v.xdut.vaud189)
 let avd=v(xdut.audit_d189)
-let avg=v(xdut.avdd.t874)
-let avs=v(xdut.avdd.t876)
-let avb=v(xdut.avdd.t875)
+let avg=v(xdut.vbn_sink.t17)
+let avs=v(xdut.avss.t208)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 190
 let aid=i(v.xdut.vaud190)
 let avd=v(xdut.audit_d190)
-let avg=v(xdut.vbn_i.t1)
-let avs=0
-let avb=0
+let avg=v(xdut.vbp_i.t45)
+let avs=v(xdut.avdd.t659)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 191
 let aid=i(v.xdut.vaud191)
 let avd=v(xdut.audit_d191)
 let avg=v(xdut.vcasp)
-let avs=v(xdut.vx2.t8)
-let avb=v(xdut.avdd.t999)
+let avs=v(xdut.vx2.t9)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 192
 let aid=i(v.xdut.vaud192)
 let avd=v(xdut.audit_d192)
-let avg=v(xdut.psrg_vnc.t9)
-let avs=v(xdut.psrg_mf1_protected.t1)
-let avb=0
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx2.t7)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 193
 let aid=i(v.xdut.vaud193)
 let avd=v(xdut.audit_d193)
-let avg=v(xdut.avdd.t555)
-let avs=v(xdut.avdd.t557)
-let avb=v(xdut.avdd.t556)
+let avg=v(xdut.vbp_i.t15)
+let avs=v(xdut.avdd.t664)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 194
 let aid=i(v.xdut.vaud194)
 let avd=v(xdut.audit_d194)
-let avg=v(xdut.avdd.t778)
-let avs=v(xdut.avdd.t780)
-let avb=v(xdut.avdd.t779)
+let avg=v(xdut.avss.t40)
+let avs=v(xdut.avss.t41)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 195
 let aid=i(v.xdut.vaud195)
 let avd=v(xdut.audit_d195)
-let avg=v(xdut.y1.t10)
-let avs=v(xdut.avdd.t926)
-let avb=v(xdut.avdd.t925)
+let avg=v(xdut.vbp_tail.t11)
+let avs=v(xdut.avdd.t621)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 196
 let aid=i(v.xdut.vaud196)
 let avd=v(xdut.audit_d196)
-let avg=v(xdut.avdd.t802)
-let avs=v(xdut.avdd.t804)
-let avb=v(xdut.avdd.t803)
+let avg=v(xdut.avdd.t118)
+let avs=v(xdut.avdd.t119)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 197
 let aid=i(v.xdut.vaud197)
 let avd=v(xdut.audit_d197)
-let avg=v(xdut.avdd.t359)
-let avs=v(xdut.avdd.t361)
-let avb=v(xdut.avdd.t360)
+let avg=v(xdut.avdd.t363)
+let avs=v(xdut.avdd.t364)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 198
 let aid=i(v.xdut.vaud198)
 let avd=v(xdut.audit_d198)
-let avg=v(xdut.v2.t3)
-let avs=v(xdut.vsp.t0)
-let avb=v(xdut.avdd.t64)
+let avg=v(xdut.vbp_tail.t1)
+let avs=v(xdut.avdd.t620)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 199
 let aid=i(v.xdut.vaud199)
 let avd=v(xdut.audit_d199)
-let avg=v(xdut.vbn_i.t10)
-let avs=v(xdut.net4.t0)
-let avb=0
+let avg=v(xdut.vbp_bias.t16)
+let avs=v(xdut.avdd.t618)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 200
 let aid=i(v.xdut.vaud200)
 let avd=v(xdut.audit_d200)
-let avg=v(xdut.vbp_i.t17)
-let avs=v(xdut.avdd.t942)
-let avb=v(xdut.avdd.t941)
+let avg=v(xdut.avdd.t449)
+let avs=v(xdut.avdd.t450)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 201
 let aid=i(v.xdut.vaud201)
 let avd=v(xdut.audit_d201)
-let avg=v(xdut.avdd.t151)
-let avs=v(xdut.avdd.t153)
-let avb=v(xdut.avdd.t152)
+let avg=v(xdut.vbp_cas.t2)
+let avs=v(xdut.vbp_bias.t8)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 202
 let aid=i(v.xdut.vaud202)
 let avd=v(xdut.audit_d202)
-let avg=v(xdut.avdd.t135)
-let avs=v(xdut.avdd.t137)
-let avb=v(xdut.avdd.t136)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx2.t10)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 203
 let aid=i(v.xdut.vaud203)
 let avd=v(xdut.audit_d203)
-let avg=v(xdut.b3.t2)
-let avs=v(xdut.rbit4top.t5)
-let avb=0
+let avg=v(xdut.avdd.t408)
+let avs=v(xdut.avdd.t409)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 204
 let aid=i(v.xdut.vaud204)
 let avd=v(xdut.audit_d204)
-let avg=v(xdut.avdd.t734)
-let avs=v(xdut.avdd.t736)
-let avb=v(xdut.avdd.t735)
+let avg=v(xdut.avss.t94)
+let avs=v(xdut.avss.t95)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 205
 let aid=i(v.xdut.vaud205)
 let avd=v(xdut.audit_d205)
-let avg=v(xdut.avdd.t487)
-let avs=v(xdut.avdd.t489)
-let avb=v(xdut.avdd.t488)
+let avg=v(xdut.vbp_cas.t8)
+let avs=v(xdut.vbp_bias.t7)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 206
 let aid=i(v.xdut.vaud206)
 let avd=v(xdut.audit_d206)
-let avg=v(xdut.avdd.t187)
-let avs=v(xdut.avdd.t189)
-let avb=v(xdut.avdd.t188)
+let avg=v(xdut.vbp_cas.t16)
+let avs=v(xdut.vbp_bias.t0)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 207
 let aid=i(v.xdut.vaud207)
 let avd=v(xdut.audit_d207)
-let avg=v(xdut.avdd.t147)
-let avs=v(xdut.avdd.t149)
-let avb=v(xdut.avdd.t148)
+let avg=v(xdut.avdd.t109)
+let avs=v(xdut.avdd.t110)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 208
 let aid=i(v.xdut.vaud208)
 let avd=v(xdut.audit_d208)
-let avg=v(xdut.avdd.t459)
-let avs=v(xdut.avdd.t461)
-let avb=v(xdut.avdd.t460)
+let avg=v(xdut.avdd.t202)
+let avs=v(xdut.avdd.t203)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 209
 let aid=i(v.xdut.vaud209)
 let avd=v(xdut.audit_d209)
-let avg=v(xdut.avdd.t579)
-let avs=v(xdut.avdd.t581)
-let avb=v(xdut.avdd.t580)
+let avg=v(xdut.vbn_sink.t32)
+let avs=v(xdut.avss.t236)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 210
 let aid=i(v.xdut.vaud210)
 let avd=v(xdut.audit_d210)
-let avg=v(xdut.vbn_i.t9)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t306)
+let avs=v(xdut.avdd.t307)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 211
 let aid=i(v.xdut.vaud211)
 let avd=v(xdut.audit_d211)
-let avg=v(xdut.vbp_bias.t14)
-let avs=v(xdut.avdd.t1024)
-let avb=v(xdut.avdd.t1023)
+let avg=v(xdut.avdd.t244)
+let avs=v(xdut.avdd.t245)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 212
 let aid=i(v.xdut.vaud212)
 let avd=v(xdut.audit_d212)
-let avg=v(xdut.avdd.t722)
-let avs=v(xdut.avdd.t724)
-let avb=v(xdut.avdd.t723)
+let avg=v(xdut.avdd.t557)
+let avs=v(xdut.avdd.t558)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 213
 let aid=i(v.xdut.vaud213)
 let avd=v(xdut.audit_d213)
-let avg=v(xdut.avdd.t770)
-let avs=v(xdut.avdd.t772)
-let avb=v(xdut.avdd.t771)
+let avg=v(xdut.vbn_i.t6)
+let avs=v(xdut.avss.t232)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 214
 let aid=i(v.xdut.vaud214)
 let avd=v(xdut.audit_d214)
-let avg=v(xdut.vsua)
-let avs=v(xdut.auxsu1)
-let avb=0
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx2.t8)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 215
 let aid=i(v.xdut.vaud215)
 let avd=v(xdut.audit_d215)
-let avg=v(xdut.avdd.t846)
-let avs=v(xdut.avdd.t848)
-let avb=v(xdut.avdd.t847)
+let avg=v(xdut.psrg_vnc.t9)
+let avs=v(xdut.psrg_mf1_protected.t0)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 216
 let aid=i(v.xdut.vaud216)
 let avd=v(xdut.audit_d216)
-let avg=v(xdut.vbp_i.t26)
-let avs=v(xdut.avdd.t55)
-let avb=v(xdut.avdd.t54)
+let avg=v(xdut.avdd.t333)
+let avs=v(xdut.avdd.t334)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 217
 let aid=i(v.xdut.vaud217)
 let avd=v(xdut.audit_d217)
-let avg=v(xdut.avdd.t255)
-let avs=v(xdut.avdd.t257)
-let avb=v(xdut.avdd.t256)
+let avg=v(xdut.avdd.t485)
+let avs=v(xdut.avdd.t486)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 218
 let aid=i(v.xdut.vaud218)
 let avd=v(xdut.audit_d218)
-let avg=v(xdut.b0_b.t7)
-let avs=v(xdut.rbit0top.t5)
-let avb=v(xdut.dvdd.t19)
+let avg=v(xdut.y1.t10)
+let avs=v(xdut.avdd.t630)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 219
 let aid=i(v.xdut.vaud219)
 let avd=v(xdut.audit_d219)
-let avg=v(xdut.b0_b.t4)
-let avs=v(xdut.rbit0top.t6)
-let avb=v(xdut.dvdd.t18)
+let avg=v(xdut.avdd.t503)
+let avs=v(xdut.avdd.t504)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 220
 let aid=i(v.xdut.vaud220)
 let avd=v(xdut.audit_d220)
-let avg=v(xdut.b3.t1)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t199)
+let avs=v(xdut.avdd.t200)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 221
 let aid=i(v.xdut.vaud221)
 let avd=v(xdut.audit_d221)
-let avg=v(xdut.avdd.t227)
-let avs=v(xdut.avdd.t229)
-let avb=v(xdut.avdd.t228)
+let avg=v(xdut.v2.t3)
+let avs=v(xdut.vsp.t9)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 222
 let aid=i(v.xdut.vaud222)
 let avd=v(xdut.audit_d222)
-let avg=v(xdut.vbp_i.t27)
-let avs=v(xdut.avdd.t57)
-let avb=v(xdut.avdd.t56)
+let avg=v(xdut.vbn_i.t10)
+let avs=v(xdut.net4.t0)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 223
 let aid=i(v.xdut.vaud223)
 let avd=v(xdut.audit_d223)
-let avg=v(xdut.vbp_i.t40)
-let avs=v(xdut.avdd.t11)
-let avb=v(xdut.avdd.t10)
+let avg=v(xdut.avss.t43)
+let avs=v(xdut.avss.t44)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 224
 let aid=i(v.xdut.vaud224)
 let avd=v(xdut.audit_d224)
-let avg=v(xdut.vbp_i.t49)
-let avs=v(xdut.avdd.t67)
-let avb=v(xdut.avdd.t66)
+let avg=v(xdut.vbp_i.t17)
+let avs=v(xdut.avdd.t595)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 225
 let aid=i(v.xdut.vaud225)
 let avd=v(xdut.audit_d225)
-let avg=v(xdut.psrg_m3_feed.t10)
-let avs=v(xdut.avdd.t94)
-let avb=v(xdut.avdd.t93)
+let avg=v(xdut.avdd.t43)
+let avs=v(xdut.avdd.t44)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 226
 let aid=i(v.xdut.vaud226)
 let avd=v(xdut.audit_d226)
-let avg=v(xdut.b5.t2)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t31)
+let avs=v(xdut.avdd.t32)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 227
 let aid=i(v.xdut.vaud227)
 let avd=v(xdut.audit_d227)
-let avg=v(xdut.vbp_i.t50)
-let avs=v(xdut.avdd.t80)
-let avb=v(xdut.avdd.t79)
+let avg=v(xdut.b3.t2)
+let avs=v(xdut.rbit4top.t2)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 228
 let aid=i(v.xdut.vaud228)
 let avd=v(xdut.audit_d228)
-let avg=v(xdut.avdd.t123)
-let avs=v(xdut.avdd.t125)
-let avb=v(xdut.avdd.t124)
+let avg=v(xdut.avdd.t457)
+let avs=v(xdut.avdd.t458)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 229
 let aid=i(v.xdut.vaud229)
 let avd=v(xdut.audit_d229)
-let avg=v(xdut.vbp_i.t30)
-let avs=v(xdut.avdd.t23)
-let avb=v(xdut.avdd.t22)
+let avg=v(xdut.avdd.t292)
+let avs=v(xdut.avdd.t293)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 230
 let aid=i(v.xdut.vaud230)
 let avd=v(xdut.audit_d230)
-let avg=v(xdut.avdd.t798)
-let avs=v(xdut.avdd.t800)
-let avb=v(xdut.avdd.t799)
+let avg=v(xdut.avdd.t70)
+let avs=v(xdut.avdd.t71)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 231
 let aid=i(v.xdut.vaud231)
 let avd=v(xdut.audit_d231)
-let avg=v(xdut.vbp_i.t7)
-let avs=v(xdut.avdd.t908)
-let avb=v(xdut.avdd.t907)
+let avg=v(xdut.avss.t70)
+let avs=v(xdut.avss.t71)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 232
 let aid=i(v.xdut.vaud232)
 let avd=v(xdut.audit_d232)
-let avg=v(xdut.vbp_i.t39)
-let avs=v(xdut.avdd.t35)
-let avb=v(xdut.avdd.t34)
+let avg=v(xdut.avdd.t40)
+let avs=v(xdut.avdd.t41)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 233
 let aid=i(v.xdut.vaud233)
 let avd=v(xdut.audit_d233)
-let avg=v(xdut.avdd.t786)
-let avs=v(xdut.avdd.t788)
-let avb=v(xdut.avdd.t787)
+let avg=v(xdut.avdd.t274)
+let avs=v(xdut.avdd.t275)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 234
 let aid=i(v.xdut.vaud234)
 let avd=v(xdut.audit_d234)
-let avg=v(xdut.v2.t4)
-let avs=v(xdut.vsp.t2)
-let avb=v(xdut.avdd.t882)
+let avg=v(xdut.avdd.t351)
+let avs=v(xdut.avdd.t352)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 235
 let aid=i(v.xdut.vaud235)
 let avd=v(xdut.audit_d235)
-let avg=v(xdut.avdd.t647)
-let avs=v(xdut.avdd.t649)
-let avb=v(xdut.avdd.t648)
+let avg=v(xdut.vbn_i.t9)
+let avs=v(xdut.avss.t206)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 236
 let aid=i(v.xdut.vaud236)
 let avd=v(xdut.audit_d236)
-let avg=v(xdut.b6.t0)
-let avs=v(xdut.dvdd.t29)
-let avb=v(xdut.dvdd.t28)
+let avg=v(xdut.vbp_bias.t14)
+let avs=v(xdut.avdd.t614)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 237
 let aid=i(v.xdut.vaud237)
 let avd=v(xdut.audit_d237)
-let avg=v(xdut.vbn_fold.t15)
-let avs=v(xdut.xf1.t0)
-let avb=0
+let avg=v(xdut.avdd.t451)
+let avs=v(xdut.avdd.t452)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 238
 let aid=i(v.xdut.vaud238)
 let avd=v(xdut.audit_d238)
-let avg=v(xdut.y1.t8)
-let avs=v(xdut.avdd.t922)
-let avb=v(xdut.avdd.t921)
+let avg=v(xdut.avdd.t479)
+let avs=v(xdut.avdd.t480)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 239
 let aid=i(v.xdut.vaud239)
 let avd=v(xdut.audit_d239)
-let avg=v(xdut.bgsu1)
-let avs=v(xdut.bgsu2)
+let avg=v(xdut.vsua)
+let avs=v(xdut.auxsu1)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 240
 let aid=i(v.xdut.vaud240)
 let avd=v(xdut.audit_d240)
-let avg=v(xdut.psrg_vnc.t11)
-let avs=v(xdut.psrg_m3_protected.t3)
-let avb=0
+let avg=v(xdut.avdd.t536)
+let avs=v(xdut.avdd.t537)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 241
 let aid=i(v.xdut.vaud241)
 let avd=v(xdut.audit_d241)
-let avg=v(xdut.psrg_m3_feed.t23)
-let avs=v(xdut.avdd.t884)
-let avb=v(xdut.avdd.t883)
+let avg=v(xdut.vbp_i.t26)
+let avs=v(xdut.avdd.t588)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 242
 let aid=i(v.xdut.vaud242)
 let avd=v(xdut.audit_d242)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx1.t9)
-let avb=v(xdut.avdd.t1002)
+let avg=v(xdut.avdd.t121)
+let avs=v(xdut.avdd.t122)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 243
 let aid=i(v.xdut.vaud243)
 let avd=v(xdut.audit_d243)
-let avg=v(xdut.avdd.t814)
-let avs=v(xdut.avdd.t816)
-let avb=v(xdut.avdd.t815)
+let avg=v(xdut.b0_b.t7)
+let avs=v(xdut.rbit0top.t5)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 244
 let aid=i(v.xdut.vaud244)
 let avd=v(xdut.audit_d244)
-let avg=v(xdut.vbp_bias.t18)
-let avs=v(xdut.avdd.t904)
-let avb=v(xdut.avdd.t903)
+let avg=v(xdut.b0_b.t4)
+let avs=v(xdut.rbit0top.t1)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 245
 let aid=i(v.xdut.vaud245)
 let avd=v(xdut.audit_d245)
-let avg=v(xdut.avdd.t399)
-let avs=v(xdut.avdd.t401)
-let avb=v(xdut.avdd.t400)
+let avg=v(xdut.b3.t1)
+let avs=v(xdut.dvss.t0)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 246
 let aid=i(v.xdut.vaud246)
 let avd=v(xdut.audit_d246)
-let avg=v(xdut.avdd.t323)
-let avs=v(xdut.avdd.t325)
-let avb=v(xdut.avdd.t324)
+let avg=v(xdut.avdd.t100)
+let avs=v(xdut.avdd.t101)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 247
 let aid=i(v.xdut.vaud247)
 let avd=v(xdut.audit_d247)
-let avg=v(xdut.vbp_i.t14)
-let avs=v(xdut.avdd.t43)
-let avb=v(xdut.avdd.t42)
+let avg=v(xdut.vbp_i.t27)
+let avs=v(xdut.avdd.t589)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 248
 let aid=i(v.xdut.vaud248)
 let avd=v(xdut.audit_d248)
-let avg=v(xdut.avdd.t175)
-let avs=v(xdut.avdd.t177)
-let avb=v(xdut.avdd.t176)
+let avg=v(xdut.vbp_i.t40)
+let avs=v(xdut.avdd.t645)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 249
 let aid=i(v.xdut.vaud249)
 let avd=v(xdut.audit_d249)
-let avg=v(xdut.vbp_i.t42)
-let avs=v(xdut.avdd.t39)
-let avb=v(xdut.avdd.t38)
+let avg=v(xdut.vbp_i.t49)
+let avs=v(xdut.avdd.t580)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 250
 let aid=i(v.xdut.vaud250)
 let avd=v(xdut.audit_d250)
-let avg=v(xdut.avdd.t563)
-let avs=v(xdut.avdd.t565)
-let avb=v(xdut.avdd.t564)
+let avg=v(xdut.psrg_m3_feed.t10)
+let avs=v(xdut.avdd.t583)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 251
 let aid=i(v.xdut.vaud251)
 let avd=v(xdut.audit_d251)
-let avg=v(xdut.b1.t2)
-let avs=v(xdut.dvdd.t25)
-let avb=v(xdut.dvdd.t24)
+let avg=v(xdut.b5.t2)
+let avs=v(xdut.dvss.t6)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 252
 let aid=i(v.xdut.vaud252)
 let avd=v(xdut.audit_d252)
-let avg=v(xdut.vbp_i.t12)
-let avs=v(xdut.avdd.t27)
-let avb=v(xdut.avdd.t26)
+let avg=v(xdut.avss.t82)
+let avs=v(xdut.avss.t83)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 253
 let aid=i(v.xdut.vaud253)
 let avd=v(xdut.audit_d253)
-let avg=v(xdut.vbp_cas.t0)
-let avs=v(xdut.vbp_bias.t6)
-let avb=v(xdut.avdd.t1043)
+let avg=v(xdut.vbp_i.t50)
+let avs=v(xdut.avdd.t592)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 254
 let aid=i(v.xdut.vaud254)
 let avd=v(xdut.audit_d254)
-let avg=v(xdut.vgn1.t2)
-let avs=v(xdut.v1.t0)
+let avg=v(xdut.avss.t184)
+let avs=v(xdut.avss.t185)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 255
 let aid=i(v.xdut.vaud255)
 let avd=v(xdut.audit_d255)
-let avg=v(xdut.avdd.t171)
-let avs=v(xdut.avdd.t173)
-let avb=v(xdut.avdd.t172)
+let avg=v(xdut.avdd.t22)
+let avs=v(xdut.avdd.t23)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 256
 let aid=i(v.xdut.vaud256)
 let avd=v(xdut.audit_d256)
-let avg=v(xdut.avdd.t663)
-let avs=v(xdut.avdd.t665)
-let avb=v(xdut.avdd.t664)
+let avg=v(xdut.avss.t175)
+let avs=v(xdut.avss.t176)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 257
 let aid=i(v.xdut.vaud257)
 let avd=v(xdut.audit_d257)
-let avg=v(xdut.b6_b.t2)
-let avs=v(xdut.rbit6top.t4)
-let avb=v(xdut.dvdd.t17)
+let avg=v(xdut.vbp_i.t30)
+let avs=v(xdut.avdd.t581)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 258
 let aid=i(v.xdut.vaud258)
 let avd=v(xdut.audit_d258)
-let avg=v(xdut.avdd.t583)
-let avs=v(xdut.avdd.t585)
-let avb=v(xdut.avdd.t584)
+let avg=v(xdut.avdd.t500)
+let avs=v(xdut.avdd.t501)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 259
 let aid=i(v.xdut.vaud259)
 let avd=v(xdut.audit_d259)
-let avg=v(xdut.vbp_cas.t18)
-let avs=v(xdut.vbp_bias.t5)
-let avb=v(xdut.avdd.t970)
+let avg=v(xdut.vbp_i.t6)
+let avs=v(xdut.avdd.t584)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 260
 let aid=i(v.xdut.vaud260)
 let avd=v(xdut.audit_d260)
-let avg=v(xdut.avdd.t383)
-let avs=v(xdut.avdd.t385)
-let avb=v(xdut.avdd.t384)
+let avg=v(xdut.vbp_i.t39)
+let avs=v(xdut.avdd.t568)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 261
 let aid=i(v.xdut.vaud261)
 let avd=v(xdut.audit_d261)
-let avg=v(xdut.b2_b.t4)
-let avs=v(xdut.rbit2top.t3)
-let avb=v(xdut.dvdd.t20)
+let avg=v(xdut.avss.t46)
+let avs=v(xdut.avss.t47)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 262
 let aid=i(v.xdut.vaud262)
 let avd=v(xdut.audit_d262)
-let avg=v(xdut.avdd.t587)
-let avs=v(xdut.avdd.t589)
-let avb=v(xdut.avdd.t588)
+let avg=v(xdut.avdd.t491)
+let avs=v(xdut.avdd.t492)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 263
 let aid=i(v.xdut.vaud263)
 let avd=v(xdut.audit_d263)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx3.t7)
-let avb=v(xdut.avdd.t1000)
+let avg=v(xdut.v2.t4)
+let avs=v(xdut.vsp.t1)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 264
 let aid=i(v.xdut.vaud264)
 let avd=v(xdut.audit_d264)
-let avg=v(xdut.vbp_cas.t2)
-let avs=v(xdut.vbp_bias.t3)
-let avb=v(xdut.avdd.t957)
+let avg=v(xdut.avdd.t402)
+let avs=v(xdut.avdd.t403)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 265
 let aid=i(v.xdut.vaud265)
 let avd=v(xdut.audit_d265)
-let avg=v(xdut.vbp_i.t16)
-let avs=v(xdut.avdd.t940)
-let avb=v(xdut.avdd.t939)
+let avg=v(xdut.b6.t0)
+let avs=v(xdut.dvdd.t5)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 266
 let aid=i(v.xdut.vaud266)
 let avd=v(xdut.audit_d266)
-let avg=v(xdut.vgn2.t8)
-let avs=v(xdut.v2.t2)
+let avg=v(xdut.vbn_fold.t15)
+let avs=v(xdut.xf1.t5)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 267
 let aid=i(v.xdut.vaud267)
 let avd=v(xdut.audit_d267)
-let avg=v(xdut.psrg_m3_feed.t11)
-let avs=v(xdut.avdd.t31)
-let avb=v(xdut.avdd.t30)
+let avg=v(xdut.y1.t8)
+let avs=v(xdut.avdd.t629)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 268
 let aid=i(v.xdut.vaud268)
 let avd=v(xdut.audit_d268)
-let avg=v(xdut.vbn_sink.t29)
-let avs=0
+let avg=v(xdut.bgsu1)
+let avs=v(xdut.bgsu2)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 269
 let aid=i(v.xdut.vaud269)
 let avd=v(xdut.audit_d269)
-let avg=v(xdut.psrg_m3_feed.t16)
-let avs=v(xdut.avdd.t1019)
-let avb=v(xdut.avdd.t1018)
+let avg=v(xdut.psrg_vnc.t11)
+let avs=v(xdut.psrg_m3_protected.t2)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 270
 let aid=i(v.xdut.vaud270)
 let avd=v(xdut.audit_d270)
-let avg=v(xdut.avdd.t738)
-let avs=v(xdut.avdd.t740)
-let avb=v(xdut.avdd.t739)
+let avg=v(xdut.psrg_m3_feed.t23)
+let avs=v(xdut.avdd.t600)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 271
 let aid=i(v.xdut.vaud271)
 let avd=v(xdut.audit_d271)
-let avg=v(xdut.avdd.t479)
-let avs=v(xdut.avdd.t481)
-let avb=v(xdut.avdd.t480)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx1.t9)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 272
 let aid=i(v.xdut.vaud272)
 let avd=v(xdut.audit_d272)
-let avg=v(xdut.vgn2.t9)
-let avs=v(xdut.v2.t1)
-let avb=0
+let avg=v(xdut.avdd.t512)
+let avs=v(xdut.avdd.t513)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 273
 let aid=i(v.xdut.vaud273)
 let avd=v(xdut.audit_d273)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx1.t6)
-let avb=v(xdut.avdd.t991)
+let avg=v(xdut.vbp_bias.t18)
+let avs=v(xdut.avdd.t619)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 274
 let aid=i(v.xdut.vaud274)
 let avd=v(xdut.audit_d274)
-let avg=v(xdut.avdd.t163)
-let avs=v(xdut.avdd.t165)
-let avb=v(xdut.avdd.t164)
+let avg=v(xdut.avdd.t229)
+let avs=v(xdut.avdd.t230)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 275
 let aid=i(v.xdut.vaud275)
 let avd=v(xdut.audit_d275)
-let avg=v(xdut.avdd.t643)
-let avs=v(xdut.avdd.t645)
-let avb=v(xdut.avdd.t644)
+let avg=v(xdut.avdd.t172)
+let avs=v(xdut.avdd.t173)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 276
 let aid=i(v.xdut.vaud276)
 let avd=v(xdut.audit_d276)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx1.t10)
-let avb=v(xdut.avdd.t1003)
+let avg=v(xdut.avss.t85)
+let avs=v(xdut.avss.t86)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 277
 let aid=i(v.xdut.vaud277)
 let avd=v(xdut.audit_d277)
-let avg=v(xdut.avdd.t531)
-let avs=v(xdut.avdd.t533)
-let avb=v(xdut.avdd.t532)
+let avg=v(xdut.vbp_i.t14)
+let avs=v(xdut.avdd.t663)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 278
 let aid=i(v.xdut.vaud278)
 let avd=v(xdut.audit_d278)
-let avg=v(xdut.avdd.t726)
-let avs=v(xdut.avdd.t728)
-let avb=v(xdut.avdd.t727)
+let avg=v(xdut.avdd.t61)
+let avs=v(xdut.avdd.t62)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 279
 let aid=i(v.xdut.vaud279)
 let avd=v(xdut.audit_d279)
-let avg=v(xdut.b2.t2)
-let avs=v(xdut.rbit3top.t0)
+let avg=v(xdut.avss.t52)
+let avs=v(xdut.avss.t53)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 280
 let aid=i(v.xdut.vaud280)
 let avd=v(xdut.audit_d280)
-let avg=v(xdut.v1.t2)
-let avs=v(xdut.vsp.t12)
-let avb=v(xdut.avdd.t1029)
+let avg=v(xdut.vbp_i.t42)
+let avs=v(xdut.avdd.t596)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 281
 let aid=i(v.xdut.vaud281)
 let avd=v(xdut.audit_d281)
-let avg=v(xdut.avdd.t223)
-let avs=v(xdut.avdd.t225)
-let avb=v(xdut.avdd.t224)
+let avg=v(xdut.avdd.t339)
+let avs=v(xdut.avdd.t340)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 282
 let aid=i(v.xdut.vaud282)
 let avd=v(xdut.audit_d282)
-let avg=v(xdut.avdd.t331)
-let avs=v(xdut.avdd.t333)
-let avb=v(xdut.avdd.t332)
+let avg=v(xdut.b1.t2)
+let avs=v(xdut.dvdd.t4)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 283
 let aid=i(v.xdut.vaud283)
 let avd=v(xdut.audit_d283)
-let avg=v(xdut.psrg_m3_feed.t9)
-let avs=v(xdut.avdd.t1031)
-let avb=v(xdut.avdd.t1030)
+let avg=v(xdut.vbp_i.t12)
+let avs=v(xdut.avdd.t665)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 284
 let aid=i(v.xdut.vaud284)
 let avd=v(xdut.audit_d284)
-let avg=v(xdut.psrg_m3_feed.t8)
-let avs=v(xdut.avdd.t902)
-let avb=v(xdut.avdd.t901)
+let avg=v(xdut.vbp_cas.t10)
+let avs=v(xdut.vbp_bias.t6)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 285
 let aid=i(v.xdut.vaud285)
 let avd=v(xdut.audit_d285)
-let avg=v(xdut.avdd.t219)
-let avs=v(xdut.avdd.t221)
-let avb=v(xdut.avdd.t220)
+let avg=v(xdut.avss.t76)
+let avs=v(xdut.avss.t77)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 286
 let aid=i(v.xdut.vaud286)
 let avd=v(xdut.audit_d286)
-let avg=v(xdut.avdd.t327)
-let avs=v(xdut.avdd.t329)
-let avb=v(xdut.avdd.t328)
+let avg=v(xdut.vgn1.t2)
+let avs=v(xdut.v1.t1)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 287
 let aid=i(v.xdut.vaud287)
 let avd=v(xdut.audit_d287)
-let avg=v(xdut.b5.t1)
-let avs=v(xdut.rbit6top.t1)
-let avb=0
+let avg=v(xdut.avdd.t58)
+let avs=v(xdut.avdd.t59)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 288
 let aid=i(v.xdut.vaud288)
 let avd=v(xdut.audit_d288)
-let avg=v(xdut.avdd.t699)
-let avs=v(xdut.avdd.t701)
-let avb=v(xdut.avdd.t700)
+let avg=v(xdut.avdd.t413)
+let avs=v(xdut.avdd.t414)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 289
 let aid=i(v.xdut.vaud289)
 let avd=v(xdut.audit_d289)
-let avg=v(xdut.v2.t6)
-let avs=v(xdut.vsp.t14)
-let avb=v(xdut.avdd.t1040)
+let avg=v(xdut.b6_b.t2)
+let avs=v(xdut.rbit6top.t4)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 290
 let aid=i(v.xdut.vaud290)
 let avd=v(xdut.audit_d290)
-let avg=v(xdut.avdd.t119)
-let avs=v(xdut.avdd.t121)
-let avb=v(xdut.avdd.t120)
+let avg=v(xdut.avdd.t354)
+let avs=v(xdut.avdd.t355)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 291
 let aid=i(v.xdut.vaud291)
 let avd=v(xdut.audit_d291)
-let avg=v(xdut.avdd.t651)
-let avs=v(xdut.avdd.t653)
-let avb=v(xdut.avdd.t652)
+let avg=v(xdut.vbp_cas.t6)
+let avs=v(xdut.vbp_bias.t5)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 292
 let aid=i(v.xdut.vaud292)
 let avd=v(xdut.audit_d292)
-let avg=v(xdut.vbp_bias.t22)
-let avs=v(xdut.avdd.t7)
-let avb=v(xdut.avdd.t6)
+let avg=v(xdut.avdd.t217)
+let avs=v(xdut.avdd.t218)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 293
 let aid=i(v.xdut.vaud293)
 let avd=v(xdut.audit_d293)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx1.t7)
-let avb=v(xdut.avdd.t996)
+let avg=v(xdut.b2_b.t4)
+let avs=v(xdut.rbit2top.t3)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 294
 let aid=i(v.xdut.vaud294)
 let avd=v(xdut.audit_d294)
-let avg=v(xdut.vbp_i.t53)
-let avs=v(xdut.avdd.t1046)
-let avb=v(xdut.avdd.t1045)
+let avg=v(xdut.avdd.t357)
+let avs=v(xdut.avdd.t358)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 295
 let aid=i(v.xdut.vaud295)
 let avd=v(xdut.audit_d295)
-let avg=v(xdut.avdd.t115)
-let avs=v(xdut.avdd.t117)
-let avb=v(xdut.avdd.t116)
+let avg=v(xdut.avss.t166)
+let avs=v(xdut.avss.t167)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 296
 let aid=i(v.xdut.vaud296)
 let avd=v(xdut.audit_d296)
-let avg=v(xdut.avdd.t495)
-let avs=v(xdut.avdd.t497)
-let avb=v(xdut.avdd.t496)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx3.t8)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 297
 let aid=i(v.xdut.vaud297)
 let avd=v(xdut.audit_d297)
-let avg=v(xdut.vbp_i.t55)
-let avs=v(xdut.avdd.t37)
-let avb=v(xdut.avdd.t36)
+let avg=v(xdut.vbp_cas.t12)
+let avs=v(xdut.vbp_bias.t3)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 298
 let aid=i(v.xdut.vaud298)
 let avd=v(xdut.audit_d298)
-let avg=v(xdut.avdd.t279)
-let avs=v(xdut.avdd.t281)
-let avb=v(xdut.avdd.t280)
+let avg=v(xdut.vbp_i.t16)
+let avs=v(xdut.avdd.t594)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 299
 let aid=i(v.xdut.vaud299)
 let avd=v(xdut.audit_d299)
-let avg=v(xdut.avdd.t567)
-let avs=v(xdut.avdd.t569)
-let avb=v(xdut.avdd.t568)
+let avg=v(xdut.vgn2.t8)
+let avs=v(xdut.v2.t1)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 300
 let aid=i(v.xdut.vaud300)
 let avd=v(xdut.audit_d300)
-let avg=v(xdut.b4.t0)
-let avs=v(xdut.dvdd.t7)
-let avb=v(xdut.dvdd.t6)
+let avg=v(xdut.psrg_m3_feed.t11)
+let avs=v(xdut.avdd.t608)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 301
 let aid=i(v.xdut.vaud301)
 let avd=v(xdut.audit_d301)
-let avg=v(xdut.vnx_bias)
-let avs=0
+let avg=v(xdut.vbn_sink.t29)
+let avs=v(xdut.avss.t2)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 302
 let aid=i(v.xdut.vaud302)
 let avd=v(xdut.audit_d302)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vaux.t2)
-let avb=v(xdut.avdd.t1006)
+let avg=v(xdut.psrg_m3_feed.t16)
+let avs=v(xdut.avdd.t616)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 303
 let aid=i(v.xdut.vaud303)
 let avd=v(xdut.audit_d303)
-let avg=v(xdut.psrg_m3_feed.t15)
-let avs=v(xdut.avdd.t1017)
-let avb=v(xdut.avdd.t1016)
+let avg=v(xdut.avdd.t459)
+let avs=v(xdut.avdd.t460)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 304
 let aid=i(v.xdut.vaud304)
 let avd=v(xdut.audit_d304)
-let avg=v(xdut.b1_b.t2)
-let avs=v(xdut.rbit1top.t11)
-let avb=v(xdut.dvdd.t14)
+let avg=v(xdut.avdd.t288)
+let avs=v(xdut.avdd.t289)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 305
 let aid=i(v.xdut.vaud305)
 let avd=v(xdut.audit_d305)
-let avg=v(xdut.vbp_i.t43)
-let avs=v(xdut.avdd.t41)
-let avb=v(xdut.avdd.t40)
+let avg=v(xdut.vgn2.t9)
+let avs=v(xdut.v2.t0)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 306
 let aid=i(v.xdut.vaud306)
 let avd=v(xdut.audit_d306)
-let avg=v(xdut.y1.t7)
-let avs=v(xdut.avdd.t924)
-let avb=v(xdut.avdd.t923)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx1.t6)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 307
 let aid=i(v.xdut.vaud307)
 let avd=v(xdut.audit_d307)
-let avg=v(xdut.avdd.t427)
-let avs=v(xdut.avdd.t429)
-let avb=v(xdut.avdd.t428)
+let avg=v(xdut.avdd.t52)
+let avs=v(xdut.avdd.t53)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 308
 let aid=i(v.xdut.vaud308)
 let avd=v(xdut.audit_d308)
-let avg=v(xdut.vbp_i.t36)
-let avs=v(xdut.avdd.t51)
-let avb=v(xdut.avdd.t50)
+let avg=v(xdut.avdd.t399)
+let avs=v(xdut.avdd.t400)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 309
 let aid=i(v.xdut.vaud309)
 let avd=v(xdut.audit_d309)
-let avg=v(xdut.vbp_i.t44)
-let avs=v(xdut.avdd.t84)
-let avb=v(xdut.avdd.t83)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx1.t10)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 310
 let aid=i(v.xdut.vaud310)
 let avd=v(xdut.audit_d310)
-let avg=v(xdut.b1.t1)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t315)
+let avs=v(xdut.avdd.t316)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 311
 let aid=i(v.xdut.vaud311)
 let avd=v(xdut.audit_d311)
-let avg=v(xdut.vbp_bias.t20)
-let avs=v(xdut.avdd.t906)
-let avb=v(xdut.avdd.t905)
+let avg=v(xdut.avdd.t453)
+let avs=v(xdut.avdd.t454)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 312
 let aid=i(v.xdut.vaud312)
 let avd=v(xdut.audit_d312)
-let avg=v(xdut.vbn_sink.t21)
-let avs=0
+let avg=v(xdut.b2.t2)
+let avs=v(xdut.rbit3top.t7)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 313
 let aid=i(v.xdut.vaud313)
 let avd=v(xdut.audit_d313)
-let avg=v(xdut.b1.t0)
-let avs=v(xdut.rbit2top.t6)
-let avb=0
+let avg=v(xdut.v1.t2)
+let avs=v(xdut.vsp.t7)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 314
 let aid=i(v.xdut.vaud314)
 let avd=v(xdut.audit_d314)
-let avg=v(xdut.y1.t16)
-let avs=v(xdut.avdd.t959)
-let avb=v(xdut.avdd.t958)
+let avg=v(xdut.avdd.t97)
+let avs=v(xdut.avdd.t98)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 315
 let aid=i(v.xdut.vaud315)
 let avd=v(xdut.audit_d315)
-let avg=v(xdut.vsu)
-let avs=v(xdut.bgsu1)
-let avb=0
+let avg=v(xdut.avdd.t178)
+let avs=v(xdut.avdd.t179)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 316
 let aid=i(v.xdut.vaud316)
 let avd=v(xdut.audit_d316)
-let avg=v(xdut.vbp_cas.t25)
-let avs=v(xdut.pm2.t11)
-let avb=v(xdut.avdd.t980)
+let avg=v(xdut.psrg_m3_feed.t9)
+let avs=v(xdut.avdd.t612)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 317
 let aid=i(v.xdut.vaud317)
 let avd=v(xdut.audit_d317)
-let avg=v(xdut.avdd.t826)
-let avs=v(xdut.avdd.t828)
-let avb=v(xdut.avdd.t827)
+let avg=v(xdut.psrg_m3_feed.t8)
+let avs=v(xdut.avdd.t0)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 318
 let aid=i(v.xdut.vaud318)
 let avd=v(xdut.audit_d318)
-let avg=v(xdut.vbn_sink.t22)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t94)
+let avs=v(xdut.avdd.t95)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 319
 let aid=i(v.xdut.vaud319)
 let avd=v(xdut.audit_d319)
-let avg=v(xdut.b4.t1)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t175)
+let avs=v(xdut.avdd.t176)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 320
 let aid=i(v.xdut.vaud320)
 let avd=v(xdut.audit_d320)
-let avg=v(xdut.vbp_i.t34)
-let avs=v(xdut.avdd.t936)
-let avb=v(xdut.avdd.t935)
+let avg=v(xdut.b5.t1)
+let avs=v(xdut.rbit6top.t5)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 321
 let aid=i(v.xdut.vaud321)
 let avd=v(xdut.audit_d321)
-let avg=v(xdut.vbp_cas.t6)
-let avs=v(xdut.vbp_bias.t2)
-let avb=v(xdut.avdd.t969)
+let avg=v(xdut.avdd.t438)
+let avs=v(xdut.avdd.t439)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 322
 let aid=i(v.xdut.vaud322)
 let avd=v(xdut.audit_d322)
-let avg=v(xdut.avdd.t247)
-let avs=v(xdut.avdd.t249)
-let avb=v(xdut.avdd.t248)
+let avg=v(xdut.v2.t6)
+let avs=v(xdut.vsp.t8)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 323
 let aid=i(v.xdut.vaud323)
 let avd=v(xdut.audit_d323)
-let avg=v(xdut.vbn_sink.t30)
-let avs=0
+let avg=v(xdut.avss.t61)
+let avs=v(xdut.avss.t62)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 324
 let aid=i(v.xdut.vaud324)
 let avd=v(xdut.audit_d324)
-let avg=v(xdut.avdd.t758)
-let avs=v(xdut.avdd.t760)
-let avb=v(xdut.avdd.t759)
+let avg=v(xdut.avdd.t19)
+let avs=v(xdut.avdd.t20)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 325
 let aid=i(v.xdut.vaud325)
 let avd=v(xdut.audit_d325)
-let avg=v(xdut.vbp_tail.t7)
-let avs=v(xdut.avdd.t1035)
-let avb=v(xdut.avdd.t1034)
+let avg=v(xdut.avdd.t405)
+let avs=v(xdut.avdd.t406)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 326
 let aid=i(v.xdut.vaud326)
 let avd=v(xdut.audit_d326)
-let avg=v(xdut.avdd.t335)
-let avs=v(xdut.avdd.t337)
-let avb=v(xdut.avdd.t336)
+let avg=v(xdut.vbp_bias.t22)
+let avs=v(xdut.avdd.t586)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 327
 let aid=i(v.xdut.vaud327)
 let avd=v(xdut.audit_d327)
-let avg=v(xdut.vbp_cas.t8)
-let avs=v(xdut.vbp_bias.t1)
-let avb=v(xdut.avdd.t1044)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx1.t7)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 328
 let aid=i(v.xdut.vaud328)
 let avd=v(xdut.audit_d328)
-let avg=v(xdut.vbn_i.t8)
-let avs=0
-let avb=0
+let avg=v(xdut.vbp_i.t53)
+let avs=v(xdut.avdd.t634)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 329
 let aid=i(v.xdut.vaud329)
 let avd=v(xdut.audit_d329)
-let avg=v(xdut.avdd.t159)
-let avs=v(xdut.avdd.t161)
-let avb=v(xdut.avdd.t160)
+let avg=v(xdut.avdd.t16)
+let avs=v(xdut.avdd.t17)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 330
 let aid=i(v.xdut.vaud330)
 let avd=v(xdut.audit_d330)
-let avg=v(xdut.avdd.t143)
-let avs=v(xdut.avdd.t145)
-let avb=v(xdut.avdd.t144)
+let avg=v(xdut.avdd.t296)
+let avs=v(xdut.avdd.t297)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 331
 let aid=i(v.xdut.vaud331)
 let avd=v(xdut.audit_d331)
-let avg=v(xdut.avdd.t559)
-let avs=v(xdut.avdd.t561)
-let avb=v(xdut.avdd.t560)
+let avg=v(xdut.vbp_i.t55)
+let avs=v(xdut.avdd.t604)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 332
 let aid=i(v.xdut.vaud332)
 let avd=v(xdut.audit_d332)
-let avg=v(xdut.avdd.t463)
-let avs=v(xdut.avdd.t465)
-let avb=v(xdut.avdd.t464)
+let avg=v(xdut.avdd.t139)
+let avs=v(xdut.avdd.t140)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 333
 let aid=i(v.xdut.vaud333)
 let avd=v(xdut.audit_d333)
-let avg=v(xdut.avdd.t483)
-let avs=v(xdut.avdd.t485)
-let avb=v(xdut.avdd.t484)
+let avg=v(xdut.avss.t103)
+let avs=v(xdut.avss.t104)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 334
 let aid=i(v.xdut.vaud334)
 let avd=v(xdut.audit_d334)
-let avg=v(xdut.avdd.t155)
-let avs=v(xdut.avdd.t157)
-let avb=v(xdut.avdd.t156)
+let avg=v(xdut.avdd.t342)
+let avs=v(xdut.avdd.t343)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 335
 let aid=i(v.xdut.vaud335)
 let avd=v(xdut.audit_d335)
-let avg=v(xdut.vgn1.t0)
-let avs=v(xdut.v1.t1)
-let avb=0
+let avg=v(xdut.b4.t0)
+let avs=v(xdut.dvdd.t2)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 336
 let aid=i(v.xdut.vaud336)
 let avd=v(xdut.audit_d336)
-let avg=v(xdut.rb_mid)
-let avs=0
+let avg=v(xdut.vnx_bias)
+let avs=v(xdut.avss.t209)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 337
 let aid=i(v.xdut.vaud337)
 let avd=v(xdut.audit_d337)
-let avg=v(xdut.avdd.t766)
-let avs=v(xdut.avdd.t768)
-let avb=v(xdut.avdd.t767)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vaux.t0)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 338
 let aid=i(v.xdut.vaud338)
 let avd=v(xdut.audit_d338)
-let avg=v(xdut.avdd.t730)
-let avs=v(xdut.avdd.t732)
-let avb=v(xdut.avdd.t731)
+let avg=v(xdut.psrg_m3_feed.t15)
+let avs=v(xdut.avdd.t615)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 339
 let aid=i(v.xdut.vaud339)
 let avd=v(xdut.audit_d339)
-let avg=v(xdut.avdd.t695)
-let avs=v(xdut.avdd.t697)
-let avb=v(xdut.avdd.t696)
+let avg=v(xdut.b1_b.t2)
+let avs=v(xdut.rbit1top.t10)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 340
 let aid=i(v.xdut.vaud340)
 let avd=v(xdut.audit_d340)
-let avg=v(xdut.b0_b.t5)
-let avs=v(xdut.rbit0top.t4)
-let avb=v(xdut.dvdd.t3)
+let avg=v(xdut.vbp_i.t43)
+let avs=v(xdut.avdd.t597)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 341
 let aid=i(v.xdut.vaud341)
 let avd=v(xdut.audit_d341)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx3.t8)
-let avb=v(xdut.avdd.t1005)
+let avg=v(xdut.y1.t7)
+let avs=v(xdut.avdd.t570)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 342
 let aid=i(v.xdut.vaud342)
 let avd=v(xdut.audit_d342)
-let avg=v(xdut.vbn_sink.t25)
-let avs=0
+let avg=v(xdut.avss.t64)
+let avs=v(xdut.avss.t65)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 343
 let aid=i(v.xdut.vaud343)
 let avd=v(xdut.audit_d343)
-let avg=v(xdut.avdd.t475)
-let avs=v(xdut.avdd.t477)
-let avb=v(xdut.avdd.t476)
+let avg=v(xdut.avdd.t250)
+let avs=v(xdut.avdd.t251)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 344
 let aid=i(v.xdut.vaud344)
 let avd=v(xdut.audit_d344)
-let avg=v(xdut.avdd.t235)
-let avs=v(xdut.avdd.t237)
-let avb=v(xdut.avdd.t236)
+let avg=v(xdut.vbp_i.t36)
+let avs=v(xdut.avdd.t565)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 345
 let aid=i(v.xdut.vaud345)
 let avd=v(xdut.audit_d345)
-let avg=v(xdut.avdd.t691)
-let avs=v(xdut.avdd.t693)
-let avb=v(xdut.avdd.t692)
+let avg=v(xdut.vbp_i.t44)
+let avs=v(xdut.avdd.t658)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 346
 let aid=i(v.xdut.vaud346)
 let avd=v(xdut.audit_d346)
-let avg=v(xdut.b0.t0)
-let avs=0
+let avg=v(xdut.avss.t187)
+let avs=v(xdut.avss.t188)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 347
 let aid=i(v.xdut.vaud347)
 let avd=v(xdut.audit_d347)
-let avg=v(xdut.vbp_cas.t22)
-let avs=v(xdut.pm1.t10)
-let avb=v(xdut.avdd.t977)
+let avg=v(xdut.b1.t1)
+let avs=v(xdut.dvss.t4)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 348
 let aid=i(v.xdut.vaud348)
 let avd=v(xdut.audit_d348)
-let avg=v(xdut.vbp_tail.t4)
-let avs=v(xdut.avdd.t918)
-let avb=v(xdut.avdd.t917)
+let avg=v(xdut.avss.t55)
+let avs=v(xdut.avss.t56)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 349
 let aid=i(v.xdut.vaud349)
 let avd=v(xdut.audit_d349)
-let avg=v(xdut.b6.t1)
-let avs=v(xdut.vq3.t2)
-let avb=0
+let avg=v(xdut.vbp_bias.t20)
+let avs=v(xdut.avdd.t654)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 350
 let aid=i(v.xdut.vaud350)
 let avd=v(xdut.audit_d350)
-let avg=v(xdut.v2.t7)
-let avs=v(xdut.vsp.t7)
-let avb=v(xdut.avdd.t1020)
+let avg=v(xdut.vbn_sink.t21)
+let avs=v(xdut.avss.t240)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 351
 let aid=i(v.xdut.vaud351)
 let avd=v(xdut.audit_d351)
-let avg=v(xdut.vbp_i.t1)
-let avs=v(xdut.avdd.t47)
-let avb=v(xdut.avdd.t46)
+let avg=v(xdut.b1.t0)
+let avs=v(xdut.rbit2top.t9)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 352
 let aid=i(v.xdut.vaud352)
 let avd=v(xdut.audit_d352)
-let avg=v(xdut.avdd.t746)
-let avs=v(xdut.avdd.t748)
-let avb=v(xdut.avdd.t747)
+let avg=v(xdut.y1.t16)
+let avs=v(xdut.avdd.t627)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 353
 let aid=i(v.xdut.vaud353)
 let avd=v(xdut.audit_d353)
-let avg=v(xdut.vbp_bias.t24)
-let avs=v(xdut.avdd.t910)
-let avb=v(xdut.avdd.t909)
+let avg=v(xdut.vsu)
+let avs=v(xdut.bgsu1)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 354
 let aid=i(v.xdut.vaud354)
 let avd=v(xdut.audit_d354)
-let avg=v(xdut.vbp_i.t56)
-let avs=v(xdut.avdd.t73)
-let avb=v(xdut.avdd.t72)
+let avg=v(xdut.vbp_cas.t25)
+let avs=v(xdut.pm2.t10)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 355
 let aid=i(v.xdut.vaud355)
 let avd=v(xdut.audit_d355)
-let avg=v(xdut.avdd.t131)
-let avs=v(xdut.avdd.t133)
-let avb=v(xdut.avdd.t132)
+let avg=v(xdut.avss.t79)
+let avs=v(xdut.avss.t80)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 356
 let aid=i(v.xdut.vaud356)
 let avd=v(xdut.audit_d356)
-let avg=v(xdut.avdd.t339)
-let avs=v(xdut.avdd.t341)
-let avb=v(xdut.avdd.t340)
+let avg=v(xdut.avdd.t521)
+let avs=v(xdut.avdd.t522)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 357
 let aid=i(v.xdut.vaud357)
 let avd=v(xdut.audit_d357)
-let avg=v(xdut.vbp_i.t37)
-let avs=v(xdut.avdd.t53)
-let avb=v(xdut.avdd.t52)
+let avg=v(xdut.vbn_sink.t22)
+let avs=v(xdut.avss.t201)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 358
 let aid=i(v.xdut.vaud358)
 let avd=v(xdut.audit_d358)
-let avg=v(xdut.psrg_m3_feed.t12)
-let avs=v(xdut.avdd.t1039)
-let avb=v(xdut.avdd.t1038)
+let avg=v(xdut.b4.t1)
+let avs=v(xdut.dvss.t2)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 359
 let aid=i(v.xdut.vaud359)
 let avd=v(xdut.audit_d359)
-let avg=v(xdut.psrg_m3_feed.t22)
-let avs=v(xdut.avdd.t986)
-let avb=v(xdut.avdd.t985)
+let avg=v(xdut.vbp_i.t34)
+let avs=v(xdut.avdd.t574)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 360
 let aid=i(v.xdut.vaud360)
 let avd=v(xdut.audit_d360)
-let avg=v(xdut.avdd.t443)
-let avs=v(xdut.avdd.t445)
-let avb=v(xdut.avdd.t444)
+let avg=v(xdut.vbp_cas.t18)
+let avs=v(xdut.vbp_bias.t2)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 361
 let aid=i(v.xdut.vaud361)
 let avd=v(xdut.audit_d361)
-let avg=v(xdut.avdd.t782)
-let avs=v(xdut.avdd.t784)
-let avb=v(xdut.avdd.t783)
+let avg=v(xdut.avdd.t115)
+let avs=v(xdut.avdd.t116)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 362
 let aid=i(v.xdut.vaud362)
 let avd=v(xdut.audit_d362)
-let avg=v(xdut.vbp_i.t11)
-let avs=v(xdut.avdd.t930)
-let avb=v(xdut.avdd.t929)
+let avg=v(xdut.vbn_sink.t30)
+let avs=v(xdut.avss.t3)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 363
 let aid=i(v.xdut.vaud363)
 let avd=v(xdut.audit_d363)
-let avg=v(xdut.avdd.t467)
-let avs=v(xdut.avdd.t469)
-let avb=v(xdut.avdd.t468)
+let avg=v(xdut.avdd.t470)
+let avs=v(xdut.avdd.t471)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 364
 let aid=i(v.xdut.vaud364)
 let avd=v(xdut.audit_d364)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.avdd.t1008)
-let avb=v(xdut.avdd.t1007)
+let avg=v(xdut.vbp_tail.t7)
+let avs=v(xdut.avdd.t650)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 365
 let aid=i(v.xdut.vaud365)
 let avd=v(xdut.audit_d365)
-let avg=v(xdut.avdd.t395)
-let avs=v(xdut.avdd.t397)
-let avb=v(xdut.avdd.t396)
+let avg=v(xdut.avdd.t181)
+let avs=v(xdut.avdd.t182)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 366
 let aid=i(v.xdut.vaud366)
 let avd=v(xdut.audit_d366)
-let avg=v(xdut.vbp_i.t29)
-let avs=v(xdut.avdd.t21)
-let avb=v(xdut.avdd.t20)
+let avg=v(xdut.vbp_cas.t14)
+let avs=v(xdut.vbp_bias.t1)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 367
 let aid=i(v.xdut.vaud367)
 let avd=v(xdut.audit_d367)
-let avg=v(xdut.vbp_i.t38)
-let avs=v(xdut.avdd.t33)
-let avb=v(xdut.avdd.t32)
+let avg=v(xdut.vbn_i.t8)
+let avs=v(xdut.avss.t199)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 368
 let aid=i(v.xdut.vaud368)
 let avd=v(xdut.audit_d368)
-let avg=v(xdut.vbp_i.t13)
-let avs=v(xdut.avdd.t29)
-let avb=v(xdut.avdd.t28)
+let avg=v(xdut.avdd.t49)
+let avs=v(xdut.avdd.t50)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 369
 let aid=i(v.xdut.vaud369)
 let avd=v(xdut.audit_d369)
-let avg=v(xdut.b6.t2)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t37)
+let avs=v(xdut.avdd.t38)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 370
 let aid=i(v.xdut.vaud370)
 let avd=v(xdut.audit_d370)
-let avg=v(xdut.avdd.t683)
-let avs=v(xdut.avdd.t685)
-let avb=v(xdut.avdd.t684)
+let avg=v(xdut.avdd.t336)
+let avs=v(xdut.avdd.t337)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 371
 let aid=i(v.xdut.vaud371)
 let avd=v(xdut.audit_d371)
-let avg=v(xdut.vbp_i.t22)
-let avs=v(xdut.vsu2)
-let avb=0
+let avg=v(xdut.avdd.t277)
+let avs=v(xdut.avdd.t278)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 372
 let aid=i(v.xdut.vaud372)
 let avd=v(xdut.audit_d372)
-let avg=v(xdut.avdd.t639)
-let avs=v(xdut.avdd.t641)
-let avb=v(xdut.avdd.t640)
+let avg=v(xdut.avdd.t290)
+let avs=v(xdut.avdd.t291)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 373
 let aid=i(v.xdut.vaud373)
 let avd=v(xdut.audit_d373)
-let avg=v(xdut.vbp_i.t3)
-let avs=v(xdut.avdd.t90)
-let avb=v(xdut.avdd.t89)
+let avg=v(xdut.avss.t160)
+let avs=v(xdut.avss.t161)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 374
 let aid=i(v.xdut.vaud374)
 let avd=v(xdut.audit_d374)
-let avg=v(xdut.avdd.t679)
-let avs=v(xdut.avdd.t681)
-let avb=v(xdut.avdd.t680)
+let avg=v(xdut.avdd.t46)
+let avs=v(xdut.avdd.t47)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 375
 let aid=i(v.xdut.vaud375)
 let avd=v(xdut.audit_d375)
-let avg=v(xdut.bgsu2)
-let avs=0
+let avg=v(xdut.vgn1.t0)
+let avs=v(xdut.v1.t0)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 376
 let aid=i(v.xdut.vaud376)
 let avd=v(xdut.audit_d376)
-let avg=v(xdut.vbp_cas.t27)
-let avs=v(xdut.pm1.t1)
-let avb=v(xdut.avdd.t954)
+let avg=v(xdut.rb_mid)
+let avs=v(xdut.avss.t200)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 377
 let aid=i(v.xdut.vaud377)
 let avd=v(xdut.audit_d377)
-let avg=v(xdut.v1.t4)
-let avs=v(xdut.vsp.t10)
-let avb=v(xdut.avdd.t1027)
+let avg=v(xdut.avdd.t476)
+let avs=v(xdut.avdd.t477)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 378
 let aid=i(v.xdut.vaud378)
 let avd=v(xdut.audit_d378)
-let avg=v(xdut.vbn.t4)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t455)
+let avs=v(xdut.avdd.t456)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 379
 let aid=i(v.xdut.vaud379)
 let avd=v(xdut.audit_d379)
-let avg=v(xdut.b2.t1)
-let avs=0
+let avg=v(xdut.avss.t157)
+let avs=v(xdut.avss.t158)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 380
 let aid=i(v.xdut.vaud380)
 let avd=v(xdut.audit_d380)
-let avg=v(xdut.avdd.t311)
-let avs=v(xdut.avdd.t313)
-let avb=v(xdut.avdd.t312)
+let avg=v(xdut.avdd.t435)
+let avs=v(xdut.avdd.t436)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 381
 let aid=i(v.xdut.vaud381)
 let avd=v(xdut.audit_d381)
-let avg=v(xdut.avdd.t263)
-let avs=v(xdut.avdd.t265)
-let avb=v(xdut.avdd.t264)
+let avg=v(xdut.b0_b.t5)
+let avs=v(xdut.rbit0top.t4)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 382
 let aid=i(v.xdut.vaud382)
 let avd=v(xdut.audit_d382)
-let avg=v(xdut.psrg_m3_feed.t20)
-let avs=v(xdut.avdd.t982)
-let avb=v(xdut.avdd.t981)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx3.t9)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 383
 let aid=i(v.xdut.vaud383)
 let avd=v(xdut.audit_d383)
-let avg=v(xdut.vgn2.t10)
-let avs=0
+let avg=v(xdut.vbn_sink.t25)
+let avs=v(xdut.avss.t196)
 let avb=0
 print aid avd avg avs avb
 echo DEVICE 384
 let aid=i(v.xdut.vaud384)
 let avd=v(xdut.audit_d384)
-let avg=v(xdut.vbp_cas.t28)
-let avs=v(xdut.pm2.t0)
-let avb=v(xdut.avdd.t955)
+let avg=v(xdut.avdd.t286)
+let avs=v(xdut.avdd.t287)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 385
 let aid=i(v.xdut.vaud385)
 let avd=v(xdut.audit_d385)
-let avg=v(xdut.avdd.t571)
-let avs=v(xdut.avdd.t573)
-let avb=v(xdut.avdd.t572)
+let avg=v(xdut.avdd.t106)
+let avs=v(xdut.avdd.t107)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 386
 let aid=i(v.xdut.vaud386)
 let avd=v(xdut.audit_d386)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx3.t4)
-let avb=v(xdut.avdd.t993)
+let avg=v(xdut.avdd.t432)
+let avs=v(xdut.avdd.t433)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 387
 let aid=i(v.xdut.vaud387)
 let avd=v(xdut.audit_d387)
-let avg=v(xdut.b2_b.t2)
-let avs=v(xdut.rbit2top.t2)
-let avb=v(xdut.dvdd.t16)
+let avg=v(xdut.b0.t0)
+let avs=v(xdut.dvss.t1)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 388
 let aid=i(v.xdut.vaud388)
 let avd=v(xdut.audit_d388)
-let avg=v(xdut.avdd.t806)
-let avs=v(xdut.avdd.t808)
-let avb=v(xdut.avdd.t807)
+let avg=v(xdut.vbp_cas.t22)
+let avs=v(xdut.pm1.t8)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 389
 let aid=i(v.xdut.vaud389)
 let avd=v(xdut.audit_d389)
-let avg=v(xdut.auxsu1)
-let avs=v(xdut.auxsu2)
-let avb=0
+let avg=v(xdut.vbp_tail.t5)
+let avs=v(xdut.avdd.t571)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 390
 let aid=i(v.xdut.vaud390)
 let avd=v(xdut.audit_d390)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.vx1.t8)
-let avb=v(xdut.avdd.t998)
+let avg=v(xdut.b6.t1)
+let avs=v(xdut.vq3.t1)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 391
 let aid=i(v.xdut.vaud391)
 let avd=v(xdut.audit_d391)
-let avg=v(xdut.vbp_tail.t8)
-let avs=v(xdut.avdd.t944)
-let avb=v(xdut.avdd.t943)
+let avg=v(xdut.v2.t7)
+let avs=v(xdut.vsp.t14)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 392
 let aid=i(v.xdut.vaud392)
 let avd=v(xdut.audit_d392)
-let avg=v(xdut.avdd.t259)
-let avs=v(xdut.avdd.t261)
-let avb=v(xdut.avdd.t260)
+let avg=v(xdut.vbp_i.t0)
+let avs=v(xdut.avdd.t667)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 393
 let aid=i(v.xdut.vaud393)
 let avd=v(xdut.audit_d393)
-let avg=v(xdut.vbp_i.t31)
-let avs=v(xdut.avdd.t25)
-let avb=v(xdut.avdd.t24)
+let avg=v(xdut.avdd.t463)
+let avs=v(xdut.avdd.t464)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 394
 let aid=i(v.xdut.vaud394)
 let avd=v(xdut.audit_d394)
-let avg=v(xdut.b0.t1)
-let avs=v(xdut.dvdd.t11)
-let avb=v(xdut.dvdd.t10)
+let avg=v(xdut.vbp_bias.t24)
+let avs=v(xdut.avdd.t587)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 395
 let aid=i(v.xdut.vaud395)
 let avd=v(xdut.audit_d395)
-let avg=v(xdut.avdd.t619)
-let avs=v(xdut.avdd.t621)
-let avb=v(xdut.avdd.t620)
+let avg=v(xdut.vbp_i.t56)
+let avs=v(xdut.avdd.t573)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 396
 let aid=i(v.xdut.vaud396)
 let avd=v(xdut.audit_d396)
-let avg=v(xdut.avdd.t543)
-let avs=v(xdut.avdd.t545)
-let avb=v(xdut.avdd.t544)
+let avg=v(xdut.avdd.t28)
+let avs=v(xdut.avdd.t29)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 397
 let aid=i(v.xdut.vaud397)
 let avd=v(xdut.audit_d397)
-let avg=v(xdut.vcasp)
-let avs=v(xdut.avdd.t990)
-let avb=v(xdut.avdd.t989)
+let avg=v(xdut.avss.t37)
+let avs=v(xdut.avss.t38)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 398
 let aid=i(v.xdut.vaud398)
 let avd=v(xdut.audit_d398)
-let avg=v(xdut.psrg_m3_feed.t21)
-let avs=v(xdut.avdd.t984)
-let avb=v(xdut.avdd.t983)
+let avg=v(xdut.avdd.t184)
+let avs=v(xdut.avdd.t185)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 399
 let aid=i(v.xdut.vaud399)
 let avd=v(xdut.audit_d399)
-let avg=v(xdut.avdd.t411)
-let avs=v(xdut.avdd.t413)
-let avb=v(xdut.avdd.t412)
+let avg=v(xdut.vbp_i.t37)
+let avs=v(xdut.avdd.t566)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 400
 let aid=i(v.xdut.vaud400)
 let avd=v(xdut.audit_d400)
-let avg=v(xdut.avdd.t866)
-let avs=v(xdut.avdd.t868)
-let avb=v(xdut.avdd.t867)
+let avg=v(xdut.psrg_m3_feed.t12)
+let avs=v(xdut.avdd.t572)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 401
 let aid=i(v.xdut.vaud401)
 let avd=v(xdut.audit_d401)
-let avg=v(xdut.avdd.t527)
-let avs=v(xdut.avdd.t529)
-let avb=v(xdut.avdd.t528)
+let avg=v(xdut.psrg_m3_feed.t22)
+let avs=v(xdut.avdd.t599)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 402
 let aid=i(v.xdut.vaud402)
 let avd=v(xdut.audit_d402)
-let avg=v(xdut.vbn_sink.t26)
-let avs=0
-let avb=0
+let avg=v(xdut.avdd.t262)
+let avs=v(xdut.avdd.t263)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 403
 let aid=i(v.xdut.vaud403)
 let avd=v(xdut.audit_d403)
-let avg=v(xdut.vbp_cas.t24)
-let avs=v(xdut.pm2.t10)
-let avb=v(xdut.avdd.t979)
+let avg=v(xdut.avdd.t488)
+let avs=v(xdut.avdd.t489)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 404
 let aid=i(v.xdut.vaud404)
 let avd=v(xdut.audit_d404)
-let avg=v(xdut.avdd.t838)
-let avs=v(xdut.avdd.t840)
-let avb=v(xdut.avdd.t839)
+let avg=v(xdut.vbp_i.t11)
+let avs=v(xdut.avdd.t644)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 405
 let aid=i(v.xdut.vaud405)
 let avd=v(xdut.audit_d405)
-let avg=v(xdut.avdd.t231)
-let avs=v(xdut.avdd.t233)
-let avb=v(xdut.avdd.t232)
+let avg=v(xdut.avss.t34)
+let avs=v(xdut.avss.t35)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 406
 let aid=i(v.xdut.vaud406)
 let avd=v(xdut.audit_d406)
-let avg=v(xdut.avdd.t854)
-let avs=v(xdut.avdd.t856)
-let avb=v(xdut.avdd.t855)
+let avg=v(xdut.avdd.t280)
+let avs=v(xdut.avdd.t281)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 407
 let aid=i(v.xdut.vaud407)
 let avd=v(xdut.audit_d407)
-let avg=v(xdut.b0_b.t2)
-let avs=v(xdut.rbit0top.t7)
-let avb=v(xdut.dvdd.t21)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.avdd.t640)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 408
 let aid=i(v.xdut.vaud408)
 let avd=v(xdut.audit_d408)
-let avg=v(xdut.vbp_cas.t30)
-let avs=v(xdut.pm1.t2)
-let avb=v(xdut.avdd.t964)
+let avg=v(xdut.avdd.t226)
+let avs=v(xdut.avdd.t227)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 409
 let aid=i(v.xdut.vaud409)
 let avd=v(xdut.audit_d409)
-let avg=v(xdut.vbp_tail.t10)
-let avs=v(xdut.avdd.t1042)
-let avb=v(xdut.avdd.t1041)
+let avg=v(xdut.vbp_i.t29)
+let avs=v(xdut.avdd.t602)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 410
 let aid=i(v.xdut.vaud410)
 let avd=v(xdut.audit_d410)
-let avg=v(xdut.avdd.t211)
-let avs=v(xdut.avdd.t213)
-let avb=v(xdut.avdd.t212)
+let avg=v(xdut.vbp_i.t38)
+let avs=v(xdut.avdd.t567)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 411
 let aid=i(v.xdut.vaud411)
 let avd=v(xdut.audit_d411)
-let avg=v(xdut.psrg_m3_feed.t14)
-let avs=v(xdut.avdd.t1015)
-let avb=v(xdut.avdd.t1014)
+let avg=v(xdut.avss.t148)
+let avs=v(xdut.avss.t149)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 412
 let aid=i(v.xdut.vaud412)
 let avd=v(xdut.audit_d412)
-let avg=v(xdut.vbp_cas.t31)
-let avs=v(xdut.pm1.t3)
-let avb=v(xdut.avdd.t965)
+let avg=v(xdut.vbp_i.t13)
+let avs=v(xdut.avdd.t666)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 413
 let aid=i(v.xdut.vaud413)
 let avd=v(xdut.audit_d413)
-let avg=v(xdut.avdd.t179)
-let avs=v(xdut.avdd.t181)
-let avb=v(xdut.avdd.t180)
+let avg=v(xdut.b6.t2)
+let avs=v(xdut.dvss.t5)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 414
 let aid=i(v.xdut.vaud414)
 let avd=v(xdut.audit_d414)
-let avg=v(xdut.avdd.t762)
-let avs=v(xdut.avdd.t764)
-let avb=v(xdut.avdd.t763)
+let avg=v(xdut.avdd.t426)
+let avs=v(xdut.avdd.t427)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 415
 let aid=i(v.xdut.vaud415)
 let avd=v(xdut.audit_d415)
-let avg=v(xdut.v1.t6)
-let avs=v(xdut.vsp.t8)
-let avb=v(xdut.avdd.t1025)
+let avg=v(xdut.vbp_i.t22)
+let avs=v(xdut.vsu2)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 416
 let aid=i(v.xdut.vaud416)
 let avd=v(xdut.audit_d416)
-let avg=v(xdut.psrg_m3_feed.t19)
-let avs=v(xdut.avdd.t5)
-let avb=v(xdut.avdd.t4)
+let avg=v(xdut.avdd.t396)
+let avs=v(xdut.avdd.t397)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 417
 let aid=i(v.xdut.vaud417)
 let avd=v(xdut.audit_d417)
-let avg=v(xdut.avdd.t127)
-let avs=v(xdut.avdd.t129)
-let avb=v(xdut.avdd.t128)
+let avg=v(xdut.avss.t58)
+let avs=v(xdut.avss.t59)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 418
 let aid=i(v.xdut.vaud418)
 let avd=v(xdut.audit_d418)
-let avg=v(xdut.avdd.t407)
-let avs=v(xdut.avdd.t409)
-let avb=v(xdut.avdd.t408)
+let avg=v(xdut.vbp_i.t2)
+let avs=v(xdut.avdd.t578)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 419
 let aid=i(v.xdut.vaud419)
 let avd=v(xdut.audit_d419)
-let avg=v(xdut.avdd.t631)
-let avs=v(xdut.avdd.t633)
-let avb=v(xdut.avdd.t632)
+let avg=v(xdut.avdd.t423)
+let avs=v(xdut.avdd.t424)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 420
 let aid=i(v.xdut.vaud420)
 let avd=v(xdut.audit_d420)
-let avg=v(xdut.avdd.t431)
-let avs=v(xdut.avdd.t433)
-let avb=v(xdut.avdd.t432)
+let avg=v(xdut.bgsu2)
+let avs=v(xdut.avss.t238)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 421
 let aid=i(v.xdut.vaud421)
 let avd=v(xdut.audit_d421)
-let avg=v(xdut.auxsu2)
-let avs=0
-let avb=0
+let avg=v(xdut.vbp_cas.t27)
+let avs=v(xdut.pm1.t11)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 422
 let aid=i(v.xdut.vaud422)
 let avd=v(xdut.audit_d422)
-let avg=v(xdut.avdd.t107)
-let avs=v(xdut.avdd.t109)
-let avb=v(xdut.avdd.t108)
+let avg=v(xdut.v1.t4)
+let avs=v(xdut.vsp.t5)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 423
 let aid=i(v.xdut.vaud423)
 let avd=v(xdut.audit_d423)
-let avg=v(xdut.b0_b.t6)
-let avs=v(xdut.rbit0top.t3)
-let avb=v(xdut.dvdd.t22)
+let avg=v(xdut.vbn.t4)
+let avs=v(xdut.avss.t233)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 424
 let aid=i(v.xdut.vaud424)
 let avd=v(xdut.audit_d424)
-let avg=v(xdut.avdd.t750)
-let avs=v(xdut.avdd.t752)
-let avb=v(xdut.avdd.t751)
+let avg=v(xdut.b2.t1)
+let avs=v(xdut.dvss.t3)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 425
 let aid=i(v.xdut.vaud425)
 let avd=v(xdut.audit_d425)
-let avg=v(xdut.avdd.t287)
-let avs=v(xdut.avdd.t289)
-let avb=v(xdut.avdd.t288)
+let avg=v(xdut.avdd.t163)
+let avs=v(xdut.avdd.t164)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 426
 let aid=i(v.xdut.vaud426)
 let avd=v(xdut.audit_d426)
-let avg=v(xdut.y1.t15)
-let avs=v(xdut.avdd.t952)
-let avb=v(xdut.avdd.t951)
+let avg=v(xdut.avdd.t127)
+let avs=v(xdut.avdd.t128)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 427
 let aid=i(v.xdut.vaud427)
 let avd=v(xdut.audit_d427)
-let avg=v(xdut.avdd.t371)
-let avs=v(xdut.avdd.t373)
-let avb=v(xdut.avdd.t372)
+let avg=v(xdut.psrg_m3_feed.t20)
+let avs=v(xdut.avdd.t653)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 428
 let aid=i(v.xdut.vaud428)
 let avd=v(xdut.audit_d428)
-let avg=v(xdut.avdd.t794)
-let avs=v(xdut.avdd.t796)
-let avb=v(xdut.avdd.t795)
+let avg=v(xdut.vgn2.t10)
+let avs=v(xdut.avss.t234)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 429
 let aid=i(v.xdut.vaud429)
 let avd=v(xdut.audit_d429)
-let avg=v(xdut.b1_b.t3)
-let avs=v(xdut.rbit1top.t13)
-let avb=v(xdut.dvdd.t13)
+let avg=v(xdut.vbp_cas.t28)
+let avs=v(xdut.pm2.t11)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 430
 let aid=i(v.xdut.vaud430)
 let avd=v(xdut.audit_d430)
-let avg=v(xdut.avdd.t659)
-let avs=v(xdut.avdd.t661)
-let avb=v(xdut.avdd.t660)
+let avg=v(xdut.avdd.t345)
+let avs=v(xdut.avdd.t346)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 431
 let aid=i(v.xdut.vaud431)
 let avd=v(xdut.audit_d431)
-let avg=v(xdut.avdd.t283)
-let avs=v(xdut.avdd.t285)
-let avb=v(xdut.avdd.t284)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx3.t5)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 432
 let aid=i(v.xdut.vaud432)
 let avd=v(xdut.audit_d432)
-let avg=v(xdut.avdd.t675)
-let avs=v(xdut.avdd.t677)
-let avb=v(xdut.avdd.t676)
+let avg=v(xdut.b2_b.t2)
+let avs=v(xdut.rbit2top.t4)
+let avb=v(dvdd)
 print aid avd avg avs avb
 echo DEVICE 433
 let aid=i(v.xdut.vaud433)
 let avd=v(xdut.audit_d433)
-let avg=v(xdut.avdd.t523)
-let avs=v(xdut.avdd.t525)
-let avb=v(xdut.avdd.t524)
+let avg=v(xdut.avdd.t506)
+let avs=v(xdut.avdd.t507)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 434
 let aid=i(v.xdut.vaud434)
 let avd=v(xdut.audit_d434)
-let avg=v(xdut.vbp_cas.t21)
-let avs=v(xdut.pm2.t9)
-let avb=v(xdut.avdd.t971)
+let avg=v(xdut.auxsu1)
+let avs=v(xdut.auxsu2)
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 435
 let aid=i(v.xdut.vaud435)
 let avd=v(xdut.audit_d435)
-let avg=v(xdut.y1.t17)
-let avs=v(xdut.avdd.t961)
-let avb=v(xdut.avdd.t960)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx1.t8)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 436
 let aid=i(v.xdut.vaud436)
 let avd=v(xdut.audit_d436)
-let avg=v(xdut.avdd.t671)
-let avs=v(xdut.avdd.t673)
-let avb=v(xdut.avdd.t672)
+let avg=v(xdut.vbp_tail.t8)
+let avs=v(xdut.avdd.t649)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 437
 let aid=i(v.xdut.vaud437)
 let avd=v(xdut.audit_d437)
-let avg=v(xdut.vbp_i.t19)
-let avs=v(xdut.avdd.t17)
-let avb=v(xdut.avdd.t16)
+let avg=v(xdut.avdd.t124)
+let avs=v(xdut.avdd.t125)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 438
 let aid=i(v.xdut.vaud438)
 let avd=v(xdut.audit_d438)
+let avg=v(xdut.vbp_i.t31)
+let avs=v(xdut.avdd.t582)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 439
+let aid=i(v.xdut.vaud439)
+let avd=v(xdut.audit_d439)
+let avg=v(xdut.avss.t22)
+let avs=v(xdut.avss.t23)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 440
+let aid=i(v.xdut.vaud440)
+let avd=v(xdut.audit_d440)
+let avg=v(xdut.b0.t1)
+let avs=v(xdut.dvdd.t1)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 441
+let aid=i(v.xdut.vaud441)
+let avd=v(xdut.audit_d441)
+let avg=v(xdut.avdd.t381)
+let avs=v(xdut.avdd.t382)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 442
+let aid=i(v.xdut.vaud442)
+let avd=v(xdut.audit_d442)
+let avg=v(xdut.avss.t109)
+let avs=v(xdut.avss.t110)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 443
+let aid=i(v.xdut.vaud443)
+let avd=v(xdut.audit_d443)
+let avg=v(xdut.avdd.t324)
+let avs=v(xdut.avdd.t325)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 444
+let aid=i(v.xdut.vaud444)
+let avd=v(xdut.audit_d444)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.avdd.t638)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 445
+let aid=i(v.xdut.vaud445)
+let avd=v(xdut.audit_d445)
+let avg=v(xdut.avss.t19)
+let avs=v(xdut.avss.t20)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 446
+let aid=i(v.xdut.vaud446)
+let avd=v(xdut.audit_d446)
+let avg=v(xdut.psrg_m3_feed.t21)
+let avs=v(xdut.avdd.t598)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 447
+let aid=i(v.xdut.vaud447)
+let avd=v(xdut.audit_d447)
+let avg=v(xdut.avdd.t238)
+let avs=v(xdut.avdd.t239)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 448
+let aid=i(v.xdut.vaud448)
+let avd=v(xdut.audit_d448)
+let avg=v(xdut.avdd.t551)
+let avs=v(xdut.avdd.t552)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 449
+let aid=i(v.xdut.vaud449)
+let avd=v(xdut.audit_d449)
+let avg=v(xdut.avss.t106)
+let avs=v(xdut.avss.t107)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 450
+let aid=i(v.xdut.vaud450)
+let avd=v(xdut.audit_d450)
+let avg=v(xdut.avdd.t312)
+let avs=v(xdut.avdd.t313)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 451
+let aid=i(v.xdut.vaud451)
+let avd=v(xdut.audit_d451)
+let avg=v(xdut.vbn_sink.t26)
+let avs=v(xdut.avss.t197)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 452
+let aid=i(v.xdut.vaud452)
+let avd=v(xdut.audit_d452)
+let avg=v(xdut.vbp_cas.t24)
+let avs=v(xdut.pm2.t9)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 453
+let aid=i(v.xdut.vaud453)
+let avd=v(xdut.audit_d453)
+let avg=v(xdut.avdd.t530)
+let avs=v(xdut.avdd.t531)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 454
+let aid=i(v.xdut.vaud454)
+let avd=v(xdut.audit_d454)
+let avg=v(xdut.avdd.t103)
+let avs=v(xdut.avdd.t104)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 455
+let aid=i(v.xdut.vaud455)
+let avd=v(xdut.audit_d455)
+let avg=v(xdut.avdd.t542)
+let avs=v(xdut.avdd.t543)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 456
+let aid=i(v.xdut.vaud456)
+let avd=v(xdut.audit_d456)
+let avg=v(xdut.b0_b.t2)
+let avs=v(xdut.rbit0top.t2)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 457
+let aid=i(v.xdut.vaud457)
+let avd=v(xdut.audit_d457)
+let avg=v(xdut.vbp_cas.t30)
+let avs=v(xdut.pm1.t6)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 458
+let aid=i(v.xdut.vaud458)
+let avd=v(xdut.audit_d458)
+let avg=v(xdut.avss.t136)
+let avs=v(xdut.avss.t137)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 459
+let aid=i(v.xdut.vaud459)
+let avd=v(xdut.audit_d459)
+let avg=v(xdut.vbp_tail.t10)
+let avs=v(xdut.avdd.t613)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 460
+let aid=i(v.xdut.vaud460)
+let avd=v(xdut.audit_d460)
+let avg=v(xdut.avdd.t88)
+let avs=v(xdut.avdd.t89)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 461
+let aid=i(v.xdut.vaud461)
+let avd=v(xdut.audit_d461)
+let avg=v(xdut.psrg_m3_feed.t14)
+let avs=v(xdut.avdd.t606)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 462
+let aid=i(v.xdut.vaud462)
+let avd=v(xdut.audit_d462)
+let avg=v(xdut.vbp_cas.t31)
+let avs=v(xdut.pm1.t7)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 463
+let aid=i(v.xdut.vaud463)
+let avd=v(xdut.audit_d463)
+let avg=v(xdut.avdd.t64)
+let avs=v(xdut.avdd.t65)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 464
+let aid=i(v.xdut.vaud464)
+let avd=v(xdut.audit_d464)
+let avg=v(xdut.avdd.t473)
+let avs=v(xdut.avdd.t474)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 465
+let aid=i(v.xdut.vaud465)
+let avd=v(xdut.audit_d465)
+let avg=v(xdut.v1.t6)
+let avs=v(xdut.vsp.t3)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 466
+let aid=i(v.xdut.vaud466)
+let avd=v(xdut.audit_d466)
+let avg=v(xdut.avss.t169)
+let avs=v(xdut.avss.t170)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 467
+let aid=i(v.xdut.vaud467)
+let avd=v(xdut.audit_d467)
+let avg=v(xdut.psrg_m3_feed.t19)
+let avs=v(xdut.avdd.t652)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 468
+let aid=i(v.xdut.vaud468)
+let avd=v(xdut.audit_d468)
+let avg=v(xdut.avdd.t25)
+let avs=v(xdut.avdd.t26)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 469
+let aid=i(v.xdut.vaud469)
+let avd=v(xdut.audit_d469)
+let avg=v(xdut.avdd.t235)
+let avs=v(xdut.avdd.t236)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 470
+let aid=i(v.xdut.vaud470)
+let avd=v(xdut.audit_d470)
+let avg=v(xdut.avdd.t390)
+let avs=v(xdut.avdd.t391)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 471
+let aid=i(v.xdut.vaud471)
+let avd=v(xdut.audit_d471)
+let avg=v(xdut.avdd.t253)
+let avs=v(xdut.avdd.t254)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 472
+let aid=i(v.xdut.vaud472)
+let avd=v(xdut.audit_d472)
+let avg=v(xdut.auxsu2)
+let avs=v(xdut.avss.t237)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 473
+let aid=i(v.xdut.vaud473)
+let avd=v(xdut.audit_d473)
+let avg=v(xdut.avdd.t10)
+let avs=v(xdut.avdd.t11)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 474
+let aid=i(v.xdut.vaud474)
+let avd=v(xdut.audit_d474)
+let avg=v(xdut.b0_b.t6)
+let avs=v(xdut.rbit0top.t3)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 475
+let aid=i(v.xdut.vaud475)
+let avd=v(xdut.audit_d475)
+let avg=v(xdut.avss.t118)
+let avs=v(xdut.avss.t119)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 476
+let aid=i(v.xdut.vaud476)
+let avd=v(xdut.audit_d476)
+let avg=v(xdut.avdd.t465)
+let avs=v(xdut.avdd.t466)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 477
+let aid=i(v.xdut.vaud477)
+let avd=v(xdut.audit_d477)
+let avg=v(xdut.avss.t31)
+let avs=v(xdut.avss.t32)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 478
+let aid=i(v.xdut.vaud478)
+let avd=v(xdut.audit_d478)
+let avg=v(xdut.avdd.t145)
+let avs=v(xdut.avdd.t146)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 479
+let aid=i(v.xdut.vaud479)
+let avd=v(xdut.audit_d479)
+let avg=v(xdut.y1.t15)
+let avs=v(xdut.avdd.t626)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 480
+let aid=i(v.xdut.vaud480)
+let avd=v(xdut.audit_d480)
+let avg=v(xdut.avdd.t208)
+let avs=v(xdut.avdd.t209)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 481
+let aid=i(v.xdut.vaud481)
+let avd=v(xdut.audit_d481)
+let avg=v(xdut.avss.t10)
+let avs=v(xdut.avss.t11)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 482
+let aid=i(v.xdut.vaud482)
+let avd=v(xdut.audit_d482)
+let avg=v(xdut.avss.t145)
+let avs=v(xdut.avss.t146)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 483
+let aid=i(v.xdut.vaud483)
+let avd=v(xdut.audit_d483)
+let avg=v(xdut.avdd.t497)
+let avs=v(xdut.avdd.t498)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 484
+let aid=i(v.xdut.vaud484)
+let avd=v(xdut.audit_d484)
+let avg=v(xdut.b1_b.t3)
+let avs=v(xdut.rbit1top.t11)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 485
+let aid=i(v.xdut.vaud485)
+let avd=v(xdut.audit_d485)
+let avg=v(xdut.avdd.t411)
+let avs=v(xdut.avdd.t412)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 486
+let aid=i(v.xdut.vaud486)
+let avd=v(xdut.audit_d486)
+let avg=v(xdut.avss.t28)
+let avs=v(xdut.avss.t29)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 487
+let aid=i(v.xdut.vaud487)
+let avd=v(xdut.audit_d487)
+let avg=v(xdut.avdd.t142)
+let avs=v(xdut.avdd.t143)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 488
+let aid=i(v.xdut.vaud488)
+let avd=v(xdut.audit_d488)
+let avg=v(xdut.avss.t142)
+let avs=v(xdut.avss.t143)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 489
+let aid=i(v.xdut.vaud489)
+let avd=v(xdut.audit_d489)
+let avg=v(xdut.avdd.t420)
+let avs=v(xdut.avdd.t421)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 490
+let aid=i(v.xdut.vaud490)
+let avd=v(xdut.audit_d490)
+let avg=v(xdut.avdd.t310)
+let avs=v(xdut.avdd.t311)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 491
+let aid=i(v.xdut.vaud491)
+let avd=v(xdut.audit_d491)
+let avg=v(xdut.avss.t121)
+let avs=v(xdut.avss.t122)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 492
+let aid=i(v.xdut.vaud492)
+let avd=v(xdut.audit_d492)
+let avg=v(xdut.vbp_cas.t21)
+let avs=v(xdut.pm2.t8)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 493
+let aid=i(v.xdut.vaud493)
+let avd=v(xdut.audit_d493)
+let avg=v(xdut.y1.t17)
+let avs=v(xdut.avdd.t660)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 494
+let aid=i(v.xdut.vaud494)
+let avd=v(xdut.audit_d494)
+let avg=v(xdut.avdd.t417)
+let avs=v(xdut.avdd.t418)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 495
+let aid=i(v.xdut.vaud495)
+let avd=v(xdut.audit_d495)
+let avg=v(xdut.vbp_i.t19)
+let avs=v(xdut.avdd.t611)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 496
+let aid=i(v.xdut.vaud496)
+let avd=v(xdut.audit_d496)
+let avg=v(xdut.avss.t73)
+let avs=v(xdut.avss.t74)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 497
+let aid=i(v.xdut.vaud497)
+let avd=v(xdut.audit_d497)
 let avg=v(xdut.b0.t3)
-let avs=v(xdut.rbit1top.t7)
+let avs=v(xdut.rbit1top.t8)
 let avb=0
 print aid avd avg avs avb
 quit

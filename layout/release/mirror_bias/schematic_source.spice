@@ -226,24 +226,17 @@ XM50 b6_b b6 dvss dvss nfet_03v3 L=0.5u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.1
 + * (W/nf + 0.18u)' ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
 XM51 b6_b b6 dvdd dvdd pfet_03v3 L=0.5u W=3u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2)
 + * (W/nf + 0.18u)' ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
-**** begin user architecture code
-
-* Explicit layout perimeter/empty-site dummies. All D/G/S/B terminals
-* connect to the quiet body rail; no dummy gate or diffusion is floating.
 XDUM_M1 avdd avdd avdd avdd pfet_05v0 W=16.75u L=2u m=22
 XDUM_M11 avdd avdd avdd avdd pfet_05v0 W=16.42u L=4u m=34
 XDUM_MINP avdd avdd avdd avdd pfet_05v0 W=54.89u L=4u m=29
 XDUM_PCAS1 avdd avdd avdd avdd pfet_05v0 W=22.21u L=8u m=20
 XDUM_PLOAD1 avdd avdd avdd avdd pfet_05v0 W=20.76u L=4u m=20
-XDUM_MSINK1 avss avss avss avss nfet_05v0 W=16.34u L=8u m=20
 XDUM_PREF avdd avdd avdd avdd pfet_05v0 W=18.75u L=8u m=29
+XDUM_MPSINK avdd avdd avdd avdd pfet_05v0 W=18.95u L=8u m=23
+XDUM_MPFOLD avdd avdd avdd avdd pfet_05v0 W=18.99u L=8u m=20
+XDUM_MSINK1 avss avss avss avss nfet_05v0 W=16.34u L=8u m=20
 XDUM_M3 avss avss avss avss nfet_05v0 W=14.6u L=4u m=14
 XDUM_MFOLD1 avss avss avss avss nfet_05v0 W=18.49u L=6u m=10
 XDUM_M16 avss avss avss avss nfet_05v0 W=7.55u L=4u m=10
-XDUM_MPSINK avdd avdd avdd avdd pfet_05v0 W=18.95u L=8u m=23
-XDUM_MPFOLD avdd avdd avdd avdd pfet_05v0 W=18.99u L=8u m=20
 XDUM_VBNSINK avss avss avss avss nfet_05v0 W=12.31u L=8u m=10
-
-
-**** end user architecture code
 .ends Bandgap_Core_Res

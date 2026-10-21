@@ -5,7 +5,7 @@ the DC circuit. This is not a PVT, mismatch, or complete-RC qualification.
 Uses archived, hashed schematic/model inputs; checks a build netlist if present.
 """
 
-from collections import defaultdict
+from collections import Counter, defaultdict
 from itertools import product
 from pathlib import Path
 import argparse
@@ -20,6 +20,11 @@ parser.add_argument(
     "--build", type=Path, help="Verified build directory for a new layout revision"
 )
 parser.add_argument("--out", type=Path)
+parser.add_argument(
+    "--reference-ac",
+    type=Path,
+    help="Independent diagnose_psrr output to validate the probed DC solution",
+)
 parser.add_argument("--release", type=Path, default=LAYOUT / "release")
 parser.add_argument(
     "--schematic",
@@ -46,7 +51,9 @@ if args.build:
     start = source.index(".subckt Bandgap_Core_Res ")
     stop = source.index("\n.ends", start)
     schematic = source[start:stop] + "\n.ends Bandgap_Core_Res\n"
-    assert schematic == (ROOT / "postlayout/schematic.spice").read_text()
+    saved_schematic = ROOT / "postlayout/schematic.spice"
+    if saved_schematic.exists():
+        assert schematic == saved_schematic.read_text()
     (OUT / "model_header.spice").write_text(header)
     (OUT / "schematic_source.spice").write_text(schematic)
     provenance = {
@@ -257,6 +264,50 @@ def run_case(mode, supply):
             ],
         }
     vref = float(re.search(r"(?m)^v\(vref\)\s*=\s*([-+\d.eE]+)", log)[1])
+    if args.reference_ac:
+        reference_folder = args.reference_ac / f"{mode}_{supply:g}"
+        reference_text = (reference_folder / "dut.spice").read_text()
+        reference = json.loads((reference_folder / "metrics.json").read_text())
+
+        def circuit_records(text):
+            rows = re.sub(r"\n\+\s*", " ", text).splitlines()
+            return Counter(
+                " ".join(row.split())
+                for row in rows
+                if row.strip()
+                and not row.lstrip().startswith("*")
+                and not (row[0] in "RC" and row.split()[1] == row.split()[2])
+            )
+
+        assert circuit_records(reference_text) == circuit_records(original)
+        fingerprint = hashlib.sha256(
+            (reference_text + header + repr(supply)).encode()
+        ).hexdigest()
+        assert reference["sha256"] == fingerprint
+        expected = reference["vref_V"]
+    else:
+        expected = saved_nominal_voltage(mode, supply)
+    assert abs(vref - expected) < 1e-6, (mode, supply, vref, expected)
+    result = {
+        "mode": mode,
+        "AVDD_V": supply,
+        "DVDD_V": 3.3,
+        "trim_code": 72,
+        "temperature_C": 25,
+        "vref_V": vref,
+        "vref_difference_from_saved_screen_V": vref - expected,
+        "reference_ac": str(args.reference_ac) if args.reference_ac else None,
+        "devices": summary,
+        "unit_records": records,
+        "original_circuit_sha256": hashlib.sha256(original.encode()).hexdigest(),
+        "deck_sha256": hashlib.sha256((folder / "test.spice").read_bytes()).hexdigest(),
+    }
+    (folder / "summary.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(mode, supply, "VREF", vref, "MOS probes", len(probes), flush=True)
+    return result
+
+
+def saved_nominal_voltage(mode, supply):
     nominal_records = (
         json.loads(nominal_path.read_text())
         if nominal_path.exists()
@@ -271,28 +322,11 @@ def run_case(mode, supply):
             )
         ]
     )
-    expected = next(
+    return next(
         row["vref_V"]
         for row in nominal_records
         if row["mode"] == mode and row["supply_V"] == supply and not row["transient"]
     )
-    assert abs(vref - expected) < 1e-6, (mode, supply, vref, expected)
-    result = {
-        "mode": mode,
-        "AVDD_V": supply,
-        "DVDD_V": 3.3,
-        "trim_code": 72,
-        "temperature_C": 25,
-        "vref_V": vref,
-        "vref_difference_from_saved_screen_V": vref - expected,
-        "devices": summary,
-        "unit_records": records,
-        "original_circuit_sha256": hashlib.sha256(original.encode()).hexdigest(),
-        "deck_sha256": hashlib.sha256((folder / "test.spice").read_bytes()).hexdigest(),
-    }
-    (folder / "summary.json").write_text(json.dumps(result, indent=2) + "\n")
-    print(mode, supply, "VREF", vref, "MOS probes", len(probes), flush=True)
-    return result
 
 
 if __name__ == "__main__":

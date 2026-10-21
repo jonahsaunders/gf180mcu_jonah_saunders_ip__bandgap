@@ -120,7 +120,14 @@ def build_model(build):
         ), nets
     report = dict(
         method="Conserve the C-only net-pair matrix; retain raw RC devices and resistors",
-        limitation="Relative distribution is approximate; ground resistance is omitted",
+        limitation="Relative coupling distribution is approximate; wells/substrate remain lumped",
+        ground_metal_resistance_included=all(
+            any(
+                row[0].startswith("R") and rail in (aliases.get(n, n) for n in row[1:3])
+                for row in rc
+            )
+            for rail in ("avss", "dvss")
+        ),
         capacitance_matrix_conserved=True,
         input_sha256={
             p.name: hashlib.sha256(p.read_bytes()).hexdigest()

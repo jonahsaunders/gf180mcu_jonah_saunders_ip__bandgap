@@ -3,7 +3,7 @@
   "different_layers": [],
   "geometry_and_text_equal": true,
   "input_sha256": {
-    "/workspace/bandgap/layout/build/matching-source-bus/filled_candidate.gds": "868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36",
-    "/workspace/bandgap/layout/build/matching-source-rebuild/filled_candidate.gds": "7d1c4ee30f0d961f2d3c81d038d4ea3777273a22a6ded3ff39dd9445cfd95369"
+    "layout/build/compact-routing-protected/filled_candidate.gds": "a1e2b376e15501b8854acdcf7586cc31891f3a70d93550aa5144348bb2f3af9c",
+    "layout/build/compact-routing-rebuild/filled_candidate.gds": "3127a34098587824ebe46b8fba5354f990114277ee577d9d2476ba6ecba4e660"
   }
 }

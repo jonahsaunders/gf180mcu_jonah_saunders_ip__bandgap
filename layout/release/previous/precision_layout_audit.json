@@ -1,0 +1,1213 @@
+{
+  "gds_sha256": "868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36",
+  "PNP_centroids_um": {
+    "Q2": [
+      98.0,
+      139.0
+    ],
+    "Q1": [
+      98.0,
+      139.0
+    ],
+    "Q3": [
+      118.0,
+      139.0
+    ]
+  },
+  "Q1_Q2_centroid_separation_um": 0.0,
+  "devices": [
+    {
+      "instance": "Q2_0_0",
+      "source": "Q2",
+      "model": "pnp_05p00x05p00",
+      "rotation": 0,
+      "emitter_center_um": [
+        88.0,
+        129.0
+      ],
+      "emitter_area_um2": 25.0,
+      "unrelated_routes_over_device": [],
+      "routes_external_to_PNP_array": [],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "Q2_0_1",
+      "source": "Q2",
+      "model": "pnp_05p00x05p00",
+      "rotation": 0,
+      "emitter_center_um": [
+        98.0,
+        129.0
+      ],
+      "emitter_area_um2": 25.0,
+      "unrelated_routes_over_device": [
+        {
+          "net": "v1",
+          "overlap_um2": {
+            "M4": 2.0,
+            "M5": 10.0
+          }
+        }
+      ],
+      "routes_external_to_PNP_array": [],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "Q2_0_2",
+      "source": "Q2",
+      "model": "pnp_05p00x05p00",
+      "rotation": 0,
+      "emitter_center_um": [
+        108.0,
+        129.0
+      ],
+      "emitter_area_um2": 25.0,
+      "unrelated_routes_over_device": [],
+      "routes_external_to_PNP_array": [],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "Q2_1_0",
+      "source": "Q2",
+      "model": "pnp_05p00x05p00",
+      "rotation": 0,
+      "emitter_center_um": [
+        88.0,
+        139.0
+      ],
+      "emitter_area_um2": 25.0,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vq3",
+          "overlap_um2": {
+            "M2": 2.0
+          }
+        }
+      ],
+      "routes_external_to_PNP_array": [],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "Q1_1_1",
+      "source": "Q1",
+      "model": "pnp_05p00x05p00",
+      "rotation": 0,
+      "emitter_center_um": [
+        98.0,
+        139.0
+      ],
+      "emitter_area_um2": 25.0,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vq3",
+          "overlap_um2": {
+            "M2": 2.0
+          }
+        }
+      ],
+      "routes_external_to_PNP_array": [],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "Q2_1_2",
+      "source": "Q2",
+      "model": "pnp_05p00x05p00",
+      "rotation": 0,
+      "emitter_center_um": [
+        108.0,
+        139.0
+      ],
+      "emitter_area_um2": 25.0,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vq3",
+          "overlap_um2": {
+            "M2": 2.32
+          }
+        }
+      ],
+      "routes_external_to_PNP_array": [],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "Q2_2_0",
+      "source": "Q2",
+      "model": "pnp_05p00x05p00",
+      "rotation": 0,
+      "emitter_center_um": [
+        88.0,
+        149.0
+      ],
+      "emitter_area_um2": 25.0,
+      "unrelated_routes_over_device": [],
+      "routes_external_to_PNP_array": [],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "Q2_2_1",
+      "source": "Q2",
+      "model": "pnp_05p00x05p00",
+      "rotation": 0,
+      "emitter_center_um": [
+        98.0,
+        149.0
+      ],
+      "emitter_area_um2": 25.0,
+      "unrelated_routes_over_device": [],
+      "routes_external_to_PNP_array": [],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "Q2_2_2",
+      "source": "Q2",
+      "model": "pnp_05p00x05p00",
+      "rotation": 0,
+      "emitter_center_um": [
+        108.0,
+        149.0
+      ],
+      "emitter_area_um2": 25.0,
+      "unrelated_routes_over_device": [],
+      "routes_external_to_PNP_array": [],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "Q3",
+      "source": "Q3",
+      "model": "pnp_05p00x05p00",
+      "rotation": 0,
+      "emitter_center_um": [
+        118.0,
+        139.0
+      ],
+      "emitter_area_um2": 25.0,
+      "unrelated_routes_over_device": [],
+      "routes_external_to_PNP_array": [],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "R1",
+      "source": "R1",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        8,
+        8
+      ],
+      "end_contact_area_um2": [
+        0.3872,
+        0.3872
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [
+        {
+          "net": "avdd",
+          "overlap_um2": {
+            "M4": 1.5999999999999999
+          }
+        },
+        {
+          "net": "v1",
+          "overlap_um2": {
+            "M4": 1.5999999999999999,
+            "M5": 8.0
+          }
+        },
+        {
+          "net": "vbp_tail",
+          "overlap_um2": {
+            "M4": 1.5999999999999999
+          }
+        },
+        {
+          "net": "su_state",
+          "overlap_um2": {
+            "M4": 1.5999999999999999
+          }
+        },
+        {
+          "net": "net3",
+          "overlap_um2": {
+            "M4": 1.5999999999999999
+          }
+        },
+        {
+          "net": "net4",
+          "overlap_um2": {
+            "M4": 1.5999999999999999
+          }
+        }
+      ],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "RFIXED",
+      "source": "RFIXED",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        14,
+        14
+      ],
+      "end_contact_area_um2": [
+        0.6776,
+        0.6776
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vq3",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit1top",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit0top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit4top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit3top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit5top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit6top",
+          "overlap_um2": {
+            "M2": 2.6399999999999997
+          }
+        }
+      ],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "RB6",
+      "source": "RB6",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        14,
+        14
+      ],
+      "end_contact_area_um2": [
+        0.6776,
+        0.6776
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vref",
+          "overlap_um2": {
+            "M4": 2.96
+          }
+        },
+        {
+          "net": "rbit1top",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit0top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit4top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit3top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit5top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rfix0",
+          "overlap_um2": {
+            "M2": 25.119999999999997,
+            "M3": 1.904,
+            "M4": 1.056
+          }
+        }
+      ],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "RFIXED1",
+      "source": "RFIXED1",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        14,
+        14
+      ],
+      "end_contact_area_um2": [
+        0.6776,
+        0.6776
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vref",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "vq3",
+          "overlap_um2": {
+            "M5": 13.2
+          }
+        },
+        {
+          "net": "rbit1top",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit0top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit4top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit3top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit5top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit6top",
+          "overlap_um2": {
+            "M2": 2.6399999999999997
+          }
+        }
+      ],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "RFIXED2",
+      "source": "RFIXED2",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        14,
+        14
+      ],
+      "end_contact_area_um2": [
+        0.6776,
+        0.6776
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vref",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "vq3",
+          "overlap_um2": {
+            "M5": 13.2
+          }
+        },
+        {
+          "net": "rbit1top",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit0top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit4top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit3top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit5top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit6top",
+          "overlap_um2": {
+            "M2": 2.6399999999999997
+          }
+        }
+      ],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "RFIXED3",
+      "source": "RFIXED3",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        14,
+        14
+      ],
+      "end_contact_area_um2": [
+        0.6776,
+        0.6776
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vref",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "vq3",
+          "overlap_um2": {
+            "M5": 13.2
+          }
+        },
+        {
+          "net": "rbit1top",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit4top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit3top",
+          "overlap_um2": {
+            "M3": 1.7919999999999998,
+            "M4": 1.008
+          }
+        },
+        {
+          "net": "rbit5top",
+          "overlap_um2": {
+            "M3": 3.28
+          }
+        },
+        {
+          "net": "rbit6top",
+          "overlap_um2": {
+            "M2": 2.6399999999999997
+          }
+        }
+      ],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "RB5",
+      "source": "RB5",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        14,
+        14
+      ],
+      "end_contact_area_um2": [
+        0.6776,
+        0.6776
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vref",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "vq3",
+          "overlap_um2": {
+            "M5": 13.2
+          }
+        },
+        {
+          "net": "rbit1top",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit0top",
+          "overlap_um2": {
+            "M3": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit2top",
+          "overlap_um2": {
+            "M4": 1.04
+          }
+        },
+        {
+          "net": "rbit4top",
+          "overlap_um2": {
+            "M3": 2.408
+          }
+        },
+        {
+          "net": "rbit3top",
+          "overlap_um2": {
+            "M4": 24.951999999999998,
+            "M5": 111.0
+          }
+        }
+      ],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "RB4",
+      "source": "RB4",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        14,
+        14
+      ],
+      "end_contact_area_um2": [
+        0.6776,
+        0.6776
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [
+        {
+          "net": "rbit3top",
+          "overlap_um2": {
+            "M4": 13.383999999999999,
+            "M5": 66.44
+          }
+        }
+      ],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "RB3",
+      "source": "RB3",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        14,
+        14
+      ],
+      "end_contact_area_um2": [
+        0.6776,
+        0.6776
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "RB2",
+      "source": "RB2",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        14,
+        14
+      ],
+      "end_contact_area_um2": [
+        0.6776,
+        0.6776
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vref",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "vq3",
+          "overlap_um2": {
+            "M5": 12.54
+          }
+        },
+        {
+          "net": "vbn_i",
+          "overlap_um2": {
+            "M3": 3.6879999999999997
+          }
+        },
+        {
+          "net": "rbit1top",
+          "overlap_um2": {
+            "M4": 3.5999999999999996,
+            "M5": 4.0
+          }
+        },
+        {
+          "net": "rbit0top",
+          "overlap_um2": {
+            "M3": 2.1439999999999997,
+            "M4": 0.976
+          }
+        }
+      ],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "RB0",
+      "source": "RB0",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        14,
+        14
+      ],
+      "end_contact_area_um2": [
+        0.6776,
+        0.6776
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vref",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        },
+        {
+          "net": "rbit2top",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        }
+      ],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    },
+    {
+      "instance": "RB1",
+      "source": "RB1",
+      "model": "ppolyf_u_1k",
+      "rotation": 0,
+      "end_contact_counts": [
+        14,
+        14
+      ],
+      "end_contact_area_um2": [
+        0.6776,
+        0.6776
+      ],
+      "equal_end_contacts": true,
+      "unrelated_routes_over_device": [
+        {
+          "net": "vref",
+          "overlap_um2": {
+            "M4": 2.6399999999999997
+          }
+        }
+      ],
+      "metal_fill_overlap_um2": {
+        "M1": 0.0,
+        "M2": 0.0,
+        "M3": 0.0,
+        "M4": 0.0,
+        "M5": 0.0
+      }
+    }
+  ],
+  "limitations": "Centroids, contact geometry and conductor overlap do not establish thermal/stress matching or statistical yield.",
+  "source_resistance": {
+    "rcc_sha256": "953e614f99ebec5612dc6564de0ca5b5537f5d1b403660cb5d790ea502df6074",
+    "rails": {
+      "avdd": {
+        "AP": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 170.02152577760708,
+          "range_ohm": [
+            170.02152577760708,
+            170.02152577760708
+          ]
+        },
+        "M1": {
+          "source_units": 6,
+          "mean_individual_source_to_port_ohm": 291.3203155775662,
+          "range_ohm": [
+            290.1963773352673,
+            292.31307490053246
+          ]
+        },
+        "M14": {
+          "source_units": 2,
+          "mean_individual_source_to_port_ohm": 303.1665400173953,
+          "range_ohm": [
+            302.3562900173953,
+            303.9767900173952
+          ]
+        },
+        "M17": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 360.7161081888612,
+          "range_ohm": [
+            360.7161081888612,
+            360.7161081888612
+          ]
+        },
+        "M19": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 381.248108189073,
+          "range_ohm": [
+            381.248108189073,
+            381.248108189073
+          ]
+        },
+        "M2": {
+          "source_units": 6,
+          "mean_individual_source_to_port_ohm": 291.3203155775662,
+          "range_ohm": [
+            290.44200949689906,
+            292.02457490053246
+          ]
+        },
+        "M20": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 351.69640818870477,
+          "range_ohm": [
+            351.69640818870477,
+            351.69640818870477
+          ]
+        },
+        "M5": {
+          "source_units": 6,
+          "mean_individual_source_to_port_ohm": 291.3203155775662,
+          "range_ohm": [
+            290.73050949689906,
+            292.60104490053243
+          ]
+        },
+        "M6": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 393.03860818912256,
+          "range_ohm": [
+            393.03860818912256,
+            393.03860818912256
+          ]
+        },
+        "MPFOLD": {
+          "source_units": 12,
+          "mean_individual_source_to_port_ohm": 22.74900816516057,
+          "range_ohm": [
+            15.729380369775301,
+            34.07897530589329
+          ]
+        },
+        "MPSINK": {
+          "source_units": 17,
+          "mean_individual_source_to_port_ohm": 73.60071048414407,
+          "range_ohm": [
+            30.394085778397876,
+            116.00068577811369
+          ]
+        },
+        "MSU_HYS": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 348.77660818863717,
+          "range_ohm": [
+            348.77660818863717,
+            348.77660818863717
+          ]
+        },
+        "MSU_LOAD": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 320.65399001739524,
+          "range_ohm": [
+            320.65399001739524,
+            320.65399001739524
+          ]
+        },
+        "MTAIL": {
+          "source_units": 6,
+          "mean_individual_source_to_port_ohm": 282.9467174442086,
+          "range_ohm": [
+            270.93517577754176,
+            289.91262577754213
+          ]
+        },
+        "PLOAD1": {
+          "source_units": 6,
+          "mean_individual_source_to_port_ohm": 413.14621818920006,
+          "range_ohm": [
+            381.0377881890878,
+            433.18600818933584
+          ]
+        },
+        "PLOAD2": {
+          "source_units": 6,
+          "mean_individual_source_to_port_ohm": 415.36305152254687,
+          "range_ohm": [
+            392.26895818911777,
+            436.8655081891201
+          ]
+        },
+        "PREF": {
+          "source_units": 5,
+          "mean_individual_source_to_port_ohm": 74.332264548639,
+          "range_ohm": [
+            35.140184548642075,
+            107.9028845486369
+          ]
+        },
+        "PRMIR": {
+          "source_units": 5,
+          "mean_individual_source_to_port_ohm": 60.34274654863968,
+          "range_ohm": [
+            32.22238454864215,
+            93.36835454863687
+          ]
+        },
+        "RB_P": {
+          "source_units": 7,
+          "mean_individual_source_to_port_ohm": 226.5510486349835,
+          "range_ohm": [
+            204.7943557778219,
+            238.3238257778436
+          ]
+        },
+        "SUPINJ": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 350.1458081886164,
+          "range_ohm": [
+            350.1458081886164,
+            350.1458081886164
+          ]
+        },
+        "SUPPDET": {
+          "source_units": 2,
+          "mean_individual_source_to_port_ohm": 263.6083965386888,
+          "range_ohm": [
+            258.3482165386888,
+            268.86857653868884
+          ]
+        },
+        "VBPCASHIGHER": {
+          "source_units": 9,
+          "mean_individual_source_to_port_ohm": 158.52811244440034,
+          "range_ohm": [
+            123.31292577792061,
+            192.2844257776499
+          ]
+        },
+        "VBPTAIL": {
+          "source_units": 3,
+          "mean_individual_source_to_port_ohm": 185.59982911077452,
+          "range_ohm": [
+            173.95752577748542,
+            197.3328257774191
+          ]
+        }
+      },
+      "avss": {
+        "AN": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 351.7278810839345,
+          "range_ohm": [
+            351.7278810839345,
+            351.7278810839345
+          ]
+        },
+        "M10": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 91.91966763190874,
+          "range_ohm": [
+            91.91966763190874,
+            91.91966763190874
+          ]
+        },
+        "M16": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 54.74480333123073,
+          "range_ohm": [
+            54.74480333123073,
+            54.74480333123073
+          ]
+        },
+        "M18": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 50.848253539144,
+          "range_ohm": [
+            50.848253539144,
+            50.848253539144
+          ]
+        },
+        "M23": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 96.59266763190877,
+          "range_ohm": [
+            96.59266763190877,
+            96.59266763190877
+          ]
+        },
+        "MSINK1": {
+          "source_units": 6,
+          "mean_individual_source_to_port_ohm": 315.1963579446137,
+          "range_ohm": [
+            304.8991181742308,
+            331.68221730911085
+          ]
+        },
+        "MSINK2": {
+          "source_units": 6,
+          "mean_individual_source_to_port_ohm": 313.4002120782181,
+          "range_ohm": [
+            293.8810816481797,
+            343.8690073091108
+          ]
+        },
+        "MSU_SENSE": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 262.01698164829895,
+          "range_ohm": [
+            262.01698164829895,
+            262.01698164829895
+          ]
+        },
+        "N1": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 91.41066763531502,
+          "range_ohm": [
+            91.41066763531502,
+            91.41066763531502
+          ]
+        },
+        "N3": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 130.1981676438647,
+          "range_ohm": [
+            130.1981676438647,
+            130.1981676438647
+          ]
+        },
+        "NTAIL": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 104.57096763800944,
+          "range_ohm": [
+            104.57096763800944,
+            104.57096763800944
+          ]
+        },
+        "RB_NL": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 147.17346764731778,
+          "range_ohm": [
+            147.17346764731778,
+            147.17346764731778
+          ]
+        },
+        "SUPN3": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 62.83786763015569,
+          "range_ohm": [
+            62.83786763015569,
+            62.83786763015569
+          ]
+        },
+        "VBNFOLDLOW": {
+          "source_units": 1,
+          "mean_individual_source_to_port_ohm": 151.5106676445604,
+          "range_ohm": [
+            151.5106676445604,
+            151.5106676445604
+          ]
+        },
+        "VBNSINK": {
+          "source_units": 2,
+          "mean_individual_source_to_port_ohm": 300.2405816482599,
+          "range_ohm": [
+            297.30248164826094,
+            303.1786816482589
+          ]
+        }
+      }
+    },
+    "method": "Driving-point R from each source terminal to its supply port; all other interconnect terminals open. Includes shared paths; not a summed operating voltage drop."
+  }
+}

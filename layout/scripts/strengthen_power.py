@@ -13,6 +13,7 @@ import os
 
 import klayout.db as k
 import numpy as np
+from scipy.ndimage import label
 
 from layout_paths import BUILD_DIR as ROOT
 from matching_constraints import ROUTE_WIDTH, ROUTE_HEIGHT, routing_exclusions
@@ -139,6 +140,12 @@ networks.extend(
         ("avdd", (210.4, 309.6)),
     ]
 )
+if os.environ.get("BANDGAP_GROUND_STRAPS", "1") == "1":
+    # Separate analog/digital returns remain separate physical nets. Optional
+    # top-metal reinforcement uses the same clearance and connectivity checks.
+    networks[-1:-1] = [
+        (name, tuple(routing["ports"][name])) for name in ("dvss", "avss")
+    ]
 for name, port in networks:
     net = extractor.probe_net(layers[36], k.DPoint(*port))
     own = extractor.shapes_of_net(net, layers[46], True)
@@ -198,8 +205,21 @@ for name, port in networks:
                 if not (square(xx * 0.8, yy * 0.8, 0.655) & existing_via4).is_empty():
                     continue
                 landings.append((xx, yy))
+                # Reserve cuts immediately: two pin searches on the same net
+                # can otherwise choose adjacent landing arrays before either
+                # is inserted into the GDS.
+                for dx in [-0.26, 0.26]:
+                    for dy in [-0.26, 0.26]:
+                        existing_via4 += square(xx * 0.8 + dx, yy * 0.8 + dy, 0.13)
                 break
     assert landings, name
+    # An unreachable island cannot connect to the root through this M5 mask.
+    # Reject it directly instead of repeating an exhaustive A* search per pin.
+    free = ~blocked
+    free[:2, :] = free[-2:, :] = False
+    free[:, :2] = free[:, -2:] = False
+    components, _ = label(free)
+    root_component = components[landings[0][1], landings[0][0]]
     metal = k.Region()
     tree = {landings[0]}
     pending = set(landings[1:])
@@ -211,7 +231,11 @@ for name, port in networks:
             key=lambda a: min(abs(a[0] - b[0]) + abs(a[1] - b[1]) for b in tree),
         )
         pending.remove(start)
-        path = find_path(start, tree, blocked)
+        path = (
+            find_path(start, tree, blocked)
+            if root_component and components[start[1], start[0]] == root_component
+            else None
+        )
         if path is None:
             # The complete lower-metal supply network already connects this
             # terminal. Omit only its optional M5 reinforcement when a signal

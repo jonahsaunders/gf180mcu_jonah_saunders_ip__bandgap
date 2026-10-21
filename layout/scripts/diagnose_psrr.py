@@ -119,7 +119,9 @@ variants = {
     "rc_zero_all_r": transform(rc, zero_r=lambda a, b: True),
     "rc_drop_all_c": transform(rc, drop_c=lambda a, b: True),
 }
-variants["schematic"] = (build / "postlayout/schematic.spice").read_text()
+start = source.index(".subckt Bandgap_Core_Res ")
+stop = source.index("\n.ends", start)
+variants["schematic"] = source[start:stop] + "\n.ends Bandgap_Core_Res\n"
 variants["magic_lvs"] = (
     (build / "pex/Bandgap_Core_Res_magic_lvs_simulation.spice")
     .read_text()

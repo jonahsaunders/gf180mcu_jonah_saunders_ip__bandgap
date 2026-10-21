@@ -1,4 +1,4 @@
-"""Move the long vgn2 route to M5; keep M4 only at its layer transitions.
+"""Move selected sensitive routes to M5; retain M4 at layer transitions.
 
 Device placement and terminal connections are unchanged. The unchanged
 foundry DRC/LVS decks verify the complete result after supply routing and fill.
@@ -6,6 +6,7 @@ foundry DRC/LVS decks verify the complete result after supply routing and fill.
 
 from pathlib import Path
 import json
+import os
 import klayout.db as k
 from layout_paths import BUILD_DIR as root
 
@@ -39,7 +40,7 @@ drawn4 = k.Region(top.begin_shapes_rec(layout.layer(46, 0))).merged()
 drawn5 = k.Region(top.begin_shapes_rec(layout.layer(81, 0))).merged()
 via4 = k.Region(top.begin_shapes_rec(layout.layer(41, 0))).merged()
 records = []
-for name in ["vgn2"]:
+for name in os.environ.get("BANDGAP_LIFT_NETS", "vgn2").split(","):
     points = [
         p for d in data["placed"] for n, p in zip(d["nodes"], d["pins"]) if n == name
     ]
@@ -76,19 +77,38 @@ for name in ["vgn2"]:
             landing += bridge
     # Close sub-rule notches between same-net transition pads and capacitor
     # access. The following foreign-net clearance assertion remains mandatory.
-    lifted = (own4.sized(100) + own5).merged().sized(235).sized(-235)
+    # Retain complete M4 components where M5 is occupied. Never clip a wire
+    # into disconnected fragments or relax the top-metal spacing rule.
+    promoted4 = k.Region()
+    retained4 = k.Region()
+    foreign5 = (drawn5 - own5).sized(465)
+    for polygon in own4.each():
+        candidate = k.Region(polygon).sized(100)
+        # Do not create isolated top-metal landing islands below its area rule.
+        if (
+            candidate.area() * layout.dbu**2 >= 1.0
+            and (candidate & foreign5).is_empty()
+        ):
+            promoted4.insert(polygon)
+        else:
+            retained4.insert(polygon)
+    promoted_cuts = cuts & promoted4
+    lifted = (promoted4.sized(100) + own5).merged().sized(235).sized(-235)
     assert (lifted & (drawn5 - own5).sized(465)).is_empty(), name
-    transition_metal4 = (landing & own4).merged().sized(145).sized(-145)
+    transition_metal4 = (
+        ((landing & promoted4) + retained4).merged().sized(145).sized(-145)
+    )
     assert (transition_metal4 & (drawn4 - own4).sized(285)).is_empty(), name
     drawn4 = (drawn4 - own4) + transition_metal4
     drawn5 += lifted
-    via4 += cuts
+    via4 += promoted_cuts
     records.append(
         dict(
             net=name,
             m4_area_um2=own4.area() * layout.dbu**2,
             m5_area_um2=lifted.area() * layout.dbu**2,
-            via4_count=cuts.count(),
+            via4_count=promoted_cuts.count(),
+            retained_m4_area_um2=retained4.area() * layout.dbu**2,
         )
     )
 for number, region in [(46, drawn4), (81, drawn5), (41, via4)]:

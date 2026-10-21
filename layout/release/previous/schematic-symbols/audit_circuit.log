@@ -1,0 +1,201 @@
+{
+  "top": "Bandgap_Core_Res",
+  "pins": [
+    "avdd",
+    "avss",
+    "vref",
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5",
+    "b6",
+    "dvss",
+    "dvdd"
+  ],
+  "probes": [
+    {
+      "name": "VI1",
+      "nodes": [
+        "net2",
+        "vgn1"
+      ]
+    },
+    {
+      "name": "VI2",
+      "nodes": [
+        "vgp",
+        "psrg_m3_feed"
+      ]
+    },
+    {
+      "name": "VI3",
+      "nodes": [
+        "net1",
+        "vref"
+      ]
+    },
+    {
+      "name": "VSENSE",
+      "nodes": [
+        "vrs",
+        "net4"
+      ]
+    },
+    {
+      "name": "VSTARTSENSE",
+      "nodes": [
+        "net5",
+        "vbn_i"
+      ]
+    }
+  ],
+  "off_grid": [],
+  "counts": {
+    "pnp_05p00x05p00": 3,
+    "nfet_03v3": 19,
+    "ppolyf_u_1k": 12,
+    "pfet_05v0": 38,
+    "nfet_05v0": 30,
+    "cap_mim_2f0fF": 11,
+    "pfet_03v3": 17,
+    "nwell": 1,
+    "pplus_u": 1
+  }
+}
+Q3 pnp_05p00x05p00 W=None L=None m=1 avss avss vq3
+Q2 pnp_05p00x05p00 W=None L=None m=8 avss avss vq2
+Q1 pnp_05p00x05p00 W=None L=None m=1 avss avss v1
+M9 nfet_03v3 W=1.0 L=2.0 m=1 bgsu1 bgsu1 bgsu2 avss
+M10 nfet_03v3 W=1.0 L=2.0 m=1 bgsu2 bgsu2 avss avss
+R1 ppolyf_u_1k W=4.0 L=42.1 m=1 vq2 v2 avss
+M22 nfet_03v3 W=1.0 L=2.0 m=1 auxsu1 auxsu1 auxsu2 avss
+M23 nfet_03v3 W=1.0 L=2.0 m=1 auxsu2 auxsu2 avss avss
+M11 pfet_05v0 W=16.42 L=4.0 m=5 net2 vcasp vx1 avdd
+M12 pfet_05v0 W=16.42 L=4.0 m=5 vgp vcasp vx2 avdd
+M13 pfet_05v0 W=16.42 L=4.0 m=5 net1 vcasp vx3 avdd
+M4 nfet_05v0 W=14.6 L=4.0 m=2 vgn1 vgn1 v1 avss
+M3 nfet_05v0 W=14.6 L=4.0 m=2 psrg_m3_protected vgn2 v2 avss
+M16 nfet_05v0 W=7.55 L=4.0 m=1 vbn vbn avss avss
+M18 nfet_05v0 W=7.55 L=4.0 m=1 vcasp vbn avss avss
+M15 pfet_05v0 W=16.0 L=4.0 m=1 vbn vcasp vaux avdd
+M17 pfet_05v0 W=0.9 L=2.0 m=1 vcasp vcasp avdd avdd
+M6 pfet_05v0 W=2.0 L=2.0 m=1 vsu vgp avdd avdd
+M19 pfet_05v0 W=2.0 L=2.0 m=1 vsua vcasp avdd avdd
+M8 nfet_05v0 W=1.0 L=2.0 m=1 vsu vsu bgsu1 avss
+M21 nfet_05v0 W=1.0 L=2.0 m=1 vsua vsua auxsu1 avss
+M2 pfet_05v0 W=16.75 L=2.0 m=6 vx1 vgp avdd avdd
+M1 pfet_05v0 W=16.75 L=2.0 m=6 vx2 vgp avdd avdd
+M5 pfet_05v0 W=16.75 L=2.0 m=6 vx3 vgp avdd avdd
+M14 pfet_05v0 W=10.0 L=2.0 m=2 vaux vgp avdd avdd
+M3C nfet_05v0 W=14.6 L=4.0 m=2 psrg_m3_feed psrg_vnc psrg_m3_protected avss
+C2 cap_mim_2f0fF W=70.7 L=70.7 m=1 vref avss
+C3 cap_mim_2f0fF W=70.7 L=70.7 m=1 vref avss
+C4 cap_mim_2f0fF W=70.7 L=70.7 m=1 vref avss
+C5 cap_mim_2f0fF W=70.7 L=70.7 m=1 vref avss
+C6 cap_mim_2f0fF W=70.7 L=70.7 m=1 vref avss
+C7 cap_mim_2f0fF W=70.7 L=70.7 m=1 vref avss
+C8 cap_mim_2f0fF W=70.7 L=70.7 m=1 vref avss
+C9 cap_mim_2f0fF W=70.7 L=70.7 m=1 vref avss
+C10 cap_mim_2f0fF W=70.7 L=70.7 m=1 vref avss
+C11 cap_mim_2f0fF W=70.7 L=70.7 m=1 vref avss
+MTAIL pfet_03v3 W=28.91 L=6.0 m=6 vsp vbp_tail avdd avdd
+R3 nwell W=2.0 L=20.19 m=1 net3 net4 avss
+R4 pplus_u W=1.0 L=232.53 m=1 avss net3 avdd
+PCAS2 pfet_05v0 W=22.21 L=8.0 m=6 vgn2 vbp_cas pm2 avdd
+PCAS1 pfet_05v0 W=22.21 L=8.0 m=6 y1 vbp_cas pm1 avdd
+MINN pfet_05v0 W=54.89 L=4.0 m=5 xf2 v2 vsp avdd
+MINP pfet_05v0 W=54.89 L=4.0 m=5 xf1 v1 vsp avdd
+MFOLD2 nfet_05v0 W=18.49 L=6.0 m=1 vgn2 vbn_fold xf2 avss
+MFOLD1 nfet_05v0 W=18.49 L=6.0 m=1 psrg_mf1_protected vbn_fold xf1 avss
+N1 nfet_05v0 W=7.78 L=8.0 m=1 vbn_i vbn_i avss avss
+N2 nfet_05v0 W=9.13 L=8.0 m=1 vbp_i vbn_i vrs avss
+PREF pfet_05v0 W=18.75 L=8.0 m=5 vbp_i vbp_i avdd avdd
+PRMIR pfet_05v0 W=18.75 L=8.0 m=5 vbn_i vbp_i avdd avdd
+NTAIL nfet_05v0 W=13.95 L=8.0 m=1 vbp_tail vbn_i avss avss
+N3 nfet_05v0 W=0.65 L=8.0 m=1 vbp_cas vbn_i avss avss
+MPSINK pfet_05v0 W=18.95 L=8.0 m=17 vbn_sink vbp_i avdd avdd
+MPFOLD pfet_05v0 W=18.99 L=8.0 m=12 vbn_fold vbp_i avdd avdd
+VBNFOLDHIGH nfet_05v0 W=4.62 L=6.0 m=1 vbn_fold vbn_fold vnx_bias avss
+VBPCASLOW pfet_05v0 W=18.93 L=8.0 m=10 vbp_cas vbp_cas vbp_bias avdd
+VBPTAIL pfet_03v3 W=13.75 L=6.0 m=3 vbp_tail vbp_tail avdd avdd
+VBNFOLDLOW nfet_03v3 W=1.62 L=8.0 m=1 vnx_bias vnx_bias avss avss
+VBPCASHIGHER pfet_03v3 W=19.06 L=8.0 m=9 vbp_bias vbp_bias avdd avdd
+SUPN2 nfet_05v0 W=0.5 L=50.0 m=1 vsu1 vbp_i vsu2 avss
+SUPN3 nfet_05v0 W=0.5 L=50.0 m=1 vsu2 vbp_i avss avss
+PLOAD1 pfet_05v0 W=20.76 L=4.0 m=6 pm1 y1 avdd avdd
+PLOAD2 pfet_05v0 W=20.76 L=4.0 m=6 pm2 y1 avdd avdd
+MFOLD1C nfet_05v0 W=18.49 L=6.0 m=1 y1 psrg_vnc psrg_mf1_protected avss
+RB_P pfet_05v0 W=17.74 L=4.0 m=7 psrg_vnc vbp_i avdd avdd
+RB_NU nfet_05v0 W=0.71 L=20.0 m=1 psrg_vnc psrg_vnc rb_mid avss
+RB_NL nfet_05v0 W=0.54 L=20.0 m=1 rb_mid rb_mid avss avss
+MSU_LOAD pfet_05v0 W=1.0 L=8.0 m=1 su_state vbp_tail avdd avdd
+MSU_HYS pfet_05v0 W=1.0 L=8.0 m=1 su_state vsu avdd avdd
+MSU_SENSE nfet_05v0 W=4.0 L=1.0 m=1 su_state vgn2 avss avss
+C1 cap_mim_2f0fF W=59.0 L=59.0 m=1 vgn2 avss
+M20 pfet_05v0 W=0.5 L=8.0 m=1 vbn aux_gate avdd avdd
+SUPPDET pfet_05v0 W=80.0 L=1.0 m=2 iref_gate vbp_i avdd avdd
+SUPN1 nfet_05v0 W=0.5 L=50.0 m=1 iref_gate vbp_i vsu1 avss
+SUPINJ pfet_05v0 W=0.5 L=8.0 m=1 net5 iref_gate avdd avdd
+M7 pfet_05v0 W=2.0 L=2.0 m=1 vgn1 aux_gate vgp avdd
+MSINK1 nfet_05v0 W=16.34 L=8.0 m=6 xf1 vbn_sink avss avss
+MSINK2 nfet_05v0 W=16.34 L=8.0 m=6 xf2 vbn_sink avss avss
+VBNSINK nfet_05v0 W=12.31 L=8.0 m=2 vbn_sink vbn_sink avss avss
+AP pfet_05v0 W=0.5 L=10.0 m=1 aux_gate vcasp avdd avdd
+AN nfet_05v0 W=1.0 L=8.0 m=1 aux_gate vbn_i avss avss
+RFIXED ppolyf_u_1k W=6.6000000000000005 L=128.0 m=1 rfix0 vref avss
+RB0 ppolyf_u_1k W=6.6000000000000005 L=2.0 m=1 rbit1top rbit0top avss
+RB1 ppolyf_u_1k W=6.6000000000000005 L=4.0 m=1 rbit2top rbit1top avss
+RB2 ppolyf_u_1k W=6.6000000000000005 L=8.0 m=1 rbit3top rbit2top avss
+RB3 ppolyf_u_1k W=6.6000000000000005 L=16.0 m=1 rbit4top rbit3top avss
+RB4 ppolyf_u_1k W=6.6000000000000005 L=32.0 m=1 rbit5top rbit4top avss
+RB5 ppolyf_u_1k W=6.6000000000000005 L=64.0 m=1 rbit6top rbit5top avss
+RB6 ppolyf_u_1k W=6.6000000000000005 L=128.0 m=1 vq3 rbit6top avss
+RFIXED1 ppolyf_u_1k W=6.6000000000000005 L=128.0 m=1 rfix1 rfix0 avss
+RFIXED2 ppolyf_u_1k W=6.6000000000000005 L=128.0 m=1 rfix2 rfix1 avss
+RFIXED3 ppolyf_u_1k W=6.6000000000000005 L=128.0 m=1 rbit0top rfix2 avss
+M24 pfet_03v3 W=40.0 L=0.28 m=6 rbit1top b0_b rbit0top dvdd
+M25 nfet_03v3 W=40.0 L=0.28 m=2 rbit0top b0 rbit1top dvss
+M26 pfet_03v3 W=40.0 L=0.28 m=3 rbit2top b1_b rbit1top dvdd
+M27 nfet_03v3 W=40.0 L=0.28 m=1 rbit1top b1 rbit2top dvss
+M28 pfet_03v3 W=20.0 L=0.28 m=3 rbit3top b2_b rbit2top dvdd
+M29 nfet_03v3 W=20.0 L=0.28 m=1 rbit2top b2 rbit3top dvss
+M30 pfet_03v3 W=30.0 L=0.28 m=1 rbit4top b3_b rbit3top dvdd
+M31 nfet_03v3 W=10.0 L=0.28 m=1 rbit3top b3 rbit4top dvss
+M32 pfet_03v3 W=15.0 L=0.28 m=1 rbit5top b4_b rbit4top dvdd
+M33 nfet_03v3 W=5.0 L=0.28 m=1 rbit4top b4 rbit5top dvss
+M34 pfet_03v3 W=7.5 L=0.28 m=1 rbit6top b5_b rbit5top dvdd
+M35 nfet_03v3 W=2.5 L=0.28 m=1 rbit5top b5 rbit6top dvss
+M36 pfet_03v3 W=3.75 L=0.28 m=1 vq3 b6_b rbit6top dvdd
+M37 nfet_03v3 W=1.25 L=0.28 m=1 rbit6top b6 vq3 dvss
+M38 nfet_03v3 W=1.0 L=0.5 m=1 b0_b b0 dvss dvss
+M39 pfet_03v3 W=3.0 L=0.5 m=1 b0_b b0 dvdd dvdd
+M40 nfet_03v3 W=1.0 L=0.5 m=1 b1_b b1 dvss dvss
+M41 pfet_03v3 W=3.0 L=0.5 m=1 b1_b b1 dvdd dvdd
+M42 nfet_03v3 W=1.0 L=0.5 m=1 b2_b b2 dvss dvss
+M43 pfet_03v3 W=3.0 L=0.5 m=1 b2_b b2 dvdd dvdd
+M44 nfet_03v3 W=1.0 L=0.5 m=1 b3_b b3 dvss dvss
+M45 pfet_03v3 W=3.0 L=0.5 m=1 b3_b b3 dvdd dvdd
+M46 nfet_03v3 W=1.0 L=0.5 m=1 b4_b b4 dvss dvss
+M47 pfet_03v3 W=3.0 L=0.5 m=1 b4_b b4 dvdd dvdd
+M48 nfet_03v3 W=1.0 L=0.5 m=1 b5_b b5 dvss dvss
+M49 pfet_03v3 W=3.0 L=0.5 m=1 b5_b b5 dvdd dvdd
+M50 nfet_03v3 W=1.0 L=0.5 m=1 b6_b b6 dvss dvss
+M51 pfet_03v3 W=3.0 L=0.5 m=1 b6_b b6 dvdd dvdd
+DUM_M1 pfet_05v0 W=16.75 L=2.0 m=22 avdd avdd avdd avdd
+DUM_M11 pfet_05v0 W=16.42 L=4.0 m=34 avdd avdd avdd avdd
+DUM_MINP pfet_05v0 W=54.89 L=4.0 m=29 avdd avdd avdd avdd
+DUM_PCAS1 pfet_05v0 W=22.21 L=8.0 m=20 avdd avdd avdd avdd
+DUM_PLOAD1 pfet_05v0 W=20.76 L=4.0 m=20 avdd avdd avdd avdd
+DUM_PREF pfet_05v0 W=18.75 L=8.0 m=29 avdd avdd avdd avdd
+DUM_MPSINK pfet_05v0 W=18.95 L=8.0 m=23 avdd avdd avdd avdd
+DUM_MPFOLD pfet_05v0 W=18.99 L=8.0 m=20 avdd avdd avdd avdd
+DUM_MSINK1 nfet_05v0 W=16.34 L=8.0 m=20 avss avss avss avss
+DUM_M3 nfet_05v0 W=14.6 L=4.0 m=14 avss avss avss avss
+DUM_MFOLD1 nfet_05v0 W=18.49 L=6.0 m=10 avss avss avss avss
+DUM_M16 nfet_05v0 W=7.55 L=4.0 m=10 avss avss avss avss
+DUM_VBNSINK nfet_05v0 W=12.31 L=8.0 m=10 avss avss avss avss
+Total devices with multiplicity: 533
+MOS channel area: 52164.12
+Cap plate area: 53465.90000000001

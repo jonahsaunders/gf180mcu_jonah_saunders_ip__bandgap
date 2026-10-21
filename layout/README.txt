@@ -14,8 +14,9 @@ release/filled_drc.lyrdb and release/filled.lvsdb.gz open in KLayout.
 release/reference.spice is the schematic-derived LVS reference. Zero-volt
 current probes become net aliases; transistor multiplicities become units.
 report.html explains the research, floorplan, results, and open work.
-reviews/2026-10-21-mirrors-implemented/README.md reports the implemented
-matching changes, independent geometry audit, DC current ratios and PSRR.
+reviews/2026-10-21-compact-routing/README.md reports the current source buses,
+ground returns, precision audit, current ratios and PSRR.
+reviews/2026-10-21-mirrors-implemented/README.md preserves the earlier revision.
 reviews/2026-10-21-mirrors/README.md preserves the historical audit at f249c5c.
 figures/index.html presents the paper-style figure gallery and full captions.
 The PSRR revision separates physical routing improvements from extraction
@@ -35,10 +36,10 @@ not add different diffusion-area, perimeter, or series-resistance values.
 release/schematic-symbols/ contains a fresh core netlist, independently
 generated LVS reference, complete KLayout LVS log/database, and source-
 equivalence evidence. All 533 units are retained; no dummies are filtered.
-The full core LVS passes. GDS is unchanged, so the existing DRC result still
-applies. The original simulation inputs and numerical results are retained.
-mirror_bias/input_manifest.json retains their original generation-source
-hash and records the equivalent current source hash for reproducible reruns.
+The full core LVS passes against the revised GDS, including all dummy units.
+The schematic itself is unchanged by the routing revision. Current inputs are
+bound to GDS/source hashes in mirror_bias/input_manifest.json; previous
+source-refactor simulation results are archived under release/previous/.
 
 After selecting GF180MCU-D, from the repository root:
   BANDGAP_LAYOUT_BUILD=layout/build/native-dummy-symbols python layout/scripts/verify_schematic_representation.py
@@ -48,7 +49,7 @@ source, add --evidence layout/build/native-dummy-symbols.
 
 Native-symbol simulation confirmation, 21 October 2026
 -----------------------------------------------------
-release/native-symbol-simulations/ archives eight fresh ngspice runs from
+Historical release/previous/native-symbol-simulations/ archives eight runs from
 a newly generated TB10 netlist: schematic and released RCC, each at 3.3/5 V,
 with separate unprobed OP/AC and drain-probe mirror measurements. TT, 25 C,
 trim 72, DVDD 3.3 V, no external load. All seven reviewed mirror ratios,
@@ -58,6 +59,7 @@ The existing simulation data and figures remain preserved. Random mismatch
 yield is outside this nominal comparison. See that directory's README.md
 and comparison.json for values, fixed tolerances, hashes and raw evidence.
 
+For that historical source-only comparison, check out commit 9b2f539 first.
 After selecting GF180MCU-D, from the repository root:
   python layout/scripts/confirm_symbol_simulations.py --out layout/build/symbol-rerun
 Choose a new empty output folder for each rerun. This command does not
@@ -121,7 +123,7 @@ The lower-case 1k parameter is required by this LVS deck.
 
 Source guide
 ------------
-scripts/render_paper_figures.py  regenerate nine figures from release and planning inputs
+scripts/render_paper_figures.py  regenerate eight current figures from release and planning inputs
 scripts/figure_style.py      shared typography and PDF/SVG/600-dpi PNG export
 scripts/layout_flow.py       explicit orchestration and verification gates
 scripts/layout_paths.py      build and PDK paths
@@ -132,11 +134,13 @@ scripts/matching_constraints.py  explicit unit patterns and matching keepouts
 scripts/matched_routes.py    balanced local main-mirror drain geometry
 scripts/audit_mirror_layout.py  independent channel/connectivity/dummy audit
 scripts/screen_mirror_bias.py  per-device current and terminal-bias comparison
-scripts/render_matching_results.py  current mirror results and review figures
+scripts/render_routing_results.py  current comparison and mirror figures
+scripts/render_matching_results.py  historical matching revision only
+scripts/audit_precision_layout.py  PNP/resistor geometry and source-path R
 scripts/compare_layouts.py   complete layer/text equivalence for fresh rebuilds
 scripts/route_physical.py    three-layer signal routing and substrate isolation
 scripts/lift_sensitive_routes.py  move the long vgn2 route to M5
-scripts/strengthen_power.py  2 um M5 supplies and four-via landing arrays
+scripts/strengthen_power.py  2 um M5 supplies/grounds and four-via arrays
 scripts/add_density_fill.py  deterministic COMP and metal fill with keepouts
 scripts/prepare_pex_view.py   geometry-identical PNP/nwell extraction hierarchy
 scripts/extract_parasitics.tcl  visible Magic extraction commands
@@ -171,10 +175,12 @@ connections. Both topology LVS checks precede simulation. The previous GDS
 was re-extracted with the same procedure for the before/after comparison;
 its earlier published results are separately retained in release/previous/.
 
-Magic extresist falsely joins AVSS and DVSS when ground resistance is enabled.
-The screening RC/RCC models therefore explicitly exclude resistance on both
-grounds. It includes signal/supply resistance, capacitance and coupling above
-0.1 fF. This is not complete distributed RC sign-off. The pre-existing project
+Unrestricted Magic extresist creates a spurious well/substrate resistance
+path between AVSS and DVSS. The revised flow uses separate 'extresist skip'
+commands for space, pwell and nwell. Signal, supply and ground metal/contact/
+via resistance is included; wells/substrate remain lumped. Both ground ports
+remain separate, and both topology LVS checks pass. Coupling above 0.1 fF is
+retained. This is not complete distributed RC sign-off. The pre-existing project
 MIM charge-form compatibility model remains in use. Resistor tee splitting is
 disabled so the extracted primitive topology can be independently verified.
 Magic 8.3.685 corrects the old double-counted sidewall coefficient. A separate
@@ -215,7 +221,8 @@ and analog requalification.
 Equal centroids are implemented where the preserved unit counts permit;
 single-unit pairs remain adjacent, not common-centroid. All 13 MOS arrays
 have verified dummy surrounds and equal orientation. M1/M2/M5 local drain
-routes have equal metal area and via counts; global interconnect resistance/
+routes have equal metal area and via counts; PLOAD and MSINK now also have
+shared source buses. R1 and the PNP-array region exclude unrelated routing; global interconnect resistance/
 capacitance, complete shielding, and a quantitative EM/IR review remain open.
 The power straps do not replace those checks. The corrected nominal PSRR
 screen exceeds the README planning threshold of 45 dB, but does not meet the
@@ -257,3 +264,16 @@ composites at that width or repanel them before reducing to a narrow column.
 captions.txt records conditions and limitations for reuse with the artwork.
 The style follows https://www.isscc.org/figures readability guidance, without
 claiming compliance with an ISSCC manuscript template or submission rules.
+
+Current routing review reproduction:
+  python layout/scripts/diagnose_psrr.py --build <build> --output <build>/psrr_diagnostics --supply-coupling
+  python layout/scripts/screen_mirror_bias.py --build <build> --reference-ac <build>/psrr_diagnostics
+  python layout/scripts/audit_precision_layout.py --build <build>
+  python layout/scripts/render_routing_results.py
+
+Current qualification scope: ten nominal DC/AC cases, 360 fixed-code corner
+DC points, four mirror cases and 481-point PSRR sweeps are complete.
+Run screen_extracted.py --dc-only to repeat the completed nominal scope.
+The full transient screen exceeded its 300 s per-case runtime; startup/restart
+is not qualified on this GDS. Previous startup data remain historical under
+release/previous/published_power_sequence_screen.json.

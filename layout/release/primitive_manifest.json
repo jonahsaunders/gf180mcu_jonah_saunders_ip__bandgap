@@ -2851,21 +2851,6 @@
       "cell": "bg_primitive_032"
     },
     {
-      "name": "DUM_MSINK1",
-      "model": "nfet_05v0",
-      "nodes": [
-        "avss",
-        "avss",
-        "avss",
-        "avss"
-      ],
-      "w": 16.34,
-      "l": 8.0,
-      "m": 20,
-      "source": "XDUM_MSINK1 avss avss avss avss nfet_05v0 W=16.34u L=8u m=20",
-      "cell": "bg_primitive_041"
-    },
-    {
       "name": "DUM_PREF",
       "model": "pfet_05v0",
       "nodes": [
@@ -2879,6 +2864,51 @@
       "m": 29,
       "source": "XDUM_PREF avdd avdd avdd avdd pfet_05v0 W=18.75u L=8u m=29",
       "cell": "bg_primitive_021"
+    },
+    {
+      "name": "DUM_MPSINK",
+      "model": "pfet_05v0",
+      "nodes": [
+        "avdd",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "w": 18.95,
+      "l": 8.0,
+      "m": 23,
+      "source": "XDUM_MPSINK avdd avdd avdd avdd pfet_05v0 W=18.95u L=8u m=23",
+      "cell": "bg_primitive_024"
+    },
+    {
+      "name": "DUM_MPFOLD",
+      "model": "pfet_05v0",
+      "nodes": [
+        "avdd",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "w": 18.99,
+      "l": 8.0,
+      "m": 20,
+      "source": "XDUM_MPFOLD avdd avdd avdd avdd pfet_05v0 W=18.99u L=8u m=20",
+      "cell": "bg_primitive_025"
+    },
+    {
+      "name": "DUM_MSINK1",
+      "model": "nfet_05v0",
+      "nodes": [
+        "avss",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "w": 16.34,
+      "l": 8.0,
+      "m": 20,
+      "source": "XDUM_MSINK1 avss avss avss avss nfet_05v0 W=16.34u L=8u m=20",
+      "cell": "bg_primitive_041"
     },
     {
       "name": "DUM_M3",
@@ -2924,36 +2954,6 @@
       "m": 10,
       "source": "XDUM_M16 avss avss avss avss nfet_05v0 W=7.55u L=4u m=10",
       "cell": "bg_primitive_005"
-    },
-    {
-      "name": "DUM_MPSINK",
-      "model": "pfet_05v0",
-      "nodes": [
-        "avdd",
-        "avdd",
-        "avdd",
-        "avdd"
-      ],
-      "w": 18.95,
-      "l": 8.0,
-      "m": 23,
-      "source": "XDUM_MPSINK avdd avdd avdd avdd pfet_05v0 W=18.95u L=8u m=23",
-      "cell": "bg_primitive_024"
-    },
-    {
-      "name": "DUM_MPFOLD",
-      "model": "pfet_05v0",
-      "nodes": [
-        "avdd",
-        "avdd",
-        "avdd",
-        "avdd"
-      ],
-      "w": 18.99,
-      "l": 8.0,
-      "m": 20,
-      "source": "XDUM_MPFOLD avdd avdd avdd avdd pfet_05v0 W=18.99u L=8u m=20",
-      "cell": "bg_primitive_025"
     },
     {
       "name": "DUM_VBNSINK",

@@ -255,26 +255,48 @@ for plan in core_drain_routes(data, layout.dbu, PITCH):
     json.dumps(local_records, indent=2) + "\n"
 )
 
-supply_plan = core_supply_routes(data, layout.dbu, PITCH)
-for level, region in enumerate(supply_plan["metal"]):
-    foreign = fixed[level].dup()
-    for other, shapes in geometry.items():
-        if other != "avdd":
-            foreign += shapes[level]
-    assert (region & foreign.sized(285)).is_empty(), (level, "source bus clearance")
-    geometry["avdd"][level] += region
-    insert(METALS[level], region)
-for level, cuts in enumerate(supply_plan["vias"]):
-    assert (cuts & via_geometry[level].sized(265)).is_empty(), (
-        level,
-        "source bus vias",
+source_bus_records = []
+for sources in [("M1", "M2", "M5"), ("PLOAD1", "PLOAD2"), ("MSINK1", "MSINK2")]:
+    supply_plan = core_supply_routes(data, layout.dbu, PITCH, sources)
+    rail = root(supply_plan["net"])
+    for level, region in enumerate(supply_plan["metal"]):
+        foreign = fixed[level].dup()
+        for other, shapes in geometry.items():
+            if other != rail:
+                foreign += shapes[level]
+        assert (region & foreign.sized(285)).is_empty(), (
+            sources,
+            level,
+            "source bus clearance",
+        )
+        geometry[rail][level] += region
+        insert(METALS[level], region)
+    for level, cuts in enumerate(supply_plan["vias"]):
+        assert (cuts & via_geometry[level].sized(265)).is_empty(), (
+            sources,
+            level,
+            "source bus vias",
+        )
+        via_geometry[level] += cuts
+        insert(VIAS[level], cuts)
+    source_points = set(supply_plan["unit_sources"])
+    terminals[rail] = [p for p in terminals[rail] if p not in source_points] + [
+        supply_plan["anchor"]
+    ]
+    source_bus_records.append(
+        {
+            "sources": list(sources),
+            "net": rail,
+            "source_terminals": len(source_points),
+            "M2_escape_length_um": 2.4,
+            "M3_row_bus_width_um": 2.0,
+            "M4_trunk_width_um": 2.0,
+            "anchor_um": supply_plan["anchor"],
+        }
     )
-    via_geometry[level] += cuts
-    insert(VIAS[level], cuts)
-source_points = set(supply_plan["unit_sources"])
-terminals["avdd"] = [p for p in terminals["avdd"] if p not in source_points] + [
-    supply_plan["anchor"]
-]
+(ROOT / "matched_source_buses.json").write_text(
+    json.dumps(source_bus_records, indent=2) + "\n"
+)
 
 names = sorted(terminals)
 grid_terms = defaultdict(list)

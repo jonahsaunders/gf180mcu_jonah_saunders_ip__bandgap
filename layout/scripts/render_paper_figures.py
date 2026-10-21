@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 from draw_layout import draw_all, draw_harness_fit
-from plot_screens import plot_nominal, plot_corners, plot_power_sequence, plot_psrr
+from plot_screens import plot_nominal, plot_corners, plot_psrr
 
 LAYOUT = Path(__file__).resolve().parents[1]
 CAPTIONS = [
@@ -30,10 +30,10 @@ CAPTIONS = [
         "psrr-before-after",
         "Supply rejection and routing improvement",
         "Simulated PSRR at TT, 25 °C, trim 72, DVDD = 3.3 V, ideal supplies/grounds, and no external load. "
-        "The upper plots compare schematic, the previously published layout, and the matching revision using the same conserved-RCC approximation. "
+        "The upper plots compare schematic, the previous layout, and the routing revision using the same ground-inclusive conserved-RCC approximation. "
         "The lower plots expand the minima; their vertical scales differ. Minima are sampled over 1 Hz–1 MHz. "
         "Annotated changes compare the two physical layouts with the same corrected extraction method. "
-        "The full curves still differ from the schematic. RCC is approximate and omits ground resistance.",
+        "The full curves still differ from the schematic. Ground metal resistance is included; well/substrate resistance remains lumped and coupling placement is approximate.",
     ),
     (
         "physical-layout",
@@ -74,8 +74,8 @@ CAPTIONS = [
         "post-layout-screens",
         "Nominal post-layout simulation",
         "Conserved-RCC approximation at TT, DVDD = 3.3 V. Temperature sweep uses trim 72; trim transfer includes all 128 codes "
-        "at 25 °C. PSRR and startup use trim 72 at 25 °C. Only the analog rail is cycled in the lower-right plot. "
-        "No added external output load. Signal/supply resistance and parasitic capacitance are included; ground resistance is omitted. "
+        "at 25 °C. PSRR uses trim 72 at 25 °C; the lower-right plot shows analog supply current versus temperature. "
+        "No added external output load. Signal/supply/ground metal resistance and parasitic capacitance are included; well/substrate resistance remains lumped. "
         "The project MIM compatibility model remains in use. Curves connect saved samples without smoothing.",
     ),
     (
@@ -87,14 +87,6 @@ CAPTIONS = [
         "coincident samples overlap. Temperatures are plotted exactly, without horizontal jitter. "
         "All saved DC points completed; recovered solver fallback warnings are retained in the released log and summary. "
         "Convergence does not establish specification compliance.",
-    ),
-    (
-        "both-supply-startup",
-        "Simultaneous supply startup and restart",
-        "Simulated analog/digital rail cycling and resulting VREF at TT, 25 °C, trim 72. The upper panel shows saved supply waveforms, "
-        "including DVDD = 3.3 V in both cases; the lower panel shows VREF. High trim inputs track DVDD. "
-        "There is no forced initial state or startup injection. Conserved-RCC approximation, with ground resistance omitted. "
-        "The release summary reports cold/restart settling after the ramp to ±0.5% of the final value.",
     ),
 ]
 
@@ -138,7 +130,7 @@ h1{font-size:28px}h2{font-size:20px}a{color:#0072b2}figure{margin:40px 0;border-
 img{width:100%;height:auto}figcaption{font-size:14px;color:#333}p{margin:12px 0}
 @media print{body{margin:0;max-width:none}figure{break-inside:avoid}figure p{display:none}}</style>
 <h1>Trim-inclusive bandgap — paper figures</h1>
-<p>GF180MCU-D · simulated results, actual layout geometry and updated draft user area · 9 figures</p>
+<p>GF180MCU-D · simulated results, actual layout geometry and updated draft user area · 8 figures</p>
 <p>Artwork uses a 7.1-inch master width, 7–9 pt labels, restrained colors and distinguishable line styles.
 PDF and SVG exports preserve vector plots and text; PNG copies are 600 dpi. The GDS polygons are rasterized
 inside vector files to keep them manageable. Full-size masters are intended for a wide paper figure;
@@ -177,7 +169,6 @@ def main():
     plot_psrr(release / "psrr", args.out)
     plot_nominal(data, args.out)
     plot_corners(release / "pvt_dc_screen.json", args.out)
-    plot_power_sequence(data / "power_sequence", args.out)
     write_gallery(args.out)
     print(f"{len(CAPTIONS)} figures exported as PDF, SVG and 600-dpi PNG: {args.out}")
 

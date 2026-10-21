@@ -8,6 +8,7 @@ saved layout placement. Ideal zero-volt probes become net aliases for LVS.
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
+import argparse
 import gzip
 import hashlib
 import json
@@ -104,6 +105,15 @@ def make_lvs_reference(inventory):
 
 
 def main():
+    global RELEASE
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--release",
+        type=Path,
+        default=RELEASE,
+        help="Checked release or staging folder to compare against",
+    )
+    RELEASE = parser.parse_args().release.resolve()
     netlists = BUILD_DIR / "netlists"
     netlists.mkdir(exist_ok=True)
     run(
@@ -206,7 +216,7 @@ def main():
                 "audit_circuit.log",
             ]
         },
-        "note": "Native transistor symbols replace the dummy code block. Their instance format retains the original W/L/m-only SPICE parameter list and therefore the same PDK defaults. Existing simulation inputs and results are retained; GDS is unchanged.",
+        "note": "Native symbols retain the W/L/m-only parameter list and original PDK defaults. Fresh source matches the archived circuit and selected GDS, including all dummy units. This verification does not modify the schematic or GDS.",
     }
     (BUILD_DIR / "verification.json").write_text(json.dumps(result, indent=2) + "\n")
     print(

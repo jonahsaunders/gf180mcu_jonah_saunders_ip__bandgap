@@ -1,0 +1,35 @@
+{
+  "status": "CORE_DRC_LVS_PASS_NOT_TAPEOUT_QUALIFIED",
+  "checked_utc": "2026-10-21T20:12:10.443407+00:00",
+  "drc_violations": 0,
+  "lvs_match": true,
+  "expanded_device_units": 533,
+  "functional_device_units": 272,
+  "tied_off_dummy_units": 261,
+  "bounds_um": [
+    0.6,
+    1.4000000000000001,
+    686.6,
+    401.0
+  ],
+  "sha256": {
+    "filled_candidate.gds": "3127a34098587824ebe46b8fba5354f990114277ee577d9d2476ba6ecba4e660",
+    "reference.spice": "b436260217a4b31375b0001109a9b0bfee5f89b3e33822005dde78b3f0818af1",
+    "filled_drc.lyrdb": "3b777b2a1e005d272fac6caf93ed6746735814f38575d03b940a93ea606d6131",
+    "filled.lvsdb": "b95470605ccfec0b3ade103a1596626d87db760779728e81d54e5308d77e70a5",
+    "placement.json": "49fc36eeadbdb61e009fae2482ebefd7f64cf950336c0e312e00f50902646b0d",
+    "primitive_manifest.json": "192db5e450b27593be4254bc6a81c552550f975775b9a65815d7b76ac6738df5",
+    "routing_status.json": "0d1937c2393c5a004417604cd96b1e6c56e4691dcd89c2c3773669643d6cfb71"
+  },
+  "schematic_sha256": "bed8b6dbb6f63facc51432769c2d601a1e830204d75cbdd8ee5941d311a751b3",
+  "pdk_version": "f6eeac7dad085ffcc829ccfd721f7b4ce39edcf7",
+  "container": "hpretl/iic-osic-tools@sha256:5d6adf1f437cd0f2f8f8614488ec3c247ba8c768f4663a25d5e997b30ccb13b0",
+  "drc_deck_sha256": "e7c7d2597890cfcb4cf0e5312f5652051a119fb3e1cc1772a6e5c04594bc65d8",
+  "lvs_deck_sha256": "09a4f1f1a6fe1fc1e4e193ae5ae1c2b1c49ba190f9e135ffd72d45c14637fde9",
+  "open_items": [
+    "Assigned wrapper and dimensions",
+    "Independent PEX accuracy and distributed well/substrate resistance",
+    "Quantitative per-branch RC balance and mismatch yield",
+    "EM/IR and full analog PVT qualification"
+  ]
+}

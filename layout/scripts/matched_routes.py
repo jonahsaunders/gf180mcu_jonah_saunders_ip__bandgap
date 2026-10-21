@@ -86,17 +86,17 @@ def core_drain_routes(placement, dbu, pitch):
     return result
 
 
-def core_supply_routes(placement, dbu, pitch):
+def core_supply_routes(placement, dbu, pitch, sources=("M1", "M2", "M5")):
     """Low-resistance row buses for all 18 main-mirror source terminals.
 
     Every source has the same short M2 escape. Wide M3 row buses feed a
     common M4 trunk at the left dummy column. Each branch contributes two
     units to each row, reducing differential source-voltage drop.
     """
-    units = [d for d in placement["placed"] if d["source"] in {"M1", "M2", "M5"}]
-    group = next(
-        g for g in placement["groups"] if set(g["names"]) == {"M1", "M2", "M5"}
-    )
+    units = [d for d in placement["placed"] if d["source"] in sources]
+    group = next(g for g in placement["groups"] if set(g["names"]) == set(sources))
+    rails = {d["nodes"][2] for d in units}
+    assert len(rails) == 1, (sources, "Source buses require a shared electrical net")
     rows = sorted({round(d["pins"][2][1], 6) for d in units})
     x = round((group["x"] + 2.4) / pitch) * pitch
     bottom = round((group["y"] - 3.2) / pitch) * pitch
@@ -132,6 +132,8 @@ def core_supply_routes(placement, dbu, pitch):
             for dy in [-0.26, 0.26]:
                 vias[1] += pad((x + dx, bus_y + dy), 0.13)
     return {
+        "sources": list(sources),
+        "net": rails.pop(),
         "anchor": anchor,
         "metal": [r.merged() for r in metal],
         "vias": [r.merged() for r in vias],

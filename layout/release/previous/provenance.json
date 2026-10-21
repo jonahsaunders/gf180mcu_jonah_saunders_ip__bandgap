@@ -1,7 +1,8 @@
 {
-  "commit": "f249c5c20f6bf5a216d05d3941f191dc6a567b2a",
-  "gds_sha256": "86c11f6ccd18e887284f187bb1635ce37da98bfc5e14b5d436efcd7a043bfa00",
-  "rcc_sha256": "643198fee319a77c059931d3c9b70380f7201c2639eeec4e93fd2421733be33f",
-  "schematic_sha256": "f7b743d6003c8c774628cbc2b5ceaaaf93a0a7923a39607b8378df716a08c511",
-  "scope": "Unchanged previous GDS re-extracted with the same primitive-terminal anchoring, Magic 8.3.685 and conserved RCC as the revised GDS; DC/AC comparison only"
+  "commit": "9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22",
+  "gds_sha256": "868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36",
+  "rcc_sha256": "953e614f99ebec5612dc6564de0ca5b5537f5d1b403660cb5d790ea502df6074",
+  "schematic_sha256": "bed8b6dbb6f63facc51432769c2d601a1e830204d75cbdd8ee5941d311a751b3",
+  "scope": "Identical previous GDS re-extracted with ground metal resistance included and well/substrate resistance lumped; same Magic 8.3.685, terminal anchoring and conserved-RCC method as revised GDS.",
+  "original_release": "https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/tree/9b2f5390b33c18b2c4f167ed6d3468e5d9a72f22/layout/release"
 }

@@ -65,20 +65,17 @@ def plot_nominal(data, out):
         axes[0, 1].plot(ac[:, 0], ac[:, 1], color=color, ls=style)
         trim = trim_samples(folder / "trim.dat")
         axes[1, 0].plot(trim[:, 1], trim[:, 2] * 1e3, color=color, ls=style)
-        tran = samples(
-            data / f"rcc_typical_typical_typical_{supply:g}_startup/startup.dat"
-        )
-        axes[1, 1].plot(tran[:, 0] * 1e3, tran[:, 2], color=color, ls=style)
+        axes[1, 1].plot(temp[:, 0], -temp[:, 2] * 1e6, color=color, ls=style)
     for ax, title, xlabel, ylabel in zip(
         axes.flat,
         [
             "Temperature response",
             "Supply rejection",
             "Trim transfer",
-            "Analog-rail power cycle",
+            "Analog supply current",
         ],
-        ["Temperature (°C)", "Frequency (Hz)", "Trim code", "Time (ms)"],
-        ["Reference (mV)", "PSRR (dB)", "Reference (mV)", "Reference (V)"],
+        ["Temperature (°C)", "Frequency (Hz)", "Trim code", "Temperature (°C)"],
+        ["Reference (mV)", "PSRR (dB)", "Reference (mV)", "Current (µA)"],
     ):
         plot_axes(ax, xlabel, ylabel, title)
     axes[0, 0].set_xticks([-40, 0, 40, 80, 125])
@@ -87,7 +84,8 @@ def plot_nominal(data, out):
     axes[0, 1].set_ylim(40, 95)
     axes[1, 0].set_xticks([0, 32, 64, 96, 127])
     axes[1, 0].set_xlim(0, 127)
-    axes[1, 1].set_xlim(0, 4)
+    axes[1, 1].set_xlim(-40, 125)
+    axes[1, 1].set_xticks([-40, 0, 40, 80, 125])
     supply_legend(fig)
     fig.text(
         0.5,
@@ -200,7 +198,7 @@ def plot_psrr(data, out):
     styles = [
         ("schematic", "revised", "Schematic", "#222222", (0, (5, 2))),
         ("rcc", "baseline", "Previous layout · RCC", GRAY, (0, (2, 2))),
-        ("rcc", "revised", "Matching revision · RCC", BLUE, "-"),
+        ("rcc", "revised", "Routing revision · RCC", BLUE, "-"),
     ]
     fig, axes = plt.subplots(
         2, 2, figsize=(WIDTH, 5.15), gridspec_kw={"height_ratios": [1.65, 1]}
@@ -239,7 +237,9 @@ def plot_psrr(data, out):
         span = max(high - low, 10)
         zoom.set_xlim(max(0, low - span / 2), high + span / 2)
         zoom.set_ylim(min(minima) - 0.35, max(minima) + 1.3)
-        zoom.yaxis.set_major_locator(MultipleLocator(0.5))
+        zoom.yaxis.set_major_locator(
+            MultipleLocator(1 if max(minima) - min(minima) > 2.5 else 0.5)
+        )
         zoom.text(
             0.98,
             0.96,

@@ -2,28 +2,28 @@
   "metal": [
     {
       "layer": 34,
-      "squares": 3544,
-      "density": 0.44236513846207726
+      "squares": 3486,
+      "density": 0.44151881108513763
     },
     {
       "layer": 36,
-      "squares": 3589,
-      "density": 0.36043812243365814
+      "squares": 3497,
+      "density": 0.36054833778749595
     },
     {
       "layer": 42,
-      "squares": 3572,
-      "density": 0.37113480171133234
+      "squares": 3526,
+      "density": 0.37175718794596346
     },
     {
       "layer": 46,
-      "squares": 3189,
-      "density": 0.38860130538701965
+      "squares": 3167,
+      "density": 0.3875882879964513
     },
     {
       "layer": 81,
-      "squares": 3618,
-      "density": 0.3167753657447535
+      "squares": 3512,
+      "density": 0.3352102729551709
     }
   ],
   "comp_density": 0.4106772005241393,

@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-21T17:16:07.931693+00:00",
+  "checked_utc": "2026-10-21T20:21:54.802290+00:00",
   "lvs_match": true,
   "no_devices_filtered": true,
   "canonical_spice_equal_to_archived_simulation_input": true,
@@ -9,23 +9,19 @@
   "functional_device_units": 272,
   "total_device_units": 533,
   "schematic_sha256": "bed8b6dbb6f63facc51432769c2d601a1e830204d75cbdd8ee5941d311a751b3",
-  "archived_simulation_source_sha256": "3e8a183237a5f1034a36ec0a1d0ab46d90b6c4fdda3fd9bb01e1806fe677f091",
-  "gds_sha256": "868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36",
+  "archived_simulation_source_sha256": "452703c882757b759cda44eb6c8a606abe3ae6bc89cd4a849443e8cf1207e36b",
+  "gds_sha256": "a1e2b376e15501b8854acdcf7586cc31891f3a70d93550aa5144348bb2f3af9c",
   "lvs_deck_sha256": "09a4f1f1a6fe1fc1e4e193ae5ae1c2b1c49ba190f9e135ffd72d45c14637fde9",
-  "lvsdb_uncompressed_sha256": "495a4996502a592882f5a5d544d2832c9a1d8fd8605095980b9d33d1a2c9c7bc",
+  "lvsdb_uncompressed_sha256": "dab204ffbbf552717f9a3ea13791c067c270d4c971562ff6fadd79452224c359",
   "sha256": {
     "schematic_source.spice": "452703c882757b759cda44eb6c8a606abe3ae6bc89cd4a849443e8cf1207e36b",
     "reference.spice": "eb97cc0be09f9ee57e386b6eed29e835e093e5b435faaa441b5aa7c7048b7ca9",
     "circuit.json": "6ad00a00df78dd590a11ccf3ce2ef46da02a014c4dd8a74bf2df9d1224698882",
-    "filled_lvs.log": "589262eaf1c612a64d7067c99f33e4720be101f1f62f10ae807d97624b496c12",
-    "filled.lvsdb.gz": "a1e199afe21de7bb0a1f58f0cd46806968d6714a1bb26c24b23a476fcea19db1",
-    "filled.cir": "8e67ee6ae6b60204a4ee169909bfbb8c36ac482fd106d2c728d239aac54b12ac",
+    "filled_lvs.log": "e92bbd76d5348e1af7bd190b8c3196b6f3b4e0b711fa00830d8b41634f639c65",
+    "filled.lvsdb.gz": "762679e94b2fc66a09edb8d49abe94a0b03456febc9a2006f83cad19afe5428b",
+    "filled.cir": "9657ea0532cbd99e22365cd8d0032cda036dffabdfc603eca7506dc75000b0f8",
     "xschem.log": "d2bcff0f9e6d429a2762c9e8630b0576cedf79c7e3fe731c08bfa63778b1ede8",
-    "audit_circuit.log": "ee282f5597982a9cc0ed84b443ed8dbe696913151d673cbf937d47cdd494427e",
-    "repository_checks.log": "f4eee98a320c0beea486f85fd074e8ea0836b5e8a162e39621b7071403182c8a",
-    "portability_checks.log": "ec361db370a0e1edcbe5fd6ca09a046283a242169fb85206fd65877cc9bedcd3"
+    "audit_circuit.log": "ee282f5597982a9cc0ed84b443ed8dbe696913151d673cbf937d47cdd494427e"
   },
-  "note": "Native transistor symbols replace the dummy code block. Their instance format retains the original W/L/m-only SPICE parameter list and therefore the same PDK defaults. Existing simulation inputs and results are retained; GDS is unchanged.",
-  "repository_tests_passed": 37,
-  "xschem_portability_netlists_passed": 40
+  "note": "Native symbols retain the W/L/m-only parameter list and original PDK defaults. Fresh source matches the archived circuit and selected GDS, including all dummy units. This verification does not modify the schematic or GDS."
 }

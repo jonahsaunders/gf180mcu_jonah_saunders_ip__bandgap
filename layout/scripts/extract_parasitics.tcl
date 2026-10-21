@@ -20,8 +20,13 @@ ext2spice -o Bandgap_Core_Res_c.spice
 extresist threshold 1000
 extresist minres 100
 extresist mindelay 0
-extresist ignore avss
-extresist ignore dvss
+# Preserve separate ground-metal networks. Magic otherwise walks through
+# space/well planes and creates a spurious AVSS-to-DVSS resistive path.
+# Wells/substrate remain lumped; metal, contacts and vias are distributed.
+# Each type must be a separate command in Magic 8.3.685.
+extresist skip space
+extresist skip pwell
+extresist skip nwell
 extresist all
 ext2spice extresist on
 ext2spice -o Bandgap_Core_Res_rc.spice

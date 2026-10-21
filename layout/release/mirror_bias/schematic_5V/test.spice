@@ -729,9 +729,9 @@ print aid avd avg avs avb
 echo DEVICE 96
 let aid=i(v.xdut.vaud96)
 let avd=v(xdut.audit_d96)
-let avg=0
-let avs=0
-let avb=0
+let avg=v(avdd)
+let avs=v(avdd)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 97
 let aid=i(v.xdut.vaud97)
@@ -743,9 +743,9 @@ print aid avd avg avs avb
 echo DEVICE 98
 let aid=i(v.xdut.vaud98)
 let avd=v(xdut.audit_d98)
-let avg=0
-let avs=0
-let avb=0
+let avg=v(avdd)
+let avs=v(avdd)
+let avb=v(avdd)
 print aid avd avg avs avb
 echo DEVICE 99
 let aid=i(v.xdut.vaud99)
@@ -764,16 +764,16 @@ print aid avd avg avs avb
 echo DEVICE 101
 let aid=i(v.xdut.vaud101)
 let avd=v(xdut.audit_d101)
-let avg=v(avdd)
-let avs=v(avdd)
-let avb=v(avdd)
+let avg=0
+let avs=0
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 102
 let aid=i(v.xdut.vaud102)
 let avd=v(xdut.audit_d102)
-let avg=v(avdd)
-let avs=v(avdd)
-let avb=v(avdd)
+let avg=0
+let avs=0
+let avb=0
 print aid avd avg avs avb
 echo DEVICE 103
 let aid=i(v.xdut.vaud103)

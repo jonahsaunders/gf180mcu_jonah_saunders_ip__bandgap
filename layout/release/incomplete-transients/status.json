@@ -1,0 +1,7 @@
+{
+  "complete": false,
+  "reason": "Analog-only and simultaneous-rail transient screens exceeded the configured 300 s per-case runtime.",
+  "scope": "Startup/restart is not qualified on this GDS. DC/AC screens completed separately. Historical startup results apply to the previous GDS/model.",
+  "analog_only_complete": false,
+  "simultaneous_rail_complete": false
+}

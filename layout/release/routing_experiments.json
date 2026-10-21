@@ -1,0 +1,84 @@
+{
+  "scope": "Compound routing experiments, not isolated causal measurements of each changed wire.",
+  "selected_reason": "Retains the source-bus and ground-return benefits, removes six unrelated R1 crossings, and preserves footprint. Compared with the unprotected ground-strap trial, its PSRR minima differ by -0.005/-0.016 dB.",
+  "trials": [
+    {
+      "candidate": "Previous unchanged layout",
+      "note": "Controlled baseline, ground metal resistance included",
+      "metrics": [
+        {
+          "name": "rcc",
+          "supply": 3.3,
+          "psrr_min_dB": 45.9431008482262,
+          "worst_Hz": 27384.19634264418,
+          "dc_psrr_dB": 89.40219021125986,
+          "vref_V": 1.192877741449192,
+          "idd_uA": 23.67946768956319,
+          "sha256": "c57e7a42f7beaec26a2fb0cfa445037070014a99a1c3933a9ca55d61be56898c"
+        },
+        {
+          "name": "rcc",
+          "supply": 5.0,
+          "psrr_min_dB": 48.65860033110907,
+          "worst_Hz": 31622.77660168446,
+          "dc_psrr_dB": 72.54539383947969,
+          "vref_V": 1.192959980347177,
+          "idd_uA": 30.523153635366416,
+          "sha256": "7702809bb929426cc8f8f32ce73dfeb1c4d13d04d285ae3838dd17166147935b"
+        }
+      ]
+    },
+    {
+      "candidate": "Source buses + xf2 promotion + ground straps",
+      "note": "DRC/LVS pass; no added R1 keepout",
+      "metrics": [
+        {
+          "name": "rcc",
+          "supply": 3.3,
+          "psrr_min_dB": 48.01614309107154,
+          "worst_Hz": 21134.89039836689,
+          "dc_psrr_dB": 81.47685489946645,
+          "vref_V": 1.193238824824921,
+          "idd_uA": 24.066200043826672,
+          "sha256": "105c2db67b1195cd1855086a9287208c2e88afb6903b491ca8a2aec890a04258"
+        },
+        {
+          "name": "rcc",
+          "supply": 5.0,
+          "psrr_min_dB": 53.1836764892461,
+          "worst_Hz": 21752.04034019566,
+          "dc_psrr_dB": 71.12111944857591,
+          "vref_V": 1.193398737583673,
+          "idd_uA": 31.216342948380348,
+          "sha256": "88dcae6e9fbc91c7a38a50493ab3cb2a51f346765228dffdc0046f5571b4523f"
+        }
+      ]
+    },
+    {
+      "candidate": "Selected protected routing",
+      "note": "DRC/LVS pass; R1 and PNP-array keepouts; vgn2-only promotion",
+      "metrics": [
+        {
+          "name": "rcc",
+          "supply": 3.3,
+          "psrr_min_dB": 48.01154664396012,
+          "worst_Hz": 21134.89039836689,
+          "dc_psrr_dB": 81.48488914735799,
+          "vref_V": 1.193160339534074,
+          "idd_uA": 24.064510887922008,
+          "sha256": "0ce19987512cb4240b59be565c68ee4086f3cb7759055bca0cb4d3f28083fe5c"
+        },
+        {
+          "name": "rcc",
+          "supply": 5.0,
+          "psrr_min_dB": 53.16803504435745,
+          "worst_Hz": 21752.04034019566,
+          "dc_psrr_dB": 71.1241582781456,
+          "vref_V": 1.193320126101019,
+          "idd_uA": 31.214710072810803,
+          "sha256": "d71a3d70e8847495a24f69bc0c9959ac51b61eba271fab8b9ed0c8831d0200d3"
+        }
+      ]
+    }
+  ]
+}

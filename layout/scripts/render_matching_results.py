@@ -37,7 +37,7 @@ def selected(records, mode, supply):
     return next(r for r in records if r["mode"] == mode and r["AVDD_V"] == supply)
 
 
-def draw_currents(old, new):
+def draw_currents(old, new, out=OUT, revision_label="Matching revision"):
     configure()
     fig, axes = plt.subplots(
         2, 2, figsize=(WIDTH, 5.2), gridspec_kw={"height_ratios": [1.35, 1]}
@@ -48,7 +48,7 @@ def draw_currents(old, new):
     series = [
         (new, "schematic", "Schematic", INK),
         (old, "rcc", "Previous layout", GRAY),
-        (new, "rcc", "Matching revision", BLUE),
+        (new, "rcc", revision_label, BLUE),
     ]
     for col, supply in enumerate([3.3, 5.0]):
         for row, pairs in enumerate([PAIRS[:5], PAIRS[5:]]):
@@ -90,12 +90,15 @@ def draw_currents(old, new):
         ha="center",
         fontsize=8,
     )
-    export(fig, OUT, "mirror-current-ratios")
+    export(fig, out, "mirror-current-ratios")
 
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     evidence = read(RELEASE / "verification.json")
+    assert evidence["sha256"]["Bandgap_Core_Res.gds"] == (
+        "868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36"
+    ), "Historical review: use its original release; current review uses render_routing_results.py"
     geometry = read(RELEASE / "mirror_geometry_audit.json")
     old = read(RELEASE / "previous/mirror_bias_summary.json")
     new = read(RELEASE / "mirror_bias/summary.json")

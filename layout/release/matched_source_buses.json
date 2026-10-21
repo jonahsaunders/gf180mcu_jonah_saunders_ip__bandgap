@@ -1,0 +1,48 @@
+[
+  {
+    "sources": [
+      "M1",
+      "M2",
+      "M5"
+    ],
+    "net": "avdd",
+    "source_terminals": 18,
+    "M2_escape_length_um": 2.4,
+    "M3_row_bus_width_um": 2.0,
+    "M4_trunk_width_um": 2.0,
+    "anchor_um": [
+      73.60000000000001,
+      4.800000000000001
+    ]
+  },
+  {
+    "sources": [
+      "PLOAD1",
+      "PLOAD2"
+    ],
+    "net": "avdd",
+    "source_terminals": 12,
+    "M2_escape_length_um": 2.4,
+    "M3_row_bus_width_um": 2.0,
+    "M4_trunk_width_um": 2.0,
+    "anchor_um": [
+      571.2,
+      4.800000000000001
+    ]
+  },
+  {
+    "sources": [
+      "MSINK1",
+      "MSINK2"
+    ],
+    "net": "avss",
+    "source_terminals": 12,
+    "M2_escape_length_um": 2.4,
+    "M3_row_bus_width_um": 2.0,
+    "M4_trunk_width_um": 2.0,
+    "anchor_um": [
+      571.2,
+      112.80000000000001
+    ]
+  }
+]
