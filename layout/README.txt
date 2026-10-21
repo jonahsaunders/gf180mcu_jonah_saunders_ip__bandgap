@@ -1,7 +1,8 @@
 TRIM-INCLUSIVE BANDGAP LAYOUT — CORE CANDIDATE, NOT TAPEOUT QUALIFIED
 
 This directory implements Bandgap_Core_Res, the DUT in TB10_RESISTOR_TRIM.
-The core contains all 272 device units, seven trim controls, separate analog
+The core contains 272 functional units and 261 explicit tied-off dummy MOS
+units, seven trim controls, separate analog
 and digital grounds, 1 kOhm/square poly resistors, and eleven MIM capacitors.
 It is an IP block for the Chipalooza harness, not a standalone padframe.
 
@@ -13,9 +14,9 @@ release/filled_drc.lyrdb and release/filled.lvsdb.gz open in KLayout.
 release/reference.spice is the schematic-derived LVS reference. Zero-volt
 current probes become net aliases; transistor multiplicities become units.
 report.html explains the research, floorplan, results, and open work.
-reviews/2026-10-21-mirrors/README.md audits actual mirror placement, routing,
-edge environments and nominal branch currents, with proposed physical fixes.
-Its alternative array pattern is not implemented in the released GDS.
+reviews/2026-10-21-mirrors-implemented/README.md reports the implemented
+matching changes, independent geometry audit, DC current ratios and PSRR.
+reviews/2026-10-21-mirrors/README.md preserves the historical audit at f249c5c.
 figures/index.html presents the paper-style figure gallery and full captions.
 The PSRR revision separates physical routing improvements from extraction
 corrections. Raw Magic RC and capacitance-conserving RCC results are both
@@ -86,6 +87,12 @@ scripts/layout_paths.py      build and PDK paths
 scripts/audit_circuit.py     literal numeric SPICE parser; no eval
 scripts/generate_primitives.py  PDK geometry generation, one cell per geometry
 scripts/place_layout.py      common-centroid unit arrays and placement
+scripts/matching_constraints.py  explicit unit patterns and matching keepouts
+scripts/matched_routes.py    balanced local main-mirror drain geometry
+scripts/audit_mirror_layout.py  independent channel/connectivity/dummy audit
+scripts/screen_mirror_bias.py  per-device current and terminal-bias comparison
+scripts/render_matching_results.py  current mirror results and review figures
+scripts/compare_layouts.py   complete layer/text equivalence for fresh rebuilds
 scripts/route_physical.py    three-layer signal routing and substrate isolation
 scripts/lift_sensitive_routes.py  move the long vgn2 route to M5
 scripts/strengthen_power.py  2 um M5 supplies and four-via landing arrays
@@ -113,6 +120,15 @@ and the well resistor, so an extraction-only hierarchy restores their verified
 primitive models. A layer XOR checks that geometry is unchanged. A separate
 KLayout LVS audit compares both the raw device extraction and the RC network
 with interconnect resistances collapsed to the actual GDS.
+
+Temporary internal extraction ports anchor PNP/well-resistor terminals so
+extresist retains their connection to the distributed resistance network.
+pex/port_manifest.json records those coordinates and the public 12-pin order.
+Raw exports are preserved. Simulation adapters remove only the temporary
+ports from the subcircuit declaration, retaining all internal node names and
+connections. Both topology LVS checks precede simulation. The previous GDS
+was re-extracted with the same procedure for the before/after comparison;
+its earlier published results are separately retained in release/previous/.
 
 Magic extresist falsely joins AVSS and DVSS when ground resistance is enabled.
 The screening RC/RCC models therefore explicitly exclude resistance on both
@@ -142,27 +158,36 @@ planning_envelope.json preserves its wording and provisional status. It
 supersedes the earlier inferred 537.15 x 273 um envelope and wrapper scaling
 discrepancy for floorplanning purposes.
 
-The current 614.0 x 307.6 um core fits geometrically and occupies 36.3% of
-the draft area. Centering it would leave 328 um on each side and 51.2 um
-above/below. These are geometric margins, not verified integration clearances.
+The released dimensions and centered margins are calculated from GDS in the
+README and harness-area-fit figure. These are geometric margins, not verified
+integration clearances. The compact floorplan restores the earlier two-row
+output-capacitor bank instead of spreading the design across the user area.
 Final wrapper geometry, slot, pin locations and wiring remain pending.
 The initial-floorplan figure is historical; harness-area-fit is the current
 planning view. Neither changes the actual GDS.
 
-Compaction to the old smaller envelope is no longer a priority. Keep the
-analog core compact, shorten sensitive amplifier/C1 connections, and use
-spare area selectively for matching dummies, isolation, supply routing and
-harness access. Spreading the circuit across the full width would lengthen
-sensitive nets; any relocation needs extraction and analog requalification.
+Compactness is an explicit design priority. Full matched-device dummy
+surrounds add area relative to the earlier core; the remaining harness area
+is not filled merely because it is available. Any relocation needs extraction
+and analog requalification.
 
-Exact geometric centroids and equal device orientation are implemented for
-the named matching groups. Edge dummies, matched interconnect resistance/
+Equal centroids are implemented where the preserved unit counts permit;
+single-unit pairs remain adjacent, not common-centroid. All 13 MOS arrays
+have verified dummy surrounds and equal orientation. M1/M2/M5 local drain
+routes have equal metal area and via counts; global interconnect resistance/
 capacitance, complete shielding, and a quantitative EM/IR review remain open.
 The power straps do not replace those checks. The corrected nominal PSRR
 screen exceeds the README planning threshold of 45 dB, but does not meet the
 original testbench's 60 dB criterion; the schematic itself also misses 60 dB.
 Full corner startup, stability, noise, mismatch, calibrated trim,
 pad/multiplexer loading, and all device-voltage checks remain to be qualified.
+
+The fixed-code DC screen retains recovered dynamic-gmin warnings separately
+from failures, accepting one only when true-gmin stepping completes in the
+same analysis, or during initialization followed by four completed operating
+points. Finite values and the exact temperature sequence are required. All four
+requested temperatures and raw logs are retained. This is convergence
+evidence, not specification compliance.
 
 Three source dimensions were snapped to the manufacturing grid: N3 W 0.646
 to 0.650 um, R3 L 20.193 to 20.190 um, R4 L 232.532 to 232.530 um. The same

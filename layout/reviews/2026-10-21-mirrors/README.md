@@ -1,5 +1,7 @@
 # Current-mirror layout review
 
+> Historical audit of the earlier compact layout, preserved at `f249c5c`. See the [implemented revision](../2026-10-21-mirrors-implemented/README.md) for current geometry and results. Reproduction of this historical audit requires that earlier checkout.
+
 **21 October 2026 · Trim-inclusive TB10 core · Physical revision recommended**
 
 The layout has useful matching features, but it is not ready for analog matching signoff. Seven selected MOS groups have equal centroids and consistent orientation. The remaining concerns are unrelated routing over sensitive devices, unequal edge environments without matching dummies, and precision bias branches excluded from the placement groups. Four new nominal DC simulations separate these physical concerns from current-ratio errors already present in the schematic.
@@ -113,7 +115,7 @@ The reviewed GDS SHA-256 is:
 - [Archived schematic/model input provenance](bias/input_manifest.json); each case directory contains the diagnostic circuit, test deck and complete ngspice log
 - [Proposed pattern arithmetic, explicitly unimplemented](proposed_pattern_check.json)
 - [Review artifact checksums and checks](verification.json)
-- [Existing release verification](../../release/verification.json) and [tool/extraction limitations](../../README.txt)
+- [Existing release verification](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/f249c5c20f6bf5a216d05d3941f191dc6a567b2a/layout/release/verification.json) and [tool/extraction limitations](../../README.txt)
 
 Use the pinned IIC-OSIC-TOOLS container in the layout reproduction guide. With this repository mounted as `/design`, run:
 

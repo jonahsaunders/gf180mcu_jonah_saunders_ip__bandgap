@@ -5,13 +5,13 @@ Device dimensions and net names come from the generated schematic inventory.
 """
 
 from collections import defaultdict
-from itertools import combinations
 from pathlib import Path
 import json
 import math
 import klayout.db as k
 
 from layout_paths import BUILD_DIR as ROOT
+from matching_constraints import ARRAYS, CAP_X, CAP_Y, dummy_name, padded_pattern
 
 DATA = json.loads((ROOT / "primitive_manifest.json").read_text())
 LY = k.Layout()
@@ -123,7 +123,8 @@ def load_primitive(device):
         )
         vias = [(41, 0), (40, 0), (38, 0)] if model.startswith("cap_") else [(35, 0)]
         for layer in layers:
-            box(cell, layer, (x - 0.2, y - 0.2, x + 0.2, y + 0.2))
+            radius = 0.6 if model.startswith("cap_") and layer == (46, 0) else 0.2
+            box(cell, layer, (x - radius, y - radius, x + radius, y + radius))
         for layer in vias:
             box(cell, layer, (x - 0.13, y - 0.13, x + 0.13, y + 0.13))
     bounds = cell.dbbox()
@@ -152,15 +153,31 @@ def place(name, x, y, rotation=0, instance=None):
             rotation=rotation,
             bounds=[bounds.left, bounds.bottom, bounds.right, bounds.top],
             pins=[[pt.x, pt.y] for pt in pins],
+            dummy=name.startswith("DUM_"),
         )
     )
+    if name.startswith("DUM_"):
+        # Short D/G/S/B locally in M1. The single routed body access then ties
+        # every dummy terminal to its explicit schematic rail.
+        anchor = pins[3]
+        for pin in pins[:3]:
+            bend = k.DPoint(anchor.x, pin.y)
+            path = k.DPath([pin, bend, anchor], 0.4, 0.2, 0.2)
+            TOP.shapes(LY.layer(34, 0)).insert(path)
 
 
-def assemble(names, pattern, pitch=None):
+def assemble(names, pattern, pitch=None, matching=False):
     """Return an array of identical oriented units, with exact original multiplicity."""
     p = META[DEVICES[names[0]]["cell"]]
     width, height = p["bounds"].width(), p["bounds"].height()
     px, py = pitch or (width + 1.6, height + 1.6)
+    active_names = list(names)
+    if matching:
+        names = [*names, dummy_name(names)]
+        pattern = [
+            [len(names) - 1 if c == "." else ord(c) - ord("A") for c in row]
+            for row in padded_pattern(pattern)
+        ]
     count = defaultdict(int)
     units = []
     for row, labels in enumerate(pattern):
@@ -171,8 +188,8 @@ def assemble(names, pattern, pitch=None):
             units.append(
                 (
                     name,
-                    col * px + width / 2,
-                    row * py + height / 2,
+                    col * px - p["bounds"].left,
+                    row * py - p["bounds"].bottom,
                     f"{name}_{count[name]}",
                 )
             )
@@ -185,51 +202,16 @@ def assemble(names, pattern, pitch=None):
         )
         ASSIGNED.add(name)
     return dict(
-        names=names,
+        names=active_names,
+        matching=matching,
+        dummy_source=names[-1] if matching else None,
         units=units,
         width=max(len(row) for row in pattern) * px - 1.6,
         height=len(pattern) * py - 1.6,
     )
 
 
-def centroid_pattern(groups, count):
-    if groups == 2 and count == 5:
-        # Five units of each device, identical orientation, exact common x centroid.
-        # The center space is reserved for a later, explicitly netlisted dummy.
-        return [[1, 0, 1, 0, 0, None, 1, 1, 0, 0, 1]]
-    if groups == 2 and count == 6:
-        return [[0, 1, 1, 0, 0, 1], [1, 0, 0, 1, 1, 0]]
-    if groups == 3 and count == 6:
-        return [[0, 1, 2, 2, 1, 0]] * 3
-    if groups == 3 and count == 5:
-        points = list(range(15))
-        good = [
-            set(c)
-            for c in combinations(points, 5)
-            if sum(i % 5 for i in c) == 10 and sum(i // 5 for i in c) == 5
-        ]
-        for a in good:
-            for b in good:
-                if not a & b:
-                    c = set(points) - a - b
-                    return [
-                        [0 if i in a else 1 if i in b else 2 for i in range(j, j + 5)]
-                        for j in (0, 5, 10)
-                    ]
-    raise ValueError((groups, count))
-
-
-groups = []
-for names in [
-    ("M1", "M2", "M5"),
-    ("M11", "M12", "M13"),
-    ("MINP", "MINN"),
-    ("PCAS1", "PCAS2"),
-    ("PLOAD1", "PLOAD2"),
-    ("MSINK1", "MSINK2"),
-    ("PREF", "PRMIR"),
-]:
-    groups.append(assemble(names, centroid_pattern(len(names), DEVICES[names[0]]["m"])))
+groups = [assemble(names, pattern, matching=True) for names, pattern in ARRAYS]
 
 # Capacitors occupy their own area with no active devices beneath them.
 for idx in range(10):
@@ -237,13 +219,10 @@ for idx in range(10):
     p = META[d["cell"]]
     place(
         d["name"],
-        230 + idx % 5 * 77 - p["bounds"].left,
-        145 + idx // 5 * 77 - p["bounds"].bottom,
+        CAP_X + (idx % 5) * 77 - p["bounds"].left,
+        CAP_Y + (idx // 5) * 77 - p["bounds"].bottom,
     )
     ASSIGNED.add(d["name"])
-p = META[DEVICES["C1"]["cell"]]
-place("C1", 535 - p["bounds"].left, 25 - p["bounds"].bottom)
-ASSIGNED.add("C1")
 
 # Q1 centered in eight identical Q2 cells. Q3 uses the same orientation nearby.
 pnps = []
@@ -333,6 +312,73 @@ def pack(rectangles, items, margin=1.5):
     return results, failed
 
 
+def cluster(label, selectors, width, height):
+    selected = [g for g in groups if any(n in g["names"] for n in selectors)]
+    assert len(selected) == len(selectors), (label, selectors)
+    result, failed = pack([(0, 0, width, height)], selected, margin=3)
+    assert not failed, (label, [g["names"] for g in failed])
+    children, units = [], []
+    right = upper = 0
+    for group, x, y in result:
+        groups.remove(group)
+        children.append((group, x, y))
+        units.extend(
+            (name, ux + x, uy + y, instance, *rest)
+            for name, ux, uy, instance, *rest in group["units"]
+        )
+        right = max(right, x + group["width"])
+        upper = max(upper, y + group["height"])
+    groups.append(
+        dict(
+            names=[n for g in selected for n in g["names"]],
+            units=units,
+            width=right + 3,
+            height=upper + 3,
+            children=children,
+            cluster=label,
+        )
+    )
+
+
+cluster("nmos_bias", ["N1", "NTAIL", "N3", "N2"], 65, 55)
+
+# Keep the current-carrying bandgap/trim paths compact. In particular, the
+# input sense devices, R1, and PNPs must not be separated by size-only packing.
+fixed_core = []
+for selector, x, y in [
+    ("M11", 8, 3),
+    ("M1", 71, 8),
+    ("M3", 123, 8),
+    ("M3C", 123, 74),
+    ("Q1", 83, 124),
+    ("R1", 133, 101),
+    ("M14", 70, 124),
+    ("M16", 176, 8),
+    ("M15", 176, 50),
+    ("MINP", 285, 8),
+    ("PCAS1", 399, 8),
+    ("MFOLD1", 503, 8),
+    ("MFOLD1C", 549, 8),
+    ("C1", 499, 122),
+    ("PLOAD1", 569, 8),
+    ("MSINK1", 569, 116),
+    ("VBNSINK", 399, 123),
+    ("MTAIL", 399, 181),
+    ("MSU_SENSE", 499, 191),
+    ("MPSINK", 180, 178),
+    ("MPFOLD", 180, 303),
+    ("PREF", 8, 316),
+    ("VBPCASLOW", 188, 73),
+    ("VBPCASHIGHER", 188, 124),
+    ("SUPPDET", 270, 8),
+    ("R4", 285, 225),
+    ("RB_P", 213, 8),
+]:
+    group = next(g for g in groups if selector in g["names"])
+    groups.remove(group)
+    fixed_core.append((group, x, y))
+
+
 digital = [
     g
     for g in groups
@@ -349,34 +395,102 @@ resistors = [
 ]
 analog = [g for g in groups if g not in digital and g not in resistors]
 layout_groups = []
+layout_clusters = []
+
+
+def record_group(group, x, y, category):
+    record = dict(
+        category=category,
+        names=group["names"],
+        x=x,
+        y=y,
+        width=group["width"],
+        height=group["height"],
+        matching=group.get("matching", False),
+        dummy_source=group.get("dummy_source"),
+    )
+    if "children" in group:
+        layout_clusters.append(dict(**record, cluster=group["cluster"]))
+        for child, cx, cy in group["children"]:
+            record_group(child, x + cx, y + cy, category)
+    else:
+        layout_groups.append(record)
+
+
 failed = []
+for group, x, y in fixed_core:
+    for name, ux, uy, instance, *rest in group["units"]:
+        place(name, x + ux, y + uy, rest[0] if rest else 0, instance)
+    record_group(group, x, y, "analog")
 for category, rects, items in [
     ("digital", [(8, 165, 50, 137)], digital),
     ("resistors", [(70, 165, 150, 137)], resistors),
-    ("analog", [(8, 8, 212, 150), (230, 8, 295, 130)], analog),
 ]:
     result, bad = pack(rects, items)
     for group, x, y in result:
         for unit in group["units"]:
             name, ux, uy, inst = unit[:4]
             place(name, x + ux, y + uy, unit[4] if len(unit) > 4 else 0, inst)
-        layout_groups.append(
-            dict(
-                category=category,
-                names=group["names"],
-                x=x,
-                y=y,
-                width=group["width"],
-                height=group["height"],
-            )
-        )
+        record_group(group, x, y, category)
     failed.extend(bad)
+
+# Pack the remaining bias/startup devices into actual free regions instead of
+# reserving another wide analog strip. Matched arrays retain their orientation.
+free = [(8, 8, 672, 390)]
+occupied = [(g["x"], g["y"], g["width"], g["height"]) for g in layout_groups]
+occupied.append((0, 153, 68, 161))  # Complete digital DNW and substrate guard ring.
+occupied += [
+    (
+        d["bounds"][0],
+        d["bounds"][1],
+        d["bounds"][2] - d["bounds"][0],
+        d["bounds"][3] - d["bounds"][1],
+    )
+    for d in PLACED
+    if d["source"].startswith("C") and d["source"] != "C1"
+]
+for x, y, w, h in occupied:
+    x, y, w, h = x - 1.5, y - 1.5, w + 3, h + 3
+    remaining = []
+    for fx, fy, fw, fh in free:
+        if x >= fx + fw or x + w <= fx or y >= fy + fh or y + h <= fy:
+            remaining.append((fx, fy, fw, fh))
+            continue
+        if x > fx:
+            remaining.append((fx, fy, x - fx, fh))
+        if x + w < fx + fw:
+            remaining.append((x + w, fy, fx + fw - x - w, fh))
+        if y > fy:
+            remaining.append((fx, fy, fw, y - fy))
+        if y + h < fy + fh:
+            remaining.append((fx, y + h, fw, fy + fh - y - h))
+    free = remaining
+result, bad = pack(free, analog)
+for group, x, y in result:
+    for name, ux, uy, instance, *rest in group["units"]:
+        place(name, x + ux, y + uy, rest[0] if rest else 0, instance)
+    record_group(group, x, y, "analog")
+failed.extend(bad)
+assert not failed, [g["names"] for g in failed]
+
+for i, first in enumerate(PLACED):
+    ax, ay, ar, at = first["bounds"]
+    for second in PLACED[i + 1 :]:
+        bx, by, br, bt = second["bounds"]
+        assert ar <= bx or br <= ax or at <= by or bt <= ay, (
+            first["name"],
+            second["name"],
+            "overlapping primitive bounds",
+        )
 
 LY.write(str(ROOT / "placement_candidate.gds"))
 (ROOT / "placement.json").write_text(
     json.dumps(
         dict(
-            placed=PLACED, groups=layout_groups, unplaced=[g["names"] for g in failed]
+            placed=PLACED,
+            groups=layout_groups,
+            clusters=layout_clusters,
+            unplaced=[g["names"] for g in failed],
         ),
         indent=2,
     )

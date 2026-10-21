@@ -1,0 +1,107 @@
+{
+  "gds_sha256": "868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36",
+  "mirror_ratios": [
+    {
+      "pair": [
+        "M1",
+        "M2"
+      ],
+      "schematic_3.3V_percent": -0.004778903745217278,
+      "previous_3.3V_percent": -0.007095294876080516,
+      "revised_3.3V_percent": -0.00438874240946685,
+      "schematic_5V_percent": -0.013300769928792366,
+      "previous_5V_percent": -0.015330283717318594,
+      "revised_5V_percent": -0.012974493122597242
+    },
+    {
+      "pair": [
+        "M5",
+        "M2"
+      ],
+      "schematic_3.3V_percent": 0.0039369201028316425,
+      "previous_3.3V_percent": -0.012196294287813991,
+      "revised_3.3V_percent": 0.004254374631451618,
+      "schematic_5V_percent": 0.002606371712277067,
+      "previous_5V_percent": -0.013423734291673206,
+      "revised_5V_percent": 0.0028442817080920335
+    },
+    {
+      "pair": [
+        "PLOAD2",
+        "PLOAD1"
+      ],
+      "schematic_3.3V_percent": 0.0006705204991463987,
+      "previous_3.3V_percent": 0.006321988452806515,
+      "revised_3.3V_percent": -0.009938124169095452,
+      "schematic_5V_percent": 0.002090634075013753,
+      "previous_5V_percent": 0.009709420152925752,
+      "revised_5V_percent": -0.011708209853900087
+    },
+    {
+      "pair": [
+        "MSINK2",
+        "MSINK1"
+      ],
+      "schematic_3.3V_percent": 0.0019331333524830185,
+      "previous_3.3V_percent": 0.0017314140417390433,
+      "revised_3.3V_percent": 0.0022621149534662877,
+      "schematic_5V_percent": 0.00034762921601316776,
+      "previous_5V_percent": 7.313910408424107e-05,
+      "revised_5V_percent": 0.0007755230050587869
+    },
+    {
+      "pair": [
+        "MFOLD2",
+        "MFOLD1"
+      ],
+      "schematic_3.3V_percent": 0.0011890802332104045,
+      "previous_3.3V_percent": 0.006839155947035991,
+      "revised_3.3V_percent": -0.00940853414295173,
+      "schematic_5V_percent": 0.0036471617860023287,
+      "previous_5V_percent": 0.011274429410201847,
+      "revised_5V_percent": -0.009968692249684441
+    },
+    {
+      "pair": [
+        "PRMIR",
+        "PREF"
+      ],
+      "schematic_3.3V_percent": 1.3810974780609664,
+      "previous_3.3V_percent": 1.3798496938841165,
+      "revised_3.3V_percent": 1.382782313863462,
+      "schematic_5V_percent": 2.5945671290369177,
+      "previous_5V_percent": 2.592163051706331,
+      "revised_5V_percent": 2.59685419772564
+    },
+    {
+      "pair": [
+        "M18",
+        "M16"
+      ],
+      "schematic_3.3V_percent": 4.038389078868687,
+      "previous_3.3V_percent": 4.048605653373172,
+      "revised_3.3V_percent": 4.028620638541325,
+      "schematic_5V_percent": 9.723154280548151,
+      "previous_5V_percent": 9.735502593341195,
+      "revised_5V_percent": 9.712441642826475
+    }
+  ],
+  "psrr": [
+    {
+      "supply_V": 3.3,
+      "previous_min_dB": 47.16976822367229,
+      "revised_min_dB": 48.10031619398102,
+      "change_dB": 0.93054797030873,
+      "schematic_min_dB": 50.55737492200636,
+      "frequency_points": 481
+    },
+    {
+      "supply_V": 5.0,
+      "previous_min_dB": 52.11997330600199,
+      "revised_min_dB": 53.36893810552198,
+      "change_dB": 1.2489647995199888,
+      "schematic_min_dB": 52.03993266999846,
+      "frequency_points": 481
+    }
+  ]
+}

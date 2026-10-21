@@ -6,6 +6,7 @@ achieved density; it never edits, disables, or filters verification rules.
 
 from pathlib import Path
 import json
+import math
 import klayout.db as k
 
 from layout_paths import BUILD_DIR as ROOT
@@ -38,7 +39,11 @@ def inside_boundary(candidate):
 # prevents fill placement from changing the surroundings of individual units.
 matching = k.Region()
 for group in placement["groups"]:
-    if len(group["names"]) > 1 or group["category"] == "resistors":
+    if (
+        group.get("matching")
+        or len(group["names"]) > 1
+        or group["category"] == "resistors"
+    ):
         matching += rectangle(group["x"], group["y"], group["width"], group["height"])
 for device in placement["placed"]:
     if device["model"].startswith(("ppoly", "nwell", "pplus")):
@@ -62,14 +67,45 @@ for number, purpose, gap in [
     comp_obstacle += grow(layer_region(number, purpose), gap)
 comp_obstacle = comp_obstacle.merged()
 comp_fill = k.Region()
-for row in range(39):
-    for col in range(77):
+for row in range(math.ceil(boundary.top * layout.dbu / 8)):
+    for col in range(math.ceil(boundary.right * layout.dbu / 8)):
         x = 2.0 + col * 8 + (row % 2) * 1.6
         y = 4.0 + row * 8 + (col % 2) * 1.6
         candidate = rectangle(x, y, 5, 5)
         if inside_boundary(candidate) and (candidate & comp_obstacle).is_empty():
             comp_fill += candidate
 top.shapes(layout.layer(22, 4)).insert(comp_fill)
+
+# GF180 DPF: 5.6 um poly squares over selected 5 um dummy-COMP squares.
+# Respect uncoded analog exclusions and M1/M2 spacing as well as coded DRC.
+poly_obstacle = grow(matching, 8.005)
+for number, purpose, gap in [
+    (22, 0, 3.205),
+    (30, 0, 5.005),
+    (21, 0, 1.005),
+    (12, 0, 2.005),
+    (204, 0, 1.005),
+    (55, 0, 1.005),
+    (110, 5, 19.705),
+    (111, 5, 19.705),
+    (151, 5, 29.705),
+    (34, 0, 2.005),
+    (36, 0, 2.005),
+]:
+    poly_obstacle += grow(layer_region(number, purpose), gap)
+poly_candidates = []
+for square in comp_fill.each():
+    candidate = k.Region(square).sized(300)
+    if inside_boundary(candidate) and (candidate & poly_obstacle).is_empty():
+        poly_candidates.append(candidate)
+poly_fill = k.Region()
+required = max(
+    0, math.ceil((0.145 * boundary.area() - layer_region(30).area()) / (5600**2))
+)
+assert len(poly_candidates) >= required, (len(poly_candidates), required)
+for index in range(required):
+    poly_fill += poly_candidates[index * len(poly_candidates) // required]
+top.shapes(layout.layer(30, 4)).insert(poly_fill)
 
 # Metal fill is 2 um square on a staggered 3.2 um lattice. Consecutive levels
 # use different offsets. Keep the specified 1 um gap to adjacent circuit
@@ -81,15 +117,15 @@ exclude = grow(fuse + matching, 6.005)
 records = []
 for level, number in enumerate(metals):
     obstacle = exclude + grow(drawn[level], 2.005)
-    previous = drawn[level - 1] if level else layer_region(30)
+    previous = drawn[level - 1] if level else layer_region(30) + poly_fill
     obstacle += grow(previous, 1.005)
     if level < len(metals) - 1:
         obstacle += grow(drawn[level + 1], 1.005)
     obstacle = obstacle.merged()
     fill = k.Region()
     offset = 0.5 * level
-    for row in range(97):
-        for col in range(193):
+    for row in range(math.ceil(boundary.top * layout.dbu / 3.2)):
+        for col in range(math.ceil(boundary.right * layout.dbu / 3.2)):
             x = 2.0 + col * 3.2 + (row % 2) * 0.5 + offset
             y = 4.0 + row * 3.2 + (col % 2) * 0.5 + offset
             candidate = rectangle(x, y, 2, 2)
@@ -118,5 +154,14 @@ print(
 )
 layout.write(str(ROOT / "filled_candidate.gds"))
 (ROOT / "fill_summary.json").write_text(
-    json.dumps({"metal": records, "comp_density": comp_density}, indent=2) + "\n"
+    json.dumps(
+        {
+            "metal": records,
+            "comp_density": comp_density,
+            "poly_density": (layer_region(30) + poly_fill).area() / boundary.area(),
+            "poly_fill_squares": poly_fill.count(),
+        },
+        indent=2,
+    )
+    + "\n"
 )

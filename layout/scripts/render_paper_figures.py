@@ -20,8 +20,8 @@ CAPTIONS = [
         "harness-area-fit",
         "Fit within the updated draft user area",
         "Approximately 1270 × 410 µm, from an organizer announcement supplied by the designer on 20 October 2026. "
-        "The existing 614.0 × 307.6 µm core occupies 36.3% of that rectangle. A centered placement would leave "
-        "328 µm on each side and 51.2 µm above/below. These are geometric margins, not verified routing or boundary clearances. "
+        "Dimensions, occupied fraction and centered margins are calculated from the released GDS. "
+        "These are geometric margins, not verified routing or boundary clearances. "
         "The centered position is illustrative; no GDS placement, slot, pin assignment or wrapper connection has changed. "
         "This draft target supersedes the earlier inferred smaller envelope for planning. Keep the analog core compact "
         "and use spare area selectively for matching, isolation, supply routing and harness access.",
@@ -30,20 +30,20 @@ CAPTIONS = [
         "psrr-before-after",
         "Supply rejection and routing improvement",
         "Simulated PSRR at TT, 25 °C, trim 72, DVDD = 3.3 V, ideal supplies/grounds, and no external load. "
-        "The upper plots compare schematic, legacy raw RC, and the two layouts using the same conserved-RCC approximation. "
+        "The upper plots compare schematic, the previously published layout, and the matching revision using the same conserved-RCC approximation. "
         "The lower plots expand the minima; their vertical scales differ. Minima are sampled over 1 Hz–1 MHz. "
-        "Routing alone adds 0.24 / 0.25 dB. The larger recovery from legacy raw RC comes principally from extraction corrections. "
+        "Annotated changes compare the two physical layouts with the same corrected extraction method. "
         "The full curves still differ from the schematic. RCC is approximate and omits ground resistance.",
     ),
     (
         "physical-layout",
         "Routed core layout",
         "Rendering of the actual routed and filled GDS, not a silicon micrograph. GF180MCU-D, five metals, MIM option B, "
-        "1 kΩ/□ poly. Core bounds are 614.0 × 307.6 µm. Twelve numbered device-group labels and eleven capacitor labels "
-        "locate the input pair, mirrors, cascodes, sinks, PNPs, bias and startup devices. Numbers 1–8 match the placement figure. "
+        "1 kΩ/□ poly. Sixteen numbered device-group labels and eleven capacitor labels "
+        "locate the input pair, mirrors, cascodes, sinks, PNPs, bias and startup devices. Numbers 1–14 match the placement figure. "
         "The dashed outline identifies the trim-logic deep n-well region. Labels overlay the actual geometry. "
         "Layout polygons are rasterized at 600 dpi inside the vector exports; dimensions and labels remain vector. "
-        "The GDS is unchanged by this figure revision. Its existing checks report zero DRC violations and an LVS match. "
+        "The matching revision reports zero DRC violations and an LVS match. "
         "Shuttle integration and full analog qualification remain open.",
     ),
     (
@@ -60,7 +60,7 @@ CAPTIONS = [
         "Saved placement coordinates and device-group bounds, with actual GDS dimensions. Numbered groups identify matching sets; "
         "other device groups remain drawn. Blue: analog; amber: trim resistors; violet: digital trim circuitry; green: MIM capacitors. "
         "The dashed outline marks the trim-logic deep n-well region. Routing is omitted for clarity. "
-        "This placement is unchanged by the PSRR routing revision.",
+        "The core mirrors, PNPs and PTAT resistor are clustered beside the trim network. Explicit tied-off MOS dummies surround every selected array.",
     ),
     (
         "matched-arrays",
@@ -68,7 +68,7 @@ CAPTIONS = [
         "Unit placement origins from the saved placement, with local coordinates and equal horizontal/vertical scale in each panel. "
         "Symbols identify source devices; black crosses show arithmetic centroids of their unit origins. Overlapping centroids share a cross. "
         "Q1 lies within the Q2 array; Q3 is separate. The drawing does not establish matched parasitics or statistical mismatch. "
-        "Edge dummies and matched routing remain review items.",
+        "Gray squares show tied-off dummy units. The M1/M2/M5 local drain routes have equal length, metal area and via count; global parasitics are not claimed equal.",
     ),
     (
         "post-layout-screens",
@@ -85,7 +85,8 @@ CAPTIONS = [
         "Trim remains 72; there is no per-corner calibration. Columns separate MOS corners; rows separate AVDD. "
         "Each temperature contains nine BJT/resistor combinations. Open markers show samples and vertical strokes show their range; "
         "coincident samples overlap. Temperatures are plotted exactly, without horizontal jitter. "
-        "All runs converged; convergence does not establish specification compliance.",
+        "All saved DC points completed; recovered solver fallback warnings are retained in the released log and summary. "
+        "Convergence does not establish specification compliance.",
     ),
     (
         "both-supply-startup",
@@ -93,7 +94,7 @@ CAPTIONS = [
         "Simulated analog/digital rail cycling and resulting VREF at TT, 25 °C, trim 72. The upper panel shows saved supply waveforms, "
         "including DVDD = 3.3 V in both cases; the lower panel shows VREF. High trim inputs track DVDD. "
         "There is no forced initial state or startup injection. Conserved-RCC approximation, with ground resistance omitted. "
-        "Cold/restart settling after the ramp to ±0.5%: 200.5 / 109.3 µs at 3.3 V and 110.6 / 47.4 µs at 5 V.",
+        "The release summary reports cold/restart settling after the ramp to ±0.5% of the final value.",
     ),
 ]
 

@@ -1,0 +1,58 @@
+{
+  "physical_ports": [
+    "avdd",
+    "avss",
+    "vref",
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5",
+    "b6",
+    "dvss",
+    "dvdd"
+  ],
+  "extraction_ports": [
+    "avdd",
+    "avss",
+    "vref",
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5",
+    "b6",
+    "dvss",
+    "dvdd",
+    "net3",
+    "net4",
+    "v1",
+    "vq2",
+    "vq3"
+  ],
+  "internal_anchor_points_um": {
+    "vq2": [
+      149.5,
+      49.85
+    ],
+    "v1": [
+      159.5,
+      59.85
+    ],
+    "vq3": [
+      179.5,
+      59.85
+    ],
+    "net3": [
+      85.79,
+      65.24
+    ],
+    "net4": [
+      85.79,
+      44.29
+    ]
+  },
+  "scope": "Temporary extraction interface only; fabricated geometry and connectivity unchanged"
+}

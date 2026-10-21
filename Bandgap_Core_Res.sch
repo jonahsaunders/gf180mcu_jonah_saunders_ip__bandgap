@@ -2576,3 +2576,20 @@ C {lab_wire.sym} 3360 642.5 0 0 {name=p180 sig_type=std_logic lab=b4_b
 }
 C {lab_wire.sym} 3360 802.5 0 0 {name=p181 sig_type=std_logic lab=b6_b
 }
+
+C {code_shown.sym} 5100 1100 0 0 {name=LAYOUT_MATCHING_DUMMIES only_toplevel=false value="* Explicit layout perimeter/empty-site dummies. All D/G/S/B terminals
+* connect to the quiet body rail; no dummy gate or diffusion is floating.
+XDUM_M1 avdd avdd avdd avdd pfet_05v0 W=16.75u L=2u m=22
+XDUM_M11 avdd avdd avdd avdd pfet_05v0 W=16.42u L=4u m=34
+XDUM_MINP avdd avdd avdd avdd pfet_05v0 W=54.89u L=4u m=29
+XDUM_PCAS1 avdd avdd avdd avdd pfet_05v0 W=22.21u L=8u m=20
+XDUM_PLOAD1 avdd avdd avdd avdd pfet_05v0 W=20.76u L=4u m=20
+XDUM_MSINK1 avss avss avss avss nfet_05v0 W=16.34u L=8u m=20
+XDUM_PREF avdd avdd avdd avdd pfet_05v0 W=18.75u L=8u m=29
+XDUM_M3 avss avss avss avss nfet_05v0 W=14.6u L=4u m=14
+XDUM_MFOLD1 avss avss avss avss nfet_05v0 W=18.49u L=6u m=10
+XDUM_M16 avss avss avss avss nfet_05v0 W=7.55u L=4u m=10
+XDUM_MPSINK avdd avdd avdd avdd pfet_05v0 W=18.95u L=8u m=23
+XDUM_MPFOLD avdd avdd avdd avdd pfet_05v0 W=18.99u L=8u m=20
+XDUM_VBNSINK avss avss avss avss nfet_05v0 W=12.31u L=8u m=10
+"}

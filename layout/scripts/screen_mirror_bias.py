@@ -8,44 +8,74 @@ Uses archived, hashed schematic/model inputs; checks a build netlist if present.
 from collections import defaultdict
 from itertools import product
 from pathlib import Path
+import argparse
 import hashlib
 import json
 import re
 import subprocess
 
 LAYOUT = Path(__file__).resolve().parent.parent
-OUT = LAYOUT / "reviews/2026-10-21-mirrors/bias"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument(
+    "--build", type=Path, help="Verified build directory for a new layout revision"
+)
+parser.add_argument("--out", type=Path)
+parser.add_argument("--release", type=Path, default=LAYOUT / "release")
+parser.add_argument(
+    "--schematic",
+    type=Path,
+    default=LAYOUT.parent / "Bandgap_Core_Res.sch",
+    help="Exact source schematic associated with the selected build/release",
+)
+args = parser.parse_args()
+ROOT = args.build or args.release
+OUT = args.out or (ROOT / "mirror_bias" if args.build else LAYOUT / "build/mirror_bias")
 OUT.mkdir(parents=True, exist_ok=True)
-inventory = json.loads((LAYOUT / "release/primitive_manifest.json").read_text())
-aliases = json.loads((LAYOUT / "release/routing_status.json").read_text())["aliases"]
+inventory = json.loads((ROOT / "primitive_manifest.json").read_text())
+aliases = json.loads((ROOT / "routing_status.json").read_text())["aliases"]
 devices = {d["name"]: d for d in inventory["devices"]}
-provenance = json.loads((OUT / "input_manifest.json").read_text())
-release = json.loads((LAYOUT / "release/verification.json").read_text())
-for name, expected in provenance["archived_input_sha256"].items():
-    assert hashlib.sha256((OUT / name).read_bytes()).hexdigest() == expected, name
-assert (
-    hashlib.sha256((LAYOUT.parent / "Bandgap_Core_Res.sch").read_bytes()).hexdigest()
-    == release["schematic_sha256"]
-    == provenance["schematic_sha256"]
-)
-rcc_path = LAYOUT / "release/pex/Bandgap_Core_Res_rcc_simulation.spice"
-assert (
-    hashlib.sha256(rcc_path.read_bytes()).hexdigest()
-    == release["sha256"]["pex/Bandgap_Core_Res_rcc_simulation.spice"]
-    == provenance["rcc_sha256"]
-)
-header = (OUT / "model_header.spice").read_text()
-schematic = (OUT / "schematic_source.spice").read_text()
-build_netlist = LAYOUT / "build/netlists/TB10_RESISTOR_TRIM.spice"
-if build_netlist.exists():
-    source = build_netlist.read_text()
-    build_header = source.split("* TB_PVT_MODELS_BEGIN", 1)[1].split(
+release = json.loads((ROOT / "verification.json").read_text())
+rcc_path = ROOT / "pex/Bandgap_Core_Res_rcc_simulation.spice"
+schematic_hash = hashlib.sha256(args.schematic.read_bytes()).hexdigest()
+assert schematic_hash == release["schematic_sha256"]
+if args.build:
+    source = (ROOT / "netlists/TB10_RESISTOR_TRIM.spice").read_text()
+    header = source.split("* TB_PVT_MODELS_BEGIN", 1)[1].split(
         "* TB_PVT_MODELS_END", 1
     )[0]
     start = source.index(".subckt Bandgap_Core_Res ")
     stop = source.index("\n.ends", start)
-    build_schematic = source[start:stop] + "\n.ends Bandgap_Core_Res\n"
-    assert header == build_header and schematic == build_schematic
+    schematic = source[start:stop] + "\n.ends Bandgap_Core_Res\n"
+    assert schematic == (ROOT / "postlayout/schematic.spice").read_text()
+    (OUT / "model_header.spice").write_text(header)
+    (OUT / "schematic_source.spice").write_text(schematic)
+    provenance = {
+        "schematic_sha256": schematic_hash,
+        "rcc_sha256": hashlib.sha256(rcc_path.read_bytes()).hexdigest(),
+        "gds_sha256": release["sha256"]["filled_candidate.gds"],
+        "archived_input_sha256": {
+            name: hashlib.sha256((OUT / name).read_bytes()).hexdigest()
+            for name in ["model_header.spice", "schematic_source.spice"]
+        },
+    }
+    (OUT / "input_manifest.json").write_text(json.dumps(provenance, indent=2) + "\n")
+    nominal_path = ROOT / "postlayout/nominal_summary.json"
+else:
+    archived = ROOT / "mirror_bias"
+    provenance = json.loads((archived / "input_manifest.json").read_text())
+    assert schematic_hash == provenance["schematic_sha256"]
+    assert (
+        hashlib.sha256(rcc_path.read_bytes()).hexdigest()
+        == release["sha256"]["pex/Bandgap_Core_Res_rcc_simulation.spice"]
+        == provenance["rcc_sha256"]
+    )
+    for name, expected in provenance["archived_input_sha256"].items():
+        assert (
+            hashlib.sha256((archived / name).read_bytes()).hexdigest() == expected
+        ), name
+    header = (archived / "model_header.spice").read_text()
+    schematic = (archived / "schematic_source.spice").read_text()
+    nominal_path = ROOT / "nominal_screen.json"
 
 
 def canonical(node):
@@ -114,11 +144,16 @@ def diagnostic_circuit(text, mode):
                 "instance": tokens[0],
                 "nodes": [measured, *nodes[1:]],
                 "voltage_probe": probe,
+                "multiplicity": (
+                    int(float(re.search(r"\bm=([\d.]+)", line, re.I)[1]))
+                    if re.search(r"\bm=([\d.]+)", line, re.I)
+                    else 1
+                ),
             }
         )
     counts = defaultdict(int)
     for probe in probes:
-        counts[probe["source"]] += 1
+        counts[probe["source"]] += 1 if mode == "schematic" else probe["multiplicity"]
     for name, device in devices.items():
         if "fet_" in device["model"]:
             assert counts[name] == (1 if mode == "schematic" else device["m"]), (
@@ -203,20 +238,42 @@ def run_case(mode, supply):
     summary = {}
     for name in sorted({probe["source"] for probe in probes}):
         rows = [r for r in records if r["source"] == name]
+        units = sum(row["multiplicity"] for row in rows)
+
+        def mean_difference(first, second):
+            return (
+                sum((row[first] - row[second]) * row["multiplicity"] for row in rows)
+                / units
+            )
+
         summary[name] = {
             "current_uA": abs(sum(row["aid"] for row in rows)) * 1e6,
-            "vds_mean_V": sum(row["avd"] - row["avs"] for row in rows) / len(rows),
-            "vgs_mean_V": sum(row["avg"] - row["avs"] for row in rows) / len(rows),
-            "vsb_mean_V": sum(row["avs"] - row["avb"] for row in rows) / len(rows),
+            "vds_mean_V": mean_difference("avd", "avs"),
+            "vgs_mean_V": mean_difference("avg", "avs"),
+            "vsb_mean_V": mean_difference("avs", "avb"),
             "source_voltage_range_V": [
                 min(row["avs"] for row in rows),
                 max(row["avs"] for row in rows),
             ],
         }
     vref = float(re.search(r"(?m)^v\(vref\)\s*=\s*([-+\d.eE]+)", log)[1])
+    nominal_records = (
+        json.loads(nominal_path.read_text())
+        if nominal_path.exists()
+        else [
+            json.loads(
+                (
+                    ROOT
+                    / "postlayout"
+                    / f"{mode}_typical_typical_typical_{supply:g}"
+                    / "metrics.json"
+                ).read_text()
+            )
+        ]
+    )
     expected = next(
         row["vref_V"]
-        for row in json.loads((LAYOUT / "release/nominal_screen.json").read_text())
+        for row in nominal_records
         if row["mode"] == mode and row["supply_V"] == supply and not row["transient"]
     )
     assert abs(vref - expected) < 1e-6, (mode, supply, vref, expected)

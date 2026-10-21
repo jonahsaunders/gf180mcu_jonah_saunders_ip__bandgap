@@ -1,119 +1,20 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bandgap PSRR investigation and layout revision</title><style>
-body{font:17px/1.6 system-ui,sans-serif;max-width:1120px;margin:42px auto;padding:0 24px;color:#203044}
-h1{font-size:36px;line-height:1.15}h2{margin-top:38px;font-size:24px}a{color:#006e81}
-.note{padding:18px 22px;background:#eef7f5;border-left:5px solid #007f76}.limit{background:#fff4e8;border-color:#ab7029}
-table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;padding:10px;border-bottom:1px solid #d9e1e8}th{background:#f0f4f6}
-img{width:100%;height:auto}figure{margin:28px 0}figcaption,.small{font-size:14px;color:#586a7a}code{background:#eef2f4;padding:2px 4px}
-li{margin:7px 0}@media print{body{font-size:11pt;margin:10mm}figure,table{break-inside:avoid}}
-</style><body><p class="small">Jonah Saunders · GF180MCU-D · Chipalooza #3 · 19 October 2026</p>
-<h1>Why the extracted PSRR looked so different</h1>
-<div class="note"><strong>The discrepancy has both extraction and physical causes.</strong> The revised layout produces about
-47.2 dB at 3.3 V and 52.2 dB at 5 V in the capacitance-conserving RCC approximation. Most of the improvement over the old
-39.3 / 42.4 dB report comes from correcting extraction. The physical routing change adds about 0.24 / 0.25 dB when measured
-with the same corrected model. The remaining 3.3 V gap to the schematic is about 3.36 dB.</div>
-<p><a href="release/Bandgap_Core_Res.gds">Revised GDS</a> · <a href="release/verification.json">Verification and hashes</a> ·
-<a href="release/psrr/comparison.json">PSRR measurements</a> · <a href="README.txt">Reproduction instructions</a> ·
-<a href="figures/index.html">Paper figure gallery — PDF, SVG and PNG</a></p>
-<p class="small">Figures have been redrawn with consistent paper-scale typography, dimensioned layout views and 600-dpi raster exports.
-Simulation data and GDS geometry are unchanged. The gallery provides complete captions and vector downloads.</p>
-<figure><img src="figures/psrr-before-after.png" alt="Before and after PSRR curves at both supply voltages"><figcaption>
-All curves use the same schematic, trim code 72, TT models, 25 °C, ideal supply sources, and no added external load.
-Higher rejection is better. The lower panels expand the RCC minima and use different vertical scales; routing alone adds 0.24 / 0.25 dB.
-Conserved RCC is explicitly an approximate model; raw RC exports remain available.
-<a href="figures/psrr-before-after.pdf">PDF</a> · <a href="figures/psrr-before-after.svg">SVG</a></figcaption></figure>
-<table><thead><tr><th>Model / layout</th><th>Minimum, 3.3 V</th><th>Minimum, 5 V</th></tr></thead><tbody><tr><td>Schematic</td><td>50.56 dB</td><td>52.04 dB</td></tr><tr><td>Previous raw RC · Magic 8.3.678</td><td>39.25 dB</td><td>42.40 dB</td></tr><tr><td>Same layout · raw RC · Magic 8.3.685</td><td>40.99 dB</td><td>44.37 dB</td></tr><tr><td>Same layout · conserved RCC</td><td>46.96 dB</td><td>51.91 dB</td></tr><tr><td>Revised layout · raw RC</td><td>41.14 dB</td><td>44.51 dB</td></tr><tr><td>Revised layout · conserved RCC</td><td>47.20 dB</td><td>52.16 dB</td></tr></tbody></table>
-<p class="small">Minima over 481 frequency points from 1 Hz to 1 MHz. Matching minima does not imply identical curves.
-The 45 dB planning threshold is exceeded in the corrected nominal screen; the original testbench's 60 dB requirement is still
-unmet, including by the schematic.</p>
-
-<h2>What caused the discrepancy</h2><ol>
-<li><strong>Old sidewall-capacitance coefficient.</strong> The installed Magic 8.3.678 predates the official correction.
-On the identical GDS, Magic 8.3.685 changes raw-RC minima from 39.25 / 42.40 dB to 40.99 / 44.37 dB.
-The <a href="https://iic-jku.github.io/klayout-pex-website/doc/doc.html">KLayout-PEX documentation</a> identifies the version issue,
-and the <a href="https://github.com/RTimothyEdwards/magic/commit/51522d6889bf0f80695d6e2948a7a12d172eb1c7">official Magic change</a>
-explains the coefficient correction.</li>
-<li><strong>Raw RC does not conserve the capacitance-only network.</strong> Removing every wire resistor from raw RC still leaves
-the large midband loss. Magic's resistance extractor converts coupling capacitance into grounded rnode capacitance while its
-RC export retains coupling capacitors. For example, baseline <code>pm1</code> has 58.74684 fF summed coupling and 58.74685 fF
-in its added grounded rnodes. This is supported by the generated files and the official
-<a href="https://github.com/RTimothyEdwards/magic/blob/bed8d4ff84333767aa923d469d339cd05c56a00a/resis/ResReadExt.c">ResReadCapacitor source</a>.
-<a href="release/psrr/rnode_coupling_evidence.json">Measured evidence</a>.</li>
-<li><strong>Residual physical coupling into the amplifier.</strong> With the corrected capacitance-only model, removing the
-AVDD–<code>xf2</code> coupling diagnostically raises the 3.3 V minimum from 46.93 to 49.57 dB; removing AVDD–<code>vgn2</code>
-raises it to 48.95 dB. These counterfactuals identify sensitivity, not achievable layout performance. Supply ripple is coupled
-into internal amplifier nodes and changes the closed-loop AC response around 20–30 kHz. Wire resistance is a smaller contributor
-to the minimum, although it affects DC supply rejection and output voltage.</li></ol>
-<h2>Physical changes retained</h2><ul>
-<li>Move the long <code>vgn2</code> M4 route onto M5, with thirteen added via transitions and M4 retained at the connection points.</li>
-<li>Keep the 2 µm top-metal supply straps 3 µm away in projection from sensitive amplifier wiring. Lower-metal supply connections
-remain complete where optional reinforcement cannot reach.</li>
-<li>Apply the correct 0.46 µm top-metal spacing when building supply straps. Retain all device sizes, trim circuitry, matched-array
-positions, and schematic connections.</li></ul>
-<p>A more compact macro placement also passed DRC/LVS but worsened corrected PSRR to 44.30 / 49.41 dB and shifted VREF upward
-by about 2.3 mV. It was rejected. A lower-metal supply detour was tested and also not retained. The selected routing has a small
-tradeoff: low-frequency PSRR changes from 81.57 / 71.63 dB to 80.73 / 71.13 dB, while worst-band rejection improves.
-The nominal VREF shift relative to the previous physical layout is about 64 / 81 µV.</p>
-<table><tr><th>Extracted coupling / load</th><th>Original geometry</th><th>Revised geometry</th></tr><tr><td>avdd – xf2</td><td>24.80 fF</td><td>24.90 fF</td></tr><tr><td>avdd – vgn2</td><td>18.26 fF</td><td>19.88 fF</td></tr><tr><td>avss – pm1</td><td>18.41 fF</td><td>18.89 fF</td></tr><tr><td>vbp_cas – vgn2</td><td>10.11 fF</td><td>9.77 fF</td></tr></table>
-<p>The intended spacing change does not reduce every sensitive capacitance: AVDD–vgn2 coupling actually increases.
-The modest net improvement reflects the changed capacitance distribution, not a demonstrated removal of that feedthrough path.
-The full PSRR curves still differ from the schematic, especially in the midband; matching the 5 V minimum alone does not resolve that.</p>
-
-<h2>How the corrected model is bounded</h2>
-<p>The new adapter preserves every extracted device and interconnect resistor, then makes each original net-pair capacitance total
-equal to the capacitance-only extraction of the same GDS. Relative capacitance distribution along a wire uses the raw extractor's
-weights and remains approximate. It does not tune capacitor values to improve PSRR. Both raw and adapted models are delivered.</p>
-<p>The adapter checks every capacitance pair. Independently, collapsing all interconnect resistances reproduces the C-only PSRR
-curve within a 0.001 dB tolerance at all 481 frequencies and both supplies.
-<a href="release/psrr/conservation_ac_check.json">AC consistency check</a> ·
-<a href="release/pex/capacitance_conservation.json">Capacitance audit</a>.</p>
-
-<h2>Verification of the actual revised GDS</h2><ul>
-<li>Full, unchanged GF180MCU-D KLayout DRC: <strong>zero violations</strong>, including density checks.</li>
-<li>Full schematic-to-GDS LVS: <strong>matched</strong>. Independent device-only and collapsed-RC extraction audits also match.</li>
-<li>Fresh source rebuild: zero geometry differences across 37 layers compared with the selected candidate.</li>
-<li>All 128 trim codes, temperature sweeps, analog-only and simultaneous two-rail startup/restart, and 360 fixed-code process/supply/temperature
-DC points complete. The existing 37 suite checks and three plotting checks pass.</li></ul>
-<table><tr><th>AVDD</th><th>VREF, trim 72</th><th>Analog current</th><th>Box TC −40…125 °C</th><th>Both-rail cold / restart settling</th></tr><tr><td>3.3 V</td><td>1.194404 V</td><td>24.33 µA</td><td>10.08 ppm/°C</td><td>200.5 / 109.3 µs</td></tr><tr><td>5 V</td><td>1.194579 V</td><td>31.67 µA</td><td>10.01 ppm/°C</td><td>110.6 / 47.4 µs</td></tr></table>
-<p class="small">Settling is measured to ±0.5% after the end of the supply ramp. Fixed-code DC corner results span
-1.175964…1.219987 V; these are convergence screens, not a statement that every specification passes.</p>
-<figure><img src="figures/both-supply-startup.png" alt="Both power rails ramp from zero and restart"><figcaption>
-The upper panel shows both supply waveforms; the lower panel shows VREF. No forced initial state or startup kick.
-High trim inputs track DVDD. <a href="figures/both-supply-startup.pdf">PDF</a></figcaption></figure>
-<h2>Floorplan and physical scope</h2>
-<p>The complete TB10 trim-inclusive IP core still contains 272 device units, seven trim controls and eleven MIM capacitors.
-Device placement is unchanged by the retained PSRR revision. The core occupies 614.0 × 307.6 µm.</p>
-<div class="note"><strong>Planning update — 20 October 2026.</strong> The designer supplied an organizer announcement
-describing approximately <strong>1270 × 410 µm</strong> user areas in the first draft of the GF180 harness floorplan.
-This supersedes the smaller inferred envelope for planning. The existing core fits geometrically and uses
-<strong>36.3%</strong> of the draft area. <a href="planning_envelope.json">Announcement and planning assumptions</a>.</div>
-<figure><img src="figures/harness-area-fit.png" alt="Existing core centered inside the approximate 1270 by 410 micron user area">
-<figcaption>Illustrative geometric fit: 328 µm each side and 51.2 µm above/below if centered.
-Final wrapper clearance and pin placement are unverified. No GDS placement has changed.
-<a href="figures/harness-area-fit.pdf">PDF</a> · <a href="figures/harness-area-fit.svg">SVG</a></figcaption></figure>
-<p>The wider draft area removes the need to compact the core to the previous inferred boundary.
-The next layout iteration should keep the analog core compact, shorten sensitive amplifier and C1 connections, and
-use spare area selectively for matching dummies, isolation, supply distribution and harness routing.
-Stretching the circuit to occupy the full width would unnecessarily lengthen sensitive connections.</p>
-<figure><img src="figures/initial-floorplan.png" alt="Initial conceptual box floorplan"><figcaption>Original planning allocations, redrawn for clarity.
-This historical envelope has been superseded by the draft user-area announcement. <a href="figures/initial-floorplan.pdf">PDF</a></figcaption></figure>
-<figure><img src="figures/implemented-floorplan.png" alt="Actual implemented macro placement"><figcaption>Implemented placement; the PSRR changes affect routing above it.
-Numbered groups identify matching sets. <a href="figures/implemented-floorplan.pdf">PDF</a></figcaption></figure>
-<figure><img src="figures/physical-layout.png" alt="Annotated physical layout with twelve device-group callouts and eleven capacitor labels"><figcaption>Actual routed and filled GDS rendering. Twelve numbered callouts identify the analog groups and startup circuitry;
-C1–C11 label the MIM capacitors, and the dashed outline marks the deep-n-well trim region. Numbers 1–8 match the implemented floorplan.
-This is a layout rendering, not a silicon micrograph. <a href="figures/physical-layout.pdf">PDF</a></figcaption></figure>
-<div class="note limit"><strong>This remains a core candidate, not a tapeout-qualified submission.</strong>
-Ground resistance is still omitted because the raw extractor falsely joins the isolated grounds. The conserved RCC distribution
-needs independent extraction confirmation. Full stability, noise, mismatch, corner startup, calibrated trim, pad/multiplexer loading,
-device-voltage and EM/IR qualification remain open. Matching edge dummies and matched route refinement remain open as well.</div>
-<p>No slot or final pin map has been supplied for this block. The earlier wrapper files suggested 537.15 × 273 µm
-(about 619.785 × 315 µm after the observed Magic scaling); those values are retained as historical context,
-not the current planning target. The approximately 1270 × 410 µm announcement is explicitly a first draft.
-The final wrapper and its connection requirements still need to be applied. The
-<a href="https://opencircuitdesign.com/chipalooza/rules-3.html">Chipalooza #3 rules</a> and
-<a href="https://github.com/RTimothyEdwards/gf180mcu_ocd_chipalooza">public harness</a> govern final integration. The
-<a href="https://opencircuitdesign.com/chipalooza/rules-2.html">#2 rules</a> provide integration precedent but use a different PDK.
-No slot, pad assignment, or final wrapper connection has been invented.</p>
-<p class="small">The original candidate is preserved in repository commit
-<a href="https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/tree/1d9ca33d3bca9852f4fd59d45b2247516f92f8e1/layout">1d9ca33</a>.
-The original design-review reference branch remains unchanged. No PDK rule was edited, filtered or waived.</p></body></html>
+<title>Compact bandgap — implemented layout review</title>
+<style>body{font:16px/1.6 Arial,sans-serif;max-width:1000px;margin:36px auto;padding:0 24px;color:#20242a}h1{font-size:30px;line-height:1.2}h2{font-size:22px;margin-top:36px}a{color:#0072b2}img{max-width:100%;height:auto}figure{margin:28px 0}figcaption,.note{font-size:14px;color:#49525b}table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:9px;text-align:left}.lead{font-size:19px}.status{border-left:4px solid #0072b2;padding:12px 20px;background:#f3f7fa}code{overflow-wrap:anywhere}</style>
+<h1>Compact trimmed bandgap reference</h1><p class="lead">GF180MCU-D · Chipalooza #3 · matching revision · 21 October 2026</p>
+<p class="status"><strong>686.0 × 399.6 µm · 0.274 mm² · DRC: 0 · LVS: matched</strong><br>Core verification is complete for the pinned decks. This remains a layout review candidate, with electrical qualification and harness integration open.</p>
+<p>The earlier compact floorplan guides this revision. The output capacitors return to two rows; matched arrays remain close to related circuitry, with explicit dummy surrounds. The block occupies 52.6% of the approximate 1270 × 410 µm planning envelope.</p>
+<figure><img src="figures/physical-layout.png" alt="Annotated physical GDS"><figcaption>Actual GDS geometry, with numbered functional groups and capacitor labels. <a href="figures/physical-layout.pdf">Vector PDF</a>.</figcaption></figure>
+<h2>Placement and matching</h2><figure><img src="figures/implemented-floorplan.png" alt="Compact implemented floorplan"></figure>
+<p>Thirteen MOS arrays have full tied-off dummy perimeters. The main three-way mirror arrays have equal centroids and second moments. The main mirror's local drain metal area, length and via counts are equal; global branch RC is not claimed equal. No unrelated net crosses the audited matched channels. Functional sizes and connectivity are unchanged.</p>
+<p><a href="reviews/2026-10-21-mirrors-implemented/README.md">Full matching review and primary layout references</a> · <a href="release/mirror_geometry_audit.json">Independent geometry audit</a> · <a href="figures/matched-arrays.pdf">Unit placement detail</a></p>
+<figure><img src="reviews/2026-10-21-mirrors-implemented/mirror-current-ratios.png" alt="Current-ratio comparison"><figcaption>Nominal DC matching only; not Monte Carlo mismatch yield.</figcaption></figure>
+<h2>PSRR and extraction</h2><figure><img src="figures/psrr-before-after.png" alt="PSRR comparison"></figure>
+<p>Minimum PSRR changes by +0.93 dB at 3.3 V and +1.25 dB at 5 V. Both old and new GDS use the same corrected extractor, primitive-terminal anchors and conserved-RCC approximation. Signal/supply resistance and approximate coupling are included; AVSS/DVSS resistance is omitted.</p>
+<p>Early long-route trials showed offset from VREF, trim and PTAT resistance and PSRR sensitivity to amplifier/supply coupling. The delivered layout reduces routing distance and keeps C1 near the amplifier. Removing selected coupling in diagnostic counterfactuals helps identify remaining sensitivity; those artificial circuits are not deliverables.</p>
+<p><a href="release/psrr/summary.json">Diagnostic AC metrics</a> · <a href="release/psrr/conservation_ac_check.json">Capacitance-conservation check</a> · <a href="release/previous/provenance.json">Controlled baseline provenance</a></p>
+<h2>Verification and remaining qualification</h2><p>The complete unedited DRC deck, core LVS and both extraction-topology LVS audits pass. An independent rebuild matches every geometry/text layer. All 360 fixed-code corner DC points complete; 2 cases retain recovered dynamic-gmin warnings. Nominal supply cycling is rerun.</p>
+<p>Neither schematic nor layout reaches the existing 60 dB PSRR testbench criterion. Full ground-network RC, statistical mismatch/trim yield, EM/IR, stability, noise, output loading, final wrapper and pin assignment remain open.</p>
+<p><a href="release/verification.json">Bound release evidence</a> · <a href="release/nominal_screen.json">Nominal screens</a> · <a href="release/pvt_dc_screen.json">Corner DC</a> · <a href="release/power_sequence_screen.json">Supply cycling</a> · <a href="README.txt">Reproduction</a></p>
+<h2>Preserved design history</h2><p>The original pre-layout temperature-trim chart, specifications and simulation instructions remain in the <a href="../README.md">main README</a>. The <a href="https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/f249c5c20f6bf5a216d05d3941f191dc6a567b2a/layout/report.html">previous layout report</a> and <a href="reviews/2026-10-21-mirrors/README.md">original mirror audit</a> retain historical findings.</p>
+<p class="note">GDS SHA-256: <code>868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36</code></p></html>

@@ -6,15 +6,15 @@
     "both_rails_cycled": true,
     "exit_code": 0,
     "errors": [],
-    "initial_vref_V": 1.095418105967439e-24,
+    "initial_vref_V": -1.564043457752215e-23,
     "end_s": 0.004,
-    "deck_sha256": "1324279169056e9146a8f9a1ea457e1bffd6b73bdf0252220d005c247ed8388e",
+    "deck_sha256": "35dabf305949022f27b8106f56873a779f8c3184520df2b7e1484fcf0d829abc",
     "model": "capacitance-conserving RCC approximation",
-    "rc_netlist_sha256": "00797a27554b4fd0aeeff9388f33c5f3a30210969d9efeaecd2eb25bbb41aec7",
-    "cold_final_V": 1.1944147498260105,
-    "cold_settling_s_after_ramp": 0.0002004803318536386,
-    "restart_final_V": 1.1944145496551752,
-    "restart_settling_s_after_ramp": 0.00010929638559709206
+    "rc_netlist_sha256": "ae2b91b7eee543d32e4af57ae68097efd2bfba6f6add44bd25888e7a39d7b257",
+    "cold_final_V": 1.1931268328234168,
+    "cold_settling_s_after_ramp": 0.0002035175168414575,
+    "restart_final_V": 1.1931267136157346,
+    "restart_settling_s_after_ramp": 0.0001113519436511971
   },
   {
     "analog_supply_V": 5.0,
@@ -23,14 +23,14 @@
     "both_rails_cycled": true,
     "exit_code": 0,
     "errors": [],
-    "initial_vref_V": 1.095418105967439e-24,
+    "initial_vref_V": -1.564043457752215e-23,
     "end_s": 0.004,
-    "deck_sha256": "26d320c14a29e92c73fa778819a4187e59173896fa7068638110a68b54d6c977",
+    "deck_sha256": "45d7aaaa6f528671a4c8122dc8c86b0a55c79ecd58410408f059f61afd88582a",
     "model": "capacitance-conserving RCC approximation",
-    "rc_netlist_sha256": "00797a27554b4fd0aeeff9388f33c5f3a30210969d9efeaecd2eb25bbb41aec7",
-    "cold_final_V": 1.1945901333228408,
-    "cold_settling_s_after_ramp": 0.00011062735591738989,
-    "restart_final_V": 1.1945900089417758,
-    "restart_settling_s_after_ramp": 4.737288044780099e-05
+    "rc_netlist_sha256": "ae2b91b7eee543d32e4af57ae68097efd2bfba6f6add44bd25888e7a39d7b257",
+    "cold_final_V": 1.1932674453200849,
+    "cold_settling_s_after_ramp": 0.000114858869332471,
+    "restart_final_V": 1.193267243650359,
+    "restart_settling_s_after_ramp": 4.9324242882866926e-05
   }
 ]

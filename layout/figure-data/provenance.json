@@ -1,19 +1,18 @@
 {
-  "source_release_commit": "776035c3e46767f3c8bee2f362b6be4f92ba5deb",
-  "gds_sha256": "86c11f6ccd18e887284f187bb1635ce37da98bfc5e14b5d436efcd7a043bfa00",
-  "source": "Saved psrr-final-build/postlayout outputs from the already verified release",
+  "gds_sha256": "868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36",
+  "source": "Matching-revision rerun, 21 October 2026",
   "transformation": "Verbatim gzip compression only; no resampling or numerical edits",
   "uncompressed_sha256": {
-    "postlayout/nominal_summary.json": "876feb2b89d5b01e2a50470f2ddbfed5cc7125633e570da02cfef39a8452c127",
-    "postlayout/rcc_typical_typical_typical_3.3/temperature.dat.gz": "83736f58fe0709188b2cf710757e342334af2a022c486311cef71137121cefd5",
-    "postlayout/rcc_typical_typical_typical_3.3/psrr.dat.gz": "7194a4c81ed7a28962a71ddb3f37b75dbd63049d5dbe7983b3ad3ccca6c0b035",
-    "postlayout/rcc_typical_typical_typical_3.3/trim.dat.gz": "b129061859a901ea32ece2e27cdafb2308da7b8e379d22e5b90f62260c39a27d",
-    "postlayout/rcc_typical_typical_typical_3.3_startup/startup.dat.gz": "fd16157d70b61f4daf98a600be9898094bcddcba95890a846e8f2b49cf63e897",
-    "postlayout/power_sequence/3.3/startup.dat.gz": "a5c05a33a3f575ac84deca8b3c500922bed986986216bfdfdf0456711b937b1f",
-    "postlayout/rcc_typical_typical_typical_5/temperature.dat.gz": "e01c41d841d5413d336e1998d9b650d16418a105393607284b1bf34e43d1b473",
-    "postlayout/rcc_typical_typical_typical_5/psrr.dat.gz": "d4cffcb71358f1f7c3772c0dba35da786acfac8bea7c469ac03d7c288e876b8f",
-    "postlayout/rcc_typical_typical_typical_5/trim.dat.gz": "9eabb4598ad4e11652d89ed3971a12c8e691ff089c95e10057707b64ffde5a09",
-    "postlayout/rcc_typical_typical_typical_5_startup/startup.dat.gz": "b8599a6a7bdcd31009caa6bb45e6a24030fcdc9c1f3782532382c8672df0f249",
-    "postlayout/power_sequence/5/startup.dat.gz": "160af555a4a08d0a065cac6ceed22d199a41c66b72eb8bfd0d978e6872fd5a00"
+    "postlayout/nominal_summary.json": "6657ccf038ca2550e73802728963dca91f557343c21474d9faaa7800d7059a11",
+    "postlayout/rcc_typical_typical_typical_3.3/temperature.dat.gz": "faed7810cb77cd033a9d4164c45f59fc30031754f3ed9d190aaf2791d0747d89",
+    "postlayout/rcc_typical_typical_typical_3.3/psrr.dat.gz": "3d9691d3f31aeb8be872c7cd37c766e782455fb79fecadf42ef0d45c8e913c15",
+    "postlayout/rcc_typical_typical_typical_3.3/trim.dat.gz": "2aff11b52b2018eff558196668dc05e8ccad6302d782f043303f30fd31c9b756",
+    "postlayout/rcc_typical_typical_typical_3.3_startup/startup.dat.gz": "a40e6e91a57a5097252c3a0c97804444e9063f7fff725187a2d1408566462687",
+    "postlayout/power_sequence/3.3/startup.dat.gz": "5c8fd0b023becfdfded7c8bb48a619740961426b682860533d120ebb73baa623",
+    "postlayout/rcc_typical_typical_typical_5/temperature.dat.gz": "5d965203412ca4a2ff46fc58075f9e92a057cf773ee4a46eff49e04153fbb91f",
+    "postlayout/rcc_typical_typical_typical_5/psrr.dat.gz": "77045773433c3c3a7aebf0cbfea9940d251adeff64b0a4918fa5b3d82a1a1b1c",
+    "postlayout/rcc_typical_typical_typical_5/trim.dat.gz": "d28e9f017586ceb24711a7abaecadf9c1b0a92b68e4385a72ff2e79d40d29279",
+    "postlayout/rcc_typical_typical_typical_5_startup/startup.dat.gz": "718f0007565cb15fef6c39d1a5e01f43d2a2ed184c730e2265eeb87630f05a0a",
+    "postlayout/power_sequence/5/startup.dat.gz": "59574f5d1f65f883f5967f5d172410dfff6c3bf6247acb0cfc3bc15ffeb1a041"
   }
 }

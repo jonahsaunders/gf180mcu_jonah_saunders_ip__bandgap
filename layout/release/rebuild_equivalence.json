@@ -1,8 +1,9 @@
 {
-  "geometry_xor_differences": 0,
-  "compared_layers": 37,
-  "files": {
-    "/workspace/psrr-layout-v4/filled_candidate.gds": "65b1c84bbfeb6fe8f76483fcb0ff43df2b633e8d5802068c7327fec9e9526c30",
-    "/workspace/psrr-final-build/filled_candidate.gds": "86c11f6ccd18e887284f187bb1635ce37da98bfc5e14b5d436efcd7a043bfa00"
+  "layers_compared": 37,
+  "different_layers": [],
+  "geometry_and_text_equal": true,
+  "input_sha256": {
+    "/workspace/bandgap/layout/build/matching-source-bus/filled_candidate.gds": "868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36",
+    "/workspace/bandgap/layout/build/matching-source-rebuild/filled_candidate.gds": "7d1c4ee30f0d961f2d3c81d038d4ea3777273a22a6ded3ff39dd9445cfd95369"
   }
 }

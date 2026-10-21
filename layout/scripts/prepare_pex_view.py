@@ -102,19 +102,41 @@ for cell in layout.each_cell():
 
 # Internal names make extracted results traceable to the schematic.
 seen = set(manifest["pins"])
+named_points = {}
+primitive_anchors = {}
 for device in data["placed"]:
     for name, point in zip(device["nodes"], device["pins"]):
         while name in aliases:
             name = aliases[name]
-        if name not in seen:
-            top.shapes(layout.layer(36, 10)).insert(k.DText(name, k.DTrans(*point)))
-            seen.add(name)
+        if name not in manifest["pins"]:
+            named_points.setdefault(name, point)
+            if device["model"] in ("pnp_05p00x05p00", "nwell"):
+                primitive_anchors.setdefault(name, point)
+# extresist can otherwise omit a hierarchical primitive's internal terminal
+# from its resistance tree. Anchor those terminals during extraction only.
+named_points.update(primitive_anchors)
+for name, point in named_points.items():
+    top.shapes(layout.layer(36, 10)).insert(k.DText(name, k.DTrans(*point)))
+    seen.add(name)
 commands.extend(["load Bandgap_Core_Res", "select top cell"])
 for name in sorted(seen):
     commands.append(f"port {name} remove")
-for index, name in enumerate(manifest["pins"], 1):
+extraction_ports = [*manifest["pins"], *sorted(primitive_anchors)]
+for index, name in enumerate(extraction_ports, 1):
     commands.append(f"port {name} make {index}")
     commands.append(f"port {name} index {index}")
 (root / "pex/define_primitives.tcl").write_text("\n".join(commands) + "\n")
+(root / "pex/port_manifest.json").write_text(
+    json.dumps(
+        {
+            "physical_ports": manifest["pins"],
+            "extraction_ports": extraction_ports,
+            "internal_anchor_points_um": primitive_anchors,
+            "scope": "Temporary extraction interface only; fabricated geometry and connectivity unchanged",
+        },
+        indent=2,
+    )
+    + "\n"
+)
 layout.write(str(root / "pex/extraction_view.gds"))
 print("PEX hierarchy restored; fabricated geometry XOR: zero differences")

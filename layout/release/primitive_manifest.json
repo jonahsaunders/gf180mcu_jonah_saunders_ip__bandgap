@@ -2774,6 +2774,201 @@
       "m": 1,
       "source": "XM51 b6_b b6 dvdd dvdd pfet_03v3 L=0.5u W=3u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)' ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0",
       "cell": "bg_primitive_065"
+    },
+    {
+      "name": "DUM_M1",
+      "model": "pfet_05v0",
+      "nodes": [
+        "avdd",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "w": 16.75,
+      "l": 2.0,
+      "m": 22,
+      "source": "XDUM_M1 avdd avdd avdd avdd pfet_05v0 W=16.75u L=2u m=22",
+      "cell": "bg_primitive_010"
+    },
+    {
+      "name": "DUM_M11",
+      "model": "pfet_05v0",
+      "nodes": [
+        "avdd",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "w": 16.42,
+      "l": 4.0,
+      "m": 34,
+      "source": "XDUM_M11 avdd avdd avdd avdd pfet_05v0 W=16.42u L=4u m=34",
+      "cell": "bg_primitive_003"
+    },
+    {
+      "name": "DUM_MINP",
+      "model": "pfet_05v0",
+      "nodes": [
+        "avdd",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "w": 54.89,
+      "l": 4.0,
+      "m": 29,
+      "source": "XDUM_MINP avdd avdd avdd avdd pfet_05v0 W=54.89u L=4u m=29",
+      "cell": "bg_primitive_017"
+    },
+    {
+      "name": "DUM_PCAS1",
+      "model": "pfet_05v0",
+      "nodes": [
+        "avdd",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "w": 22.21,
+      "l": 8.0,
+      "m": 20,
+      "source": "XDUM_PCAS1 avdd avdd avdd avdd pfet_05v0 W=22.21u L=8u m=20",
+      "cell": "bg_primitive_016"
+    },
+    {
+      "name": "DUM_PLOAD1",
+      "model": "pfet_05v0",
+      "nodes": [
+        "avdd",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "w": 20.76,
+      "l": 4.0,
+      "m": 20,
+      "source": "XDUM_PLOAD1 avdd avdd avdd avdd pfet_05v0 W=20.76u L=4u m=20",
+      "cell": "bg_primitive_032"
+    },
+    {
+      "name": "DUM_MSINK1",
+      "model": "nfet_05v0",
+      "nodes": [
+        "avss",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "w": 16.34,
+      "l": 8.0,
+      "m": 20,
+      "source": "XDUM_MSINK1 avss avss avss avss nfet_05v0 W=16.34u L=8u m=20",
+      "cell": "bg_primitive_041"
+    },
+    {
+      "name": "DUM_PREF",
+      "model": "pfet_05v0",
+      "nodes": [
+        "avdd",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "w": 18.75,
+      "l": 8.0,
+      "m": 29,
+      "source": "XDUM_PREF avdd avdd avdd avdd pfet_05v0 W=18.75u L=8u m=29",
+      "cell": "bg_primitive_021"
+    },
+    {
+      "name": "DUM_M3",
+      "model": "nfet_05v0",
+      "nodes": [
+        "avss",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "w": 14.6,
+      "l": 4.0,
+      "m": 14,
+      "source": "XDUM_M3 avss avss avss avss nfet_05v0 W=14.6u L=4u m=14",
+      "cell": "bg_primitive_004"
+    },
+    {
+      "name": "DUM_MFOLD1",
+      "model": "nfet_05v0",
+      "nodes": [
+        "avss",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "w": 18.49,
+      "l": 6.0,
+      "m": 10,
+      "source": "XDUM_MFOLD1 avss avss avss avss nfet_05v0 W=18.49u L=6u m=10",
+      "cell": "bg_primitive_018"
+    },
+    {
+      "name": "DUM_M16",
+      "model": "nfet_05v0",
+      "nodes": [
+        "avss",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "w": 7.55,
+      "l": 4.0,
+      "m": 10,
+      "source": "XDUM_M16 avss avss avss avss nfet_05v0 W=7.55u L=4u m=10",
+      "cell": "bg_primitive_005"
+    },
+    {
+      "name": "DUM_MPSINK",
+      "model": "pfet_05v0",
+      "nodes": [
+        "avdd",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "w": 18.95,
+      "l": 8.0,
+      "m": 23,
+      "source": "XDUM_MPSINK avdd avdd avdd avdd pfet_05v0 W=18.95u L=8u m=23",
+      "cell": "bg_primitive_024"
+    },
+    {
+      "name": "DUM_MPFOLD",
+      "model": "pfet_05v0",
+      "nodes": [
+        "avdd",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "w": 18.99,
+      "l": 8.0,
+      "m": 20,
+      "source": "XDUM_MPFOLD avdd avdd avdd avdd pfet_05v0 W=18.99u L=8u m=20",
+      "cell": "bg_primitive_025"
+    },
+    {
+      "name": "DUM_VBNSINK",
+      "model": "nfet_05v0",
+      "nodes": [
+        "avss",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "w": 12.31,
+      "l": 8.0,
+      "m": 10,
+      "source": "XDUM_VBNSINK avss avss avss avss nfet_05v0 W=12.31u L=8u m=10",
+      "cell": "bg_primitive_042"
     }
   ],
   "off_grid": [],
@@ -2781,8 +2976,8 @@
     "pnp_05p00x05p00": 3,
     "nfet_03v3": 19,
     "ppolyf_u_1k": 12,
-    "pfet_05v0": 30,
-    "nfet_05v0": 25,
+    "pfet_05v0": 38,
+    "nfet_05v0": 30,
     "cap_mim_2f0fF": 11,
     "pfet_03v3": 17,
     "nwell": 1,

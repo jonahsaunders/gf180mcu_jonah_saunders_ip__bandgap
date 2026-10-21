@@ -34,8 +34,8 @@ def circuit_file(mode):
         return path
     if mode == "magic_lvs":
         path = RESULTS / "magic_lvs.spice"
-        source = (ROOT / "pex/Bandgap_Core_Res_magic_lvs.spice").read_text()
-        path.write_text(source.replace("cap_mim_2f0_m4m5_noshield", "cap_mim_2f0fF"))
+        source = (ROOT / "pex/Bandgap_Core_Res_magic_lvs_simulation.spice").read_text()
+        path.write_text(source)
         return path
     return ROOT / "pex" / f"Bandgap_Core_Res_{mode}_simulation.spice"
 

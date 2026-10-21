@@ -3,6 +3,6 @@ test_large_loop_sweep_has_bounded_pages_and_keeps_extremes (__main__.PlotChecks.
 test_startup_plot_uses_actual_largest_peak (__main__.PlotChecks.test_startup_plot_uses_actual_largest_peak) ... ok
 
 ----------------------------------------------------------------------
-Ran 3 tests in 0.527s
+Ran 3 tests in 0.575s
 
 OK

@@ -199,9 +199,8 @@ def plot_psrr(data, out):
     configure()
     styles = [
         ("schematic", "revised", "Schematic", "#222222", (0, (5, 2))),
-        ("rc", "legacy", "Previous raw RC (8.3.678)", RED, (0, (1, 1.4))),
-        ("rcc", "baseline", "Previous layout / conserved RCC", GRAY, (0, (4, 2))),
-        ("rcc", "revised", "Revised layout / conserved RCC", BLUE, "-"),
+        ("rcc", "baseline", "Previous layout · RCC", GRAY, (0, (2, 2))),
+        ("rcc", "revised", "Matching revision · RCC", BLUE, "-"),
     ]
     fig, axes = plt.subplots(
         2, 2, figsize=(WIDTH, 5.15), gridspec_kw={"height_ratios": [1.65, 1]}
@@ -222,6 +221,7 @@ def plot_psrr(data, out):
         ax.set_yticks([40, 50, 60, 70, 80, 90])
         zoom = axes[1, col]
         minima = []
+        minimum_frequencies = []
         for revision, color, style in [
             ("baseline", GRAY, (0, (4, 2))),
             ("revised", BLUE, "-"),
@@ -231,16 +231,19 @@ def plot_psrr(data, out):
             index = np.argmin(curve[:, 1])
             freq, value = curve[index]
             minima.append(value)
+            minimum_frequencies.append(freq / 1e3)
             zoom.plot(freq / 1e3, value, "o", color=color, ms=3.5, mfc="white", mew=0.9)
         plot_axes(zoom, "Frequency (kHz)", "PSRR (dB)")
-        zoom.set_xlim(15, 35)
+        low = min(minimum_frequencies)
+        high = max(minimum_frequencies)
+        span = max(high - low, 10)
+        zoom.set_xlim(max(0, low - span / 2), high + span / 2)
         zoom.set_ylim(min(minima) - 0.35, max(minima) + 1.3)
         zoom.yaxis.set_major_locator(MultipleLocator(0.5))
-        zoom.set_xticks([15, 20, 25, 30, 35])
         zoom.text(
             0.98,
             0.96,
-            f"Min: {minima[0]:.2f} → {minima[1]:.2f} dB\nRouting gain: {minima[1]-minima[0]:.2f} dB",
+            f"Min: {minima[0]:.2f} → {minima[1]:.2f} dB\nLayout change: {minima[1]-minima[0]:+.2f} dB",
             transform=zoom.transAxes,
             ha="right",
             va="top",

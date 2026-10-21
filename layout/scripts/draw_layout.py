@@ -5,6 +5,7 @@ altered for the illustration. The concept drawing is explicitly separate.
 """
 
 import json
+import math
 import klayout.db as k
 
 from figure_style import WIDTH, INK, BLUE, configure, export
@@ -14,6 +15,26 @@ from matplotlib.patches import Rectangle
 
 BLOCK_COLORS = {"analog": "#DCEAF3", "digital": "#E4DBEE", "resistors": "#F4E4C5"}
 CAP_COLOR = "#D7E9E1"
+
+
+def review_groups(data):
+    return [g for g in data["groups"] if g.get("matching") or len(g["names"]) > 1]
+
+
+def functional_annotations(data, bounds):
+    caps = [
+        d for d in data["placed"] if d["source"].startswith("C") and d["source"] != "C1"
+    ]
+    center = (
+        sum(d["x"] for d in caps) / len(caps),
+        sum(d["y"] for d in caps) / len(caps),
+    )
+    top = bounds[3] + 25
+    return [
+        ("Trim logic\n+ switches / DNW", (33, 266), (33, top)),
+        ("1 kΩ/□ poly\ntrim ladder", (108, 275), (160, top)),
+        ("Output MIM bank · C2–C11", center, (center[0], top)),
+    ]
 
 
 def rectangle(ax, x, y, w, h, color, label=None, **kwargs):
@@ -182,7 +203,7 @@ def draw_placement(data, bounds, out):
             rectangle(ax, x, y, xx - x, yy - y, CAP_COLOR, device["name"])
     # Numbered matching groups keep tiny geometries readable without hiding
     # adjacent devices. Full source names are given beneath the drawing.
-    groups = [g for g in data["groups"] if len(g["names"]) > 1]
+    groups = review_groups(data)
     for number, group in enumerate(groups, 1):
         ax.text(
             group["x"] + group["width"] / 2,
@@ -197,11 +218,7 @@ def draw_placement(data, bounds, out):
     ax.add_patch(
         Rectangle((5, 162), 56, 144, fill=False, edgecolor="#705290", lw=1, ls="--")
     )
-    for text, point, label in [
-        ("Trim logic\nDNW", (33, 266), (33, 340)),
-        ("Poly trim\nladder", (108, 275), (145, 340)),
-        ("Output capacitors C2–C11", (420, 301), (420, 340)),
-    ]:
+    for text, point, label in functional_annotations(data, bounds):
         ax.annotate(
             text,
             xy=point,
@@ -213,12 +230,12 @@ def draw_placement(data, bounds, out):
         )
     # Move dimensions above the annotation line by using the available upper band.
     ax.set_ylim(bounds[1] - 14, bounds[3] + 85)
-    fig.set_size_inches(WIDTH, 4.9)
-    fig.subplots_adjust(bottom=0.21)
+    fig.set_size_inches(WIDTH, 5.6)
+    fig.subplots_adjust(bottom=0.30)
     entries = [f"{n}  {' / '.join(g['names'])}" for n, g in enumerate(groups, 1)]
     for index, text in enumerate(entries):
         fig.text(
-            0.07 + 0.47 * (index // 4), 0.155 - 0.035 * (index % 4), text, fontsize=7.5
+            0.07 + 0.47 * (index // 7), 0.25 - 0.031 * (index % 7), text, fontsize=7.5
         )
     export(fig, out, "implemented-floorplan")
 
@@ -235,8 +252,8 @@ def polygon_vertices(layout, top, number, purpose=0):
 
 def draw_physical(layout, bounds, data, out):
     configure()
-    fig, ax = layout_axes(bounds, height=5.55, dimension_y=70)
-    fig.subplots_adjust(bottom=0.30)
+    fig, ax = layout_axes(bounds, height=6.0, dimension_y=70)
+    fig.subplots_adjust(bottom=0.34)
     ax.set_ylim(bounds[1] - 14, bounds[3] + 85)
     top = layout.top_cell()
     layers = [
@@ -261,7 +278,7 @@ def draw_physical(layout, bounds, data, out):
                 rasterized=True,
             )
         )
-    for number in [22, 34, 36, 42, 46, 81]:
+    for number in [22, 30, 34, 36, 42, 46, 81]:
         ax.add_collection(
             PolyCollection(
                 polygon_vertices(layout, top, number, 4),
@@ -273,25 +290,26 @@ def draw_physical(layout, bounds, data, out):
         )
     # Use the same matching-group numbers as the placement figure. Markers
     # locate actual group bounds; the legend keeps long names off the geometry.
-    matching = [g for g in data["groups"] if len(g["names"]) > 1]
+    selected = review_groups(data) + [
+        next(g for g in data["groups"] if g["names"] == ["VBPCASLOW"])
+    ]
+    roles = {
+        "MINP": "input pair",
+        "MSINK1": "current sinks",
+        "PREF": "bias mirror",
+        "MPSINK": "sink bias",
+        "MPFOLD": "fold bias",
+        "VBNSINK": "sink reference",
+        "MFOLD1": "folded branches",
+        "M16": "bias pair",
+        "PCAS1": "PMOS cascodes",
+        "PLOAD1": "matched loads",
+        "VBPCASLOW": "cascode bias",
+        "Q1": "PNP devices",
+    }
     labels = [
-        "PREF / PRMIR — bias mirror",
-        "MINP / MINN — amplifier input pair",
-        "PCAS1 / PCAS2 — PMOS cascodes",
-        "MSINK1 / MSINK2 — current sinks",
-        "M1 / M2 / M5 — matched array",
-        "M11 / M12 / M13 — matched array",
-        "PLOAD1 / PLOAD2 — matched loads",
-        "Q1 / Q2 / Q3 — PNP devices",
-    ]
-    selected = matching + [
-        next(g for g in data["groups"] if g["names"] == [name])
-        for name in ["MPSINK", "MPFOLD", "VBPCASLOW"]
-    ]
-    labels += [
-        "MPSINK — sink bias",
-        "MPFOLD — fold bias",
-        "VBPCASLOW — cascode bias",
+        " / ".join(g["names"]) + " — " + roles.get(g["names"][0], "matched array")
+        for g in selected
     ]
     for number, group in enumerate(selected, 1):
         x = group["x"] + group["width"] / 2
@@ -309,10 +327,12 @@ def draw_physical(layout, bounds, data, out):
     startup = [d for d in data["placed"] if d["source"] in ["MSU_SENSE", "SUPINJ"]]
     x = sum(d["x"] for d in startup) / len(startup)
     y = sum(d["y"] for d in startup) / len(startup)
+    for device in startup:
+        ax.plot([x, device["x"]], [y, device["y"]], color=INK, lw=0.5, zorder=3)
     ax.text(
         x,
         y,
-        "12",
+        str(len(selected) + 1),
         ha="center",
         va="center",
         fontsize=7.5,
@@ -341,11 +361,7 @@ def draw_physical(layout, bounds, data, out):
     ax.add_patch(
         Rectangle((5, 162), 56, 144, fill=False, edgecolor="#705290", lw=0.9, ls="--")
     )
-    for label, point, location in [
-        ("Trim logic\n+ switches / DNW", (33, 266), (33, 340)),
-        ("1 kΩ/□ poly\ntrim ladder", (108, 275), (145, 340)),
-        ("Output MIM bank · C2–C11", (420, 301), (420, 340)),
-    ]:
+    for label, point, location in functional_annotations(data, bounds):
         ax.annotate(
             label,
             xy=point,
@@ -357,8 +373,8 @@ def draw_physical(layout, bounds, data, out):
         )
     for index, label in enumerate(labels):
         fig.text(
-            0.07 + 0.47 * (index // 6),
-            0.255 - 0.034 * (index % 6),
+            0.07 + 0.47 * (index // 8),
+            0.29 - 0.032 * (index % 8),
             f"{index+1}  {label}",
             fontsize=7,
         )
@@ -374,11 +390,9 @@ def draw_physical(layout, bounds, data, out):
 
 def draw_matching(data, out):
     configure()
-    groups = [g for g in data["groups"] if len(g["names"]) > 1]
-    assert len(groups) == 8, "Update the panel allocation if matching groups change"
-    fig, axes = plt.subplots(
-        4, 2, figsize=(WIDTH, 7.6), gridspec_kw={"height_ratios": [0.45, 1, 1, 1]}
-    )
+    groups = review_groups(data)
+    rows = math.ceil(len(groups) / 2)
+    fig, axes = plt.subplots(rows, 2, figsize=(WIDTH, rows * 2.0))
     fig.subplots_adjust(
         left=0.08, right=0.98, bottom=0.07, top=0.93, hspace=0.56, wspace=0.26
     )
@@ -388,6 +402,25 @@ def draw_matching(data, out):
     for ax, group in zip(axes.flat, groups):
         xs_all, ys_all = [], []
         origin_x, origin_y = group["x"], group["y"]
+        dummies = [
+            d for d in data["placed"] if d["source"] == group.get("dummy_source")
+        ]
+        if dummies:
+            dx, dy = [d["x"] - origin_x for d in dummies], [
+                d["y"] - origin_y for d in dummies
+            ]
+            ax.scatter(
+                dx,
+                dy,
+                marker="s",
+                s=19,
+                facecolors="#E1E4E7",
+                edgecolors="#989FA6",
+                linewidth=0.4,
+                zorder=1,
+            )
+            xs_all.extend(dx)
+            ys_all.extend(dy)
         for index, name in enumerate(group["names"]):
             units = [d for d in data["placed"] if d["source"] == name]
             xs, ys = [d["x"] for d in units], [d["y"] for d in units]
@@ -450,7 +483,7 @@ def draw_matching(data, out):
     fig.text(
         0.5,
         0.025,
-        "Actual placement origins; equal axis scale within each panel. Q3 remains separate from Q1/Q2.",
+        "Actual unit origins • gray squares: tied-off dummies • Q3 remains separate from Q1/Q2",
         ha="center",
         fontsize=8,
     )

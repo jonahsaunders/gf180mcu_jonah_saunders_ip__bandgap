@@ -1,0 +1,9 @@
+{
+  "schematic_sha256": "cedc57eff17583c7ccc3fb25ccf7114d85389c148d365d7b38a732b10827ac09",
+  "rcc_sha256": "ae2b91b7eee543d32e4af57ae68097efd2bfba6f6add44bd25888e7a39d7b257",
+  "gds_sha256": "868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36",
+  "archived_input_sha256": {
+    "model_header.spice": "13a666e7d3290ee89bdca2fdf0cf5f748834835741ab6262363e9ddabf460402",
+    "schematic_source.spice": "3e8a183237a5f1034a36ec0a1d0ab46d90b6c4fdda3fd9bb01e1806fe677f091"
+  }
+}

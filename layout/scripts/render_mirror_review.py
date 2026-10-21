@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import json
+import hashlib
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
@@ -12,6 +13,10 @@ from figure_style import WIDTH, INK, BLUE, configure, export
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "reviews/2026-10-21-mirrors"
 data = json.loads((OUT / "mirror_geometry_audit.json").read_text())
+assert (
+    hashlib.sha256((ROOT / "release/Bandgap_Core_Res.gds").read_bytes()).hexdigest()
+    == data["release_sha256"]["Bandgap_Core_Res.gds"]
+), "Historical review requires its original release; use git checkout f249c5c"
 placement = json.loads((ROOT / "release/placement.json").read_text())
 units = data["units"]
 colors = {

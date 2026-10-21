@@ -1,0 +1,7 @@
+{
+  "commit": "f249c5c20f6bf5a216d05d3941f191dc6a567b2a",
+  "gds_sha256": "86c11f6ccd18e887284f187bb1635ce37da98bfc5e14b5d436efcd7a043bfa00",
+  "rcc_sha256": "643198fee319a77c059931d3c9b70380f7201c2639eeec4e93fd2421733be33f",
+  "schematic_sha256": "f7b743d6003c8c774628cbc2b5ceaaaf93a0a7923a39607b8378df716a08c511",
+  "scope": "Unchanged previous GDS re-extracted with the same primitive-terminal anchoring, Magic 8.3.685 and conserved RCC as the revised GDS; DC/AC comparison only"
+}

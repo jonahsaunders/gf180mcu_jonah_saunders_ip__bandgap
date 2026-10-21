@@ -133,6 +133,9 @@ def verify():
         "reference.spice",
         "filled_drc.lyrdb",
         "filled.lvsdb",
+        "placement.json",
+        "primitive_manifest.json",
+        "routing_status.json",
     ]
     evidence = {
         "status": "CORE_DRC_LVS_PASS_NOT_TAPEOUT_QUALIFIED",
@@ -140,6 +143,10 @@ def verify():
         "drc_violations": violations,
         "lvs_match": True,
         "expanded_device_units": len(placement["placed"]),
+        "functional_device_units": sum(
+            not d.get("dummy", False) for d in placement["placed"]
+        ),
+        "tied_off_dummy_units": sum(d.get("dummy", False) for d in placement["placed"]),
         "bounds_um": [boundary.left, boundary.bottom, boundary.right, boundary.top],
         "sha256": {name: hash_file(BUILD_DIR / name) for name in files},
         "schematic_sha256": hash_file(REPOSITORY / "Bandgap_Core_Res.sch"),
@@ -150,7 +157,7 @@ def verify():
         "open_items": [
             "Assigned wrapper and dimensions",
             "Complete RC including ground network",
-            "Matched-route symmetry and edge dummies",
+            "Quantitative per-branch RC balance and mismatch yield",
             "EM/IR and full analog PVT qualification",
         ],
     }

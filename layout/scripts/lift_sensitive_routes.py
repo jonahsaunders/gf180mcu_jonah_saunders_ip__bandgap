@@ -50,10 +50,37 @@ for name in ["vgn2"]:
     # Keep M4 only around transitions. M5 carries the long horizontal routes.
     landing = cuts.sized(170)
     # Existing M4-M5 terminal connections also need their M4 enclosure.
-    landing += ex.shapes_of_net(net, layers[41], True).merged().sized(170)
-    lifted = own4.sized(100).merged()
+    existing_via4 = ex.shapes_of_net(net, layers[41], True).merged()
+    landing += existing_via4.sized(170)
+    # The capacitor access is off the routing grid. Bridge its nearby via3
+    # transition at full width, rather than creating a narrow closing sliver.
+    for terminal in existing_via4.each():
+        start = terminal.bbox().center().to_dtype(layout.dbu)
+        end = min(
+            (
+                point
+                for cut in cuts.each()
+                if (point := cut.bbox().center().to_dtype(layout.dbu)) != start
+            ),
+            key=lambda point: abs(point.x - start.x) + abs(point.y - start.y),
+        )
+        distance = abs(end.x - start.x) + abs(end.y - start.y)
+        if 0 < distance < 2:
+            bridge = k.Region(
+                k.DPath([start, k.DPoint(end.x, start.y), end], 0.4, 0.2, 0.2)
+                .to_itype(layout.dbu)
+                .polygon()
+            )
+            assert (bridge & (drawn4 - own4).sized(285)).is_empty(), name
+            own4 += bridge
+            landing += bridge
+    # Close sub-rule notches between same-net transition pads and capacitor
+    # access. The following foreign-net clearance assertion remains mandatory.
+    lifted = (own4.sized(100) + own5).merged().sized(235).sized(-235)
     assert (lifted & (drawn5 - own5).sized(465)).is_empty(), name
-    drawn4 = (drawn4 - own4) + (landing & own4)
+    transition_metal4 = (landing & own4).merged().sized(145).sized(-145)
+    assert (transition_metal4 & (drawn4 - own4).sized(285)).is_empty(), name
+    drawn4 = (drawn4 - own4) + transition_metal4
     drawn5 += lifted
     via4 += cuts
     records.append(

@@ -4,6 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 from itertools import product
 from pathlib import Path
 import json
+import math
 import re
 import subprocess
 import screen_extracted as nominal
@@ -25,7 +26,7 @@ def run_case(case):
     lines = [
         f"* Fixed-code DC screen {name}",
         header,
-        ".options klu num_threads=1",
+        ".options klu num_threads=1 itl1=500",
         f'.include {nominal.circuit_file("rcc")}',
         "XDUT avdd 0 vref b0 b1 b2 b3 b4 b5 b6 0 dvdd Bandgap_Core_Res",
         f"VDD avdd 0 {supply}",
@@ -60,11 +61,29 @@ def run_case(case):
             timeout=120,
         )
     log = (folder / "ngspice.log").read_text()
-    errors = [
-        line
-        for line in log.splitlines()
-        if re.search(r"(?i)error|failed|singular matrix", line)
-    ]
+    errors, convergence_warnings = [], []
+    for block_index, block in enumerate(log.split("Doing analysis at TEMP =")):
+        for line in block.splitlines():
+            if not re.search(r"(?i)error|failed|singular matrix", line):
+                continue
+            # ngspice deliberately falls back from dynamic to true gmin.
+            # Accept that one warning only after the same OP demonstrably
+            # completes; retain it in the released results and raw log.
+            recovered = (
+                line == "Warning: Dynamic gmin stepping failed"
+                and "Note: True gmin stepping completed" in block.split(line, 1)[1]
+                and (
+                    re.search(r"No\. of Data Rows\s*:\s*1\b", block)
+                    # An initialization fallback can precede the circuit
+                    # banner. Require all four subsequent OPs to complete.
+                    or (
+                        block_index == 0
+                        and len(re.findall(r"No\. of Data Rows\s*:\s*1\b", log)) == 4
+                        and "ngspice-46 done" in log
+                    )
+                )
+            )
+            (convergence_warnings if recovered else errors).append(line)
     values = []
     if (folder / "dc.dat").exists():
         for row in (folder / "dc.dat").read_text().splitlines():
@@ -74,14 +93,20 @@ def run_case(case):
             values.append(
                 {"temperature_C": temperature, "vref_V": vref, "idd_uA": -current * 1e6}
             )
+    if [v["temperature_C"] for v in values] != [-40, 25, 110, 125]:
+        errors.append("Missing or unexpected DC temperature points")
+    if not all(math.isfinite(value) for point in values for value in point.values()):
+        errors.append("Nonfinite DC result")
     record = dict(
         mos=mos,
         bjt=bjt,
         resistor=res,
         supply_V=supply,
         trim_code=72,
+        dc_iteration_limit=500,
         exit_code=result.returncode,
         errors=errors,
+        convergence_warnings=convergence_warnings,
         points=values,
     )
     print(name, len(values), "points", len(errors), "diagnostics", flush=True)

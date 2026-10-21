@@ -1,13 +1,13 @@
 [
   {
     "supply_V": 3.3,
-    "maximum_curve_error_dB": 7.036405236249266e-09,
+    "maximum_curve_error_dB": 4.469555392461189e-09,
     "tolerance_dB": 0.001,
     "frequency_points": 481
   },
   {
     "supply_V": 5.0,
-    "maximum_curve_error_dB": 3.745753929251805e-09,
+    "maximum_curve_error_dB": 9.456613270231173e-10,
     "tolerance_dB": 0.001,
     "frequency_points": 481
   }

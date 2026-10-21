@@ -16,6 +16,11 @@ parser.add_argument("--build", default=str(BUILD_DIR))
 parser.add_argument("--output", default=str(BUILD_DIR / "psrr_diagnostics"))
 parser.add_argument("--sweep", action="store_true")
 parser.add_argument("--pairs", action="store_true")
+parser.add_argument(
+    "--supply-coupling",
+    action="store_true",
+    help="Diagnostic removal of AVDD coupling to selected high-impedance amplifier nodes",
+)
 args = parser.parse_args()
 build = Path(args.build)
 out = Path(args.output)
@@ -111,7 +116,7 @@ variants = {
 }
 variants["schematic"] = (build / "postlayout/schematic.spice").read_text()
 variants["magic_lvs"] = (
-    (build / "pex/Bandgap_Core_Res_magic_lvs.spice")
+    (build / "pex/Bandgap_Core_Res_magic_lvs_simulation.spice")
     .read_text()
     .replace("cap_mim_2f0_m4m5_noshield", "cap_mim_2f0fF")
 )
@@ -119,6 +124,11 @@ if (build / "pex/Bandgap_Core_Res_rcc_simulation.spice").exists():
     rcc = records(build / "pex/Bandgap_Core_Res_rcc_simulation.spice")
     variants["rcc"] = transform(rcc)
     variants["rcc_zero_all_r"] = transform(rcc, zero_r=lambda a, b: True)
+    if args.supply_coupling:
+        for node in ["vgn2", "xf1", "xf2", "pm1", "pm2", "y1"]:
+            variants[f"rcc_drop_avdd_{node}"] = transform(
+                rcc, drop_c=lambda a, b, wanted={"avdd", node}: {a, b} == wanted
+            )
 if args.sweep:
     nets = sorted({base(r[1]) for r in rc if r and r[0].startswith("R")})
     for net in nets:

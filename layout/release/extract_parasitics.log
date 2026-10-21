@@ -39,14 +39,18 @@ The selected label is already a port.
 Do "port help" to get a list of options.
 The selected label is already a port.
 Do "port help" to get a list of options.
+The selected label is already a port.
+Do "port help" to get a list of options.
 Extracting nwell into nwell.ext:
 Processing nwell
 Extracting pnp_05p00x05p00 into pnp_05p00x05p00.ext:
 Processing pnp_05p00x05p00
 Extracting Bandgap_Core_Res into Bandgap_Core_Res.ext:
 Processing Bandgap_Core_Res
+Bandgap_Core_Res: 261 warnings
+Total of 261 warnings.
 exttospice finished.
-Devs merged: 146
+Devs merged: 394
 exttospice finished.
 Extracting W
 Extracting A
@@ -60,6 +64,9 @@ Extracting E
 Total Nets: 3
 Nets extracted: 3 (1.000000)
 Nets output: 2 (0.666667)
+Extracting vbp_i
+Extracting vbn_i
+Extracting vbn_fold
 Extracting rbit4top
 Extracting rbit3top
 Extracting b5_b
@@ -72,36 +79,31 @@ Extracting rbit0top
 Extracting b0_b
 Extracting b4_b
 Extracting b6_b
-Extracting vq3
 Extracting b1_b
 Extracting b3_b
-Extracting vbp_i
-Extracting psrg_m3_feed
-Extracting vx2
-Extracting vx1
-Extracting vx3
-Extracting vgn1
-Extracting psrg_vnc
-Extracting vaux
-Extracting vbp_cas
-Extracting pm2
-Extracting vgn2
-Extracting pm1
-Extracting y1
-Extracting vbn_i
 Extracting vbn_sink
 Extracting vbp_bias
-Extracting vbn
-Extracting v1
-Extracting v2
-Extracting psrg_m3_protected
 Extracting vbp_tail
-Extracting vbn_fold
-Extracting xf2
-Extracting iref_gate
-Extracting vsp
-Extracting xf1
 Extracting su_state
+Extracting vx1
+Extracting vgn1
+Extracting vx2
+Extracting psrg_m3_feed
+Extracting vx3
+Extracting vaux
+Extracting v2
+Extracting vsp
+Extracting vgn2
+Extracting xf2
+Extracting xf1
+Extracting vbp_cas
+Extracting psrg_vnc
+Extracting psrg_m3_protected
+Extracting vbn
+Extracting iref_gate
+Extracting pm2
+Extracting pm1
+Extracting y1
 Extracting psrg_mf1_protected
 Extracting dvdd
 Extracting avdd
@@ -110,11 +112,16 @@ Extracting b4
 Extracting b0
 Extracting b5
 Extracting b6
+Extracting vq3
 Extracting b2
 Extracting b1
 Extracting vref
-Total Nets: 114
-Nets extracted: 53 (0.464912)
-Nets output: 53 (0.464912)
-Devs merged: 0
+Extracting net3
+Extracting vq2
+Extracting net4
+Extracting v1
+Total Nets: 112
+Nets extracted: 56 (0.500000)
+Nets output: 56 (0.500000)
+Devs merged: 59
 exttospice finished.

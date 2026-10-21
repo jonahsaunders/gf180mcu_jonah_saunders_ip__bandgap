@@ -15,6 +15,7 @@ import math
 
 import klayout.db as k
 import numpy as np
+from matched_routes import core_drain_routes, core_supply_routes
 
 
 def digest(path):
@@ -39,8 +40,13 @@ def geometric_metrics(units):
 
 def analyze(release, output):
     manifest = json.loads((release / "verification.json").read_text())
+    gds_name = (
+        "Bandgap_Core_Res.gds"
+        if (release / "Bandgap_Core_Res.gds").exists()
+        else "filled_candidate.gds"
+    )
     inputs = [
-        "Bandgap_Core_Res.gds",
+        gds_name,
         "placement.json",
         "primitive_manifest.json",
         "routing_status.json",
@@ -59,7 +65,7 @@ def analyze(release, output):
         return name
 
     layout = k.Layout()
-    layout.read(str(release / "Bandgap_Core_Res.gds"))
+    layout.read(str(release / gds_name))
     top = layout.top_cell()
     dbu = layout.dbu
 
@@ -141,7 +147,9 @@ def analyze(release, output):
     group_records = []
     for group in placement["groups"]:
         names = group["names"]
-        if len(names) < 2 or not all(name in by_source for name in names):
+        if (len(names) < 2 and not group.get("matching")) or not all(
+            name in by_source for name in names
+        ):
             continue
         x, y, width, height = [group[key] for key in ["x", "y", "width", "height"]]
         bounds = rectangle([x, y, x + width, y + height])
@@ -183,14 +191,46 @@ def analyze(release, output):
             record["local_nwell_area_um2"] = sorted(set(signatures))
             unit_metrics[name] = record
         centers = [record["centroid_um"] for record in unit_metrics.values()]
+        dummy_units = by_source.get(group.get("dummy_source"), [])
+        dummy_record = None
+        if dummy_units:
+            dummy_device = devices[group["dummy_source"]]
+            assert len({canonical(n) for n in dummy_device["nodes"]}) == 1
+            assert canonical(dummy_device["nodes"][0]) == (
+                "avdd" if dummy_device["model"].startswith("pfet") else "avss"
+            )
+            sites = {
+                tuple(round(v, 6) for v in u["channel_center_um"]): u
+                for u in units + dummy_units
+            }
+            xs = sorted({p[0] for p in sites})
+            ys = sorted({p[1] for p in sites})
+            perimeter = {
+                (x, y)
+                for x in xs
+                for y in ys
+                if x in (xs[0], xs[-1]) or y in (ys[0], ys[-1])
+            }
+            assert len(sites) == len(xs) * len(ys)
+            assert all(sites[p]["source"] == group["dummy_source"] for p in perimeter)
+            dummy_record = {
+                "count": len(dummy_units),
+                "rail": canonical(dummy_device["nodes"][0]),
+                "complete_perimeter": True,
+                "perimeter_units": len(perimeter),
+                "internal_units": len(dummy_units) - len(perimeter),
+            }
         group_records.append(
             {
                 "names": names,
                 "bounds_um": [x, y, x + width, y + height],
-                "max_centroid_separation_um": max(
-                    math.dist(a, b) for a, b in combinations(centers, 2)
+                "max_centroid_separation_um": (
+                    max(math.dist(a, b) for a, b in combinations(centers, 2))
+                    if len(centers) > 1
+                    else 0.0
                 ),
                 "devices": unit_metrics,
+                "dummy_verification": dummy_record,
                 "foreign_routes_over_channels": foreign,
                 "metal_fill_overlap_group_um2": {
                     f"M{i+1}": (bounds & fill[n]).area() * dbu**2
@@ -205,7 +245,7 @@ def analyze(release, output):
     # than assuming the hand-selected matching groups cover every current mirror.
     families = defaultdict(list)
     for name, device in devices.items():
-        if name not in by_source:
+        if name not in by_source or name.startswith("DUM_"):
             continue
         if name.startswith("M") and name[1:].isdigit() and int(name[1:]) >= 24:
             continue  # Trim transmission gates and inverters.
@@ -272,6 +312,60 @@ def analyze(release, output):
         }
         for name, shapes in net_shapes.items()
     }
+    local_validation = []
+    local_path = release / "matched_local_routes.json"
+    if local_path.exists() and all(
+        "reserved_bounds_um" in r for r in json.loads(local_path.read_text())
+    ):
+        for plan in core_drain_routes(placement, dbu, 0.8):
+            name = canonical(plan["net"])
+            window = rectangle(plan["reserved_bounds"])
+            areas, counts = [], []
+            for number, expected in zip([36, 42, 46], plan["metal"]):
+                actual = net_shapes[name][number] & window
+                assert (actual ^ (expected & window)).is_empty(), (
+                    name,
+                    number,
+                    "local route modified",
+                )
+                areas.append(actual.area() * dbu**2)
+            for number, expected in zip([38, 40], plan["vias"]):
+                actual = net_shapes[name][number] & window
+                assert (actual ^ (expected & window)).is_empty(), (
+                    name,
+                    number,
+                    "local vias modified",
+                )
+                counts.append(actual.count())
+            local_validation.append(
+                {
+                    "source": plan["source"],
+                    "net": name,
+                    "actual_local_metal_area_um2": areas,
+                    "actual_local_via_counts": counts,
+                    "geometry_xor_um2": 0.0,
+                }
+            )
+        for record in local_validation[1:]:
+            assert (
+                record["actual_local_metal_area_um2"]
+                == local_validation[0]["actual_local_metal_area_um2"]
+            )
+            assert (
+                record["actual_local_via_counts"]
+                == local_validation[0]["actual_local_via_counts"]
+            )
+    source_plan = core_supply_routes(placement, dbu, 0.8)
+    for number, expected in zip([36, 42, 46], source_plan["metal"]):
+        assert (expected - net_shapes["avdd"][number]).is_empty(), (
+            number,
+            "source bus missing",
+        )
+    for number, expected in zip([38, 40], source_plan["vias"]):
+        assert (expected - net_shapes["avdd"][number]).is_empty(), (
+            number,
+            "source bus via missing",
+        )
     record = {
         "scope": "Read-only geometry/connectivity audit; not mismatch or electrical qualification",
         "release_sha256": hashes,
@@ -281,6 +375,15 @@ def analyze(release, output):
         "gate_source_bulk_families": family_records,
         "additional_pair_distances": pairs,
         "net_geometry": net_metrics,
+        "balanced_local_routes_verified_in_gds": local_validation,
+        "main_mirror_source_bus": {
+            "verified_in_gds": True,
+            "source_terminals": len(source_plan["unit_sources"]),
+            "M2_escape_length_um": 2.4,
+            "M3_row_bus_width_um": 2.0,
+            "M4_common_trunk_width_um": 2.0,
+            "global_branch_RC_equality_claimed": False,
+        },
         "units": all_mos,
     }
     output.mkdir(parents=True, exist_ok=True)
@@ -305,8 +408,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     layout_dir = Path(__file__).resolve().parent.parent
     parser.add_argument("--release", type=Path, default=layout_dir / "release")
-    parser.add_argument(
-        "--out", type=Path, default=layout_dir / "reviews/2026-10-21-mirrors"
-    )
+    parser.add_argument("--out", type=Path, default=layout_dir / "build/mirror_review")
     args = parser.parse_args()
     analyze(args.release, args.out)

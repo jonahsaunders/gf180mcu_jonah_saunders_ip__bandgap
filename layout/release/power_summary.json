@@ -1,20 +1,132 @@
 [
   {
-    "net": "avdd",
+    "net": "dvdd",
     "m5_width_um": 2,
-    "landing_count": 159,
-    "via4_count": 636,
-    "area_um2": 5674.4,
+    "landing_count": 11,
+    "via4_count": 44,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 412.0,
     "signal_clearance_um": 3.0,
+    "unreinforced_landings": 0
+  },
+  {
+    "net": "vref",
+    "m5_width_um": 2,
+    "landing_count": 15,
+    "via4_count": 20,
+    "direct_metal5_landings": 10,
+    "added_area_um2": 1996.6899999999998,
+    "signal_clearance_um": 0,
+    "unreinforced_landings": 0
+  },
+  {
+    "net": "v1",
+    "m5_width_um": 2,
+    "landing_count": 6,
+    "via4_count": 24,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 733.6,
+    "signal_clearance_um": 0,
+    "unreinforced_landings": 0
+  },
+  {
+    "net": "v2",
+    "m5_width_um": 2,
+    "landing_count": 5,
+    "via4_count": 20,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 733.6,
+    "signal_clearance_um": 0,
+    "unreinforced_landings": 0
+  },
+  {
+    "net": "vq3",
+    "m5_width_um": 2,
+    "landing_count": 3,
+    "via4_count": 12,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 3560.7999999999997,
+    "signal_clearance_um": 0,
+    "unreinforced_landings": 0
+  },
+  {
+    "net": "rbit0top",
+    "m5_width_um": 2,
+    "landing_count": 3,
+    "via4_count": 12,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 84.0,
+    "signal_clearance_um": 0,
+    "unreinforced_landings": 1
+  },
+  {
+    "net": "rbit1top",
+    "m5_width_um": 2,
+    "landing_count": 2,
+    "via4_count": 8,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 4.0,
+    "signal_clearance_um": 0,
+    "unreinforced_landings": 2
+  },
+  {
+    "net": "rbit2top",
+    "m5_width_um": 2,
+    "landing_count": 1,
+    "via4_count": 4,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 4.0,
+    "signal_clearance_um": 0,
+    "unreinforced_landings": 1
+  },
+  {
+    "net": "rbit3top",
+    "m5_width_um": 2,
+    "landing_count": 3,
+    "via4_count": 12,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 191.2,
+    "signal_clearance_um": 0,
+    "unreinforced_landings": 0
+  },
+  {
+    "net": "rbit4top",
+    "m5_width_um": 2,
+    "landing_count": 1,
+    "via4_count": 4,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 4.0,
+    "signal_clearance_um": 0,
     "unreinforced_landings": 3
   },
   {
-    "net": "dvdd",
+    "net": "rbit5top",
     "m5_width_um": 2,
-    "landing_count": 10,
-    "via4_count": 40,
-    "area_um2": 407.2,
-    "signal_clearance_um": 3.0,
+    "landing_count": 1,
+    "via4_count": 4,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 4.0,
+    "signal_clearance_um": 0,
     "unreinforced_landings": 0
+  },
+  {
+    "net": "rbit6top",
+    "m5_width_um": 2,
+    "landing_count": 2,
+    "via4_count": 8,
+    "direct_metal5_landings": 0,
+    "added_area_um2": 13.6,
+    "signal_clearance_um": 0,
+    "unreinforced_landings": 0
+  },
+  {
+    "net": "avdd",
+    "m5_width_um": 2,
+    "landing_count": 55,
+    "via4_count": 28,
+    "direct_metal5_landings": 48,
+    "added_area_um2": 649.208,
+    "signal_clearance_um": 3.0,
+    "unreinforced_landings": 529
   }
 ]
