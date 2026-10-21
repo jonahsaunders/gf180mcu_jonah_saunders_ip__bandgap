@@ -1,0 +1,2927 @@
+{
+  "mode": "schematic",
+  "AVDD_V": 5.0,
+  "DVDD_V": 3.3,
+  "trim_code": 72,
+  "temperature_C": 25,
+  "vref_V": 1.194381285576608,
+  "vref_difference_from_saved_screen_V": 1.5360550609244683e-09,
+  "devices": {
+    "AN": {
+      "current_uA": 0.04255568608613203,
+      "vds_mean_V": 4.913940545385895,
+      "vgs_mean_V": 0.7159912630014914,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "AP": {
+      "current_uA": 0.0425556858640874,
+      "vds_mean_V": -0.08605945461410514,
+      "vgs_mean_V": -1.366030993442557,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "DUM_M1": {
+      "current_uA": 0.0,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "DUM_M11": {
+      "current_uA": 2.58493941422821e-20,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "DUM_M16": {
+      "current_uA": 0.0,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "DUM_M3": {
+      "current_uA": 0.0,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "DUM_MFOLD1": {
+      "current_uA": 0.0,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "DUM_MINP": {
+      "current_uA": 0.0,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "DUM_MPFOLD": {
+      "current_uA": 0.0,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "DUM_MPSINK": {
+      "current_uA": 0.0,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "DUM_MSINK1": {
+      "current_uA": 0.0,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "DUM_PCAS1": {
+      "current_uA": 0.0,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "DUM_PLOAD1": {
+      "current_uA": 1.292469707114106e-20,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "DUM_PREF": {
+      "current_uA": 0.0,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "DUM_VBNSINK": {
+      "current_uA": 0.0,
+      "vds_mean_V": 0.0,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M1": {
+      "current_uA": 5.03525833691427,
+      "vds_mean_V": -0.2297227914332387,
+      "vgs_mean_V": -0.9451075965570723,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "M10": {
+      "current_uA": 0.1100231188377876,
+      "vds_mean_V": 0.6650880483323443,
+      "vgs_mean_V": 0.6650880615678962,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M11": {
+      "current_uA": 5.03596184133517,
+      "vds_mean_V": -2.978388508677514,
+      "vgs_mean_V": -1.1349143322239144,
+      "vsb_mean_V": -0.2311166612186426,
+      "source_voltage_range_V": [
+        4.768883338781357,
+        4.768883338781357
+      ]
+    },
+    "M12": {
+      "current_uA": 5.03526423991722,
+      "vds_mean_V": -0.7153848051238336,
+      "vgs_mean_V": -1.1363082020093183,
+      "vsb_mean_V": -0.2297227914332387,
+      "source_voltage_range_V": [
+        4.770277208566761,
+        4.770277208566761
+      ]
+    },
+    "M13": {
+      "current_uA": 5.03643052002234,
+      "vds_mean_V": -3.574226358468844,
+      "vgs_mean_V": -1.1346386374880089,
+      "vsb_mean_V": -0.2313923559545481,
+      "source_voltage_range_V": [
+        4.768607644045452,
+        4.768607644045452
+      ]
+    },
+    "M14": {
+      "current_uA": 1.00668605303629,
+      "vds_mean_V": -0.23002569244039606,
+      "vgs_mean_V": -0.9451075965570723,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "M15": {
+      "current_uA": 1.00707811331824,
+      "vds_mean_V": -3.9952065879264818,
+      "vgs_mean_V": -1.136005301002161,
+      "vsb_mean_V": -0.23002569244039606,
+      "source_voltage_range_V": [
+        4.769974307559604,
+        4.769974307559604
+      ]
+    },
+    "M16": {
+      "current_uA": 1.007082391188187,
+      "vds_mean_V": 0.7747677196331223,
+      "vgs_mean_V": 0.7747677196331223,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M17": {
+      "current_uA": 1.10500257077817,
+      "vds_mean_V": -1.366030993442557,
+      "vgs_mean_V": -1.366030993442557,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "M18": {
+      "current_uA": 1.105002565815648,
+      "vds_mean_V": 3.633969006557443,
+      "vgs_mean_V": 0.7747677196331223,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M19": {
+      "current_uA": 2.45622324454884,
+      "vds_mean_V": -1.1122434607746778,
+      "vgs_mean_V": -1.366030993442557,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "M2": {
+      "current_uA": 5.03592815413183,
+      "vds_mean_V": -0.2311166612186426,
+      "vgs_mean_V": -0.9451075965570723,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "M20": {
+      "current_uA": 4.2756909124363995e-06,
+      "vds_mean_V": -4.225232280366877,
+      "vgs_mean_V": -0.08605945461410514,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "M21": {
+      "current_uA": 2.456223244351463,
+      "vds_mean_V": 1.7053877312181882,
+      "vgs_mean_V": 1.7053877312181882,
+      "vsb_mean_V": 2.182368808007134,
+      "source_voltage_range_V": [
+        2.182368808007134,
+        2.182368808007134
+      ]
+    },
+    "M22": {
+      "current_uA": 2.456217174318098,
+      "vds_mean_V": 1.2410487477927963,
+      "vgs_mean_V": 1.2410487438382671,
+      "vsb_mean_V": 0.9413200641688667,
+      "source_voltage_range_V": [
+        0.9413200641688667,
+        0.9413200641688667
+      ]
+    },
+    "M23": {
+      "current_uA": 2.456214044599392,
+      "vds_mean_V": 0.9413200667524532,
+      "vgs_mean_V": 0.9413200641688667,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M24": {
+      "current_uA": 1.55060076714851e-05,
+      "vds_mean_V": -0.0016640126981521952,
+      "vgs_mean_V": 2.4986075228363633,
+      "vsb_mean_V": -2.498607531045533,
+      "source_voltage_range_V": [
+        0.8013924689544667,
+        0.8013924689544667
+      ]
+    },
+    "M25": {
+      "current_uA": 1.598701544082211e-06,
+      "vds_mean_V": 0.0016640126981521952,
+      "vgs_mean_V": -0.7997284562563145,
+      "vsb_mean_V": 0.7997284562563145,
+      "source_voltage_range_V": [
+        0.7997284562563145,
+        0.7997284562563145
+      ]
+    },
+    "M26": {
+      "current_uA": 7.77161858239376e-06,
+      "vds_mean_V": -0.0031970967598681233,
+      "vgs_mean_V": 2.5002715355345155,
+      "vsb_mean_V": -2.5002715437436853,
+      "source_voltage_range_V": [
+        0.7997284562563145,
+        0.7997284562563145
+      ]
+    },
+    "M27": {
+      "current_uA": 7.976901347289955e-07,
+      "vds_mean_V": 0.0031970967598681233,
+      "vgs_mean_V": -0.7965313594964464,
+      "vsb_mean_V": 0.7965313594964464,
+      "source_voltage_range_V": [
+        0.7965313594964464,
+        0.7965313594964464
+      ]
+    },
+    "M28": {
+      "current_uA": 7.65982334766407e-06,
+      "vds_mean_V": -0.006263268287806989,
+      "vgs_mean_V": 2.5034686322943838,
+      "vsb_mean_V": -2.5034686405035536,
+      "source_voltage_range_V": [
+        0.7965313594964464,
+        0.7965313594964464
+      ]
+    },
+    "M29": {
+      "current_uA": 7.973035482738738e-07,
+      "vds_mean_V": 0.006263268287806989,
+      "vgs_mean_V": -0.7902680912086394,
+      "vsb_mean_V": 0.7902680912086394,
+      "source_voltage_range_V": [
+        0.7902680912086394,
+        0.7902680912086394
+      ]
+    },
+    "M3": {
+      "current_uA": 5.035241182452993,
+      "vds_mean_V": 1.0257380583039972,
+      "vgs_mean_V": 1.0822946044576263,
+      "vsb_mean_V": 0.7083262348607118,
+      "source_voltage_range_V": [
+        0.7083262348607118,
+        0.7083262348607118
+      ]
+    },
+    "M30": {
+      "current_uA": 3.2187724033321897e-06,
+      "vds_mean_V": -0.0008919105722516862,
+      "vgs_mean_V": -0.7902680828536737,
+      "vsb_mean_V": -2.5097319087913603,
+      "source_voltage_range_V": [
+        0.7902680912086394,
+        0.7902680912086394
+      ]
+    },
+    "M31": {
+      "current_uA": 4.674093657023772,
+      "vds_mean_V": 0.0008919105722516862,
+      "vgs_mean_V": 2.5106238193636123,
+      "vsb_mean_V": 0.7893761806363877,
+      "source_voltage_range_V": [
+        0.7893761806363877,
+        0.7893761806363877
+      ]
+    },
+    "M32": {
+      "current_uA": 2.57265560718523e-06,
+      "vds_mean_V": -0.024660304123165333,
+      "vgs_mean_V": 2.510623811154442,
+      "vsb_mean_V": -2.5106238193636123,
+      "source_voltage_range_V": [
+        0.7893761806363877,
+        0.7893761806363877
+      ]
+    },
+    "M33": {
+      "current_uA": 7.894421356233914e-07,
+      "vds_mean_V": 0.024660304123165333,
+      "vgs_mean_V": -0.7647158765132224,
+      "vsb_mean_V": 0.7647158765132224,
+      "source_voltage_range_V": [
+        0.7647158765132224,
+        0.7647158765132224
+      ]
+    },
+    "M34": {
+      "current_uA": 2.60778354279893e-06,
+      "vds_mean_V": -0.049189700276571435,
+      "vgs_mean_V": 2.5352841152776078,
+      "vsb_mean_V": -2.5352841234867776,
+      "source_voltage_range_V": [
+        0.7647158765132224,
+        0.7647158765132224
+      ]
+    },
+    "M35": {
+      "current_uA": 7.647791795255282e-07,
+      "vds_mean_V": 0.049189700276571435,
+      "vgs_mean_V": -0.7155261762366509,
+      "vsb_mean_V": 0.7155261762366509,
+      "source_voltage_range_V": [
+        0.7155261762366509,
+        0.7155261762366509
+      ]
+    },
+    "M36": {
+      "current_uA": 2.6500006676437997e-06,
+      "vds_mean_V": -0.0072005672881029215,
+      "vgs_mean_V": -0.7155261678816852,
+      "vsb_mean_V": -2.584473823763349,
+      "source_voltage_range_V": [
+        0.7155261762366509,
+        0.7155261762366509
+      ]
+    },
+    "M37": {
+      "current_uA": 4.667377567879605,
+      "vds_mean_V": 0.0072005672881029215,
+      "vgs_mean_V": 2.591674391051452,
+      "vsb_mean_V": 0.708325608948548,
+      "source_voltage_range_V": [
+        0.708325608948548,
+        0.708325608948548
+      ]
+    },
+    "M38": {
+      "current_uA": 3.308337761728786e-06,
+      "vds_mean_V": 3.300000263054186,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M39": {
+      "current_uA": 3.30833760684276e-06,
+      "vds_mean_V": -8.209169788386816e-09,
+      "vgs_mean_V": -3.3,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        3.3,
+        3.3
+      ]
+    },
+    "M3C": {
+      "current_uA": 5.035265253998904,
+      "vds_mean_V": 2.3208281102782187,
+      "vgs_mean_V": 1.400488108758597,
+      "vsb_mean_V": 1.734064293164709,
+      "source_voltage_range_V": [
+        1.734064293164709,
+        1.734064293164709
+      ]
+    },
+    "M4": {
+      "current_uA": 5.035965206186376,
+      "vds_mean_V": 1.082171992506939,
+      "vgs_mean_V": 1.082171992506939,
+      "vsb_mean_V": 0.7083228375969041,
+      "source_voltage_range_V": [
+        0.7083228375969041,
+        0.7083228375969041
+      ]
+    },
+    "M40": {
+      "current_uA": 3.308337761728786e-06,
+      "vds_mean_V": 3.300000263054186,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M41": {
+      "current_uA": 3.30833760684276e-06,
+      "vds_mean_V": -8.209169788386816e-09,
+      "vgs_mean_V": -3.3,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        3.3,
+        3.3
+      ]
+    },
+    "M42": {
+      "current_uA": 3.308337761728786e-06,
+      "vds_mean_V": 3.300000263054186,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M43": {
+      "current_uA": 3.30833760684276e-06,
+      "vds_mean_V": -8.209169788386816e-09,
+      "vgs_mean_V": -3.3,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        3.3,
+        3.3
+      ]
+    },
+    "M44": {
+      "current_uA": 3.487997609325806e-06,
+      "vds_mean_V": 8.354965679078511e-09,
+      "vgs_mean_V": 3.3,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M45": {
+      "current_uA": 3.48799760932581e-06,
+      "vds_mean_V": -3.299999991645034,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        3.3,
+        3.3
+      ]
+    },
+    "M46": {
+      "current_uA": 3.308337761728786e-06,
+      "vds_mean_V": 3.300000263054186,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M47": {
+      "current_uA": 3.30833760684276e-06,
+      "vds_mean_V": -8.209169788386816e-09,
+      "vgs_mean_V": -3.3,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        3.3,
+        3.3
+      ]
+    },
+    "M48": {
+      "current_uA": 3.308337761728786e-06,
+      "vds_mean_V": 3.300000263054186,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M49": {
+      "current_uA": 3.30833760684276e-06,
+      "vds_mean_V": -8.209169788386816e-09,
+      "vgs_mean_V": -3.3,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        3.3,
+        3.3
+      ]
+    },
+    "M5": {
+      "current_uA": 5.03605940913869,
+      "vds_mean_V": -0.2313923559545481,
+      "vgs_mean_V": -0.9451075965570723,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "M50": {
+      "current_uA": 3.487997609325806e-06,
+      "vds_mean_V": 8.354965679078511e-09,
+      "vgs_mean_V": 3.3,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "M51": {
+      "current_uA": 3.48799760932581e-06,
+      "vds_mean_V": -3.299999991645034,
+      "vgs_mean_V": 0.0,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        3.3,
+        3.3
+      ]
+    },
+    "M6": {
+      "current_uA": 0.11002972007938701,
+      "vds_mean_V": -2.178094440108997,
+      "vgs_mean_V": -0.9451075965570723,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "M7": {
+      "current_uA": 3.3687338632911898e-06,
+      "vds_mean_V": -2.2643975733390844,
+      "vgs_mean_V": 0.8590481419429672,
+      "vsb_mean_V": -0.9451075965570723,
+      "source_voltage_range_V": [
+        4.054892403442928,
+        4.054892403442928
+      ]
+    },
+    "M8": {
+      "current_uA": 0.1100297182254906,
+      "vds_mean_V": 1.265564273675627,
+      "vgs_mean_V": 1.265564273675627,
+      "vsb_mean_V": 1.556341286215376,
+      "source_voltage_range_V": [
+        1.556341286215376,
+        1.556341286215376
+      ]
+    },
+    "M9": {
+      "current_uA": 0.1100253401720153,
+      "vds_mean_V": 0.8912532515682818,
+      "vgs_mean_V": 0.8912532246474798,
+      "vsb_mean_V": 0.6650880615678962,
+      "source_voltage_range_V": [
+        0.6650880615678962,
+        0.6650880615678962
+      ]
+    },
+    "MFOLD1": {
+      "current_uA": 2.0309031354732396,
+      "vds_mean_V": 0.8959688224539462,
+      "vgs_mean_V": 1.1229175465237482,
+      "vsb_mean_V": 0.8434235927613158,
+      "source_voltage_range_V": [
+        0.8434235927613158,
+        0.8434235927613158
+      ]
+    },
+    "MFOLD1C": {
+      "current_uA": 2.030914676784357,
+      "vds_mean_V": 2.3370517781433726,
+      "vgs_mean_V": 1.395159986708044,
+      "vsb_mean_V": 1.739392415215262,
+      "source_voltage_range_V": [
+        1.739392415215262,
+        1.739392415215262
+      ]
+    },
+    "MFOLD2": {
+      "current_uA": 2.030977205796307,
+      "vds_mean_V": 0.947115269523982,
+      "vgs_mean_V": 1.122835569490708,
+      "vsb_mean_V": 0.8435055697943561,
+      "source_voltage_range_V": [
+        0.8435055697943561,
+        0.8435055697943561
+      ]
+    },
+    "MINN": {
+      "current_uA": 0.9458064295686169,
+      "vds_mean_V": -1.612319522895215,
+      "vgs_mean_V": -1.7474988578288593,
+      "vsb_mean_V": -2.544174907310429,
+      "source_voltage_range_V": [
+        2.455825092689571,
+        2.455825092689571
+      ]
+    },
+    "MINP": {
+      "current_uA": 0.9458701059881329,
+      "vds_mean_V": -1.612401499928255,
+      "vgs_mean_V": -1.7475022550926667,
+      "vsb_mean_V": -2.544174907310429,
+      "source_voltage_range_V": [
+        2.455825092689571,
+        2.455825092689571
+      ]
+    },
+    "MPFOLD": {
+      "current_uA": 0.523689256911755,
+      "vds_mean_V": -3.0336588607149353,
+      "vgs_mean_V": -0.8502409514484679,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "MPSINK": {
+      "current_uA": 0.747180249849674,
+      "vds_mean_V": -4.278795505456147,
+      "vgs_mean_V": -0.8502409514484679,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "MSINK1": {
+      "current_uA": 2.976770649997293,
+      "vds_mean_V": 0.8434235927613157,
+      "vgs_mean_V": 0.7212044945438528,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "MSINK2": {
+      "current_uA": 2.976780998121766,
+      "vds_mean_V": 0.8435055697943561,
+      "vgs_mean_V": 0.7212044945438528,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "MSU_HYS": {
+      "current_uA": 1.76454186956269,
+      "vds_mean_V": -4.996304061090584,
+      "vgs_mean_V": -2.178094440108997,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "MSU_LOAD": {
+      "current_uA": 0.000883597358475319,
+      "vds_mean_V": -4.996304061145681,
+      "vgs_mean_V": -0.7927698518238229,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "MSU_SENSE": {
+      "current_uA": 1.765425466921253,
+      "vds_mean_V": 0.003695938854319108,
+      "vgs_mean_V": 1.790620839318338,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "MTAIL": {
+      "current_uA": 1.89160960020785,
+      "vds_mean_V": -2.544174907310429,
+      "vgs_mean_V": -0.7927698518238229,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "N1": {
+      "current_uA": 0.217467724493062,
+      "vds_mean_V": 0.7159912630014914,
+      "vgs_mean_V": 0.7159912630014914,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "N2": {
+      "current_uA": 0.211963829120092,
+      "vds_mean_V": 4.137390834537757,
+      "vgs_mean_V": 0.7036230489877169,
+      "vsb_mean_V": 0.01236821401377449,
+      "source_voltage_range_V": [
+        0.01236821401377449,
+        0.01236821401377449
+      ]
+    },
+    "N3": {
+      "current_uA": 0.028963085041411322,
+      "vds_mean_V": 3.382368293413756,
+      "vgs_mean_V": 0.7159912630014914,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "NTAIL": {
+      "current_uA": 0.4464512799818405,
+      "vds_mean_V": 4.207230148176177,
+      "vgs_mean_V": 0.7159912630014914,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "PCAS1": {
+      "current_uA": 2.03091467909644,
+      "vds_mean_V": -0.48594056469545865,
+      "vgs_mean_V": -1.180016464640337,
+      "vsb_mean_V": -0.43761524194590695,
+      "source_voltage_range_V": [
+        4.562384758054093,
+        4.562384758054093
+      ]
+    },
+    "PCAS2": {
+      "current_uA": 2.0309772164474,
+      "vds_mean_V": -2.770808606002186,
+      "vgs_mean_V": -1.179061151906768,
+      "vsb_mean_V": -0.43857055467947603,
+      "source_voltage_range_V": [
+        4.561429445320524,
+        4.561429445320524
+      ]
+    },
+    "PLOAD1": {
+      "current_uA": 2.0309063186729803,
+      "vds_mean_V": -0.43761524194590695,
+      "vgs_mean_V": -0.9235558066413656,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "PLOAD2": {
+      "current_uA": 2.03094877749251,
+      "vds_mean_V": -0.43857055467947603,
+      "vgs_mean_V": -0.9235558066413656,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "PREF": {
+      "current_uA": 0.211963845946139,
+      "vds_mean_V": -0.8502409514484679,
+      "vgs_mean_V": -0.8502409514484679,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "PRMIR": {
+      "current_uA": 0.2174633902185,
+      "vds_mean_V": -4.2840087369985085,
+      "vgs_mean_V": -0.8502409514484679,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "RB_NL": {
+      "current_uA": 0.5971640832935776,
+      "vds_mean_V": 1.377611601734619,
+      "vgs_mean_V": 1.377611561952017,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "RB_NU": {
+      "current_uA": 0.5971685952399497,
+      "vds_mean_V": 1.756940839971289,
+      "vgs_mean_V": 1.756940839971289,
+      "vsb_mean_V": 1.377611561952017,
+      "source_voltage_range_V": [
+        1.377611561952017,
+        1.377611561952017
+      ]
+    },
+    "RB_P": {
+      "current_uA": 0.597168591169132,
+      "vds_mean_V": -1.865447598076694,
+      "vgs_mean_V": -0.8502409514484679,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "SUPINJ": {
+      "current_uA": 4.33653113418586e-06,
+      "vds_mean_V": -4.2840087369985085,
+      "vgs_mean_V": -0.013940933273710598,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "SUPN1": {
+      "current_uA": 1.39554720135493,
+      "vds_mean_V": 3.7737368412950634,
+      "vgs_mean_V": 2.937437844415764,
+      "vsb_mean_V": 1.212321204135768,
+      "source_voltage_range_V": [
+        1.212321204135768,
+        1.212321204135768
+      ]
+    },
+    "SUPN2": {
+      "current_uA": 1.395539188486783,
+      "vds_mean_V": 0.6872585566708047,
+      "vgs_mean_V": 3.6246964010865685,
+      "vsb_mean_V": 0.5250626474649633,
+      "source_voltage_range_V": [
+        0.5250626474649633,
+        0.5250626474649633
+      ]
+    },
+    "SUPN3": {
+      "current_uA": 1.395537451126527,
+      "vds_mean_V": 0.5250626474649633,
+      "vgs_mean_V": 4.149759048551532,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "SUPPDET": {
+      "current_uA": 1.3955472121822499,
+      "vds_mean_V": -0.013940933273710598,
+      "vgs_mean_V": -0.8502409514484679,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "VBNFOLDHIGH": {
+      "current_uA": 0.5236892585506563,
+      "vds_mean_V": 1.121514784359865,
+      "vgs_mean_V": 1.121514784359865,
+      "vsb_mean_V": 0.844826354925199,
+      "source_voltage_range_V": [
+        0.844826354925199,
+        0.844826354925199
+      ]
+    },
+    "VBNFOLDLOW": {
+      "current_uA": 0.5236864464297497,
+      "vds_mean_V": 0.8448262769943289,
+      "vgs_mean_V": 0.844826354925199,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "VBNSINK": {
+      "current_uA": 0.7471802346660527,
+      "vds_mean_V": 0.7212044945438529,
+      "vgs_mean_V": 0.7212044945438529,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        0.0,
+        0.0
+      ]
+    },
+    "VBPCASHIGHER": {
+      "current_uA": 0.0289408848209134,
+      "vds_mean_V": -0.6138298959163784,
+      "vgs_mean_V": -0.6138298959163784,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    },
+    "VBPCASLOW": {
+      "current_uA": 0.0289631690059926,
+      "vds_mean_V": -1.0038018106698656,
+      "vgs_mean_V": -1.0038018106698656,
+      "vsb_mean_V": -0.6138298959163784,
+      "source_voltage_range_V": [
+        4.386170104083622,
+        4.386170104083622
+      ]
+    },
+    "VBPTAIL": {
+      "current_uA": 0.446451264846104,
+      "vds_mean_V": -0.7927698518238229,
+      "vgs_mean_V": -0.7927698518238229,
+      "vsb_mean_V": 0.0,
+      "source_voltage_range_V": [
+        5.0,
+        5.0
+      ]
+    }
+  },
+  "unit_records": [
+    {
+      "index": 0,
+      "source": "M9",
+      "instance": "XM9",
+      "nodes": [
+        "audit_d0",
+        "bgsu1",
+        "bgsu2",
+        "avss"
+      ],
+      "voltage_probe": "VAUD0",
+      "multiplicity": 1,
+      "aid": 1.100253401720153e-07,
+      "avd": 1.556341313136178,
+      "avg": 1.556341286215376,
+      "avs": 0.6650880615678962,
+      "avb": 0.0
+    },
+    {
+      "index": 1,
+      "source": "M10",
+      "instance": "XM10",
+      "nodes": [
+        "audit_d1",
+        "bgsu2",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD1",
+      "multiplicity": 1,
+      "aid": 1.100231188377876e-07,
+      "avd": 0.6650880483323443,
+      "avg": 0.6650880615678962,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 2,
+      "source": "M22",
+      "instance": "XM22",
+      "nodes": [
+        "audit_d2",
+        "auxsu1",
+        "auxsu2",
+        "avss"
+      ],
+      "voltage_probe": "VAUD2",
+      "multiplicity": 1,
+      "aid": 2.456217174318098e-06,
+      "avd": 2.182368811961663,
+      "avg": 2.182368808007134,
+      "avs": 0.9413200641688667,
+      "avb": 0.0
+    },
+    {
+      "index": 3,
+      "source": "M23",
+      "instance": "XM23",
+      "nodes": [
+        "audit_d3",
+        "auxsu2",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD3",
+      "multiplicity": 1,
+      "aid": 2.456214044599392e-06,
+      "avd": 0.9413200667524532,
+      "avg": 0.9413200641688667,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 4,
+      "source": "M11",
+      "instance": "XM11",
+      "nodes": [
+        "audit_d4",
+        "vcasp",
+        "vx1",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD4",
+      "multiplicity": 5,
+      "aid": -5.03596184133517e-06,
+      "avd": 1.790494830103843,
+      "avg": 3.633969006557443,
+      "avs": 4.768883338781357,
+      "avb": 5.0
+    },
+    {
+      "index": 5,
+      "source": "M12",
+      "instance": "XM12",
+      "nodes": [
+        "audit_d5",
+        "vcasp",
+        "vx2",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD5",
+      "multiplicity": 5,
+      "aid": -5.03526423991722e-06,
+      "avd": 4.054892403442928,
+      "avg": 3.633969006557443,
+      "avs": 4.770277208566761,
+      "avb": 5.0
+    },
+    {
+      "index": 6,
+      "source": "M13",
+      "instance": "XM13",
+      "nodes": [
+        "audit_d6",
+        "vcasp",
+        "vx3",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD6",
+      "multiplicity": 5,
+      "aid": -5.03643052002234e-06,
+      "avd": 1.194381285576608,
+      "avg": 3.633969006557443,
+      "avs": 4.768607644045452,
+      "avb": 5.0
+    },
+    {
+      "index": 7,
+      "source": "M4",
+      "instance": "XM4",
+      "nodes": [
+        "audit_d7",
+        "vgn1",
+        "v1",
+        "avss"
+      ],
+      "voltage_probe": "VAUD7",
+      "multiplicity": 2,
+      "aid": 5.035965206186377e-06,
+      "avd": 1.790494830103843,
+      "avg": 1.790494830103843,
+      "avs": 0.7083228375969041,
+      "avb": 0.0
+    },
+    {
+      "index": 8,
+      "source": "M3",
+      "instance": "XM3",
+      "nodes": [
+        "audit_d8",
+        "vgn2",
+        "v2",
+        "avss"
+      ],
+      "voltage_probe": "VAUD8",
+      "multiplicity": 2,
+      "aid": 5.035241182452993e-06,
+      "avd": 1.734064293164709,
+      "avg": 1.790620839318338,
+      "avs": 0.7083262348607118,
+      "avb": 0.0
+    },
+    {
+      "index": 9,
+      "source": "M16",
+      "instance": "XM16",
+      "nodes": [
+        "audit_d9",
+        "vbn",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD9",
+      "multiplicity": 1,
+      "aid": 1.007082391188187e-06,
+      "avd": 0.7747677196331223,
+      "avg": 0.7747677196331223,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 10,
+      "source": "M18",
+      "instance": "XM18",
+      "nodes": [
+        "audit_d10",
+        "vbn",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD10",
+      "multiplicity": 1,
+      "aid": 1.105002565815648e-06,
+      "avd": 3.633969006557443,
+      "avg": 0.7747677196331223,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 11,
+      "source": "M15",
+      "instance": "XM15",
+      "nodes": [
+        "audit_d11",
+        "vcasp",
+        "vaux",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD11",
+      "multiplicity": 1,
+      "aid": -1.00707811331824e-06,
+      "avd": 0.7747677196331223,
+      "avg": 3.633969006557443,
+      "avs": 4.769974307559604,
+      "avb": 5.0
+    },
+    {
+      "index": 12,
+      "source": "M17",
+      "instance": "XM17",
+      "nodes": [
+        "audit_d12",
+        "vcasp",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD12",
+      "multiplicity": 1,
+      "aid": -1.10500257077817e-06,
+      "avd": 3.633969006557443,
+      "avg": 3.633969006557443,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 13,
+      "source": "M6",
+      "instance": "XM6",
+      "nodes": [
+        "audit_d13",
+        "vgp",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD13",
+      "multiplicity": 1,
+      "aid": -1.10029720079387e-07,
+      "avd": 2.821905559891003,
+      "avg": 4.054892403442928,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 14,
+      "source": "M19",
+      "instance": "XM19",
+      "nodes": [
+        "audit_d14",
+        "vcasp",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD14",
+      "multiplicity": 1,
+      "aid": -2.45622324454884e-06,
+      "avd": 3.887756539225322,
+      "avg": 3.633969006557443,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 15,
+      "source": "M8",
+      "instance": "XM8",
+      "nodes": [
+        "audit_d15",
+        "vsu",
+        "bgsu1",
+        "avss"
+      ],
+      "voltage_probe": "VAUD15",
+      "multiplicity": 1,
+      "aid": 1.100297182254906e-07,
+      "avd": 2.821905559891003,
+      "avg": 2.821905559891003,
+      "avs": 1.556341286215376,
+      "avb": 0.0
+    },
+    {
+      "index": 16,
+      "source": "M21",
+      "instance": "XM21",
+      "nodes": [
+        "audit_d16",
+        "vsua",
+        "auxsu1",
+        "avss"
+      ],
+      "voltage_probe": "VAUD16",
+      "multiplicity": 1,
+      "aid": 2.456223244351463e-06,
+      "avd": 3.887756539225322,
+      "avg": 3.887756539225322,
+      "avs": 2.182368808007134,
+      "avb": 0.0
+    },
+    {
+      "index": 17,
+      "source": "M2",
+      "instance": "XM2",
+      "nodes": [
+        "audit_d17",
+        "vgp",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD17",
+      "multiplicity": 6,
+      "aid": -5.03592815413183e-06,
+      "avd": 4.768883338781357,
+      "avg": 4.054892403442928,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 18,
+      "source": "M1",
+      "instance": "XM1",
+      "nodes": [
+        "audit_d18",
+        "vgp",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD18",
+      "multiplicity": 6,
+      "aid": -5.03525833691427e-06,
+      "avd": 4.770277208566761,
+      "avg": 4.054892403442928,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 19,
+      "source": "M5",
+      "instance": "XM5",
+      "nodes": [
+        "audit_d19",
+        "vgp",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD19",
+      "multiplicity": 6,
+      "aid": -5.03605940913869e-06,
+      "avd": 4.768607644045452,
+      "avg": 4.054892403442928,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 20,
+      "source": "M14",
+      "instance": "XM14",
+      "nodes": [
+        "audit_d20",
+        "vgp",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD20",
+      "multiplicity": 2,
+      "aid": -1.00668605303629e-06,
+      "avd": 4.769974307559604,
+      "avg": 4.054892403442928,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 21,
+      "source": "M3C",
+      "instance": "XM3C",
+      "nodes": [
+        "audit_d21",
+        "psrg_vnc",
+        "psrg_m3_protected",
+        "avss"
+      ],
+      "voltage_probe": "VAUD21",
+      "multiplicity": 2,
+      "aid": 5.035265253998903e-06,
+      "avd": 4.054892403442928,
+      "avg": 3.134552401923306,
+      "avs": 1.734064293164709,
+      "avb": 0.0
+    },
+    {
+      "index": 22,
+      "source": "MTAIL",
+      "instance": "XMTAIL",
+      "nodes": [
+        "audit_d22",
+        "vbp_tail",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD22",
+      "multiplicity": 6,
+      "aid": -1.89160960020785e-06,
+      "avd": 2.455825092689571,
+      "avg": 4.207230148176177,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 23,
+      "source": "PCAS2",
+      "instance": "XPCAS2",
+      "nodes": [
+        "audit_d23",
+        "vbp_cas",
+        "pm2",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD23",
+      "multiplicity": 6,
+      "aid": -2.0309772164474e-06,
+      "avd": 1.790620839318338,
+      "avg": 3.382368293413756,
+      "avs": 4.561429445320524,
+      "avb": 5.0
+    },
+    {
+      "index": 24,
+      "source": "PCAS1",
+      "instance": "XPCAS1",
+      "nodes": [
+        "audit_d24",
+        "vbp_cas",
+        "pm1",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD24",
+      "multiplicity": 6,
+      "aid": -2.03091467909644e-06,
+      "avd": 4.076444193358634,
+      "avg": 3.382368293413756,
+      "avs": 4.562384758054093,
+      "avb": 5.0
+    },
+    {
+      "index": 25,
+      "source": "MINN",
+      "instance": "XMINN",
+      "nodes": [
+        "audit_d25",
+        "v2",
+        "vsp",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD25",
+      "multiplicity": 5,
+      "aid": -9.45806429568617e-07,
+      "avd": 0.8435055697943561,
+      "avg": 0.7083262348607118,
+      "avs": 2.455825092689571,
+      "avb": 5.0
+    },
+    {
+      "index": 26,
+      "source": "MINP",
+      "instance": "XMINP",
+      "nodes": [
+        "audit_d26",
+        "v1",
+        "vsp",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD26",
+      "multiplicity": 5,
+      "aid": -9.45870105988133e-07,
+      "avd": 0.8434235927613158,
+      "avg": 0.7083228375969041,
+      "avs": 2.455825092689571,
+      "avb": 5.0
+    },
+    {
+      "index": 27,
+      "source": "MFOLD2",
+      "instance": "XMFOLD2",
+      "nodes": [
+        "audit_d27",
+        "vbn_fold",
+        "xf2",
+        "avss"
+      ],
+      "voltage_probe": "VAUD27",
+      "multiplicity": 1,
+      "aid": 2.030977205796307e-06,
+      "avd": 1.790620839318338,
+      "avg": 1.966341139285064,
+      "avs": 0.8435055697943561,
+      "avb": 0.0
+    },
+    {
+      "index": 28,
+      "source": "MFOLD1",
+      "instance": "XMFOLD1",
+      "nodes": [
+        "audit_d28",
+        "vbn_fold",
+        "xf1",
+        "avss"
+      ],
+      "voltage_probe": "VAUD28",
+      "multiplicity": 1,
+      "aid": 2.03090313547324e-06,
+      "avd": 1.739392415215262,
+      "avg": 1.966341139285064,
+      "avs": 0.8434235927613158,
+      "avb": 0.0
+    },
+    {
+      "index": 29,
+      "source": "N1",
+      "instance": "XN1",
+      "nodes": [
+        "audit_d29",
+        "vbn_i",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD29",
+      "multiplicity": 1,
+      "aid": 2.17467724493062e-07,
+      "avd": 0.7159912630014914,
+      "avg": 0.7159912630014914,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 30,
+      "source": "N2",
+      "instance": "XN2",
+      "nodes": [
+        "audit_d30",
+        "vbn_i",
+        "vrs",
+        "avss"
+      ],
+      "voltage_probe": "VAUD30",
+      "multiplicity": 1,
+      "aid": 2.11963829120092e-07,
+      "avd": 4.149759048551531,
+      "avg": 0.7159912630014914,
+      "avs": 0.01236821401377449,
+      "avb": 0.0
+    },
+    {
+      "index": 31,
+      "source": "PREF",
+      "instance": "XPREF",
+      "nodes": [
+        "audit_d31",
+        "vbp_i",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD31",
+      "multiplicity": 5,
+      "aid": -2.11963845946139e-07,
+      "avd": 4.149759048551532,
+      "avg": 4.149759048551532,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 32,
+      "source": "PRMIR",
+      "instance": "XPRMIR",
+      "nodes": [
+        "audit_d32",
+        "vbp_i",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD32",
+      "multiplicity": 5,
+      "aid": -2.174633902185e-07,
+      "avd": 0.7159912630014914,
+      "avg": 4.149759048551532,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 33,
+      "source": "NTAIL",
+      "instance": "XNTAIL",
+      "nodes": [
+        "audit_d33",
+        "vbn_i",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD33",
+      "multiplicity": 1,
+      "aid": 4.464512799818405e-07,
+      "avd": 4.207230148176177,
+      "avg": 0.7159912630014914,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 34,
+      "source": "N3",
+      "instance": "XN3",
+      "nodes": [
+        "audit_d34",
+        "vbn_i",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD34",
+      "multiplicity": 1,
+      "aid": 2.896308504141132e-08,
+      "avd": 3.382368293413756,
+      "avg": 0.7159912630014914,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 35,
+      "source": "MPSINK",
+      "instance": "XMPSINK",
+      "nodes": [
+        "audit_d35",
+        "vbp_i",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD35",
+      "multiplicity": 17,
+      "aid": -7.47180249849674e-07,
+      "avd": 0.7212044945438529,
+      "avg": 4.149759048551532,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 36,
+      "source": "MPFOLD",
+      "instance": "XMPFOLD",
+      "nodes": [
+        "audit_d36",
+        "vbp_i",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD36",
+      "multiplicity": 12,
+      "aid": -5.23689256911755e-07,
+      "avd": 1.966341139285064,
+      "avg": 4.149759048551532,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 37,
+      "source": "VBNFOLDHIGH",
+      "instance": "XVBNFOLDHIGH",
+      "nodes": [
+        "audit_d37",
+        "vbn_fold",
+        "vnx_bias",
+        "avss"
+      ],
+      "voltage_probe": "VAUD37",
+      "multiplicity": 1,
+      "aid": 5.236892585506563e-07,
+      "avd": 1.966341139285064,
+      "avg": 1.966341139285064,
+      "avs": 0.844826354925199,
+      "avb": 0.0
+    },
+    {
+      "index": 38,
+      "source": "VBPCASLOW",
+      "instance": "XVBPCASLOW",
+      "nodes": [
+        "audit_d38",
+        "vbp_cas",
+        "vbp_bias",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD38",
+      "multiplicity": 10,
+      "aid": -2.89631690059926e-08,
+      "avd": 3.382368293413756,
+      "avg": 3.382368293413756,
+      "avs": 4.386170104083622,
+      "avb": 5.0
+    },
+    {
+      "index": 39,
+      "source": "VBPTAIL",
+      "instance": "XVBPTAIL",
+      "nodes": [
+        "audit_d39",
+        "vbp_tail",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD39",
+      "multiplicity": 3,
+      "aid": -4.46451264846104e-07,
+      "avd": 4.207230148176177,
+      "avg": 4.207230148176177,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 40,
+      "source": "VBNFOLDLOW",
+      "instance": "XVBNFOLDLOW",
+      "nodes": [
+        "audit_d40",
+        "vnx_bias",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD40",
+      "multiplicity": 1,
+      "aid": 5.236864464297497e-07,
+      "avd": 0.8448262769943289,
+      "avg": 0.844826354925199,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 41,
+      "source": "VBPCASHIGHER",
+      "instance": "XVBPCASHIGHER",
+      "nodes": [
+        "audit_d41",
+        "vbp_bias",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD41",
+      "multiplicity": 9,
+      "aid": -2.89408848209134e-08,
+      "avd": 4.386170104083622,
+      "avg": 4.386170104083622,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 42,
+      "source": "SUPN2",
+      "instance": "XSUPN2",
+      "nodes": [
+        "audit_d42",
+        "vbp_i",
+        "vsu2",
+        "avss"
+      ],
+      "voltage_probe": "VAUD42",
+      "multiplicity": 1,
+      "aid": 1.395539188486783e-06,
+      "avd": 1.212321204135768,
+      "avg": 4.149759048551532,
+      "avs": 0.5250626474649633,
+      "avb": 0.0
+    },
+    {
+      "index": 43,
+      "source": "SUPN3",
+      "instance": "XSUPN3",
+      "nodes": [
+        "audit_d43",
+        "vbp_i",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD43",
+      "multiplicity": 1,
+      "aid": 1.395537451126527e-06,
+      "avd": 0.5250626474649633,
+      "avg": 4.149759048551532,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 44,
+      "source": "PLOAD1",
+      "instance": "XPLOAD1",
+      "nodes": [
+        "audit_d44",
+        "y1",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD44",
+      "multiplicity": 6,
+      "aid": -2.03090631867298e-06,
+      "avd": 4.562384758054093,
+      "avg": 4.076444193358634,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 45,
+      "source": "PLOAD2",
+      "instance": "XPLOAD2",
+      "nodes": [
+        "audit_d45",
+        "y1",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD45",
+      "multiplicity": 6,
+      "aid": -2.03094877749251e-06,
+      "avd": 4.561429445320524,
+      "avg": 4.076444193358634,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 46,
+      "source": "MFOLD1C",
+      "instance": "XMFOLD1C",
+      "nodes": [
+        "audit_d46",
+        "psrg_vnc",
+        "psrg_mf1_protected",
+        "avss"
+      ],
+      "voltage_probe": "VAUD46",
+      "multiplicity": 1,
+      "aid": 2.030914676784357e-06,
+      "avd": 4.076444193358634,
+      "avg": 3.134552401923306,
+      "avs": 1.739392415215262,
+      "avb": 0.0
+    },
+    {
+      "index": 47,
+      "source": "RB_P",
+      "instance": "XRB_P",
+      "nodes": [
+        "audit_d47",
+        "vbp_i",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD47",
+      "multiplicity": 7,
+      "aid": -5.97168591169132e-07,
+      "avd": 3.134552401923306,
+      "avg": 4.149759048551532,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 48,
+      "source": "RB_NU",
+      "instance": "XRB_NU",
+      "nodes": [
+        "audit_d48",
+        "psrg_vnc",
+        "rb_mid",
+        "avss"
+      ],
+      "voltage_probe": "VAUD48",
+      "multiplicity": 1,
+      "aid": 5.971685952399497e-07,
+      "avd": 3.134552401923306,
+      "avg": 3.134552401923306,
+      "avs": 1.377611561952017,
+      "avb": 0.0
+    },
+    {
+      "index": 49,
+      "source": "RB_NL",
+      "instance": "XRB_NL",
+      "nodes": [
+        "audit_d49",
+        "rb_mid",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD49",
+      "multiplicity": 1,
+      "aid": 5.971640832935776e-07,
+      "avd": 1.377611601734619,
+      "avg": 1.377611561952017,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 50,
+      "source": "MSU_LOAD",
+      "instance": "XMSU_LOAD",
+      "nodes": [
+        "audit_d50",
+        "vbp_tail",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD50",
+      "multiplicity": 1,
+      "aid": -8.83597358475319e-10,
+      "avd": 0.003695938854319108,
+      "avg": 4.207230148176177,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 51,
+      "source": "MSU_HYS",
+      "instance": "XMSU_HYS",
+      "nodes": [
+        "audit_d51",
+        "vsu",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD51",
+      "multiplicity": 1,
+      "aid": -1.76454186956269e-06,
+      "avd": 0.003695938909416077,
+      "avg": 2.821905559891003,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 52,
+      "source": "MSU_SENSE",
+      "instance": "XMSU_SENSE",
+      "nodes": [
+        "audit_d52",
+        "vgn2",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD52",
+      "multiplicity": 1,
+      "aid": 1.765425466921253e-06,
+      "avd": 0.003695938854319108,
+      "avg": 1.790620839318338,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 53,
+      "source": "M20",
+      "instance": "XM20",
+      "nodes": [
+        "audit_d53",
+        "aux_gate",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD53",
+      "multiplicity": 1,
+      "aid": -4.2756909124364e-12,
+      "avd": 0.7747677196331223,
+      "avg": 4.913940545385895,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 54,
+      "source": "SUPPDET",
+      "instance": "XSUPPDET",
+      "nodes": [
+        "audit_d54",
+        "vbp_i",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD54",
+      "multiplicity": 2,
+      "aid": -1.39554721218225e-06,
+      "avd": 4.986059066726289,
+      "avg": 4.149759048551532,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 55,
+      "source": "SUPN1",
+      "instance": "XSUPN1",
+      "nodes": [
+        "audit_d55",
+        "vbp_i",
+        "vsu1",
+        "avss"
+      ],
+      "voltage_probe": "VAUD55",
+      "multiplicity": 1,
+      "aid": 1.39554720135493e-06,
+      "avd": 4.986058045430831,
+      "avg": 4.149759048551532,
+      "avs": 1.212321204135768,
+      "avb": 0.0
+    },
+    {
+      "index": 56,
+      "source": "SUPINJ",
+      "instance": "XSUPINJ",
+      "nodes": [
+        "audit_d56",
+        "iref_gate",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD56",
+      "multiplicity": 1,
+      "aid": -4.33653113418586e-12,
+      "avd": 0.7159912630014914,
+      "avg": 4.986059066726289,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 57,
+      "source": "M7",
+      "instance": "XM7",
+      "nodes": [
+        "audit_d57",
+        "aux_gate",
+        "vgp",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD57",
+      "multiplicity": 1,
+      "aid": -3.36873386329119e-12,
+      "avd": 1.790494830103843,
+      "avg": 4.913940545385895,
+      "avs": 4.054892403442928,
+      "avb": 5.0
+    },
+    {
+      "index": 58,
+      "source": "MSINK1",
+      "instance": "XMSINK1",
+      "nodes": [
+        "audit_d58",
+        "vbn_sink",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD58",
+      "multiplicity": 6,
+      "aid": 2.976770649997293e-06,
+      "avd": 0.8434235927613158,
+      "avg": 0.7212044945438529,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 59,
+      "source": "MSINK2",
+      "instance": "XMSINK2",
+      "nodes": [
+        "audit_d59",
+        "vbn_sink",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD59",
+      "multiplicity": 6,
+      "aid": 2.976780998121766e-06,
+      "avd": 0.8435055697943561,
+      "avg": 0.7212044945438529,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 60,
+      "source": "VBNSINK",
+      "instance": "XVBNSINK",
+      "nodes": [
+        "audit_d60",
+        "vbn_sink",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD60",
+      "multiplicity": 2,
+      "aid": 7.471802346660526e-07,
+      "avd": 0.7212044945438529,
+      "avg": 0.7212044945438529,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 61,
+      "source": "AP",
+      "instance": "XAP",
+      "nodes": [
+        "audit_d61",
+        "vcasp",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD61",
+      "multiplicity": 1,
+      "aid": -4.25556858640874e-08,
+      "avd": 4.913940545385895,
+      "avg": 3.633969006557443,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 62,
+      "source": "AN",
+      "instance": "XAN",
+      "nodes": [
+        "audit_d62",
+        "vbn_i",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD62",
+      "multiplicity": 1,
+      "aid": 4.255568608613203e-08,
+      "avd": 4.913940545385895,
+      "avg": 0.7159912630014914,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 63,
+      "source": "M24",
+      "instance": "XM24",
+      "nodes": [
+        "audit_d63",
+        "b0_b",
+        "rbit0top",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD63",
+      "multiplicity": 6,
+      "aid": -1.55060076714851e-11,
+      "avd": 0.7997284562563145,
+      "avg": 3.29999999179083,
+      "avs": 0.8013924689544667,
+      "avb": 3.3
+    },
+    {
+      "index": 64,
+      "source": "M25",
+      "instance": "XM25",
+      "nodes": [
+        "audit_d64",
+        "b0",
+        "rbit1top",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD64",
+      "multiplicity": 2,
+      "aid": 1.598701544082211e-12,
+      "avd": 0.8013924689544667,
+      "avg": 0.0,
+      "avs": 0.7997284562563145,
+      "avb": 0.0
+    },
+    {
+      "index": 65,
+      "source": "M26",
+      "instance": "XM26",
+      "nodes": [
+        "audit_d65",
+        "b1_b",
+        "rbit1top",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD65",
+      "multiplicity": 3,
+      "aid": -7.77161858239376e-12,
+      "avd": 0.7965313594964464,
+      "avg": 3.29999999179083,
+      "avs": 0.7997284562563145,
+      "avb": 3.3
+    },
+    {
+      "index": 66,
+      "source": "M27",
+      "instance": "XM27",
+      "nodes": [
+        "audit_d66",
+        "b1",
+        "rbit2top",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD66",
+      "multiplicity": 1,
+      "aid": 7.976901347289955e-13,
+      "avd": 0.7997284562563145,
+      "avg": 0.0,
+      "avs": 0.7965313594964464,
+      "avb": 0.0
+    },
+    {
+      "index": 67,
+      "source": "M28",
+      "instance": "XM28",
+      "nodes": [
+        "audit_d67",
+        "b2_b",
+        "rbit2top",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD67",
+      "multiplicity": 3,
+      "aid": -7.65982334766407e-12,
+      "avd": 0.7902680912086394,
+      "avg": 3.29999999179083,
+      "avs": 0.7965313594964464,
+      "avb": 3.3
+    },
+    {
+      "index": 68,
+      "source": "M29",
+      "instance": "XM29",
+      "nodes": [
+        "audit_d68",
+        "b2",
+        "rbit3top",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD68",
+      "multiplicity": 1,
+      "aid": 7.973035482738739e-13,
+      "avd": 0.7965313594964464,
+      "avg": 0.0,
+      "avs": 0.7902680912086394,
+      "avb": 0.0
+    },
+    {
+      "index": 69,
+      "source": "M30",
+      "instance": "XM30",
+      "nodes": [
+        "audit_d69",
+        "b3_b",
+        "rbit3top",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD69",
+      "multiplicity": 1,
+      "aid": -3.21877240333219e-12,
+      "avd": 0.7893761806363877,
+      "avg": 8.354965679078511e-09,
+      "avs": 0.7902680912086394,
+      "avb": 3.3
+    },
+    {
+      "index": 70,
+      "source": "M31",
+      "instance": "XM31",
+      "nodes": [
+        "audit_d70",
+        "b3",
+        "rbit4top",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD70",
+      "multiplicity": 1,
+      "aid": 4.674093657023772e-06,
+      "avd": 0.7902680912086394,
+      "avg": 3.3,
+      "avs": 0.7893761806363877,
+      "avb": 0.0
+    },
+    {
+      "index": 71,
+      "source": "M32",
+      "instance": "XM32",
+      "nodes": [
+        "audit_d71",
+        "b4_b",
+        "rbit4top",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD71",
+      "multiplicity": 1,
+      "aid": -2.57265560718523e-12,
+      "avd": 0.7647158765132224,
+      "avg": 3.29999999179083,
+      "avs": 0.7893761806363877,
+      "avb": 3.3
+    },
+    {
+      "index": 72,
+      "source": "M33",
+      "instance": "XM33",
+      "nodes": [
+        "audit_d72",
+        "b4",
+        "rbit5top",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD72",
+      "multiplicity": 1,
+      "aid": 7.894421356233915e-13,
+      "avd": 0.7893761806363877,
+      "avg": 0.0,
+      "avs": 0.7647158765132224,
+      "avb": 0.0
+    },
+    {
+      "index": 73,
+      "source": "M34",
+      "instance": "XM34",
+      "nodes": [
+        "audit_d73",
+        "b5_b",
+        "rbit5top",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD73",
+      "multiplicity": 1,
+      "aid": -2.60778354279893e-12,
+      "avd": 0.7155261762366509,
+      "avg": 3.29999999179083,
+      "avs": 0.7647158765132224,
+      "avb": 3.3
+    },
+    {
+      "index": 74,
+      "source": "M35",
+      "instance": "XM35",
+      "nodes": [
+        "audit_d74",
+        "b5",
+        "rbit6top",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD74",
+      "multiplicity": 1,
+      "aid": 7.647791795255282e-13,
+      "avd": 0.7647158765132224,
+      "avg": 0.0,
+      "avs": 0.7155261762366509,
+      "avb": 0.0
+    },
+    {
+      "index": 75,
+      "source": "M36",
+      "instance": "XM36",
+      "nodes": [
+        "audit_d75",
+        "b6_b",
+        "rbit6top",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD75",
+      "multiplicity": 1,
+      "aid": -2.6500006676438e-12,
+      "avd": 0.708325608948548,
+      "avg": 8.354965679078511e-09,
+      "avs": 0.7155261762366509,
+      "avb": 3.3
+    },
+    {
+      "index": 76,
+      "source": "M37",
+      "instance": "XM37",
+      "nodes": [
+        "audit_d76",
+        "b6",
+        "vq3",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD76",
+      "multiplicity": 1,
+      "aid": 4.667377567879605e-06,
+      "avd": 0.7155261762366509,
+      "avg": 3.3,
+      "avs": 0.708325608948548,
+      "avb": 0.0
+    },
+    {
+      "index": 77,
+      "source": "M38",
+      "instance": "XM38",
+      "nodes": [
+        "audit_d77",
+        "b0",
+        "dvss",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD77",
+      "multiplicity": 1,
+      "aid": 3.308337761728786e-12,
+      "avd": 3.300000263054186,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 78,
+      "source": "M39",
+      "instance": "XM39",
+      "nodes": [
+        "audit_d78",
+        "b0",
+        "dvdd",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD78",
+      "multiplicity": 1,
+      "aid": -3.30833760684276e-12,
+      "avd": 3.29999999179083,
+      "avg": 0.0,
+      "avs": 3.3,
+      "avb": 3.3
+    },
+    {
+      "index": 79,
+      "source": "M40",
+      "instance": "XM40",
+      "nodes": [
+        "audit_d79",
+        "b1",
+        "dvss",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD79",
+      "multiplicity": 1,
+      "aid": 3.308337761728786e-12,
+      "avd": 3.300000263054186,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 80,
+      "source": "M41",
+      "instance": "XM41",
+      "nodes": [
+        "audit_d80",
+        "b1",
+        "dvdd",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD80",
+      "multiplicity": 1,
+      "aid": -3.30833760684276e-12,
+      "avd": 3.29999999179083,
+      "avg": 0.0,
+      "avs": 3.3,
+      "avb": 3.3
+    },
+    {
+      "index": 81,
+      "source": "M42",
+      "instance": "XM42",
+      "nodes": [
+        "audit_d81",
+        "b2",
+        "dvss",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD81",
+      "multiplicity": 1,
+      "aid": 3.308337761728786e-12,
+      "avd": 3.300000263054186,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 82,
+      "source": "M43",
+      "instance": "XM43",
+      "nodes": [
+        "audit_d82",
+        "b2",
+        "dvdd",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD82",
+      "multiplicity": 1,
+      "aid": -3.30833760684276e-12,
+      "avd": 3.29999999179083,
+      "avg": 0.0,
+      "avs": 3.3,
+      "avb": 3.3
+    },
+    {
+      "index": 83,
+      "source": "M44",
+      "instance": "XM44",
+      "nodes": [
+        "audit_d83",
+        "b3",
+        "dvss",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD83",
+      "multiplicity": 1,
+      "aid": 3.487997609325806e-12,
+      "avd": 8.354965679078511e-09,
+      "avg": 3.3,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 84,
+      "source": "M45",
+      "instance": "XM45",
+      "nodes": [
+        "audit_d84",
+        "b3",
+        "dvdd",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD84",
+      "multiplicity": 1,
+      "aid": -3.48799760932581e-12,
+      "avd": 8.354965679078511e-09,
+      "avg": 3.3,
+      "avs": 3.3,
+      "avb": 3.3
+    },
+    {
+      "index": 85,
+      "source": "M46",
+      "instance": "XM46",
+      "nodes": [
+        "audit_d85",
+        "b4",
+        "dvss",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD85",
+      "multiplicity": 1,
+      "aid": 3.308337761728786e-12,
+      "avd": 3.300000263054186,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 86,
+      "source": "M47",
+      "instance": "XM47",
+      "nodes": [
+        "audit_d86",
+        "b4",
+        "dvdd",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD86",
+      "multiplicity": 1,
+      "aid": -3.30833760684276e-12,
+      "avd": 3.29999999179083,
+      "avg": 0.0,
+      "avs": 3.3,
+      "avb": 3.3
+    },
+    {
+      "index": 87,
+      "source": "M48",
+      "instance": "XM48",
+      "nodes": [
+        "audit_d87",
+        "b5",
+        "dvss",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD87",
+      "multiplicity": 1,
+      "aid": 3.308337761728786e-12,
+      "avd": 3.300000263054186,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 88,
+      "source": "M49",
+      "instance": "XM49",
+      "nodes": [
+        "audit_d88",
+        "b5",
+        "dvdd",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD88",
+      "multiplicity": 1,
+      "aid": -3.30833760684276e-12,
+      "avd": 3.29999999179083,
+      "avg": 0.0,
+      "avs": 3.3,
+      "avb": 3.3
+    },
+    {
+      "index": 89,
+      "source": "M50",
+      "instance": "XM50",
+      "nodes": [
+        "audit_d89",
+        "b6",
+        "dvss",
+        "dvss"
+      ],
+      "voltage_probe": "VAUD89",
+      "multiplicity": 1,
+      "aid": 3.487997609325806e-12,
+      "avd": 8.354965679078511e-09,
+      "avg": 3.3,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 90,
+      "source": "M51",
+      "instance": "XM51",
+      "nodes": [
+        "audit_d90",
+        "b6",
+        "dvdd",
+        "dvdd"
+      ],
+      "voltage_probe": "VAUD90",
+      "multiplicity": 1,
+      "aid": -3.48799760932581e-12,
+      "avd": 8.354965679078511e-09,
+      "avg": 3.3,
+      "avs": 3.3,
+      "avb": 3.3
+    },
+    {
+      "index": 91,
+      "source": "DUM_M1",
+      "instance": "XDUM_M1",
+      "nodes": [
+        "audit_d91",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD91",
+      "multiplicity": 22,
+      "aid": -0.0,
+      "avd": 5.0,
+      "avg": 5.0,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 92,
+      "source": "DUM_M11",
+      "instance": "XDUM_M11",
+      "nodes": [
+        "audit_d92",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD92",
+      "multiplicity": 34,
+      "aid": -2.58493941422821e-26,
+      "avd": 5.0,
+      "avg": 5.0,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 93,
+      "source": "DUM_MINP",
+      "instance": "XDUM_MINP",
+      "nodes": [
+        "audit_d93",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD93",
+      "multiplicity": 29,
+      "aid": -0.0,
+      "avd": 5.0,
+      "avg": 5.0,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 94,
+      "source": "DUM_PCAS1",
+      "instance": "XDUM_PCAS1",
+      "nodes": [
+        "audit_d94",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD94",
+      "multiplicity": 20,
+      "aid": -0.0,
+      "avd": 5.0,
+      "avg": 5.0,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 95,
+      "source": "DUM_PLOAD1",
+      "instance": "XDUM_PLOAD1",
+      "nodes": [
+        "audit_d95",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD95",
+      "multiplicity": 20,
+      "aid": 1.292469707114106e-26,
+      "avd": 5.0,
+      "avg": 5.0,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 96,
+      "source": "DUM_PREF",
+      "instance": "XDUM_PREF",
+      "nodes": [
+        "audit_d96",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD96",
+      "multiplicity": 29,
+      "aid": -0.0,
+      "avd": 5.0,
+      "avg": 5.0,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 97,
+      "source": "DUM_MPSINK",
+      "instance": "XDUM_MPSINK",
+      "nodes": [
+        "audit_d97",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD97",
+      "multiplicity": 23,
+      "aid": -0.0,
+      "avd": 5.0,
+      "avg": 5.0,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 98,
+      "source": "DUM_MPFOLD",
+      "instance": "XDUM_MPFOLD",
+      "nodes": [
+        "audit_d98",
+        "avdd",
+        "avdd",
+        "avdd"
+      ],
+      "voltage_probe": "VAUD98",
+      "multiplicity": 20,
+      "aid": -0.0,
+      "avd": 5.0,
+      "avg": 5.0,
+      "avs": 5.0,
+      "avb": 5.0
+    },
+    {
+      "index": 99,
+      "source": "DUM_MSINK1",
+      "instance": "XDUM_MSINK1",
+      "nodes": [
+        "audit_d99",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD99",
+      "multiplicity": 20,
+      "aid": -0.0,
+      "avd": -0.0,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 100,
+      "source": "DUM_M3",
+      "instance": "XDUM_M3",
+      "nodes": [
+        "audit_d100",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD100",
+      "multiplicity": 14,
+      "aid": -0.0,
+      "avd": -0.0,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 101,
+      "source": "DUM_MFOLD1",
+      "instance": "XDUM_MFOLD1",
+      "nodes": [
+        "audit_d101",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD101",
+      "multiplicity": 10,
+      "aid": -0.0,
+      "avd": -0.0,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 102,
+      "source": "DUM_M16",
+      "instance": "XDUM_M16",
+      "nodes": [
+        "audit_d102",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD102",
+      "multiplicity": 10,
+      "aid": -0.0,
+      "avd": -0.0,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    },
+    {
+      "index": 103,
+      "source": "DUM_VBNSINK",
+      "instance": "XDUM_VBNSINK",
+      "nodes": [
+        "audit_d103",
+        "avss",
+        "avss",
+        "avss"
+      ],
+      "voltage_probe": "VAUD103",
+      "multiplicity": 10,
+      "aid": -0.0,
+      "avd": -0.0,
+      "avg": 0.0,
+      "avs": 0.0,
+      "avb": 0.0
+    }
+  ],
+  "original_circuit_sha256": "452703c882757b759cda44eb6c8a606abe3ae6bc89cd4a849443e8cf1207e36b",
+  "deck_sha256": "9e7fd2aba9d2e8b6e479b51ddba86dacec93dac20f831e158646f29579ba88e7"
+}

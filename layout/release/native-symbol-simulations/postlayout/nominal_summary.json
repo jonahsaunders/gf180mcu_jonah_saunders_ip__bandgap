@@ -1,0 +1,26 @@
+[
+  {
+    "mode": "schematic",
+    "supply_V": 3.3,
+    "transient": false,
+    "vref_V": 1.194230495820671
+  },
+  {
+    "mode": "schematic",
+    "supply_V": 5.0,
+    "transient": false,
+    "vref_V": 1.194381284040553
+  },
+  {
+    "mode": "rcc",
+    "supply_V": 3.3,
+    "transient": false,
+    "vref_V": 1.193126773422487
+  },
+  {
+    "mode": "rcc",
+    "supply_V": 5.0,
+    "transient": false,
+    "vref_V": 1.193267319964717
+  }
+]

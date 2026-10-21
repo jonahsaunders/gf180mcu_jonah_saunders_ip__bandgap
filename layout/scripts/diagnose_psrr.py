@@ -17,6 +17,11 @@ parser.add_argument("--output", default=str(BUILD_DIR / "psrr_diagnostics"))
 parser.add_argument("--sweep", action="store_true")
 parser.add_argument("--pairs", action="store_true")
 parser.add_argument(
+    "--models",
+    nargs="+",
+    help="Run only these named variants (for example: schematic rcc); default: all",
+)
+parser.add_argument(
     "--supply-coupling",
     action="store_true",
     help="Diagnostic removal of AVDD coupling to selected high-impedance amplifier nodes",
@@ -234,10 +239,16 @@ def run(case):
     return record
 
 
+if args.models:
+    unknown = set(args.models) - variants.keys()
+    if unknown:
+        parser.error(f"Unknown model variants: {sorted(unknown)}")
+    variants = {name: variants[name] for name in dict.fromkeys(args.models)}
+
 with ThreadPoolExecutor(max_workers=4) as pool:
     results = list(pool.map(run, [(n, v) for n in variants for v in [3.3, 5.0]]))
 (out / "summary.json").write_text(json.dumps(results, indent=2) + "\n")
-if "rcc" in variants:
+if {"c", "rcc_zero_all_r"}.issubset(variants):
     checks = []
     for supply in [3.3, 5.0]:
         reference = np.loadtxt(out / f"c_{supply:g}/psrr.dat", skiprows=1)

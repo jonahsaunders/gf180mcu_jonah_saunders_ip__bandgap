@@ -1,0 +1,8 @@
+Using run time directory XSCHEM_SHAREDIR = /foss/tools/xschem/share/xschem
+Sourcing /foss/tools/xschem/share/xschem/xschemrc init file
+Sourcing /headless/.xschem/xschemrc init file
+pdk installation: using /foss/pdks
+180MCU_MODELS: /foss/pdks/gf180mcuD/libs.tech/ngspice
+setup_tcp_bespice: success : listening to TCP port: 2022
+Sourced library init file /foss/tools/xschem/share/doc/xschem/analyses/lib_init.tcl
+

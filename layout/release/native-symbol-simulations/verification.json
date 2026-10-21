@@ -1,0 +1,7 @@
+{
+  "schematic_sha256": "bed8b6dbb6f63facc51432769c2d601a1e830204d75cbdd8ee5941d311a751b3",
+  "sha256": {
+    "filled_candidate.gds": "868a5339f5ba86624387fb1692e9608f3a689568eddaf98099092b62fe544b36"
+  },
+  "physical_verification_source": "layout/release/verification.json"
+}

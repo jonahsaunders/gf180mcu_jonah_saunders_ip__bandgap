@@ -137,6 +137,8 @@ The two sheets below show the **same trim-inclusive schematic**: the functional 
 
 **Native-symbol verification.** A fresh TB10 netlist preserves all device models, parameters, multiplicities, and connections. Full core LVS against the released GDS passes with all **533 device units**, including every dummy unit, retained in the reference. The GDS and archived simulation inputs/results are unchanged. [LVS and equivalence evidence](layout/release/schematic-symbols/verification.json) · [LVS log](layout/release/schematic-symbols/filled_lvs.log)
 
+**Fresh simulation confirmation · 21 October 2026.** Eight new runs from the native-symbol schematic confirm unchanged nominal mirror matching and PSRR at TT, 25 °C, trim 72, and AVDD = 3.3/5 V. All seven reviewed current ratios, every MOS current/bias, and all 481 PSRR samples per curve match the previous results at saved precision. Minimum PSRR remains **50.56/52.04 dB (schematic)** and **48.10/53.37 dB (extracted RCC)** at 3.3/5 V. [Comparison, conditions and reproduction](layout/release/native-symbol-simulations/README.md) · [Fresh numerical evidence](layout/release/native-symbol-simulations/comparison.json)
+
 ## Installation and first run
 
 ### 1. Open the simulation environment

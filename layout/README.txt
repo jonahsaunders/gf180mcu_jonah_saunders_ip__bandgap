@@ -46,6 +46,23 @@ After selecting GF180MCU-D, from the repository root:
 The second command uses the published evidence; to render a newly checked
 source, add --evidence layout/build/native-dummy-symbols.
 
+Native-symbol simulation confirmation, 21 October 2026
+-----------------------------------------------------
+release/native-symbol-simulations/ archives eight fresh ngspice runs from
+a newly generated TB10 netlist: schematic and released RCC, each at 3.3/5 V,
+with separate unprobed OP/AC and drain-probe mirror measurements. TT, 25 C,
+trim 72, DVDD 3.3 V, no external load. All seven reviewed mirror ratios,
+all named MOS currents/biases and all four 481-point PSRR curves are equal
+to the archived results at saved precision. No cached results are used.
+The existing simulation data and figures remain preserved. Random mismatch
+yield is outside this nominal comparison. See that directory's README.md
+and comparison.json for values, fixed tolerances, hashes and raw evidence.
+
+After selecting GF180MCU-D, from the repository root:
+  python layout/scripts/confirm_symbol_simulations.py --out layout/build/symbol-rerun
+Choose a new empty output folder for each rerun. This command does not
+modify the physical layout or the archived release.
+
 STATUS: the complete, unedited GF180MCU-D KLayout DRC deck reports zero
 violations and LVS matches. This is NOT a claim that every uncoded foundry
 recommendation, analog specification, or Chipalooza integration requirement

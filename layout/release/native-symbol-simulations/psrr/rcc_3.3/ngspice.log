@@ -1,0 +1,21 @@
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+Note: No compatibility mode selected!
+
+
+Circuit: * psrr diagnostic only
+
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  1.00000e+00 Reference value :  7.94328e+04
+No. of Data Rows : 481
+ngspice-46 done
