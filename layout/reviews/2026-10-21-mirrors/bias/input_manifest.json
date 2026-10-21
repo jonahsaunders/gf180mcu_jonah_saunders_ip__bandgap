@@ -1,0 +1,10 @@
+{
+  "provenance": "Copied from the TB10 model header and core subcircuit; checked against build/postlayout/schematic.spice before the diagnostic runs.",
+  "base_commit": "6d950638ba6d4ae57ccfaa5497163c75e89153e8",
+  "archived_input_sha256": {
+    "model_header.spice": "13a666e7d3290ee89bdca2fdf0cf5f748834835741ab6262363e9ddabf460402",
+    "schematic_source.spice": "349d7fcf24e852b04eec1f72bf4e925baa803d33ae3fadfd6301e04200ed77f5"
+  },
+  "schematic_sha256": "f7b743d6003c8c774628cbc2b5ceaaaf93a0a7923a39607b8378df716a08c511",
+  "rcc_sha256": "00797a27554b4fd0aeeff9388f33c5f3a30210969d9efeaecd2eb25bbb41aec7"
+}

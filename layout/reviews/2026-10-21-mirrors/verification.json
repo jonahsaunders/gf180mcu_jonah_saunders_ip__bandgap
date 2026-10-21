@@ -1,0 +1,102 @@
+{
+  "status": "REVIEW_COMPLETE_PHYSICAL_REVISION_RECOMMENDED",
+  "date": "2026-10-21",
+  "reviewed_commit": "6d950638ba6d4ae57ccfaa5497163c75e89153e8",
+  "design_modified": false,
+  "proposal_implemented": false,
+  "gds_sha256": "86c11f6ccd18e887284f187bb1635ce37da98bfc5e14b5d436efcd7a043bfa00",
+  "container_image": "hpretl/iic-osic-tools@sha256:5d6adf1f437cd0f2f8f8614488ec3c247ba8c768f4663a25d5e997b30ccb13b0",
+  "checks": {
+    "gds_channels_verified": 237,
+    "metal_nets_verified": 73,
+    "matching_groups_verified": 7,
+    "groups_with_foreign_net_channel_overlap": 6,
+    "nominal_dc_runs_passed": 4,
+    "maximum_vref_difference_from_saved_screen_V": 1.0982773890333419e-07,
+    "proposal_equal_first_and_second_spatial_moments": true,
+    "existing_drc_lvs_evidence_hashes_rechecked": true,
+    "drc_lvs_rerun_for_review": false
+  },
+  "nominal_current_ratios": [
+    {
+      "mode": "schematic",
+      "AVDD_V": 3.3,
+      "M1/M2_percent": -0.004778903745217278,
+      "M5/M2_percent": 0.0039369201028316425,
+      "PRMIR/PREF_percent": 1.3810974780609664,
+      "M18/M16_percent": 4.038389078868687,
+      "PLOAD2/PLOAD1_percent": 0.0006705204991463987,
+      "MSINK2/MSINK1_percent": 0.0019331333524830185,
+      "MFOLD2/MFOLD1_percent": 0.0011890802332104045
+    },
+    {
+      "mode": "schematic",
+      "AVDD_V": 5.0,
+      "M1/M2_percent": -0.013300769928792366,
+      "M5/M2_percent": 0.002606371712277067,
+      "PRMIR/PREF_percent": 2.5945671290369177,
+      "M18/M16_percent": 9.723154280548151,
+      "PLOAD2/PLOAD1_percent": 0.002090634075013753,
+      "MSINK2/MSINK1_percent": 0.00034762921601316776,
+      "MFOLD2/MFOLD1_percent": 0.0036471617860023287
+    },
+    {
+      "mode": "rcc",
+      "AVDD_V": 3.3,
+      "M1/M2_percent": -0.007093157839732633,
+      "M5/M2_percent": -0.01221760742096123,
+      "PRMIR/PREF_percent": 1.3794286460185656,
+      "M18/M16_percent": 4.045175352847763,
+      "PLOAD2/PLOAD1_percent": 0.006341696449108092,
+      "MSINK2/MSINK1_percent": 0.0017131395369407443,
+      "MFOLD2/MFOLD1_percent": 0.006854343144180319
+    },
+    {
+      "mode": "rcc",
+      "AVDD_V": 5.0,
+      "M1/M2_percent": -0.01532279049681895,
+      "M5/M2_percent": -0.013443297519921682,
+      "PRMIR/PREF_percent": 2.5915760109660457,
+      "M18/M16_percent": 9.728961278414271,
+      "PLOAD2/PLOAD1_percent": 0.009735577420966202,
+      "MSINK2/MSINK1_percent": 5.618281517794088e-05,
+      "MFOLD2/MFOLD1_percent": 0.011294654324989217
+    }
+  ],
+  "source_sha256": {
+    "layout/scripts/audit_mirror_layout.py": "42326d409918225567af52a70e9a4ee3c6e59f73d3ccf65fe21ca1b2878142de",
+    "layout/scripts/screen_mirror_bias.py": "175c0215b8db8815441951eeb6486b5e64b9510a89b50f3906620559636ac59a",
+    "layout/scripts/render_mirror_review.py": "f49397e170287c25dbf0a8572ae62598434e4604f9a15782cbaa69517e1970ff"
+  },
+  "sha256": {
+    "bias/input_manifest.json": "d0ace270b99cbc8ed2995be88673a591c918c55c679f90faeecf8977423c5272",
+    "bias/model_header.spice": "13a666e7d3290ee89bdca2fdf0cf5f748834835741ab6262363e9ddabf460402",
+    "bias/rcc_3.3V/diagnostic.spice": "c32e638a6dbd0d0bf79feceefe7aa33f38b96f508b46022153458cd55f988f7f",
+    "bias/rcc_3.3V/ngspice.log": "a62776c6ae04edf319f88107652463c798c5bcf822f7a4018b4d07a598e937ac",
+    "bias/rcc_3.3V/summary.json": "886c4f185a5a1e823c51f79bdd6c0a9daa3dc0369940aa22fc1a72d8ce618aa1",
+    "bias/rcc_3.3V/test.spice": "32ad679da2129c1c21a1529915564abb8248a6b9bb23ca1e75ccb66debad1308",
+    "bias/rcc_5V/diagnostic.spice": "c32e638a6dbd0d0bf79feceefe7aa33f38b96f508b46022153458cd55f988f7f",
+    "bias/rcc_5V/ngspice.log": "a1d1eb1d10a25ab62fd1a86221bbb2cfde5821b9fcc1074eb51d4b2b217c2951",
+    "bias/rcc_5V/summary.json": "558f0ca0955781317e7e5c279ae1f9779f5e61f58488d27435b2f47697e61e4a",
+    "bias/rcc_5V/test.spice": "296c1fbe5c19ab25b6abdd038dd3d354d495e2e0fae0cc14ecb6f51674b98a4c",
+    "bias/schematic_3.3V/diagnostic.spice": "77fb809571eb7c0f2f52e921348de0418e49c186b7a5eb4c125717402bd67b26",
+    "bias/schematic_3.3V/ngspice.log": "42154afd63206dee814c9c030db9951032a6c692ca7f348b9a4bac92dce65cfe",
+    "bias/schematic_3.3V/summary.json": "ee53749fa6680433361ef5eb1b3a1bcf3f0c4262d2184cafaf2598ef0d0fab1f",
+    "bias/schematic_3.3V/test.spice": "3af47820564cd370e2dcaf34d4c354a8cf945d88d94214ca207ad3ccdb5de472",
+    "bias/schematic_5V/diagnostic.spice": "77fb809571eb7c0f2f52e921348de0418e49c186b7a5eb4c125717402bd67b26",
+    "bias/schematic_5V/ngspice.log": "d9fcbd6bf299c1333726c840520ad5d93846e2624e3a3055ab3377379ae3c0e2",
+    "bias/schematic_5V/summary.json": "af5fc81dfb8c90095335482d9907f98c0866d6fa7dcd6afff38a228e260cb278",
+    "bias/schematic_5V/test.spice": "fbac3e87a929ccb3837052ba058e1286ddffbb5a26be5fb5c920dfb1bdabdd1d",
+    "bias/schematic_source.spice": "349d7fcf24e852b04eec1f72bf4e925baa803d33ae3fadfd6301e04200ed77f5",
+    "bias/summary.json": "3682777c7b814542657eb18cb92ec9221e6540995e71cafc04b2a902469f6ffa",
+    "mirror-array-review.pdf": "ce0bb7492947a728a3eaf720976db341b47ce1542934f9c0bc058044422ac81a",
+    "mirror-array-review.png": "9eb8a366b69fe82815c03824add226fede8c67b48735d8c2c1ef53b2ad195a28",
+    "mirror-array-review.svg": "c19a97eb6addbfc4a69077ccb8c2130c77da638a352c0a103e87c9d9d53f64dd",
+    "mirror-placement-review.pdf": "3b679a674db3e8eec37e2bcc970d715f01bc58e54dcf8102a9606985f7665de0",
+    "mirror-placement-review.png": "240205460dc471a22136657d363f4e28863392a29515696260330597d87bee1d",
+    "mirror-placement-review.svg": "02de0f4589250f66336252da0763a152685b1216db32bbb77b64a14d7b6d6549",
+    "mirror_geometry_audit.json": "191325122e20f70d842910b9e2cb47d8bd7d77b4f8544b81894bf58680667d17",
+    "proposed_pattern_check.json": "3da8cc427c27861f62773024a64f0fb908d20e4f1269544c5b68ed94556763e1",
+    "README.md": "a513937456f49347333f3859e531cac8c24b24b56f1d4cb7b1868d030437593b"
+  }
+}

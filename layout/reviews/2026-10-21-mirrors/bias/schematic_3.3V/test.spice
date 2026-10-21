@@ -1,0 +1,696 @@
+* Diagnostic DC mirror currents; ideal series drain probes only.
+
+.include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice bjt_typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice res_typical
+* GF180 2p0fF MIM fit, charge-form ngspice compatibility implementation.
+* Derived from GlobalFoundries PDK Authors (2022), Apache-2.0:
+* https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr
+* Same geometry, voltage/temperature coefficients, leakage and corner factors.
+* Differential C(V)=C0*(1+a*V+b*V^2) is implemented as
+* Q(V)=C0*(V+a*V^2/2+b*V^3/3), so dQ/dV exactly equals C(V).
+* This avoids ngspice's poorly scaled unity-capacitor C-expression expansion.
+* Do not also include mimcap_typical: it would redefine cap_mim_2f0fF.
+.param mim_corner_2p0fF=1 mc_c_cox_2p0fF=0
+.subckt cap_mim_2f0fF  1 2  c_length=l  c_width=w dtemp=0 par=1
+.param gleak='9.51e-10/5*10000'
+.param c_cox='1.99e-3*mim_corner_2p0fF'
+.param c_capsw='2.383e-10*mim_corner_2p0fF'
+.param c_vcr1='0+(c_width>5u||c_length>5u)*8.742e-6+(c_width<=5u||c_length<=5u)*(-81e-6)'
+.param c_vcr2='0+(c_width>5u||c_length>5u)*9.188e-6+(c_width<=5u||c_length<=5u)*(16.7e-6)'
+
+.param c_tnom=25
+.param c_tc1=1.46e-5
+.param c_tc2=-5.55e-8
+.param c_AREA='c_length*c_width'
+.param c_PERI='2*(c_length+c_width)'
+
+.param c_c0='(c_cox*c_AREA+c_capsw*c_PERI)*(1+c_tc1*(temper +dtemp -c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
+*
+c_cap 1 2 Q='c_c0*(v(1,2)+c_vcr1*v(1,2)*v(1,2)/2+c_vcr2*v(1,2)*v(1,2)*v(1,2)/3)*(1+mc_c_cox_2p0fF)'
+r_leak 1 2 r='1/(gleak*c_AREA)' tc1=c_tc1 tc2=c_tc2 dtemp=dtemp
+.ends cap_mim_2f0fF
+* Bootstrap nominal process; runner selects each corner independently. Mismatch disabled. MIM compatibility model above is intentional.
+.options tnom=25 numdgt=15 method=gear maxord=2 reltol=1e-5 vntol=1e-7 abstol=1e-13 itl4=200
+.param sw_stat_global=0 sw_stat_mismatch=0 fnoicor=0
+.param VDD_RUN=5
+.temp 25
+
+.options klu num_threads=1
+.include diagnostic.spice
+XDUT avdd 0 vref b0 b1 b2 b3 b4 b5 b6 0 dvdd Bandgap_Core_Res
+VDD avdd 0 3.3
+VDVDD dvdd 0 3.3
+VB0 b0 0 0
+VB1 b1 0 0
+VB2 b2 0 0
+VB3 b3 0 3.3
+VB4 b4 0 0
+VB5 b5 0 0
+VB6 b6 0 3.3
+.control
+set noaskquit
+set numdgt=15
+op
+print v(vref) i(vdd)
+echo DEVICE 0
+let aid=i(v.xdut.vaud0)
+let avd=v(xdut.audit_d0)
+let avg=v(xdut.bgsu1)
+let avs=v(xdut.bgsu2)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 1
+let aid=i(v.xdut.vaud1)
+let avd=v(xdut.audit_d1)
+let avg=v(xdut.bgsu2)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 2
+let aid=i(v.xdut.vaud2)
+let avd=v(xdut.audit_d2)
+let avg=v(xdut.auxsu1)
+let avs=v(xdut.auxsu2)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 3
+let aid=i(v.xdut.vaud3)
+let avd=v(xdut.audit_d3)
+let avg=v(xdut.auxsu2)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 4
+let aid=i(v.xdut.vaud4)
+let avd=v(xdut.audit_d4)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx1)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 5
+let aid=i(v.xdut.vaud5)
+let avd=v(xdut.audit_d5)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx2)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 6
+let aid=i(v.xdut.vaud6)
+let avd=v(xdut.audit_d6)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vx3)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 7
+let aid=i(v.xdut.vaud7)
+let avd=v(xdut.audit_d7)
+let avg=v(xdut.vgn1)
+let avs=v(xdut.v1)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 8
+let aid=i(v.xdut.vaud8)
+let avd=v(xdut.audit_d8)
+let avg=v(xdut.vgn2)
+let avs=v(xdut.v2)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 9
+let aid=i(v.xdut.vaud9)
+let avd=v(xdut.audit_d9)
+let avg=v(xdut.vbn)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 10
+let aid=i(v.xdut.vaud10)
+let avd=v(xdut.audit_d10)
+let avg=v(xdut.vbn)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 11
+let aid=i(v.xdut.vaud11)
+let avd=v(xdut.audit_d11)
+let avg=v(xdut.vcasp)
+let avs=v(xdut.vaux)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 12
+let aid=i(v.xdut.vaud12)
+let avd=v(xdut.audit_d12)
+let avg=v(xdut.vcasp)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 13
+let aid=i(v.xdut.vaud13)
+let avd=v(xdut.audit_d13)
+let avg=v(xdut.vgp)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 14
+let aid=i(v.xdut.vaud14)
+let avd=v(xdut.audit_d14)
+let avg=v(xdut.vcasp)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 15
+let aid=i(v.xdut.vaud15)
+let avd=v(xdut.audit_d15)
+let avg=v(xdut.vsu)
+let avs=v(xdut.bgsu1)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 16
+let aid=i(v.xdut.vaud16)
+let avd=v(xdut.audit_d16)
+let avg=v(xdut.vsua)
+let avs=v(xdut.auxsu1)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 17
+let aid=i(v.xdut.vaud17)
+let avd=v(xdut.audit_d17)
+let avg=v(xdut.vgp)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 18
+let aid=i(v.xdut.vaud18)
+let avd=v(xdut.audit_d18)
+let avg=v(xdut.vgp)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 19
+let aid=i(v.xdut.vaud19)
+let avd=v(xdut.audit_d19)
+let avg=v(xdut.vgp)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 20
+let aid=i(v.xdut.vaud20)
+let avd=v(xdut.audit_d20)
+let avg=v(xdut.vgp)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 21
+let aid=i(v.xdut.vaud21)
+let avd=v(xdut.audit_d21)
+let avg=v(xdut.psrg_vnc)
+let avs=v(xdut.psrg_m3_protected)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 22
+let aid=i(v.xdut.vaud22)
+let avd=v(xdut.audit_d22)
+let avg=v(xdut.vbp_tail)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 23
+let aid=i(v.xdut.vaud23)
+let avd=v(xdut.audit_d23)
+let avg=v(xdut.vbp_cas)
+let avs=v(xdut.pm2)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 24
+let aid=i(v.xdut.vaud24)
+let avd=v(xdut.audit_d24)
+let avg=v(xdut.vbp_cas)
+let avs=v(xdut.pm1)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 25
+let aid=i(v.xdut.vaud25)
+let avd=v(xdut.audit_d25)
+let avg=v(xdut.v2)
+let avs=v(xdut.vsp)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 26
+let aid=i(v.xdut.vaud26)
+let avd=v(xdut.audit_d26)
+let avg=v(xdut.v1)
+let avs=v(xdut.vsp)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 27
+let aid=i(v.xdut.vaud27)
+let avd=v(xdut.audit_d27)
+let avg=v(xdut.vbn_fold)
+let avs=v(xdut.xf2)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 28
+let aid=i(v.xdut.vaud28)
+let avd=v(xdut.audit_d28)
+let avg=v(xdut.vbn_fold)
+let avs=v(xdut.xf1)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 29
+let aid=i(v.xdut.vaud29)
+let avd=v(xdut.audit_d29)
+let avg=v(xdut.vbn_i)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 30
+let aid=i(v.xdut.vaud30)
+let avd=v(xdut.audit_d30)
+let avg=v(xdut.vbn_i)
+let avs=v(xdut.vrs)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 31
+let aid=i(v.xdut.vaud31)
+let avd=v(xdut.audit_d31)
+let avg=v(xdut.vbp_i)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 32
+let aid=i(v.xdut.vaud32)
+let avd=v(xdut.audit_d32)
+let avg=v(xdut.vbp_i)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 33
+let aid=i(v.xdut.vaud33)
+let avd=v(xdut.audit_d33)
+let avg=v(xdut.vbn_i)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 34
+let aid=i(v.xdut.vaud34)
+let avd=v(xdut.audit_d34)
+let avg=v(xdut.vbn_i)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 35
+let aid=i(v.xdut.vaud35)
+let avd=v(xdut.audit_d35)
+let avg=v(xdut.vbp_i)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 36
+let aid=i(v.xdut.vaud36)
+let avd=v(xdut.audit_d36)
+let avg=v(xdut.vbp_i)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 37
+let aid=i(v.xdut.vaud37)
+let avd=v(xdut.audit_d37)
+let avg=v(xdut.vbn_fold)
+let avs=v(xdut.vnx_bias)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 38
+let aid=i(v.xdut.vaud38)
+let avd=v(xdut.audit_d38)
+let avg=v(xdut.vbp_cas)
+let avs=v(xdut.vbp_bias)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 39
+let aid=i(v.xdut.vaud39)
+let avd=v(xdut.audit_d39)
+let avg=v(xdut.vbp_tail)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 40
+let aid=i(v.xdut.vaud40)
+let avd=v(xdut.audit_d40)
+let avg=v(xdut.vnx_bias)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 41
+let aid=i(v.xdut.vaud41)
+let avd=v(xdut.audit_d41)
+let avg=v(xdut.vbp_bias)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 42
+let aid=i(v.xdut.vaud42)
+let avd=v(xdut.audit_d42)
+let avg=v(xdut.vbp_i)
+let avs=v(xdut.vsu2)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 43
+let aid=i(v.xdut.vaud43)
+let avd=v(xdut.audit_d43)
+let avg=v(xdut.vbp_i)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 44
+let aid=i(v.xdut.vaud44)
+let avd=v(xdut.audit_d44)
+let avg=v(xdut.y1)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 45
+let aid=i(v.xdut.vaud45)
+let avd=v(xdut.audit_d45)
+let avg=v(xdut.y1)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 46
+let aid=i(v.xdut.vaud46)
+let avd=v(xdut.audit_d46)
+let avg=v(xdut.psrg_vnc)
+let avs=v(xdut.psrg_mf1_protected)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 47
+let aid=i(v.xdut.vaud47)
+let avd=v(xdut.audit_d47)
+let avg=v(xdut.vbp_i)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 48
+let aid=i(v.xdut.vaud48)
+let avd=v(xdut.audit_d48)
+let avg=v(xdut.psrg_vnc)
+let avs=v(xdut.rb_mid)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 49
+let aid=i(v.xdut.vaud49)
+let avd=v(xdut.audit_d49)
+let avg=v(xdut.rb_mid)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 50
+let aid=i(v.xdut.vaud50)
+let avd=v(xdut.audit_d50)
+let avg=v(xdut.vbp_tail)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 51
+let aid=i(v.xdut.vaud51)
+let avd=v(xdut.audit_d51)
+let avg=v(xdut.vsu)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 52
+let aid=i(v.xdut.vaud52)
+let avd=v(xdut.audit_d52)
+let avg=v(xdut.vgn2)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 53
+let aid=i(v.xdut.vaud53)
+let avd=v(xdut.audit_d53)
+let avg=v(xdut.aux_gate)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 54
+let aid=i(v.xdut.vaud54)
+let avd=v(xdut.audit_d54)
+let avg=v(xdut.vbp_i)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 55
+let aid=i(v.xdut.vaud55)
+let avd=v(xdut.audit_d55)
+let avg=v(xdut.vbp_i)
+let avs=v(xdut.vsu1)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 56
+let aid=i(v.xdut.vaud56)
+let avd=v(xdut.audit_d56)
+let avg=v(xdut.iref_gate)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 57
+let aid=i(v.xdut.vaud57)
+let avd=v(xdut.audit_d57)
+let avg=v(xdut.aux_gate)
+let avs=v(xdut.vgp)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 58
+let aid=i(v.xdut.vaud58)
+let avd=v(xdut.audit_d58)
+let avg=v(xdut.vbn_sink)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 59
+let aid=i(v.xdut.vaud59)
+let avd=v(xdut.audit_d59)
+let avg=v(xdut.vbn_sink)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 60
+let aid=i(v.xdut.vaud60)
+let avd=v(xdut.audit_d60)
+let avg=v(xdut.vbn_sink)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 61
+let aid=i(v.xdut.vaud61)
+let avd=v(xdut.audit_d61)
+let avg=v(xdut.vcasp)
+let avs=v(avdd)
+let avb=v(avdd)
+print aid avd avg avs avb
+echo DEVICE 62
+let aid=i(v.xdut.vaud62)
+let avd=v(xdut.audit_d62)
+let avg=v(xdut.vbn_i)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 63
+let aid=i(v.xdut.vaud63)
+let avd=v(xdut.audit_d63)
+let avg=v(xdut.b0_b)
+let avs=v(xdut.rbit0top)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 64
+let aid=i(v.xdut.vaud64)
+let avd=v(xdut.audit_d64)
+let avg=v(b0)
+let avs=v(xdut.rbit1top)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 65
+let aid=i(v.xdut.vaud65)
+let avd=v(xdut.audit_d65)
+let avg=v(xdut.b1_b)
+let avs=v(xdut.rbit1top)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 66
+let aid=i(v.xdut.vaud66)
+let avd=v(xdut.audit_d66)
+let avg=v(b1)
+let avs=v(xdut.rbit2top)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 67
+let aid=i(v.xdut.vaud67)
+let avd=v(xdut.audit_d67)
+let avg=v(xdut.b2_b)
+let avs=v(xdut.rbit2top)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 68
+let aid=i(v.xdut.vaud68)
+let avd=v(xdut.audit_d68)
+let avg=v(b2)
+let avs=v(xdut.rbit3top)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 69
+let aid=i(v.xdut.vaud69)
+let avd=v(xdut.audit_d69)
+let avg=v(xdut.b3_b)
+let avs=v(xdut.rbit3top)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 70
+let aid=i(v.xdut.vaud70)
+let avd=v(xdut.audit_d70)
+let avg=v(b3)
+let avs=v(xdut.rbit4top)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 71
+let aid=i(v.xdut.vaud71)
+let avd=v(xdut.audit_d71)
+let avg=v(xdut.b4_b)
+let avs=v(xdut.rbit4top)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 72
+let aid=i(v.xdut.vaud72)
+let avd=v(xdut.audit_d72)
+let avg=v(b4)
+let avs=v(xdut.rbit5top)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 73
+let aid=i(v.xdut.vaud73)
+let avd=v(xdut.audit_d73)
+let avg=v(xdut.b5_b)
+let avs=v(xdut.rbit5top)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 74
+let aid=i(v.xdut.vaud74)
+let avd=v(xdut.audit_d74)
+let avg=v(b5)
+let avs=v(xdut.rbit6top)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 75
+let aid=i(v.xdut.vaud75)
+let avd=v(xdut.audit_d75)
+let avg=v(xdut.b6_b)
+let avs=v(xdut.rbit6top)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 76
+let aid=i(v.xdut.vaud76)
+let avd=v(xdut.audit_d76)
+let avg=v(b6)
+let avs=v(xdut.vq3)
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 77
+let aid=i(v.xdut.vaud77)
+let avd=v(xdut.audit_d77)
+let avg=v(b0)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 78
+let aid=i(v.xdut.vaud78)
+let avd=v(xdut.audit_d78)
+let avg=v(b0)
+let avs=v(dvdd)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 79
+let aid=i(v.xdut.vaud79)
+let avd=v(xdut.audit_d79)
+let avg=v(b1)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 80
+let aid=i(v.xdut.vaud80)
+let avd=v(xdut.audit_d80)
+let avg=v(b1)
+let avs=v(dvdd)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 81
+let aid=i(v.xdut.vaud81)
+let avd=v(xdut.audit_d81)
+let avg=v(b2)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 82
+let aid=i(v.xdut.vaud82)
+let avd=v(xdut.audit_d82)
+let avg=v(b2)
+let avs=v(dvdd)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 83
+let aid=i(v.xdut.vaud83)
+let avd=v(xdut.audit_d83)
+let avg=v(b3)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 84
+let aid=i(v.xdut.vaud84)
+let avd=v(xdut.audit_d84)
+let avg=v(b3)
+let avs=v(dvdd)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 85
+let aid=i(v.xdut.vaud85)
+let avd=v(xdut.audit_d85)
+let avg=v(b4)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 86
+let aid=i(v.xdut.vaud86)
+let avd=v(xdut.audit_d86)
+let avg=v(b4)
+let avs=v(dvdd)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 87
+let aid=i(v.xdut.vaud87)
+let avd=v(xdut.audit_d87)
+let avg=v(b5)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 88
+let aid=i(v.xdut.vaud88)
+let avd=v(xdut.audit_d88)
+let avg=v(b5)
+let avs=v(dvdd)
+let avb=v(dvdd)
+print aid avd avg avs avb
+echo DEVICE 89
+let aid=i(v.xdut.vaud89)
+let avd=v(xdut.audit_d89)
+let avg=v(b6)
+let avs=0
+let avb=0
+print aid avd avg avs avb
+echo DEVICE 90
+let aid=i(v.xdut.vaud90)
+let avd=v(xdut.audit_d90)
+let avg=v(b6)
+let avs=v(dvdd)
+let avb=v(dvdd)
+print aid avd avg avs avb
+quit
+.endc
+.end

@@ -13,6 +13,9 @@ release/filled_drc.lyrdb and release/filled.lvsdb.gz open in KLayout.
 release/reference.spice is the schematic-derived LVS reference. Zero-volt
 current probes become net aliases; transistor multiplicities become units.
 report.html explains the research, floorplan, results, and open work.
+reviews/2026-10-21-mirrors/README.md audits actual mirror placement, routing,
+edge environments and nominal branch currents, with proposed physical fixes.
+Its alternative array pattern is not implemented in the released GDS.
 figures/index.html presents the paper-style figure gallery and full captions.
 The PSRR revision separates physical routing improvements from extraction
 corrections. Raw Magic RC and capacitance-conserving RCC results are both

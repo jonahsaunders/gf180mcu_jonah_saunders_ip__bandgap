@@ -194,6 +194,7 @@ For the full-suite command, profile settings, troubleshooting, and **rerunning s
 | :--- | :--- |
 | [Layout reproduction](layout/README.txt) | Pinned tools, build flow, extraction assumptions, and open work |
 | [Release verification](layout/release/verification.json) | DRC/LVS results, tool versions, and source/artifact hashes |
+| [Current-mirror review](layout/reviews/2026-10-21-mirrors/README.md) | Measured placement, matching risks, nominal branch currents, and proposed improvements |
 | [Figure exports](layout/figures) | Nine figures in PDF, SVG, and 600-dpi PNG; captions included |
 | [Testbench reference](docs/TESTBENCHES.md) | TB01–TB10 and measurement coverage |
 | [Software validation](VALIDATION.md) | Runner, parser, and plotting checks |

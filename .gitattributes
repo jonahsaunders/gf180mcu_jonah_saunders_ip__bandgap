@@ -8,3 +8,6 @@ layout/**/*.pdf binary
 # Preserve tool-produced evidence and SVG paths verbatim.
 layout/release/** -whitespace
 layout/figures/*.svg -whitespace
+# Preserve generated vector formatting and raw simulator progress output.
+layout/reviews/**/*.svg -whitespace
+layout/reviews/**/ngspice.log -text -whitespace
