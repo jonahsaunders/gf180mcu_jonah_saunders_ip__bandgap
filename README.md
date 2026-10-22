@@ -119,6 +119,10 @@ At 3.3 V, nominal load-pair error falls from **0.0081% to 0.0007%** and sink-pai
 
 ## Schematics
 
+[![Resistor-trim bandgap schematic showing the functional circuit, seven-bit trim network and trim-input buffers](docs/images/bandgap-core-resistor-trim.svg)](docs/images/bandgap-core-resistor-trim.svg)
+
+**Fig. 7.** Functional circuit of the final resistor-trim bandgap reference, exported directly from the saved Xschem schematic. The full sheet, including the native dummy transistor symbols, is available below. [Full-resolution functional schematic](docs/images/bandgap-core-resistor-trim.svg)
+
 **[View the complete final Xschem schematic, including trim and all dummy transistors](docs/SCHEMATICS.md)** · [Full-resolution vector image](docs/images/bandgap-core-resistor-trim-complete.svg)
 
 The final trim-inclusive core contains **13 native dummy transistor symbols**, representing **261 dummy units**, in the editable Xschem source. The linked page shows the entire sheet and separate functional-circuit and dummy close-ups. The exported source matches the [LVS-checked schematic](layout/release/schematic-symbols/verification.json), with all **533 device units** retained.
