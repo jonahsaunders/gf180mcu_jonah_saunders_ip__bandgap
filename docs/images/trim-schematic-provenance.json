@@ -1,7 +1,7 @@
 {
   "source": "Bandgap_Core_Res.sch",
   "source_sha256": "bed8b6dbb6f63facc51432769c2d601a1e830204d75cbdd8ee5941d311a751b3",
-  "presentation": "Two direct Xschem crops of the saved native-symbol schematic. No display-only arrangement or redrawn transistor symbols.",
+  "presentation": "One complete-sheet Xschem export and two detail crops of the same saved native-symbol schematic. No display-only arrangement or redrawn transistor symbols.",
   "verification": "layout/release/schematic-symbols/verification.json",
   "native_dummy_symbols": 13,
   "dummy_units": 261,
@@ -177,6 +177,7 @@
     }
   ],
   "figure_sha256": {
+    "bandgap-core-resistor-trim-complete.svg": "72b6dadc16ef9e49c367e038b6450752e54b267ef64152e8fda0ba319f7bea82",
     "bandgap-core-resistor-trim.svg": "be8ac583553cf75a473f91243f1269386970e1013cf583dc952363797dd81381",
     "bandgap-core-resistor-trim-dummies.svg": "479b6a15cc967936418b3307dc722076584f55d6cca89042a025fc9376496526"
   }

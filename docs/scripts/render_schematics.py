@@ -1,9 +1,9 @@
-"""Export two views of the actual native-symbol trim-inclusive Xschem sheet.
+"""Export the complete trim-inclusive Xschem sheet and two detail views.
 
 Run after selecting GF180MCU-D and verifying the schematic representation:
     python docs/scripts/render_schematics.py
 
-Both figures are direct Xschem crops. No transistors are redrawn and no
+All figures use the saved Xschem geometry. No transistors are redrawn and no
 temporary schematic arrangement or hidden code block is substituted.
 """
 
@@ -131,7 +131,7 @@ def render_sheet(name, number, window, title, subtitle, footer):
         figure,
         width - margin,
         width * 0.023,
-        f"{number} / 2",
+        f"{number} / 2" if number is not None else "COMPLETE SHEET",
         width * 0.012,
         **{"text-anchor": "end"},
     )
@@ -171,15 +171,36 @@ def main():
     assert (
         sha256(SOURCE) == verified["schematic_sha256"]
     ), "Schematic differs from checked source"
+    assert (
+        sha256(ROOT / "layout/release/Bandgap_Core_Res.gds") == verified["gds_sha256"]
+    ), "Released layout differs from checked GDS"
     for name, expected in verified["sha256"].items():
         assert sha256(evidence / name) == expected, name
     inventory = json.loads((evidence / "circuit.json").read_text())
     banks = [row for row in inventory["devices"] if row["name"].startswith("DUM_")]
     assert len(banks) == 13 and sum(row["m"] for row in banks) == 261
     assert "code_shown.sym" not in SOURCE.read_text()
+    assert (
+        len(
+            re.findall(
+                r"C \{symbols/[pn]fet_05v0.sym\} [^\n]+\{name=DUM_",
+                SOURCE.read_text(),
+            )
+        )
+        == 13
+    )
 
+    complete_name = "bandgap-core-resistor-trim-complete.svg"
     functional_name = "bandgap-core-resistor-trim.svg"
     dummy_name = "bandgap-core-resistor-trim-dummies.svg"
+    complete_labels = render_sheet(
+        complete_name,
+        None,
+        (-150, -900, 6060, 1800),
+        "TRIM-INCLUSIVE BANDGAP · COMPLETE XSCHEM SHEET",
+        "Functional circuit, seven-bit trim and 13 native dummy transistor banks",
+        "One saved schematic: Bandgap_Core_Res.sch, instantiated by TB10_RESISTOR_TRIM. All 261 dummy units are retained in LVS.",
+    )
     functional_labels = render_sheet(
         functional_name,
         1,
@@ -199,10 +220,13 @@ def main():
     assert "ppolyf_u_1k" in functional_labels and "ppolyf_u_2k" not in functional_labels
     assert all(f"b{bit}" in functional_labels for bit in range(7))
     assert all("X" + bank["name"] in dummy_labels for bank in banks)
+    assert "ppolyf_u_1k" in complete_labels and "ppolyf_u_2k" not in complete_labels
+    assert all(f"b{bit}" in complete_labels for bit in range(7))
+    assert all("X" + bank["name"] in complete_labels for bank in banks)
     manifest = {
         "source": "Bandgap_Core_Res.sch",
         "source_sha256": sha256(SOURCE),
-        "presentation": "Two direct Xschem crops of the saved native-symbol schematic. No display-only arrangement or redrawn transistor symbols.",
+        "presentation": "One complete-sheet Xschem export and two detail crops of the same saved native-symbol schematic. No display-only arrangement or redrawn transistor symbols.",
         "verification": "layout/release/schematic-symbols/verification.json",
         "native_dummy_symbols": 13,
         "dummy_units": 261,
@@ -211,13 +235,17 @@ def main():
             for bank in banks
         ],
         "figure_sha256": {
-            name: sha256(IMAGES / name) for name in [functional_name, dummy_name]
+            name: sha256(IMAGES / name)
+            for name in [complete_name, functional_name, dummy_name]
         },
     }
     (IMAGES / "trim-schematic-provenance.json").write_text(
         json.dumps(manifest, indent=2) + "\n"
     )
-    print("Exported both native Xschem views from the LVS-checked source.")
+    print(
+        "Exported the complete Xschem sheet and both detail views "
+        "from the LVS-checked source."
+    )
 
 
 if __name__ == "__main__":

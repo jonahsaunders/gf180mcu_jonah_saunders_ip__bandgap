@@ -119,26 +119,15 @@ At 3.3 V, nominal load-pair error falls from **0.0081% to 0.0007%** and sink-pai
 
 ## Schematics
 
-| Circuit | Schematic image | Xschem source |
-| :--- | :--- | :--- |
-| Trim-inclusive core — functional circuit | [Sheet 1 · full-size SVG](docs/images/bandgap-core-resistor-trim.svg) | [Bandgap_Core_Res.sch](Bandgap_Core_Res.sch) |
-| Trim-inclusive core — dummy devices | [Sheet 2 · full-size SVG](docs/images/bandgap-core-resistor-trim-dummies.svg) | [Native `DUM_*` transistor symbols](Bandgap_Core_Res.sch) |
-| Untrimmed reference core | [Full-size SVG](docs/images/bandgap-core.svg) | [Bandgap_Core.sch](Bandgap_Core.sch) |
-| Seven-bit resistor-trim testbench | [Testbench guide](docs/TESTBENCHES.md) | [TB10_RESISTOR_TRIM.sch](TB10_RESISTOR_TRIM.sch) |
+**[View the complete final Xschem schematic, including trim and all dummy transistors](docs/SCHEMATICS.md)** · [Full-resolution vector image](docs/images/bandgap-core-resistor-trim-complete.svg)
 
-The two sheets below show the **same trim-inclusive schematic**: the functional circuit followed by its explicit dummy devices. Open either vector image to inspect individual labels.
+The final trim-inclusive core contains **13 native dummy transistor symbols**, representing **261 dummy units**, in the editable Xschem source. The linked page shows the entire sheet and separate functional-circuit and dummy close-ups. The exported source matches the [LVS-checked schematic](layout/release/schematic-symbols/verification.json), with all **533 device units** retained.
 
-[![Sheet 1: trim-inclusive bandgap schematic with seven-bit trim and neatly arranged input buffers](docs/images/bandgap-core-resistor-trim.svg)](docs/images/bandgap-core-resistor-trim.svg)
-
-**Fig. 7(a).** Functional circuit of the current 1k-resistor core, exported directly from the saved Xschem schematic. Its seven trim-input buffers are arranged in two rows for readability. Dummy devices continue in Fig. 7(b).
-
-[![Sheet 2: all 13 dummy transistor banks with device sizes, multiplicities, matched groups, and explicit supply connections](docs/images/bandgap-core-resistor-trim-dummies.svg)](docs/images/bandgap-core-resistor-trim-dummies.svg)
-
-**Fig. 7(b).** Direct Xschem export of **13 native PDK transistor symbols**, representing **197 PMOS and 64 NMOS dummy units**. Each editable symbol carries its own model, W/L, and multiplicity; the displayed size line reads `m × W / L`. Explicit wires tie drain, gate, source, and body to **AVDD for PMOS** or **AVSS for NMOS**. The dummy code block has been removed. Panel positions are for readability; physical placement is shown in [the matched-array figure](layout/figures/matched-arrays.pdf). [Figure provenance](docs/images/trim-schematic-provenance.json) · [Reproduction script](docs/scripts/render_schematics.py)
-
-**Native-symbol verification.** The schematic still contains all 13 native dummy transistor banks. A fresh TB10 netlist and full LVS against the revised GDS retain all **533 device units**, including every dummy. [Current LVS evidence](layout/release/schematic-symbols/verification.json) · [Full LVS log](layout/release/schematic-symbols/filled_lvs.log)
-
-**Preserved simulation history.** The earlier eight-run check established that replacing the dummy code block with native symbols did not change mirror matching or any PSRR sample at saved precision. That comparison applies to the previous GDS and its ground-omitting extraction. Its **50.56/52.04 dB schematic** and **48.10/53.37 dB extracted** results remain in the [historical confirmation](layout/release/previous/native-symbol-simulations/README.md). The new routing results are reported above.
+| Circuit | Xschem source |
+| :--- | :--- |
+| Final core — seven-bit resistor trim and native dummy transistors | [Bandgap_Core_Res.sch](Bandgap_Core_Res.sch) |
+| Final trim-inclusive testbench | [TB10_RESISTOR_TRIM.sch](TB10_RESISTOR_TRIM.sch) |
+| Untrimmed reference core | [Bandgap_Core.sch](Bandgap_Core.sch) |
 
 ## Installation and first run
 
