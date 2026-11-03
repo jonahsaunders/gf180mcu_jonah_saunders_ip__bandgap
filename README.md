@@ -5,6 +5,8 @@ designed for Chipalooza #3. It uses a folded-cascode error amplifier,
 a startup circuit, and seven-bit resistor trim, with a nominal output
 target of 1.18 V.
 
+[![3D view of the bandgap layout](docs/images/bandgap-design.png)](docs/images/bandgap-design.png)
+
 - [Design documentation](docs/DESIGN.md)
 - [Installation and first run](docs/GETTING_STARTED.md)
 - [Testbench reference](docs/TESTBENCHES.md)
