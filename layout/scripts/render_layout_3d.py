@@ -32,9 +32,16 @@ STACK = [(22, "Active", 0, .2, "#a7c7b5"), (30, "Poly", .5, .3, "#d4949c"),
          (81, "M5", 10, 1.2, "#759db4")]
 
 
+# Preview styling is separate from GLB materials and physical geometry.
+PNG_PALETTE = {"Active": "#75b59b", "Poly": "#ce7964", "M1": "#dab35a",
+               "M2": "#8eafb9", "M3": "#5fa99a"}
+
 def project(points):
     a = np.asarray(points)
-    return np.column_stack((.82*a[:, 0]-.57*a[:, 1], .30*a[:, 0]+.43*a[:, 1]+5*a[:, 2]))
+    azimuth, elevation = np.deg2rad([24, 45])
+    ca, sa, se, ce = np.cos(azimuth), np.sin(azimuth), np.sin(elevation), np.cos(elevation)
+    return np.column_stack((ca*a[:, 0]+sa*a[:, 1],
+                            -sa*se*a[:, 0]+ca*se*a[:, 1]+5*ce*a[:, 2]))
 
 
 def main():
@@ -70,11 +77,18 @@ def main():
         result = len(doc["accessors"])
         doc["accessors"].append(entry)
         return result
-    fig, ax = plt.subplots(figsize=(16, 10), facecolor="white")
+    fig, ax = plt.subplots(figsize=(16, 8.25), facecolor="white")
     ax.set_facecolor("white")
     base = [(bounds.left-8, bounds.bottom-8, -.6), (bounds.right+8, bounds.bottom-8, -.6),
             (bounds.right+8, bounds.top+8, -.6), (bounds.left-8, bounds.top+8, -.6)]
-    ax.add_collection(PolyCollection([project(base)], facecolors="#e1eaf0", edgecolors="#99a8af", linewidths=.6))
+    bottom_base = [(x, y, -3.2) for x, y, _ in base]
+    # Visible front and right faces of an illustrative support slab.
+    for i, shade in [(0, "#878f93"), (1, "#707a80")]:
+        j = i+1
+        face = [bottom_base[i], bottom_base[j], base[j], base[i]]
+        ax.add_collection(PolyCollection([project(face)], facecolors=shade, edgecolors="none"))
+    ax.add_collection(PolyCollection([project(base)], facecolors="#e3edf4",
+                                     edgecolors="#a6b2ba", linewidths=.4))
     records = []
     for number, name, z, height, color in STACK:
         region = k.Region()
@@ -128,9 +142,11 @@ def main():
         # glTF units are metres; XY is converted from micrometres, Z is
         # intentionally stretched 5x for inspection of the layer order.
         doc["nodes"].append({"name": name, "mesh": mesh, "scale": [1e-6, 1e-6, 5e-6]})
+        preview_color = PNG_PALETTE.get(name, color)
+        preview_rgb = to_rgb(preview_color)
         if sides:
-            ax.add_collection(PolyCollection(sides, facecolors=[tuple(c*.58 for c in rgb)], edgecolors="none", rasterized=True))
-        ax.add_collection(PolyCollection(roofs, facecolors=color, edgecolors="none", rasterized=True))
+            ax.add_collection(PolyCollection(sides, facecolors=[tuple(c*.58 for c in preview_rgb)], edgecolors="none", rasterized=True))
+        ax.add_collection(PolyCollection(roofs, facecolors=preview_color, edgecolors="none", rasterized=True))
         records.append({"layer": number, "name": name, "gds_area_um2": region.area()*dbu**2,
                         "selection": "outside FuseTop" if name == "V4" else "inside FuseTop" if name == "MIM top contacts" else "complete layer",
                         "mesh_projected_area_um2": area, "vertices": len(v), "triangles": len(t)//3,
@@ -138,13 +154,9 @@ def main():
         print(name, len(v), "vertices", flush=True)
     ax.autoscale_view()
     ax.set_aspect("equal")
-    ax.margins(.035)
+    ax.margins(.025)
     ax.axis("off")
-    fig.text(.055, .94, "BANDGAP REFERENCE", fontsize=24, color="#223642", weight="bold")
-    fig.text(.055, .905, "GF180MCU-D  /  Power-rail layout", fontsize=13, color="#697e88")
-    fig.text(.055, .065, f"{bounds.width():.2f} x {bounds.height():.2f} um  /  Exact GDS XY geometry", fontsize=12, color="#334b58")
-    fig.text(.055, .038, "Illustrative layer elevations and vertical exaggeration; dielectric omitted.", fontsize=10, color="#6e7f88")
-    fig.subplots_adjust(left=.02, right=.98, top=.87, bottom=.10)
+    fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
     png = args.out / "bandgap-design.png"
     fig.savefig(png, dpi=200, facecolor=fig.get_facecolor())
     plt.close(fig)

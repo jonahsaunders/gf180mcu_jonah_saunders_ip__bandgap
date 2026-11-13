@@ -1,6 +1,6 @@
 {
   "source_gds_sha256": "83b53398d4d4e71c3c14c59bed86c0f3a999e9b0eef69ecd577c7207972433eb",
-  "source_gds": "review-input/filled_candidate.gds",
+  "source_gds": "layout/release/Bandgap_Core_Res.gds",
   "top_cell": "Bandgap_Core_Res",
   "bounds_um": [
     0.6,
@@ -168,9 +168,16 @@
     }
   ],
   "sha256": {
-    "bandgap-design.png": "3b369779fdbcd16df1c8e35510f427096c624c90f2ae0a129a7574d6c67c2d23",
+    "bandgap-design.png": "b530892501881c8cbd5a332a9d7458c49cf1519afac30d65d573b451c3ab46cf",
     "bandgap-layout.glb": "4f7e4741f87f163ddf24d3c0ae4f1387cea3e754eaeebf7bbe8314c5b26865ed",
-    "preview.png": "0c55204567b4c95541f3cda47781549b4495ece898a94337a8a0a27b14fbc986"
+    "preview.png": "6842caa4510b2c75d02a95e9a85fe7ad5fe5046a35c3d49595099b0d1ff05922"
   },
-  "preview_note": "Reduced-resolution QA preview; original geometry/model unchanged"
+  "preview_note": "Reduced-resolution QA preview; exact layout and GLB unchanged",
+  "render_style": {
+    "projection": "orthographic",
+    "azimuth_deg": 24,
+    "elevation_deg": 45,
+    "annotation_text": false,
+    "background": "white"
+  }
 }
