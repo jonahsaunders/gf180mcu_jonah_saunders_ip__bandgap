@@ -63,6 +63,55 @@ jobs:
             --entrypoint /bin/bash "$IMAGE" \
             -lc "bash /design/layout/build.sh $STAGE" 2>&1 | tee /tmp/console.log
 
+      # Post-layout evidence, run when the commit message contains [qualify]:
+      # the documented Magic 8.3.685 extraction, both topology LVS audits,
+      # the nominal DC/AC screens, the PSRR diagnostics and the mirror and
+      # precision-device audits described in layout/README.txt.
+      - name: Build the documented Magic version for extraction
+        if: contains(github.event.head_commit.message, '[qualify]')
+        run: |
+          docker run --rm --user root \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "bash /design/layout/build_magic.sh" > /tmp/build_magic.log 2>&1 \
+            || { tail -50 /tmp/build_magic.log; exit 1; }
+          tail -3 /tmp/build_magic.log
+          sudo chmod -R a+rwX layout/build
+
+      - name: Extract parasitics and audit the extracted topology
+        id: extract
+        if: contains(github.event.head_commit.message, '[qualify]')
+        run: |
+          set -o pipefail
+          docker run --rm --network none \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "bash /design/layout/build.sh extract" 2>&1 | tee -a /tmp/console.log
+
+      - name: Nominal screens, PSRR diagnostics and layout audits
+        id: screens
+        if: contains(github.event.head_commit.message, '[qualify]')
+        run: |
+          set -o pipefail
+          cat > /tmp/qualify.sh <<'EOS'
+          set -eo pipefail
+          source /foss/tools/sak/sak-pdk-script.sh gf180mcuD >/dev/null
+          set -u
+          export BANDGAP_LAYOUT_BUILD=/design/layout/build OMP_NUM_THREADS=1
+          cd /design
+          B=layout/build
+          python3 layout/scripts/screen_extracted.py --dc-only
+          python3 layout/scripts/diagnose_psrr.py --build $B --output $B/psrr_diagnostics --supply-coupling
+          python3 layout/scripts/screen_mirror_bias.py --build $B --reference-ac $B/psrr_diagnostics
+          python3 layout/scripts/audit_precision_layout.py --build $B
+          python3 layout/scripts/audit_mirror_layout.py --release $B --out $B/mirror_review
+          EOS
+          cp /tmp/qualify.sh layout/build/qualify.sh
+          docker run --rm --network none \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "bash /design/layout/build/qualify.sh" 2>&1 | tee -a /tmp/console.log
+
       - name: Collect results
         if: always()
         run: |
@@ -70,9 +119,9 @@ jobs:
           mkdir -p /tmp/results
           cp /tmp/console.log /tmp/results/ 2>/dev/null || true
           if [ -d layout/build ]; then
-            ( cd layout/build && find . -maxdepth 2 -type f \
+            ( cd layout/build && find . -maxdepth 4 -type f \
                 \( -name '*.log' -o -name '*.json' -o -name '*.lyrdb' -o -name '*.lvsdb' \
-                   -o -name '*.cir' -o -name '*.spice' -o -name '*.tcl' \
+                   -o -name '*.cir' -o -name '*.spice' -o -name '*.tcl' -o -name '*.dat' \
                    -o -name '*_candidate.gds' -o -name '*.png' \) \
                 -not -path './toolchain/*' -not -path './primitives/*' \
                 -size -95M -print0 | xargs -0 -I{} cp --parents {} /tmp/results/ )
@@ -84,6 +133,8 @@ jobs:
             "ref": "${GITHUB_REF_NAME}",
             "stage": "${STAGE}",
             "flow_outcome": "${{ steps.flow.outcome }}",
+            "extract_outcome": "${{ steps.extract.outcome }}",
+            "screens_outcome": "${{ steps.screens.outcome }}",
             "flow_seconds": $(( $(date -u +%s) - start )),
             "run_url": "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}",
             "image": "${IMAGE}"
@@ -106,6 +157,7 @@ jobs:
         run: |
           cd /tmp/results
           gzip -9 -k *_candidate.gds 2>/dev/null && rm -f *_candidate.gds || true
+          find . -type f \( -name '*.spice' -o -name '*.dat' -o -name '*.lvsdb' \) -size +1M -exec gzip -9 {} +
           git init -q
           git checkout -q -b results
           git config user.name "github-actions[bot]"

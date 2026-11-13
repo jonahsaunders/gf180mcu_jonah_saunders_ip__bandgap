@@ -46,10 +46,8 @@ STITCH_MARGIN = 500
 VIA_GROUP_CLEARANCE = 370
 FUSE_KEEPOUT = 1500
 SUPPLY_TAP_UM = float(os.environ.get("BANDGAP_SUPPLY_TAP_UM", "30"))
-# Top-metal tracks kept free for a strap that is routed later. The M3 drain
-# (v2) can leave its array only past the west end of the lifted vgn2 route;
-# v1 is routed first and enters the same drain row from the south instead.
-RESERVED_TRACKS = {"v1": [(129.5, 34.0, 134.0, 50.0)]}
+# A supply tap into the PNP array stays on the contact edge of a unit.
+PNP_TAP_UM = 8.0
 # Straps that must stay complete; a change that isolates one stops the build.
 COMPLETE_STRAPS = {"vref": 15, "v1": 6, "v2": 2}
 
@@ -67,6 +65,25 @@ def canonical(name):
     while name in aliases:
         name = aliases[name]
     return name
+
+
+# Top-metal areas a strap must leave free.
+# v1: the M3 drain (v2) can leave its array only past the west end of the
+#     lifted vgn2 route; v1 is routed first and enters the same drain row
+#     from the south instead.
+# vq3: leaves Q3 without entering the Q1/Q2 array.
+core_pnp = [d["bounds"] for d in placement["placed"] if d["source"] in ("Q1", "Q2")]
+STRAP_KEEPOUTS = {
+    "v1": [(129.5, 34.0, 134.0, 50.0)],
+    "vq3": [
+        (
+            min(b[0] for b in core_pnp),
+            min(b[1] for b in core_pnp),
+            max(b[2] for b in core_pnp),
+            max(b[3] for b in core_pnp),
+        )
+    ],
+}
 
 
 def extract_metal():
@@ -373,12 +390,13 @@ for name, port in networks:
         obstacle5 += sensitive
     for bounds in routing_exclusions(placement, name, aliases):
         obstacle5 += rectangle(bounds).sized(1465)
-    for bounds in RESERVED_TRACKS.get(name, []):
+    for bounds in STRAP_KEEPOUTS.get(name, []):
         obstacle5 += rectangle(bounds)
     blocked = grid_mask(obstacle5)
     own4_near = grid_mask(own, 0.05)
     landings = []
     direct_metal5 = set()
+    pnp_landings = set()
     for device in [{"nodes": [name], "pins": [port]}] + placement["placed"]:
         if has_rails and (device.get("dummy") or device.get("source") in matched):
             # Rails cover the dummy perimeter of every matched array. Their
@@ -422,6 +440,8 @@ for name, port in networks:
                 if not (square(xx * 0.8, yy * 0.8, 0.76) & local_via4).is_empty():
                     continue
                 landings.append((xx, yy))
+                if device.get("model", "").startswith("pnp"):
+                    pnp_landings.add((xx, yy))
                 # Reserve cuts immediately: two pin searches on the same net
                 # can otherwise choose adjacent landing arrays before either
                 # is inserted into the GDS.
@@ -463,8 +483,11 @@ for name, port in networks:
                 key=lambda a: min(abs(a[0] - b[0]) + abs(a[1] - b[1]) for b in tree),
             )
             pending.remove(start)
+        reach = limit
+        if has_rails and start in pnp_landings:
+            reach = round(PNP_TAP_UM / PITCH)
         path = (
-            find_path(start, tree, blocked, limit)
+            find_path(start, tree, blocked, reach)
             if int(components[start[1], start[0]]) in reachable
             else None
         )
