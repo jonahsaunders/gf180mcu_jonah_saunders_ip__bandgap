@@ -41,7 +41,8 @@ jobs:
           assert model['layers'] == old_model['layers'], 'Layer geometry changed'
           with Image.open(output/'bandgap-design.png') as image:
               assert image.size == (3200, 1650), image.size
-              image.thumbnail((1600, 1000), Image.Resampling.LANCZOS)
+              image = image.convert('RGB')
+              image.thumbnail((1280, 1000), Image.Resampling.LANCZOS)
               image.save(output/'preview.png', optimize=True)
           assert (output/'preview.png').stat().st_size < 1000000
           model['sha256']['preview.png'] = sha(output/'preview.png')
