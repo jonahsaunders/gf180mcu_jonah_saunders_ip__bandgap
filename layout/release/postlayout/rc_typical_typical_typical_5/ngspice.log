@@ -1,0 +1,924 @@
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+Note: No compatibility mode selected!
+
+
+Circuit: * post-layout screen rc_typical_typical_typical_5
+
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  1.00000e+00 Reference value :  5.95662e+04Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 241
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value : -4.00000e+01 Reference value :  1.90000e+01 Reference value :  7.70000e+01Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 166
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00
+No. of Data Rows : 1
+ngspice-46 done

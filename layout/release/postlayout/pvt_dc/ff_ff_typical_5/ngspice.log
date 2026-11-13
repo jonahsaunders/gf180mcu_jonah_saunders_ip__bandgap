@@ -1,0 +1,35 @@
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+Note: No compatibility mode selected!
+
+
+Circuit: * fixed-code dc screen ff_ff_typical_5
+
+Doing analysis at TEMP = -40.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 110.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 125.000000 and TNOM = 25.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  0.00000e+00
+No. of Data Rows : 1
+ngspice-46 done

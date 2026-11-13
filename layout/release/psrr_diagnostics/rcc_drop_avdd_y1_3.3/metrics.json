@@ -1,0 +1,10 @@
+{
+  "name": "rcc_drop_avdd_y1",
+  "supply": 3.3,
+  "psrr_min_dB": 47.77632153720106,
+  "worst_Hz": 22387.21138568384,
+  "dc_psrr_dB": 81.26376560108585,
+  "vref_V": 1.193159120114432,
+  "idd_uA": 24.26252696442997,
+  "sha256": "479bde48f1546376e1e77caa267b8b4c6b2cbbef724eacaac438d3f424705b45"
+}

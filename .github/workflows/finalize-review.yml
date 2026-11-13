@@ -1,0 +1,37 @@
+name: Finalize power-rail evidence
+on:
+  push:
+    branches: [power-rail-improvements]
+    paths: [.github/workflows/finalize-review.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: dcc962075dd8464762289a31427a359ac610cf2f
+          path: reviewed-release
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install pillow==11.3.0
+      - name: Verify spectra and preserve explicit numerical estimates
+        run: python layout/scripts/finalize_review_release.py reviewed-release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final-reviewed-power-rail-release
+          path: reviewed-release
+          retention-days: 90
+      - name: Save final reviewed evidence
+        run: |
+          cd reviewed-release
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add model power_review verification.json
+          git commit -m 'Validate finite noise spectra and retain native integration limitation'
+          git push origin HEAD:refs/heads/power-rail-improvements-reviewed-release

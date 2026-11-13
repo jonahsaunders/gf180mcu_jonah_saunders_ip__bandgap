@@ -1,5 +1,7 @@
 # Current-mirror layout review
 
+> Historical October review. The complete original revision is preserved on [design_review_2](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/reviews/2026-10-21-mirrors/README.md). See the [13 November power-rail review](../../../docs/POWER_RAIL_REVIEW.md) for the current release. Release-evidence links below point to the historical snapshot.
+
 > Historical audit of the earlier compact layout, preserved at `f249c5c`. See the [implemented revision](../2026-10-21-mirrors-implemented/README.md) for current geometry and results. Reproduction of this historical audit requires that earlier checkout.
 
 **21 October 2026 · Trim-inclusive TB10 core · Physical revision recommended**

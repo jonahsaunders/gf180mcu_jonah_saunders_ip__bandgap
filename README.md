@@ -8,6 +8,8 @@ target of 1.18 V.
 [![3D view of the bandgap layout](docs/images/bandgap-design.png)](docs/images/bandgap-design.png)
 
 - [Design documentation](docs/DESIGN.md)
+- [Power-rail review and before/after results](docs/POWER_RAIL_REVIEW.md)
+- [Download the GDS-derived 3D model (GLB)](layout/release/model/bandgap-layout.glb)
 - [Installation and first run](docs/GETTING_STARTED.md)
 - [Testbench reference](docs/TESTBENCHES.md)
 
@@ -25,7 +27,7 @@ and the complete sheet.
 
 The layout is in `layout/`. The released GDS is
 [`Bandgap_Core_Res.gds`](layout/release/Bandgap_Core_Res.gds);
-the core measures 686.0 × 399.6 µm. Build instructions and tool versions
+the core measures 682.8 × 396.76 µm. Build instructions and tool versions
 are in [layout/README.txt](layout/README.txt).
 
 The released core has zero reported DRC violations with the pinned deck,
@@ -74,10 +76,19 @@ for other benches, full runs, and reruns.
 
 ## Results
 
-[Current post-layout results](docs/DESIGN.md#post-layout-simulation)
-use fixed trim code 72 and an approximate RCC extraction. Startup/restart
-is not yet qualified, and PSRR remains below the testbench's 60 dB target.
-Full electrical qualification is still in progress.
+[Current post-layout results](docs/POWER_RAIL_REVIEW.md) compare freshly
+rebuilt layouts using fixed trim code 72 and an approximate RCC extraction.
+The new rails substantially reduce most supply-path resistances; four nominal
+startup/restart cases and all 360 fixed-code DC corner points complete.
+PSRR, supply-current and noise regressions are reported explicitly; the
+exploratory load sweep also exposes an existing output-loading limitation. Full PVT
+startup, mismatch yield, and electrical qualification remain open; PSRR is
+still below the testbench's 60 dB target.
+
+The pre-power-rail `main` is preserved on
+[`design_review_2`](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/tree/design_review_2).
+The 3D preview and GLB use the released GDS polygons; layer heights are
+illustrative and are not fabrication dimensions.
 
 <a id="specifications"></a>
 <a id="projected-post-trim-specifications"></a>
@@ -88,3 +99,4 @@ are for the older 2k design, preserved on
 [`design_review_1`](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/tree/design_review_1).
 
 Designed by Jonah Saunders.
+

@@ -1,3 +1,8 @@
+HISTORICAL OCTOBER FIGURES - pre-power-rail release.
+These captions and images are preserved on design_review_2. They do not
+represent the 13 November rail geometry or new measurements. Reproduce
+with the design_review_2 checkout. Current evidence: docs/POWER_RAIL_REVIEW.md.
+
 1. Fit within the updated draft user area
 Approximately 1270 × 410 µm, from an organizer announcement supplied by the designer on 20 October 2026. Dimensions, occupied fraction and centered margins are calculated from the released GDS. These are geometric margins, not verified routing or boundary clearances. The centered position is illustrative; no GDS placement, slot, pin assignment or wrapper connection has changed. This draft target supersedes the earlier inferred smaller envelope for planning. Keep the analog core compact and use spare area selectively for matching, isolation, supply routing and harness access.
 

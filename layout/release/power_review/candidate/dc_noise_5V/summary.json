@@ -1,0 +1,19 @@
+{
+  "layout": "candidate",
+  "kind": "dc_noise",
+  "supply_V": 5.0,
+  "temperature_C": 25,
+  "trim_code": 72,
+  "rcc_sha256": "12bcee71bc98985f32a93baeae677eedbcbcd7fed65a923ab38bae76b4bf67f8",
+  "deck_sha256": "3a28e9c3d06cf0f121111549ebdc7adca5eadfd2402150b30cc112cd68069bff",
+  "timeout_s": 600,
+  "status": "INCOMPLETE",
+  "errors": [
+    "Error: Noise simulation is not (yet) supported with 'option KLU'.",
+    "Error: no such vector onoise_total",
+    "Error: no such plot named noise1",
+    "Error: no such vector onoise_spectrum",
+    "ngspice error; inspect the retained log"
+  ],
+  "exit_code": 0
+}

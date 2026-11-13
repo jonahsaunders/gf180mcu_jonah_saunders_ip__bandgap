@@ -14,11 +14,15 @@ release/filled_drc.lyrdb and release/filled.lvsdb.gz open in KLayout.
 release/reference.spice is the schematic-derived LVS reference. Zero-volt
 current probes become net aliases; transistor multiplicities become units.
 report.html explains the research, floorplan, results, and open work.
-reviews/2026-10-21-compact-routing/README.md reports the current source buses,
-ground returns, precision audit, current ratios and PSRR.
+../docs/POWER_RAIL_REVIEW.md reports the current 13 November power-rail review.
+release/power_review/comparison.json records the fresh before/after metrics.
+release/model/ contains the GDS-derived GLB, preview and model provenance.
+The pre-rail main is preserved on design_review_2.
+reviews/2026-10-21-compact-routing/README.md is the historical October review.
 reviews/2026-10-21-mirrors-implemented/README.md preserves the earlier revision.
 reviews/2026-10-21-mirrors/README.md preserves the historical audit at f249c5c.
-figures/index.html presents the paper-style figure gallery and full captions.
+figures/index.html presents the historical October paper-style figure gallery.
+Those images and figure-data/ are not regenerated power-rail measurements.
 The PSRR revision separates physical routing improvements from extraction
 corrections. Raw Magic RC and capacitance-conserving RCC results are both
 retained; the latter is an approximation, not a foundry signoff extraction.
@@ -33,10 +37,11 @@ The dummy instance format emits the original W/L/m-only SPICE parameter
 list, preserving the PDK defaults used by the former code block; it does
 not add different diffusion-area, perimeter, or series-resistance values.
 
-release/schematic-symbols/ contains a fresh core netlist, independently
+release/schematic-symbols/ preserves the October source-equivalence core netlist, independently
 generated LVS reference, complete KLayout LVS log/database, and source-
 equivalence evidence. All 533 units are retained; no dummies are filtered.
-The full core LVS passes against the revised GDS, including all dummy units.
+Current full core LVS also passes, including all dummy units; its current
+artifacts are release/filled.lvsdb.gz and release/filled_lvs.log.
 The schematic itself is unchanged by the routing revision. Current inputs are
 bound to GDS/source hashes in mirror_bias/input_manifest.json; previous
 source-refactor simulation results are archived under release/previous/.
@@ -123,7 +128,7 @@ The lower-case 1k parameter is required by this LVS deck.
 
 Source guide
 ------------
-scripts/render_paper_figures.py  regenerate eight current figures from release and planning inputs
+scripts/render_paper_figures.py  historical paper figures; use design_review_2
 scripts/figure_style.py      shared typography and PDF/SVG/600-dpi PNG export
 scripts/layout_flow.py       explicit orchestration and verification gates
 scripts/layout_paths.py      build and PDK paths
@@ -140,7 +145,12 @@ scripts/audit_precision_layout.py  PNP/resistor geometry and source-path R
 scripts/compare_layouts.py   complete layer/text equivalence for fresh rebuilds
 scripts/route_physical.py    three-layer signal routing and substrate isolation
 scripts/lift_sensitive_routes.py  move the long vgn2 route to M5
-scripts/strengthen_power.py  2 um M5 supplies/grounds and four-via arrays
+scripts/power_plan.py        choose rail-specific M5 stripes and stitch locations
+scripts/strengthen_power.py  planned M5 supplies/grounds, local taps and via arrays
+scripts/review_power_rails.py  controlled before/after RCC and startup comparison
+scripts/run_power_review.sh  rebuild immutable main baseline and compare evidence
+scripts/render_layout_3d.py  GDS polygons to layered GLB and PNG, illustrative Z
+scripts/package_power_review.py  hash and package fresh current release evidence
 scripts/add_density_fill.py  deterministic COMP and metal fill with keepouts
 scripts/prepare_pex_view.py   geometry-identical PNP/nwell extraction hierarchy
 scripts/extract_parasitics.tcl  visible Magic extraction commands
@@ -209,9 +219,9 @@ The released dimensions and centered margins are calculated from GDS in the
 README and harness-area-fit figure. These are geometric margins, not verified
 integration clearances. The compact floorplan restores the earlier two-row
 output-capacitor bank instead of spreading the design across the user area.
-Final wrapper geometry, slot, pin locations and wiring remain pending.
-The initial-floorplan figure is historical; harness-area-fit is the current
-planning view. Neither changes the actual GDS.
+Slot 4 is assigned. Final wrapper geometry, pin locations and wiring remain pending.
+The initial-floorplan and harness-area-fit figures describe older layouts;
+current dimensions/margins are in ../docs/DESIGN.md. None changes the GDS.
 
 Compactness is an explicit design priority. Full matched-device dummy
 surrounds add area relative to the earlier core; the remaining harness area
@@ -247,7 +257,8 @@ verification rule was edited or weakened to obtain a passing report.
 
 Paper figure reproduction (no circuit simulation)
 ------------------------------------------------
-From the repository root, in the same container environment:
+Check out design_review_2 first: figure-data and these scripts describe the
+October release. From that checkout in the same container environment:
 
   python layout/scripts/render_paper_figures.py
 
@@ -265,15 +276,46 @@ captions.txt records conditions and limitations for reuse with the artwork.
 The style follows https://www.isscc.org/figures readability guidance, without
 claiming compliance with an ISSCC manuscript template or submission rules.
 
-Current routing review reproduction:
+Current numerical diagnostic reproduction:
   python layout/scripts/diagnose_psrr.py --build <build> --output <build>/psrr_diagnostics --supply-coupling
   python layout/scripts/screen_mirror_bias.py --build <build> --reference-ac <build>/psrr_diagnostics
   python layout/scripts/audit_precision_layout.py --build <build>
-  python layout/scripts/render_routing_results.py
+For the October routing figures, check out design_review_2 before running
+render_routing_results.py; its archived comparisons describe that revision.
 
-Current qualification scope: ten nominal DC/AC cases, 360 fixed-code corner
-DC points, four mirror cases and 481-point PSRR sweeps are complete.
-Run screen_extracted.py --dc-only to repeat the completed nominal scope.
-The full transient screen exceeded its 300 s per-case runtime; startup/restart
-is not qualified on this GDS. Previous startup data remain historical under
-release/previous/published_power_sequence_screen.json.
+Current qualification scope (13 November 2026): ten nominal DC/AC cases,
+360 fixed-code corner DC points, four mirror cases and 481-point PSRR sweeps
+complete. Four RCC nominal startup/restart cases complete and pass at TT,
+25 C, trim 72, both AVDDs, with analog-only and simultaneous-rail cycling.
+Four baseline transients time out at 600 s and remain incomplete. Full PVT
+startup is still open. Noise, line/load outcomes and all regressions are
+recorded in ../docs/POWER_RAIL_REVIEW.md and release/power_review/comparison.json.
+
+Independent before/after reproduction
+------------------------------------
+The baseline is immutable main commit 0818d5f8d65c6bd1c25f599b13a52347e6589f04.
+Check that out into .review-baseline/ alongside the current source, build
+the current layout and Magic toolchain, extract and run the completed
+nominal/PSRR/mirror/precision/corner screens listed above. Then in the same
+pinned container mounted at /design:
+  bash /design/layout/scripts/run_power_review.sh
+Use a fresh build folder; the review output must not already exist.
+The review uses the same toolchain and conditions on both layouts. It checks
+actual reports, hashes, finite arrays and sweep axes. Timeouts, invalid noise
+data or failed startup conditions are retained as incomplete/failed evidence,
+not silently promoted to passing results. DC/noise uses the Sparse solver;
+transients use KLU. The workflow records complete raw inputs and outputs.
+A green workflow means collection/validation completed; inspect individual
+case statuses for the electrical conclusions.
+
+3D model reproduction
+---------------------
+In an environment with klayout==0.30.9, numpy==2.2.6, matplotlib==3.10.3:
+  python layout/scripts/render_layout_3d.py --gds layout/release/Bandgap_Core_Res.gds --out <new-output-folder>
+The GLB retains selected GDS conductor/contact polygons and fill, with exact
+XY coordinates and preserved holes. Z heights/thicknesses are illustrative;
+the PNG exaggerates Z by 5x. Well/implant/dielectric volumes are omitted.
+MIM top plates and their Via4 contacts are separate from ordinary Via4.
+This is a visualization, not a fabrication model. provenance.json binds the
+model to the GDS and records layer areas, mesh counts and output hashes.
+

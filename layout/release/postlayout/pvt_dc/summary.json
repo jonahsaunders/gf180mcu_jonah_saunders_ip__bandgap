@@ -1,0 +1,2972 @@
+[
+  {
+    "mos": "typical",
+    "bjt": "typical",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.191782934968515,
+        "idd_uA": 19.06196240126068
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.193159120114432,
+        "idd_uA": 24.26252696442997
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.192696013113401,
+        "idd_uA": 31.185001949786912
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.192413182885285,
+        "idd_uA": 32.37759950769209
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "typical",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.191959246785142,
+        "idd_uA": 26.21157694590347
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.193321833690832,
+        "idd_uA": 31.588926547697916
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.192877541830144,
+        "idd_uA": 38.894376674116195
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.192615239852134,
+        "idd_uA": 40.16058930412605
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "typical",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.197145427356362,
+        "idd_uA": 23.73292159348068
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.200495983026309,
+        "idd_uA": 30.186832263627362
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.202900882773154,
+        "idd_uA": 38.73799387350539
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.203162432831703,
+        "idd_uA": 40.20523679822974
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "typical",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.197306610987324,
+        "idd_uA": 31.95280007427133
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.200646263628953,
+        "idd_uA": 38.67615924594917
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.203075853863349,
+        "idd_uA": 47.720586392091846
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.203361920703356,
+        "idd_uA": 49.28009673771217
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "typical",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187515088075937,
+        "idd_uA": 15.982687486707489
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.187367664072442,
+        "idd_uA": 20.34932876539723
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.184707945332509,
+        "idd_uA": 26.18179187461618
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.184011130529491,
+        "idd_uA": 27.19129680289246
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "typical",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187708969917724,
+        "idd_uA": 22.450775160443648
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.187547848984233,
+        "idd_uA": 26.934912425729948
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.184906638852242,
+        "idd_uA": 33.07211883060643
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.184229045987768,
+        "idd_uA": 34.13906073781581
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ff",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187204848766218,
+        "idd_uA": 19.05669642655607
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.186938060367698,
+        "idd_uA": 24.25668635628168
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.184361036214351,
+        "idd_uA": 31.18044123426351
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.183716797555177,
+        "idd_uA": 32.37374489661023
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ff",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187381650595719,
+        "idd_uA": 26.20575158313964
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.187101522019542,
+        "idd_uA": 31.58247088922806
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.184544112702171,
+        "idd_uA": 38.88936093422251
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.183920805708963,
+        "idd_uA": 40.15638450233443
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ff",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.192526555754087,
+        "idd_uA": 23.72502838192572
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.194232057055803,
+        "idd_uA": 30.17812106057574
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.194533381159361,
+        "idd_uA": 38.73133261281257
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.194438567518012,
+        "idd_uA": 40.19968309851862
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ff",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.192688153023036,
+        "idd_uA": 31.944029151333897
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.194382916529688,
+        "idd_uA": 38.66646647706068
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.194709474345938,
+        "idd_uA": 47.71326501115225
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.194639480070815,
+        "idd_uA": 49.27399428564319
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ff",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.182963729495024,
+        "idd_uA": 15.97887457075221
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.181174542111449,
+        "idd_uA": 20.3450700045193
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.176393867839903,
+        "idd_uA": 26.17838490466438
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.175332255646002,
+        "idd_uA": 27.18838366235024
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ff",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.183158160128894,
+        "idd_uA": 22.44657135326102
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.181355615282628,
+        "idd_uA": 26.93024061746689
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.176594496662182,
+        "idd_uA": 33.068405306551796
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.175552610550354,
+        "idd_uA": 34.13589774425142
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ss",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.198454826051503,
+        "idd_uA": 19.06899227104862
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.202163563718249,
+        "idd_uA": 24.27072832743412
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.204721913825228,
+        "idd_uA": 31.192069069489882
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.204958332066159,
+        "idd_uA": 32.38383173623078
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ss",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.198630436549607,
+        "idd_uA": 26.21935134509465
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.2023252392085,
+        "idd_uA": 31.597987188989762
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.204901373002935,
+        "idd_uA": 38.90212350882546
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.205157790174938,
+        "idd_uA": 40.167414078636185
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ss",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.203867242962545,
+        "idd_uA": 23.74329991423277
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.209555165689511,
+        "idd_uA": 30.198846579869503
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.214970689772657,
+        "idd_uA": 38.748071034748456
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.215745359013403,
+        "idd_uA": 40.21400122849906
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ss",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.20402783387812,
+        "idd_uA": 31.9643343128124
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.2097046459844,
+        "idd_uA": 38.68949768486877
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.215144174882439,
+        "idd_uA": 47.73170261104526
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.215942968224248,
+        "idd_uA": 49.28970920589981
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ss",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.194154515841592,
+        "idd_uA": 15.98786107659251
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.196336717401409,
+        "idd_uA": 20.35541803787349
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.196705904104212,
+        "idd_uA": 26.18718033430881
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.196532459004532,
+        "idd_uA": 27.196116825617143
+      }
+    ]
+  },
+  {
+    "mos": "typical",
+    "bjt": "ss",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.1943476157058,
+        "idd_uA": 22.45647826672092
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.196515671736302,
+        "idd_uA": 26.94160697514731
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.196901994043825,
+        "idd_uA": 33.07802006716699
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.19674711210213,
+        "idd_uA": 34.14430411528893
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "typical",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.191348434690525,
+        "idd_uA": 20.50237406515504
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.192411370783985,
+        "idd_uA": 25.764658748177602
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.191698368323954,
+        "idd_uA": 32.9569828629895
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.191945652386906,
+        "idd_uA": 34.22408035694171
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "typical",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.191571581587918,
+        "idd_uA": 29.62671336360749
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.192629932595666,
+        "idd_uA": 34.639027008300864
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.192102368506861,
+        "idd_uA": 41.6866929775912
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.19257796096175,
+        "idd_uA": 42.95459822597217
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "typical",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.196605768457924,
+        "idd_uA": 25.29709669356193
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.199580965146264,
+        "idd_uA": 31.78820228243877
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.201654660859226,
+        "idd_uA": 40.56390865978085
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.202420379417202,
+        "idd_uA": 42.1061716636876
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "typical",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.196792382626506,
+        "idd_uA": 35.3944604574352
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.199761596050811,
+        "idd_uA": 41.750427154809564
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.202069802501564,
+        "idd_uA": 50.54705298910278
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.203173566699538,
+        "idd_uA": 52.124845801991206
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "typical",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.18715539945751,
+        "idd_uA": 17.32244799987799
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.186739766138526,
+        "idd_uA": 21.76950458227822
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.183899750757656,
+        "idd_uA": 27.90562977120663
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.183781557349859,
+        "idd_uA": 28.9897024143815
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "typical",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.18742207273927,
+        "idd_uA": 25.85594215384283
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.187011443053077,
+        "idd_uA": 29.97617282387459
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.184344995930479,
+        "idd_uA": 35.85322842233586
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.184387176436561,
+        "idd_uA": 36.91498606971873
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ff",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.186772246073788,
+        "idd_uA": 20.49699618682471
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.186194080850714,
+        "idd_uA": 25.75875509147222
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.18337211083011,
+        "idd_uA": 32.95247543878829
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.183263000048798,
+        "idd_uA": 34.22044512632129
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ff",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.186995944060109,
+        "idd_uA": 29.6210129813405
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.186413664752546,
+        "idd_uA": 34.632669730263096
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.183779083306432,
+        "idd_uA": 41.68186195071533
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.183897526265995,
+        "idd_uA": 42.95067435161853
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ff",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.191989239244719,
+        "idd_uA": 25.2890880294085
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.193321608809344,
+        "idd_uA": 31.77941915333948
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.193297333291681,
+        "idd_uA": 40.55733266632882
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.193711829422819,
+        "idd_uA": 42.10090040603378
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ff",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.192176333792372,
+        "idd_uA": 35.38583739992839
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.193503070928157,
+        "idd_uA": 41.74087156999355
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.193714776421055,
+        "idd_uA": 50.53989832687127
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.194466598020108,
+        "idd_uA": 52.119091261437276
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ff",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.182605640152213,
+        "idd_uA": 17.3185196297704
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.180549857781945,
+        "idd_uA": 21.76516678293192
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.175593401092772,
+        "idd_uA": 27.90225744006105
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.175115516815978,
+        "idd_uA": 28.98696335708532
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ff",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.18287291329496,
+        "idd_uA": 25.85185682225997
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.1808227112316,
+        "idd_uA": 29.97156870969966
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.176042203711144,
+        "idd_uA": 35.84966620521921
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.175723862127759,
+        "idd_uA": 36.91207488598513
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ss",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.19801754781423,
+        "idd_uA": 20.50955936748677
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.201410303818831,
+        "idd_uA": 25.77296045773781
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.203711530238514,
+        "idd_uA": 32.9639664931209
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.204470797630574,
+        "idd_uA": 34.22999817011417
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ss",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.19823990511143,
+        "idd_uA": 29.63433409266773
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.201627451073705,
+        "idd_uA": 34.64794929308584
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.204111568846315,
+        "idd_uA": 41.69422301210166
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.205100363634675,
+        "idd_uA": 42.96099523253475
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ss",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.203324170699535,
+        "idd_uA": 25.30762332510754
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.208633481088441,
+        "idd_uA": 31.80031605123957
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.213709606170183,
+        "idd_uA": 40.57386591377072
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.214980988702258,
+        "idd_uA": 42.1145142074703
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ss",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.203510093322575,
+        "idd_uA": 35.40581393751103
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.208812961967165,
+        "idd_uA": 41.76361431975029
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.214121699841456,
+        "idd_uA": 50.55790293103334
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.215732276832016,
+        "idd_uA": 52.133981529687226
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ss",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.193792482429688,
+        "idd_uA": 17.32778855407555
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.195704116370796,
+        "idd_uA": 21.77570575138556
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.195886419144686,
+        "idd_uA": 27.910980927879187
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.19628420521213,
+        "idd_uA": 28.994267529932163
+      }
+    ]
+  },
+  {
+    "mos": "ff",
+    "bjt": "ss",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.194058294671634,
+        "idd_uA": 25.861499240006083
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.195974162693369,
+        "idd_uA": 29.98272691052978
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.1963269061564,
+        "idd_uA": 35.8589224198926
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.196886402861727,
+        "idd_uA": 36.919871118922075
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "typical",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.192303345095034,
+        "idd_uA": 18.26586447719864
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.19403472646078,
+        "idd_uA": 23.37162573430058
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.194110098633116,
+        "idd_uA": 30.18662070457808
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.193914967848968,
+        "idd_uA": 31.35937695390881
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "typical",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.192466011954382,
+        "idd_uA": 24.2019384959749
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.194182035890021,
+        "idd_uA": 29.658585181609702
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.194256364445573,
+        "idd_uA": 36.93776397263617
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.194064319941985,
+        "idd_uA": 38.15072778334897
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "typical",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.197782019602966,
+        "idd_uA": 22.823703694998418
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.20154829452571,
+        "idd_uA": 29.14578742124002
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.204584824898053,
+        "idd_uA": 37.59204431041288
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.204950620729478,
+        "idd_uA": 39.04229446737066
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "typical",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.197937936957693,
+        "idd_uA": 29.92032550976636
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.201699548335576,
+        "idd_uA": 36.69637993397528
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.204744998942446,
+        "idd_uA": 45.33223989199866
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.20511567035423,
+        "idd_uA": 46.77357796464846
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "typical",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187950321627719,
+        "idd_uA": 15.24868995249711
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.188109190732547,
+        "idd_uA": 19.5191094262906
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.185916641491943,
+        "idd_uA": 25.24239625505699
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.18529454614863,
+        "idd_uA": 26.23039087235486
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "typical",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.188124074309458,
+        "idd_uA": 20.44841177177161
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.188265172542825,
+        "idd_uA": 25.01367674556118
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.186066667604502,
+        "idd_uA": 31.21515595748003
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.185446550892783,
+        "idd_uA": 32.28167379658963
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ff",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187722840681764,
+        "idd_uA": 18.26064557066537
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.187809020331785,
+        "idd_uA": 23.36582952366966
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.185766575382758,
+        "idd_uA": 30.18207152643716
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.185209164734953,
+        "idd_uA": 31.35552410955275
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ff",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187885929276771,
+        "idd_uA": 24.196024026238252
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.187956914351645,
+        "idd_uA": 29.65204910237392
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.185913586655518,
+        "idd_uA": 36.9329081266453
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.18535938224102,
+        "idd_uA": 38.14665850196807
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ff",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.193160180120971,
+        "idd_uA": 22.81586999097681
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.195278753837555,
+        "idd_uA": 29.1371437102037
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.19620722318141,
+        "idd_uA": 37.58539990412887
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.196215682757063,
+        "idd_uA": 39.03673807989473
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ff",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.193316434924458,
+        "idd_uA": 29.91143473783023
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.195430430605416,
+        "idd_uA": 36.68678856279603
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.196367857931576,
+        "idd_uA": 45.32541282883125
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.196381272969216,
+        "idd_uA": 46.767905464414106
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ff",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.183396924426938,
+        "idd_uA": 15.244913447791621
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.181912106380711,
+        "idd_uA": 19.51488173896196
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.177595160360674,
+        "idd_uA": 25.23900348633903
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.176607476484018,
+        "idd_uA": 26.22747150598572
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ff",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.183571162120439,
+        "idd_uA": 20.44415596897655
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.182068804188562,
+        "idd_uA": 25.00893943722043
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.177746196409766,
+        "idd_uA": 31.21141470651259
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.176760656494112,
+        "idd_uA": 32.27845291888071
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ss",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.198978775968663,
+        "idd_uA": 18.27283841036134
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.203045964748439,
+        "idd_uA": 23.37977115808182
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.206148505913321,
+        "idd_uA": 30.19367184164765
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.206473901294887,
+        "idd_uA": 31.365604755835058
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ss",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.199140840508553,
+        "idd_uA": 24.20986085807484
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.203192464698182,
+        "idd_uA": 29.667744952245602
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.206293785828518,
+        "idd_uA": 36.945293498014564
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.206622116287327,
+        "idd_uA": 38.15727380330285
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ss",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.204508165151844,
+        "idd_uA": 22.83400208025749
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.210615671537126,
+        "idd_uA": 29.157716485610923
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.216669402671447,
+        "idd_uA": 37.6020992970895
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.217549746481783,
+        "idd_uA": 39.05105271374846
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ss",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.204663601849863,
+        "idd_uA": 29.932007585928652
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.210766342454709,
+        "idd_uA": 36.70962893769424
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.21682897936866,
+        "idd_uA": 45.3425959503952
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.21771410326905,
+        "idd_uA": 46.7825447134072
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ss",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.194592745792755,
+        "idd_uA": 15.25382624442317
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.197084045649419,
+        "idd_uA": 19.525153419642162
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.197925437041832,
+        "idd_uA": 25.24777318302348
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.197827871965031,
+        "idd_uA": 26.23520735549076
+      }
+    ]
+  },
+  {
+    "mos": "ss",
+    "bjt": "ss",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.194765805863006,
+        "idd_uA": 20.45423320381068
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.197239034480394,
+        "idd_uA": 25.02045720948711
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.198074116710752,
+        "idd_uA": 31.221101372546194
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.197978315064841,
+        "idd_uA": 32.28695974494242
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "typical",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.191445801250137,
+        "idd_uA": 19.62557895093373
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.192612250809624,
+        "idd_uA": 24.886089026236707
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.191802946262566,
+        "idd_uA": 31.890300161404276
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.191441174914483,
+        "idd_uA": 33.10726181230988
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "typical",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.191615413387069,
+        "idd_uA": 26.97705293190287
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.192768354340532,
+        "idd_uA": 32.21185666393209
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.191967825673856,
+        "idd_uA": 39.40727090801753
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.191615392096001,
+        "idd_uA": 40.6596157517873
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "typical",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.196741786264339,
+        "idd_uA": 24.298197190086768
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.199840613659681,
+        "idd_uA": 30.81379562021945
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.20183672856431,
+        "idd_uA": 39.42874640296973
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.202007317732583,
+        "idd_uA": 40.91749038007009
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "typical",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.196894775756436,
+        "idd_uA": 32.67417175575608
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.199981635169642,
+        "idd_uA": 39.2538777375771
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.20198715658659,
+        "idd_uA": 48.1962641825511
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.202166916465375,
+        "idd_uA": 49.745847914952904
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "typical",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187224007089112,
+        "idd_uA": 16.53639915212746
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.186897114763192,
+        "idd_uA": 20.959325432823558
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.183937139401176,
+        "idd_uA": 26.889349234426412
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.183169914314191,
+        "idd_uA": 27.92440754254917
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "typical",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187413109108615,
+        "idd_uA": 23.242978256862493
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.187074419656907,
+        "idd_uA": 27.58466215667752
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.184128075156263,
+        "idd_uA": 33.60876563650488
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.183371733636234,
+        "idd_uA": 34.6610070714284
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ff",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.18686900816817,
+        "idd_uA": 19.620267682867
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.186393725744327,
+        "idd_uA": 24.88019690487889
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.183472554047562,
+        "idd_uA": 31.885719902887597
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.182749657979427,
+        "idd_uA": 33.10339209788531
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ff",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187039094198353,
+        "idd_uA": 26.971225457615798
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.186550543958358,
+        "idd_uA": 32.20540116232871
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.183639044639335,
+        "idd_uA": 39.402279982621536
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.182925974964105,
+        "idd_uA": 40.655382325669265
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ff",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.192124525324139,
+        "idd_uA": 24.290262234223928
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.193579782277869,
+        "idd_uA": 30.805036456828347
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.193474709153262,
+        "idd_uA": 39.422070930777885
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.19328926030508,
+        "idd_uA": 40.91191180827353
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ff",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.19227790808011,
+        "idd_uA": 32.665388687635215
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.193721345727774,
+        "idd_uA": 39.24418556920392
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.193626301830808,
+        "idd_uA": 48.1888929424531
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.193450400678166,
+        "idd_uA": 49.739711464846216
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ff",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.182673725112186,
+        "idd_uA": 16.5325400524511
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.180706133889471,
+        "idd_uA": 20.955013382484
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.175626987959715,
+        "idd_uA": 26.88592183214502
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.17449520598376,
+        "idd_uA": 27.921467752234502
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ff",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.182863362111866,
+        "idd_uA": 23.23878768014293
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.18088429688263,
+        "idd_uA": 27.57998645100592
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.175819946844966,
+        "idd_uA": 33.60504769257644
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.174699647745869,
+        "idd_uA": 34.657840949629744
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ss",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.19811580336633,
+        "idd_uA": 19.63267897499427
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.201612992315989,
+        "idd_uA": 24.89436321815002
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.203822137234485,
+        "idd_uA": 31.8973957073385
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.20397919308549,
+        "idd_uA": 33.11352246914631
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ss",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.198284737176824,
+        "idd_uA": 26.98481775248327
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.201768104854614,
+        "idd_uA": 32.220935044163994
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.203984862056059,
+        "idd_uA": 39.415053356482176
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.204150607864585,
+        "idd_uA": 40.666465955819184
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ss",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.203461257250159,
+        "idd_uA": 24.30863945961292
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.208895284293454,
+        "idd_uA": 30.825882765053382
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.213898520274227,
+        "idd_uA": 39.4388493221877
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.214581743504136,
+        "idd_uA": 40.92628146026699
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ss",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.203613682699308,
+        "idd_uA": 32.68568776130733
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.209035558726154,
+        "idd_uA": 39.26724017342102
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.214047403847581,
+        "idd_uA": 48.20742461692933
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.214739300010699,
+        "idd_uA": 49.755548903922495
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ss",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.193861860231735,
+        "idd_uA": 16.5416402412041
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.195863036642163,
+        "idd_uA": 20.96549641584967
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.1959293500891,
+        "idd_uA": 26.89476612220687
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.195685137572575,
+        "idd_uA": 27.929255993783038
+      }
+    ]
+  },
+  {
+    "mos": "fs",
+    "bjt": "ss",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.194050197880943,
+        "idd_uA": 23.24866631511957
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.196039149337591,
+        "idd_uA": 27.59136014578553
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.196117564662603,
+        "idd_uA": 33.61466264552432
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.19588344069982,
+        "idd_uA": 34.666267201448704
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "typical",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.192159887296431,
+        "idd_uA": 18.81605496232107
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.193764180871578,
+        "idd_uA": 23.915830633738402
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.19374656266204,
+        "idd_uA": 30.73499918964544
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.19372522637131,
+        "idd_uA": 31.916949916200988
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "typical",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.192346009913406,
+        "idd_uA": 25.58159894091741
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.193938917943444,
+        "idd_uA": 31.062984738860706
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.19401741393956,
+        "idd_uA": 38.456776569098025
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.19413150562767,
+        "idd_uA": 39.74136976378065
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "typical",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.197594305378654,
+        "idd_uA": 23.48198887250021
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.201211630211341,
+        "idd_uA": 29.80876103940367
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.204125134318057,
+        "idd_uA": 38.22876603978507
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.204661808263173,
+        "idd_uA": 39.68731109956226
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "typical",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.197767615106754,
+        "idd_uA": 31.37908690500223
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.201383430814609,
+        "idd_uA": 38.204854283477054
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.204431944927085,
+        "idd_uA": 47.22797226490143
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.205155668287292,
+        "idd_uA": 48.738598006179416
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "typical",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187841144191377,
+        "idd_uA": 15.736137844940858
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.187889732116524,
+        "idd_uA": 19.994467391216148
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.185627897369177,
+        "idd_uA": 25.72730923444124
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.185190714132161,
+        "idd_uA": 26.723514899934802
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "typical",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.188043614741823,
+        "idd_uA": 21.78582344233552
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.188079048262707,
+        "idd_uA": 26.37465847659527
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.18589614754533,
+        "idd_uA": 32.60750044013384
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.185565223372286,
+        "idd_uA": 33.69546043347825
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ff",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187580266676169,
+        "idd_uA": 18.81082895186813
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.187540189861061,
+        "idd_uA": 23.91000778892796
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.185407040998331,
+        "idd_uA": 30.730474888499963
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.185025586960036,
+        "idd_uA": 31.91320099758073
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ff",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.187766890550056,
+        "idd_uA": 25.57577676850616
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.187715689994462,
+        "idd_uA": 31.056541030095367
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.185679160779548,
+        "idd_uA": 38.45180541843162
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.185432786141899,
+        "idd_uA": 39.737245302007295
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ff",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.192973528677218,
+        "idd_uA": 23.47414184625309
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.194944116077173,
+        "idd_uA": 29.80007648086063
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.195752159059912,
+        "idd_uA": 38.22215718090823
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.195933790063618,
+        "idd_uA": 39.68188529643398
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ff",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.193147264567024,
+        "idd_uA": 31.370307396968787
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.195116527961548,
+        "idd_uA": 38.19522110587552
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.19605983442116,
+        "idd_uA": 47.22097192285307
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.196428145914242,
+        "idd_uA": 48.7329227272514
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ff",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.183288506974427,
+        "idd_uA": 15.73235423709062
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.181694137440967,
+        "idd_uA": 19.99022195315856
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.177309997656068,
+        "idd_uA": 25.72393512622968
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.17650936544109,
+        "idd_uA": 26.72068080727091
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ff",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.18349153157182,
+        "idd_uA": 21.781639807278008
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.181884346197988,
+        "idd_uA": 26.36997374320334
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.177579873378089,
+        "idd_uA": 32.60380938844366
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.1768851650571,
+        "idd_uA": 33.69234421112946
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ss",
+    "resistor": "typical",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.19883402396166,
+        "idd_uA": 18.82304310309551
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.202772909978637,
+        "idd_uA": 23.92400890457402
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.205779119678935,
+        "idd_uA": 30.742005914909022
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.206275179687583,
+        "idd_uA": 31.923035596936387
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ss",
+    "resistor": "typical",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.199019429640097,
+        "idd_uA": 25.589371883305407
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.202946589668791,
+        "idd_uA": 31.072050994775687
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.206048304935148,
+        "idd_uA": 38.46444481207556
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.206680350147602,
+        "idd_uA": 39.74804726756728
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ss",
+    "resistor": "ff",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.204318899162894,
+        "idd_uA": 23.492295250725988
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.210276047334475,
+        "idd_uA": 29.82072917179349
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.216202954062734,
+        "idd_uA": 38.23876681894852
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.217250851379589,
+        "idd_uA": 39.69588368532693
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ss",
+    "resistor": "ff",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.204491595376199,
+        "idd_uA": 31.39061311756443
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.210447001071174,
+        "idd_uA": 38.21814645090565
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.216508649842853,
+        "idd_uA": 47.23856307743822
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.217744173470719,
+        "idd_uA": 48.747582311926585
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ss",
+    "resistor": "ss",
+    "supply_V": 3.3,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.194482448939999,
+        "idd_uA": 15.74127946314213
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.196862406596,
+        "idd_uA": 20.00053179459832
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.197631464345346,
+        "idd_uA": 25.7326488459953
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.197715711094827,
+        "idd_uA": 26.728211466367398
+      }
+    ]
+  },
+  {
+    "mos": "sf",
+    "bjt": "ss",
+    "resistor": "ss",
+    "supply_V": 5.0,
+    "trim_code": 72,
+    "dc_iteration_limit": 500,
+    "exit_code": 0,
+    "errors": [],
+    "convergence_warnings": [],
+    "points": [
+      {
+        "temperature_C": -40.0,
+        "vref_V": 1.194684126170306,
+        "idd_uA": 21.79153535511007
+      },
+      {
+        "temperature_C": 25.0,
+        "vref_V": 1.197050483273611,
+        "idd_uA": 26.38133561662603
+      },
+      {
+        "temperature_C": 110.0,
+        "vref_V": 1.197897559026015,
+        "idd_uA": 32.61335602246503
+      },
+      {
+        "temperature_C": 125.0,
+        "vref_V": 1.198088612503873,
+        "idd_uA": 33.70062138574231
+      }
+    ]
+  }
+]

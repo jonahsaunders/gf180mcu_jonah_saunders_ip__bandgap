@@ -1,0 +1,61 @@
+{
+  "status": "FINITE_SPECTRA_NUMERICALLY_INTEGRATED_NOT_NATIVE_NOISE_PASS",
+  "conditions": "RCC, TT, 25 C, trim 72, DVDD 3.3 V, no external load, Sparse solver",
+  "band_Hz": [
+    1,
+    1000000.0
+  ],
+  "method": "Square saved amplitude spectral density, trapezoid-integrate PSD over frequency, take square root",
+  "cross_check": "Piecewise power-law PSD integration; difference estimates quadrature sensitivity, not model uncertainty",
+  "limitations": "Native ngspice onoise_total is NaN for both layouts; full noise model/integrator qualification remains open",
+  "cases": [
+    {
+      "layout": "baseline",
+      "supply_V": 3.3,
+      "source": "power_review/sparse_retry/baseline/dc_noise_3.3V/noise_spectrum.dat.gz",
+      "compressed_sha256": "63a7c574c0791c123337d095f484ba18932e91725915a267e2a335e6141bdb24",
+      "frequency_points": 241,
+      "native_integrated_noise_status": "INVALID_NAN_RETAINED",
+      "trapezoid_rms_V": 0.00020267409924389082,
+      "piecewise_powerlaw_rms_V": 0.0002026004798353795,
+      "noise_10Hz_V_rtHz": 9.189728591440038e-06,
+      "noise_1000Hz_V_rtHz": 1.535197863529155e-06
+    },
+    {
+      "layout": "baseline",
+      "supply_V": 5,
+      "source": "power_review/sparse_retry/baseline/dc_noise_5V/noise_spectrum.dat.gz",
+      "compressed_sha256": "fa262dc4ed81bb48bb346f693ae377085a9ca85eddede16c30df26de9ffd46f4",
+      "frequency_points": 241,
+      "native_integrated_noise_status": "INVALID_NAN_RETAINED",
+      "trapezoid_rms_V": 0.00016395727833530863,
+      "piecewise_powerlaw_rms_V": 0.00016389949821504462,
+      "noise_10Hz_V_rtHz": 8.339842805241349e-06,
+      "noise_1000Hz_V_rtHz": 1.245551584673366e-06
+    },
+    {
+      "layout": "candidate",
+      "supply_V": 3.3,
+      "source": "power_review/sparse_retry/candidate/dc_noise_3.3V/noise_spectrum.dat.gz",
+      "compressed_sha256": "6f7256700521ce53adb152af39c625756cf7fc7c2c1886739c7882184aa6bc62",
+      "frequency_points": 241,
+      "native_integrated_noise_status": "INVALID_NAN_RETAINED",
+      "trapezoid_rms_V": 0.00020704075365705424,
+      "piecewise_powerlaw_rms_V": 0.0002069655857935959,
+      "noise_10Hz_V_rtHz": 9.516571097733084e-06,
+      "noise_1000Hz_V_rtHz": 1.572725102382147e-06
+    },
+    {
+      "layout": "candidate",
+      "supply_V": 5,
+      "source": "power_review/sparse_retry/candidate/dc_noise_5V/noise_spectrum.dat.gz",
+      "compressed_sha256": "14569fe6e132d63f3f856e543e1b3449463167c2a3acd8c8bf423900b680ad89",
+      "frequency_points": 241,
+      "native_integrated_noise_status": "INVALID_NAN_RETAINED",
+      "trapezoid_rms_V": 0.00016764021409499996,
+      "piecewise_powerlaw_rms_V": 0.00016758118872035752,
+      "noise_10Hz_V_rtHz": 8.654218647485317e-06,
+      "noise_1000Hz_V_rtHz": 1.278185667703458e-06
+    }
+  ]
+}

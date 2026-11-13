@@ -8,27 +8,23 @@ A bandgap reference targeting **1.18 V** in GF180MCU-D, integrating a folded-cas
 
 | Technology | Core footprint | Trim | Physical verification |
 | :--- | :--- | :--- | :--- |
-| GF180MCU-D · 5 metals | 686.0 × 399.6 µm · 0.274 mm² | 7 bits · 128 codes | 0 reported DRC violations · LVS match |
+| GF180MCU-D · 5 metals | 682.8 × 396.76 µm · 0.271 mm² | 7 bits · 128 codes | 0 reported DRC violations · LVS match |
 
 Physical checks apply to the released core and pinned decks. This is a **layout review candidate**; integration and electrical qualification remain open.
 
 ## Layout
 
-[![Annotated GDS layout with numbered analog groups, trim circuitry and capacitor labels](../layout/figures/physical-layout.png)](../layout/figures/physical-layout.png)
+[![GDS-derived 3D view of the revised power rails](images/bandgap-design.png)](images/bandgap-design.png)
 
-**Fig. 1.** Routed and filled GDS of the complete trim-inclusive core. Sixteen numbered callouts identify the analog device groups and startup circuitry; C1–C11 identify the MIM capacitors. The dashed outline marks the deep-n-well trim region. Numbers 1–14 correspond to the matching groups in Fig. 3. The updated routing adds shared amplifier source buses and separate M5 ground reinforcement inside the unchanged footprint. This is a layout rendering, not a silicon micrograph. [Vector PDF](../layout/figures/physical-layout.pdf)
+The 13 November power-rail revision has a **682.8 × 396.76 µm** routed and filled core. Device placement, circuit sizes and all 533 expanded device units are unchanged. The preview and [GLB model](../layout/release/model/bandgap-layout.glb) are generated from the verified GDS; XY geometry is exact, while layer heights are illustrative. [Physical checks and model provenance](POWER_RAIL_REVIEW.md).
+
+The [October annotated layout and figures](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/docs/DESIGN.md#layout) remain historical on `design_review_2`.
 
 ## Floorplan
 
-The organizer's draft guidance allocates approximately **1270 × 410 µm** per user area. The compact core occupies **52.6%** of that area. The two-row output-capacitor bank follows the earlier compact floorplan; the precision core sits beside the trim ladder. The added matched-device dummy surrounds account for the increase from the earlier 614 × 307.6 µm core.
+Against the organizer's provisional **1270 × 410 µm** planning area, the new core occupies **52.0%**. Centering would leave **293.6 µm** horizontally on each side and **6.62 µm** vertically. These are geometric margins, not verified integration clearances. Device coordinates and the two-row output-capacitor bank are unchanged. [Planning assumptions](../layout/planning_envelope.json).
 
-[![Current core centered in the approximate 1270 by 410 micrometer Chipalooza user area](../layout/figures/harness-area-fit.png)](../layout/figures/harness-area-fit.png)
-
-**Fig. 2.** Geometric fit within the draft user area. Centering leaves 292.0 µm on each side and 5.2 µm above and below. Final wrapper boundaries, required clearances, slot assignment, and pin locations remain pending. [Vector PDF](../layout/figures/harness-area-fit.pdf) · [Announcement and assumptions](../layout/planning_envelope.json)
-
-[![Implemented floorplan showing trim logic, poly resistor ladder, matched analog groups and output capacitor bank](../layout/figures/implemented-floorplan.png)](../layout/figures/implemented-floorplan.png)
-
-**Fig. 3.** Implemented placement, drawn from the saved device coordinates. Trim logic and the resistor ladder occupy the left side. The amplifier lies below the two-row output capacitor bank, with C1 close to its sensitive output and the bias arrays grouped beside the core. The numbered legend identifies the matching groups. [Vector PDF](../layout/figures/implemented-floorplan.pdf) · [Matching detail](../layout/figures/matched-arrays.pdf) · [Historical initial concept](../layout/figures/initial-floorplan.pdf)
+The block is assigned to **slot 4**; final wrapper coordinates, clearances, pad selection and wiring still need verification against the actual wrapper. See [harness integration instructions](../README.md#chipalooza-harness-integration).
 
 ## Simulation results
 
@@ -87,35 +83,28 @@ Typical values are rounded estimates near nominal conditions; the 1.184 V estima
 
 ### Post-layout simulation
 
-Current results use typical device corners, trim code 72, DVDD = 3.3 V, and 25 °C unless stated otherwise. The capacitance-conserving RCC approximation now includes **analog and digital ground metal resistance**. Well/substrate resistance remains lumped, and distributed coupling placement remains approximate.
+The [13 November power-rail review](POWER_RAIL_REVIEW.md) is the current source for before/after results and limitations. Both original `main` and the new rails were rebuilt and extracted with the same toolchain. Typical corners, trim 72, DVDD 3.3 V and 25 °C are used below, without an external output load.
 
-| Parameter | AVDD = 3.3 V | AVDD = 5.0 V | Unit |
+| RCC parameter | AVDD = 3.3 V | AVDD = 5.0 V | Unit |
 | :--- | ---: | ---: | :--- |
-| Reference output | 1.193160 | 1.193320 | V |
-| Analog supply current | 24.06 | 31.21 | µA |
-| Box temperature coefficient, −40 to 125 °C | 7.53 | 7.45 | ppm/°C |
-| Minimum PSRR, 1 Hz to 1 MHz | 48.01 | 53.17 | dB |
+| Reference output | 1.193159 | 1.193322 | V |
+| Analog supply current | 24.2625 | 31.5889 | µA |
+| Box temperature coefficient, −40 to 125 °C | 7.5278 | 7.4506 | ppm/°C |
+| Minimum PSRR, 481 points from 1 Hz to 1 MHz | 47.9886 | 53.1037 | dB |
 
+Code 72 is fixed; these are not minimum-drift calibrated results. RCC conserves the C-only net-pair capacitance matrix while retaining extracted resistance. Well/substrate resistance remains lumped and coupling placement is approximate. [Nominal data](../layout/release/nominal_screen.json) · [PSRR diagnostics](../layout/release/psrr_diagnostics/summary.json).
 
-No external output load is added. Code 72 is fixed; it is not a completed minimum-drift calibration. [Nominal data](../layout/release/nominal_screen.json) · [PSRR data](../layout/release/psrr/summary.json)
+Most supply-path resistances improve substantially; the M1/M2/M5 supply path falls about 95%. Amplifier bias moves closer to schematic values. **Not every metric improves:** four source paths get more resistive, minimum RCC PSRR falls by 0.023 / 0.064 dB, supply current rises 0.82% / 1.20%, and numerically integrated noise from finite spectra rises about 2.2%. Both layouts have substantial output droop at a 1 µA load. The detailed review retains these regressions and the native noise-integration limitation.
 
-**Startup remains unqualified on this revision.** The expanded transient screen exceeded its 300 s per-case runtime limit. No incomplete run is counted as passing. Earlier cold-start/restart results remain in the [historical supply-sequence data](../layout/release/previous/published_power_sequence_screen.json); they apply to the previous GDS and extraction model. [Current attempt status and logs](../layout/release/incomplete-transients/status.json)
-
-[![Schematic and extracted PSRR comparisons at both supplies](../layout/figures/psrr-before-after.png)](../layout/figures/psrr-before-after.png)
-
-**Fig. 5.** Controlled comparison over 481 common frequencies. With ground metal resistance included in **both** layouts, minimum PSRR improves from **45.94 to 48.01 dB** at 3.3 V and **48.66 to 53.17 dB** at 5 V. Both use Magic 8.3.685, identical terminal anchoring, and the same RCC conservation method. The earlier published 48.10/53.37 dB values omitted ground resistance; those results are retained separately and are not the baseline for the physical gain. [Vector PDF](../layout/figures/psrr-before-after.pdf) · [Extraction explanation and comparison](../layout/reviews/2026-10-21-compact-routing/README.md#psrr-and-the-extraction-correction)
+**Four nominal RCC startup/restart cases complete and pass the functional check**, covering 3.3/5 V AVDD, analog-only cycling and simultaneous analog/digital cycling, at TT/25 °C/trim 72. No forced initial-state kick is used. All four baseline cases time out after the same 600 s wall-clock limit and remain incomplete; no comparative physical startup-speed claim follows from a solver timeout. Full PVT/ramp-rate/load qualification remains open. [Waveform conditions and results](POWER_RAIL_REVIEW.md#startup-and-restart).
 
 ### Mirror layout and matching
 
-The **686.0 × 399.6 µm** placement is unchanged. The routing revision adds shared 2 µm source buses for the amplifier load and sink pairs, reinforces separate AVSS/DVSS returns with M5 and redundant vias, and keeps unrelated wires off R1 and the PNP-array region. All 13 MOS dummy surrounds remain intact. The actual-GDS audit finds zero unrelated-net crossings over the matched MOS channels and R1's resistor body; Q1/Q2 retain coincident emitter centroids and equal unit areas.
+Device placement, model sizes, unit counts and dummy surrounds are unchanged by the power-rail revision. All 272 functional units and 261 dummy units are retained. The independent [mirror geometry audit](../layout/release/mirror_review/mirror_geometry_audit.json), [per-device bias results](../layout/release/mirror_bias/summary.json), and [precision/source-resistance audit](../layout/release/precision_layout_audit.json) accompany the released GDS. Nominal matching and geometry checks do not establish random mismatch yield.
 
-At 3.3 V, nominal load-pair error falls from **0.0081% to 0.0007%** and sink-pair error from **0.0198% to 0.0024%**. The main mirror changes only slightly. All seven ratios, including the larger bias-dependent errors, are reported below and in the detailed comparison. All 272 functional units and 261 tied-off dummy units retain their models, dimensions and connections.
+**Verification scope:** complete unmodified core DRC reports **0 violations**, LVS matches **533 units**, and both extraction-topology audits pass. All **360 fixed-code corner DC points** and ten nominal DC/AC cases complete. The new corner screen has no recovered convergence warnings. Neither schematic nor layout meets the original 60 dB testbench PSRR criterion. Full startup PVT, mismatch/trim yield, independent PEX accuracy, distributed well/substrate RC, EM/IR, stability, terminal-voltage limits and final harness integration remain open. Additional noise/line/load outcomes are documented in the [review](POWER_RAIL_REVIEW.md#noise-line-and-load-screens). [Release manifest](../layout/release/verification.json) · [Detailed report](../layout/report.html).
 
-[![Nominal mirror current ratios before and after compact routing improvements](../layout/reviews/2026-10-21-compact-routing/mirror-current-ratios.png)](../layout/reviews/2026-10-21-compact-routing/mirror-current-ratios.png)
-
-**Fig. 6.** Nominal DC current-ratio errors from independent drain probes, with the same ground-inclusive extraction for both layouts. These are deterministic comparisons, not statistical mismatch predictions. Source-path resistance, terminal biases and remaining asymmetries are documented in the [routing review](../layout/reviews/2026-10-21-compact-routing/README.md). [Per-unit currents](../layout/release/mirror_bias/summary.json) · [Precision-layout audit](../layout/release/precision_layout_audit.json)
-
-**Verification and qualification.** The complete unedited core DRC deck reports **0 violations**, LVS matches all **533 units**, both extraction-topology LVS audits pass, and an independent source rebuild has zero geometry/text differences. All **360 fixed-code corner DC points** complete; **2 of 90 cases** retain recovered solver-fallback warnings. Neither schematic nor layout meets the existing 60 dB testbench PSRR criterion. Startup/restart, statistical matching/trim yield, independent PEX accuracy, distributed well/substrate resistance, EM/IR, stability, noise, loading and final harness integration remain open. [Release evidence](../layout/release/verification.json) · [Detailed report](../layout/report.html) · [Design budgets](REFERENCE_SPECIFICATIONS.md)
+The older October routing comparisons, plots and archived simulation history remain available in [design_review_2](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/docs/DESIGN.md#post-layout-simulation).
 
 ## Schematics
 
@@ -125,7 +114,7 @@ At 3.3 V, nominal load-pair error falls from **0.0081% to 0.0007%** and sink-pai
 
 **[View the complete final Xschem schematic, including trim and all dummy transistors](SCHEMATICS.md)** · [Full-resolution vector image](images/bandgap-core-resistor-trim-complete.svg)
 
-The final trim-inclusive core contains **13 native dummy transistor symbols**, representing **261 dummy units**, in the editable Xschem source. The linked page shows the entire sheet and separate functional-circuit and dummy close-ups. The exported source matches the [LVS-checked schematic](../layout/release/schematic-symbols/verification.json), with all **533 device units** retained.
+The final trim-inclusive core contains **13 native dummy transistor symbols**, representing **261 dummy units**, in the editable Xschem source. The linked page shows the entire sheet and separate functional-circuit and dummy close-ups. The unchanged source retains the historical [schematic-representation equivalence check](../layout/release/schematic-symbols/verification.json), with all **533 device units** retained.
 
 | Circuit | Xschem source |
 | :--- | :--- |
@@ -137,3 +126,4 @@ The final trim-inclusive core contains **13 native dummy transistor symbols**, r
 ## Simulation setup
 
 See [Installation and first run](GETTING_STARTED.md) and the [simulation guide](SIMULATION_GUIDE.md).
+

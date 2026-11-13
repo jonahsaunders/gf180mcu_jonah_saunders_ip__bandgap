@@ -1,8 +1,10 @@
 # Compact routing and ground-return revision
 
+> Historical October review. The complete original revision is preserved on [design_review_2](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/reviews/2026-10-21-compact-routing/README.md). See the [13 November power-rail review](../../../docs/POWER_RAIL_REVIEW.md) for the current release. Release-evidence links below point to the historical snapshot.
+
 **21 October 2026 · Trim-inclusive TB10 core · 686.0 × 399.6 µm**
 
-Device placement, circuit dimensions, native dummy symbols and the two-row capacitor bank remain unchanged. This revision improves interconnect inside the existing footprint. The complete unedited GF180MCU-D DRC deck reports **0 violations**, core LVS matches all **533 units**, and both extraction-topology LVS audits pass. [Release manifest](../../release/verification.json) · [Independent rebuild](../../release/rebuild_equivalence.json).
+Device placement, circuit dimensions, native dummy symbols and the two-row capacitor bank remain unchanged. This revision improves interconnect inside the existing footprint. The complete unedited GF180MCU-D DRC deck reports **0 violations**, core LVS matches all **533 units**, and both extraction-topology LVS audits pass. [Release manifest](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/release/verification.json) · [Independent rebuild](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/release/rebuild_equivalence.json).
 
 ## Implemented changes
 
@@ -13,7 +15,7 @@ Device placement, circuit dimensions, native dummy symbols and the two-row capac
 
 ![Current physical layout](../../figures/physical-layout.png)
 
-[Floorplan](../../figures/implemented-floorplan.pdf) · [Matching audit](../../release/mirror_geometry_audit.json) · [Precision audit](../../release/precision_layout_audit.json).
+[Floorplan](../../figures/implemented-floorplan.pdf) · [Matching audit](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/release/mirror_geometry_audit.json) · [Precision audit](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/release/precision_layout_audit.json).
 
 These choices follow the foundry's [MP.1–MP.13 matching guidelines](https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_10_6_2.html), including consistent unit geometry, nearby placement, dummy surroundings and similar node interconnect. The foundry explicitly includes [BJTs and resistors](https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_10_6_1.html) in matching guidance. These rules are not all encoded in DRC; the geometry and electrical audits are separate evidence.
 
@@ -34,7 +36,7 @@ TT, 25 °C, trim 72, DVDD = 3.3 V, ideal external supply/ground connections and 
 
 ![Mirror current comparison](mirror-current-ratios.png)
 
-[Vector PDF](mirror-current-ratios.pdf) · [All currents and biases](../../release/mirror_bias/summary.json).
+[Vector PDF](mirror-current-ratios.pdf) · [All currents and biases](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/release/mirror_bias/summary.json).
 
 The source-resistance audit solves each extracted rail network with a 1 A test current at one source terminal and the supply port fixed at zero. Other terminals are open. The values below are averages of the resulting individual driving-point resistances; they are neither summed operating drops nor equivalent resistance of all sources in parallel.
 
@@ -63,19 +65,19 @@ Minimum PSRR is sampled at **481 common frequencies from 1 Hz to 1 MHz**. The un
 
 ![Controlled PSRR comparison](../../figures/psrr-before-after.png)
 
-The stated gain is in the worst sampled PSRR, not at every frequency. For example, the low-frequency 3.3 V response decreases toward the schematic response; the complete curves show this tradeoff. The protected-routing choice differs from the unprotected ground-strap trial by only −0.005/−0.016 dB in the two minima. [Compound routing trials](../../release/routing_experiments.json).
+The stated gain is in the worst sampled PSRR, not at every frequency. For example, the low-frequency 3.3 V response decreases toward the schematic response; the complete curves show this tradeoff. The protected-routing choice differs from the unprotected ground-strap trial by only −0.005/−0.016 dB in the two minima. [Compound routing trials](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/release/routing_experiments.json).
 
 The old published model omitted AVSS/DVSS resistance because unrestricted Magic resistance extraction joined their well/substrate networks. The new flow skips distributed `space`, `pwell` and `nwell` resistance individually while retaining metal/contact/via resistance on both grounds. Each skip is a separate command in the tested Magic 8.3.685 implementation. [Magic extraction reference](https://opencircuitdesign.com/magic/commandref/extresist.html) · [Visible extraction commands](../../scripts/extract_parasitics.tcl).
 
 Both GDS versions pass independent topology LVS with this method, including an audit with interconnect resistors collapsed. The capacitance-conserving RCC adapter preserves the capacitance-only net-pair totals; zeroing wire resistance recovers the capacitance-only AC result within 0.001 dB. These are consistency checks, not independent field-solver validation. The resistance of wells/substrate remains lumped, and distributed coupling placement remains approximate. No foundry model or verification deck was weakened.
 
-[Baseline provenance and raw extraction](../../release/previous/provenance.json) · [Capacitance check](../../release/psrr/conservation_ac_check.json) · [All AC diagnostics](../../release/psrr/summary.json) · [Numerical comparison](comparison.json).
+[Baseline provenance and raw extraction](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/release/previous/provenance.json) · [Capacitance check](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/release/psrr/conservation_ac_check.json) · [All AC diagnostics](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/release/psrr/summary.json) · [Numerical comparison](comparison.json).
 
 ## Qualification and reproduction
 
 The native-symbol schematic is unchanged and remains the full LVS reference, including all 261 dummy units. The original pre-layout chart and simulation information remain in the main README. Previous published simulations are retained as history, with their original GDS and extraction assumptions identified.
 
-All ten nominal DC/AC cases and 360 fixed-code corner DC points complete. Additional analog-only and simultaneous-rail transient attempts exceeded the 300 s per-case limit; startup/restart is not qualified on this revision. Their input decks and partial logs are retained, and old startup values are not presented as new results. [Attempt status](../../release/incomplete-transients/status.json).
+All ten nominal DC/AC cases and 360 fixed-code corner DC points complete. Additional analog-only and simultaneous-rail transient attempts exceeded the 300 s per-case limit; startup/restart is not qualified on this revision. Their input decks and partial logs are retained, and old startup values are not presented as new results. [Attempt status](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/blob/design_review_2/layout/release/incomplete-transients/status.json).
 
 Neither the schematic nor layout reaches the existing 60 dB PSRR testbench criterion. Statistical mismatch/trim yield, independent PEX accuracy, distributed well/substrate resistance, complete branch balance, thermal/stress effects, EM/IR, stability, noise, loading and final harness integration remain open. Refer to the current release manifest for the exact completed screens; do not apply historical startup numbers to a new GDS.
 

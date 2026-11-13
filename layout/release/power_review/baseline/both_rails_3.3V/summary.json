@@ -1,0 +1,14 @@
+{
+  "layout": "baseline",
+  "kind": "both_rails",
+  "supply_V": 3.3,
+  "temperature_C": 25,
+  "trim_code": 72,
+  "rcc_sha256": "1b227ba1c759eba5913113064d0db5585bb02b1e10b2056ab5fc910f1a2615f3",
+  "deck_sha256": "5a361d6699c5968af667f291a5477a106746519d168084785a81e6f8f84b3b6a",
+  "timeout_s": 600,
+  "status": "INCOMPLETE",
+  "errors": [
+    "WALL_CLOCK_TIMEOUT: no functional conclusion"
+  ]
+}

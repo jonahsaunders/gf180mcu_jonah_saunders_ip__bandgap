@@ -1,0 +1,282 @@
+[
+  {
+    "name": "rc",
+    "supply": 3.3,
+    "psrr_min_dB": 40.6827182293114,
+    "worst_Hz": 26607.25059798864,
+    "dc_psrr_dB": 81.26332211484198,
+    "vref_V": 1.193159120114432,
+    "idd_uA": 24.26252696442997,
+    "sha256": "7dcf6afebe2bbbaefb79bad38851b09d47a5393960e796cbf83aae262ca99fd2"
+  },
+  {
+    "name": "rc",
+    "supply": 5.0,
+    "psrr_min_dB": 43.85543613422015,
+    "worst_Hz": 27384.19634264418,
+    "dc_psrr_dB": 71.45480194648341,
+    "vref_V": 1.193321833690832,
+    "idd_uA": 31.588926547697916,
+    "sha256": "61390e35a2d2c3ae5d1c8259cc727b502c72e2f93807d5201da421b1e6edf5b2"
+  },
+  {
+    "name": "c",
+    "supply": 3.3,
+    "psrr_min_dB": 47.97320938334714,
+    "worst_Hz": 21752.04034019566,
+    "dc_psrr_dB": 81.87751934210915,
+    "vref_V": 1.194220647418116,
+    "idd_uA": 24.37990026896394,
+    "sha256": "b06f7f7642979ac07ae8c1ff380572c799470f4a64ad21dca997bde7b5c96cf9"
+  },
+  {
+    "name": "c",
+    "supply": 5.0,
+    "psrr_min_dB": 53.13237054211932,
+    "worst_Hz": 21752.04034019566,
+    "dc_psrr_dB": 71.85180996334104,
+    "vref_V": 1.1943714462756,
+    "idd_uA": 31.715998239021612,
+    "sha256": "5aa3b68de9b66e4aaf845b010dcc6ffbf1720b5abad232f00abf684adb24aece"
+  },
+  {
+    "name": "rc_zero_all_r",
+    "supply": 3.3,
+    "psrr_min_dB": 40.66700478210975,
+    "worst_Hz": 26607.25059798864,
+    "dc_psrr_dB": 81.87700879209913,
+    "vref_V": 1.194220647609632,
+    "idd_uA": 24.3799002750624,
+    "sha256": "85c2bafc85aff0c18bbfd7efef7a23f0a3549dc3c8944e5c558f6b5f16b4865e"
+  },
+  {
+    "name": "rc_zero_all_r",
+    "supply": 5.0,
+    "psrr_min_dB": 43.85646848591463,
+    "worst_Hz": 27384.19634264418,
+    "dc_psrr_dB": 71.85178899094811,
+    "vref_V": 1.194371447668846,
+    "idd_uA": 31.715998287411967,
+    "sha256": "6295ded92cbbfb00c25e4f2d39b51d87972e85ec1cc4e68e6fc68a30429aecb9"
+  },
+  {
+    "name": "rc_drop_all_c",
+    "supply": 3.3,
+    "psrr_min_dB": 50.96193452109855,
+    "worst_Hz": 258523.4839562255,
+    "dc_psrr_dB": 81.26383971214318,
+    "vref_V": 1.193159120563749,
+    "idd_uA": 24.26250400589825,
+    "sha256": "eb062778b0d22c01ae7ad53f8da164e9a57eb604afcb593f9b5cbe8f22179dfd"
+  },
+  {
+    "name": "rc_drop_all_c",
+    "supply": 5.0,
+    "psrr_min_dB": 52.83118954770268,
+    "worst_Hz": 409732.1098135522,
+    "dc_psrr_dB": 71.45482524334624,
+    "vref_V": 1.193321833982566,
+    "idd_uA": 31.588868409926363,
+    "sha256": "cc5597cc5e0459a94d4998df2ff59cd5fcad805ec2913a32afaf0971dcc95049"
+  },
+  {
+    "name": "schematic",
+    "supply": 3.3,
+    "psrr_min_dB": 50.55737492200636,
+    "worst_Hz": 281838.2931264525,
+    "dc_psrr_dB": 81.88070421101796,
+    "vref_V": 1.194230495820671,
+    "idd_uA": 24.379896150584038,
+    "sha256": "a92de5ec8eb175bd9f5d2e655c4f563cc3d706c1f8f884ca592141ad57991575"
+  },
+  {
+    "name": "schematic",
+    "supply": 5.0,
+    "psrr_min_dB": 52.03993266999846,
+    "worst_Hz": 298538.2618918035,
+    "dc_psrr_dB": 71.8525200681346,
+    "vref_V": 1.194381284040553,
+    "idd_uA": 31.71598058022465,
+    "sha256": "fd8973366c7ab16db5443339cbe63f57ad6a809a148f02d355d0a7f3ab74db79"
+  },
+  {
+    "name": "magic_lvs",
+    "supply": 3.3,
+    "psrr_min_dB": 50.90171611047949,
+    "worst_Hz": 258523.4839562255,
+    "dc_psrr_dB": 81.8776063452448,
+    "vref_V": 1.194220647452992,
+    "idd_uA": 24.37990027042876,
+    "sha256": "731dbbd006c33a9b772ad107c3af1cb12a46ab565b0adcdc9834be75272d8522"
+  },
+  {
+    "name": "magic_lvs",
+    "supply": 5.0,
+    "psrr_min_dB": 52.71813871243899,
+    "worst_Hz": 409732.1098135522,
+    "dc_psrr_dB": 71.85181261775446,
+    "vref_V": 1.194371446481138,
+    "idd_uA": 31.7159982462947,
+    "sha256": "a96dbe2ca089cccab26810e1f83a7257d217f77c0a76768bdc0b8c76e80a6e3a"
+  },
+  {
+    "name": "rcc",
+    "supply": 3.3,
+    "psrr_min_dB": 47.98863645169284,
+    "worst_Hz": 21134.89039836689,
+    "dc_psrr_dB": 81.26376720287271,
+    "vref_V": 1.193159120114432,
+    "idd_uA": 24.26252696442997,
+    "sha256": "9a783eaf593e038e40b6029816f4fb29fdf067c315e1c54b9cf4fbc0a2f2171a"
+  },
+  {
+    "name": "rcc",
+    "supply": 5.0,
+    "psrr_min_dB": 53.10372925072802,
+    "worst_Hz": 21752.04034019566,
+    "dc_psrr_dB": 71.45482123015745,
+    "vref_V": 1.193321833690832,
+    "idd_uA": 31.588926547697916,
+    "sha256": "9e603448b56cc2971df33503a73af8d5d099e14cf599a969eae1e85efa67c7c8"
+  },
+  {
+    "name": "rcc_zero_all_r",
+    "supply": 3.3,
+    "psrr_min_dB": 47.97320938332726,
+    "worst_Hz": 21752.04034019566,
+    "dc_psrr_dB": 81.87751934184647,
+    "vref_V": 1.194220647609632,
+    "idd_uA": 24.3799002750624,
+    "sha256": "fa636bf761a2edb1b09a1b4970990dab72687420bb7e04ed529edaaf6d3601a3"
+  },
+  {
+    "name": "rcc_zero_all_r",
+    "supply": 5.0,
+    "psrr_min_dB": 53.13237056917787,
+    "worst_Hz": 21752.04034019566,
+    "dc_psrr_dB": 71.85180999028337,
+    "vref_V": 1.194371447668846,
+    "idd_uA": 31.715998287411967,
+    "sha256": "6845e7595f7b5bb6344ba1136f12f9896723e7c3ead1e9e535980395e04244af"
+  },
+  {
+    "name": "rcc_drop_avdd_vgn2",
+    "supply": 3.3,
+    "psrr_min_dB": 50.40743102122416,
+    "worst_Hz": 18836.49089489837,
+    "dc_psrr_dB": 81.2638141529716,
+    "vref_V": 1.193159120114432,
+    "idd_uA": 24.26252696442997,
+    "sha256": "cd00d07e347f24b6f3b5813aed77cf4685576451ce8263b619907a1e849c0ba7"
+  },
+  {
+    "name": "rcc_drop_avdd_vgn2",
+    "supply": 5.0,
+    "psrr_min_dB": 54.33688603310364,
+    "worst_Hz": 501187.2336272856,
+    "dc_psrr_dB": 71.45482266240636,
+    "vref_V": 1.193321833690832,
+    "idd_uA": 31.588926547697916,
+    "sha256": "c7da0bc2f97384468a039ffbdc64c3eedbf17a26af007a5116676010eb2ca22d"
+  },
+  {
+    "name": "rcc_drop_avdd_xf1",
+    "supply": 3.3,
+    "psrr_min_dB": 44.81282169894946,
+    "worst_Hz": 25118.86431509631,
+    "dc_psrr_dB": 81.26366446222366,
+    "vref_V": 1.193159120114432,
+    "idd_uA": 24.26252696442997,
+    "sha256": "2deb247457e19709bfc72a7123551b16059f5b93b2fabe1e13ee5f328de83465"
+  },
+  {
+    "name": "rcc_drop_avdd_xf1",
+    "supply": 5.0,
+    "psrr_min_dB": 49.43019753566817,
+    "worst_Hz": 24406.1906804203,
+    "dc_psrr_dB": 71.45481772596233,
+    "vref_V": 1.193321833690832,
+    "idd_uA": 31.588926547697916,
+    "sha256": "277aa30994c83d80b9111ef7c153cd45643378060f582a402a1974178f80cd0e"
+  },
+  {
+    "name": "rcc_drop_avdd_xf2",
+    "supply": 3.3,
+    "psrr_min_dB": 51.7238746284963,
+    "worst_Hz": 18302.06106311092,
+    "dc_psrr_dB": 81.26383440371984,
+    "vref_V": 1.193159120114432,
+    "idd_uA": 24.26252696442997,
+    "sha256": "6af086338ac804a6435987c5e5ac05600481f9660c6c07cee01d2f88a34ee03d"
+  },
+  {
+    "name": "rcc_drop_avdd_xf2",
+    "supply": 5.0,
+    "psrr_min_dB": 54.47396965746235,
+    "worst_Hz": 530884.4442310025,
+    "dc_psrr_dB": 71.45482320986137,
+    "vref_V": 1.193321833690832,
+    "idd_uA": 31.588926547697916,
+    "sha256": "cf405bd7060bc64d0cd0ac074b9d7e59a9e256f811abb17e2f2165dce9bcd8e1"
+  },
+  {
+    "name": "rcc_drop_avdd_pm1",
+    "supply": 3.3,
+    "psrr_min_dB": 47.98129812022481,
+    "worst_Hz": 20535.25026457187,
+    "dc_psrr_dB": 81.26376659601655,
+    "vref_V": 1.193159120114432,
+    "idd_uA": 24.26252696442997,
+    "sha256": "12c05b630d78d151135c7180e7f1f6824f86bb6269a894a05508150f7339804b"
+  },
+  {
+    "name": "rcc_drop_avdd_pm1",
+    "supply": 5.0,
+    "psrr_min_dB": 53.03248186640304,
+    "worst_Hz": 21752.04034019566,
+    "dc_psrr_dB": 71.45482121105186,
+    "vref_V": 1.193321833690832,
+    "idd_uA": 31.588926547697916,
+    "sha256": "0a7e36616bf0aca138438b61e8af9d7bfff9a47d6a431eff78016e0e5e88d1e2"
+  },
+  {
+    "name": "rcc_drop_avdd_pm2",
+    "supply": 3.3,
+    "psrr_min_dB": 47.98884143088952,
+    "worst_Hz": 22387.21138568384,
+    "dc_psrr_dB": 81.26376791443465,
+    "vref_V": 1.193159120114432,
+    "idd_uA": 24.26252696442997,
+    "sha256": "14aec3eed3029172e944bdecc95cfba9b32318fbe206ca5ef29ed2b357b22cb5"
+  },
+  {
+    "name": "rcc_drop_avdd_pm2",
+    "supply": 5.0,
+    "psrr_min_dB": 53.18121674663465,
+    "worst_Hz": 22387.21138568384,
+    "dc_psrr_dB": 71.45482125398503,
+    "vref_V": 1.193321833690832,
+    "idd_uA": 31.588926547697916,
+    "sha256": "d22664c53c0a5a9be0862051eab4a9e7ad11c90b2fb1b58e4b4860274d5ad010"
+  },
+  {
+    "name": "rcc_drop_avdd_y1",
+    "supply": 3.3,
+    "psrr_min_dB": 47.77632153720106,
+    "worst_Hz": 22387.21138568384,
+    "dc_psrr_dB": 81.26376560108585,
+    "vref_V": 1.193159120114432,
+    "idd_uA": 24.26252696442997,
+    "sha256": "479bde48f1546376e1e77caa267b8b4c6b2cbbef724eacaac438d3f424705b45"
+  },
+  {
+    "name": "rcc_drop_avdd_y1",
+    "supply": 5.0,
+    "psrr_min_dB": 52.95302463011379,
+    "worst_Hz": 22387.21138568384,
+    "dc_psrr_dB": 71.45482117524762,
+    "vref_V": 1.193321833690832,
+    "idd_uA": 31.588926547697916,
+    "sha256": "d1a2fa347742bf3c447f0e5a622848898f721554b02aad6456e3e38601233598"
+  }
+]

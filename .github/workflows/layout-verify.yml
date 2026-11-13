@@ -1,0 +1,198 @@
+# Rebuilds the trim-inclusive core layout and runs the complete, unedited
+# GF180MCU-D KLayout DRC and LVS decks inside the pinned IIC-OSIC-TOOLS image
+# documented in layout/README.txt. Results (logs, reports, candidate GDS) are
+# uploaded as a workflow artifact and mirrored to a disposable
+# "<branch>-ci-results" branch so they can be fetched with plain git.
+name: Layout build, DRC and LVS
+
+on:
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: "layout/build.sh stage (build, verify, extract, screen, pvt, all)"
+        default: build
+  push:
+    branches:
+      - main
+      - power-rail-improvements
+    paths:
+      - "layout/scripts/**"
+      - "layout/build.sh"
+      - "*.sch"
+      - "*.sym"
+      - ".github/workflows/layout-verify.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: layout-verify-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  IMAGE: hpretl/iic-osic-tools@sha256:5d6adf1f437cd0f2f8f8614488ec3c247ba8c768f4663a25d5e997b30ccb13b0
+  STAGE: ${{ github.event.inputs.stage || 'build' }}
+
+jobs:
+  layout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out immutable comparison baseline
+        if: contains(github.event.head_commit.message, '[review]')
+        uses: actions/checkout@v4
+        with:
+          ref: 0818d5f8d65c6bd1c25f599b13a52347e6589f04
+          path: .review-baseline
+
+      - name: Free runner disk space for the EDA image
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
+            /opt/hostedtoolcache/CodeQL /usr/local/share/boost /usr/share/swift
+          sudo docker image prune --all --force >/dev/null || true
+          df -h /
+
+      - name: Pull the pinned EDA image
+        run: |
+          docker pull "$IMAGE"
+          df -h /
+
+      - name: Build layout and run foundry DRC/LVS
+        id: flow
+        run: |
+          set -o pipefail
+          # The image's default user differs from the runner's; let it write.
+          chmod -R a+rwX .
+          date -u +%s > /tmp/flow_start
+          docker run --rm --network none \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "bash /design/layout/build.sh $STAGE" 2>&1 | tee /tmp/console.log
+
+      # Post-layout evidence, run when the commit message contains [qualify]:
+      # the documented Magic 8.3.685 extraction, both topology LVS audits,
+      # the nominal DC/AC screens, the PSRR diagnostics, the mirror and
+      # precision-device audits and the 360-point fixed-code corner DC screen
+      # described in layout/README.txt. Transient screens are not run here.
+      - name: Build the documented Magic version for extraction
+        if: contains(github.event.head_commit.message, '[qualify]')
+        run: |
+          docker run --rm --user root \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "bash /design/layout/build_magic.sh" > /tmp/build_magic.log 2>&1 \
+            || { tail -50 /tmp/build_magic.log; exit 1; }
+          tail -3 /tmp/build_magic.log
+          sudo chmod -R a+rwX layout/build
+
+      - name: Extract parasitics and audit the extracted topology
+        id: extract
+        if: contains(github.event.head_commit.message, '[qualify]')
+        run: |
+          set -o pipefail
+          docker run --rm --network none \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "bash /design/layout/build.sh extract" 2>&1 | tee -a /tmp/console.log
+
+      - name: Nominal screens, PSRR diagnostics and layout audits
+        id: screens
+        if: contains(github.event.head_commit.message, '[qualify]')
+        run: |
+          set -o pipefail
+          cat > /tmp/qualify.sh <<'EOS'
+          set -eo pipefail
+          source /foss/tools/sak/sak-pdk-script.sh gf180mcuD >/dev/null
+          set -u
+          export BANDGAP_LAYOUT_BUILD=/design/layout/build OMP_NUM_THREADS=1
+          cd /design
+          B=layout/build
+          python3 layout/scripts/screen_extracted.py --dc-only
+          python3 layout/scripts/diagnose_psrr.py --build $B --output $B/psrr_diagnostics --supply-coupling
+          python3 layout/scripts/screen_mirror_bias.py --build $B --reference-ac $B/psrr_diagnostics
+          python3 layout/scripts/audit_precision_layout.py --build $B
+          python3 layout/scripts/audit_mirror_layout.py --release $B --out $B/mirror_review
+          python3 layout/scripts/screen_pvt_dc.py
+          EOS
+          cp /tmp/qualify.sh layout/build/qualify.sh
+          docker run --rm --network none \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "bash /design/layout/build/qualify.sh" 2>&1 | tee -a /tmp/console.log
+
+      - name: Fresh baseline and independent before-after simulation
+        id: review
+        if: contains(github.event.head_commit.message, '[review]')
+        run: |
+          set -o pipefail
+          docker run --rm --network none \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "bash /design/layout/scripts/run_power_review.sh" 2>&1 | tee -a /tmp/console.log
+
+      - name: Rebuild geometric 3D model and evidence package
+        if: contains(github.event.head_commit.message, '[review]') && steps.review.outcome == 'success'
+        run: |
+          set -o pipefail
+          docker run --rm --network none \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "python3 /design/layout/scripts/render_layout_3d.py --gds /design/layout/build/filled_candidate.gds --out /design/layout/build/model && python3 /design/layout/scripts/package_power_review.py --build /design/layout/build" 2>&1 | tee -a /tmp/console.log
+
+      - name: Collect results
+        if: always()
+        run: |
+          sudo chmod -R a+rwX layout/build 2>/dev/null || true
+          mkdir -p /tmp/results
+          cp /tmp/console.log /tmp/results/ 2>/dev/null || true
+          if [ -d layout/build ]; then
+            ( cd layout/build && find . -maxdepth 8 -type f \
+                \( -name '*.log' -o -name '*.json' -o -name '*.lyrdb' -o -name '*.lvsdb' \
+                   -o -name '*.cir' -o -name '*.spice' -o -name '*.tcl' -o -name '*.dat' \
+                   -o -name '*_candidate.gds' -o -name 'Bandgap_Core_Res.gds' -o -name '*.png' -o -name '*.glb' -o -name '*.gz' \) \
+                -not -path './toolchain/*' -not -path './primitives/*' -not -path './baseline/primitives/*' \
+                -size -95M -print0 | xargs -0 -I{} cp --parents {} /tmp/results/ )
+          fi
+          start=$(cat /tmp/flow_start 2>/dev/null || date -u +%s)
+          cat > /tmp/results/ci_status.json <<EOF
+          {
+            "commit": "${GITHUB_SHA}",
+            "ref": "${GITHUB_REF_NAME}",
+            "stage": "${STAGE}",
+            "flow_outcome": "${{ steps.flow.outcome }}",
+            "extract_outcome": "${{ steps.extract.outcome }}",
+            "screens_outcome": "${{ steps.screens.outcome }}",
+            "flow_seconds": $(( $(date -u +%s) - start )),
+            "run_url": "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}",
+            "image": "${IMAGE}"
+          }
+          EOF
+          ls -la /tmp/results
+
+      - name: Upload results artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: layout-results-${{ github.sha }}
+          path: /tmp/results
+          retention-days: 30
+
+      - name: Mirror results to the CI results branch
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd /tmp/results
+          gzip -9 -k *_candidate.gds 2>/dev/null && rm -f *_candidate.gds || true
+          find . -type f \( -name '*.spice' -o -name '*.dat' -o -name '*.lvsdb' \) -size +1M -exec gzip -9 {} +
+          git init -q
+          git checkout -q -b results
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "CI results for ${GITHUB_SHA} (${STAGE}: ${{ steps.flow.outcome }})"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            "results:refs/heads/${GITHUB_REF_NAME}-ci-results"
+

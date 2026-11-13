@@ -1,0 +1,14 @@
+{
+  "layout": "baseline",
+  "kind": "analog_only",
+  "supply_V": 5.0,
+  "temperature_C": 25,
+  "trim_code": 72,
+  "rcc_sha256": "1b227ba1c759eba5913113064d0db5585bb02b1e10b2056ab5fc910f1a2615f3",
+  "deck_sha256": "329f681a2e8e8db4f8a59ae4933db3ea9579cb2ee4353b7944a402ad0c082f15",
+  "timeout_s": 600,
+  "status": "INCOMPLETE",
+  "errors": [
+    "WALL_CLOCK_TIMEOUT: no functional conclusion"
+  ]
+}

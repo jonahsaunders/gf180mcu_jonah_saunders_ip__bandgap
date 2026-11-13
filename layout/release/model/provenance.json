@@ -1,0 +1,176 @@
+{
+  "source_gds_sha256": "83b53398d4d4e71c3c14c59bed86c0f3a999e9b0eef69ecd577c7207972433eb",
+  "source_gds": "review-input/filled_candidate.gds",
+  "top_cell": "Bandgap_Core_Res",
+  "bounds_um": [
+    0.6,
+    1.4000000000000001,
+    683.4,
+    398.16
+  ],
+  "xy_geometry": "Exact selected GDS polygons, datatypes 0 and 4; holes preserved by trapezoid decomposition",
+  "z_geometry": "Illustrative elevations, 5x vertical exaggeration; not foundry stack dimensions",
+  "mim_option_B": "FuseTop electrode is separated from M4; Via4 inside FuseTop starts at the top electrode, preserving the capacitor gap",
+  "layers": [
+    {
+      "layer": 22,
+      "name": "Active",
+      "gds_area_um2": 111677.13399999999,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 111677.13400000168,
+      "vertices": 33288,
+      "triangles": 49932,
+      "illustrative_z_um": 0,
+      "illustrative_thickness_um": 0.2
+    },
+    {
+      "layer": 30,
+      "name": "Poly",
+      "gds_area_um2": 59743.6392,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 59743.639199999845,
+      "vertices": 4272,
+      "triangles": 6408,
+      "illustrative_z_um": 0.5,
+      "illustrative_thickness_um": 0.3
+    },
+    {
+      "layer": 33,
+      "name": "Contact",
+      "gds_area_um2": 4976.487999999999,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 4976.487999999517,
+      "vertices": 822560,
+      "triangles": 1233840,
+      "illustrative_z_um": 0.8,
+      "illustrative_thickness_um": 0.7
+    },
+    {
+      "layer": 34,
+      "name": "M1",
+      "gds_area_um2": 119827.609,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 119827.60900000136,
+      "vertices": 59336,
+      "triangles": 89004,
+      "illustrative_z_um": 1.5,
+      "illustrative_thickness_um": 0.6
+    },
+    {
+      "layer": 35,
+      "name": "V1",
+      "gds_area_um2": 140.33759999999998,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 140.33760000013487,
+      "vertices": 16608,
+      "triangles": 24912,
+      "illustrative_z_um": 2.1,
+      "illustrative_thickness_um": 1.4
+    },
+    {
+      "layer": 36,
+      "name": "M2",
+      "gds_area_um2": 97635.529425,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 97635.5294250003,
+      "vertices": 54304,
+      "triangles": 81456,
+      "illustrative_z_um": 3.5,
+      "illustrative_thickness_um": 0.6
+    },
+    {
+      "layer": 38,
+      "name": "V2",
+      "gds_area_um2": 99.4396,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 99.43959999996046,
+      "vertices": 11768,
+      "triangles": 17652,
+      "illustrative_z_um": 4.1,
+      "illustrative_thickness_um": 1.4
+    },
+    {
+      "layer": 42,
+      "name": "M3",
+      "gds_area_um2": 100268.16219999999,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 100268.16220000313,
+      "vertices": 50688,
+      "triangles": 76032,
+      "illustrative_z_um": 5.5,
+      "illustrative_thickness_um": 0.6
+    },
+    {
+      "layer": 40,
+      "name": "V3",
+      "gds_area_um2": 115.8664,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 115.8664000000492,
+      "vertices": 13712,
+      "triangles": 20568,
+      "illustrative_z_um": 6.1,
+      "illustrative_thickness_um": 1.4
+    },
+    {
+      "layer": 46,
+      "name": "M4",
+      "gds_area_um2": 105638.143,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 105638.1430000005,
+      "vertices": 39832,
+      "triangles": 59748,
+      "illustrative_z_um": 7.5,
+      "illustrative_thickness_um": 0.7
+    },
+    {
+      "layer": 41,
+      "name": "V4",
+      "gds_area_um2": 805.6568,
+      "selection": "outside FuseTop",
+      "mesh_projected_area_um2": 805.6568000010377,
+      "vertices": 95344,
+      "triangles": 143016,
+      "illustrative_z_um": 8.2,
+      "illustrative_thickness_um": 1.8
+    },
+    {
+      "layer": 75,
+      "name": "MIM top plate",
+      "gds_area_um2": 53465.899999999994,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 53465.89999999995,
+      "vertices": 88,
+      "triangles": 132,
+      "illustrative_z_um": 8.65,
+      "illustrative_thickness_um": 0.2
+    },
+    {
+      "layer": 41,
+      "name": "MIM top contacts",
+      "gds_area_um2": 6122.4644,
+      "selection": "inside FuseTop",
+      "mesh_projected_area_um2": 6122.464400006385,
+      "vertices": 724552,
+      "triangles": 1086828,
+      "illustrative_z_um": 8.85,
+      "illustrative_thickness_um": 1.15
+    },
+    {
+      "layer": 81,
+      "name": "M5",
+      "gds_area_um2": 122409.18299999999,
+      "selection": "complete layer",
+      "mesh_projected_area_um2": 122409.1829999997,
+      "vertices": 21256,
+      "triangles": 31884,
+      "illustrative_z_um": 10,
+      "illustrative_thickness_um": 1.2
+    }
+  ],
+  "sha256": {
+    "bandgap-design.png": "3b369779fdbcd16df1c8e35510f427096c624c90f2ae0a129a7574d6c67c2d23",
+    "bandgap-layout.glb": "4f7e4741f87f163ddf24d3c0ae4f1387cea3e754eaeebf7bbe8314c5b26865ed",
+    "preview.png": "0c55204567b4c95541f3cda47781549b4495ece898a94337a8a0a27b14fbc986"
+  },
+  "preview_note": "Reduced-resolution QA preview; original geometry/model unchanged"
+}

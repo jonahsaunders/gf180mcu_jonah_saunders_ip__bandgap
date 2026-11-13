@@ -1,0 +1,344 @@
+[
+  {
+    "group": [
+      "M11",
+      "M12",
+      "M13"
+    ],
+    "name": "M11",
+    "units": 5,
+    "centroid_um": [
+      36.6,
+      77.87
+    ]
+  },
+  {
+    "group": [
+      "M11",
+      "M12",
+      "M13"
+    ],
+    "name": "M12",
+    "units": 5,
+    "centroid_um": [
+      36.6,
+      77.87
+    ]
+  },
+  {
+    "group": [
+      "M11",
+      "M12",
+      "M13"
+    ],
+    "name": "M13",
+    "units": 5,
+    "centroid_um": [
+      36.6,
+      77.87
+    ]
+  },
+  {
+    "group": [
+      "M1",
+      "M2",
+      "M5"
+    ],
+    "name": "M1",
+    "units": 6,
+    "centroid_um": [
+      95.8,
+      62.07500000000001
+    ]
+  },
+  {
+    "group": [
+      "M1",
+      "M2",
+      "M5"
+    ],
+    "name": "M2",
+    "units": 6,
+    "centroid_um": [
+      95.8,
+      62.07500000000001
+    ]
+  },
+  {
+    "group": [
+      "M1",
+      "M2",
+      "M5"
+    ],
+    "name": "M5",
+    "units": 6,
+    "centroid_um": [
+      95.8,
+      62.07500000000001
+    ]
+  },
+  {
+    "group": [
+      "M3",
+      "M4"
+    ],
+    "name": "M3",
+    "units": 2,
+    "centroid_um": [
+      147.4,
+      36.9
+    ]
+  },
+  {
+    "group": [
+      "M3",
+      "M4"
+    ],
+    "name": "M4",
+    "units": 2,
+    "centroid_um": [
+      147.39999999999998,
+      36.9
+    ]
+  },
+  {
+    "group": [
+      "Q1",
+      "Q2",
+      "Q3"
+    ],
+    "name": "Q1",
+    "units": 1,
+    "centroid_um": [
+      98.0,
+      139.0
+    ]
+  },
+  {
+    "group": [
+      "Q1",
+      "Q2",
+      "Q3"
+    ],
+    "name": "Q2",
+    "units": 8,
+    "centroid_um": [
+      98.0,
+      139.0
+    ]
+  },
+  {
+    "group": [
+      "Q1",
+      "Q2",
+      "Q3"
+    ],
+    "name": "Q3",
+    "units": 1,
+    "centroid_um": [
+      118.0,
+      139.0
+    ]
+  },
+  {
+    "group": [
+      "M16",
+      "M18"
+    ],
+    "name": "M16",
+    "units": 1,
+    "centroid_um": [
+      187.8,
+      26.325
+    ]
+  },
+  {
+    "group": [
+      "M16",
+      "M18"
+    ],
+    "name": "M18",
+    "units": 1,
+    "centroid_um": [
+      196.2,
+      26.325
+    ]
+  },
+  {
+    "group": [
+      "MINP",
+      "MINN"
+    ],
+    "name": "MINP",
+    "units": 5,
+    "centroid_um": [
+      338.8,
+      97.33500000000001
+    ]
+  },
+  {
+    "group": [
+      "MINP",
+      "MINN"
+    ],
+    "name": "MINN",
+    "units": 5,
+    "centroid_um": [
+      338.8,
+      97.33500000000001
+    ]
+  },
+  {
+    "group": [
+      "PCAS1",
+      "PCAS2"
+    ],
+    "name": "PCAS1",
+    "units": 6,
+    "centroid_um": [
+      447.8,
+      62.02000000000001
+    ]
+  },
+  {
+    "group": [
+      "PCAS1",
+      "PCAS2"
+    ],
+    "name": "PCAS2",
+    "units": 6,
+    "centroid_um": [
+      447.8,
+      62.02000000000001
+    ]
+  },
+  {
+    "group": [
+      "MFOLD1",
+      "MFOLD2"
+    ],
+    "name": "MFOLD1",
+    "units": 1,
+    "centroid_um": [
+      517.8,
+      42.735
+    ]
+  },
+  {
+    "group": [
+      "MFOLD1",
+      "MFOLD2"
+    ],
+    "name": "MFOLD2",
+    "units": 1,
+    "centroid_um": [
+      528.2,
+      42.735
+    ]
+  },
+  {
+    "group": [
+      "PLOAD1",
+      "PLOAD2"
+    ],
+    "name": "PLOAD1",
+    "units": 6,
+    "centroid_um": [
+      601.8000000000001,
+      59.12
+    ]
+  },
+  {
+    "group": [
+      "PLOAD1",
+      "PLOAD2"
+    ],
+    "name": "PLOAD2",
+    "units": 6,
+    "centroid_um": [
+      601.8000000000001,
+      59.12
+    ]
+  },
+  {
+    "group": [
+      "MSINK1",
+      "MSINK2"
+    ],
+    "name": "MSINK1",
+    "units": 6,
+    "centroid_um": [
+      617.8000000000001,
+      158.28
+    ]
+  },
+  {
+    "group": [
+      "MSINK1",
+      "MSINK2"
+    ],
+    "name": "MSINK2",
+    "units": 6,
+    "centroid_um": [
+      617.8000000000001,
+      158.28
+    ]
+  },
+  {
+    "group": [
+      "VBNSINK"
+    ],
+    "name": "VBNSINK",
+    "units": 2,
+    "centroid_um": [
+      423.0,
+      148.465
+    ]
+  },
+  {
+    "group": [
+      "MPSINK"
+    ],
+    "name": "MPSINK",
+    "units": 17,
+    "centroid_um": [
+      226.9764705882353,
+      236.15441176470588
+    ]
+  },
+  {
+    "group": [
+      "MPFOLD"
+    ],
+    "name": "MPFOLD",
+    "units": 12,
+    "centroid_um": [
+      228.79999999999998,
+      350.58
+    ]
+  },
+  {
+    "group": [
+      "PREF",
+      "PRMIR"
+    ],
+    "name": "PREF",
+    "units": 5,
+    "centroid_um": [
+      87.8,
+      351.125
+    ]
+  },
+  {
+    "group": [
+      "PREF",
+      "PRMIR"
+    ],
+    "name": "PRMIR",
+    "units": 5,
+    "centroid_um": [
+      87.8,
+      351.125
+    ]
+  }
+]
