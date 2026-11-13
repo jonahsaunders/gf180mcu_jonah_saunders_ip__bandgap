@@ -8,8 +8,9 @@ actual routed metal before it is drawn.
 
 Stage 2 keeps the earlier behaviour for everything else: 2 um M5 straps for
 the reference and bandgap-core nets, and short 2 um taps from functional
-supply terminals to the nearest rail. A supply tap longer than
-BANDGAP_SUPPLY_TAP_UM is not drawn; that terminal keeps its lower-metal route.
+supply terminals outside the matched arrays to the nearest rail. A supply tap
+longer than BANDGAP_SUPPLY_TAP_UM is not drawn; that terminal keeps its
+lower-metal route.
 
 Connections are obtained from the actual metal connectivity, not device names
 in the schematic. Independent foundry DRC and LVS must run after this stage.
@@ -44,7 +45,13 @@ STITCH_PITCH = 2400
 STITCH_MARGIN = 500
 VIA_GROUP_CLEARANCE = 370
 FUSE_KEEPOUT = 1500
-SUPPLY_TAP_UM = float(os.environ.get("BANDGAP_SUPPLY_TAP_UM", "40"))
+SUPPLY_TAP_UM = float(os.environ.get("BANDGAP_SUPPLY_TAP_UM", "30"))
+# Top-metal tracks kept free for a strap that is routed later. The M3 drain
+# (v2) can leave its array only past the west end of the lifted vgn2 route;
+# v1 is routed first and enters the same drain row from the south instead.
+RESERVED_TRACKS = {"v1": [(129.5, 34.0, 134.0, 50.0)]}
+# Straps that must stay complete; a change that isolates one stops the build.
+COMPLETE_STRAPS = {"vref": 15, "v1": 6, "v2": 2}
 
 layout = k.Layout()
 layout.read(str(ROOT / "routed_candidate.gds"))
@@ -331,6 +338,7 @@ def find_path(start, tree, blocked, limit=None):
 
 
 summary = []
+matched = {name for g in placement["groups"] if g.get("matching") for name in g["names"]}
 networks = [("dvdd", ports["dvdd"]), ("vref", ports["vref"])]
 for name in ["v1", "v2", "vq3", *[f"rbit{i}top" for i in range(7)]]:
     candidates = [
@@ -365,14 +373,17 @@ for name, port in networks:
         obstacle5 += sensitive
     for bounds in routing_exclusions(placement, name, aliases):
         obstacle5 += rectangle(bounds).sized(1465)
+    for bounds in RESERVED_TRACKS.get(name, []):
+        obstacle5 += rectangle(bounds)
     blocked = grid_mask(obstacle5)
     own4_near = grid_mask(own, 0.05)
     landings = []
     direct_metal5 = set()
     for device in [{"nodes": [name], "pins": [port]}] + placement["placed"]:
-        if has_rails and device.get("dummy"):
-            # Dummy units are tied by the rails above them and by their
-            # existing lower-metal straps; they get no individual tap.
+        if has_rails and (device.get("dummy") or device.get("source") in matched):
+            # Rails cover the dummy perimeter of every matched array. Their
+            # units keep the symmetric lower-metal source wiring and get no
+            # individual top-metal tap across functional channels.
             continue
         for signal, (x, y) in zip(device["nodes"], device["pins"]):
             if canonical(signal) != name:
@@ -470,6 +481,13 @@ for name, port in networks:
         tap_lengths.append((len(path) - 1) * PITCH)
     port_landing = landings[0]
     landings = connected_landings
+    if name in COMPLETE_STRAPS:
+        assert len(landings) >= COMPLETE_STRAPS[name] and not skipped_landings, (
+            name,
+            len(landings),
+            skipped_landings,
+            "precision strap is no longer complete",
+        )
     landing_metal4 = own.dup()
     added_vias = 0
     for x, y in landings:

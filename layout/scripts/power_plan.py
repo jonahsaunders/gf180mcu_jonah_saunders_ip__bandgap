@@ -121,20 +121,18 @@ def supply_plan(placement):
 
     # ------------------------------------------------------------- AVSS
     add("avss", "M5", (123.5, 1.7, 566.0, 6.0), "bottom rail")
+    # The M3/M4 drains (v1, v2) leave their array to the north-west on M5,
+    # past the lifted vgn2 route, so that side stays open: one rail on the
+    # south dummy row and a narrow neck up the west dummy column, backed by
+    # the dummy units' own M4. North of the array the PNP-array return widens
+    # and turns along the south edge of the array, clear of v1, v2, vq3, R1.
     m3 = ring(placement, "M3")
-    m16 = ring(placement, "M16")
-    add("avss", "M5", (m3["W"][0], 1.7, m3["W"][2], 93.5), "M3/M4 rail W and core stub")
-    add("avss", "M5", (m3["W"][0], 1.7, 159.0, m3["S"][3]), "M3/M4 dummy-ring rail S")
-    add("avss", "M5", m3["N"], "M3/M4 dummy-ring rail N")
-    add("avss", "M5", m3["E"], "M3/M4 dummy-ring rail E")
-    add(
-        "avss",
-        "M5",
-        (m3["E"][0], m16["N"][1], m16["N"][2], m16["N"][3]),
-        "M16/M18 dummy-ring rail N and link",
-    )
-    for side in "WES":
-        add("avss", "M5", m16[side], f"M16/M18 dummy-ring rail {side}")
+    west = m3["W"]
+    add("avss", "M5", (west[0], 1.7, 159.0, m3["S"][3]), "M3/M4 dummy-ring rail S")
+    add("avss", "M5", (west[0], m3["S"][3], 125.7, 66.0), "core return, neck")
+    add("avss", "M4", (124.4, 22.0, 128.4, 31.0), "core return, dummy-pad bridge")
+    add("avss", "M5", (west[0], 66.0, west[2], 123.2), "core return")
+    add("avss", "M5", (83.5, 117.2, west[2], 123.2), "PNP-array return rail")
     fold_n = ring(placement, "MFOLD1")
     add(
         "avss",
