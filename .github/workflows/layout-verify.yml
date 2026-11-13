@@ -39,6 +39,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check out immutable comparison baseline
+        if: contains(github.event.head_commit.message, '[review]')
+        uses: actions/checkout@v4
+        with:
+          ref: 0818d5f8d65c6bd1c25f599b13a52347e6589f04
+          path: .review-baseline
+
       - name: Free runner disk space for the EDA image
         run: |
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
@@ -114,6 +121,25 @@ jobs:
             --entrypoint /bin/bash "$IMAGE" \
             -lc "bash /design/layout/build/qualify.sh" 2>&1 | tee -a /tmp/console.log
 
+      - name: Fresh baseline and independent before-after simulation
+        id: review
+        if: contains(github.event.head_commit.message, '[review]')
+        run: |
+          set -o pipefail
+          docker run --rm --network none \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "bash /design/layout/scripts/run_power_review.sh" 2>&1 | tee -a /tmp/console.log
+
+      - name: Rebuild geometric 3D model and evidence package
+        if: contains(github.event.head_commit.message, '[review]') && steps.review.outcome == 'success'
+        run: |
+          set -o pipefail
+          docker run --rm --network none \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "python3 /design/layout/scripts/render_layout_3d.py --gds /design/layout/build/filled_candidate.gds --out /design/layout/build/model && python3 /design/layout/scripts/package_power_review.py --build /design/layout/build" 2>&1 | tee -a /tmp/console.log
+
       - name: Collect results
         if: always()
         run: |
@@ -121,11 +147,11 @@ jobs:
           mkdir -p /tmp/results
           cp /tmp/console.log /tmp/results/ 2>/dev/null || true
           if [ -d layout/build ]; then
-            ( cd layout/build && find . -maxdepth 4 -type f \
+            ( cd layout/build && find . -maxdepth 8 -type f \
                 \( -name '*.log' -o -name '*.json' -o -name '*.lyrdb' -o -name '*.lvsdb' \
                    -o -name '*.cir' -o -name '*.spice' -o -name '*.tcl' -o -name '*.dat' \
-                   -o -name '*_candidate.gds' -o -name '*.png' \) \
-                -not -path './toolchain/*' -not -path './primitives/*' \
+                   -o -name '*_candidate.gds' -o -name 'Bandgap_Core_Res.gds' -o -name '*.png' -o -name '*.glb' -o -name '*.gz' \) \
+                -not -path './toolchain/*' -not -path './primitives/*' -not -path './baseline/primitives/*' \
                 -size -95M -print0 | xargs -0 -I{} cp --parents {} /tmp/results/ )
           fi
           start=$(cat /tmp/flow_start 2>/dev/null || date -u +%s)
@@ -168,3 +194,4 @@ jobs:
           git commit -q -m "CI results for ${GITHUB_SHA} (${STAGE}: ${{ steps.flow.outcome }})"
           git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
             "results:refs/heads/${GITHUB_REF_NAME}-ci-results"
+
