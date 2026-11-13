@@ -15,6 +15,7 @@ from collections import Counter
 import gzip
 import hashlib
 import json
+import os
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
@@ -58,6 +59,33 @@ def drc_items(report):
     for item in ET.parse(report).findall(".//items/item"):
         counts[(item.findtext("category") or "?").strip("'")] += 1
     return dict(sorted(counts.items()))
+
+
+def drc_examples(report, limit=6):
+    """A few marker coordinates per violated rule, for the job log."""
+    if not report.exists():
+        return
+    seen = Counter()
+    for item in ET.parse(report).findall(".//items/item"):
+        rule = (item.findtext("category") or "?").strip("'")
+        seen[rule] += 1
+        if seen[rule] <= limit:
+            values = [v.text for v in item.findall("values/value") if v.text]
+            print(f"  {rule}: {' '.join(values)[:300]}")
+
+
+def deck_text(pattern):
+    """Print the installed deck's own definition of the rules that fired."""
+    import re
+
+    expression = re.compile(pattern)
+    for deck in sorted(DRC_DIR.rglob("*.drc")):
+        lines = deck.read_text(errors="replace").splitlines()
+        for number, line in enumerate(lines):
+            if expression.search(line):
+                print(f"--- {deck.relative_to(DRC_DIR)}:{number + 1}")
+                for context in lines[max(0, number - 9) : number + 2]:
+                    print("   ", context[:330])
 
 
 def lvs_result(report):
@@ -158,6 +186,9 @@ def main():
     )
     if not summary["drc"]["clean"]:
         print(log[-3000:])
+        drc_examples(drc_report)
+        if os.environ.get("SLOT4_SHOW_RULES"):
+            deck_text(os.environ["SLOT4_SHOW_RULES"])
 
     antenna_deck = DRC_DIR / "gf180mcu_antenna.drc"
     antenna_in_main = sum("ANT." in line for line in log.splitlines())
