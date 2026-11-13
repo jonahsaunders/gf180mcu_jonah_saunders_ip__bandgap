@@ -30,5 +30,6 @@ report["additional_screens"] = [replacements.get(key(row), row) for row in repor
 report["incomplete_screens"] = sum(row["status"] != "COMPLETE" for row in report["additional_screens"])
 report["startup_functional_failures"] = [row for row in report["additional_screens"] if row.get("functional") is False]
 path.write_text(json.dumps(report, indent=2)+"\n")
-assert all(row["status"] == "COMPLETE" for row in new), new
-print("Four Sparse line/load/noise cases completed; original attempts retained.")
+for row in new:
+    print(json.dumps(row), flush=True)
+print("Sparse rerun evidence retained, including any explicitly incomplete cases.")

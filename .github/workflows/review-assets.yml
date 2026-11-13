@@ -1,4 +1,5 @@
 name: Validate and package reviewed layout assets
+# Retain finite DC results and all noise diagnostics even if a noise model fails.
 on:
   push:
     branches: [power-rail-improvements]

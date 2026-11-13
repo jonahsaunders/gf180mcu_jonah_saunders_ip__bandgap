@@ -32,7 +32,7 @@ def sha(path):
 def samples(path, columns, expected=None):
     data = np.loadtxt(path, skiprows=1, ndmin=2)
     if data.shape[1] != columns or not np.isfinite(data).all():
-        raise ValueError(f"Invalid finite sample matrix: {path}")
+        raise ValueError(f"Invalid finite sample matrix: {path}; shape={data.shape}; first rows={data[:3].tolist()}")
     if expected is not None and len(data) != expected:
         raise ValueError(f"Expected {expected} samples, got {len(data)}: {path}")
     return data
@@ -109,15 +109,15 @@ def run_case(case):
             op = samples(folder / "operating.dat", 3, 1)
             line = samples(folder / "line.dat", 3, 18)
             load = samples(folder / "load.dat", 3, 11)
-            noise = samples(folder / "noise_integrated.dat", 2, 1)
-            spectrum = samples(folder / "noise_spectrum.dat", 2, 241)
             if not np.allclose(line[:, 0], np.linspace(3.3, 5, 18)) or not np.allclose(load[:, 0], np.linspace(0, 1e-5, 11), atol=1e-12):
                 raise ValueError("Unexpected line/load sweep axes")
             record.update(vref_V=float(op[0, 1]), idd_uA=float(-op[0, 2]*1e6),
                           line_span_uV=float(np.ptp(line[:, 1])*1e6),
                           line_endpoint_uV_per_V=float((line[-1, 1]-line[0, 1])/1.7*1e6),
-                          load_span_uV=float(np.ptp(load[:, 1])*1e6),
-                          noise_1Hz_1MHz_rms_V=float(noise[0, 1]),
+                          load_span_uV=float(np.ptp(load[:, 1])*1e6), line_load_status="COMPLETE")
+            noise = samples(folder / "noise_integrated.dat", 2, 1)
+            spectrum = samples(folder / "noise_spectrum.dat", 2, 241)
+            record.update(noise_1Hz_1MHz_rms_V=float(noise[0, 1]),
                           noise_10Hz_V_rtHz=float(np.interp(10, spectrum[:, 0], spectrum[:, 1])))
         record["status"] = "COMPLETE"
     except subprocess.TimeoutExpired:
