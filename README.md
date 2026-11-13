@@ -8,8 +8,7 @@ target of 1.18 V.
 [![3D view of the bandgap layout](docs/images/bandgap-design.png)](docs/images/bandgap-design.png)
 
 - [Design documentation](docs/DESIGN.md)
-- [Power-rail review and before/after results](docs/POWER_RAIL_REVIEW.md)
-- [Download the GDS-derived 3D model (GLB)](layout/release/model/bandgap-layout.glb)
+- [Final Integration](docs/FINAL_INTEGRATION.md)
 - [Installation and first run](docs/GETTING_STARTED.md)
 - [Testbench reference](docs/TESTBENCHES.md)
 
