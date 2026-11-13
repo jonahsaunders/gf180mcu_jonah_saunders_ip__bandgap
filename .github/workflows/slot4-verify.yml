@@ -1,0 +1,79 @@
+# Rebuilds the Chipalooza slot-4 integration (gds/slot_4.gds.gz) and runs the
+# complete, unedited GF180MCU-D KLayout DRC, antenna and LVS decks on top cell
+# slot_4 inside the pinned IIC-OSIC-TOOLS image documented in layout/README.txt.
+# Logs and reports are uploaded as workflow artifacts and the verdict is printed
+# in the job log. CI does not create or update repository branches.
+name: Slot 4 integration DRC and LVS
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - slot4-integration
+    paths:
+      - "gds/**"
+      - "layout/slot4/**"
+      - "layout/harness/**"
+      - "layout/scripts/build_slot4.py"
+      - "layout/scripts/verify_slot4.py"
+      - "layout/verify_slot4.sh"
+      - "layout/release/Bandgap_Core_Res.gds"
+      - "layout/release/reference.spice"
+      - ".github/workflows/slot4-verify.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: slot4-verify-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  IMAGE: hpretl/iic-osic-tools@sha256:5d6adf1f437cd0f2f8f8614488ec3c247ba8c768f4663a25d5e997b30ccb13b0
+
+jobs:
+  slot4:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Free runner disk space for the EDA image
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
+            /opt/hostedtoolcache/CodeQL /usr/local/share/boost /usr/share/swift
+          sudo docker image prune --all --force >/dev/null || true
+          df -h /
+
+      - name: Pull the pinned EDA image
+        run: docker pull "$IMAGE"
+
+      - name: Rebuild slot_4 and run foundry DRC, antenna and LVS
+        run: |
+          set -o pipefail
+          # The image's default user differs from the runner's; let it write.
+          chmod -R a+rwX .
+          docker run --rm --network none \
+            --mount type=bind,source="$PWD",target=/design \
+            --entrypoint /bin/bash "$IMAGE" \
+            -lc "bash /design/layout/verify_slot4.sh" 2>&1 | tee /tmp/console.log
+
+      - name: Collect results
+        if: always()
+        run: |
+          sudo chmod -R a+rwX layout/build 2>/dev/null || true
+          mkdir -p /tmp/results
+          cp /tmp/console.log /tmp/results/ 2>/dev/null || true
+          cp layout/build/slot4/*.log layout/build/slot4/*.json \
+            layout/build/slot4/*.lyrdb layout/build/slot4/*.lvsdb \
+            layout/build/slot4/*.cir /tmp/results/ 2>/dev/null || true
+          ls -la /tmp/results
+
+      - name: Upload results artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: slot4-results-${{ github.sha }}
+          path: /tmp/results
+          retention-days: 30

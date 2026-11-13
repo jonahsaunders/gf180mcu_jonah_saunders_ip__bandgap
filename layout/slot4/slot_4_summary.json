@@ -1,0 +1,110 @@
+{
+  "top_cell": "slot_4",
+  "slot": 4,
+  "outline_um": [
+    0.0,
+    0.0,
+    1274.27,
+    412.71
+  ],
+  "core": {
+    "cell": "Bandgap_Core_Res",
+    "source": "layout/release/Bandgap_Core_Res.gds",
+    "source_sha256": "83b53398d4d4e71c3c14c59bed86c0f3a999e9b0eef69ecd577c7207972433eb",
+    "placement": "mirror about x axis, origin at (578.6, 401.65) um"
+  },
+  "wrapper": {
+    "source": "layout/harness/slot4_wrapper.gds",
+    "source_sha256": "dab65dc8148c355bb0cfd9b2530349a615852b03fc8a4909c2dfda336b989cb1"
+  },
+  "pin_map": {
+    "avdd": "vdd_5v0",
+    "avss": "vss_5v0",
+    "dvdd": "vdd_3v3",
+    "dvss": "vss_3v3",
+    "vref": "s4_an[0]",
+    "b0": "dig_in[0]",
+    "b1": "dig_in[1]",
+    "b2": "dig_in[2]",
+    "b3": "dig_in[3]",
+    "b4": "dig_in[4]",
+    "b5": "dig_in[5]",
+    "b6": "dig_in[6]"
+  },
+  "reference_netlist": {
+    "path": "layout/slot4/slot_4.spice",
+    "devices": 533
+  },
+  "traces": {
+    "vref": [
+      "core port to pin metal: 8.03 um; plate 6.9 x 44.32 um on M5/M4, 9.43 x 44.32 um on M3"
+    ],
+    "avdd": [
+      "three 30 um M5 stripes from the pin, 30 um M5 collector, two 30 um taps onto the PREF ring and a 19 um tap onto the M11-M13 spine"
+    ],
+    "avss": [
+      "two 25.5 um M5 stripes from the pin; 11.2 um M5 channel above the core strapped to 9.4 um of M4 and M3; merged with the core rail over 442.5 um"
+    ],
+    "dvdd": [
+      "30 um M5 stripe; 16 um M4+M3 underpass below the AVDD collector; M5 plate merged with the core's 16 um edge strap"
+    ],
+    "dvss": [
+      "30 um M5 stripe and riser; two 24 um M4 underpasses (M3 doubled outside the trim-bit band); M5 plate merged with the core's 50.4 um edge strap"
+    ],
+    "b0..b6": [
+      "2 um tracks: M3 pad at the pin row, M4 riser, M5 for the 490 um run, M3 for the last 77 um into the core pads; 12 cuts at every layer change"
+    ]
+  },
+  "checks": {
+    "via40_cuts": 11160,
+    "via41_cuts": 12144,
+    "metal_nets": {
+      "core": 73,
+      "wrapper": 70,
+      "slot": 131
+    },
+    "unconnected_harness_pins": [
+      "analog_bus0",
+      "analog_bus1",
+      "analog_bus2",
+      "analog_bus3",
+      "clk",
+      "dig_in[10]",
+      "dig_in[11]",
+      "dig_in[12]",
+      "dig_in[13]",
+      "dig_in[14]",
+      "dig_in[15]",
+      "dig_in[16]",
+      "dig_in[17]",
+      "dig_in[18]",
+      "dig_in[19]",
+      "dig_in[20]",
+      "dig_in[21]",
+      "dig_in[22]",
+      "dig_in[23]",
+      "dig_in[7]",
+      "dig_in[8]",
+      "dig_in[9]",
+      "dig_out[0]",
+      "dig_out[10]",
+      "dig_out[11]",
+      "dig_out[1]",
+      "dig_out[2]",
+      "dig_out[3]",
+      "dig_out[4]",
+      "dig_out[5]",
+      "dig_out[6]",
+      "dig_out[7]",
+      "dig_out[8]",
+      "dig_out[9]",
+      "enable",
+      "ibias0",
+      "ibias1",
+      "reset",
+      "s4_an[1]",
+      "vbias"
+    ]
+  },
+  "gds_sha256_uncompressed": "bea405c5499d40857469521b9f83b6100095c8adb967a2e17e23451a1ac80ad1"
+}
