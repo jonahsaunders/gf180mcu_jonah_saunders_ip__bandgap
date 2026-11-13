@@ -11,9 +11,10 @@ import shutil
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--build", type=Path, required=True)
+    parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     root = args.build
-    out = root / "review-package"
+    out = args.output or root / "review-package"
     out.mkdir(exist_ok=False)
     names = ["filled_candidate.gds", "filled_drc.log", "filled_drc.lyrdb", "filled.lvsdb",
              "filled_lvs.log", "filled.cir", "reference.spice", "placement.json",

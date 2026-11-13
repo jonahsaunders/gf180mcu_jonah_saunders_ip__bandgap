@@ -45,8 +45,10 @@ def run_case(case):
     source = (root / "netlists/TB10_RESISTOR_TRIM.spice").read_text()
     header = source.split("* TB_PVT_MODELS_BEGIN", 1)[1].split("* TB_PVT_MODELS_END", 1)[0]
     model = root / "pex/Bandgap_Core_Res_rcc_simulation.spice"
+    # ngspice KLU does not support noise analysis; use Sparse for these cases.
+    solver = "sparse" if kind == "dc_noise" else "klu"
     lines = [f"* Independent rail review: {label} {kind}", header,
-             ".options klu num_threads=1", ".temp 25", f'.include "{model}"',
+             f".options {solver} num_threads=1", ".temp 25", f'.include "{model}"',
              "XDUT avdd 0 vref b0 b1 b2 b3 b4 b5 b6 0 dvdd Bandgap_Core_Res"]
     def ramp(v):
         return f"PWL(0 0 100u {v} 2m {v} 2.001m 0 2.5m 0 2.6m {v} 4m {v})"
@@ -73,7 +75,7 @@ def run_case(case):
     (folder / "test.spice").write_text(deck)
     record = {"layout": label, "kind": kind, "supply_V": supply, "temperature_C": 25,
               "trim_code": 72, "rcc_sha256": sha(model), "deck_sha256": sha(folder / "test.spice"),
-              "timeout_s": timeout, "status": "INCOMPLETE", "errors": []}
+              "timeout_s": timeout, "solver": solver, "status": "INCOMPLETE", "errors": []}
     try:
         with (folder / "ngspice.log").open("w") as log:
             proc = subprocess.run(["ngspice", "-b", "test.spice"], cwd=folder,
