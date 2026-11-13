@@ -80,7 +80,7 @@ def main():
         area = 0.0
         for polygon in region.each():
             for part in polygon.decompose_trapezoids():
-                xy = [(p.x*dbu, p.y*dbu) for p in part.each_point_hull()]
+                xy = [(p.x*dbu, p.y*dbu) for p in part.each_point()]
                 if len(xy) < 3:
                     continue
                 signed = sum(xy[i][0]*xy[(i+1)%len(xy)][1]-xy[(i+1)%len(xy)][0]*xy[i][1] for i in range(len(xy)))
