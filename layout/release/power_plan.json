@@ -1,0 +1,717 @@
+[
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      8.5,
+      316.5,
+      18.3,
+      385.75
+    ],
+    "role": "PREF dummy-ring rail W"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      157.3,
+      316.5,
+      167.1,
+      385.75
+    ],
+    "role": "PREF dummy-ring rail E"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      8.5,
+      316.5,
+      167.1,
+      337.85
+    ],
+    "role": "PREF dummy-ring rail S"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      8.5,
+      364.4,
+      167.1,
+      385.75
+    ],
+    "role": "PREF dummy-ring rail N"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      180.5,
+      303.5,
+      190.3,
+      397.66
+    ],
+    "role": "MPFOLD dummy-ring rail W"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      267.3,
+      303.5,
+      277.1,
+      397.66
+    ],
+    "role": "MPFOLD dummy-ring rail E"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      180.5,
+      303.5,
+      277.1,
+      325.09
+    ],
+    "role": "MPFOLD dummy-ring rail S"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      180.5,
+      376.07,
+      277.1,
+      397.66
+    ],
+    "role": "MPFOLD dummy-ring rail N"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      180.5,
+      178.5,
+      190.3,
+      296.65
+    ],
+    "role": "MPSINK dummy-ring rail W"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      267.3,
+      178.5,
+      277.1,
+      296.65
+    ],
+    "role": "MPSINK dummy-ring rail E"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      180.5,
+      178.5,
+      277.1,
+      200.05
+    ],
+    "role": "MPSINK dummy-ring rail S"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      180.5,
+      275.1,
+      277.1,
+      296.65
+    ],
+    "role": "MPSINK dummy-ring rail N"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      157.3,
+      376.07,
+      190.3,
+      385.75
+    ],
+    "role": "PREF to MPFOLD upper link"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      157.3,
+      316.5,
+      190.3,
+      325.09
+    ],
+    "role": "PREF to MPFOLD lower link"
+  },
+  {
+    "net": "avdd",
+    "layer": "M4",
+    "box": [
+      181.4,
+      294.0,
+      189.4,
+      306.0
+    ],
+    "role": "MPSINK to MPFOLD bridge under the reference corridor"
+  },
+  {
+    "net": "avdd",
+    "layer": "M4",
+    "box": [
+      193.8,
+      294.0,
+      201.5,
+      306.0
+    ],
+    "role": "MPSINK to MPFOLD bridge under the reference corridor"
+  },
+  {
+    "net": "avdd",
+    "layer": "M4",
+    "box": [
+      206.2,
+      294.0,
+      214.2,
+      306.0
+    ],
+    "role": "MPSINK to MPFOLD bridge under the reference corridor"
+  },
+  {
+    "net": "avdd",
+    "layer": "M4",
+    "box": [
+      218.6,
+      294.0,
+      226.6,
+      306.0
+    ],
+    "role": "MPSINK to MPFOLD bridge under the reference corridor"
+  },
+  {
+    "net": "avdd",
+    "layer": "M4",
+    "box": [
+      231.0,
+      294.0,
+      239.0,
+      306.0
+    ],
+    "role": "MPSINK to MPFOLD bridge under the reference corridor"
+  },
+  {
+    "net": "avdd",
+    "layer": "M4",
+    "box": [
+      243.4,
+      294.0,
+      251.4,
+      306.0
+    ],
+    "role": "MPSINK to MPFOLD bridge under the reference corridor"
+  },
+  {
+    "net": "avdd",
+    "layer": "M4",
+    "box": [
+      255.8,
+      294.0,
+      263.8,
+      306.0
+    ],
+    "role": "MPSINK to MPFOLD bridge under the reference corridor"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      267.3,
+      204.0,
+      679.5,
+      214.0
+    ],
+    "role": "east rail"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      669.5,
+      2.0,
+      679.5,
+      214.0
+    ],
+    "role": "right-hand drop"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      576.5,
+      88.6,
+      679.5,
+      109.74
+    ],
+    "role": "PLOAD dummy-ring rail N"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      628.3,
+      10.5,
+      634.1,
+      109.74
+    ],
+    "role": "PLOAD dummy-ring rail E"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      586.5,
+      10.5,
+      679.5,
+      31.5
+    ],
+    "role": "PLOAD dummy-ring rail S"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      569.7,
+      2.0,
+      679.5,
+      6.4
+    ],
+    "role": "PLOAD source-bus feed"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      569.7,
+      2.0,
+      573.0,
+      9.6
+    ],
+    "role": "PLOAD source-bus anchor"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      59.0,
+      4.0,
+      75.3,
+      115.6
+    ],
+    "role": "core-mirror spine"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      59.0,
+      115.6,
+      70.5,
+      180.0
+    ],
+    "role": "core-mirror spine, upper part"
+  },
+  {
+    "net": "avdd",
+    "layer": "M4",
+    "box": [
+      60.5,
+      171.2,
+      70.5,
+      233.3
+    ],
+    "role": "spine to PREF link, lower part"
+  },
+  {
+    "net": "avdd",
+    "layer": "M4",
+    "box": [
+      60.5,
+      235.5,
+      70.5,
+      321.0
+    ],
+    "role": "spine to PREF link, upper part"
+  },
+  {
+    "net": "avdd",
+    "layer": "M5",
+    "box": [
+      60.5,
+      229.5,
+      70.5,
+      239.3
+    ],
+    "role": "link jumper over the vq3 M4 wire"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      123.5,
+      1.7,
+      566.0,
+      6.0
+    ],
+    "role": "bottom rail"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      123.5,
+      1.7,
+      159.0,
+      25.7
+    ],
+    "role": "M3/M4 dummy-ring rail S"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      123.5,
+      25.7,
+      125.7,
+      66.0
+    ],
+    "role": "core return, neck"
+  },
+  {
+    "net": "avss",
+    "layer": "M4",
+    "box": [
+      124.4,
+      22.0,
+      128.4,
+      31.0
+    ],
+    "role": "core return, dummy-pad bridge"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      123.5,
+      66.0,
+      129.3,
+      123.2
+    ],
+    "role": "core return"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      83.5,
+      117.2,
+      129.3,
+      123.2
+    ],
+    "role": "PNP-array return rail"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      503.5,
+      1.7,
+      542.5,
+      28.5
+    ],
+    "role": "MFOLD dummy-ring rail S"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      534.7,
+      1.7,
+      544.7,
+      122.4
+    ],
+    "role": "MFOLD rail E and leg"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      497.6,
+      32.3,
+      507.6,
+      122.4
+    ],
+    "role": "MFOLD rail W and leg"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      497.6,
+      55.88,
+      544.7,
+      76.97
+    ],
+    "role": "MFOLD dummy-ring rail N"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      399.5,
+      117.2,
+      579.3,
+      122.4
+    ],
+    "role": "mid rail"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      399.5,
+      117.2,
+      446.5,
+      138.41
+    ],
+    "role": "VBNSINK dummy-ring rail S"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      399.5,
+      158.52,
+      446.5,
+      173.43
+    ],
+    "role": "VBNSINK dummy-ring rail N"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      436.7,
+      123.5,
+      446.5,
+      173.43
+    ],
+    "role": "VBNSINK dummy-ring rail E"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      399.5,
+      123.5,
+      409.3,
+      173.43
+    ],
+    "role": "VBNSINK dummy-ring rail W"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      560.95,
+      117.2,
+      579.3,
+      200.06
+    ],
+    "role": "C1 bottom-plate strip and MSINK rail W"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      569.5,
+      181.12,
+      666.1,
+      200.06
+    ],
+    "role": "MSINK dummy-ring rail N"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      569.5,
+      116.5,
+      666.1,
+      135.44
+    ],
+    "role": "MSINK dummy-ring rail S"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      656.3,
+      116.5,
+      666.1,
+      200.06
+    ],
+    "role": "MSINK dummy-ring rail E"
+  },
+  {
+    "net": "avss",
+    "layer": "M4",
+    "box": [
+      595.2,
+      190.0,
+      615.6,
+      237.0
+    ],
+    "role": "underpass to capacitor rail A"
+  },
+  {
+    "net": "avss",
+    "layer": "M4",
+    "box": [
+      620.0,
+      190.0,
+      640.4,
+      237.0
+    ],
+    "role": "underpass to capacitor rail B"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      286.0,
+      231.0,
+      668.4,
+      241.0
+    ],
+    "role": "capacitor-bank rail"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      357.35,
+      231.0,
+      362.2,
+      391.6
+    ],
+    "role": "capacitor finger"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      434.35,
+      231.0,
+      439.2,
+      391.6
+    ],
+    "role": "capacitor finger"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      511.35,
+      231.0,
+      516.2,
+      391.6
+    ],
+    "role": "capacitor finger"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      588.35,
+      231.0,
+      593.2,
+      391.6
+    ],
+    "role": "capacitor finger"
+  },
+  {
+    "net": "avss",
+    "layer": "M5",
+    "box": [
+      665.35,
+      231.0,
+      668.4,
+      391.6
+    ],
+    "role": "capacitor finger, edge"
+  },
+  {
+    "net": "vref",
+    "layer": "M5",
+    "box": [
+      306.55,
+      313.0,
+      336.55,
+      322.0
+    ],
+    "role": "capacitor tie"
+  },
+  {
+    "net": "vref",
+    "layer": "M5",
+    "box": [
+      383.55,
+      313.0,
+      413.55,
+      322.0
+    ],
+    "role": "capacitor tie"
+  },
+  {
+    "net": "vref",
+    "layer": "M5",
+    "box": [
+      460.55,
+      313.0,
+      490.55,
+      322.0
+    ],
+    "role": "capacitor tie"
+  },
+  {
+    "net": "vref",
+    "layer": "M5",
+    "box": [
+      537.55,
+      313.0,
+      567.55,
+      322.0
+    ],
+    "role": "capacitor tie"
+  },
+  {
+    "net": "vref",
+    "layer": "M5",
+    "box": [
+      614.55,
+      313.0,
+      644.55,
+      322.0
+    ],
+    "role": "capacitor tie"
+  }
+]

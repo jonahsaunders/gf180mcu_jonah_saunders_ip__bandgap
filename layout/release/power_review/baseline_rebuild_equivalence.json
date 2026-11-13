@@ -1,0 +1,9 @@
+{
+  "layers_compared": 37,
+  "different_layers": [],
+  "geometry_and_text_equal": true,
+  "input_sha256": {
+    "layout/release/Bandgap_Core_Res.gds": "a1e2b376e15501b8854acdcf7586cc31891f3a70d93550aa5144348bb2f3af9c",
+    "review-input/baseline/filled_candidate.gds": "ae32c8f94551ac1e78edd08e745c25d8fae843ba2436e534a3ff029c1a6aba45"
+  }
+}

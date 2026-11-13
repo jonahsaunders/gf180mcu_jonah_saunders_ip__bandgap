@@ -1,0 +1,22 @@
+{
+  "mode": "rc",
+  "mos": "typical",
+  "bjt": "typical",
+  "resistor": "typical",
+  "supply_V": 3.3,
+  "transient": false,
+  "exit_code": 0,
+  "path": "rc_typical_typical_typical_3.3",
+  "input_sha256": "38729248f4a63e4233358971b9ad8dd53859ccf669ac39b0ea38721922f0aa6f",
+  "errors": [],
+  "vref_V": 1.193159120114432,
+  "idd_uA": 24.26252696442997,
+  "idigital_uA": 0.000105900955298068,
+  "tc_box_ppm_C": 7.5277849854884025,
+  "psrr_min_dB": 40.68271822931049,
+  "trim_codes": 128,
+  "best_code": 71,
+  "best_vref_V": 1.194219623099815,
+  "trim_min_V": 1.114527389989341,
+  "trim_max_V": 1.294779554022891
+}

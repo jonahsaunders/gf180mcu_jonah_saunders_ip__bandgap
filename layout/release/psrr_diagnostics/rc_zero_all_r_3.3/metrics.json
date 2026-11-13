@@ -1,0 +1,10 @@
+{
+  "name": "rc_zero_all_r",
+  "supply": 3.3,
+  "psrr_min_dB": 40.66700478210975,
+  "worst_Hz": 26607.25059798864,
+  "dc_psrr_dB": 81.87700879209913,
+  "vref_V": 1.194220647609632,
+  "idd_uA": 24.3799002750624,
+  "sha256": "85c2bafc85aff0c18bbfd7efef7a23f0a3549dc3c8944e5c558f6b5f16b4865e"
+}

@@ -1,0 +1,22 @@
+{
+  "layout": "baseline",
+  "kind": "dc_noise",
+  "supply_V": 3.3,
+  "temperature_C": 25,
+  "trim_code": 72,
+  "rcc_sha256": "1b227ba1c759eba5913113064d0db5585bb02b1e10b2056ab5fc910f1a2615f3",
+  "deck_sha256": "4c02ce4c4a3cfb7645316c56a22c3f6bbf645c2dec68b750fe1d9ab1414c4006",
+  "timeout_s": 600,
+  "solver": "sparse",
+  "status": "INCOMPLETE",
+  "errors": [
+    "Invalid finite sample matrix: /design/review-input/power_review/sparse_retry/baseline/dc_noise_3.3V/noise_integrated.dat; shape=(1, 2); first rows=[[nan, nan]]"
+  ],
+  "exit_code": 0,
+  "vref_V": 1.193160342625779,
+  "idd_uA": 24.06451048657003,
+  "line_span_uV": 159.78288036389011,
+  "line_endpoint_uV_per_V": 93.98992962581771,
+  "load_span_uV": 2222563.2736163526,
+  "line_load_status": "COMPLETE"
+}

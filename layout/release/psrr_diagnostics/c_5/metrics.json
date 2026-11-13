@@ -1,0 +1,10 @@
+{
+  "name": "c",
+  "supply": 5.0,
+  "psrr_min_dB": 53.13237054211932,
+  "worst_Hz": 21752.04034019566,
+  "dc_psrr_dB": 71.85180996334104,
+  "vref_V": 1.1943714462756,
+  "idd_uA": 31.715998239021612,
+  "sha256": "5aa3b68de9b66e4aaf845b010dcc6ffbf1720b5abad232f00abf684adb24aece"
+}

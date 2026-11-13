@@ -9,7 +9,7 @@ Circuit: * diagnostic dc mirror currents; ideal series drain probes only.
 Doing analysis at TEMP = 25.000000 and TNOM = 25.000000
 
 Using KLU as Direct Linear Solver
- Reference value :  0.00000e+00
+
 No. of Data Rows : 1
 v(vref) = 1.194381285576608e+00
 i(vdd) = -3.17159914682046e-05

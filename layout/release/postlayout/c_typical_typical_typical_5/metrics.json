@@ -1,0 +1,22 @@
+{
+  "mode": "c",
+  "mos": "typical",
+  "bjt": "typical",
+  "resistor": "typical",
+  "supply_V": 5.0,
+  "transient": false,
+  "exit_code": 0,
+  "path": "c_typical_typical_typical_5",
+  "input_sha256": "8b2b3323e28444d61801385d42352085bf28a676a932a18184187495eafb63ec",
+  "errors": [],
+  "vref_V": 1.1943714462756,
+  "idd_uA": 31.715998239021612,
+  "idigital_uA": 0.0001059259013564785,
+  "tc_box_ppm_C": 9.998756910745398,
+  "psrr_min_dB": 53.13266073441045,
+  "trim_codes": 128,
+  "best_code": 72,
+  "best_vref_V": 1.194371446276996,
+  "trim_min_V": 1.115437795740872,
+  "trim_max_V": 1.296913755065345
+}

@@ -1,0 +1,22 @@
+{
+  "mode": "schematic",
+  "mos": "typical",
+  "bjt": "typical",
+  "resistor": "typical",
+  "supply_V": 5.0,
+  "transient": false,
+  "exit_code": 0,
+  "path": "schematic_typical_typical_typical_5",
+  "input_sha256": "d0e9d54d6dd8d1c9b36d3ffe696aa086e83a3df47e8b476b77c8d03b546411ab",
+  "errors": [],
+  "vref_V": 1.194381284040553,
+  "idd_uA": 31.71598058022465,
+  "idigital_uA": 0.0001059365535094005,
+  "tc_box_ppm_C": 10.018878250657652,
+  "psrr_min_dB": 52.03993266999905,
+  "trim_codes": 128,
+  "best_code": 72,
+  "best_vref_V": 1.194381285929393,
+  "trim_min_V": 1.115455253933396,
+  "trim_max_V": 1.296913553374257
+}

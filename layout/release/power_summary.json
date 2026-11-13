@@ -15,9 +15,12 @@
     "landing_count": 15,
     "via4_count": 20,
     "direct_metal5_landings": 10,
-    "added_area_um2": 1996.6899999999998,
+    "added_area_um2": 2264.0699999999997,
     "signal_clearance_um": 0,
-    "unreinforced_landings": 0
+    "unreinforced_landings": 0,
+    "planned_m5_area_um2": 1350.0,
+    "planned_m4_area_um2": 0.0,
+    "stitch_via4_count": 0
   },
   {
     "net": "v1",
@@ -25,7 +28,7 @@
     "landing_count": 6,
     "via4_count": 24,
     "direct_metal5_landings": 0,
-    "added_area_um2": 759.1999999999999,
+    "added_area_um2": 805.5999999999999,
     "signal_clearance_um": 0,
     "unreinforced_landings": 0
   },
@@ -42,12 +45,12 @@
   {
     "net": "vq3",
     "m5_width_um": 2,
-    "landing_count": 3,
-    "via4_count": 12,
+    "landing_count": 2,
+    "via4_count": 8,
     "direct_metal5_landings": 0,
-    "added_area_um2": 3560.7999999999997,
+    "added_area_um2": 378.4,
     "signal_clearance_um": 0,
-    "unreinforced_landings": 0
+    "unreinforced_landings": 1
   },
   {
     "net": "rbit0top",
@@ -82,10 +85,10 @@
   {
     "net": "rbit3top",
     "m5_width_um": 2,
-    "landing_count": 3,
-    "via4_count": 12,
+    "landing_count": 2,
+    "via4_count": 8,
     "direct_metal5_landings": 0,
-    "added_area_um2": 191.2,
+    "added_area_um2": 221.6,
     "signal_clearance_um": 0,
     "unreinforced_landings": 0
   },
@@ -132,21 +135,31 @@
   {
     "net": "avss",
     "m5_width_um": 2,
-    "landing_count": 169,
-    "via4_count": 672,
-    "direct_metal5_landings": 1,
-    "added_area_um2": 5201.48,
+    "landing_count": 20,
+    "via4_count": 36,
+    "direct_metal5_landings": 11,
+    "added_area_um2": 77.6,
     "signal_clearance_um": 0,
-    "unreinforced_landings": 63
+    "unreinforced_landings": 36,
+    "longest_tap_um": 20.0,
+    "tap_limit_um": 30.0,
+    "planned_m5_area_um2": 21651.953999999998,
+    "planned_m4_area_um2": 1953.6,
+    "stitch_via4_count": 2860
   },
   {
     "net": "avdd",
     "m5_width_um": 2,
-    "landing_count": 55,
-    "via4_count": 28,
-    "direct_metal5_landings": 48,
-    "added_area_um2": 649.208,
+    "landing_count": 28,
+    "via4_count": 108,
+    "direct_metal5_landings": 1,
+    "added_area_um2": 598.972,
     "signal_clearance_um": 3.0,
-    "unreinforced_landings": 527
+    "unreinforced_landings": 21,
+    "longest_tap_um": 24.0,
+    "tap_limit_um": 30.0,
+    "planned_m5_area_um2": 31533.814,
+    "planned_m4_area_um2": 2144.4,
+    "stitch_via4_count": 7156
   }
 ]

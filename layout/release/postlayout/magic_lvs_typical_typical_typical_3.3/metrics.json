@@ -1,0 +1,22 @@
+{
+  "mode": "magic_lvs",
+  "mos": "typical",
+  "bjt": "typical",
+  "resistor": "typical",
+  "supply_V": 3.3,
+  "transient": false,
+  "exit_code": 0,
+  "path": "magic_lvs_typical_typical_typical_3.3",
+  "input_sha256": "9d9b16f4439fd1a5b6770808383547e4f3c5cd91034943f95c9c4bd18579dd24",
+  "errors": [],
+  "vref_V": 1.194220647452992,
+  "idd_uA": 24.37990027042876,
+  "idigital_uA": 0.0001059271618484126,
+  "tc_box_ppm_C": 10.066168597974368,
+  "psrr_min_dB": 50.90191357878254,
+  "trim_codes": 128,
+  "best_code": 72,
+  "best_vref_V": 1.194220647453213,
+  "trim_min_V": 1.115298207591439,
+  "trim_max_V": 1.296747798727417
+}

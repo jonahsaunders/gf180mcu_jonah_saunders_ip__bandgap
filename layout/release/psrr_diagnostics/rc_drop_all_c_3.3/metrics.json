@@ -1,0 +1,10 @@
+{
+  "name": "rc_drop_all_c",
+  "supply": 3.3,
+  "psrr_min_dB": 50.96193452109855,
+  "worst_Hz": 258523.4839562255,
+  "dc_psrr_dB": 81.26383971214318,
+  "vref_V": 1.193159120563749,
+  "idd_uA": 24.26250400589825,
+  "sha256": "eb062778b0d22c01ae7ad53f8da164e9a57eb604afcb593f9b5cbe8f22179dfd"
+}

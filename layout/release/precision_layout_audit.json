@@ -1,5 +1,5 @@
 {
-  "gds_sha256": "a1e2b376e15501b8854acdcf7586cc31891f3a70d93550aa5144348bb2f3af9c",
+  "gds_sha256": "83b53398d4d4e71c3c14c59bed86c0f3a999e9b0eef69ecd577c7207972433eb",
   "PNP_centroids_um": {
     "Q2": [
       98.0,
@@ -424,12 +424,6 @@
           }
         },
         {
-          "net": "vq3",
-          "overlap_um2": {
-            "M5": 13.2
-          }
-        },
-        {
           "net": "rbit1top",
           "overlap_um2": {
             "M4": 2.6399999999999997
@@ -493,12 +487,6 @@
           "net": "vref",
           "overlap_um2": {
             "M4": 2.6399999999999997
-          }
-        },
-        {
-          "net": "vq3",
-          "overlap_um2": {
-            "M5": 13.2
           }
         },
         {
@@ -568,12 +556,6 @@
           }
         },
         {
-          "net": "vq3",
-          "overlap_um2": {
-            "M5": 13.2
-          }
-        },
-        {
           "net": "rbit1top",
           "overlap_um2": {
             "M4": 2.6399999999999997
@@ -635,12 +617,6 @@
           }
         },
         {
-          "net": "vq3",
-          "overlap_um2": {
-            "M5": 13.2
-          }
-        },
-        {
           "net": "rbit1top",
           "overlap_um2": {
             "M4": 2.6399999999999997
@@ -667,8 +643,8 @@
         {
           "net": "rbit3top",
           "overlap_um2": {
-            "M4": 25.912,
-            "M5": 111.0
+            "M4": 23.991999999999997,
+            "M5": 121.55999999999999
           }
         }
       ],
@@ -753,12 +729,6 @@
           "net": "vref",
           "overlap_um2": {
             "M4": 2.6399999999999997
-          }
-        },
-        {
-          "net": "vq3",
-          "overlap_um2": {
-            "M5": 12.54
           }
         },
         {
@@ -859,313 +829,313 @@
   ],
   "limitations": "Centroids, contact geometry and conductor overlap do not establish thermal/stress matching or statistical yield.",
   "source_resistance": {
-    "rcc_sha256": "18a396173820161c4e10cd84e8a7dd558fa5ae7cd542fec6c3ecc75b2477c8da",
+    "rcc_sha256": "12bcee71bc98985f32a93baeae677eedbcbcd7fed65a923ab38bae76b4bf67f8",
     "rails": {
       "avdd": {
         "AP": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 170.02152577768982,
+          "mean_individual_source_to_port_ohm": 24.43172907944133,
           "range_ohm": [
-            170.02152577768982,
-            170.02152577768982
+            24.43172907944133,
+            24.43172907944133
           ]
         },
         "M1": {
           "source_units": 6,
-          "mean_individual_source_to_port_ohm": 291.4553155776423,
+          "mean_individual_source_to_port_ohm": 14.541770312051815,
           "range_ohm": [
-            290.3313773353433,
-            292.44807490060856
+            13.835006488318207,
+            15.276976488318203
           ]
         },
         "M14": {
           "source_units": 2,
-          "mean_individual_source_to_port_ohm": 303.30154001747144,
+          "mean_individual_source_to_port_ohm": 17.6708038399333,
           "range_ohm": [
-            302.4912900174715,
-            304.11179001747144
+            17.108408081197936,
+            18.233199598668662
           ]
         },
         "M17": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 370.1206081895454,
+          "mean_individual_source_to_port_ohm": 33.76093474462804,
           "range_ohm": [
-            370.1206081895454,
-            370.1206081895454
+            33.76093474462804,
+            33.76093474462804
           ]
         },
         "M19": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 375.1193408676129,
+          "mean_individual_source_to_port_ohm": 16.63320343285077,
           "range_ohm": [
-            375.1193408676129,
-            375.1193408676129
+            16.63320343285077,
+            16.63320343285077
           ]
         },
         "M2": {
           "source_units": 6,
-          "mean_individual_source_to_port_ohm": 291.45531557764224,
+          "mean_individual_source_to_port_ohm": 14.541770312051815,
           "range_ohm": [
-            290.57700949697505,
-            292.15957490060856
+            13.733589217079096,
+            15.175559217079089
           ]
         },
         "M20": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 352.0559081892675,
+          "mean_individual_source_to_port_ohm": 47.22473482471423,
           "range_ohm": [
-            352.0559081892675,
-            352.0559081892675
+            47.22473482471423,
+            47.22473482471423
           ]
         },
         "M5": {
           "source_units": 6,
-          "mean_individual_source_to_port_ohm": 291.4553155776423,
+          "mean_individual_source_to_port_ohm": 14.541770312051815,
           "range_ohm": [
-            290.86550949697505,
-            292.73604490060853
+            13.893230230758148,
+            15.335200230758147
           ]
         },
         "M6": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 385.5445397737853,
+          "mean_individual_source_to_port_ohm": 19.293283926051906,
           "range_ohm": [
-            385.5445397737853,
-            385.5445397737853
+            19.293283926051906,
+            19.293283926051906
           ]
         },
         "MPFOLD": {
           "source_units": 12,
-          "mean_individual_source_to_port_ohm": 22.749008165160593,
+          "mean_individual_source_to_port_ohm": 24.503736494955433,
           "range_ohm": [
-            15.729380369775301,
-            34.07897530589329
+            15.426295997055481,
+            35.95194832488467
           ]
         },
         "MPSINK": {
           "source_units": 17,
-          "mean_individual_source_to_port_ohm": 73.6007104841591,
+          "mean_individual_source_to_port_ohm": 26.85473539512482,
           "range_ohm": [
-            30.394085778399063,
-            116.00068577814447
+            18.766848578713404,
+            36.941912703011205
           ]
         },
         "MSU_HYS": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 358.2266081892675,
+          "mean_individual_source_to_port_ohm": 53.39543482471424,
           "range_ohm": [
-            358.2266081892675,
-            358.2266081892675
+            53.39543482471424,
+            53.39543482471424
           ]
         },
         "MSU_LOAD": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 320.78899001747146,
+          "mean_individual_source_to_port_ohm": 21.51487968813761,
           "range_ohm": [
-            320.78899001747146,
-            320.78899001747146
+            21.51487968813761,
+            21.51487968813761
           ]
         },
         "MTAIL": {
           "source_units": 6,
-          "mean_individual_source_to_port_ohm": 282.9467174442991,
+          "mean_individual_source_to_port_ohm": 20.715371023266353,
           "range_ohm": [
-            270.93517577763237,
-            289.91262577763257
+            13.788813626973283,
+            24.690825335155626
           ]
         },
         "PLOAD1": {
           "source_units": 6,
-          "mean_individual_source_to_port_ohm": 377.6456533445976,
+          "mean_individual_source_to_port_ohm": 15.16388256067701,
           "range_ohm": [
-            375.97799968401927,
-            379.3130070051759
+            14.142609800070362,
+            16.18485532128366
           ]
         },
         "PLOAD2": {
           "source_units": 6,
-          "mean_individual_source_to_port_ohm": 377.6456533445976,
+          "mean_individual_source_to_port_ohm": 15.16388256067701,
           "range_ohm": [
-            376.3564996840193,
-            378.9349570051759
+            14.292805321283657,
+            16.034659800070365
           ]
         },
         "PREF": {
           "source_units": 5,
-          "mean_individual_source_to_port_ohm": 74.33226454864455,
+          "mean_individual_source_to_port_ohm": 29.987911691711655,
           "range_ohm": [
-            35.1401845486433,
-            107.90288454864537
+            22.16649759276639,
+            42.25155473514512
           ]
         },
         "PRMIR": {
           "source_units": 5,
-          "mean_individual_source_to_port_ohm": 60.34274654864489,
+          "mean_individual_source_to_port_ohm": 21.627094298458918,
           "range_ohm": [
-            32.22238454864304,
-            93.36835454864537
+            18.316823322312622,
+            27.71702473514512
           ]
         },
         "RB_P": {
           "source_units": 7,
-          "mean_individual_source_to_port_ohm": 226.551048635177,
+          "mean_individual_source_to_port_ohm": 69.74906694221842,
           "range_ohm": [
-            204.79435577799964,
-            238.32382577804023
+            52.7025620394004,
+            80.68834351865436
           ]
         },
         "SUPINJ": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 350.4158081892428,
+          "mean_individual_source_to_port_ohm": 48.33053623061148,
           "range_ohm": [
-            350.4158081892428,
-            350.4158081892428
+            48.33053623061148,
+            48.33053623061148
           ]
         },
         "SUPPDET": {
           "source_units": 2,
-          "mean_individual_source_to_port_ohm": 263.6083965389347,
+          "mean_individual_source_to_port_ohm": 89.34980619237058,
           "range_ohm": [
-            258.3482165389347,
-            268.86857653893475
+            84.08962619237057,
+            94.60998619237057
           ]
         },
         "VBPCASHIGHER": {
           "source_units": 9,
-          "mean_individual_source_to_port_ohm": 158.5281124444816,
+          "mean_individual_source_to_port_ohm": 23.661870265605035,
           "range_ohm": [
-            123.31292577797545,
-            192.28442577773927
+            13.885554673346004,
+            43.94074201034534
           ]
         },
         "VBPTAIL": {
           "source_units": 3,
-          "mean_individual_source_to_port_ohm": 182.58482577752247,
+          "mean_individual_source_to_port_ohm": 18.136331059612854,
           "range_ohm": [
-            174.04752577756676,
-            188.10782577750027
+            16.455519088211823,
+            20.85455055096237
           ]
         }
       },
       "avss": {
         "AN": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 30.807888672090698,
+          "mean_individual_source_to_port_ohm": 22.069297867397115,
           "range_ohm": [
-            30.807888672090698,
-            30.807888672090698
+            22.069297867397115,
+            22.069297867397115
           ]
         },
         "M10": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 52.46525057535354,
+          "mean_individual_source_to_port_ohm": 51.48526000192134,
           "range_ohm": [
-            52.46525057535354,
-            52.46525057535354
+            51.48526000192134,
+            51.48526000192134
           ]
         },
         "M16": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 24.669977765745564,
+          "mean_individual_source_to_port_ohm": 24.591088354993055,
           "range_ohm": [
-            24.669977765745564,
-            24.669977765745564
+            24.591088354993055,
+            24.591088354993055
           ]
         },
         "M18": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 20.287132012265,
+          "mean_individual_source_to_port_ohm": 20.15727765285077,
           "range_ohm": [
-            20.287132012265,
-            20.287132012265
+            20.15727765285077,
+            20.15727765285077
           ]
         },
         "M23": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 57.13825057535354,
+          "mean_individual_source_to_port_ohm": 56.15826000192134,
           "range_ohm": [
-            57.13825057535354,
-            57.13825057535354
+            56.15826000192134,
+            56.15826000192134
           ]
         },
         "MSINK1": {
           "source_units": 6,
-          "mean_individual_source_to_port_ohm": 23.176651571901534,
+          "mean_individual_source_to_port_ohm": 15.062991876534264,
           "range_ohm": [
-            21.709984023571103,
-            24.64295912023197
+            13.621984901659879,
+            16.503638851408652
           ]
         },
         "MSINK2": {
           "source_units": 6,
-          "mean_individual_source_to_port_ohm": 23.176651571901534,
+          "mean_individual_source_to_port_ohm": 15.062991876534264,
           "range_ohm": [
-            21.850999120231968,
-            24.501944023571095
+            13.71167885140865,
+            16.413944901659878
           ]
         },
         "MSU_SENSE": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 27.442362952643535,
+          "mean_individual_source_to_port_ohm": 21.11829399593349,
           "range_ohm": [
-            27.442362952643535,
-            27.442362952643535
+            21.11829399593349,
+            21.11829399593349
           ]
         },
         "N1": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 32.69065423526028,
+          "mean_individual_source_to_port_ohm": 29.7635415221921,
           "range_ohm": [
-            32.69065423526028,
-            32.69065423526028
+            29.7635415221921,
+            29.7635415221921
           ]
         },
         "N3": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 26.261302392265698,
+          "mean_individual_source_to_port_ohm": 34.64469570831988,
           "range_ohm": [
-            26.261302392265698,
-            26.261302392265698
+            34.64469570831988,
+            34.64469570831988
           ]
         },
         "NTAIL": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 28.370848115038573,
+          "mean_individual_source_to_port_ohm": 24.09641028016952,
           "range_ohm": [
-            28.370848115038573,
-            28.370848115038573
+            24.09641028016952,
+            24.09641028016952
           ]
         },
         "RB_NL": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 25.145497052363268,
+          "mean_individual_source_to_port_ohm": 40.22396402909888,
           "range_ohm": [
-            25.145497052363268,
-            25.145497052363268
+            40.22396402909888,
+            40.22396402909888
           ]
         },
         "SUPN3": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 30.841765520056164,
+          "mean_individual_source_to_port_ohm": 30.577537279894816,
           "range_ohm": [
-            30.841765520056164,
-            30.841765520056164
+            30.577537279894816,
+            30.577537279894816
           ]
         },
         "VBNFOLDLOW": {
           "source_units": 1,
-          "mean_individual_source_to_port_ohm": 20.49528688375874,
+          "mean_individual_source_to_port_ohm": 53.88516868599394,
           "range_ohm": [
-            20.49528688375874,
-            20.49528688375874
+            53.88516868599394,
+            53.88516868599394
           ]
         },
         "VBNSINK": {
           "source_units": 2,
-          "mean_individual_source_to_port_ohm": 24.808666075529054,
+          "mean_individual_source_to_port_ohm": 22.262935831243695,
           "range_ohm": [
-            23.131970670473628,
-            26.485361480584476
+            21.388605054410135,
+            23.137266608077255
           ]
         }
       }

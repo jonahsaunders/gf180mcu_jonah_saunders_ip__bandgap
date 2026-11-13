@@ -1,0 +1,1478 @@
+* Post-layout screen schematic_typical_typical_typical_3.3
+
+.include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice bjt_typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice res_typical
+* GF180 2p0fF MIM fit, charge-form ngspice compatibility implementation.
+* Derived from GlobalFoundries PDK Authors (2022), Apache-2.0:
+* https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr
+* Same geometry, voltage/temperature coefficients, leakage and corner factors.
+* Differential C(V)=C0*(1+a*V+b*V^2) is implemented as
+* Q(V)=C0*(V+a*V^2/2+b*V^3/3), so dQ/dV exactly equals C(V).
+* This avoids ngspice's poorly scaled unity-capacitor C-expression expansion.
+* Do not also include mimcap_typical: it would redefine cap_mim_2f0fF.
+.param mim_corner_2p0fF=1 mc_c_cox_2p0fF=0
+.subckt cap_mim_2f0fF  1 2  c_length=l  c_width=w dtemp=0 par=1
+.param gleak='9.51e-10/5*10000'
+.param c_cox='1.99e-3*mim_corner_2p0fF'
+.param c_capsw='2.383e-10*mim_corner_2p0fF'
+.param c_vcr1='0+(c_width>5u||c_length>5u)*8.742e-6+(c_width<=5u||c_length<=5u)*(-81e-6)'
+.param c_vcr2='0+(c_width>5u||c_length>5u)*9.188e-6+(c_width<=5u||c_length<=5u)*(16.7e-6)'
+
+.param c_tnom=25
+.param c_tc1=1.46e-5
+.param c_tc2=-5.55e-8
+.param c_AREA='c_length*c_width'
+.param c_PERI='2*(c_length+c_width)'
+
+.param c_c0='(c_cox*c_AREA+c_capsw*c_PERI)*(1+c_tc1*(temper +dtemp -c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
+*
+c_cap 1 2 Q='c_c0*(v(1,2)+c_vcr1*v(1,2)*v(1,2)/2+c_vcr2*v(1,2)*v(1,2)*v(1,2)/3)*(1+mc_c_cox_2p0fF)'
+r_leak 1 2 r='1/(gleak*c_AREA)' tc1=c_tc1 tc2=c_tc2 dtemp=dtemp
+.ends cap_mim_2f0fF
+* Bootstrap nominal process; runner selects each corner independently. Mismatch disabled. MIM compatibility model above is intentional.
+.options tnom=25 numdgt=15 method=gear maxord=2 reltol=1e-5 vntol=1e-7 abstol=1e-13 itl4=200
+.param sw_stat_global=0 sw_stat_mismatch=0 fnoicor=0
+.param VDD_RUN=5
+.temp 25
+
+.options klu num_threads=1
+.include /design/layout/build/postlayout/schematic.spice
+XDUT avdd 0 vref b0 b1 b2 b3 b4 b5 b6 0 dvdd Bandgap_Core_Res
+VDVDD dvdd 0 3.3
+VDD avdd 0 3.3 AC 1
+VB0 b0 0 0
+VB1 b1 0 0
+VB2 b2 0 0
+VB3 b3 0 3.3
+VB4 b4 0 0
+VB5 b5 0 0
+VB6 b6 0 3.3
+.control
+set noaskquit
+set num_threads=1
+set numdgt=15
+set wr_singlescale
+set wr_vecnames
+save v(avdd) v(vref) i(vdd) i(vdvdd)
+op
+wrdata operating.dat v(vref) i(vdd) i(vdvdd)
+ac dec 40 1 1Meg
+let psrr_db=-db(v(vref))
+wrdata psrr.dat psrr_db
+dc temp -40 125 1
+wrdata temperature.dat v(vref) i(vdd)
+set temp=25
+unset appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=0
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=1
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=2
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=3
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=4
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=5
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=6
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=7
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=8
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=9
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=10
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=11
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=12
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=13
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=14
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 0
+op
+let trim_code=15
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=16
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=17
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=18
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=19
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=20
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=21
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=22
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=23
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=24
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=25
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=26
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=27
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=28
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=29
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=30
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 0
+op
+let trim_code=31
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=32
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=33
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=34
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=35
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=36
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=37
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=38
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=39
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=40
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=41
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=42
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=43
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=44
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=45
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=46
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=47
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=48
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=49
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=50
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=51
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=52
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=53
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=54
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=55
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=56
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=57
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=58
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=59
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=60
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=61
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=62
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 0
+op
+let trim_code=63
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=64
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=65
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=66
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=67
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=68
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=69
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=70
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=71
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=72
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=73
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=74
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=75
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=76
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=77
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=78
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=79
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=80
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=81
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=82
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=83
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=84
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=85
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=86
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=87
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=88
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=89
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=90
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=91
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=92
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=93
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=94
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 0
+alter VB6 3.3
+op
+let trim_code=95
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=96
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=97
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=98
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=99
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=100
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=101
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=102
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=103
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=104
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=105
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=106
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=107
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=108
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=109
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=110
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 0
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=111
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=112
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=113
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=114
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=115
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=116
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=117
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=118
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 0
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=119
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=120
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=121
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=122
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 0
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=123
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=124
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 0
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=125
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 0
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=126
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+alter VB0 3.3
+alter VB1 3.3
+alter VB2 3.3
+alter VB3 3.3
+alter VB4 3.3
+alter VB5 3.3
+alter VB6 3.3
+op
+let trim_code=127
+wrdata trim.dat trim_code v(vref) i(vdd)
+set appendwrite
+quit
+.endc
+.end

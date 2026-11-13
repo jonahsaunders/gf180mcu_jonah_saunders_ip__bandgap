@@ -6,7 +6,7 @@
   "temperature_C": 25,
   "vref_V": 1.194381285576608,
   "vref_difference_from_saved_screen_V": 1.5360550609244683e-09,
-  "reference_ac": "layout/build/compact-routing-protected/psrr_diagnostics",
+  "reference_ac": "layout/build/psrr_diagnostics",
   "devices": {
     "AN": {
       "current_uA": 0.04255568608613203,
