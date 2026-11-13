@@ -1,8 +1,8 @@
 # Rebuilds the trim-inclusive core layout and runs the complete, unedited
 # GF180MCU-D KLayout DRC and LVS decks inside the pinned IIC-OSIC-TOOLS image
 # documented in layout/README.txt. Results (logs, reports, candidate GDS) are
-# uploaded as a workflow artifact and mirrored to a disposable
-# "<branch>-ci-results" branch so they can be fetched with plain git.
+# uploaded as workflow artifacts; published release evidence lives on main.
+# CI does not create or update repository branches.
 name: Layout build, DRC and LVS
 
 on:
@@ -14,7 +14,6 @@ on:
   push:
     branches:
       - main
-      - power-rail-improvements
     paths:
       - "layout/scripts/**"
       - "layout/build.sh"
@@ -23,7 +22,7 @@ on:
       - ".github/workflows/layout-verify.yml"
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: layout-verify-${{ github.ref }}
@@ -178,21 +177,3 @@ jobs:
           name: layout-results-${{ github.sha }}
           path: /tmp/results
           retention-days: 30
-
-      - name: Mirror results to the CI results branch
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          cd /tmp/results
-          gzip -9 -k *_candidate.gds 2>/dev/null && rm -f *_candidate.gds || true
-          find . -type f \( -name '*.spice' -o -name '*.dat' -o -name '*.lvsdb' \) -size +1M -exec gzip -9 {} +
-          git init -q
-          git checkout -q -b results
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -q -m "CI results for ${GITHUB_SHA} (${STAGE}: ${{ steps.flow.outcome }})"
-          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
-            "results:refs/heads/${GITHUB_REF_NAME}-ci-results"
-
