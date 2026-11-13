@@ -89,9 +89,7 @@ STRAP_KEEPOUTS = {
 def extract_metal():
     """Metal connectivity of the current layout. Capacitor via4 is no short."""
     extractor = k.LayoutToNetlist(k.RecursiveShapeIterator(layout, top, []))
-    layers = {
-        i: extractor.make_layer(layout.layer(i, 0), f"L{i}") for i in METAL_STACK
-    }
+    layers = {i: extractor.make_layer(layout.layer(i, 0), f"L{i}") for i in METAL_STACK}
     fuse_layer = extractor.make_layer(layout.layer(75, 0), "FuseTop")
     layers[41] = layers[41] - fuse_layer
     extractor.register(layers[41], "Via4OutsideCapacitor")
@@ -176,7 +174,9 @@ sensitive_edge = sensitive_metal.sized(nm(supply_clearance))
 # --------------------------------------------------------------------------
 plan = supply_plan(placement)
 plan_nets = sorted({entry["net"] for entry in plan})
-port_net = {name: extractor.probe_net(layers[36], k.DPoint(*ports[name])) for name in ports}
+port_net = {
+    name: extractor.probe_net(layers[36], k.DPoint(*ports[name])) for name in ports
+}
 assert all(net is not None for net in port_net.values())
 original = {
     name: {
@@ -300,7 +300,9 @@ for name in plan_nets:
 # Re-extract with the rails in place. The supplies and the reference must
 # still be separate nets, and every planned rectangle must be on its own net.
 extractor, layers = extract_metal()
-port_net = {name: extractor.probe_net(layers[36], k.DPoint(*ports[name])) for name in ports}
+port_net = {
+    name: extractor.probe_net(layers[36], k.DPoint(*ports[name])) for name in ports
+}
 clusters = {name: net.cluster_id for name, net in port_net.items()}
 assert len(set(clusters.values())) == len(clusters), (clusters, "ports are shorted")
 for entry in plan:
@@ -317,7 +319,10 @@ for entry in plan:
 # Stage 2: precision straps and short supply taps
 # --------------------------------------------------------------------------
 def segment(a, b, width=2):
-    points = [k.DPoint(a[0] * PITCH, a[1] * PITCH), k.DPoint(b[0] * PITCH, b[1] * PITCH)]
+    points = [
+        k.DPoint(a[0] * PITCH, a[1] * PITCH),
+        k.DPoint(b[0] * PITCH, b[1] * PITCH),
+    ]
     return k.Region(
         k.DPath(points, width, width / 2, width / 2).to_itype(dbu).polygon()
     )
@@ -355,7 +360,9 @@ def find_path(start, tree, blocked, limit=None):
 
 
 summary = []
-matched = {name for g in placement["groups"] if g.get("matching") for name in g["names"]}
+matched = {
+    name for g in placement["groups"] if g.get("matching") for name in g["names"]
+}
 networks = [("dvdd", ports["dvdd"]), ("vref", ports["vref"])]
 for name in ["v1", "v2", "vq3", *[f"rbit{i}top" for i in range(7)]]:
     candidates = [

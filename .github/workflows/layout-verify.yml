@@ -65,8 +65,9 @@ jobs:
 
       # Post-layout evidence, run when the commit message contains [qualify]:
       # the documented Magic 8.3.685 extraction, both topology LVS audits,
-      # the nominal DC/AC screens, the PSRR diagnostics and the mirror and
-      # precision-device audits described in layout/README.txt.
+      # the nominal DC/AC screens, the PSRR diagnostics, the mirror and
+      # precision-device audits and the 360-point fixed-code corner DC screen
+      # described in layout/README.txt. Transient screens are not run here.
       - name: Build the documented Magic version for extraction
         if: contains(github.event.head_commit.message, '[qualify]')
         run: |
@@ -105,6 +106,7 @@ jobs:
           python3 layout/scripts/screen_mirror_bias.py --build $B --reference-ac $B/psrr_diagnostics
           python3 layout/scripts/audit_precision_layout.py --build $B
           python3 layout/scripts/audit_mirror_layout.py --release $B --out $B/mirror_review
+          python3 layout/scripts/screen_pvt_dc.py
           EOS
           cp /tmp/qualify.sh layout/build/qualify.sh
           docker run --rm --network none \
