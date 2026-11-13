@@ -31,6 +31,24 @@ are in [layout/README.txt](layout/README.txt).
 The released core has zero reported DRC violations with the pinned deck,
 and LVS matches all 533 device units. Harness integration is still open.
 
+### Chipalooza harness integration
+
+Tim Edwards assigned the bandgap reference to **slot 4** of the GF180MCU
+harness for the planned December 2026 tapeout.
+
+- Match the layout coordinates in
+  [`slot4_wrapper.gds`](https://github.com/RTimothyEdwards/gf180mcu_ocd_chipalooza/blob/main/gds/slot4_wrapper.gds).
+  You can copy the wrapper cell or its contents into the slot layout.
+- Submit `slot_4.gds` or `slot_4.gds.gz` with `slot_4` as the top-level cell.
+- The default pad is a 5 V analog pad from the dual-voltage I/O library
+  (3.3 V core, 5 V periphery). Pads can be configured individually. If a
+  pad needs a different cell, such as a digital input or output cell,
+  send the cell name to Tim Edwards for the harness
+  [`config.txt`](https://github.com/RTimothyEdwards/gf180mcu_ocd_chipalooza/blob/main/config.txt).
+
+Final design reviews are planned for the week of **November 30, 2026**
+to confirm that the slot layout integrates into the harness top level.
+
 <a id="installation-and-first-run"></a>
 
 ## Simulation
