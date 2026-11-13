@@ -1,0 +1,73 @@
+name: Restyle layout preview
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/restyle-layout-preview.yml
+      - .github/layout-preview-renderer.py
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install klayout==0.30.9 numpy==2.2.6 matplotlib==3.10.3 pillow==11.3.0
+      - name: Render the verified layout without annotations
+        run: |
+          python - <<'PY'
+          import hashlib, json, shutil, subprocess, sys
+          from pathlib import Path
+          from PIL import Image
+          root = Path('layout/release')
+          sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+          verification_path = root/'verification.json'
+          verification = json.loads(verification_path.read_text())
+          for name, expected in verification['sha256'].items():
+              assert sha(root/name) == expected, name
+          old_model = json.loads((root/'model/provenance.json').read_text())
+          assert sha(root/'Bandgap_Core_Res.gds') == old_model['source_gds_sha256']
+          renderer = Path('.github/layout-preview-renderer.py')
+          assert 'fig.text(' not in renderer.read_text()
+          output = Path('/tmp/text-free-preview')
+          subprocess.run([sys.executable, str(renderer), '--gds', str(root/'Bandgap_Core_Res.gds'), '--out', str(output)], check=True)
+          model = json.loads((output/'provenance.json').read_text())
+          assert model['source_gds_sha256'] == old_model['source_gds_sha256']
+          assert sha(output/'bandgap-layout.glb') == sha(root/'model/bandgap-layout.glb'), '3D geometry/materials changed'
+          assert model['layers'] == old_model['layers'], 'Layer geometry changed'
+          with Image.open(output/'bandgap-design.png') as image:
+              assert image.size == (3200, 1640), image.size
+              image.thumbnail((1600, 1000), Image.Resampling.LANCZOS)
+              image.save(output/'preview.png', optimize=True)
+          assert (output/'preview.png').stat().st_size < 1000000
+          model['sha256']['preview.png'] = sha(output/'preview.png')
+          model['preview_note'] = 'Reduced-resolution QA preview; exact layout and GLB unchanged'
+          model['render_style'] = {'projection': 'orthographic', 'azimuth_deg': 24, 'elevation_deg': 45, 'annotation_text': False, 'background': 'white'}
+          (output/'provenance.json').write_text(json.dumps(model, indent=2)+'\n')
+          for name in ['bandgap-design.png', 'preview.png', 'provenance.json']:
+              shutil.copy2(output/name, root/'model'/name)
+              verification['sha256']['model/'+name] = sha(root/'model'/name)
+          shutil.copy2(output/'bandgap-design.png', 'docs/images/bandgap-design.png')
+          shutil.copy2(renderer, 'layout/scripts/render_layout_3d.py')
+          verification_path.write_text(json.dumps(verification, indent=2)+'\n')
+          assert sha(Path('docs/images/bandgap-design.png')) == model['sha256']['bandgap-design.png']
+          for name, expected in verification['sha256'].items():
+              assert sha(root/name) == expected, name
+          print('Text-free preview generated; GDS, GLB and all electrical evidence unchanged.')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: text-free-layout-preview
+          path: /tmp/text-free-preview
+          retention-days: 30
+      - name: Publish the preview and reproducible renderer
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add layout/scripts/render_layout_3d.py docs/images/bandgap-design.png layout/release/model/bandgap-design.png layout/release/model/preview.png layout/release/model/provenance.json layout/release/verification.json
+          git commit -m 'Restyle layout image to match reference and remove annotation text'
+          git push origin HEAD:main
