@@ -77,7 +77,7 @@ def main():
         result = len(doc["accessors"])
         doc["accessors"].append(entry)
         return result
-    fig, ax = plt.subplots(figsize=(16, 8.2), facecolor="white")
+    fig, ax = plt.subplots(figsize=(16, 8.25), facecolor="white")
     ax.set_facecolor("white")
     base = [(bounds.left-8, bounds.bottom-8, -.6), (bounds.right+8, bounds.bottom-8, -.6),
             (bounds.right+8, bounds.top+8, -.6), (bounds.left-8, bounds.top+8, -.6)]

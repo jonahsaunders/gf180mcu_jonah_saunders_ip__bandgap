@@ -40,7 +40,7 @@ jobs:
           assert sha(output/'bandgap-layout.glb') == sha(root/'model/bandgap-layout.glb'), '3D geometry/materials changed'
           assert model['layers'] == old_model['layers'], 'Layer geometry changed'
           with Image.open(output/'bandgap-design.png') as image:
-              assert image.size == (3200, 1640), image.size
+              assert image.size == (3200, 1650), image.size
               image.thumbnail((1600, 1000), Image.Resampling.LANCZOS)
               image.save(output/'preview.png', optimize=True)
           assert (output/'preview.png').stat().st_size < 1000000
