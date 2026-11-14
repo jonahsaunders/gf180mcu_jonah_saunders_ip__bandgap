@@ -125,12 +125,26 @@ def lvs_result(report):
                     f"  {kind} layout={name(item.first())} "
                     f"schematic={name(item.second())} status={item.status()}"
                 )
-    layout_netlist = database.netlist()
-    devices = sum(1 for c in layout_netlist.each_circuit() for _ in c.each_device())
+
+    def census(netlist):
+        counts = Counter()
+        for circuit in netlist.each_circuit():
+            for device in circuit.each_device():
+                counts[device.device_class().name] += 1
+        return dict(sorted(counts.items()))
+
+    def top_pins(netlist):
+        return sorted(
+            pin.name() for c in netlist.each_circuit_top_down() for pin in c.each_pin()
+        )[:60]
+
+    layout_netlist, schematic = database.netlist(), database.reference()
     return {
         "match": bool(pairs) and all(p.status() == xref.Match for p in pairs),
         "circuit_pairs": len(pairs),
-        "layout_devices_after_combination": devices,
+        "layout_devices_after_combination": census(layout_netlist),
+        "schematic_devices_after_combination": census(schematic),
+        "layout_top_pins": top_pins(layout_netlist),
         "detail": detail,
     }
 
@@ -177,6 +191,12 @@ def main():
         "deck_reports_success": "DRC RESULT: SUCCESS (0 violations)" in log,
         "errors_in_log": log.count("ERROR:"),
         "rules_executed": log.count("Executing rule"),
+        "density_percent_reported_by_deck": {
+            name.lower(): round(float(value), 3)
+            for name, value in re.findall(
+                r"(COMP|Poly2|Metal\d) ratio: ([0-9.]+) %", log
+            )
+        },
     }
     summary["drc"]["clean"] = (
         status == 0
