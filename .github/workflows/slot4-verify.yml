@@ -32,7 +32,8 @@ concurrency:
 env:
   # Optional regular expression: print the installed deck's definition of
   # matching rules when DRC reports violations (diagnostics only).
-  SLOT4_SHOW_RULES: '(output|rule).*["'']+(DM[0-9T]*\.[0-9]|DCF\.|DPF\.|PL\.8|M[1-4]\.4|ANT\.16_i_ANT\.6)'
+  SLOT4_SHOW_RULES: ''
+  SLOT4_SHOW_FILES: 'rule_decks/dummy_metal.rb rule_decks/dummy_exclude.rb rule_decks/mslot.rb generic_layers.rb'
   IMAGE: hpretl/iic-osic-tools@sha256:5d6adf1f437cd0f2f8f8614488ec3c247ba8c768f4663a25d5e997b30ccb13b0
 
 jobs:
@@ -58,7 +59,7 @@ jobs:
           # The image's default user differs from the runner's; let it write.
           chmod -R a+rwX .
           docker run --rm --network none \
-            --env SLOT4_SHOW_RULES \
+            --env SLOT4_SHOW_RULES --env SLOT4_SHOW_FILES \
             --mount type=bind,source="$PWD",target=/design \
             --entrypoint /bin/bash "$IMAGE" \
             -lc "bash /design/layout/verify_slot4.sh" 2>&1 | tee /tmp/console.log

@@ -188,6 +188,12 @@ def main():
     if not summary["drc"]["clean"]:
         print(log[-3000:])
         drc_examples(drc_report)
+        for name in os.environ.get("SLOT4_SHOW_FILES", "").split():
+            print(f"=== {name}")
+            for number, line in enumerate(
+                (DRC_DIR / name).read_text(errors="replace").splitlines()[:420]
+            ):
+                print(f"{number + 1:4d} {line[:300]}")
         if os.environ.get("SLOT4_SHOW_RULES"):
             deck_text(os.environ["SLOT4_SHOW_RULES"])
             deck_text("|".join(re.escape(rule) for rule in items))
