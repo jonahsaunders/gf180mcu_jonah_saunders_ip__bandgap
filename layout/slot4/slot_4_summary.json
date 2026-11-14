@@ -37,27 +37,47 @@
   },
   "traces": {
     "vref": [
-      "core port to pin metal: 8.03 um; plate 6.9 x 44.32 um on M5/M4, 9.43 x 44.32 um on M3"
+      "core port to pin metal: 8.03 um; plate 6.9 x 44.32 um on M5/M4, 7.98 x 44.32 um on M3"
     ],
     "avdd": [
-      "three 30 um M5 stripes from the pin, 30 um M5 collector, two 30 um taps onto the PREF ring and a 19 um tap onto the M11-M13 spine"
+      "three 30 um stripes from the pin and a 30 um collector, all five metals strapped; two 30 um M5 taps onto the PREF ring and a 19 um M5 tap onto the M11-M13 spine"
     ],
     "avss": [
-      "two 25.5 um M5 stripes from the pin; 11.2 um M5 channel above the core strapped to 9.4 um of M4 and M3; merged with the core rail over 442.5 um"
+      "two 25.5 um stripes from the pin, all five metals strapped; 11.2 um M5 channel above the core strapped to 9.4 um of M4 and M3; merged with the core rail over 442.5 um"
     ],
     "dvdd": [
-      "30 um M5 stripe; 16 um M4+M3 underpass below the AVDD collector; M5 plate merged with the core's 16 um edge strap"
+      "30 um stripe, all five metals strapped; 16 um M4+M3 underpass below the AVDD collector; M5 plate merged with the core's 16 um edge strap"
     ],
     "dvss": [
-      "30 um M5 stripe and riser; two 24 um M4 underpasses (M3 doubled outside the trim-bit band); M5 plate merged with the core's 50.4 um edge strap"
+      "30 um stripe and riser, all five metals strapped (M3/M4 stop where the trim bits cross); two 24 um M4 underpasses, M3 doubled outside the trim-bit band; M5 plate merged with the core's 50.4 um edge strap"
     ],
     "b0..b6": [
-      "2 um tracks: M3 pad at the pin row, M4 riser, M5 for the 490 um run, M3 for the last 77 um into the core pads; 12 cuts at every layer change"
+      "2 um tracks: M3 pad at the pin row, M4 riser, M3+M4 in parallel for the 465 um run, 23 um M5 bridge, M3 for the last 77 um into the core pads; 12 cuts at every layer change"
     ]
   },
   "checks": {
-    "via40_cuts": 11160,
-    "via41_cuts": 12144,
+    "via35_cuts": 53256,
+    "via38_cuts": 48036,
+    "via40_cuts": 60652,
+    "via41_cuts": 57360,
+    "density_percent": {
+      "comp": 38.16,
+      "poly2": 15.5,
+      "metal1": 48.59,
+      "metal2": 47.34,
+      "metal3": 50.05,
+      "metal4": 51.17,
+      "metal5": 54.11
+    },
+    "dummy_squares": {
+      "comp": 3560,
+      "poly2": 695,
+      "metal1": 3465,
+      "metal2": 7377,
+      "metal3": 7118,
+      "metal4": 7050,
+      "metal5": 7298
+    },
     "metal_nets": {
       "core": 73,
       "wrapper": 70,
@@ -106,5 +126,5 @@
       "vbias"
     ]
   },
-  "gds_sha256_uncompressed": "bea405c5499d40857469521b9f83b6100095c8adb967a2e17e23451a1ac80ad1"
+  "gds_sha256_uncompressed": "591e195214dfb28fd969cc7c6aca571d75e274936c0a95c848bfe9274b9cbc35"
 }

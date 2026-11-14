@@ -36,11 +36,14 @@ CORE = "Bandgap_Core_Res"
 DBU = 0.001
 GRID = 5  # nm
 
-# GF180MCU-D 5LM layer numbers (datatype 0 drawing, 10 label/pin, 4 fill).
-M3, VIA3, M4, VIA4, M5 = 42, 40, 46, 41, 81
+# GF180MCU-D 5LM layer numbers (datatype 0 drawing, 10 label/pin, 4 dummy fill).
+COMP, POLY = 22, 30
+M1, VIA1, M2, VIA2, M3, VIA3, M4, VIA4, M5 = 34, 35, 36, 38, 42, 40, 46, 41, 81
 FUSETOP = 75
-STACK = [34, 35, 36, 38, M3, VIA3, M4, VIA4, M5]  # M1 via1 M2 via2 M3 via3 M4 via4 M5
-METALS = [34, 36, M3, M4, M5]
+STACK = [M1, VIA1, M2, VIA2, M3, VIA3, M4, VIA4, M5]
+METALS = [M1, M2, M3, M4, M5]
+LOWER = [M1, M2, M3, M4]
+VIA_BETWEEN = {VIA1: (M1, M2), VIA2: (M2, M3), VIA3: (M3, M4), VIA4: (M4, M5)}
 
 # Core placement: y' = CORE_Y - y (mirror about the x axis), x' = CORE_X + x.
 # This puts the core flush against the pad side of the slot with its vref port
@@ -57,17 +60,43 @@ PIN_MAP = {
     **{f"b{i}": f"dig_in[{i}]" for i in range(7)},
 }
 
-# Clearance demanded between added metal and any metal it is not meant to
-# touch. The foundry minimums are 0.28/0.30 um (M3, M4) and 0.46 um (M5).
-CLEARANCE = {M3: 0.50, M4: 0.50, M5: 0.90}
-MIN_SPACE = {M3: 0.28, M4: 0.28, M5: 0.46}
-MIN_WIDTH = {M3: 0.28, M4: 0.28, M5: 0.44}
+# Clearance demanded between added metal and any circuit metal it is not meant
+# to touch. The foundry minimums are 0.23..0.30 um (M1..M4) and 0.46 um (M5).
+CLEARANCE = {M1: 0.50, M2: 0.50, M3: 0.50, M4: 0.50, M5: 0.90}
+MIN_SPACE = {M1: 0.23, M2: 0.28, M3: 0.28, M4: 0.28, M5: 0.46}
+MIN_WIDTH = {M1: 0.23, M2: 0.28, M3: 0.28, M4: 0.28, M5: 0.44}
 # Only here, where seven 0.29 um pin lines leave the pin row on its 0.58 um
 # pitch, is added metal allowed down to the foundry minimum spacing.
 PIN_ESCAPE = (0.0, 150.0, 30.0, 165.0)
 VIA_SIZE = 0.26
-VIA_ENCLOSURE = 0.10
-MAX_STRIPE = 30.0  # widest single piece of supply metal, um
+VIA_MARGIN = 0.60  # cluster centre to metal edge: 0.21 um enclosure of the cuts
+VIA_PITCH = 1.6
+# Cut clusters sit on one fixed lattice per via level, shifted between levels
+# so that no cluster is stacked on the one below it.
+VIA_ORIGIN = {
+    VIA1: (0.8, 0.05),
+    VIA2: (0.0, 0.05),
+    VIA3: (0.0, 0.85),
+    VIA4: (0.8, 0.85),
+}
+MAX_STRIPE = 30.0  # MSLOT.1: widest metal allowed without slots, um
+
+# Dummy fill (datatype 4), same drawing rules as layout/scripts/add_density_fill.py.
+FILL_REGION = (3.0, 3.0, 574.0, 409.7)  # left of the core, inside the border
+FILL_TO_CIRCUIT = 2.005  # DMn.3: dummy metal to circuit metal on the same layer
+FILL_TO_ADJACENT = 1.005  # design-manual DM.4-DM.7, not coded in the deck
+POLY_FILL_REGION = (3.0, 3.0, 548.0, 409.7)  # 30 um from the core (DPF.8/DPF.11)
+POLY_FILL_TARGET = 0.155  # die density aimed for; PL.8 needs 14 %
+DENSITY_MINIMUM = {
+    COMP: 0.25,
+    POLY: 0.14,
+    M1: 0.30,
+    M2: 0.30,
+    M3: 0.30,
+    M4: 0.30,
+    M5: 0.30,
+}
+DENSITY_MARGIN = 0.01
 
 
 def nm(value):
@@ -89,55 +118,74 @@ class Plan:
     def __init__(self):
         self.shapes = {}  # net -> layer -> [Box]
         self.notes = {}  # net -> [description]
+        self.dense = []  # windows where every via lattice point is used
+        self.fill = {}  # layer -> Region of dummy fill (datatype 4)
 
     def add(self, net, layer, x0, y0, x1, y1):
         self.shapes.setdefault(net, {}).setdefault(layer, []).append(
             box(x0, y0, x1, y1)
         )
 
+    def stack(self, net, layers, x0, y0, x1, y1):
+        for layer in layers:
+            self.add(net, layer, x0, y0, x1, y1)
+
     def note(self, net, text):
         self.notes.setdefault(net, []).append(text)
 
-    def vias(self, net, layer, x0, y0, x1, y1, pitch=1.6, offset=0.0):
-        """Fill a window with 2x2 cut clusters on a regular pitch.
+    def dense_vias(self, x0, y0, x1, y1):
+        self.dense.append(box(x0, y0, x1, y1))
 
-        Cuts inside a cluster are 0.26 um apart; clusters are at least
-        0.82 um apart, so no group ever forms the 4x4 array that would need
-        the wider 0.36 um via spacing. The window is the common metal area;
-        clusters stay 0.21 um or more inside it.
+    def place_vias(self):
+        """Join every pair of adjacent metals of a net wherever they overlap.
+
+        2x2 clusters of 0.26 um cuts (0.26 um apart) are dropped on a fixed
+        1.6 um lattice, so clusters are 0.82 um apart and never form the 4x4
+        array that needs wider via spacing. Inside the declared dense windows
+        every lattice point is used; elsewhere one point in eight, which is
+        still a cluster every 6.4 um along every 3.2 um of strap width.
         """
-        half = 0.39  # cluster half extent: cuts at +-0.13..+-0.39
-        margin = half + 0.21
-
-        def centres(lower, upper):
-            span = upper - lower - 2 * margin
-            if span < -1e-9:
-                return []
-            steps = int((span + 1e-9) // pitch)
-            first = lower + margin + (span - steps * pitch) / 2 + offset
-            values = [
-                round(round((first + i * pitch) * 100) / 100, 2)
-                for i in range(steps + 1)
-            ]
-            return [v for v in values if v <= upper - margin + 1e-9]
-
-        count = 0
-        for cx in centres(x0, x1):
-            for cy in centres(y0, y1):
-                for dx in (-0.39, 0.13):
-                    for dy in (-0.39, 0.13):
-                        self.add(
-                            net,
-                            layer,
-                            round(cx + dx, 3),
-                            round(cy + dy, 3),
-                            round(cx + dx + VIA_SIZE, 3),
-                            round(cy + dy + VIA_SIZE, 3),
-                        )
-                count += 1
-        if not count:
-            raise ValueError(f"no via cluster fits in {(x0, y0, x1, y1)}")
-        return count
+        pitch, margin = nm(VIA_PITCH), nm(VIA_MARGIN)
+        counts = {}
+        for net in sorted(self.shapes):
+            for via, (below, above) in VIA_BETWEEN.items():
+                common = (
+                    self.region(below, net).merged() & self.region(above, net).merged()
+                )
+                allowed = common.sized(-margin)
+                if allowed.is_empty():
+                    continue
+                origin_x, origin_y = (nm(v) for v in VIA_ORIGIN[via])
+                points = set()
+                for piece in allowed.decompose_trapezoids_to_region().each():
+                    area = piece.bbox()
+                    for i in range(
+                        -((origin_x - area.left) // pitch),
+                        (area.right - origin_x) // pitch + 1,
+                    ):
+                        for j in range(
+                            -((origin_y - area.bottom) // pitch),
+                            (area.top - origin_y) // pitch + 1,
+                        ):
+                            points.add((i, j))
+                for i, j in sorted(points):
+                    centre = k.Point(origin_x + i * pitch, origin_y + j * pitch)
+                    if not (i % 4 == 0 and j % 2 == 0) and not any(
+                        window.contains(centre) for window in self.dense
+                    ):
+                        continue
+                    for dx in (-390, 130):
+                        for dy in (-390, 130):
+                            self.shapes[net].setdefault(via, []).append(
+                                k.Box(
+                                    centre.x + dx,
+                                    centre.y + dy,
+                                    centre.x + dx + nm(VIA_SIZE),
+                                    centre.y + dy + nm(VIA_SIZE),
+                                )
+                            )
+                    counts[via] = counts.get(via, 0) + 1
+        return counts
 
     def region(self, layer, net=None):
         result = k.Region()
@@ -202,25 +250,25 @@ def plan_routes(pins, wrapper_layout):
     coll0, coll1 = 538.0, 568.0  # AVDD collector, M5
     east0, east1 = 569.6, 578.6  # via fields between collector and core
     core_edge_strap = 581.2  # right edge of the core's dvdd/dvss edge straps
+    strap0 = 3.0  # lower metals start just outside the pin row
 
     # ---- vref -> s4_an[0] -------------------------------------------------
     # The core's vref strap ends on the core's right edge at y 50.25..52.25.
     # 0.6 um outside the core it opens into a plate as tall as the pin and is
-    # brought down to the pin's metal 3 through two full via fields.
+    # brought down to the pin's metal 3 through two full via fields. Metal 3
+    # starts 2.05 um from the core, whose metal-3 dummy fill reaches its edge.
     px0, py0, px1, py1 = pin_um("s4_an[0]", M3)
     plate0, plate1 = 1262.6, 1269.5
     plan.add("vref", M5, 1261.0, 50.25, plate0, 52.25)
     plan.add("vref", M4, 1261.0, 50.65, plate0, 51.85)
-    for layer in (M5, M4):
-        plan.add("vref", layer, plate0, py0, plate1, py1)
-    plan.add("vref", M3, plate0, py0, px1, py1)
-    plan.vias("vref", VIA4, plate0, py0, plate1, py1)
-    plan.vias("vref", VIA3, plate0, py0, plate1, py1, offset=0.8)
+    plan.stack("vref", (M5, M4), plate0, py0, plate1, py1)
+    plan.add("vref", M3, 1264.05, py0, px1, py1)
+    plan.dense_vias(plate0, py0, px1, py1)
     plan.note(
         "vref",
         f"core port to pin metal: {px0 - 1262.0:.2f} um; plate "
         f"{plate1 - plate0:.1f} x {py1 - py0:.2f} um on M5/M4, "
-        f"{px1 - plate0:.2f} x {py1 - py0:.2f} um on M3",
+        f"{px1 - 1264.05:.2f} x {py1 - py0:.2f} um on M3",
     )
 
     # ---- avdd -> vdd_5v0 --------------------------------------------------
@@ -229,7 +277,11 @@ def plan_routes(pins, wrapper_layout):
     for index in range(3):
         y = round(ay0 + index * (MAX_STRIPE + gap), 3)
         plan.add("avdd", M5, ax0, y, coll1, round(y + MAX_STRIPE, 3))
-    plan.add("avdd", M5, coll0, 17.0, coll1, 397.65)
+        plan.stack("avdd", LOWER, strap0, y, coll1, round(y + MAX_STRIPE, 3))
+    plan.stack("avdd", (M5, M2, M1), coll0, 17.0, coll1, 397.65)
+    # Metal 3/4 of the collector step aside where other nets pass beneath it.
+    for lower, upper in ((17.0, 95.0), (117.5, 185.8), (242.7, 397.65)):
+        plan.stack("avdd", (M4, M3), coll0, lower, coll1, upper)
     # Two taps onto the west rail of the PREF/PMIR supply ring ...
     plan.add("avdd", M5, coll1, 17.0, 596.9, 47.0)
     plan.add("avdd", M5, coll1, 54.0, 596.9, 84.0)
@@ -237,95 +289,99 @@ def plan_routes(pins, wrapper_layout):
     plan.add("avdd", M5, coll1, 378.65, 653.9, 397.65)
     plan.note(
         "avdd",
-        f"three {MAX_STRIPE:.0f} um M5 stripes from the pin, {coll1 - coll0:.0f} um "
-        "M5 collector, two 30 um taps onto the PREF ring and a 19 um tap onto "
-        "the M11-M13 spine",
+        f"three {MAX_STRIPE:.0f} um stripes from the pin and a {coll1 - coll0:.0f} um "
+        "collector, all five metals strapped; two 30 um M5 taps onto the PREF "
+        "ring and a 19 um M5 tap onto the M11-M13 spine",
     )
 
     # ---- avss -> vss_5v0 --------------------------------------------------
     sx0, sy0, _, sy1 = pin_um("vss_5v0", M5)
     top = 410.2  # 0.2 um inside the wrapper's 2.31 um border
     plan.add("avss", M5, sx0, sy0, 3.5, sy1)
-    plan.add("avss", M5, 3.0, 356.5, 534.0, 382.0)
-    plan.add("avss", M5, 3.0, 384.6, 534.0, top)
-    plan.add("avss", M5, 504.0, 356.5, 534.0, top)
+    for lower, upper in ((356.5, 382.0), (384.6, top)):
+        plan.stack("avss", METALS, strap0, lower, 534.0, upper)
+    plan.stack("avss", METALS, 504.0, 356.5, 534.0, top)
     # Channel above the core, then down onto the core's full-length rail.
     plan.add("avss", M5, 504.0, 399.0, 1144.6, top)
     plan.add("avss", M5, 702.1, 395.65, 1144.6, 400.0)
-    for layer in (M4, M3):
-        plan.add("avss", layer, 534.0, 400.8, 1144.6, top)
-    plan.vias("avss", VIA4, 534.0, 400.8, 1144.6, top)
-    plan.vias("avss", VIA3, 534.0, 400.8, 1144.6, top, offset=0.8)
+    plan.stack("avss", (M4, M3), 534.0, 400.8, 1144.6, top)
+    plan.dense_vias(534.0, 399.0, 1144.6, top)
     plan.note(
         "avss",
-        "two 25.5 um M5 stripes from the pin; 11.2 um M5 channel above the core "
-        "strapped to 9.4 um of M4 and M3; merged with the core rail over 442.5 um",
+        "two 25.5 um stripes from the pin, all five metals strapped; 11.2 um M5 "
+        "channel above the core strapped to 9.4 um of M4 and M3; merged with "
+        "the core rail over 442.5 um",
     )
 
     # ---- dvdd -> vdd_3v3 --------------------------------------------------
     dx0, _, _, dy1 = pin_um("vdd_3v3", M5)
-    plan.add("dvdd", M5, dx0, round(dy1 - MAX_STRIPE, 3), west1, dy1)
-    plan.add("dvdd", M5, west0, round(dy1 - MAX_STRIPE, 3), west1, 114.25)
-    for layer in (M4, M3):
-        plan.add("dvdd", layer, west0, 98.25, east1, 114.25)
+    stripe = round(dy1 - MAX_STRIPE, 3)
+    plan.add("dvdd", M5, dx0, stripe, west1, dy1)
+    plan.stack("dvdd", LOWER, strap0, stripe, west1, dy1)
+    plan.stack("dvdd", METALS, west0, stripe, west1, 114.25)
+    plan.stack("dvdd", (M4, M3), west0, 98.25, east1, 114.25)
     plan.add("dvdd", M5, east0, 98.25, core_edge_strap, 114.25)
-    plan.vias("dvdd", VIA4, west0, 98.25, west1, 114.25)
-    plan.vias("dvdd", VIA4, east0, 98.25, east1, 114.25)
-    plan.vias("dvdd", VIA3, west0, 98.25, east1, 114.25, offset=0.8)
     plan.note(
         "dvdd",
-        "30 um M5 stripe; 16 um M4+M3 underpass below the AVDD collector; "
-        "M5 plate merged with the core's 16 um edge strap",
+        "30 um stripe, all five metals strapped; 16 um M4+M3 underpass below "
+        "the AVDD collector; M5 plate merged with the core's 16 um edge strap",
     )
 
     # ---- dvss -> vss_3v3 --------------------------------------------------
     gx0, _, _, _ = pin_um("vss_3v3", M5)
     plan.add("dvss", M5, gx0, 118.0, west1, 148.0)
-    plan.add("dvss", M5, 506.4, 118.0, west1, 239.45)
+    plan.stack("dvss", LOWER, strap0, 118.0, west1, 148.0)
+    plan.stack("dvss", (M5, M2, M1), 506.4, 118.0, west1, 239.45)
+    plan.stack("dvss", (M4, M3), 506.4, 118.0, west1, 199.0)
     for lower, upper in ((189.05, 213.0), (215.5, 239.45)):
         plan.add("dvss", M4, west0, lower, east1, upper)
-        plan.vias("dvss", VIA4, west0, lower, west1, upper)
-        plan.vias("dvss", VIA4, east0, lower, east1, upper)
     # Metal 3 doubles the underpass wherever the trim-bit lines do not run.
     for lower, upper in ((189.05, 199.85), (226.0, 239.45)):
         plan.add("dvss", M3, west0, lower, east1, upper)
-        plan.vias("dvss", VIA3, west0, lower, east1, upper, offset=0.8)
     plan.add("dvss", M5, east0, 189.05, core_edge_strap, 239.45)
     plan.note(
         "dvss",
-        "30 um M5 stripe and riser; two 24 um M4 underpasses (M3 doubled outside "
-        "the trim-bit band); M5 plate merged with the core's 50.4 um edge strap",
+        "30 um stripe and riser, all five metals strapped (M3/M4 stop where the "
+        "trim bits cross); two 24 um M4 underpasses, M3 doubled outside the "
+        "trim-bit band; M5 plate merged with the core's 50.4 um edge strap",
     )
 
     # ---- b0..b6 -> dig_in[0..6] -------------------------------------------
     # The pins are 0.29 um metal-3 lines on a 0.58 um pitch. Each leaves the
     # pin row by a short staircase onto a 2 um pad, rises on metal 4 and runs
-    # the long way on metal 5, so that the long wire only reaches the trim-logic
-    # gates at the last metal step. A 77 um metal-3 stub then passes under the
-    # DVSS riser and the AVDD collector into the core's edge pad.
+    # the long way on metal 3 and metal 4 in parallel. Just before the core a
+    # 23 um metal-5 bridge is the only link to the last 77 um metal-3 stub, so
+    # the long wire is not connected to the trim-logic gates until metal 5 is
+    # patterned (antenna rules ANT.16_i); the stub passes under the DVSS riser
+    # and the AVDD collector into the core's edge pad.
     for index in range(7):
         net = f"b{index}"
         pin_layer, pin_box = pins[PIN_MAP[net]]
         drawn = drawn_pin(wrapper_layout, pin_layer, pin_box)
         wire_lo, wire_hi = um(drawn.bottom), um(drawn.top)
         track = round(221.65 - 3.2 * index, 3)  # y of the core pad for this bit
-        x = round(4.0 + 3.2 * index, 3)
+        x = round(3.8 + 3.2 * index, 3)
         plan.add(net, M3, 0.0, wire_lo, x + 2.0, wire_hi)
         plan.add(net, M3, x, 153.0, x + 2.0, wire_hi)
-        plan.vias(net, VIA3, x, 153.0, x + 2.0, 157.6)
         plan.add(net, M4, x, 153.0, x + 2.0, track + 1.0)
-        plan.add(net, M4, x, track - 1.0, x + 5.2, track + 1.0)
-        plan.vias(net, VIA4, x, track - 1.0, x + 5.2, track + 1.0)
-        plan.add(net, M5, x, track - 1.0, 503.0, track + 1.0)
-        plan.vias(net, VIA4, 497.3, track - 1.0, 502.5, track + 1.0)
-        plan.add(net, M4, 497.3, track - 1.0, 508.7, track + 1.0)
-        plan.vias(net, VIA3, 503.5, track - 1.0, 508.7, track + 1.0)
-        plan.add(net, M3, 503.5, track - 1.0, 580.4, track + 1.0)
+        plan.stack(net, (M4, M3), x, track - 1.0, 486.0, track + 1.0)
+        plan.add(net, M5, 480.0, track - 1.0, 503.0, track + 1.0)
+        plan.add(net, M4, 497.0, track - 1.0, 509.0, track + 1.0)
+        plan.add(net, M3, 503.2, track - 1.0, 580.4, track + 1.0)
+    plan.dense_vias(0.0, 150.0, 30.0, 165.0)
+    plan.dense_vias(478.0, 200.0, 512.0, 224.0)
     plan.note(
         "b0..b6",
-        "2 um tracks: M3 pad at the pin row, M4 riser, M5 for the 490 um run, "
-        "M3 for the last 77 um into the core pads; 12 cuts at every layer change",
+        "2 um tracks: M3 pad at the pin row, M4 riser, M3+M4 in parallel for the "
+        "465 um run, 23 um M5 bridge, M3 for the last 77 um into the core pads; "
+        "12 cuts at every layer change",
     )
+
+    # Via fields at the pin ends of the supply straps and across the whole
+    # crossing zone in front of the core; sparse stitching in between.
+    plan.dense_vias(strap0, 3.0, 15.0, 410.4)
+    plan.dense_vias(west0 - 16.0, 3.0, east1, 410.4)
+    plan.via_counts = plan.place_vias()
     return plan
 
 
@@ -334,6 +390,68 @@ def flat_region(layout, cell, layer, datatype):
     if index is None:
         return k.Region()
     return k.Region(layout.begin_shapes(cell, index))
+
+
+def core_trans():
+    return k.Trans(k.Trans.M0, nm(CORE_X), nm(CORE_Y))
+
+
+def squares(region_box, size, pitch, origin, stagger, shift=0.0):
+    """The staggered square lattice of add_density_fill.py, clipped to a box."""
+    x0, y0, x1, y1 = region_box
+    result = k.Region()
+    row = 0
+    while origin[1] + row * pitch <= y1:
+        col = 0
+        while origin[0] + col * pitch <= x1:
+            x = origin[0] + col * pitch + (row % 2) * stagger + shift
+            y = origin[1] + row * pitch + (col % 2) * stagger + shift
+            if x >= x0 and y >= y0 and x + size <= x1 and y + size <= y1:
+                result.insert(
+                    box(
+                        round(x, 3), round(y, 3), round(x + size, 3), round(y + size, 3)
+                    )
+                )
+            col += 1
+        row += 1
+    return result
+
+
+def plan_fill(plan, wrapper_layout):
+    """Dummy fill for the otherwise empty area left of the core.
+
+    The core carries its own fill; without more, the slot as a whole would
+    fall below the die-level density minimums. Squares keep 2 um from circuit
+    metal on their own layer and 1 um from circuit metal one layer up or down.
+    """
+    wrapper = wrapper_layout.top_cell()
+
+    def circuit(layer):
+        return plan.region(layer) + flat_region(wrapper_layout, wrapper, layer, 0)
+
+    # COMP: 5 um squares on a staggered 8 um lattice; nothing else is nearby.
+    comp = squares(FILL_REGION, 5.0, 8.0, (2.0, 4.0), 1.6)
+    plan.fill[COMP] = comp
+    # Poly: 5.6 um squares over dummy COMP, clear of circuit metal 1 and 2.
+    blocked = (circuit(M1) + circuit(M2)).sized(nm(FILL_TO_CIRCUIT))
+    limit = box(*POLY_FILL_REGION)
+    candidates = [
+        square.bbox().enlarged(300, 300)
+        for square in comp.each()
+        if square.bbox().enlarged(300, 300).inside(limit)
+    ]
+    candidates = [c for c in candidates if (k.Region(c) & blocked).is_empty()]
+    plan.poly_candidates = candidates
+    plan.fill[POLY] = k.Region()
+    # Metal: 2 um squares on a staggered 3.2 um lattice, shifted per level.
+    for level, layer in enumerate(METALS):
+        obstacle = circuit(layer).sized(nm(FILL_TO_CIRCUIT))
+        if level:
+            obstacle += circuit(METALS[level - 1]).sized(nm(FILL_TO_ADJACENT))
+        if level < len(METALS) - 1:
+            obstacle += circuit(METALS[level + 1]).sized(nm(FILL_TO_ADJACENT))
+        lattice = squares(FILL_REGION, 2.0, 3.2, (2.0, 4.0), 0.5, 0.5 * level)
+        plan.fill[layer] = lattice.not_interacting(obstacle.merged())
 
 
 def assemble(plan):
@@ -367,7 +485,36 @@ def assemble(plan):
             target = top.shapes(layout.layer(layer, 0))
             for item in plan.shapes[net][layer]:
                 target.insert(item)
+    for layer in sorted(plan.fill):
+        top.shapes(layout.layer(layer, 4)).insert(plan.fill[layer])
     return layout, wrapper_layout
+
+
+def densities(layout, plan=None):
+    """Drawn plus dummy area of each density-checked layer over the slot outline."""
+    top = layout.cell(TOP)
+    area = top.bbox().area()
+    result = {}
+    for layer in DENSITY_MINIMUM:
+        region = flat_region(layout, top, layer, 0) + flat_region(layout, top, layer, 4)
+        result[layer] = region.merged().area() / area
+    return result
+
+
+def choose_poly_fill(plan, core_poly_area, slot_area):
+    """Evenly spaced dummy poly squares, enough for the target die density."""
+    square = nm(5.6) ** 2
+    required = max(0, -(-int(POLY_FILL_TARGET * slot_area - core_poly_area) // square))
+    candidates = plan.poly_candidates
+    if len(candidates) < required:
+        raise RuntimeError(f"only {len(candidates)} of {required} dummy poly sites")
+    chosen = k.Region()
+    for index in range(required):
+        chosen.insert(candidates[index * len(candidates) // required])
+    plan.fill[POLY] = chosen
+    # Dummy metal 1 also keeps 1 um from poly, as in the core.
+    plan.fill[M1] = plan.fill[M1].not_interacting(chosen.sized(nm(FILL_TO_ADJACENT)))
+    return required
 
 
 def extract_nets(layout, cell_name):
@@ -420,7 +567,7 @@ def check(layout, wrapper_layout, plan):
             outline.top - border,
         )
     )
-    core_box = core.bbox().transformed(k.Trans(k.Trans.M0, nm(CORE_X), nm(CORE_Y)))
+    core_box = core.bbox().transformed(core_trans())
     if not k.Region(core_box).inside(interior).count():
         raise RuntimeError("core instance enters the wrapper border")
     pins = wrapper_pins(wrapper_layout)
@@ -436,16 +583,20 @@ def check(layout, wrapper_layout, plan):
 
     # 2. Width, spacing and enclosure of everything that was added.
     escape = box(*PIN_ESCAPE)
-    for layer in (M3, M4, M5):
+    place = core_trans()
+    wrapper = wrapper_layout.top_cell()
+    core_dummy = {}
+    circuit_all = {}
+    for layer in METALS:
         added_all = plan.region(layer).merged()
         narrow = added_all.width_check(nm(MIN_WIDTH[layer]))
         if narrow.count():
             raise RuntimeError(f"layer {layer}: added metal below minimum width")
-        existing = (
-            flat_region(layout, core, layer, 0) + flat_region(layout, core, layer, 4)
-        ).transformed(k.Trans(k.Trans.M0, nm(CORE_X), nm(CORE_Y)))
-        existing += flat_region(wrapper_layout, wrapper_layout.top_cell(), layer, 0)
+        existing = flat_region(layout, core, layer, 0).transformed(place)
+        existing += flat_region(wrapper_layout, wrapper, layer, 0)
         existing.merge()
+        circuit_all[layer] = (existing + added_all).merged()
+        core_dummy[layer] = flat_region(layout, core, layer, 4).transformed(place)
         clearance = nm(CLEARANCE[layer])
         for net in plan.shapes:
             mine = plan.region(layer, net).merged()
@@ -456,7 +607,7 @@ def check(layout, wrapper_layout, plan):
                 if other != net:
                     others += plan.region(layer, other)
             foreign = existing.not_interacting(mine) + others
-            overlap = mine & foreign
+            overlap = mine & (foreign + core_dummy[layer])
             if not overlap.is_empty():
                 raise RuntimeError(
                     f"{net} layer {layer}: overlaps other metal at {overlap[0]}"
@@ -475,41 +626,103 @@ def check(layout, wrapper_layout, plan):
             for pair in mine.space_check(clearance).each():
                 if not pair.bbox().inside(escape):
                     raise RuntimeError(f"{net} layer {layer}: notch at {pair}")
-    for via, below, above in ((VIA3, M3, M4), (VIA4, M4, M5)):
+            near_dummy = mine.separation_check(core_dummy[layer], nm(FILL_TO_CIRCUIT))
+            if near_dummy.count():
+                raise RuntimeError(
+                    f"{net} layer {layer}: within 2 um of core dummy fill at "
+                    f"{near_dummy[0]}"
+                )
+    fuse = flat_region(layout, core, FUSETOP, 0).transformed(place)
+    all_cuts = {}
+    for via, (below, above) in VIA_BETWEEN.items():
         cuts = plan.region(via)
         if cuts.space_check(nm(VIA_SIZE)).count():
             raise RuntimeError(f"via layer {via}: cuts closer than {VIA_SIZE} um")
-        core_cuts = flat_region(layout, core, via, 0).transformed(
-            k.Trans(k.Trans.M0, nm(CORE_X), nm(CORE_Y))
-        )
+        core_cuts = flat_region(layout, core, via, 0).transformed(place)
+        all_cuts[via] = core_cuts + cuts
         if cuts.separation_check(core_cuts, nm(1.0)).count():
             raise RuntimeError(f"via layer {via}: added cut within 1 um of a core cut")
-        for metal in (below, above):
-            uncovered = cuts.sized(nm(VIA_ENCLOSURE)) - plan.region(metal)
-            if not uncovered.is_empty():
+        for net in plan.shapes:
+            mine = plan.region(via, net)
+            for metal in (below, above):
+                uncovered = mine.sized(nm(0.2)) - plan.region(metal, net)
+                if not uncovered.is_empty():
+                    raise RuntimeError(
+                        f"{net} via layer {via}: cut not enclosed by its own layer "
+                        f"{metal} at {uncovered[0]}"
+                    )
+        for layer in (via, M4):
+            shapes = plan.region(layer)
+            if (
+                shapes.separation_check(fuse, nm(5.0)).count()
+                or not (shapes & fuse).is_empty()
+            ):
                 raise RuntimeError(
-                    f"via layer {via}: cut not enclosed by added layer {metal} "
-                    f"at {uncovered[0]}"
+                    f"layer {layer}: added shape within 5 um of a MIM cap"
                 )
         report[f"via{via}_cuts"] = cuts.count()
-    fuse = flat_region(layout, core, FUSETOP, 0).transformed(
-        k.Trans(k.Trans.M0, nm(CORE_X), nm(CORE_Y))
-    )
-    for layer in (VIA3, M4, VIA4):
-        if (
-            plan.region(layer).separation_check(fuse, nm(5.0)).count()
-            or not (plan.region(layer) & fuse).is_empty()
-        ):
-            raise RuntimeError(f"layer {layer}: added shape within 5 um of a MIM cap")
-    for net, layers in plan.shapes.items():
-        if net in ("avdd", "avss", "dvdd", "dvss"):
-            for layer, items in layers.items():
-                if layer in (M3, M4, M5):
-                    widest = max(min(b.width(), b.height()) for b in items)
-                    if widest > nm(MAX_STRIPE):
-                        raise RuntimeError(
-                            f"{net} layer {layer}: piece wider than 30 um"
-                        )
+
+    # MSLOT.1 as the deck computes it: no metal region that holds a square
+    # larger than 30 um, after removing 0.2 um around vias above and below.
+    half = nm(MAX_STRIPE) // 2
+
+    def opened(region):
+        return region.sized(0, -half).sized(-half, 0).sized(0, half).sized(half, 0)
+
+    exempt = (flat_region(layout, core, M4, 0).transformed(place) & fuse).sized(nm(5.0))
+    contact = flat_region(layout, core, 33, 0).transformed(place)
+    for index, layer in enumerate(METALS):
+        punched = all_cuts[STACK[2 * index - 1]] if index else contact
+        if index < len(METALS) - 1:
+            punched = punched + all_cuts[STACK[2 * index + 1]]
+        wide = opened(opened(circuit_all[layer]) - punched.sized(200) - exempt)
+        wide = wide.interacting(plan.region(layer))
+        if not wide.is_empty():
+            raise RuntimeError(
+                f"layer {layer}: unslotted metal over 30 um at {wide[0]}"
+            )
+
+    # Dummy fill: clear of circuit metal and of the core, and enough of it.
+    core_box = k.Region(core.bbox().transformed(place))
+    for layer, dummy in plan.fill.items():
+        if layer in METALS:
+            if (
+                dummy.separation_check(circuit_all[layer], nm(2.0)).count()
+                or not (dummy & circuit_all[layer]).is_empty()
+            ):
+                raise RuntimeError(f"layer {layer}: dummy within 2 um of circuit metal")
+            every = dummy + core_dummy[layer]
+            if every.space_check(nm(0.98)).count():
+                raise RuntimeError(f"layer {layer}: dummy squares closer than 0.98 um")
+            if dummy.separation_check(fuse, nm(6.0)).count():
+                raise RuntimeError(f"layer {layer}: dummy within 6 um of a MIM cap")
+        reach = {COMP: 4.1, POLY: 30.0}.get(layer, 2.2)
+        if not (dummy & core_box.sized(nm(reach))).is_empty():
+            raise RuntimeError(f"layer {layer}: dummy within {reach} um of the core")
+    if not (plan.fill[POLY] - plan.fill[COMP].sized(300)).is_empty():
+        raise RuntimeError("dummy poly not on dummy COMP")
+    achieved = densities(layout)
+    for layer, minimum in DENSITY_MINIMUM.items():
+        if achieved[layer] < minimum + DENSITY_MARGIN:
+            raise RuntimeError(
+                f"layer {layer}: density {achieved[layer]:.3f} below "
+                f"{minimum + DENSITY_MARGIN:.2f}"
+            )
+    names = {
+        COMP: "comp",
+        POLY: "poly2",
+        M1: "metal1",
+        M2: "metal2",
+        M3: "metal3",
+        M4: "metal4",
+        M5: "metal5",
+    }
+    report["density_percent"] = {
+        names[layer]: round(100 * achieved[layer], 2) for layer in DENSITY_MINIMUM
+    }
+    report["dummy_squares"] = {
+        names[layer]: plan.fill[layer].count() for layer in plan.fill
+    }
 
     # 3. Connectivity. Metal-only extraction of the core, the wrapper and the
     #    finished slot: every core port must merge with exactly its harness pin,
@@ -629,6 +842,15 @@ def main():
     wrapper_layout.read(str(WRAPPER_GDS))
     pins = wrapper_pins(wrapper_layout)
     plan = plan_routes(pins, wrapper_layout)
+    plan_fill(plan, wrapper_layout)
+    core_layout = k.Layout()
+    core_layout.read(str(CORE_GDS))
+    core_cell = core_layout.top_cell()
+    core_poly = (
+        flat_region(core_layout, core_cell, POLY, 0)
+        + flat_region(core_layout, core_cell, POLY, 4)
+    ).merged()
+    choose_poly_fill(plan, core_poly.area(), wrapper_layout.top_cell().bbox().area())
     layout, wrapper_layout = assemble(plan)
     report = check(layout, wrapper_layout, plan)
     data = write_gds(layout)

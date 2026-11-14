@@ -30,10 +30,11 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  # Optional regular expression: print the installed deck's definition of
-  # matching rules when DRC reports violations (diagnostics only).
+  # Diagnostics, used only when DRC reports violations: a regular expression
+  # selecting rule definitions to print from the installed deck, and deck
+  # files (relative to the deck directory) to print in full.
   SLOT4_SHOW_RULES: ''
-  SLOT4_SHOW_FILES: 'rule_decks/dummy_metal.rb rule_decks/dummy_exclude.rb rule_decks/mslot.rb generic_layers.rb'
+  SLOT4_SHOW_FILES: ''
   IMAGE: hpretl/iic-osic-tools@sha256:5d6adf1f437cd0f2f8f8614488ec3c247ba8c768f4663a25d5e997b30ccb13b0
 
 jobs:
