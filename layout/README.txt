@@ -219,7 +219,11 @@ The released dimensions and centered margins are calculated from GDS in the
 README and harness-area-fit figure. These are geometric margins, not verified
 integration clearances. The compact floorplan restores the earlier two-row
 output-capacitor bank instead of spreading the design across the user area.
-Slot 4 is assigned. Final wrapper geometry, pin locations and wiring remain pending.
+Slot 4 is assigned. ../gds/slot_4.gds.gz is the slot layout (top cell slot_4):
+scripts/build_slot4.py builds it from the released core and harness/slot4_wrapper.gds,
+verify_slot4.sh runs the foundry DRC and LVS on it, and slot4/ holds its reference
+netlist, summary, verification record and figure. See ../docs/SLOT4_INTEGRATION.md.
+The harness top-level assembly and LVS have not been run.
 The initial-floorplan and harness-area-fit figures describe older layouts;
 current dimensions/margins are in ../docs/DESIGN.md. None changes the GDS.
 

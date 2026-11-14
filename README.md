@@ -30,7 +30,10 @@ the core measures 682.8 × 396.76 µm. Build instructions and tool versions
 are in [layout/README.txt](layout/README.txt).
 
 The released core has zero reported DRC violations with the pinned deck,
-and LVS matches all 533 device units. Harness integration is still open.
+and LVS matches all 533 device units. The slot-4 layout,
+[`gds/slot_4.gds.gz`](gds/slot_4.gds.gz), also passes DRC and LVS on its own;
+the harness top level has not been run. See
+[slot 4 integration](docs/SLOT4_INTEGRATION.md).
 
 ### Chipalooza harness integration
 
@@ -46,6 +49,12 @@ harness for the planned December 2026 tapeout.
   pad needs a different cell, such as a digital input or output cell,
   send the cell name to Tim Edwards for the harness
   [`config.txt`](https://github.com/RTimothyEdwards/gf180mcu_ocd_chipalooza/blob/main/config.txt).
+
+The slot layout is [`gds/slot_4.gds.gz`](gds/slot_4.gds.gz), top cell `slot_4`:
+vref on `s4_an[0]`, AVDD/AVSS on the 5 V pins, DVDD/DVSS on the 3.3 V pins and
+trim bits b0–b6 on `dig_in[0..6]`. Both dedicated pads keep the default
+analog pad type. Placement, wiring, verification and the open questions for
+the harness are in [slot 4 integration](docs/SLOT4_INTEGRATION.md).
 
 Final design reviews are planned for the week of **November 30, 2026**
 to confirm that the slot layout integrates into the harness top level.
