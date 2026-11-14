@@ -138,7 +138,7 @@ def lvs_result(report):
             pin.name() for c in netlist.each_circuit_top_down() for pin in c.each_pin()
         )[:60]
 
-    layout_netlist, schematic = database.netlist(), database.reference()
+    layout_netlist, schematic = database.netlist(), database.reference
     return {
         "match": bool(pairs) and all(p.status() == xref.Match for p in pairs),
         "circuit_pairs": len(pairs),
