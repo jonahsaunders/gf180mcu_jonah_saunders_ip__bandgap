@@ -798,7 +798,7 @@ def slot_netlist(pins_in_order):
     return "\n".join(lines) + "\n", devices
 
 
-# Port order of slot4_wrapper in the harness netlists.
+# Port order of slot4_wrapper in the harness's extracted layout netlist.
 WRAPPER_PORTS = (
     ["s4_an[0]", "s4_an[1]", "vdd_3v3", "vss_5v0", "vdd_5v0", "vss_3v3"]
     + [f"analog_bus{i}" for i in (3, 2, 1, 0)]

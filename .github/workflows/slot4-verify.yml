@@ -10,7 +10,6 @@ on:
   push:
     branches:
       - main
-      - slot4-integration
     paths:
       - "gds/**"
       - "layout/slot4/**"

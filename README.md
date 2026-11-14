@@ -7,6 +7,12 @@ target of 1.18 V.
 
 [![3D view of the bandgap layout](docs/images/bandgap-design.png)](docs/images/bandgap-design.png)
 
+[![3D view of the bandgap integrated into harness slot 4](docs/images/slot4-design.png)](docs/images/slot4-design.png)
+
+Top: the bandgap core. Bottom: the core integrated into Chipalooza harness
+slot 4, with its supply, trim and output wiring
+([Final Integration](docs/FINAL_INTEGRATION.md)).
+
 - [Design documentation](docs/DESIGN.md)
 - [Final Integration](docs/FINAL_INTEGRATION.md)
 - [Installation and first run](docs/GETTING_STARTED.md)
@@ -33,7 +39,7 @@ The released core has zero reported DRC violations with the pinned deck,
 and LVS matches all 533 device units. The slot-4 layout,
 [`gds/slot_4.gds.gz`](gds/slot_4.gds.gz), also passes DRC and LVS on its own;
 the harness top level has not been run. See
-[slot 4 integration](docs/SLOT4_INTEGRATION.md).
+[Final Integration](docs/FINAL_INTEGRATION.md).
 
 ### Chipalooza harness integration
 
@@ -54,7 +60,7 @@ The slot layout is [`gds/slot_4.gds.gz`](gds/slot_4.gds.gz), top cell `slot_4`:
 vref on `s4_an[0]`, AVDD/AVSS on the 5 V pins, DVDD/DVSS on the 3.3 V pins and
 trim bits b0–b6 on `dig_in[0..6]`. Both dedicated pads keep the default
 analog pad type. Placement, wiring, verification and the open questions for
-the harness are in [slot 4 integration](docs/SLOT4_INTEGRATION.md).
+the harness are in [Final Integration](docs/FINAL_INTEGRATION.md).
 
 Final design reviews are planned for the week of **November 30, 2026**
 to confirm that the slot layout integrates into the harness top level.
