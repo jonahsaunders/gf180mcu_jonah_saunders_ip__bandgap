@@ -16,6 +16,7 @@ import gzip
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
@@ -76,10 +77,10 @@ def drc_examples(report, limit=6):
 
 def deck_text(pattern):
     """Print the installed deck's own definition of the rules that fired."""
-    import re
-
     expression = re.compile(pattern)
-    for deck in sorted(DRC_DIR.rglob("*.drc")):
+    files = sorted(f for f in DRC_DIR.rglob("*") if f.is_file())
+    print("Deck files:", [str(f.relative_to(DRC_DIR)) for f in files][:60])
+    for deck in files:
         lines = deck.read_text(errors="replace").splitlines()
         for number, line in enumerate(lines):
             if expression.search(line):
@@ -189,6 +190,7 @@ def main():
         drc_examples(drc_report)
         if os.environ.get("SLOT4_SHOW_RULES"):
             deck_text(os.environ["SLOT4_SHOW_RULES"])
+            deck_text("|".join(re.escape(rule) for rule in items))
 
     antenna_deck = DRC_DIR / "gf180mcu_antenna.drc"
     antenna_in_main = sum("ANT." in line for line in log.splitlines())
