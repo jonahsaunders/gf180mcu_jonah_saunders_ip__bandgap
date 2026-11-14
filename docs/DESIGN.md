@@ -24,7 +24,7 @@ The [October annotated layout and figures](https://github.com/jonahsaunders/gf18
 
 Against the organizer's provisional **1270 × 410 µm** planning area, the new core occupies **52.0%**. Centering would leave **293.6 µm** horizontally on each side and **6.62 µm** vertically. These are geometric margins, not verified integration clearances. Device coordinates and the two-row output-capacitor bank are unchanged. [Planning assumptions](../layout/planning_envelope.json).
 
-The block is assigned to **slot 4**; final wrapper coordinates, clearances, pad selection and wiring still need verification against the actual wrapper. See [harness integration instructions](../README.md#chipalooza-harness-integration).
+The block is assigned to **slot 4**. The slot layout matches the wrapper's outline and pins and passes DRC and LVS on its own ([Final Integration](FINAL_INTEGRATION.md)); it still needs the harness top-level checks. See [harness integration instructions](../README.md#chipalooza-harness-integration).
 
 ## Simulation results
 

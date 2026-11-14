@@ -12,3 +12,4 @@ layout/figures/*.svg -whitespace
 layout/reviews/**/*.svg -whitespace
 layout/reviews/**/ngspice.log -text -whitespace
 layout/release/**/ngspice.log -text -whitespace
+gds/** binary

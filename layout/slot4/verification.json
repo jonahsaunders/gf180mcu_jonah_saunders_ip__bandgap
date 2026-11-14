@@ -1,0 +1,80 @@
+{
+  "note": "Copied from the job log of the workflow run below; the run rebuilt the slot from source, found it identical to the committed GDS and ran the installed, unedited GF180MCU-D decks.",
+  "run_url": "https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/actions/runs/43534634469",
+  "commit": "c8464a4",
+  "image": "hpretl/iic-osic-tools@sha256:5d6adf1f437cd0f2f8f8614488ec3c247ba8c768f4663a25d5e997b30ccb13b0",
+  "result": {
+    "top_cell": "slot_4",
+    "rebuild_matches_committed_gds": true,
+    "gds_sha256_uncompressed": "591e195214dfb28fd969cc7c6aca571d75e274936c0a95c848bfe9274b9cbc35",
+    "gds_gz_sha256": "e98336cf78c769e738652885e6301ed716005e2d04f459824a50ed5997bd6e32",
+    "top_cells": [
+      "slot_4"
+    ],
+    "drc": {
+      "exit_status": 0,
+      "violations": 0,
+      "by_rule": {},
+      "deck_reports_success": true,
+      "errors_in_log": 0,
+      "rules_executed": 776,
+      "density_percent_reported_by_deck": {
+        "comp": 38.159,
+        "poly2": 15.505,
+        "metal1": 48.585,
+        "metal2": 47.341,
+        "metal3": 50.054,
+        "metal4": 51.168,
+        "metal5": 54.105
+      },
+      "clean": true
+    },
+    "antenna": {
+      "rules_in_main_deck_log": 24,
+      "separate_deck": null
+    },
+    "lvs": {
+      "exit_status": 0,
+      "match": true,
+      "circuit_pairs": 1,
+      "layout_devices_after_combination": {
+        "cap_mim_2f0fF": 2,
+        "nfet_03v3": 19,
+        "nfet_05v0": 28,
+        "nwell": 1,
+        "pfet_03v3": 17,
+        "pfet_05v0": 33,
+        "pnp_05p00x05p00": 3,
+        "pplus_u": 1,
+        "ppolyf_u_1k": 9
+      },
+      "schematic_devices_after_combination": {
+        "CAP_MIM_2F0FF": 2,
+        "NFET_03V3": 19,
+        "NFET_05V0": 28,
+        "NWELL": 1,
+        "PFET_03V3": 17,
+        "PFET_05V0": 33,
+        "PNP_05P00X05P00": 3,
+        "PPLUS_U": 1,
+        "PPOLYF_U_1K": 9
+      },
+      "layout_top_pins": [
+        "avdd,vdd_5v0",
+        "avss,vss_5v0",
+        "b0,dig_in[0]",
+        "b1,dig_in[1]",
+        "b2,dig_in[2]",
+        "b3,dig_in[3]",
+        "b4,dig_in[4]",
+        "b5,dig_in[5]",
+        "b6,dig_in[6]",
+        "dvdd,vdd_3v3",
+        "dvss,vss_3v3",
+        "s4_an[0],vref"
+      ],
+      "detail": []
+    },
+    "pass": true
+  }
+}

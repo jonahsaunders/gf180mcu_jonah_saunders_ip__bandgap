@@ -1,0 +1,102 @@
+{
+  "image": "docs/images/slot4-design.png",
+  "image_sha256": "cb985d5a66377a94c62acabee9fa52cea12ad91e0c6af7c1284a6591215949cc",
+  "source_gds": "gds/slot_4.gds.gz",
+  "source_gds_sha256_uncompressed": "591e195214dfb28fd969cc7c6aca571d75e274936c0a95c848bfe9274b9cbc35",
+  "top_cell": "slot_4",
+  "bounds_um": [
+    0.0,
+    0.0,
+    1274.27,
+    412.71000000000004
+  ],
+  "xy_geometry": "Every selected polygon of the flattened slot, datatypes 0 and 4",
+  "z_geometry": "Illustrative elevations, 5x vertical exaggeration; not foundry stack dimensions",
+  "style": "Projection, stack and colours imported from render_layout_3d.py",
+  "layers": [
+    {
+      "layer": 22,
+      "name": "Active",
+      "gds_area_um2": 200677.134,
+      "trapezoids": 7721
+    },
+    {
+      "layer": 30,
+      "name": "Poly",
+      "gds_area_um2": 81538.839,
+      "trapezoids": 1229
+    },
+    {
+      "layer": 33,
+      "name": "Contact",
+      "gds_area_um2": 4976.488,
+      "trapezoids": 102820
+    },
+    {
+      "layer": 34,
+      "name": "M1",
+      "gds_area_um2": 255512.565,
+      "trapezoids": 10896
+    },
+    {
+      "layer": 35,
+      "name": "V1",
+      "gds_area_um2": 3740.443,
+      "trapezoids": 55332
+    },
+    {
+      "layer": 36,
+      "name": "M2",
+      "gds_area_um2": 248968.929,
+      "trapezoids": 14180
+    },
+    {
+      "layer": 38,
+      "name": "V2",
+      "gds_area_um2": 3346.673,
+      "trapezoids": 49507
+    },
+    {
+      "layer": 42,
+      "name": "M3",
+      "gds_area_um2": 263234.536,
+      "trapezoids": 13549
+    },
+    {
+      "layer": 40,
+      "name": "V3",
+      "gds_area_um2": 4215.942,
+      "trapezoids": 62366
+    },
+    {
+      "layer": 46,
+      "name": "M4",
+      "gds_area_um2": 269094.587,
+      "trapezoids": 12078
+    },
+    {
+      "layer": 41,
+      "name": "V4",
+      "gds_area_um2": 4683.193,
+      "trapezoids": 69278
+    },
+    {
+      "layer": 75,
+      "name": "MIM top plate",
+      "gds_area_um2": 53465.9,
+      "trapezoids": 11
+    },
+    {
+      "layer": 41,
+      "name": "MIM top contacts",
+      "gds_area_um2": 6122.464,
+      "trapezoids": 90569
+    },
+    {
+      "layer": 81,
+      "name": "M5",
+      "gds_area_um2": 284541.083,
+      "trapezoids": 10003
+    }
+  ]
+}
