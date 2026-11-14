@@ -65,7 +65,7 @@ The first version matched LVS but failed DRC with 17 violations. All three cause
 
 ## Verification
 
-Run inside the pinned IIC-OSIC-TOOLS image by [`slot4-verify.yml`](../.github/workflows/slot4-verify.yml): [workflow run](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/actions/runs/43534634469) at `c8464a4`. The printed verdict is saved as [`layout/slot4/verification.json`](../layout/slot4/verification.json).
+Run inside the pinned IIC-OSIC-TOOLS image by [`slot4-verify.yml`](../.github/workflows/slot4-verify.yml): [workflow run](https://github.com/jonahsaunders/gf180mcu_jonah_saunders_ip__bandgap/actions/runs/43537212548) on `main` at `10ad866`. The workflow reruns on every push to `main` that touches the slot's files. The printed verdict is saved as [`layout/slot4/verification.json`](../layout/slot4/verification.json).
 
 | Check | Result |
 | --- | --- |

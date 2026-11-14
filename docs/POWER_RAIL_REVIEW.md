@@ -29,7 +29,7 @@ The final numerical-noise check and reduced-resolution preview passed in [the fi
 | Core bounds, width x height | 686.0 x 399.6 um | 682.8 x 396.76 um |
 | Core area | 0.274126 mm2 | 0.270908 mm2 |
 
-Verification checks the actual DRC item count and LVS match database, rather than trusting process exit status. The selected unmodified deck includes density, antenna, via-array and MIM checks. The smaller bounds result from routing extent changes; device placement is unchanged. The checks apply to the core, not a completed slot-4 wrapper.
+Verification checks the actual DRC item count and LVS match database, rather than trusting process exit status. The selected unmodified deck includes density, antenna, via-array and MIM checks. The smaller bounds result from routing extent changes; device placement is unchanged. The checks apply to the core; the slot-4 layout is checked separately ([Final Integration](FINAL_INTEGRATION.md)).
 
 ## Electrical comparison
 
@@ -112,4 +112,4 @@ Recreate the model with `python layout/scripts/render_layout_3d.py --gds layout/
 
 ## Remaining work
 
-Full PVT startup/restart and ramp sequencing; loop stability and transient loading; random mismatch and minimum-drift trim yield; device terminal-voltage limits; independent PEX accuracy and distributed well/substrate RC; quantitative EM/IR; and final slot-4 harness integration remain open. No PDK model, design rule or device connection was weakened to obtain a pass. The review supports merging the rail improvement as the next core candidate, with the regressions and qualification limits above retained explicitly.
+Full PVT startup/restart and ramp sequencing; loop stability and transient loading; random mismatch and minimum-drift trim yield; device terminal-voltage limits; independent PEX accuracy and distributed well/substrate RC; quantitative EM/IR; and the harness top-level run of the slot-4 layout remain open (the slot layout itself is described in [Final Integration](FINAL_INTEGRATION.md)). No PDK model, design rule or device connection was weakened to obtain a pass. The review supports merging the rail improvement as the next core candidate, with the regressions and qualification limits above retained explicitly.
